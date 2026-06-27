@@ -1,0 +1,21 @@
+{
+  "id": "supertrend-pro",
+  "name": "SuperTrend Pro",
+  "author": "aravind_r",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": ["supertrend", "atr", "crypto", "trailing-stop", "trend"],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Enhanced SuperTrend with ATR multiplier, trailing stop visualization, and buy/sell signal markers. Optimized for crypto volatility.",
+  "likes": 567,
+  "uses": 2800,
+  "language": "Python",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}

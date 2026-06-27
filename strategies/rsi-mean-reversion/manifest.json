@@ -1,0 +1,19 @@
+{
+  "id": "rsi-mean-reversion",
+  "name": "RSI Mean Reversion",
+  "author": "TradeGrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "mean-reversion",
+  "tags": ["rsi", "mean-reversion", "oversold", "overbought"],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Buy on RSI oversold crossover and sell on RSI overbought crossunder.",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}

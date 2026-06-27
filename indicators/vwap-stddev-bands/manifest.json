@@ -1,0 +1,20 @@
+{
+  "id": "vwap-stddev-bands",
+  "name": "VWAP StdDev Bands",
+  "author": "vkumar",
+  "version": "1.0.0",
+  "category": "volume",
+  "tags": ["vwap", "bands", "intraday", "volume"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Volume-weighted average price with configurable standard deviation bands. Automatically resets at session open for intraday timeframes.",
+  "likes": 342,
+  "uses": 1200,
+  "language": "Python",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "supertrend",
+  "name": "Supertrend",
+  "author": "TradeGrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": ["supertrend", "atr", "trend-following"],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Buy and sell on Supertrend direction flips using ATR-based trailing bands.",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}
