@@ -12,4 +12,4 @@ if ta.crossover(rsi, oversold):
 if ta.crossunder(rsi, overbought):
     strategy.close("Long")
 
-plot(rsi, "RSI", color="purple")
+plot(rsi, title="RSI", color="purple")

@@ -12,5 +12,5 @@ if ta.crossover(macd_line, signal_line):
 if ta.crossunder(macd_line, signal_line):
     strategy.close("Long")
 
-plot(macd_line, "MACD", color="blue")
-plot(signal_line, "Signal", color="orange")
+plot(macd_line, title="MACD", color="blue")
+plot(signal_line, title="Signal", color="orange")

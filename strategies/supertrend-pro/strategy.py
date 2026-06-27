@@ -20,6 +20,6 @@ if use_trailing:
         strategy.exit("Trail Short", "Short", trail_offset=trail_offset)
 
 bull = direction[-1] > 0
-plot(supertrend, "SuperTrend", color="green" if bull else "red", linewidth=2)
+plot(supertrend, title="SuperTrend", color="green" if bull else "red", linewidth=2)
 plotshape(ta.crossover(direction, 0), title="Buy", shape="triangleup", location="belowbar", color="green", size="small")
 plotshape(ta.crossunder(direction, 0), title="Sell", shape="triangledown", location="abovebar", color="red", size="small")

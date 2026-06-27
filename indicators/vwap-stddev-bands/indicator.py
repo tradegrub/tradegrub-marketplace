@@ -10,7 +10,7 @@ dev = mult * ta.stdev(close, length)
 upper = vwap_val + dev
 lower = vwap_val - dev
 
-plot(vwap_val, "VWAP", color="blue")
-plot(upper, "Upper Band", color="rgba(38,166,154,0.5)")
-plot(lower, "Lower Band", color="rgba(239,83,80,0.5)")
+plot(vwap_val, title="VWAP", color="blue")
+plot(upper, title="Upper Band", color="rgba(38,166,154,0.5)")
+plot(lower, title="Lower Band", color="rgba(239,83,80,0.5)")
 fill(upper, lower, color="rgba(38,166,154,0.08)")

@@ -22,5 +22,5 @@ if show_fvg:
     bgcolor(fvg_bull, color="rgba(38,166,154,0.1)")
     bgcolor(fvg_bear, color="rgba(239,83,80,0.1)")
 
-plot(swing_high, "Swing High", color="rgba(38,166,154,0.4)", linewidth=1)
-plot(swing_low, "Swing Low", color="rgba(239,83,80,0.4)", linewidth=1)
+plot(swing_high, title="Swing High", color="rgba(38,166,154,0.4)", linewidth=1)
+plot(swing_low, title="Swing Low", color="rgba(239,83,80,0.4)", linewidth=1)

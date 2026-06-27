@@ -11,4 +11,4 @@ if ta.crossover(direction, 0)[-1]:
 if ta.crossunder(direction, 0)[-1]:
     strategy.close("Long")
 
-plot(supertrend, "Supertrend", color="green")
+plot(supertrend, title="Supertrend", color="green")

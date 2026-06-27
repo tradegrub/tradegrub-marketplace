@@ -38,6 +38,6 @@ while cum_vol < target_vol:
 vah = price_low + (hi_idx + 1) * row_height
 val_price = price_low + lo_idx * row_height
 
-hline(poc_price, "POC", color="orange", linewidth=2)
-hline(vah, "VAH", color="rgba(38,166,154,0.6)", linestyle="dashed")
-hline(val_price, "VAL", color="rgba(239,83,80,0.6)", linestyle="dashed")
+hline(poc_price, title="POC", color="orange", linewidth=2)
+hline(vah, title="VAH", color="rgba(38,166,154,0.6)", linestyle="dashed")
+hline(val_price, title="VAL", color="rgba(239,83,80,0.6)", linestyle="dashed")

@@ -12,5 +12,5 @@ if ta.crossover(fast_ma, slow_ma):
 if ta.crossunder(fast_ma, slow_ma):
     strategy.close("Long")
 
-plot(fast_ma, "Fast MA", color="blue")
-plot(slow_ma, "Slow MA", color="orange")
+plot(fast_ma, title="Fast MA", color="blue")
+plot(slow_ma, title="Slow MA", color="orange")

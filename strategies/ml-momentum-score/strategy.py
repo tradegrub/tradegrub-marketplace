@@ -28,6 +28,6 @@ if cur > threshold * 100:
 if cur < (1 - threshold) * 100:
     strategy.close("ML Long")
 
-plot(score, "ML Score", color="cyan")
-hline(threshold * 100, "Buy Threshold", color="green", linestyle="dashed")
-hline((1 - threshold) * 100, "Sell Threshold", color="red", linestyle="dashed")
+plot(score, title="ML Score", color="cyan")
+hline(threshold * 100, title="Buy Threshold", color="green", linestyle="dashed")
+hline((1 - threshold) * 100, title="Sell Threshold", color="red", linestyle="dashed")

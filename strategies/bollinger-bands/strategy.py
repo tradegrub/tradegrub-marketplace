@@ -11,6 +11,6 @@ if ta.crossover(close, lower)[-1]:
 if ta.crossunder(close, upper)[-1]:
     strategy.close("Long")
 
-plot(upper, "Upper Band", color="red")
-plot(basis, "Basis", color="gray")
-plot(lower, "Lower Band", color="green")
+plot(upper, title="Upper Band", color="red")
+plot(basis, title="Basis", color="gray")
+plot(lower, title="Lower Band", color="green")
