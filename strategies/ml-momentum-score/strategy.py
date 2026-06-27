@@ -1,4 +1,5 @@
 from tg_scripting import *
+import numpy as np
 
 lookback = input.int(200, "Training Lookback", minval=50, maxval=500)
 threshold = input.float(0.6, "Signal Threshold", minval=0.5, maxval=0.9)
@@ -13,18 +14,18 @@ vol_ratio = volume / vol_sma
 roc5 = ta.roc(close, 5)
 roc10 = ta.roc(close, 10)
 
-# Weighted momentum score (no sklearn needed, runs in browser)
 norm_rsi = (rsi_val - 50) / 50
 norm_macd = hist / ta.atr(14)
 norm_vol = (vol_ratio - 1) / 2
 norm_roc = (roc5 + roc10) / 20
 
 score = 50 + 25 * (0.3 * norm_rsi + 0.25 * norm_macd + 0.2 * norm_vol + 0.25 * norm_roc)
-score = max(0, min(100, score))
+score = np.clip(score, 0, 100)
 
-if score > threshold * 100:
+cur = score[-1]
+if cur > threshold * 100:
     strategy.entry("ML Long", strategy.LONG)
-if score < (1 - threshold) * 100:
+if cur < (1 - threshold) * 100:
     strategy.close("ML Long")
 
 plot(score, "ML Score", color="cyan")
