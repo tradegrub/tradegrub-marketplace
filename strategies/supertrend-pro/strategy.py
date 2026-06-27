@@ -1,8 +1,8 @@
 from tg_scripting import *
 
-atr_period = input.int("ATR Period", 10, minval=1, maxval=100)
-multiplier = input.float("Multiplier", 3.0, minval=0.5, maxval=10.0)
-use_trailing = input.bool("Trailing Stop", True)
+atr_period = input.int(10, "ATR Period", minval=1, maxval=100)
+multiplier = input.float(3.0, "Multiplier", minval=0.5, maxval=10.0)
+use_trailing = input.bool(True, "Trailing Stop")
 
 atr = ta.atr(atr_period)
 supertrend, direction = ta.supertrend(atr_period, multiplier)

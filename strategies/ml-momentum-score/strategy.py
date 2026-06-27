@@ -1,11 +1,11 @@
 from tg_scripting import *
 import numpy as np
 
-lookback = input.int("Training Lookback", 200, minval=50, maxval=500)
-threshold = input.float("Signal Threshold", 0.6, minval=0.5, maxval=0.9)
-rsi_period = input.int("RSI Period", 14, minval=5, maxval=50)
-macd_fast = input.int("MACD Fast", 12, minval=5, maxval=30)
-macd_slow = input.int("MACD Slow", 26, minval=15, maxval=50)
+lookback = input.int(200, "Training Lookback", minval=50, maxval=500)
+threshold = input.float(0.6, "Signal Threshold", minval=0.5, maxval=0.9)
+rsi_period = input.int(14, "RSI Period", minval=5, maxval=50)
+macd_fast = input.int(12, "MACD Fast", minval=5, maxval=30)
+macd_slow = input.int(26, "MACD Slow", minval=15, maxval=50)
 
 rsi = ta.rsi(close, rsi_period)
 macd_line, signal_line, hist = ta.macd(close, macd_fast, macd_slow, 9)

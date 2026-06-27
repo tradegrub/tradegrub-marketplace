@@ -1,9 +1,9 @@
 from tg_scripting import *
 
-swing_length = input.int("Swing Length", 5, minval=2, maxval=20)
-show_ob = input.bool("Show Order Blocks", True)
-show_fvg = input.bool("Show Fair Value Gaps", True)
-show_bos = input.bool("Show Break of Structure", True)
+swing_length = input.int(5, "Swing Length", minval=2, maxval=20)
+show_ob = input.bool(True, "Show Order Blocks")
+show_fvg = input.bool(True, "Show Fair Value Gaps")
+show_bos = input.bool(True, "Show Break of Structure")
 
 swing_high = ta.highest(high, swing_length)
 swing_low = ta.lowest(low, swing_length)

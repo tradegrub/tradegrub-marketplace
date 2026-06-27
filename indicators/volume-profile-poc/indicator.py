@@ -1,8 +1,8 @@
 from tg_scripting import *
 
-lookback = input.int("Lookback Bars", 100, minval=10, maxval=500)
-rows = input.int("Row Count", 24, minval=10, maxval=100)
-va_pct = input.float("Value Area %", 70.0, minval=50.0, maxval=90.0)
+lookback = input.int(100, "Lookback Bars", minval=10, maxval=500)
+rows = input.int(24, "Row Count", minval=10, maxval=100)
+va_pct = input.float(70.0, "Value Area %", minval=50.0, maxval=90.0)
 
 price_high = ta.highest(high, lookback)
 price_low = ta.lowest(low, lookback)

@@ -1,8 +1,8 @@
 # Moving Average Crossover Strategy
 from tg_scripting import *
 
-fast_period = input.int("Fast Period", 9, minval=2, maxval=200)
-slow_period = input.int("Slow Period", 21, minval=2, maxval=500)
+fast_period = input.int(9, "Fast Period", minval=2, maxval=200)
+slow_period = input.int(21, "Slow Period", minval=2, maxval=500)
 
 fast_ma = ta.sma(close, fast_period)
 slow_ma = ta.sma(close, slow_period)

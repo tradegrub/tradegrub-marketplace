@@ -1,9 +1,9 @@
 # RSI Mean Reversion Strategy
 from tg_scripting import *
 
-length = input.int("RSI Length", 14, minval=2, maxval=100)
-oversold = input.int("Oversold Level", 30, minval=5, maxval=50)
-overbought = input.int("Overbought Level", 70, minval=50, maxval=95)
+length = input.int(14, "RSI Length", minval=2, maxval=100)
+oversold = input.int(30, "Oversold Level", minval=5, maxval=50)
+overbought = input.int(70, "Overbought Level", minval=50, maxval=95)
 
 rsi = ta.rsi(close, length)
 

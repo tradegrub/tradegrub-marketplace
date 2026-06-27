@@ -1,8 +1,8 @@
 # Bollinger Bands Strategy
 from tg_scripting import *
 
-length = input.int("Length", 20, minval=5, maxval=200)
-mult = input.float("Std Dev Multiplier", 2.0, minval=0.5, maxval=5.0)
+length = input.int(20, "Length", minval=5, maxval=200)
+mult = input.float(2.0, "Std Dev Multiplier", minval=0.5, maxval=5.0)
 
 upper, basis, lower = ta.bbands(close, length, mult)
 
