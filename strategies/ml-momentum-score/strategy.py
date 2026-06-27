@@ -15,7 +15,7 @@ roc5 = ta.roc(close, 5)
 roc10 = ta.roc(close, 10)
 
 norm_rsi = (rsi_val - 50) / 50
-norm_macd = hist / ta.atr(14)
+norm_macd = hist / ta.atr(high, low, close, 14)
 norm_vol = (vol_ratio - 1) / 2
 norm_roc = (roc5 + roc10) / 20
 

@@ -4,12 +4,12 @@ atr_period = input.int(10, "ATR Period", minval=1, maxval=100)
 multiplier = input.float(3.0, "Multiplier", minval=0.5, maxval=10.0)
 use_trailing = input.bool(True, "Trailing Stop")
 
-atr_val = ta.atr(atr_period)
-supertrend, direction = ta.supertrend(atr_period, multiplier)
+atr_val = ta.atr(high, low, close, atr_period)
+supertrend, direction = ta.supertrend(high, low, close, atr_period, multiplier)
 
-if ta.crossover(direction, 0):
+if ta.crossover(direction, 0)[-1]:
     strategy.entry("Long", strategy.LONG)
-if ta.crossunder(direction, 0):
+if ta.crossunder(direction, 0)[-1]:
     strategy.entry("Short", strategy.SHORT)
 
 if use_trailing:
