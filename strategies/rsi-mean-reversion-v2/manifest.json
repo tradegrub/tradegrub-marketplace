@@ -1,0 +1,22 @@
+{
+  "id": "rsi",
+  "name": "RSI",
+  "author": "anjalimohta",
+  "author_uid": "",
+  "version": "1.0.0",
+  "category": "mean-reversion",
+  "tags": [
+    "rsi"
+  ],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "description": "test",
+  "min_platform_version": "2.0",
+  "created": "2026-06-30"
+}
