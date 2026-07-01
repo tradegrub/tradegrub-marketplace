@@ -1,0 +1,12 @@
+{
+  "id": "monotonicity-index",
+  "name": "Monotonicity Index",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Trend",
+  "tags": ["monotonicity", "trend", "orderliness", "consistency", "isotonic", "quality"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Measures trend consistency and orderliness using monotonic pair analysis for trend quality assessment"
+}

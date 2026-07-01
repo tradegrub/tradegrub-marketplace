@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Elder Triple Screen Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Screen 1: Trend (EMA Slope) - top panel -->
+  <rect x="70" y="62" width="115" height="18" rx="3" fill="#42a5f5" fill-opacity="0.1"/>
+  <text x="127" y="75" text-anchor="middle" fill="#42a5f5" font-size="10" font-weight="600">Screen 1: Trend</text>
+
+  <!-- EMA line rising -->
+  <polyline points="100,135 160,130 220,125 280,118 340,112 400,108 460,105 520,102 580,100 640,98 700,97" fill="none" stroke="#ff9800" stroke-width="2.5" opacity="0.8"/>
+  <text x="710" y="100" fill="#ff9800" font-size="8">EMA(13)</text>
+
+  <!-- Rising arrows -->
+  <text x="350" y="140" fill="#26a69a" font-size="9" opacity="0.7">slope > 0 = UPTREND</text>
+
+  <!-- Screen 2: Momentum (MACD Histogram) - middle panel -->
+  <line x1="80" y1="155" x2="740" y2="155" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+  <rect x="70" y="157" width="140" height="18" rx="3" fill="#ab47bc" fill-opacity="0.1"/>
+  <text x="140" y="170" text-anchor="middle" fill="#ab47bc" font-size="10" font-weight="600">Screen 2: Momentum</text>
+
+  <!-- MACD histogram bars -->
+  <line x1="80" y1="225" x2="740" y2="225" stroke="#888" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.2"/>
+  <text x="745" y="228" fill="#888" font-size="7">0</text>
+
+  <!-- Histogram bars - mixed, then rising -->
+  <rect x="105" y="225" width="12" height="15" fill="#ef5350" rx="1" opacity="0.6"/>
+  <rect x="125" y="225" width="12" height="10" fill="#ef5350" rx="1" opacity="0.6"/>
+  <rect x="145" y="225" width="12" height="5" fill="#ef5350" rx="1" opacity="0.6"/>
+  <rect x="165" y="220" width="12" height="5" fill="#26a69a" rx="1" opacity="0.6"/>
+  <rect x="185" y="215" width="12" height="10" fill="#26a69a" rx="1" opacity="0.6"/>
+  <rect x="205" y="210" width="12" height="15" fill="#26a69a" rx="1" opacity="0.6"/>
+  <rect x="225" y="205" width="12" height="20" fill="#26a69a" rx="1" opacity="0.6"/>
+  <rect x="245" y="202" width="12" height="23" fill="#26a69a" rx="1" opacity="0.6"/>
+  <rect x="265" y="200" width="12" height="25" fill="#26a69a" rx="1" opacity="0.7"/>
+  <rect x="285" y="198" width="12" height="27" fill="#26a69a" rx="1" opacity="0.7"/>
+  <rect x="305" y="195" width="12" height="30" fill="#26a69a" rx="1" opacity="0.8"/>
+  <!-- Rising highlight -->
+  <text x="350" y="218" fill="#26a69a" font-size="9" opacity="0.7">histogram rising</text>
+
+  <!-- Falling histograms -->
+  <rect x="405" y="195" width="12" height="30" fill="#26a69a" rx="1" opacity="0.7"/>
+  <rect x="425" y="200" width="12" height="25" fill="#26a69a" rx="1" opacity="0.6"/>
+  <rect x="445" y="208" width="12" height="17" fill="#26a69a" rx="1" opacity="0.5"/>
+  <rect x="465" y="215" width="12" height="10" fill="#26a69a" rx="1" opacity="0.4"/>
+  <rect x="485" y="225" width="12" height="8" fill="#ef5350" rx="1" opacity="0.5"/>
+  <rect x="505" y="225" width="12" height="15" fill="#ef5350" rx="1" opacity="0.6"/>
+
+  <!-- Screen 3: Entry (Stochastic) - bottom panel -->
+  <line x1="80" y1="260" x2="740" y2="260" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+  <rect x="70" y="262" width="120" height="18" rx="3" fill="#00e676" fill-opacity="0.1"/>
+  <text x="130" y="275" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">Screen 3: Entry</text>
+
+  <!-- Stochastic overbought/oversold zones -->
+  <line x1="80" y1="295" x2="740" y2="295" stroke="#ef5350" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="745" y="298" fill="#ef5350" font-size="7">80</text>
+  <line x1="80" y1="355" x2="740" y2="355" stroke="#00e676" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="745" y="358" fill="#00e676" font-size="7">20</text>
+
+  <!-- Stochastic line -->
+  <polyline points="100,310 140,320 180,335 220,350 260,360 300,355 340,340 380,320 420,305 460,295 500,300 540,315 580,330 620,345 660,355 700,350" fill="none" stroke="#42a5f5" stroke-width="2" opacity="0.8"/>
+
+  <!-- Signal point - stoch dips below 20 while trend up + hist rising -->
+  <circle cx="260" cy="360" r="7" fill="#00e676" opacity="0.3"/>
+  <circle cx="260" cy="360" r="4" fill="#00e676" opacity="0.8" filter="url(#softGlow)"/>
+
+  <!-- Vertical alignment line showing all 3 screens agree -->
+  <line x1="260" y1="65" x2="260" y2="370" stroke="#00e676" stroke-width="1" stroke-dasharray="4,2" opacity="0.3"/>
+
+  <!-- BUY label -->
+  <rect x="275" y="362" width="100" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="325" y="376" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY (all 3)</text>
+
+  <!-- Check marks for each screen -->
+  <text x="268" y="130" fill="#26a69a" font-size="12">&#10003;</text>
+  <text x="268" y="210" fill="#26a69a" font-size="12">&#10003;</text>
+  <text x="268" y="362" fill="#26a69a" font-size="12">&#10003;</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="100" y="400" width="10" height="12" fill="#ef5350" rx="1"/>
+    <rect x="140" y="398" width="10" height="14" fill="#26a69a" rx="1"/>
+    <rect x="180" y="400" width="10" height="12" fill="#ef5350" rx="1"/>
+    <rect x="220" y="395" width="10" height="17" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="255" y="385" width="12" height="27" fill="#00e676" rx="1" opacity="0.6" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="300" y="395" width="10" height="17" fill="#26a69a" rx="1"/>
+    <rect x="340" y="398" width="10" height="14" fill="#26a69a" rx="1"/>
+    <rect x="380" y="400" width="10" height="12" fill="#ef5350" rx="1"/>
+    <rect x="420" y="398" width="10" height="14" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ff9800"/>
+    <text x="30" y="24" fill="#999" font-size="9">EMA Trend</text>
+    <circle cx="120" cy="20" r="4" fill="#ab47bc"/>
+    <text x="130" y="24" fill="#999" font-size="9">MACD Histogram</text>
+    <circle cx="255" cy="20" r="4" fill="#42a5f5"/>
+    <text x="265" y="24" fill="#999" font-size="9">Stochastic</text>
+    <circle cx="355" cy="20" r="4" fill="#00e676"/>
+    <text x="365" y="24" fill="#999" font-size="9">All Screens Align</text>
+    <circle cx="500" cy="20" r="4" fill="#ef5350"/>
+    <text x="510" y="24" fill="#999" font-size="9">OB/OS Zones</text>
+  </g>
+</svg>

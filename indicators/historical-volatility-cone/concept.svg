@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Historical Volatility Cone</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="70" x2="60" y2="430" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="430" x2="750" y2="430" stroke="#333" stroke-width="1"/>
+  <text x="30" y="250" text-anchor="middle" fill="#666" font-size="9" transform="rotate(-90,30,250)">Volatility %</text>
+
+  <!-- Upper cone band -->
+  <polygon points="100,180 200,190 300,175 400,195 500,170 600,185 700,175 700,250 600,260 500,245 400,265 300,250 200,262 100,255" fill="rgba(255,23,68,0.08)" stroke="none"/>
+  <polyline points="100,180 200,190 300,175 400,195 500,170 600,185 700,175" stroke="#ff1744" stroke-width="1" fill="none"/>
+
+  <!-- Lower cone band -->
+  <polygon points="100,320 200,330 300,315 400,335 500,310 600,325 700,315 700,380 600,390 500,375 400,395 300,380 200,392 100,385" fill="rgba(0,230,118,0.08)" stroke="none"/>
+  <polyline points="100,385 200,392 300,380 400,395 500,375 600,390 700,380" stroke="#00e676" stroke-width="1" fill="none"/>
+  <polyline points="100,320 200,330 300,315 400,335 500,310 600,325 700,315" stroke="#00e676" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Median line -->
+  <polyline points="100,255 200,262 300,250 400,265 500,245 600,260 700,250" stroke="#FFA726" stroke-width="1" fill="none" stroke-dasharray="6,3"/>
+
+  <!-- Current HV line -->
+  <polyline points="100,270 200,250 300,230 400,290 500,350 600,200 700,160" stroke="#42A5F5" stroke-width="2.5" fill="none"/>
+
+  <!-- High vol zone highlight -->
+  <rect x="580" y="70" width="140" height="115" fill="rgba(255,23,68,0.06)" rx="3"/>
+  <text x="650" y="90" text-anchor="middle" fill="#ff1744" font-size="9">Above upper cone</text>
+
+  <!-- Low vol zone highlight -->
+  <rect x="440" y="345" width="100" height="55" fill="rgba(0,230,118,0.06)" rx="3"/>
+  <text x="490" y="410" text-anchor="middle" fill="#00e676" font-size="9">Below lower</text>
+
+  <!-- Annotations -->
+  <circle cx="600" cy="200" r="4" fill="#42A5F5"/>
+  <circle cx="500" cy="350" r="4" fill="#42A5F5"/>
+
+  <!-- Legend -->
+  <rect x="120" y="455" width="12" height="12" fill="#42A5F5" rx="2"/>
+  <text x="138" y="466" fill="#aaa" font-size="10">Current HV</text>
+  <rect x="240" y="455" width="12" height="12" fill="#ff1744" rx="2"/>
+  <text x="258" y="466" fill="#aaa" font-size="10">Upper Cone</text>
+  <rect x="370" y="455" width="12" height="12" fill="#00e676" rx="2"/>
+  <text x="388" y="466" fill="#aaa" font-size="10">Lower Cone</text>
+  <rect x="490" y="455" width="12" height="12" fill="#FFA726" rx="2"/>
+  <text x="508" y="466" fill="#aaa" font-size="10">Median</text>
+</svg>

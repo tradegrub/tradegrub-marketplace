@@ -1,0 +1,12 @@
+{
+  "id": "walk-forward-efficiency",
+  "name": "Walk-Forward Efficiency",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "statistics",
+  "tags": ["walk-forward", "robustness", "overfitting", "backtest", "efficiency"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Measures how well in-sample trend characteristics hold out-of-sample by comparing rolling regression fit quality across adjacent windows"
+}

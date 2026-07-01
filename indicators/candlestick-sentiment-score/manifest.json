@@ -1,0 +1,11 @@
+{
+  "name": "Candlestick Sentiment Score",
+  "id": "candlestick-sentiment-score",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "price-action",
+  "tags": ["candlestick", "sentiment", "price-action", "body-position", "wick-analysis"],
+  "description": "Composite bar sentiment score from body direction, close position, and wick bias",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

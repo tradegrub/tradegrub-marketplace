@@ -1,0 +1,12 @@
+{
+  "id": "kagi-chart-overlay",
+  "name": "Kagi Chart Overlay",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "trend",
+  "tags": ["kagi", "reversal", "trend", "noise-filter", "japanese"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Kagi reversal-based trend lines that ignore time and change thickness on shoulder/waist breaks to show trend direction"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "enhanced-momentum-scanner",
+  "name": "Enhanced Momentum Scanner",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "numpy",
+    "momentum",
+    "divergence",
+    "quality",
+    "scanner"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Enhanced momentum oscillator with built-in signal quality scoring and multi-bar divergence detection using numpy array operations",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e0a040"/>
+    </marker>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <g stroke="white" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="100" y1="40" x2="100" y2="430"/>
+    <line x1="200" y1="40" x2="200" y2="430"/>
+    <line x1="300" y1="40" x2="300" y2="430"/>
+    <line x1="500" y1="40" x2="500" y2="430"/>
+    <line x1="600" y1="40" x2="600" y2="430"/>
+    <line x1="700" y1="40" x2="700" y2="430"/>
+  </g>
+  <text x="400" y="28" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Berlin Candles</text>
+  <text x="400" y="43" text-anchor="middle" fill="#888" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+  <line x1="400" y1="55" x2="400" y2="430" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="200" y="68" text-anchor="middle" fill="#ff6b6b" font-family="Arial,sans-serif" font-size="13" font-weight="bold" opacity="0.9">Raw Price</text>
+  <text x="600" y="68" text-anchor="middle" fill="#4ecdc4" font-family="Arial,sans-serif" font-size="13" font-weight="bold" opacity="0.9">Smoothed</text>
+  <g filter="url(#glow)">
+    <line x1="65" y1="120" x2="65" y2="340" stroke="#ff6b6b" stroke-width="1"/>
+    <rect x="59" y="180" width="12" height="80" fill="#ff6b6b" rx="1"/>
+    <line x1="95" y1="100" x2="95" y2="350" stroke="#26de81" stroke-width="1"/>
+    <rect x="89" y="200" width="12" height="40" fill="#26de81" rx="1"/>
+    <line x1="125" y1="150" x2="125" y2="370" stroke="#ff6b6b" stroke-width="1"/>
+    <rect x="119" y="160" width="12" height="180" fill="#ff6b6b" rx="1"/>
+    <line x1="155" y1="90" x2="155" y2="330" stroke="#26de81" stroke-width="1"/>
+    <rect x="149" y="140" width="12" height="120" fill="#26de81" rx="1"/>
+    <line x1="185" y1="110" x2="185" y2="360" stroke="#ff6b6b" stroke-width="1"/>
+    <rect x="179" y="220" width="12" height="15" fill="#ff6b6b" rx="1"/>
+    <line x1="215" y1="95" x2="215" y2="380" stroke="#26de81" stroke-width="1"/>
+    <rect x="209" y="130" width="12" height="160" fill="#26de81" rx="1"/>
+    <line x1="245" y1="130" x2="245" y2="400" stroke="#ff6b6b" stroke-width="1"/>
+    <rect x="239" y="140" width="12" height="50" fill="#ff6b6b" rx="1"/>
+    <line x1="275" y1="85" x2="275" y2="340" stroke="#26de81" stroke-width="1"/>
+    <rect x="269" y="100" width="12" height="140" fill="#26de81" rx="1"/>
+    <line x1="305" y1="120" x2="305" y2="390" stroke="#ff6b6b" stroke-width="1"/>
+    <rect x="299" y="170" width="12" height="190" fill="#ff6b6b" rx="1"/>
+    <line x1="335" y1="105" x2="335" y2="370" stroke="#26de81" stroke-width="1"/>
+    <rect x="329" y="150" width="12" height="100" fill="#26de81" rx="1"/>
+    <line x1="365" y1="115" x2="365" y2="355" stroke="#ff6b6b" stroke-width="1"/>
+    <rect x="359" y="200" width="12" height="90" fill="#ff6b6b" rx="1"/>
+  </g>
+  <line x1="385" y1="240" x2="415" y2="240" stroke="#e0a040" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+  <text x="400" y="225" text-anchor="middle" fill="#e0a040" font-family="Arial,sans-serif" font-size="11" font-weight="bold">Smoothing</text>
+  <g filter="url(#glow)">
+    <line x1="445" y1="200" x2="445" y2="290" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="439" y="210" width="12" height="60" fill="#4ecdc4" rx="1"/>
+    <line x1="475" y1="190" x2="475" y2="275" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="469" y="200" width="12" height="55" fill="#4ecdc4" rx="1"/>
+    <line x1="505" y1="195" x2="505" y2="285" stroke="#e07070" stroke-width="1"/>
+    <rect x="499" y="210" width="12" height="50" fill="#e07070" rx="1"/>
+    <line x1="535" y1="185" x2="535" y2="270" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="529" y="195" width="12" height="55" fill="#4ecdc4" rx="1"/>
+    <line x1="565" y1="180" x2="565" y2="265" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="559" y="190" width="12" height="50" fill="#4ecdc4" rx="1"/>
+    <line x1="595" y1="185" x2="595" y2="275" stroke="#e07070" stroke-width="1"/>
+    <rect x="589" y="200" width="12" height="48" fill="#e07070" rx="1"/>
+    <line x1="625" y1="178" x2="625" y2="260" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="619" y="188" width="12" height="50" fill="#4ecdc4" rx="1"/>
+    <line x1="655" y1="172" x2="655" y2="255" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="649" y="182" width="12" height="48" fill="#4ecdc4" rx="1"/>
+    <line x1="685" y1="175" x2="685" y2="258" stroke="#e07070" stroke-width="1"/>
+    <rect x="679" y="188" width="12" height="42" fill="#e07070" rx="1"/>
+    <line x1="715" y1="168" x2="715" y2="248" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="709" y="178" width="12" height="48" fill="#4ecdc4" rx="1"/>
+    <line x1="745" y1="162" x2="745" y2="242" stroke="#4ecdc4" stroke-width="1"/>
+    <rect x="739" y="172" width="12" height="46" fill="#4ecdc4" rx="1"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="11">
+    <circle cx="200" cy="455" r="5" fill="#ff6b6b"/>
+    <text x="212" y="459" fill="#aaa">Raw Bearish</text>
+    <circle cx="310" cy="455" r="5" fill="#26de81"/>
+    <text x="322" y="459" fill="#aaa">Raw Bullish</text>
+    <circle cx="420" cy="455" r="5" fill="#4ecdc4"/>
+    <text x="432" y="459" fill="#aaa">Smoothed Bullish</text>
+    <circle cx="560" cy="455" r="5" fill="#e07070"/>
+    <text x="572" y="459" fill="#aaa">Smoothed Bearish</text>
+  </g>
+  <text x="200" y="420" text-anchor="middle" fill="#666" font-family="Arial,sans-serif" font-size="9">High volatility / noise</text>
+  <text x="600" y="420" text-anchor="middle" fill="#666" font-family="Arial,sans-serif" font-size="9">EMA-smoothed / cleaner trends</text>
+</svg>

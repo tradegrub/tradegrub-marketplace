@@ -1,0 +1,12 @@
+{
+  "id": "unreached-highs-lows",
+  "name": "Unreached Highs/Lows Oscillator",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Trend",
+  "tags": ["unreached", "persistence", "trend", "highs", "lows", "strength"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Measures percentage of recent highs and lows not revisited by price, gauging trend persistence and strength"
+}

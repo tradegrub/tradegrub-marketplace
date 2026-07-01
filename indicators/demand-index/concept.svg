@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Demand Index</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <line x1="60" y1="70" x2="60" y2="200" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="200" x2="750" y2="200" stroke="#333" stroke-width="1"/>
+  <polyline points="100,175 160,165 220,150 280,145 340,155 400,165 460,155 520,140 580,130 640,125 700,120" stroke="#e0e0e0" stroke-width="1.5" fill="none"/>
+
+  <!-- DI subplot -->
+  <line x1="60" y1="230" x2="750" y2="230" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="230" x2="60" y2="440" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="335" x2="750" y2="335" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="55" y="340" text-anchor="end" fill="#666" font-size="8">0</text>
+
+  <!-- Background zones -->
+  <rect x="60" y="230" width="280" height="105" fill="rgba(76,175,80,0.05)"/>
+  <rect x="340" y="335" width="160" height="105" fill="rgba(255,23,68,0.05)"/>
+  <rect x="500" y="230" width="250" height="105" fill="rgba(76,175,80,0.05)"/>
+
+  <!-- DI line -->
+  <polyline points="100,300 160,290 220,275 280,285 340,335 400,370 460,385 520,340 580,310 640,290 700,280" stroke="#42A5F5" stroke-width="2" fill="none"/>
+
+  <!-- Signal line -->
+  <polyline points="100,310 160,305 220,295 280,295 340,310 400,345 460,370 520,360 580,340 640,315 700,300" stroke="#FFA726" stroke-width="1.5" fill="none" stroke-dasharray="6,3"/>
+
+  <!-- Zero cross annotations -->
+  <circle cx="340" cy="335" r="4" fill="#ff1744"/>
+  <text x="340" y="325" text-anchor="middle" fill="#ff1744" font-size="8">Sellers take over</text>
+  <circle cx="505" cy="335" r="4" fill="#00e676"/>
+  <text x="505" y="325" text-anchor="middle" fill="#00e676" font-size="8">Buyers return</text>
+
+  <!-- Legend -->
+  <rect x="200" y="462" width="12" height="12" fill="#42A5F5" rx="2"/>
+  <text x="218" y="473" fill="#aaa" font-size="10">Demand Index</text>
+  <rect x="340" y="462" width="12" height="12" fill="#FFA726" rx="2"/>
+  <text x="358" y="473" fill="#aaa" font-size="10">Signal</text>
+  <rect x="440" y="462" width="12" height="12" fill="rgba(76,175,80,0.3)" rx="2"/>
+  <text x="458" y="473" fill="#aaa" font-size="10">Buying</text>
+  <rect x="530" y="462" width="12" height="12" fill="rgba(255,23,68,0.3)" rx="2"/>
+  <text x="548" y="473" fill="#aaa" font-size="10">Selling</text>
+</svg>

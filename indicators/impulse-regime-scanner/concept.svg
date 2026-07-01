@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="consolZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="trendZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="60" y1="60" x2="760" y2="60"/>
+    <line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="240" x2="760" y2="240"/>
+    <line x1="60" y1="300" x2="760" y2="300"/>
+    <line x1="60" y1="360" x2="760" y2="360"/>
+    <line x1="60" y1="420" x2="760" y2="420"/>
+    <line x1="160" y1="50" x2="160" y2="430"/>
+    <line x1="260" y1="50" x2="260" y2="430"/>
+    <line x1="360" y1="50" x2="360" y2="430"/>
+    <line x1="460" y1="50" x2="460" y2="430"/>
+    <line x1="560" y1="50" x2="560" y2="430"/>
+    <line x1="660" y1="50" x2="660" y2="430"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="18" font-weight="bold">Impulse Regime Scanner</text>
+  <text x="400" y="46" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Y-axis labels -->
+  <text x="52" y="64" text-anchor="end" fill="#64748b" font-family="Arial,sans-serif" font-size="9">195</text>
+  <text x="52" y="124" text-anchor="end" fill="#64748b" font-family="Arial,sans-serif" font-size="9">185</text>
+  <text x="52" y="184" text-anchor="end" fill="#64748b" font-family="Arial,sans-serif" font-size="9">175</text>
+  <text x="52" y="244" text-anchor="end" fill="#64748b" font-family="Arial,sans-serif" font-size="9">165</text>
+  <text x="52" y="304" text-anchor="end" fill="#64748b" font-family="Arial,sans-serif" font-size="9">155</text>
+  <text x="52" y="364" text-anchor="end" fill="#64748b" font-family="Arial,sans-serif" font-size="9">145</text>
+
+  <!-- Background Zones -->
+  <rect x="60" y="50" width="150" height="380" fill="url(#consolZone)"/>
+  <rect x="210" y="50" width="130" height="380" fill="url(#trendZone)"/>
+  <rect x="340" y="50" width="170" height="380" fill="url(#consolZone)"/>
+  <rect x="510" y="50" width="130" height="380" fill="url(#trendZone)"/>
+  <rect x="640" y="50" width="120" height="380" fill="url(#consolZone)"/>
+
+  <!-- Zone labels -->
+  <text x="135" y="82" text-anchor="middle" fill="#60a5fa" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Consolidation</text>
+  <text x="275" y="82" text-anchor="middle" fill="#4ade80" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Trending</text>
+  <text x="425" y="82" text-anchor="middle" fill="#60a5fa" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Consolidation</text>
+  <text x="575" y="82" text-anchor="middle" fill="#4ade80" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Trending</text>
+  <text x="700" y="82" text-anchor="middle" fill="#60a5fa" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Consolidation</text>
+
+  <!-- Price line: sideways in consolidation, sharp moves in trending -->
+  <polyline fill="none" stroke="#e2e8f0" stroke-width="1.8" filter="url(#glow)" points="
+    60,280 70,278 80,282 90,276 100,280 110,284 120,278 130,275 140,280 150,283
+    160,279 170,277 180,281 190,276 200,280 210,275
+    220,260 230,240 240,215 250,190 260,170 270,155 280,140 290,125 300,110
+    310,105 320,100 330,95 340,92
+    350,95 360,98 370,100 380,96 390,102 400,98 410,95 420,100 430,97
+    440,102 450,98 460,95 470,100 480,96 490,102 500,98 510,95
+    520,110 530,130 540,155 550,180 560,200 570,220 580,245 590,270
+    600,290 610,310 620,330 630,345 640,350
+    650,348 660,352 670,346 680,350 690,354 700,348 710,352 720,346
+    730,350 740,354 750,348 760,350
+  "/>
+
+  <!-- Impulse breakout spikes (red arrows) -->
+  <line x1="215" y1="275" x2="215" y2="255" stroke="#ef4444" stroke-width="3" filter="url(#glowStrong)"/>
+  <polygon points="215,248 210,258 220,258" fill="#ef4444" filter="url(#glowStrong)"/>
+
+  <line x1="265" y1="170" x2="265" y2="150" stroke="#ef4444" stroke-width="3" filter="url(#glowStrong)"/>
+  <polygon points="265,143 260,153 270,153" fill="#ef4444" filter="url(#glowStrong)"/>
+
+  <line x1="520" y1="100" x2="520" y2="120" stroke="#ef4444" stroke-width="3" filter="url(#glowStrong)"/>
+  <polygon points="520,127 515,117 525,117" fill="#ef4444" filter="url(#glowStrong)"/>
+
+  <line x1="575" y1="215" x2="575" y2="235" stroke="#ef4444" stroke-width="3" filter="url(#glowStrong)"/>
+  <polygon points="575,242 570,232 580,232" fill="#ef4444" filter="url(#glowStrong)"/>
+
+  <!-- Callout labels -->
+  <text x="225" y="244" fill="#ef4444" font-family="Arial,sans-serif" font-size="9" font-weight="bold">Impulse Breakout</text>
+  <text x="530" y="138" fill="#ef4444" font-family="Arial,sans-serif" font-size="9" font-weight="bold">Impulse Breakout</text>
+
+  <!-- Legend bar -->
+  <rect x="60" y="450" width="680" height="36" rx="4" fill="#0f172a" fill-opacity="0.7"/>
+  <rect x="90" y="463" width="14" height="10" rx="2" fill="#3b82f6" opacity="0.6"/>
+  <text x="110" y="472" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">Consolidation</text>
+  <rect x="220" y="463" width="14" height="10" rx="2" fill="#22c55e" opacity="0.6"/>
+  <text x="240" y="472" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">Trending</text>
+  <rect x="330" y="463" width="14" height="10" rx="2" fill="#ef4444"/>
+  <text x="350" y="472" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">Impulse</text>
+  <line x1="430" y1="468" x2="455" y2="468" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="462" y="472" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">Price</text>
+</svg>

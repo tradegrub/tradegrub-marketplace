@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Heikin-Ashi Trend Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Label: HA candles -->
+  <text x="75" y="75" fill="#bbb" font-size="10" font-weight="500">Heikin-Ashi Candles</text>
+
+  <!-- HA EMA fast -->
+  <path d="M 80,290 Q 140,295 180,298 Q 220,295 260,280 Q 300,260 340,240 Q 380,222 420,208 Q 460,198 500,192 Q 540,195 580,205 Q 620,220 660,238 Q 700,252 740,260" fill="none" stroke="#42a5f5" stroke-width="1.5" opacity="0.7"/>
+  <text x="742" y="256" fill="#42a5f5" font-size="8">HA EMA Fast</text>
+
+  <!-- HA EMA slow -->
+  <path d="M 80,285 Q 140,290 200,292 Q 260,290 320,278 Q 380,260 420,245 Q 460,232 500,225 Q 540,222 580,225 Q 620,232 660,242 Q 700,250 740,255" fill="none" stroke="#ef5350" stroke-width="1.5" opacity="0.7"/>
+  <text x="742" y="270" fill="#ef5350" font-size="8">HA EMA Slow</text>
+
+  <!-- RED HA candles (bearish trend - no lower wicks) -->
+  <line x1="90" y1="275" x2="90" y2="310" stroke="#ef5350" stroke-width="1"/>
+  <rect x="86" y="278" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="115" y1="280" x2="115" y2="318" stroke="#ef5350" stroke-width="1"/>
+  <rect x="111" y="285" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="140" y1="285" x2="140" y2="322" stroke="#ef5350" stroke-width="1"/>
+  <rect x="136" y="290" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="165" y1="288" x2="165" y2="320" stroke="#ef5350" stroke-width="1"/>
+  <rect x="161" y="292" width="8" height="18" fill="#ef5350" rx="1"/>
+  <!-- Transition doji -->
+  <line x1="190" y1="285" x2="190" y2="315" stroke="#ef5350" stroke-width="1"/>
+  <rect x="186" y="296" width="8" height="6" fill="#ef5350" rx="1"/>
+
+  <!-- Color flip annotation -->
+  <circle cx="215" cy="288" r="20" fill="none" stroke="#00e676" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- GREEN HA candles (bullish trend - no upper wicks typically) -->
+  <line x1="215" y1="268" x2="215" y2="300" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="209" y="272" width="12" height="22" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Buy signal -->
+  <g filter="url(#softGlow)">
+    <polygon points="215,262 225,262 220,250" fill="#00e676"/>
+  </g>
+  <rect x="228" y="245" width="115" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="285" y="259" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY (Color Flip)</text>
+
+  <!-- More green HA candles (uptrend, strong = no lower wicks) -->
+  <line x1="240" y1="255" x2="240" y2="280" stroke="#26a69a" stroke-width="1"/>
+  <rect x="236" y="258" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="265" y1="242" x2="265" y2="268" stroke="#26a69a" stroke-width="1"/>
+  <rect x="261" y="245" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="290" y1="228" x2="290" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="286" y="232" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="315" y1="218" x2="315" y2="242" stroke="#26a69a" stroke-width="1"/>
+  <rect x="311" y="220" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="340" y1="205" x2="340" y2="232" stroke="#26a69a" stroke-width="1"/>
+  <rect x="336" y="208" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="365" y1="195" x2="365" y2="222" stroke="#26a69a" stroke-width="1"/>
+  <rect x="361" y="198" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="390" y1="188" x2="390" y2="212" stroke="#26a69a" stroke-width="1"/>
+  <rect x="386" y="190" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="415" y1="182" x2="415" y2="206" stroke="#26a69a" stroke-width="1"/>
+  <rect x="411" y="185" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="440" y1="178" x2="440" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="436" y="180" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="465" y1="175" x2="465" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="461" y="178" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="490" y1="172" x2="490" y2="195" stroke="#26a69a" stroke-width="1"/>
+  <rect x="486" y="175" width="8" height="12" fill="#26a69a" rx="1"/>
+
+  <!-- Topping / color flip back -->
+  <line x1="515" y1="175" x2="515" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="511" y="182" width="8" height="6" fill="#26a69a" rx="1"/>
+  <!-- Bearish flip -->
+  <circle cx="540" cy="192" r="20" fill="none" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="540" y1="180" x2="540" y2="210" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="534" y="185" width="12" height="18" fill="#ef5350" rx="1" filter="url(#glow)"/>
+
+  <!-- Sell signal -->
+  <g filter="url(#softGlow)">
+    <polygon points="535,215 545,215 540,228" fill="#ef5350"/>
+  </g>
+  <rect x="548" y="210" width="120" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="608" y="224" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SELL (Color Flip)</text>
+
+  <!-- More red -->
+  <line x1="565" y1="195" x2="565" y2="225" stroke="#ef5350" stroke-width="1"/>
+  <rect x="561" y="200" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="590" y1="205" x2="590" y2="238" stroke="#ef5350" stroke-width="1"/>
+  <rect x="586" y="210" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="615" y1="218" x2="615" y2="252" stroke="#ef5350" stroke-width="1"/>
+  <rect x="611" y="222" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="640" y1="230" x2="640" y2="265" stroke="#ef5350" stroke-width="1"/>
+  <rect x="636" y="235" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="665" y1="242" x2="665" y2="275" stroke="#ef5350" stroke-width="1"/>
+  <rect x="661" y="248" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="690" y1="252" x2="690" y2="282" stroke="#ef5350" stroke-width="1"/>
+  <rect x="686" y="258" width="8" height="16" fill="#ef5350" rx="1"/>
+
+  <!-- Noise vs smooth comparison annotation -->
+  <rect x="350" y="75" width="200" height="32" rx="6" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="450" y="90" text-anchor="middle" fill="#bbb" font-size="10">HA candles smooth noise</text>
+  <text x="450" y="102" text-anchor="middle" fill="#888" font-size="8">Strong trends show no counter-wicks</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="86" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="111" y="395" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="136" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="161" y="400" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="186" y="403" width="8" height="9" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="209" y="385" width="12" height="27" fill="#00e676" rx="1" opacity="0.5" filter="url(#softGlow)"/>
+  <g opacity="0.35">
+    <rect x="236" y="395" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="261" y="393" width="8" height="19" fill="#26a69a" rx="1"/>
+    <rect x="286" y="395" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="311" y="398" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="336" y="398" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="361" y="400" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="386" y="400" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="411" y="402" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="436" y="403" width="8" height="9" fill="#26a69a" rx="1"/>
+    <rect x="461" y="403" width="8" height="9" fill="#26a69a" rx="1"/>
+    <rect x="486" y="405" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="511" y="405" width="8" height="7" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="534" y="388" width="12" height="24" fill="#ef5350" rx="1" opacity="0.5" filter="url(#softGlow)"/>
+  <g opacity="0.35">
+    <rect x="561" y="395" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="586" y="393" width="8" height="19" fill="#ef5350" rx="1"/>
+    <rect x="611" y="395" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="636" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="661" y="400" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="686" y="402" width="8" height="10" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">HA Bullish (Green)</text>
+    <circle cx="160" cy="20" r="4" fill="#ef5350"/>
+    <text x="170" y="24" fill="#999" font-size="9">HA Bearish (Red)</text>
+    <circle cx="300" cy="20" r="4" fill="#00e676"/>
+    <text x="310" y="24" fill="#999" font-size="9">Color Flip Signal</text>
+    <circle cx="440" cy="20" r="4" fill="#42a5f5"/>
+    <text x="450" y="24" fill="#999" font-size="9">HA EMA Fast</text>
+    <rect x="555" y="14" width="20" height="12" fill="#ef5350" opacity="0.4" rx="2"/>
+    <text x="580" y="24" fill="#999" font-size="9">HA EMA Slow</text>
+  </g>
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="80" y1="55" x2="80" y2="430"/><line x1="160" y1="55" x2="160" y2="430"/>
+    <line x1="240" y1="55" x2="240" y2="430"/><line x1="320" y1="55" x2="320" y2="430"/>
+    <line x1="400" y1="55" x2="400" y2="430"/><line x1="480" y1="55" x2="480" y2="430"/>
+    <line x1="560" y1="55" x2="560" y2="430"/><line x1="640" y1="55" x2="640" y2="430"/>
+    <line x1="720" y1="55" x2="720" y2="430"/>
+    <line x1="50" y1="100" x2="760" y2="100"/><line x1="50" y1="150" x2="760" y2="150"/>
+    <line x1="50" y1="200" x2="760" y2="200"/><line x1="50" y1="250" x2="760" y2="250"/>
+    <line x1="50" y1="300" x2="760" y2="300"/><line x1="50" y1="350" x2="760" y2="350"/>
+    <line x1="50" y1="400" x2="760" y2="400"/>
+  </g>
+
+  <!-- Title -->
+  <text x="30" y="30" font-family="Arial, sans-serif" font-size="17" fill="#ffffff" font-weight="bold">Weighted SMA Signal</text>
+  <text x="30" y="46" font-family="Arial, sans-serif" font-size="11" fill="#888888">tradegrub.finance</text>
+
+  <!-- Y-axis labels -->
+  <text x="15" y="104" font-family="Arial, sans-serif" font-size="9" fill="#555">195</text>
+  <text x="15" y="154" font-family="Arial, sans-serif" font-size="9" fill="#555">190</text>
+  <text x="15" y="204" font-family="Arial, sans-serif" font-size="9" fill="#555">185</text>
+  <text x="15" y="254" font-family="Arial, sans-serif" font-size="9" fill="#555">180</text>
+  <text x="15" y="304" font-family="Arial, sans-serif" font-size="9" fill="#555">175</text>
+  <text x="15" y="354" font-family="Arial, sans-serif" font-size="9" fill="#555">170</text>
+  <text x="15" y="404" font-family="Arial, sans-serif" font-size="9" fill="#555">165</text>
+
+  <!-- 30 Candlesticks -->
+  <!-- Downtrend, then bullish cross ~candle 12, uptrend, then bearish cross ~candle 23, downtrend -->
+  <!-- c1: red -->
+  <line x1="60" y1="180" x2="60" y2="230" stroke="#ee4444" stroke-width="1"/><rect x="56" y="190" width="8" height="28" fill="#ee4444"/>
+  <!-- c2: red -->
+  <line x1="82" y1="195" x2="82" y2="248" stroke="#ee4444" stroke-width="1"/><rect x="78" y="205" width="8" height="30" fill="#ee4444"/>
+  <!-- c3: green -->
+  <line x1="104" y1="210" x2="104" y2="260" stroke="#00cc66" stroke-width="1"/><rect x="100" y="225" width="8" height="22" fill="#00cc66"/>
+  <!-- c4: red -->
+  <line x1="126" y1="225" x2="126" y2="278" stroke="#ee4444" stroke-width="1"/><rect x="122" y="235" width="8" height="30" fill="#ee4444"/>
+  <!-- c5: red -->
+  <line x1="148" y1="245" x2="148" y2="295" stroke="#ee4444" stroke-width="1"/><rect x="144" y="255" width="8" height="28" fill="#ee4444"/>
+  <!-- c6: red -->
+  <line x1="170" y1="260" x2="170" y2="310" stroke="#ee4444" stroke-width="1"/><rect x="166" y="270" width="8" height="28" fill="#ee4444"/>
+  <!-- c7: green -->
+  <line x1="192" y1="275" x2="192" y2="320" stroke="#00cc66" stroke-width="1"/><rect x="188" y="285" width="8" height="22" fill="#00cc66"/>
+  <!-- c8: red -->
+  <line x1="214" y1="280" x2="214" y2="330" stroke="#ee4444" stroke-width="1"/><rect x="210" y="290" width="8" height="28" fill="#ee4444"/>
+  <!-- c9: green -->
+  <line x1="236" y1="290" x2="236" y2="340" stroke="#00cc66" stroke-width="1"/><rect x="232" y="308" width="8" height="20" fill="#00cc66"/>
+  <!-- c10: green (bottom, start reversal) -->
+  <line x1="258" y1="300" x2="258" y2="350" stroke="#00cc66" stroke-width="1"/><rect x="254" y="320" width="8" height="18" fill="#00cc66"/>
+  <!-- c11: green -->
+  <line x1="280" y1="290" x2="280" y2="335" stroke="#00cc66" stroke-width="1"/><rect x="276" y="305" width="8" height="20" fill="#00cc66"/>
+  <!-- c12: green (bullish crossover candle) -->
+  <line x1="302" y1="275" x2="302" y2="320" stroke="#00cc66" stroke-width="1"/><rect x="298" y="288" width="8" height="22" fill="#00cc66"/>
+  <!-- c13: green -->
+  <line x1="324" y1="260" x2="324" y2="300" stroke="#00cc66" stroke-width="1"/><rect x="320" y="270" width="8" height="20" fill="#00cc66"/>
+  <!-- c14: green -->
+  <line x1="346" y1="240" x2="346" y2="280" stroke="#00cc66" stroke-width="1"/><rect x="342" y="250" width="8" height="22" fill="#00cc66"/>
+  <!-- c15: red -->
+  <line x1="368" y1="230" x2="368" y2="265" stroke="#ee4444" stroke-width="1"/><rect x="364" y="238" width="8" height="18" fill="#ee4444"/>
+  <!-- c16: green -->
+  <line x1="390" y1="215" x2="390" y2="250" stroke="#00cc66" stroke-width="1"/><rect x="386" y="225" width="8" height="18" fill="#00cc66"/>
+  <!-- c17: green -->
+  <line x1="412" y1="195" x2="412" y2="235" stroke="#00cc66" stroke-width="1"/><rect x="408" y="205" width="8" height="22" fill="#00cc66"/>
+  <!-- c18: green -->
+  <line x1="434" y1="175" x2="434" y2="215" stroke="#00cc66" stroke-width="1"/><rect x="430" y="185" width="8" height="22" fill="#00cc66"/>
+  <!-- c19: red -->
+  <line x1="456" y1="165" x2="456" y2="200" stroke="#ee4444" stroke-width="1"/><rect x="452" y="172" width="8" height="20" fill="#ee4444"/>
+  <!-- c20: green -->
+  <line x1="478" y1="150" x2="478" y2="185" stroke="#00cc66" stroke-width="1"/><rect x="474" y="158" width="8" height="20" fill="#00cc66"/>
+  <!-- c21: green (peak) -->
+  <line x1="500" y1="135" x2="500" y2="172" stroke="#00cc66" stroke-width="1"/><rect x="496" y="145" width="8" height="20" fill="#00cc66"/>
+  <!-- c22: red -->
+  <line x1="522" y1="140" x2="522" y2="180" stroke="#ee4444" stroke-width="1"/><rect x="518" y="148" width="8" height="24" fill="#ee4444"/>
+  <!-- c23: red (bearish crossover candle) -->
+  <line x1="544" y1="155" x2="544" y2="200" stroke="#ee4444" stroke-width="1"/><rect x="540" y="165" width="8" height="26" fill="#ee4444"/>
+  <!-- c24: red -->
+  <line x1="566" y1="175" x2="566" y2="220" stroke="#ee4444" stroke-width="1"/><rect x="562" y="185" width="8" height="25" fill="#ee4444"/>
+  <!-- c25: green -->
+  <line x1="588" y1="190" x2="588" y2="230" stroke="#00cc66" stroke-width="1"/><rect x="584" y="200" width="8" height="20" fill="#00cc66"/>
+  <!-- c26: red -->
+  <line x1="610" y1="205" x2="610" y2="248" stroke="#ee4444" stroke-width="1"/><rect x="606" y="215" width="8" height="24" fill="#ee4444"/>
+  <!-- c27: red -->
+  <line x1="632" y1="220" x2="632" y2="268" stroke="#ee4444" stroke-width="1"/><rect x="628" y="230" width="8" height="28" fill="#ee4444"/>
+  <!-- c28: green -->
+  <line x1="654" y1="235" x2="654" y2="275" stroke="#00cc66" stroke-width="1"/><rect x="650" y="248" width="8" height="18" fill="#00cc66"/>
+  <!-- c29: red -->
+  <line x1="676" y1="245" x2="676" y2="290" stroke="#ee4444" stroke-width="1"/><rect x="672" y="255" width="8" height="26" fill="#ee4444"/>
+  <!-- c30: red -->
+  <line x1="698" y1="260" x2="698" y2="305" stroke="#ee4444" stroke-width="1"/><rect x="694" y="268" width="8" height="28" fill="#ee4444"/>
+
+  <!-- Fast WMA (cyan, thin) - crosses above slow at candle 12, crosses below at candle 23 -->
+  <polyline fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.9"
+    points="60,210 82,225 104,240 126,258 148,275 170,290 192,298 214,305
+            236,310 258,318 280,305 302,288 324,268 346,248 368,235 390,220
+            412,202 434,185 456,172 478,158 500,148 522,152 544,168
+            566,188 588,205 610,222 632,240 654,252 676,265 698,278"/>
+
+  <!-- Slow WMA (magenta, thick) -->
+  <polyline fill="none" stroke="#ff44cc" stroke-width="2.5" opacity="0.8"
+    points="60,195 82,208 104,222 126,238 148,255 170,272 192,285 214,295
+            236,305 258,312 280,310 302,298 324,282 346,265 368,250 390,238
+            412,222 434,208 456,195 478,180 500,168 522,158 544,155
+            566,165 588,180 610,198 632,218 654,235 676,248 698,260"/>
+
+  <!-- Bullish crossover marker at candle 12 (x=302) -->
+  <!-- Fast crosses above slow here -->
+  <polygon points="302,340 295,358 309,358" fill="#00ff66" filter="url(#glowStrong)"/>
+  <text x="302" y="372" font-family="Arial, sans-serif" font-size="12" fill="#00ff66" text-anchor="middle" font-weight="bold" filter="url(#glow)">BUY</text>
+  <!-- Adaptive period label -->
+  <rect x="268" y="376" width="68" height="16" rx="3" fill="#0d0d1a" opacity="0.7"/>
+  <text x="302" y="388" font-family="Arial, sans-serif" font-size="9" fill="#00bbaa" text-anchor="middle">Period: 14&#x2192;12</text>
+
+  <!-- Bearish crossover marker at candle 23 (x=544) -->
+  <polygon points="544,130 537,112 551,112" fill="#ff4444" filter="url(#glowStrong)"/>
+  <text x="544" y="108" font-family="Arial, sans-serif" font-size="12" fill="#ff4444" text-anchor="middle" font-weight="bold" filter="url(#glow)">SELL</text>
+  <!-- Adaptive period label -->
+  <rect x="510" y="92" width="68" height="16" rx="3" fill="#0d0d1a" opacity="0.7"/>
+  <text x="544" y="104" font-family="Arial, sans-serif" font-size="9" fill="#ff8866" text-anchor="middle">Period: 12&#x2192;14</text>
+
+  <!-- Crossover highlight circles -->
+  <circle cx="302" cy="293" r="6" fill="none" stroke="#00ff66" stroke-width="1.5" filter="url(#glow)" opacity="0.7"/>
+  <circle cx="544" cy="162" r="6" fill="none" stroke="#ff4444" stroke-width="1.5" filter="url(#glow)" opacity="0.7"/>
+
+  <!-- Legend bar -->
+  <rect x="50" y="450" width="710" height="40" rx="4" fill="#0d0d1a" opacity="0.6"/>
+  <line x1="75" y1="470" x2="110" y2="470" stroke="#00e5ff" stroke-width="1.5"/>
+  <text x="116" y="474" font-family="Arial, sans-serif" font-size="10" fill="#00e5ff">Fast WMA (12)</text>
+  <line x1="230" y1="470" x2="265" y2="470" stroke="#ff44cc" stroke-width="2.5"/>
+  <text x="271" y="474" font-family="Arial, sans-serif" font-size="10" fill="#ff44cc">Slow WMA (26)</text>
+  <polygon points="398,463 393,477 403,477" fill="#00ff66"/>
+  <text x="410" y="474" font-family="Arial, sans-serif" font-size="10" fill="#00ff66">BUY Signal</text>
+  <polygon points="518,477 513,463 523,463" fill="#ff4444"/>
+  <text x="530" y="474" font-family="Arial, sans-serif" font-size="10" fill="#ff4444">SELL Signal</text>
+  <text x="630" y="474" font-family="Arial, sans-serif" font-size="9" fill="#555">Adaptive Period</text>
+</svg>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Candle Density</text>
+  <text x="400" y="48" text-anchor="middle" fill="#667" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="white" stroke-opacity="0.04" stroke-width="1">
+    <line x1="60" y1="70" x2="760" y2="70"/>
+    <line x1="60" y1="140" x2="760" y2="140"/>
+    <line x1="60" y1="210" x2="760" y2="210"/>
+    <line x1="60" y1="280" x2="760" y2="280"/>
+    <line x1="60" y1="350" x2="760" y2="350"/>
+    <line x1="60" y1="420" x2="760" y2="420"/>
+    <line x1="60" y1="70" x2="60" y2="420"/>
+    <line x1="200" y1="70" x2="200" y2="420"/>
+    <line x1="340" y1="70" x2="340" y2="420"/>
+    <line x1="480" y1="70" x2="480" y2="420"/>
+    <line x1="620" y1="70" x2="620" y2="420"/>
+    <line x1="760" y1="70" x2="760" y2="420"/>
+  </g>
+
+  <!-- Heatmap density grid -->
+  <g opacity="0.7">
+    <!-- Top area: low density -->
+    <rect x="60" y="70" width="700" height="42" fill="#0d1137" rx="1"/>
+
+    <!-- Row 4: sparse activity -->
+    <rect x="60" y="112" width="140" height="14" fill="#0d1137"/>
+    <rect x="200" y="112" width="70" height="14" fill="#1a1150"/>
+    <rect x="270" y="112" width="70" height="14" fill="#2d1b69"/>
+    <rect x="340" y="112" width="140" height="14" fill="#1a1150"/>
+    <rect x="480" y="112" width="280" height="14" fill="#0d1137"/>
+
+    <!-- Row 5 -->
+    <rect x="60" y="126" width="100" height="14" fill="#0d1137"/>
+    <rect x="160" y="126" width="56" height="14" fill="#1a1150"/>
+    <rect x="216" y="126" width="70" height="14" fill="#3d2680"/>
+    <rect x="286" y="126" width="56" height="14" fill="#5c3d99"/>
+    <rect x="342" y="126" width="70" height="14" fill="#3d2680"/>
+    <rect x="412" y="126" width="56" height="14" fill="#1a1150"/>
+    <rect x="468" y="126" width="292" height="14" fill="#0d1137"/>
+
+    <!-- Row 6-7: first congestion zone -->
+    <rect x="60" y="140" width="80" height="28" fill="#0d1137"/>
+    <rect x="140" y="140" width="56" height="28" fill="#2d1b69"/>
+    <rect x="196" y="140" width="56" height="28" fill="#5c3d99"/>
+    <rect x="252" y="140" width="70" height="28" fill="#c4621a"/>
+    <rect x="322" y="140" width="56" height="28" fill="#e8a020"/>
+    <rect x="378" y="140" width="56" height="28" fill="#c4621a"/>
+    <rect x="434" y="140" width="56" height="28" fill="#5c3d99"/>
+    <rect x="490" y="140" width="56" height="28" fill="#2d1b69"/>
+    <rect x="546" y="140" width="214" height="28" fill="#0d1137"/>
+
+    <!-- Row 8: transition -->
+    <rect x="60" y="168" width="120" height="14" fill="#0d1137"/>
+    <rect x="180" y="168" width="56" height="14" fill="#1a1150"/>
+    <rect x="236" y="168" width="70" height="14" fill="#3d2680"/>
+    <rect x="306" y="168" width="56" height="14" fill="#5c3d99"/>
+    <rect x="362" y="168" width="56" height="14" fill="#3d2680"/>
+    <rect x="418" y="168" width="56" height="14" fill="#1a1150"/>
+    <rect x="474" y="168" width="286" height="14" fill="#0d1137"/>
+
+    <!-- Row 9-10: gap area -->
+    <rect x="60" y="182" width="700" height="28" fill="#0d1137"/>
+
+    <!-- Row 11-14: major congestion zone (support level) -->
+    <rect x="60" y="210" width="56" height="14" fill="#0d1137"/>
+    <rect x="116" y="210" width="56" height="14" fill="#1a1150"/>
+    <rect x="172" y="210" width="56" height="14" fill="#2d1b69"/>
+    <rect x="228" y="210" width="56" height="14" fill="#3d2680"/>
+    <rect x="284" y="210" width="56" height="14" fill="#5c3d99"/>
+    <rect x="340" y="210" width="56" height="14" fill="#3d2680"/>
+    <rect x="396" y="210" width="56" height="14" fill="#1a1150"/>
+    <rect x="452" y="210" width="56" height="14" fill="#2d1b69"/>
+    <rect x="508" y="210" width="56" height="14" fill="#5c3d99"/>
+    <rect x="564" y="210" width="56" height="14" fill="#3d2680"/>
+    <rect x="620" y="210" width="140" height="14" fill="#0d1137"/>
+
+    <rect x="60" y="224" width="56" height="28" fill="#1a1150"/>
+    <rect x="116" y="224" width="56" height="28" fill="#3d2680"/>
+    <rect x="172" y="224" width="56" height="28" fill="#5c3d99"/>
+    <rect x="228" y="224" width="56" height="28" fill="#c4621a"/>
+    <rect x="284" y="224" width="70" height="28" fill="#e8a020"/>
+    <rect x="354" y="224" width="56" height="28" fill="#f0c030"/>
+    <rect x="410" y="224" width="56" height="28" fill="#e8a020"/>
+    <rect x="466" y="224" width="56" height="28" fill="#f0c030"/>
+    <rect x="522" y="224" width="70" height="28" fill="#e8a020"/>
+    <rect x="592" y="224" width="56" height="28" fill="#c4621a"/>
+    <rect x="648" y="224" width="56" height="28" fill="#5c3d99"/>
+    <rect x="704" y="224" width="56" height="28" fill="#2d1b69"/>
+
+    <rect x="60" y="252" width="56" height="14" fill="#1a1150"/>
+    <rect x="116" y="252" width="56" height="14" fill="#2d1b69"/>
+    <rect x="172" y="252" width="56" height="14" fill="#5c3d99"/>
+    <rect x="228" y="252" width="56" height="14" fill="#c4621a"/>
+    <rect x="284" y="252" width="56" height="14" fill="#e8a020"/>
+    <rect x="340" y="252" width="56" height="14" fill="#c4621a"/>
+    <rect x="396" y="252" width="56" height="14" fill="#5c3d99"/>
+    <rect x="452" y="252" width="56" height="14" fill="#c4621a"/>
+    <rect x="508" y="252" width="56" height="14" fill="#e8a020"/>
+    <rect x="564" y="252" width="56" height="14" fill="#c4621a"/>
+    <rect x="620" y="252" width="56" height="14" fill="#5c3d99"/>
+    <rect x="676" y="252" width="84" height="14" fill="#1a1150"/>
+
+    <!-- Transition down -->
+    <rect x="60" y="266" width="140" height="14" fill="#0d1137"/>
+    <rect x="200" y="266" width="56" height="14" fill="#1a1150"/>
+    <rect x="256" y="266" width="56" height="14" fill="#2d1b69"/>
+    <rect x="312" y="266" width="56" height="14" fill="#1a1150"/>
+    <rect x="368" y="266" width="140" height="14" fill="#0d1137"/>
+    <rect x="508" y="266" width="56" height="14" fill="#1a1150"/>
+    <rect x="564" y="266" width="56" height="14" fill="#2d1b69"/>
+    <rect x="620" y="266" width="140" height="14" fill="#0d1137"/>
+
+    <rect x="60" y="280" width="700" height="14" fill="#0d1137"/>
+
+    <!-- Lower congestion -->
+    <rect x="60" y="294" width="200" height="14" fill="#0d1137"/>
+    <rect x="260" y="294" width="56" height="14" fill="#1a1150"/>
+    <rect x="316" y="294" width="56" height="14" fill="#2d1b69"/>
+    <rect x="372" y="294" width="56" height="14" fill="#1a1150"/>
+    <rect x="428" y="294" width="140" height="14" fill="#0d1137"/>
+    <rect x="568" y="294" width="56" height="14" fill="#2d1b69"/>
+    <rect x="624" y="294" width="56" height="14" fill="#5c3d99"/>
+    <rect x="680" y="294" width="80" height="14" fill="#2d1b69"/>
+
+    <rect x="60" y="308" width="240" height="28" fill="#0d1137"/>
+    <rect x="300" y="308" width="56" height="28" fill="#1a1150"/>
+    <rect x="356" y="308" width="176" height="28" fill="#0d1137"/>
+    <rect x="532" y="308" width="56" height="28" fill="#1a1150"/>
+    <rect x="588" y="308" width="56" height="28" fill="#3d2680"/>
+    <rect x="644" y="308" width="56" height="28" fill="#c4621a"/>
+    <rect x="700" y="308" width="60" height="28" fill="#5c3d99"/>
+
+    <!-- Bottom-right congestion -->
+    <rect x="60" y="336" width="480" height="14" fill="#0d1137"/>
+    <rect x="540" y="336" width="56" height="14" fill="#1a1150"/>
+    <rect x="596" y="336" width="56" height="14" fill="#3d2680"/>
+    <rect x="652" y="336" width="56" height="14" fill="#e8a020"/>
+    <rect x="708" y="336" width="52" height="14" fill="#c4621a"/>
+
+    <rect x="60" y="350" width="500" height="14" fill="#0d1137"/>
+    <rect x="560" y="350" width="56" height="14" fill="#2d1b69"/>
+    <rect x="616" y="350" width="56" height="14" fill="#5c3d99"/>
+    <rect x="672" y="350" width="56" height="14" fill="#c4621a"/>
+    <rect x="728" y="350" width="32" height="14" fill="#3d2680"/>
+
+    <rect x="60" y="364" width="520" height="14" fill="#0d1137"/>
+    <rect x="580" y="364" width="56" height="14" fill="#1a1150"/>
+    <rect x="636" y="364" width="56" height="14" fill="#2d1b69"/>
+    <rect x="692" y="364" width="68" height="14" fill="#1a1150"/>
+
+    <!-- Bottom: clean -->
+    <rect x="60" y="378" width="700" height="42" fill="#0d1137"/>
+  </g>
+
+  <!-- Price line overlay -->
+  <polyline fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)" opacity="0.9"
+    points="
+      70,300 84,295 98,290 112,280 126,260 140,250 154,240 168,235
+      182,230 196,225 210,220 224,200 238,180 252,160 266,150 280,155
+      294,148 308,152 322,158 336,155 350,150 364,160 378,170 392,180
+      406,200 420,220 434,230 448,238 462,235 476,240 490,238 504,242
+      518,240 532,245 546,260 560,280 574,300 588,310 602,320 616,330
+      630,340 644,338 658,342 672,335 686,340 700,345 714,350 728,355
+      742,350 756,348
+    "/>
+
+  <!-- Y-axis labels -->
+  <g fill="#556" font-family="Arial,sans-serif" font-size="10" text-anchor="end">
+    <text x="55" y="74">180</text>
+    <text x="55" y="144">160</text>
+    <text x="55" y="214">140</text>
+    <text x="55" y="284">120</text>
+    <text x="55" y="354">100</text>
+    <text x="55" y="424">80</text>
+  </g>
+
+  <!-- Legend bar -->
+  <g transform="translate(180, 455)" font-family="Arial,sans-serif" font-size="11" fill="#999">
+    <circle cx="0" cy="-3" r="5" fill="#0d1137"/>
+    <text x="10" y="0">Low</text>
+    <circle cx="70" cy="-3" r="5" fill="#3d2680"/>
+    <text x="80" y="0">Medium</text>
+    <circle cx="165" cy="-3" r="5" fill="#c4621a"/>
+    <text x="175" y="0">High</text>
+    <circle cx="235" cy="-3" r="5" fill="#f0c030"/>
+    <text x="245" y="0">Very High</text>
+    <circle cx="350" cy="-3" r="5" fill="white" opacity="0.9"/>
+    <text x="360" y="0">Price</text>
+  </g>
+</svg>

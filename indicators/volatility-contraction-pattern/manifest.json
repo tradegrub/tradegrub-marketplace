@@ -1,0 +1,12 @@
+{
+  "id": "volatility-contraction-pattern",
+  "name": "Volatility Contraction Pattern",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Volatility",
+  "tags": ["vcp", "contraction", "breakout", "volume", "range", "volatility"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Detects progressively tighter price ranges with declining volume suggesting an upcoming breakout"
+}

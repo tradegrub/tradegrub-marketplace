@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Two Bar Reversal Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- BULLISH pattern (left side) -->
+  <text x="220" y="78" text-anchor="middle" fill="#26a69a" font-size="12" font-weight="600">Bullish Two Bar Reversal</text>
+
+  <!-- Context downtrend candles -->
+  <line x1="90" y1="120" x2="90" y2="170" stroke="#ef5350" stroke-width="1"/>
+  <rect x="86" y="128" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="115" y1="138" x2="115" y2="188" stroke="#ef5350" stroke-width="1"/>
+  <rect x="111" y="148" width="8" height="28" fill="#ef5350" rx="1"/>
+
+  <!-- Bar 1 (bearish - strong body) -->
+  <line x1="165" y1="162" x2="165" y2="265" stroke="#ef5350" stroke-width="2"/>
+  <rect x="155" y="175" width="20" height="65" fill="#ef5350" rx="2" opacity="0.9"/>
+  <text x="165" y="280" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="600">Bar 1</text>
+
+  <!-- Bar 1 open reference line -->
+  <line x1="150" y1="175" x2="370" y2="175" stroke="#888" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="375" y="178" fill="#888" font-size="8">Bar1 open</text>
+
+  <!-- Bar 2 (bullish - strong body, closes above bar1 open) -->
+  <line x1="250" y1="155" x2="250" y2="268" stroke="#00e676" stroke-width="2"/>
+  <rect x="240" y="162" width="20" height="78" fill="#00e676" rx="2" filter="url(#glow)"/>
+  <text x="250" y="280" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">Bar 2</text>
+
+  <!-- Body ratio annotation -->
+  <rect x="130" y="295" width="160" height="18" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="210" y="308" text-anchor="middle" fill="#bbb" font-size="9">Both bars: body ratio >= 0.5</text>
+
+  <!-- BUY arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="250,148 258,148 254,136" fill="#00e676"/>
+  </g>
+  <rect x="265" y="132" width="48" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="289" y="146" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY</text>
+
+  <!-- Stop loss -->
+  <line x1="150" y1="268" x2="370" y2="268" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="375" y="272" fill="#ef5350" font-size="9">Stop</text>
+
+  <!-- Take profit -->
+  <line x1="240" y1="105" x2="370" y2="105" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="375" y="109" fill="#00e676" font-size="9">TP (1.5x ATR)</text>
+
+  <!-- BEARISH pattern (right side) -->
+  <text x="590" y="78" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="600">Bearish Two Bar Reversal</text>
+
+  <!-- Context uptrend candles -->
+  <line x1="470" y1="275" x2="470" y2="325" stroke="#26a69a" stroke-width="1"/>
+  <rect x="466" y="288" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="495" y1="255" x2="495" y2="305" stroke="#26a69a" stroke-width="1"/>
+  <rect x="491" y="268" width="8" height="25" fill="#26a69a" rx="1"/>
+
+  <!-- Bar 1 (bullish - strong body) -->
+  <line x1="545" y1="180" x2="545" y2="290" stroke="#26a69a" stroke-width="2"/>
+  <rect x="535" y="205" width="20" height="60" fill="#26a69a" rx="2" opacity="0.9"/>
+  <text x="545" y="305" text-anchor="middle" fill="#26a69a" font-size="11" font-weight="600">Bar 1</text>
+
+  <!-- Bar 1 open reference -->
+  <line x1="530" y1="265" x2="720" y2="265" stroke="#888" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="725" y="268" fill="#888" font-size="8">Bar1 open</text>
+
+  <!-- Bar 2 (bearish - strong body, closes below bar1 open) -->
+  <line x1="625" y1="178" x2="625" y2="295" stroke="#ef5350" stroke-width="2"/>
+  <rect x="615" y="200" width="20" height="80" fill="#ef5350" rx="2" filter="url(#glow)"/>
+  <text x="625" y="305" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="600">Bar 2</text>
+
+  <!-- SELL arrow -->
+  <polygon points="625,300 633,300 629,312" fill="#ef5350" filter="url(#softGlow)"/>
+  <rect x="640" y="302" width="55" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="667" y="316" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SELL</text>
+
+  <!-- Stop loss bearish -->
+  <line x1="530" y1="178" x2="720" y2="178" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="182" fill="#ef5350" font-size="9">Stop</text>
+
+  <!-- Take profit bearish -->
+  <line x1="615" y1="345" x2="720" y2="345" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="349" fill="#00e676" font-size="9">TP</text>
+
+  <!-- Divider -->
+  <line x1="420" y1="70" x2="420" y2="380" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="86" y="400" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="111" y="395" width="8" height="17" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="155" y="385" width="20" height="27" fill="#ef5350" rx="1" opacity="0.5"/>
+  <rect x="240" y="378" width="20" height="34" fill="#00e676" rx="1" opacity="0.6" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="466" y="400" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="491" y="395" width="8" height="17" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="535" y="385" width="20" height="27" fill="#26a69a" rx="1" opacity="0.5"/>
+  <rect x="615" y="378" width="20" height="34" fill="#ef5350" rx="1" opacity="0.6"/>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ef5350"/>
+    <text x="30" y="24" fill="#999" font-size="9">Bearish Bar</text>
+    <circle cx="120" cy="20" r="4" fill="#26a69a"/>
+    <text x="130" y="24" fill="#999" font-size="9">Bullish Bar</text>
+    <circle cx="220" cy="20" r="4" fill="#00e676"/>
+    <text x="230" y="24" fill="#999" font-size="9">Buy Signal</text>
+    <circle cx="320" cy="20" r="4" fill="#ef5350"/>
+    <text x="330" y="24" fill="#999" font-size="9">Sell Signal</text>
+    <circle cx="420" cy="20" r="4" fill="#42a5f5"/>
+    <text x="430" y="24" fill="#999" font-size="9">Entry Level</text>
+    <rect x="530" y="12" width="20" height="16" fill="#888" opacity="0.3" rx="2"/>
+    <text x="555" y="24" fill="#999" font-size="9">Body Ratio Filter</text>
+  </g>
+</svg>

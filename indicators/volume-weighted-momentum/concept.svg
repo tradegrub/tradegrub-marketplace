@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Volume Weighted Momentum</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Overbought zone -->
+  <rect x="70" y="80" width="670" height="60" fill="#ff1744" fill-opacity="0.04" rx="2"/>
+  <!-- Oversold zone -->
+  <rect x="70" y="310" width="670" height="60" fill="#00e676" fill-opacity="0.04" rx="2"/>
+
+  <!-- OB line -->
+  <line x1="70" y1="140" x2="740" y2="140" stroke="rgba(255,23,68,0.5)" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="748" y="144" fill="#ff1744" font-family="Inter,sans-serif" font-size="8">OB</text>
+
+  <!-- Zero line -->
+  <line x1="70" y1="225" x2="740" y2="225" stroke="#555555" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="748" y="229" fill="#888" font-family="Inter,sans-serif" font-size="8">0</text>
+
+  <!-- OS line -->
+  <line x1="70" y1="310" x2="740" y2="310" stroke="rgba(0,230,118,0.5)" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="748" y="314" fill="#00e676" font-family="Inter,sans-serif" font-size="8">OS</text>
+
+  <!-- VW Momentum line -->
+  <polyline points="100,260 130,250 160,235 190,210 220,185 250,160 280,140 310,120 340,110 370,105 400,115 430,135 460,160 490,190 520,220 550,245 580,270 610,295 640,315 670,330 700,340" fill="none" stroke="#42A5F5" stroke-width="2.5"/>
+
+  <!-- Strong bull markers (momentum > 0 and high vol) -->
+  <polygon points="247,165 253,165 250,158" fill="#00e676"/>
+  <polygon points="277,145 283,145 280,138" fill="#00e676"/>
+  <polygon points="307,125 313,125 310,118" fill="#00e676"/>
+
+  <!-- Strong bear markers -->
+  <polygon points="637,310 643,310 640,318" fill="#ff1744"/>
+  <polygon points="667,325 673,325 670,333" fill="#ff1744"/>
+  <polygon points="697,335 703,335 700,343" fill="#ff1744"/>
+
+  <!-- Annotation for OB -->
+  <rect x="320" y="92" width="90" height="18" rx="3" fill="rgba(255,23,68,0.15)" stroke="#ff1744" stroke-width="0.5"/>
+  <text x="365" y="104" text-anchor="middle" fill="#ff1744" font-family="Inter,sans-serif" font-size="9">Overbought</text>
+
+  <!-- Annotation for OS -->
+  <rect x="600" y="340" width="80" height="18" rx="3" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="0.5"/>
+  <text x="640" y="352" text-anchor="middle" fill="#00e676" font-family="Inter,sans-serif" font-size="9">Oversold</text>
+
+  <!-- Volume bars at bottom showing relative volume -->
+  <g opacity="0.3">
+    <rect x="97" y="395" width="6" height="10" fill="#888" rx="1"/>
+    <rect x="127" y="393" width="6" height="12" fill="#888" rx="1"/>
+    <rect x="157" y="390" width="6" height="15" fill="#888" rx="1"/>
+    <rect x="187" y="385" width="6" height="20" fill="#26a69a" rx="1"/>
+    <rect x="217" y="380" width="6" height="25" fill="#26a69a" rx="1"/>
+    <rect x="247" y="372" width="6" height="33" fill="#00e676" rx="1"/>
+    <rect x="277" y="368" width="6" height="37" fill="#00e676" rx="1"/>
+    <rect x="307" y="365" width="6" height="40" fill="#00e676" rx="1"/>
+    <rect x="337" y="370" width="6" height="35" fill="#26a69a" rx="1"/>
+    <rect x="367" y="378" width="6" height="27" fill="#26a69a" rx="1"/>
+    <rect x="397" y="385" width="6" height="20" fill="#888" rx="1"/>
+    <rect x="427" y="388" width="6" height="17" fill="#888" rx="1"/>
+    <rect x="457" y="390" width="6" height="15" fill="#888" rx="1"/>
+    <rect x="487" y="388" width="6" height="17" fill="#888" rx="1"/>
+    <rect x="517" y="385" width="6" height="20" fill="#ef5350" rx="1"/>
+    <rect x="547" y="380" width="6" height="25" fill="#ef5350" rx="1"/>
+    <rect x="577" y="375" width="6" height="30" fill="#ef5350" rx="1"/>
+    <rect x="607" y="370" width="6" height="35" fill="#ff1744" rx="1"/>
+    <rect x="637" y="365" width="6" height="40" fill="#ff1744" rx="1"/>
+    <rect x="667" y="368" width="6" height="37" fill="#ff1744" rx="1"/>
+    <rect x="697" y="372" width="6" height="33" fill="#ef5350" rx="1"/>
+  </g>
+  <text x="85" y="403" fill="#666" font-family="Inter,sans-serif" font-size="7">RVOL</text>
+
+  <!-- Legend -->
+  <g transform="translate(80, 440)">
+    <rect width="640" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <line x1="15" y1="20" x2="35" y2="20" stroke="#42A5F5" stroke-width="2.5"/>
+    <text x="40" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">VW Momentum</text>
+    <line x1="165" y1="20" x2="185" y2="20" stroke="#555" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="190" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Zero Line</text>
+    <polygon points="275,24 283,24 279,16" fill="#00e676"/>
+    <text x="288" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Strong Bull</text>
+    <polygon points="380,16 388,16 384,24" fill="#ff1744"/>
+    <text x="393" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Strong Bear</text>
+    <rect x="480" y="14" width="14" height="12" fill="#00e676" fill-opacity="0.3" rx="2"/>
+    <text x="500" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">High RVOL</text>
+  </g>
+</svg>

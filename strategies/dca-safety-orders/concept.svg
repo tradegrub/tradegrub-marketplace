@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">DCA Safety Orders Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Price line: entry, decline with safety orders, then recovery -->
+  <polyline points="80,140 120,145 160,160 200,180 240,210 280,250 320,290 360,330 400,360 440,340 480,300 520,260 560,220 600,190 640,160 680,130 720,110"
+    fill="none" stroke="#2196F3" stroke-width="2.5"/>
+
+  <!-- Initial entry -->
+  <circle cx="120" cy="145" r="6" fill="#26a69a" filter="url(#glow)"/>
+  <text x="120" y="132" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="600">Base Order</text>
+  <text x="120" y="120" text-anchor="middle" fill="#787b86" font-size="8">1x size</text>
+
+  <!-- Safety Order 1 -->
+  <circle cx="240" cy="210" r="6" fill="#26a69a" filter="url(#glow)"/>
+  <text x="240" y="198" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="600">SO 1</text>
+  <text x="240" y="186" text-anchor="middle" fill="#787b86" font-size="8">1.5x size</text>
+  <line x1="240" y1="210" x2="240" y2="145" stroke="#26a69a" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/>
+
+  <!-- Safety Order 2 -->
+  <circle cx="320" cy="290" r="6" fill="#26a69a" filter="url(#glow)"/>
+  <text x="320" y="278" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="600">SO 2</text>
+  <text x="320" y="266" text-anchor="middle" fill="#787b86" font-size="8">2x size</text>
+  <line x1="320" y1="290" x2="320" y2="145" stroke="#26a69a" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/>
+
+  <!-- Safety Order 3 -->
+  <circle cx="400" cy="360" r="7" fill="#26a69a" filter="url(#glow)"/>
+  <text x="400" y="348" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="600">SO 3</text>
+  <text x="400" y="336" text-anchor="middle" fill="#787b86" font-size="8">3x size</text>
+  <line x1="400" y1="360" x2="400" y2="145" stroke="#26a69a" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/>
+
+  <!-- Average entry line -->
+  <line x1="120" y1="265" x2="720" y2="265" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="269" fill="#FF9800" font-size="9">Avg Entry</text>
+
+  <!-- Take profit line -->
+  <line x1="440" y1="200" x2="720" y2="200" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="204" fill="#26a69a" font-size="9">Take Profit</text>
+
+  <!-- Take profit marker -->
+  <circle cx="580" cy="220" r="6" fill="none" stroke="#26a69a" stroke-width="2"/>
+  <rect x="588" y="210" width="85" height="20" rx="4" fill="#26a69a" fill-opacity="0.15" stroke="#26a69a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="630" y="224" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">TAKE PROFIT</text>
+
+  <!-- Decline % annotations -->
+  <text x="175" y="175" fill="#ef5350" font-size="8">-3%</text>
+  <text x="275" y="255" fill="#ef5350" font-size="8">-6%</text>
+  <text x="355" y="330" fill="#ef5350" font-size="8">-10%</text>
+
+  <!-- Recovery arrow -->
+  <path d="M 420,350 Q 500,280 570,225" fill="none" stroke="#26a69a" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="570,225 565,235 575,232" fill="#26a69a" opacity="0.5"/>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Safety Order Entries</text>
+    <line x1="165" y1="20" x2="185" y2="20" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="190" y="24" fill="#999" font-size="9">Average Entry Price</text>
+    <line x1="340" y1="20" x2="360" y2="20" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="365" y="24" fill="#999" font-size="9">Take Profit Target</text>
+    <circle cx="520" cy="20" r="4" fill="#2196F3"/>
+    <text x="530" y="24" fill="#999" font-size="9">Price</text>
+  </g>
+</svg>

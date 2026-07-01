@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="titleGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4aa"/>
+      <stop offset="100%" stop-color="#4ecdc4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#2a2a4a" stroke-width="0.5">
+    <!-- Horizontal grid lines at each price level -->
+    <line x1="60" y1="60" x2="720" y2="60"/>
+    <line x1="60" y1="95" x2="720" y2="95"/>
+    <line x1="60" y1="130" x2="720" y2="130"/>
+    <line x1="60" y1="165" x2="720" y2="165"/>
+    <line x1="60" y1="200" x2="720" y2="200"/>
+    <line x1="60" y1="235" x2="720" y2="235"/>
+    <line x1="60" y1="270" x2="720" y2="270"/>
+    <line x1="60" y1="305" x2="720" y2="305"/>
+    <line x1="60" y1="340" x2="720" y2="340"/>
+    <line x1="60" y1="375" x2="720" y2="375"/>
+    <line x1="60" y1="410" x2="720" y2="410"/>
+    <!-- Vertical grid lines -->
+    <line x1="120" y1="50" x2="120" y2="420"/>
+    <line x1="180" y1="50" x2="180" y2="420"/>
+    <line x1="240" y1="50" x2="240" y2="420"/>
+    <line x1="300" y1="50" x2="300" y2="420"/>
+    <line x1="360" y1="50" x2="360" y2="420"/>
+    <line x1="420" y1="50" x2="420" y2="420"/>
+    <line x1="480" y1="50" x2="480" y2="420"/>
+    <line x1="540" y1="50" x2="540" y2="420"/>
+    <line x1="600" y1="50" x2="600" y2="420"/>
+    <line x1="660" y1="50" x2="660" y2="420"/>
+  </g>
+
+  <!-- Price labels on right -->
+  <g fill="#8888aa" font-family="monospace" font-size="11" text-anchor="end">
+    <text x="770" y="64">155</text>
+    <text x="770" y="99">150</text>
+    <text x="770" y="134">145</text>
+    <text x="770" y="169">140</text>
+    <text x="770" y="204">135</text>
+    <text x="770" y="239">130</text>
+    <text x="770" y="274">125</text>
+    <text x="770" y="309">120</text>
+    <text x="770" y="344">115</text>
+    <text x="770" y="379">110</text>
+    <text x="770" y="414">105</text>
+  </g>
+
+  <!-- Column 1: X (up) from 110 to 130 -->
+  <g fill="#00e676" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="120" y="383">X</text>
+    <text x="120" y="348">X</text>
+    <text x="120" y="313">X</text>
+    <text x="120" y="278">X</text>
+    <text x="120" y="243">X</text>
+  </g>
+
+  <!-- Column 2: O (down) from 125 to 115 -->
+  <g fill="#ff5252" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="180" y="278">O</text>
+    <text x="180" y="313">O</text>
+    <text x="180" y="348">O</text>
+  </g>
+
+  <!-- Column 3: X (up) from 120 to 140 -->
+  <g fill="#00e676" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="240" y="313">X</text>
+    <text x="240" y="278">X</text>
+    <text x="240" y="243">X</text>
+    <text x="240" y="208">X</text>
+    <text x="240" y="173">X</text>
+  </g>
+
+  <!-- Column 4: O (down) from 135 to 125 -->
+  <g fill="#ff5252" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="300" y="208">O</text>
+    <text x="300" y="243">O</text>
+    <text x="300" y="278">O</text>
+  </g>
+
+  <!-- Column 5: X (up) from 130 to 145 -->
+  <g fill="#00e676" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="360" y="243">X</text>
+    <text x="360" y="208">X</text>
+    <text x="360" y="173">X</text>
+    <text x="360" y="138">X</text>
+  </g>
+
+  <!-- Column 6: O (down) from 140 to 130 -->
+  <g fill="#ff5252" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="420" y="173">O</text>
+    <text x="420" y="208">O</text>
+    <text x="420" y="243">O</text>
+  </g>
+
+  <!-- Column 7: X (up) from 135 to 150 -->
+  <g fill="#00e676" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="480" y="208">X</text>
+    <text x="480" y="173">X</text>
+    <text x="480" y="138">X</text>
+    <text x="480" y="103">X</text>
+  </g>
+
+  <!-- Column 8: O (down) from 145 to 140 -->
+  <g fill="#ff5252" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="540" y="138">O</text>
+    <text x="540" y="173">O</text>
+  </g>
+
+  <!-- Column 9: X (up) from 145 to 155 - double top breakout -->
+  <g fill="#00e676" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="600" y="138">X</text>
+    <text x="600" y="103">X</text>
+    <text x="600" y="68">X</text>
+  </g>
+
+  <!-- Column 10: O (down) from 150 to 145 -->
+  <g fill="#ff5252" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="660" y="103">O</text>
+    <text x="660" y="138">O</text>
+  </g>
+
+  <!-- Double top breakout marker -->
+  <polygon points="600,50 594,40 606,40" fill="#00e676"/>
+  <text x="600" y="36" fill="#00e676" font-family="sans-serif" font-size="9" text-anchor="middle">BREAKOUT</text>
+
+  <!-- Price target dashed line -->
+  <line x1="60" y1="60" x2="720" y2="60" stroke="#00bcd4" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.8"/>
+  <text x="68" y="55" fill="#00bcd4" font-family="sans-serif" font-size="10">Price Target: 155</text>
+
+  <!-- Bearish target dashed line -->
+  <line x1="60" y1="340" x2="720" y2="340" stroke="#ff9800" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="68" y="336" fill="#ff9800" font-family="sans-serif" font-size="9" opacity="0.7">Bear Target: 115</text>
+
+  <!-- Uptrend line -->
+  <line x1="110" y1="390" x2="610" y2="55" stroke="#4ecdc4" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+
+  <!-- Legend -->
+  <rect x="60" y="440" width="280" height="45" rx="6" fill="#0e0e20" stroke="#2a2a4a" stroke-width="1"/>
+  <text x="80" y="457" fill="#00e676" font-family="monospace" font-size="14" font-weight="bold">X</text>
+  <text x="95" y="457" fill="#8888aa" font-family="sans-serif" font-size="11">Rising Column</text>
+  <text x="200" y="457" fill="#ff5252" font-family="monospace" font-size="14" font-weight="bold">O</text>
+  <text x="215" y="457" fill="#8888aa" font-family="sans-serif" font-size="11">Falling Column</text>
+  <line x1="80" y1="472" x2="110" y2="472" stroke="#00bcd4" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="115" y="476" fill="#8888aa" font-family="sans-serif" font-size="11">Price Target</text>
+  <text x="200" y="476" fill="#00e676" font-family="sans-serif" font-size="11">^  Breakout Signal</text>
+
+  <!-- Title -->
+  <text x="400" y="28" fill="url(#titleGlow)" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Point and Figure Overlay</text>
+
+  <!-- Branding -->
+  <text x="745" y="488" fill="#4a4a6a" font-family="sans-serif" font-size="11" text-anchor="end">tradegrub.finance</text>
+</svg>

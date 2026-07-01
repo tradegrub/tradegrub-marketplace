@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Supply and Demand Zones</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Supply Zone (top) -->
+  <rect x="100" y="90" width="660" height="40" fill="#ef5350" fill-opacity="0.1" stroke="#ef5350" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+  <text x="115" y="107" fill="#ef5350" font-size="10" font-weight="500">SUPPLY ZONE (Untested)</text>
+
+  <!-- Demand Zone (bottom) -->
+  <rect x="100" y="310" width="660" height="40" fill="#26a69a" fill-opacity="0.1" stroke="#26a69a" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+  <text x="115" y="327" fill="#26a69a" font-size="10" font-weight="500">DEMAND ZONE (Untested)</text>
+
+  <!-- Mitigated demand zone (dimmer, lower) -->
+  <rect x="250" y="370" width="510" height="30" fill="#26a69a" fill-opacity="0.04" stroke="#26a69a" stroke-width="0.8" stroke-opacity="0.15" stroke-dasharray="4,4" rx="3"/>
+  <text x="265" y="388" fill="#26a69a" font-size="9" opacity="0.4">Mitigated Zone</text>
+
+  <!-- Price action: starts mid, drops to demand, bounces up to supply area, drops -->
+  <!-- Consolidation near supply -->
+  <line x1="110" y1="135" x2="110" y2="185" stroke="#ef5350" stroke-width="1"/>
+  <rect x="106" y="140" width="8" height="30" fill="#ef5350" rx="1"/>
+  <!-- Strong bearish departure from supply -->
+  <line x1="140" y1="125" x2="140" y2="210" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="134" y="128" width="12" height="65" fill="#ef5350" rx="1" filter="url(#softGlow)"/>
+
+  <!-- Departure arrow -->
+  <path d="M 155,170 L 155,195" stroke="#ef5350" stroke-width="1.5"/>
+  <polygon points="151,195 159,195 155,205" fill="#ef5350"/>
+  <text x="168" y="188" fill="#ef5350" font-size="8">Strong departure</text>
+
+  <!-- Drop candles -->
+  <line x1="175" y1="195" x2="175" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="171" y="205" width="8" height="38" fill="#ef5350" rx="1"/>
+  <line x1="205" y1="230" x2="205" y2="295" stroke="#ef5350" stroke-width="1"/>
+  <rect x="201" y="240" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="235" y1="270" x2="235" y2="340" stroke="#ef5350" stroke-width="1"/>
+  <rect x="231" y="278" width="8" height="42" fill="#ef5350" rx="1"/>
+
+  <!-- Bounce at demand zone -->
+  <line x1="265" y1="295" x2="265" y2="365" stroke="#26a69a" stroke-width="1.5"/>
+  <rect x="259" y="300" width="12" height="50" fill="#26a69a" rx="1" filter="url(#softGlow)"/>
+
+  <!-- Departure arrow up -->
+  <path d="M 280,330 L 280,305" stroke="#26a69a" stroke-width="1.5"/>
+  <polygon points="276,305 284,305 280,295" fill="#26a69a"/>
+
+  <!-- Recovery candles -->
+  <line x1="300" y1="260" x2="300" y2="318" stroke="#26a69a" stroke-width="1"/>
+  <rect x="296" y="275" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="330" y1="230" x2="330" y2="285" stroke="#26a69a" stroke-width="1"/>
+  <rect x="326" y="240" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="360" y1="205" x2="360" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="356" y="212" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="390" y1="180" x2="390" y2="228" stroke="#26a69a" stroke-width="1"/>
+  <rect x="386" y="188" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="420" y1="162" x2="420" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="416" y="168" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Approaching supply zone - reaction -->
+  <line x1="450" y1="140" x2="450" y2="180" stroke="#26a69a" stroke-width="1"/>
+  <rect x="446" y="148" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Reaction at supply -->
+  <rect x="462" y="126" width="55" height="22" rx="4" fill="#ff9800" fill-opacity="0.12" stroke="#ff9800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="490" y="141" text-anchor="middle" fill="#ff9800" font-size="9" font-weight="500">Reaction</text>
+
+  <line x1="485" y1="135" x2="485" y2="182" stroke="#ef5350" stroke-width="1"/>
+  <rect x="481" y="140" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="515" y1="152" x2="515" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="511" y="158" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="545" y1="170" x2="545" y2="215" stroke="#ef5350" stroke-width="1"/>
+  <rect x="541" y="176" width="8" height="26" fill="#ef5350" rx="1"/>
+
+  <!-- Second bounce attempt at lower demand -->
+  <line x1="575" y1="200" x2="575" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="571" y="215" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="605" y1="190" x2="605" y2="235" stroke="#26a69a" stroke-width="1"/>
+  <rect x="601" y="198" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="635" y1="180" x2="635" y2="220" stroke="#ef5350" stroke-width="1"/>
+  <rect x="631" y="185" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="665" y1="175" x2="665" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="661" y="180" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="695" y1="168" x2="695" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="691" y="172" width="8" height="18" fill="#26a69a" rx="1"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="106" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="134" y="380" width="12" height="35" fill="#ef5350" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="171" y="393" width="8" height="22" fill="#ef5350" rx="1"/>
+    <rect x="201" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="231" y="390" width="8" height="25" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="259" y="382" width="12" height="33" fill="#26a69a" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="296" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="326" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="356" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="386" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="416" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="446" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="481" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="511" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="541" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="571" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="601" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="631" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="661" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="691" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ef5350"/>
+    <text x="30" y="24" fill="#999" font-size="9">Supply Zone</text>
+    <circle cx="130" cy="20" r="4" fill="#26a69a"/>
+    <text x="140" y="24" fill="#999" font-size="9">Demand Zone</text>
+    <circle cx="250" cy="20" r="4" fill="#ff9800"/>
+    <text x="260" y="24" fill="#999" font-size="9">Zone Reaction</text>
+    <rect x="375" y="12" width="30" height="16" fill="#26a69a" opacity="0.15" rx="2" stroke="#26a69a" stroke-width="0.5" stroke-opacity="0.3"/>
+    <text x="410" y="24" fill="#999" font-size="9">Mitigated</text>
+    <rect x="475" y="12" width="20" height="16" fill="#ef5350" opacity="0.5" rx="2"/>
+    <text x="500" y="24" fill="#999" font-size="9">Departure Vol</text>
+  </g>
+</svg>

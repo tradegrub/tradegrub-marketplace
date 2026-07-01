@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="400" y="60" text-anchor="middle" font-family="Inter,sans-serif" font-size="24" fill="#e0e0e0" font-weight="600">MESA Adaptive Stochastic</text>
+  <text x="400" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#888888">Autocorrelation Cycle Detection</text>
+  <line x1="80" y1="160" x2="720" y2="160" stroke="#f4433644" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="730" y="164" font-family="Inter,sans-serif" font-size="12" fill="#f44336">80</text>
+  <line x1="80" y1="340" x2="720" y2="340" stroke="#4CAF5044" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="730" y="344" font-family="Inter,sans-serif" font-size="12" fill="#4CAF50">20</text>
+  <polyline points="80,250 130,220 180,180 230,150 280,170 330,230 380,300 430,350 480,330 530,280 580,220 630,190 680,210 720,250" fill="none" stroke="#26c6da" stroke-width="2.5"/>
+  <polyline points="80,250 130,235 180,200 230,170 280,165 330,200 380,270 430,330 480,345 530,310 580,260 630,220 680,205 720,225" fill="none" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="400" y="440" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" fill="#90caf9">Adaptive period from dominant cycle length</text>
+  <text x="400" y="470" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#666666">%K (cyan) and %D (orange) with OB/OS levels</text>
+</svg>

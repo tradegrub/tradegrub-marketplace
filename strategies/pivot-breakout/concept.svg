@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="pivotFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26a69a" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ef5350" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Pivot Point Breakout Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Pivot zone fill -->
+  <rect x="80" y="180" width="500" height="100" fill="url(#pivotFill)" rx="2"/>
+
+  <!-- Pivot High line -->
+  <line x1="80" y1="180" x2="580" y2="180" stroke="#26a69a" stroke-width="1.5" opacity="0.7"/>
+  <text x="85" y="175" fill="#26a69a" font-size="10" font-weight="500">Pivot High (5-bar highest)</text>
+
+  <!-- Pivot Low line -->
+  <line x1="80" y1="280" x2="580" y2="280" stroke="#ef5350" stroke-width="1.5" opacity="0.7"/>
+  <text x="85" y="296" fill="#ef5350" font-size="10" font-weight="500">Pivot Low (5-bar lowest)</text>
+
+  <!-- Midline -->
+  <line x1="80" y1="230" x2="700" y2="230" stroke="#ff9800" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <text x="705" y="234" fill="#ff9800" font-size="9" opacity="0.7">Midline</text>
+
+  <!-- Candles oscillating in range -->
+  <line x1="110" y1="195" x2="110" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="106" y="220" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="145" y1="190" x2="145" y2="265" stroke="#ef5350" stroke-width="1"/>
+  <rect x="141" y="200" width="8" height="40" fill="#ef5350" rx="1"/>
+  <line x1="180" y1="200" x2="180" y2="270" stroke="#26a69a" stroke-width="1"/>
+  <rect x="176" y="230" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="215" y1="188" x2="215" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="211" y="210" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="195" x2="250" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="246" y="205" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="285" y1="192" x2="285" y2="258" stroke="#26a69a" stroke-width="1"/>
+  <rect x="281" y="215" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="320" y1="188" x2="320" y2="250" stroke="#26a69a" stroke-width="1"/>
+  <rect x="316" y="200" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="355" y1="185" x2="355" y2="245" stroke="#26a69a" stroke-width="1"/>
+  <rect x="351" y="195" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="390" y1="183" x2="390" y2="238" stroke="#26a69a" stroke-width="1"/>
+  <rect x="386" y="192" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="425" y1="182" x2="425" y2="228" stroke="#26a69a" stroke-width="1"/>
+  <rect x="421" y="190" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="460" y1="180" x2="460" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="456" y="185" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="495" y1="178" x2="495" y2="220" stroke="#26a69a" stroke-width="1"/>
+  <rect x="491" y="183" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Breakout candle -->
+  <line x1="540" y1="148" x2="540" y2="198" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="534" y="152" width="12" height="35" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Breakout arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="545,142 555,142 550,129" fill="#00e676"/>
+  </g>
+  <rect x="558" y="125" width="100" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="608" y="140" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BREAKOUT</text>
+
+  <!-- Volume confirmation annotation -->
+  <rect x="510" y="345" width="115" height="18" rx="4" fill="#42a5f5" fill-opacity="0.12" stroke="#42a5f5" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="567" y="358" text-anchor="middle" fill="#42a5f5" font-size="9" font-weight="500">Vol > 1.5x Average</text>
+
+  <!-- Post-breakout candles -->
+  <line x1="580" y1="135" x2="580" y2="172" stroke="#26a69a" stroke-width="1"/>
+  <rect x="576" y="140" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="615" y1="125" x2="615" y2="160" stroke="#26a69a" stroke-width="1"/>
+  <rect x="611" y="130" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="650" y1="118" x2="650" y2="152" stroke="#ef5350" stroke-width="1"/>
+  <rect x="646" y="122" width="8" height="16" fill="#ef5350" rx="1"/>
+  <line x1="685" y1="110" x2="685" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="681" y="115" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="106" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="141" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="176" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="211" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="246" y="404" width="8" height="11" fill="#ef5350" rx="1"/>
+    <rect x="281" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="316" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="351" y="404" width="8" height="11" fill="#26a69a" rx="1"/>
+    <rect x="386" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="421" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="456" y="404" width="8" height="11" fill="#26a69a" rx="1"/>
+    <rect x="491" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="534" y="375" width="12" height="40" fill="#00e676" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="576" y="390" width="8" height="25" fill="#26a69a" rx="1"/>
+    <rect x="611" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="646" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="681" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Volume avg line -->
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#888" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Pivot High</text>
+    <circle cx="120" cy="20" r="4" fill="#ef5350"/>
+    <text x="130" y="24" fill="#999" font-size="9">Pivot Low</text>
+    <circle cx="210" cy="20" r="4" fill="#00e676"/>
+    <text x="220" y="24" fill="#999" font-size="9">Breakout Signal</text>
+    <circle cx="330" cy="20" r="4" fill="#ff9800"/>
+    <text x="340" y="24" fill="#999" font-size="9">Midline Exit</text>
+    <circle cx="430" cy="20" r="4" fill="#42a5f5"/>
+    <text x="440" y="24" fill="#999" font-size="9">Volume Filter</text>
+    <rect x="545" y="12" width="20" height="16" fill="#00e676" opacity="0.5" rx="2"/>
+    <text x="570" y="24" fill="#999" font-size="9">Volume Surge</text>
+  </g>
+</svg>

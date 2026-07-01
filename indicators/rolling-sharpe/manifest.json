@@ -1,0 +1,34 @@
+{
+  "id": "rolling-sharpe",
+  "name": "Rolling Risk-Adjusted Returns",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistical",
+  "tags": [
+    "pandas",
+    "sharpe",
+    "sortino",
+    "calmar",
+    "risk-adjusted",
+    "performance"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Rolling risk-adjusted return metrics using pandas-style efficient window calculations, computing Sharpe ratio, Sortino ratio, and Calmar ratio with color-coded performance zones",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

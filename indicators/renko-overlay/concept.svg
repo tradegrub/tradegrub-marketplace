@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="gup" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0d7a3e"/>
+      <stop offset="100%" stop-color="#2ecc71"/>
+    </linearGradient>
+    <linearGradient id="gdn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#922"/>
+      <stop offset="100%" stop-color="#e74c3c"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <g stroke="#ffffff10" stroke-width="0.5">
+    <line x1="60" y1="60" x2="60" y2="440"/><line x1="60" y1="440" x2="740" y2="440"/>
+    <line x1="60" y1="100" x2="740" y2="100"/><line x1="60" y1="140" x2="740" y2="140"/>
+    <line x1="60" y1="180" x2="740" y2="180"/><line x1="60" y1="220" x2="740" y2="220"/>
+    <line x1="60" y1="260" x2="740" y2="260"/><line x1="60" y1="300" x2="740" y2="300"/>
+    <line x1="60" y1="340" x2="740" y2="340"/><line x1="60" y1="380" x2="740" y2="380"/>
+    <line x1="60" y1="420" x2="740" y2="420"/>
+  </g>
+  <!-- Axis lines -->
+  <line x1="60" y1="60" x2="60" y2="440" stroke="#ffffff30" stroke-width="1"/>
+  <line x1="60" y1="440" x2="740" y2="440" stroke="#ffffff30" stroke-width="1"/>
+  <!-- Price labels -->
+  <g fill="#ffffff80" font-family="monospace" font-size="10" text-anchor="end">
+    <text x="755" y="104">110</text><text x="755" y="144">109</text>
+    <text x="755" y="184">108</text><text x="755" y="224">107</text>
+    <text x="755" y="264">106</text><text x="755" y="304">105</text>
+    <text x="755" y="344">104</text><text x="755" y="384">103</text>
+    <text x="755" y="424">102</text>
+  </g>
+  <!-- Title -->
+  <text x="400" y="38" fill="#ffffffdd" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Renko Overlay</text>
+  <text x="400" y="54" fill="#ffffff60" font-family="sans-serif" font-size="11" text-anchor="middle">Brick-based trend visualization</text>
+  <!-- Brick size = 40px = 1 price unit -->
+  <!-- Phase 1: Up trend - 7 green bricks starting at 103 -->
+  <rect x="80" y="380" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="114" y="340" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="148" y="300" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="182" y="260" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="216" y="220" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="250" y="180" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="284" y="140" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <!-- Phase 2: Down trend - 5 red bricks from 109 down to 105 -->
+  <rect x="318" y="180" width="34" height="40" rx="2" fill="url(#gdn)" stroke="#e74c3c" stroke-width="1.5" opacity="0.85"/>
+  <rect x="352" y="220" width="34" height="40" rx="2" fill="url(#gdn)" stroke="#e74c3c" stroke-width="1.5" opacity="0.85"/>
+  <rect x="386" y="260" width="34" height="40" rx="2" fill="url(#gdn)" stroke="#e74c3c" stroke-width="1.5" opacity="0.85"/>
+  <rect x="420" y="300" width="34" height="40" rx="2" fill="url(#gdn)" stroke="#e74c3c" stroke-width="1.5" opacity="0.85"/>
+  <rect x="454" y="340" width="34" height="40" rx="2" fill="url(#gdn)" stroke="#e74c3c" stroke-width="1.5" opacity="0.85"/>
+  <!-- Phase 3: Up trend again - 6 green bricks from 104 up to 109 -->
+  <rect x="488" y="300" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="522" y="260" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="556" y="220" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="590" y="180" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="624" y="140" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <rect x="658" y="100" width="34" height="40" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1.5" opacity="0.85"/>
+  <!-- Trend line (midpoints of bricks) -->
+  <polyline fill="none" stroke="#f1c40f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"
+    points="97,400 131,360 165,320 199,280 233,240 267,200 301,160
+            335,200 369,240 403,280 437,320 471,360
+            505,320 539,280 573,240 607,200 641,160 675,120"/>
+  <!-- Annotations -->
+  <g font-family="sans-serif" font-size="10">
+    <!-- Reversal arrows -->
+    <text x="326" y="135" fill="#e74c3c" font-size="9" text-anchor="middle">Reversal</text>
+    <path d="M326,138 L326,155" stroke="#e74c3c" stroke-width="1" marker-end="url(#arrowR)"/>
+    <text x="496" y="370" fill="#2ecc71" font-size="9" text-anchor="middle">Reversal</text>
+    <path d="M496,358 L496,340" stroke="#2ecc71" stroke-width="1"/>
+  </g>
+  <!-- Legend -->
+  <rect x="80" y="456" width="12" height="12" rx="2" fill="url(#gup)" stroke="#2ecc71" stroke-width="1"/>
+  <text x="96" y="467" fill="#ffffffcc" font-family="sans-serif" font-size="11">Up Brick</text>
+  <rect x="170" y="456" width="12" height="12" rx="2" fill="url(#gdn)" stroke="#e74c3c" stroke-width="1"/>
+  <text x="186" y="467" fill="#ffffffcc" font-family="sans-serif" font-size="11">Down Brick</text>
+  <line x1="270" y1="462" x2="295" y2="462" stroke="#f1c40f" stroke-width="2"/>
+  <text x="300" y="467" fill="#ffffffcc" font-family="sans-serif" font-size="11">Trend Line</text>
+  <!-- Branding -->
+  <text x="735" y="490" fill="#ffffff40" font-family="sans-serif" font-size="10" text-anchor="end">tradegrub.finance</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Conditional VaR (Expected Shortfall)</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <rect x="60" y="70" width="700" height="140" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <polyline points="100,160 160,145 220,140 280,135 340,130 400,150 460,175 520,185 580,160 640,140 700,135" fill="none" stroke="#66BB6A" stroke-width="2" opacity="0.7"/>
+  <rect x="440" y="70" width="100" height="140" fill="rgba(244,67,54,0.1)"/>
+  <polygon points="480,190 475,200 485,200" fill="#EF5350"/>
+
+  <!-- Subplot -->
+  <rect x="60" y="240" width="700" height="190" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="260" fill="#888" font-family="Inter,sans-serif" font-size="10">VaR / CVaR %</text>
+
+  <!-- Zero line -->
+  <line x1="60" y1="300" x2="760" y2="300" stroke="#888" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+  <text x="762" y="304" fill="#888" font-family="Inter,sans-serif" font-size="9">0%</text>
+
+  <!-- VaR line (orange, less negative) -->
+  <polyline points="100,340 160,342 220,345 280,348 340,350 400,358 460,375 520,380 580,365 640,350 700,345" fill="none" stroke="#FF9800" stroke-width="1"/>
+  <!-- CVaR line (red, more negative) -->
+  <polyline points="100,360 160,365 220,368 280,372 340,375 400,385 460,405 520,415 580,395 640,375 700,368" fill="none" stroke="#EF5350" stroke-width="2"/>
+
+  <!-- Gap annotation -->
+  <line x1="520" y1="380" x2="520" y2="415" stroke="#FFEB3B" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="535" y="400" fill="#FFEB3B" font-family="Inter,sans-serif" font-size="9">Tail Gap</text>
+
+  <text x="400" y="235" text-anchor="middle" fill="#EF5350" font-family="Inter,sans-serif" font-size="10">CVaR Breach Zone</text>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="100" y2="475" stroke="#FF9800" stroke-width="1"/>
+  <text x="105" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">VaR %</text>
+  <line x1="200" y1="475" x2="220" y2="475" stroke="#EF5350" stroke-width="2"/>
+  <text x="225" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">CVaR %</text>
+  <polygon points="360,470 355,480 365,480" fill="#EF5350"/>
+  <text x="375" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Tail Breach</text>
+  <line x1="500" y1="470" x2="500" y2="480" stroke="#FFEB3B" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="510" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Tail Gap</text>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "name": "Grid Level Trader",
+  "id": "grid-trader",
+  "version": "1.0.0",
+  "type": "strategy",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Grid trading strategy that buys at lower price grid levels and sells at upper levels, designed for ranging and sideways markets with configurable grid spacing",
+  "category": "mean-reversion",
+  "tags": ["grid", "mean-reversion", "range-trading", "systematic"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 5100
+}

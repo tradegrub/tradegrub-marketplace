@@ -1,0 +1,34 @@
+{
+  "id": "markov-regime",
+  "name": "Markov Regime Strategy",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistical",
+  "tags": [
+    "scipy",
+    "markov",
+    "regime",
+    "probability",
+    "state-machine",
+    "transition"
+  ],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Markov chain regime-based trading strategy that builds transition probability matrices from discretized returns and trades based on regime state transitions",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Congestion Index",
+  "id": "congestion-index",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Measures consolidation intensity by comparing N-bar range to sum of individual bar ranges",
+  "category": "volatility",
+  "tags": ["congestion", "consolidation", "range", "squeeze", "volatility"],
+  "overlay": false,
+  "inputs": [
+    {"name": "length", "type": "int", "default": 14, "min": 2, "max": 100}
+  ]
+}

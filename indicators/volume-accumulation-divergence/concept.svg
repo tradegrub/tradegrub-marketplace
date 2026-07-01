@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="160" y1="60" x2="160" y2="420"/>
+    <line x1="240" y1="60" x2="240" y2="420"/><line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="400" y1="60" x2="400" y2="420"/><line x1="480" y1="60" x2="480" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="640" y1="60" x2="640" y2="420"/>
+    <line x1="720" y1="60" x2="720" y2="420"/>
+    <line x1="60" y1="100" x2="750" y2="100"/><line x1="60" y1="140" x2="750" y2="140"/>
+    <line x1="60" y1="180" x2="750" y2="180"/><line x1="60" y1="220" x2="750" y2="220"/>
+    <line x1="60" y1="300" x2="750" y2="300"/><line x1="60" y1="340" x2="750" y2="340"/>
+    <line x1="60" y1="380" x2="750" y2="380"/>
+  </g>
+
+  <!-- Panel separator -->
+  <line x1="50" y1="265" x2="760" y2="265" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
+  <text x="55" y="75" fill="#666" font-size="9">PRICE</text>
+  <text x="55" y="285" fill="#666" font-size="9">VOLUME</text>
+
+  <!-- Upper panel: Price line making higher highs (y: 60-260) -->
+  <polyline fill="none" stroke="#ffffff" stroke-width="2" opacity="0.9"
+    points="
+      70,230 90,225 110,215 130,200 150,190 170,195 190,185 210,170
+      230,160 250,155 270,165 290,158 310,145 330,140 350,150 370,145
+      390,130 410,125 430,135 450,128 470,115 490,110 510,120 530,112
+      550,100 570,95 590,105 610,98 630,88 650,82 670,92 690,85
+      710,78 730,75
+    "/>
+
+  <!-- Price higher highs markers -->
+  <circle cx="250" cy="155" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="470" cy="115" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="730" cy="75" r="3" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Dashed line connecting price highs (ascending) -->
+  <line x1="250" y1="155" x2="470" y2="115" stroke="#ff6688" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+  <line x1="470" y1="115" x2="730" y2="75" stroke="#ff6688" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+
+  <!-- Lower panel: Cumulative volume line (cyan) making LOWER highs (y: 280-420) -->
+  <polyline fill="none" stroke="#00e5ff" stroke-width="2" filter="url(#glow)" opacity="0.9"
+    points="
+      70,410 90,405 110,398 130,390 150,382 170,388 190,378 210,368
+      230,355 250,340 270,350 290,345 310,338 330,335 350,345 370,340
+      390,332 410,328 430,338 450,335 470,330 490,328 510,335 530,332
+      550,328 570,325 590,332 610,330 630,328 650,326 670,332 690,330
+      710,328 730,327
+    "/>
+
+  <!-- Signal line (orange) in volume panel -->
+  <polyline fill="none" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"
+    points="
+      70,412 90,408 110,402 130,395 150,388 170,385 190,380 210,372
+      230,362 250,348 270,348 290,346 310,342 330,340 350,342 370,340
+      390,336 410,334 430,336 450,334 470,333 490,332 510,334 530,333
+      550,332 570,330 590,331 610,330 630,330 650,329 670,330 690,330
+      710,329 730,328
+    "/>
+
+  <!-- Volume lower highs markers -->
+  <circle cx="250" cy="340" r="3" fill="#00e5ff" opacity="0.7"/>
+  <circle cx="470" cy="330" r="3" fill="#00e5ff" opacity="0.7"/>
+  <circle cx="730" cy="327" r="3" fill="#00e5ff" opacity="0.7"/>
+
+  <!-- Dashed line connecting volume highs (descending/flattening = divergence) -->
+  <line x1="250" y1="340" x2="470" y2="330" stroke="#ff6688" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+  <line x1="470" y1="330" x2="730" y2="327" stroke="#ff6688" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+
+  <!-- Bearish Divergence annotation -->
+  <text x="580" y="180" fill="#ff6688" font-size="13" font-weight="bold" text-anchor="middle" filter="url(#glow)">Bearish Divergence</text>
+
+  <!-- Warning triangle -->
+  <polygon points="530,170 537,158 544,170" fill="none" stroke="#ffaa00" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="537" y="168" fill="#ffaa00" font-size="8" text-anchor="middle" font-weight="bold">!</text>
+
+  <!-- Divergence arrows showing the spread -->
+  <text x="46" y="159" fill="#888" font-size="9" text-anchor="end">HH</text>
+  <text x="46" y="344" fill="#888" font-size="9" text-anchor="end">LH</text>
+
+  <!-- Title -->
+  <text x="20" y="28" fill="#ffffff" font-size="17" font-weight="bold">Volume Accumulation Divergence</text>
+  <text x="20" y="45" fill="#888888" font-size="11">tradegrub.finance</text>
+
+  <!-- Legend bar -->
+  <rect x="0" y="455" width="800" height="45" fill="#0d0d1a" opacity="0.6"/>
+  <line x1="60" y1="475" x2="85" y2="475" stroke="#ffffff" stroke-width="2"/>
+  <text x="90" y="479" fill="#cccccc" font-size="11">Price</text>
+  <line x1="150" y1="475" x2="175" y2="475" stroke="#00e5ff" stroke-width="2"/>
+  <text x="180" y="479" fill="#cccccc" font-size="11">Cum. Volume</text>
+  <line x1="280" y1="475" x2="305" y2="475" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="310" y="479" fill="#cccccc" font-size="11">Signal</text>
+  <line x1="375" y1="475" x2="400" y2="475" stroke="#ff6688" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="405" y="479" fill="#cccccc" font-size="11">Divergence</text>
+  <polygon points="500,470 507,462 514,470" fill="none" stroke="#ffaa00" stroke-width="1.2"/>
+  <text x="507" y="468" fill="#ffaa00" font-size="6" text-anchor="middle" font-weight="bold">!</text>
+  <text x="520" y="479" fill="#cccccc" font-size="11">Warning</text>
+</svg>

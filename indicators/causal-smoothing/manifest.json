@@ -1,0 +1,30 @@
+{
+  "id": "causal-smoothing",
+  "name": "Causal Adaptive Smoother",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": ["smoothing", "adaptive", "volatility", "trend", "ema"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Adaptive smoothing that reduces lag in low volatility and increases stability in high volatility",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": ["python"],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "overlay": true,
+  "inputs": [
+    {"name": "base_length", "type": "int", "default": 20, "min": 5, "max": 100},
+    {"name": "sensitivity", "type": "float", "default": 1.5, "min": 0.1, "max": 5.0}
+  ],
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

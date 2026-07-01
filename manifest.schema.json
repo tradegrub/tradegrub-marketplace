@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TradeGrub Marketplace Manifest",
+  "type": "object",
+  "required": [
+    "id", "name", "author", "author_uid", "version", "category",
+    "tags", "type", "access", "price", "currency", "description",
+    "min_platform_version", "screenshots", "created", "updated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique kebab-case identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable display name"
+    },
+    "author": {
+      "type": "string"
+    },
+    "author_uid": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["trend", "mean-reversion", "momentum", "volatility", "volume"]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "type": {
+      "type": "string",
+      "enum": ["strategy", "indicator"]
+    },
+    "access": {
+      "type": "string",
+      "enum": ["open-source", "free", "paid"]
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string",
+      "enum": ["USD"]
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 280
+    },
+    "min_platform_version": {
+      "type": "string"
+    },
+    "screenshots": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "backtest_summary": {
+      "type": "object"
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "additionalProperties": false
+}

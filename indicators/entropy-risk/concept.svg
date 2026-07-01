@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow-blue"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-orange"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow-purple"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-size="18" font-weight="700">Entropy Risk Measurement</text>
+  <text x="400" y="50" text-anchor="middle" fill="#888" font-size="10">tradegrub.finance — Shannon Entropy, KL Divergence, Surprise Factor</text>
+
+  <!-- Grid lines - candlestick pane -->
+  <line x1="60" y1="65" x2="760" y2="65" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="105" x2="760" y2="105" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="145" x2="760" y2="145" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="185" x2="760" y2="185" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="225" x2="760" y2="225" stroke="#ffffff10" stroke-width="0.5"/>
+
+  <!-- Vertical grid -->
+  <line x1="160" y1="60" x2="160" y2="460" stroke="#ffffff08" stroke-width="0.5"/>
+  <line x1="260" y1="60" x2="260" y2="460" stroke="#ffffff08" stroke-width="0.5"/>
+  <line x1="360" y1="60" x2="360" y2="460" stroke="#ffffff08" stroke-width="0.5"/>
+  <line x1="460" y1="60" x2="460" y2="460" stroke="#ffffff08" stroke-width="0.5"/>
+  <line x1="560" y1="60" x2="560" y2="460" stroke="#ffffff08" stroke-width="0.5"/>
+  <line x1="660" y1="60" x2="660" y2="460" stroke="#ffffff08" stroke-width="0.5"/>
+
+  <!-- Risk zone background shading in sub-pane -->
+  <rect x="80" y="265" width="120" height="170" fill="#ef535015" rx="2"/>
+  <rect x="420" y="265" width="100" height="170" fill="#ef535015" rx="2"/>
+  <rect x="280" y="265" width="100" height="170" fill="#26a69a12" rx="2"/>
+  <rect x="600" y="265" width="120" height="170" fill="#26a69a12" rx="2"/>
+  <rect x="140" y="265" width="25" height="170" fill="#AB47BC18" rx="1"/>
+  <rect x="460" y="265" width="25" height="170" fill="#AB47BC18" rx="1"/>
+
+  <!-- Candlestick chart - top pane (y 60-240) -->
+  <line x1="85" y1="170" x2="85" y2="120" stroke="#26a69a" stroke-width="1"/>
+  <rect x="81" y="135" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="105" y1="160" x2="105" y2="100" stroke="#26a69a" stroke-width="1"/>
+  <rect x="101" y="110" width="8" height="35" fill="#26a69a" rx="1"/>
+  <line x1="125" y1="180" x2="125" y2="110" stroke="#ef5350" stroke-width="1"/>
+  <rect x="121" y="120" width="8" height="40" fill="#ef5350" rx="1"/>
+  <line x1="145" y1="190" x2="145" y2="130" stroke="#26a69a" stroke-width="1"/>
+  <rect x="141" y="145" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="165" y1="200" x2="165" y2="140" stroke="#ef5350" stroke-width="1"/>
+  <rect x="161" y="150" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="185" y1="185" x2="185" y2="130" stroke="#26a69a" stroke-width="1"/>
+  <rect x="181" y="140" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="205" y1="175" x2="205" y2="120" stroke="#26a69a" stroke-width="1"/>
+  <rect x="201" y="130" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="225" y1="165" x2="225" y2="105" stroke="#26a69a" stroke-width="1"/>
+  <rect x="221" y="115" width="8" height="32" fill="#26a69a" rx="1"/>
+  <line x1="245" y1="170" x2="245" y2="100" stroke="#ef5350" stroke-width="1"/>
+  <rect x="241" y="105" width="8" height="45" fill="#ef5350" rx="1"/>
+  <line x1="265" y1="180" x2="265" y2="115" stroke="#ef5350" stroke-width="1"/>
+  <rect x="261" y="120" width="8" height="38" fill="#ef5350" rx="1"/>
+  <line x1="285" y1="175" x2="285" y2="125" stroke="#26a69a" stroke-width="1"/>
+  <rect x="281" y="135" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="305" y1="160" x2="305" y2="110" stroke="#26a69a" stroke-width="1"/>
+  <rect x="301" y="120" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="325" y1="150" x2="325" y2="100" stroke="#26a69a" stroke-width="1"/>
+  <rect x="321" y="108" width="8" height="27" fill="#26a69a" rx="1"/>
+  <line x1="345" y1="145" x2="345" y2="95" stroke="#26a69a" stroke-width="1"/>
+  <rect x="341" y="102" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="365" y1="150" x2="365" y2="90" stroke="#ef5350" stroke-width="1"/>
+  <rect x="361" y="95" width="8" height="38" fill="#ef5350" rx="1"/>
+  <line x1="385" y1="155" x2="385" y2="100" stroke="#26a69a" stroke-width="1"/>
+  <rect x="381" y="108" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="405" y1="160" x2="405" y2="95" stroke="#ef5350" stroke-width="1"/>
+  <rect x="401" y="100" width="8" height="42" fill="#ef5350" rx="1"/>
+  <line x1="425" y1="175" x2="425" y2="105" stroke="#ef5350" stroke-width="1"/>
+  <rect x="421" y="110" width="8" height="48" fill="#ef5350" rx="1"/>
+  <line x1="445" y1="185" x2="445" y2="120" stroke="#ef5350" stroke-width="1"/>
+  <rect x="441" y="125" width="8" height="42" fill="#ef5350" rx="1"/>
+  <line x1="465" y1="195" x2="465" y2="100" stroke="#ef5350" stroke-width="1"/>
+  <rect x="461" y="105" width="8" height="70" fill="#ef5350" rx="1"/>
+  <line x1="485" y1="180" x2="485" y2="130" stroke="#26a69a" stroke-width="1"/>
+  <rect x="481" y="140" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="505" y1="170" x2="505" y2="120" stroke="#26a69a" stroke-width="1"/>
+  <rect x="501" y="128" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="525" y1="160" x2="525" y2="110" stroke="#26a69a" stroke-width="1"/>
+  <rect x="521" y="118" width="8" height="26" fill="#26a69a" rx="1"/>
+  <line x1="545" y1="148" x2="545" y2="100" stroke="#26a69a" stroke-width="1"/>
+  <rect x="541" y="108" width="8" height="24" fill="#26a69a" rx="1"/>
+  <line x1="565" y1="140" x2="565" y2="95" stroke="#26a69a" stroke-width="1"/>
+  <rect x="561" y="102" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="585" y1="135" x2="585" y2="90" stroke="#26a69a" stroke-width="1"/>
+  <rect x="581" y="96" width="8" height="24" fill="#26a69a" rx="1"/>
+  <line x1="605" y1="130" x2="605" y2="85" stroke="#26a69a" stroke-width="1"/>
+  <rect x="601" y="92" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="625" y1="125" x2="625" y2="82" stroke="#26a69a" stroke-width="1"/>
+  <rect x="621" y="88" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="645" y1="130" x2="645" y2="80" stroke="#ef5350" stroke-width="1"/>
+  <rect x="641" y="85" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="665" y1="140" x2="665" y2="90" stroke="#26a69a" stroke-width="1"/>
+  <rect x="661" y="98" width="8" height="26" fill="#26a69a" rx="1"/>
+  <line x1="685" y1="135" x2="685" y2="85" stroke="#26a69a" stroke-width="1"/>
+  <rect x="681" y="92" width="8" height="26" fill="#26a69a" rx="1"/>
+  <line x1="705" y1="128" x2="705" y2="80" stroke="#26a69a" stroke-width="1"/>
+  <rect x="701" y="86" width="8" height="26" fill="#26a69a" rx="1"/>
+  <line x1="725" y1="122" x2="725" y2="78" stroke="#26a69a" stroke-width="1"/>
+  <rect x="721" y="84" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="745" y1="118" x2="745" y2="75" stroke="#ef5350" stroke-width="1"/>
+  <rect x="741" y="80" width="8" height="24" fill="#ef5350" rx="1"/>
+
+  <!-- Pane separator -->
+  <line x1="60" y1="250" x2="760" y2="250" stroke="#ffffff30" stroke-width="1.5"/>
+  <text x="65" y="245" fill="#888" font-size="9">Price</text>
+  <text x="65" y="275" fill="#888" font-size="9">Entropy / Risk</text>
+
+  <!-- Grid lines - sub pane -->
+  <line x1="60" y1="300" x2="760" y2="300" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="340" x2="760" y2="340" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="380" x2="760" y2="380" stroke="#ffffff10" stroke-width="0.5"/>
+  <line x1="60" y1="420" x2="760" y2="420" stroke="#ffffff10" stroke-width="0.5"/>
+
+  <!-- Threshold lines -->
+  <line x1="60" y1="305" x2="760" y2="305" stroke="#ef5350" stroke-width="1" stroke-dasharray="6,4" opacity="0.6"/>
+  <text x="762" y="308" fill="#ef5350" font-size="8" opacity="0.7">High</text>
+  <line x1="60" y1="385" x2="760" y2="385" stroke="#26a69a" stroke-width="1" stroke-dasharray="6,4" opacity="0.6"/>
+  <text x="762" y="388" fill="#26a69a" font-size="8" opacity="0.7">Low</text>
+  <line x1="60" y1="290" x2="760" y2="290" stroke="#AB47BC" stroke-width="1" stroke-dasharray="4,6" opacity="0.5"/>
+  <text x="762" y="293" fill="#AB47BC" font-size="8" opacity="0.7">2&#x3C3;</text>
+
+  <!-- Shannon Entropy line (blue) -->
+  <polyline points="85,310 105,315 125,295 145,300 165,305 185,330 205,345 225,360 245,375 265,380 285,390 305,400 325,395 345,390 365,370 385,355 405,335 425,310 445,300 465,295 485,310 505,330 525,350 545,365 565,380 585,390 605,400 625,405 645,395 665,390 685,395 705,400 725,405 745,398"
+    fill="none" stroke="#42A5F5" stroke-width="2" filter="url(#glow-blue)" opacity="0.9"/>
+
+  <!-- KL Divergence line (orange) -->
+  <polyline points="85,340 105,345 125,320 145,325 165,330 185,350 205,365 225,375 245,385 265,388 285,400 305,410 325,405 345,398 365,380 385,365 405,348 425,330 445,318 465,310 485,325 505,345 525,362 545,378 565,392 585,402 605,412 625,415 645,408 665,402 685,406 705,412 725,416 745,410"
+    fill="none" stroke="#FF7043" stroke-width="2" filter="url(#glow-orange)" opacity="0.9"/>
+
+  <!-- Surprise Factor line (purple) with spikes -->
+  <polyline points="85,370 105,375 125,365 145,280 165,360 185,380 205,390 225,395 245,388 265,392 285,400 305,405 325,398 345,395 365,385 385,378 405,370 425,365 445,355 465,270 485,360 505,380 525,390 545,395 565,398 585,400 605,405 625,408 645,395 665,390 685,396 705,402 725,406 745,400"
+    fill="none" stroke="#AB47BC" stroke-width="2" filter="url(#glow-purple)" opacity="0.9"/>
+
+  <!-- Surprise spike annotations -->
+  <circle cx="145" cy="280" r="4" fill="none" stroke="#AB47BC" stroke-width="1.5" opacity="0.8"/>
+  <text x="145" y="272" text-anchor="middle" fill="#AB47BC" font-size="8" font-weight="600">Surprise!</text>
+  <circle cx="465" cy="270" r="4" fill="none" stroke="#AB47BC" stroke-width="1.5" opacity="0.8"/>
+  <text x="465" y="262" text-anchor="middle" fill="#AB47BC" font-size="8" font-weight="600">Surprise!</text>
+
+  <!-- Risk zone labels -->
+  <text x="140" y="445" text-anchor="middle" fill="#ef5350" font-size="8" opacity="0.6">HIGH RISK</text>
+  <text x="330" y="445" text-anchor="middle" fill="#26a69a" font-size="8" opacity="0.6">LOW RISK</text>
+  <text x="470" y="445" text-anchor="middle" fill="#ef5350" font-size="8" opacity="0.6">HIGH RISK</text>
+  <text x="660" y="445" text-anchor="middle" fill="#26a69a" font-size="8" opacity="0.6">LOW RISK</text>
+
+  <!-- Legend -->
+  <rect x="140" y="462" width="520" height="28" fill="#ffffff08" rx="4"/>
+  <line x1="160" y1="476" x2="180" y2="476" stroke="#42A5F5" stroke-width="2"/>
+  <text x="185" y="480" fill="#bbb" font-size="9">Shannon Entropy</text>
+  <line x1="300" y1="476" x2="320" y2="476" stroke="#FF7043" stroke-width="2"/>
+  <text x="325" y="480" fill="#bbb" font-size="9">KL Divergence</text>
+  <line x1="430" y1="476" x2="450" y2="476" stroke="#AB47BC" stroke-width="2"/>
+  <text x="455" y="480" fill="#bbb" font-size="9">Surprise Factor</text>
+  <rect x="560" y="471" width="10" height="10" fill="#ef535025" stroke="#ef5350" stroke-width="0.5" rx="1"/>
+  <text x="575" y="480" fill="#bbb" font-size="9">High Risk</text>
+  <rect x="630" y="471" width="10" height="10" fill="#26a69a20" stroke="#26a69a" stroke-width="0.5" rx="1"/>
+  <text x="645" y="480" fill="#bbb" font-size="9">Low Risk</text>
+</svg>

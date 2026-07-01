@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Monte Carlo Equity Simulator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Confidence band fill -->
+  <polygon points="80,250 120,240 160,225 200,210 240,195 280,180 320,170 360,155 400,145 440,130 480,120 520,110 560,105 600,95 640,88 680,80 720,75 720,280 680,270 640,265 600,258 560,255 520,250 480,248 440,250 400,255 360,260 320,265 280,268 240,270 200,272 160,275 120,278 80,280" fill="rgba(66,165,245,0.08)" stroke="none"/>
+
+  <!-- Upper bound (green) -->
+  <polyline points="80,250 120,240 160,225 200,210 240,195 280,180 320,170 360,155 400,145 440,130 480,120 520,110 560,105 600,95 640,88 680,80 720,75" fill="none" stroke="#00e676" stroke-width="1"/>
+
+  <!-- Lower bound (red) -->
+  <polyline points="80,280 120,278 160,275 200,272 240,270 280,268 320,265 360,260 400,255 440,250 480,248 520,250 560,255 600,258 640,265 680,270 720,280" fill="none" stroke="#ff5252" stroke-width="1"/>
+
+  <!-- Median path (orange) -->
+  <polyline points="80,265 120,258 160,250 200,242 240,233 280,225 320,218 360,208 400,200 440,192 480,185 520,180 560,178 600,175 640,172 680,170 720,168" fill="none" stroke="#ffa726" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Actual equity (blue) -->
+  <polyline points="80,265 120,260 160,248 200,240 240,230 280,222 320,215 360,200 400,195 440,185 480,175 520,172 560,180 600,170 640,158 680,150 720,142" fill="none" stroke="#42a5f5" stroke-width="2.5"/>
+
+  <!-- Simulated faint paths -->
+  <polyline points="200,242 240,235 280,228 320,220 360,210 400,198 440,188 480,178 520,175 560,170 600,165 640,160 680,155 720,150" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <polyline points="200,242 240,238 280,232 320,228 360,222 400,218 440,215 480,210 520,208 560,205 600,200 640,198 680,195 720,192" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <polyline points="200,242 240,240 280,238 320,240 360,242 400,240 440,238 480,235 520,234 560,235 600,238 640,240 680,242 720,245" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+  <polyline points="200,242 240,228 280,218 320,205 360,195 400,188 440,180 480,170 520,160 560,155 600,148 640,140 680,135 720,128" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+
+  <!-- Wide spread highlight -->
+  <rect x="580" y="70" width="160" height="350" fill="rgba(255,193,7,0.05)" rx="2"/>
+  <text x="660" y="400" text-anchor="middle" fill="rgba(255,193,7,0.5)" font-family="Inter,sans-serif" font-size="9">Wide Spread</text>
+
+  <!-- Y axis labels -->
+  <text x="50" y="105" text-anchor="end" fill="#555" font-family="Inter,sans-serif" font-size="9">120</text>
+  <text x="50" y="200" text-anchor="end" fill="#555" font-family="Inter,sans-serif" font-size="9">100</text>
+  <text x="50" y="300" text-anchor="end" fill="#555" font-family="Inter,sans-serif" font-size="9">80</text>
+
+  <!-- Legend -->
+  <g transform="translate(80, 440)">
+    <rect x="0" y="0" width="640" height="40" fill="rgba(255,255,255,0.03)" rx="6"/>
+    <line x1="20" y1="20" x2="45" y2="20" stroke="#42a5f5" stroke-width="2.5"/>
+    <text x="50" y="24" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Actual</text>
+    <line x1="110" y1="20" x2="135" y2="20" stroke="#ffa726" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="140" y="24" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Median</text>
+    <line x1="210" y1="20" x2="235" y2="20" stroke="#00e676" stroke-width="1"/>
+    <text x="240" y="24" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Upper</text>
+    <line x1="300" y1="20" x2="325" y2="20" stroke="#ff5252" stroke-width="1"/>
+    <text x="330" y="24" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Lower</text>
+    <rect x="390" y="12" width="16" height="16" fill="rgba(66,165,245,0.12)" rx="2"/>
+    <text x="411" y="24" fill="#aaa" font-family="Inter,sans-serif" font-size="10">95% Confidence</text>
+  </g>
+</svg>

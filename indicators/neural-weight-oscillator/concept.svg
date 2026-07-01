@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="34" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Neural Weight Oscillator</text>
+  <text x="400" y="50" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- INPUT NODES (left side) with weight bars -->
+  <!-- RSI Weight -->
+  <rect x="30" y="92" width="68" height="6" rx="3" fill="#1a2a3e" stroke="#4fc3f7" stroke-width="0.5"/>
+  <rect x="30" y="92" width="52" height="6" rx="3" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="120" cy="95" r="10" fill="#0e1a2e" stroke="#4fc3f7" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="120" cy="95" r="4" fill="#4fc3f7" opacity="0.6"/>
+  <text x="25" y="85" fill="#4fc3f7" font-size="9" opacity="0.9">RSI Weight</text>
+
+  <!-- Volume Weight -->
+  <rect x="30" y="167" width="68" height="6" rx="3" fill="#1a2a3e" stroke="#4fc3f7" stroke-width="0.5"/>
+  <rect x="30" y="167" width="40" height="6" rx="3" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="120" cy="170" r="10" fill="#0e1a2e" stroke="#4fc3f7" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="120" cy="170" r="4" fill="#4fc3f7" opacity="0.6"/>
+  <text x="25" y="160" fill="#4fc3f7" font-size="9" opacity="0.9">Volume Weight</text>
+
+  <!-- Momentum Weight -->
+  <rect x="30" y="242" width="68" height="6" rx="3" fill="#1a2a3e" stroke="#4fc3f7" stroke-width="0.5"/>
+  <rect x="30" y="242" width="60" height="6" rx="3" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="120" cy="245" r="10" fill="#0e1a2e" stroke="#4fc3f7" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="120" cy="245" r="4" fill="#4fc3f7" opacity="0.6"/>
+  <text x="25" y="235" fill="#4fc3f7" font-size="9" opacity="0.9">Momentum Wt</text>
+
+  <!-- Volatility Weight -->
+  <rect x="30" y="317" width="68" height="6" rx="3" fill="#1a2a3e" stroke="#4fc3f7" stroke-width="0.5"/>
+  <rect x="30" y="317" width="35" height="6" rx="3" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="120" cy="320" r="10" fill="#0e1a2e" stroke="#4fc3f7" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="120" cy="320" r="4" fill="#4fc3f7" opacity="0.6"/>
+  <text x="25" y="310" fill="#4fc3f7" font-size="9" opacity="0.9">Volatility Wt</text>
+
+  <!-- Trend Weight -->
+  <rect x="30" y="392" width="68" height="6" rx="3" fill="#1a2a3e" stroke="#4fc3f7" stroke-width="0.5"/>
+  <rect x="30" y="392" width="55" height="6" rx="3" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="120" cy="395" r="10" fill="#0e1a2e" stroke="#4fc3f7" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="120" cy="395" r="4" fill="#4fc3f7" opacity="0.6"/>
+  <text x="25" y="385" fill="#4fc3f7" font-size="9" opacity="0.9">Trend Weight</text>
+
+  <!-- CONNECTIONS: Input to Hidden Layer -->
+  <!-- To hidden node 1 (y=170) -->
+  <line x1="130" y1="95" x2="285" y2="170" stroke="#4fc3f7" stroke-width="2.5" opacity="0.25"/>
+  <line x1="130" y1="170" x2="285" y2="170" stroke="#4fc3f7" stroke-width="3" opacity="0.35"/>
+  <line x1="130" y1="245" x2="285" y2="170" stroke="#4fc3f7" stroke-width="1.5" opacity="0.2"/>
+  <line x1="130" y1="320" x2="285" y2="170" stroke="#4fc3f7" stroke-width="1" opacity="0.15"/>
+  <line x1="130" y1="395" x2="285" y2="170" stroke="#4fc3f7" stroke-width="2" opacity="0.2"/>
+
+  <!-- To hidden node 2 (y=280) -->
+  <line x1="130" y1="95" x2="285" y2="280" stroke="#4fc3f7" stroke-width="1" opacity="0.15"/>
+  <line x1="130" y1="170" x2="285" y2="280" stroke="#4fc3f7" stroke-width="1.5" opacity="0.2"/>
+  <line x1="130" y1="245" x2="285" y2="280" stroke="#4fc3f7" stroke-width="3" opacity="0.35"/>
+  <line x1="130" y1="320" x2="285" y2="280" stroke="#4fc3f7" stroke-width="2.5" opacity="0.3"/>
+  <line x1="130" y1="395" x2="285" y2="280" stroke="#4fc3f7" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- To hidden node 3 (y=370) -->
+  <line x1="130" y1="95" x2="285" y2="370" stroke="#4fc3f7" stroke-width="1.5" opacity="0.18"/>
+  <line x1="130" y1="170" x2="285" y2="370" stroke="#4fc3f7" stroke-width="1" opacity="0.12"/>
+  <line x1="130" y1="245" x2="285" y2="370" stroke="#4fc3f7" stroke-width="2" opacity="0.22"/>
+  <line x1="130" y1="320" x2="285" y2="370" stroke="#4fc3f7" stroke-width="2.5" opacity="0.3"/>
+  <line x1="130" y1="395" x2="285" y2="370" stroke="#4fc3f7" stroke-width="3" opacity="0.35"/>
+
+  <!-- HIDDEN LAYER NODES (magenta) -->
+  <circle cx="295" cy="170" r="14" fill="#1a0e2e" stroke="#e040fb" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="295" cy="170" r="6" fill="#e040fb" opacity="0.5"/>
+  <circle cx="295" cy="280" r="14" fill="#1a0e2e" stroke="#e040fb" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="295" cy="280" r="6" fill="#e040fb" opacity="0.5"/>
+  <circle cx="295" cy="370" r="14" fill="#1a0e2e" stroke="#e040fb" stroke-width="1.5" filter="url(#glow)"/>
+  <circle cx="295" cy="370" r="6" fill="#e040fb" opacity="0.5"/>
+
+  <!-- CONNECTIONS: Hidden to Output -->
+  <line x1="309" y1="170" x2="415" y2="265" stroke="#e040fb" stroke-width="3" opacity="0.35"/>
+  <line x1="309" y1="280" x2="415" y2="265" stroke="#e040fb" stroke-width="2.5" opacity="0.3"/>
+  <line x1="309" y1="370" x2="415" y2="265" stroke="#e040fb" stroke-width="2" opacity="0.25"/>
+
+  <!-- OUTPUT NODE (gold) -->
+  <circle cx="425" cy="265" r="18" fill="#1a1a0e" stroke="#ffd740" stroke-width="2" filter="url(#glowStrong)"/>
+  <circle cx="425" cy="265" r="8" fill="#ffd740" opacity="0.5"/>
+  <text x="425" y="305" text-anchor="middle" fill="#ffd740" font-size="9" opacity="0.8">Composite</text>
+
+  <!-- OUTPUT OSCILLATOR (right side) -->
+  <!-- Scale labels -->
+  <text x="475" y="105" fill="#555577" font-size="8">100</text>
+  <text x="475" y="265" fill="#555577" font-size="8">50</text>
+  <text x="475" y="420" fill="#555577" font-size="8">0</text>
+
+  <!-- Scale lines -->
+  <line x1="495" y1="100" x2="770" y2="100" stroke="#555577" stroke-width="0.4" stroke-dasharray="3,4"/>
+  <line x1="495" y1="260" x2="770" y2="260" stroke="#ffd740" stroke-width="0.4" stroke-dasharray="3,4" opacity="0.4"/>
+  <line x1="495" y1="420" x2="770" y2="420" stroke="#555577" stroke-width="0.4" stroke-dasharray="3,4"/>
+
+  <!-- Overbought/Oversold zones -->
+  <rect x="495" y="100" width="275" height="45" fill="#4fc3f7" opacity="0.04" rx="2"/>
+  <rect x="495" y="375" width="275" height="45" fill="#ff5252" opacity="0.04" rx="2"/>
+  <text x="770" y="130" text-anchor="end" fill="#4fc3f7" font-size="7" opacity="0.5">Overbought</text>
+  <text x="770" y="405" text-anchor="end" fill="#ff5252" font-size="7" opacity="0.5">Oversold</text>
+
+  <!-- Connection from output node to oscillator -->
+  <line x1="443" y1="265" x2="495" y2="260" stroke="#ffd740" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,3"/>
+
+  <!-- Oscillator line -->
+  <polyline points="500,340 515,320 530,290 545,260 555,230 565,180 575,150 585,130 600,145 615,190 630,240 645,280 655,310 665,340 675,360 690,380 700,370 712,330 724,280 736,240 748,200 760,170"
+    fill="none" stroke="#ffd740" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Signal dots on oscillator -->
+  <circle cx="575" cy="150" r="3" fill="#4fc3f7" filter="url(#glow)"/>
+  <circle cx="690" cy="380" r="3" fill="#ff5252" filter="url(#glow)"/>
+
+  <!-- LEGEND BAR -->
+  <rect x="30" y="460" width="740" height="28" rx="4" fill="#0e1020" opacity="0.6"/>
+  <circle cx="60" cy="474" r="5" fill="#0e1a2e" stroke="#4fc3f7" stroke-width="1"/>
+  <text x="72" y="478" fill="#8888aa" font-size="9">Input Factors</text>
+  <circle cx="175" cy="474" r="5" fill="#1a0e2e" stroke="#e040fb" stroke-width="1"/>
+  <text x="187" y="478" fill="#8888aa" font-size="9">Hidden Layer</text>
+  <circle cx="295" cy="474" r="5" fill="#1a1a0e" stroke="#ffd740" stroke-width="1"/>
+  <text x="307" y="478" fill="#8888aa" font-size="9">Output Node</text>
+  <rect x="405" y="470" width="20" height="3" rx="1" fill="#ffd740"/>
+  <text x="432" y="478" fill="#8888aa" font-size="9">Oscillator (0-100)</text>
+  <circle cx="555" cy="474" r="3" fill="#4fc3f7"/>
+  <text x="565" y="478" fill="#8888aa" font-size="9">Overbought</text>
+  <circle cx="650" cy="474" r="3" fill="#ff5252"/>
+  <text x="660" y="478" fill="#8888aa" font-size="9">Oversold</text>
+</svg>

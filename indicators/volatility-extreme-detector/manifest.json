@@ -1,0 +1,11 @@
+{
+  "name": "Volatility Extreme Detector",
+  "id": "volatility-extreme-detector",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "volatility",
+  "tags": ["volatility", "vix-fix", "extremes", "bottoms", "tops"],
+  "description": "Synthetic volatility measure detecting both extreme bottoms and tops using price range analysis",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

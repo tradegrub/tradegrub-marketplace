@@ -1,0 +1,30 @@
+{
+  "id": "oscillator-channel-overlay",
+  "name": "Oscillator Channel Overlay",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "oscillators",
+  "tags": ["rsi", "regression", "channel", "overlay", "oscillator"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Maps RSI values into a linear regression channel on the price chart for oscillator state in price context",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": ["python"],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "overlay": true,
+  "inputs": [
+    {"name": "reg_length", "type": "int", "default": 50, "min": 10, "max": 200},
+    {"name": "rsi_length", "type": "int", "default": 14, "min": 2, "max": 50}
+  ],
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Squeeze Pro</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <rect x="60" y="70" width="700" height="150" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+  <line x1="100" y1="140" x2="100" y2="180" stroke="#26a69a" stroke-width="1"/><rect x="97" y="145" width="6" height="28" fill="#26a69a" rx="1"/>
+  <line x1="140" y1="135" x2="140" y2="175" stroke="#26a69a" stroke-width="1"/><rect x="137" y="138" width="6" height="30" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="130" x2="180" y2="170" stroke="#26a69a" stroke-width="1"/><rect x="177" y="133" width="6" height="28" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="128" x2="220" y2="165" stroke="#26a69a" stroke-width="1"/><rect x="217" y="130" width="6" height="25" fill="#26a69a" rx="1"/>
+  <!-- Squeeze zone (tight range) -->
+  <line x1="260" y1="132" x2="260" y2="158" stroke="#ef5350" stroke-width="1"/><rect x="257" y="135" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="130" x2="300" y2="155" stroke="#26a69a" stroke-width="1"/><rect x="297" y="133" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="340" y1="131" x2="340" y2="156" stroke="#ef5350" stroke-width="1"/><rect x="337" y="134" width="6" height="17" fill="#ef5350" rx="1"/>
+  <line x1="380" y1="129" x2="380" y2="154" stroke="#26a69a" stroke-width="1"/><rect x="377" y="132" width="6" height="16" fill="#26a69a" rx="1"/>
+  <!-- Breakout -->
+  <line x1="420" y1="110" x2="420" y2="150" stroke="#26a69a" stroke-width="1"/><rect x="417" y="112" width="6" height="30" fill="#26a69a" rx="1"/>
+  <line x1="460" y1="95" x2="460" y2="140" stroke="#26a69a" stroke-width="1"/><rect x="457" y="98" width="6" height="32" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="85" x2="500" y2="130" stroke="#26a69a" stroke-width="1"/><rect x="497" y="88" width="6" height="30" fill="#26a69a" rx="1"/>
+  <line x1="540" y1="80" x2="540" y2="125" stroke="#26a69a" stroke-width="1"/><rect x="537" y="83" width="6" height="30" fill="#26a69a" rx="1"/>
+  <line x1="580" y1="85" x2="580" y2="130" stroke="#ef5350" stroke-width="1"/><rect x="577" y="90" width="6" height="30" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="90" x2="620" y2="135" stroke="#ef5350" stroke-width="1"/><rect x="617" y="95" width="6" height="30" fill="#ef5350" rx="1"/>
+  <line x1="660" y1="95" x2="660" y2="140" stroke="#26a69a" stroke-width="1"/><rect x="657" y="98" width="6" height="30" fill="#26a69a" rx="1"/>
+  <line x1="700" y1="90" x2="700" y2="135" stroke="#26a69a" stroke-width="1"/><rect x="697" y="93" width="6" height="30" fill="#26a69a" rx="1"/>
+
+  <!-- Squeeze annotation -->
+  <text x="320" y="85" text-anchor="middle" fill="#ff6f00" font-size="10" font-family="Inter,sans-serif">SQUEEZE</text>
+  <line x1="255" y1="88" x2="385" y2="88" stroke="#ff6f00" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <text x="480" y="78" text-anchor="middle" fill="#00e676" font-size="10" font-family="Inter,sans-serif">BREAKOUT</text>
+
+  <!-- Momentum histogram panel -->
+  <rect x="60" y="240" width="700" height="200" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+  <line x1="60" y1="340" x2="760" y2="340" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- Momentum bars -->
+  <rect x="97" y="325" width="6" height="15" fill="#1b5e20" rx="1"/>
+  <rect x="137" y="318" width="6" height="22" fill="#00e676" rx="1"/>
+  <rect x="177" y="312" width="6" height="28" fill="#00e676" rx="1"/>
+  <rect x="217" y="320" width="6" height="20" fill="#1b5e20" rx="1"/>
+  <!-- Squeeze - small bars -->
+  <rect x="257" y="333" width="6" height="7" fill="#1b5e20" rx="1"/>
+  <rect x="297" y="335" width="6" height="5" fill="#1b5e20" rx="1"/>
+  <rect x="337" y="340" width="6" height="5" fill="#b71c1c" rx="1"/>
+  <rect x="377" y="340" width="6" height="3" fill="#b71c1c" rx="1"/>
+  <!-- Breakout bars -->
+  <rect x="417" y="310" width="6" height="30" fill="#00e676" rx="1"/>
+  <rect x="457" y="295" width="6" height="45" fill="#00e676" rx="1"/>
+  <rect x="497" y="280" width="6" height="60" fill="#00e676" rx="1"/>
+  <rect x="537" y="270" width="6" height="70" fill="#00e676" rx="1"/>
+  <rect x="577" y="278" width="6" height="62" fill="#1b5e20" rx="1"/>
+  <rect x="617" y="290" width="6" height="50" fill="#1b5e20" rx="1"/>
+  <rect x="657" y="305" width="6" height="35" fill="#1b5e20" rx="1"/>
+  <rect x="697" y="315" width="6" height="25" fill="#1b5e20" rx="1"/>
+
+  <!-- Squeeze dots on zero line -->
+  <circle cx="260" cy="340" r="4" fill="#000000" stroke="#555" stroke-width="0.5"/>
+  <circle cx="300" cy="340" r="4" fill="#ff1744"/>
+  <circle cx="340" cy="340" r="4" fill="#ff6f00"/>
+  <circle cx="380" cy="340" r="4" fill="#ff6f00"/>
+  <circle cx="420" cy="340" r="4" fill="#00e676"/>
+  <circle cx="460" cy="340" r="4" fill="#00e676"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <rect x="80" y="471" width="12" height="8" fill="#00e676" rx="1"/>
+  <text x="97" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Rising Mom.</text>
+  <rect x="185" y="471" width="12" height="8" fill="#1b5e20" rx="1"/>
+  <text x="202" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Falling Mom.</text>
+  <circle cx="305" cy="475" r="4" fill="#000000" stroke="#555" stroke-width="0.5"/>
+  <text x="315" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Low Squeeze</text>
+  <circle cx="410" cy="475" r="4" fill="#ff1744"/>
+  <text x="420" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Mid Squeeze</text>
+  <circle cx="520" cy="475" r="4" fill="#ff6f00"/>
+  <text x="530" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">High Squeeze</text>
+  <circle cx="630" cy="475" r="4" fill="#00e676"/>
+  <text x="640" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">No Squeeze</text>
+</svg>

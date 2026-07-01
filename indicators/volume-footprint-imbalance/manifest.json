@@ -1,0 +1,12 @@
+{
+  "id": "volume-footprint-imbalance",
+  "name": "Volume Footprint Imbalance",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "volume",
+  "tags": ["footprint", "orderflow", "imbalance", "delta", "bid-ask"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Estimates bid/ask volume imbalance within each candle using price position and wick analysis to approximate order flow footprint data"
+}

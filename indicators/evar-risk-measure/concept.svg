@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="150" y1="80" x2="150" y2="380"/><line x1="250" y1="80" x2="250" y2="380"/>
+    <line x1="350" y1="80" x2="350" y2="380"/><line x1="450" y1="80" x2="450" y2="380"/>
+    <line x1="550" y1="80" x2="550" y2="380"/><line x1="650" y1="80" x2="650" y2="380"/>
+    <line x1="100" y1="150" x2="720" y2="150"/><line x1="100" y1="220" x2="720" y2="220"/>
+    <line x1="100" y1="290" x2="720" y2="290"/><line x1="100" y1="350" x2="720" y2="350"/>
+  </g>
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">EVaR Risk Measure</text>
+  <text x="400" y="52" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Y-axis label -->
+  <text x="70" y="230" fill="#888" font-size="10" transform="rotate(-90, 70, 230)" text-anchor="middle">Probability Density</text>
+
+  <!-- X-axis baseline -->
+  <line x1="120" y1="360" x2="720" y2="360" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- X-axis labels -->
+  <text x="155" y="378" text-anchor="middle" fill="#888" font-size="9">-4%</text>
+  <text x="230" y="378" text-anchor="middle" fill="#888" font-size="9">-3%</text>
+  <text x="305" y="378" text-anchor="middle" fill="#888" font-size="9">-2%</text>
+  <text x="380" y="378" text-anchor="middle" fill="#888" font-size="9">-1%</text>
+  <text x="455" y="378" text-anchor="middle" fill="#888" font-size="9">0%</text>
+  <text x="530" y="378" text-anchor="middle" fill="#888" font-size="9">+1%</text>
+  <text x="605" y="378" text-anchor="middle" fill="#888" font-size="9">+2%</text>
+  <text x="680" y="378" text-anchor="middle" fill="#888" font-size="9">+3%</text>
+
+  <!-- Normal distribution overlay (white dashed, subtle) -->
+  <polyline points="130,358 155,355 180,348 205,335 230,315 255,288 280,255 305,218 330,182 355,152 380,132 405,120 430,115 455,118 480,128 505,145 530,168 555,198 580,232 605,268 630,300 655,328 680,348 705,355 720,358" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,3" opacity="0.2"/>
+
+  <!-- Left-skewed bell curve (filled polygon, cyan) -->
+  <polygon points="120,360 140,358 160,354 180,345 200,330 220,308 240,280 260,248 280,215 300,185 320,160 340,142 360,130 380,122 400,118 420,117 440,120 460,128 480,140 500,158 520,180 540,208 560,238 580,270 600,300 620,325 640,342 660,352 680,357 700,359 720,360" fill="#00e5ff" fill-opacity="0.08" stroke="#00e5ff" stroke-width="1.5" filter="url(#softGlow)"/>
+
+  <!-- CVaR shaded area (left tail, red) -->
+  <polygon points="120,360 140,358 160,354 180,345 200,330 220,308 240,280 250,265 250,360" fill="#ef5350" fill-opacity="0.2"/>
+  <polygon points="120,360 140,358 160,354 180,345 200,330 220,308 240,280 250,265 250,360" fill="none" stroke="#ef5350" stroke-width="1" opacity="0.4"/>
+
+  <!-- VaR vertical line (red) at x=250 -->
+  <line x1="250" y1="90" x2="250" y2="360" stroke="#ef5350" stroke-width="2" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- VaR label -->
+  <rect x="255" y="92" width="130" height="22" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="320" y="107" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500">VaR (95%): -2.3%</text>
+
+  <!-- CVaR label -->
+  <rect x="130" y="300" width="100" height="22" rx="4" fill="#ef5350" fill-opacity="0.12" stroke="#ef5350" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="180" y="315" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500">CVaR: -3.1%</text>
+
+  <!-- Cornish-Fisher adjustment annotation -->
+  <rect x="300" y="185" width="168" height="22" rx="4" fill="#ffd740" fill-opacity="0.12" stroke="#ffd740" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="384" y="200" text-anchor="middle" fill="#ffd740" font-size="9" font-weight="500">Cornish-Fisher Adjustment</text>
+  <!-- Arrow showing shift from normal to adjusted tail -->
+  <path d="M 310,207 Q 290,230 270,260" fill="none" stroke="#ffd740" stroke-width="1.2" opacity="0.6"/>
+  <polygon points="270,260 274,252 268,254" fill="#ffd740" opacity="0.6"/>
+  <!-- Small arrow pointing to where normal vs adjusted diverge -->
+  <path d="M 380,207 Q 370,225 355,240" fill="none" stroke="#ffd740" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
+
+  <!-- Position sizing recommendation box -->
+  <rect x="540" y="85" width="185" height="40" rx="6" fill="#26a69a" fill-opacity="0.1" stroke="#26a69a" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="632" y="102" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="500">Suggested Position</text>
+  <text x="632" y="117" text-anchor="middle" fill="#26a69a" font-size="12" font-weight="600">2.4% of Portfolio</text>
+
+  <!-- Distribution statistics box -->
+  <rect x="540" y="140" width="185" height="80" rx="6" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="555" y="158" fill="#999" font-size="9">Distribution Stats</text>
+  <text x="555" y="173" fill="#888" font-size="8">Skewness: -0.42</text>
+  <text x="555" y="186" fill="#888" font-size="8">Kurtosis: 3.87</text>
+  <text x="555" y="199" fill="#888" font-size="8">Entropy: 2.14 nats</text>
+  <text x="555" y="212" fill="#888" font-size="8">Confidence: 95%</text>
+
+  <!-- Percentile markers on the curve -->
+  <line x1="305" y1="218" x2="305" y2="360" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.15"/>
+  <text x="305" y="368" text-anchor="middle" fill="#888" font-size="7" opacity="0.4">5th</text>
+  <line x1="380" y1="122" x2="380" y2="360" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.15"/>
+  <text x="380" y="368" text-anchor="middle" fill="#888" font-size="7" opacity="0.4">25th</text>
+  <line x1="440" y1="120" x2="440" y2="360" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.15"/>
+  <text x="440" y="368" text-anchor="middle" fill="#888" font-size="7" opacity="0.4">50th</text>
+  <line x1="520" y1="180" x2="520" y2="360" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.15"/>
+  <text x="520" y="368" text-anchor="middle" fill="#888" font-size="7" opacity="0.4">75th</text>
+  <line x1="600" y1="300" x2="600" y2="360" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.15"/>
+  <text x="600" y="368" text-anchor="middle" fill="#888" font-size="7" opacity="0.4">95th</text>
+
+  <!-- Mean marker -->
+  <line x1="430" y1="118" x2="430" y2="360" stroke="#26a69a" stroke-width="1" stroke-dasharray="4,3" opacity="0.3"/>
+  <text x="430" y="395" text-anchor="middle" fill="#26a69a" font-size="8" opacity="0.6">Mean: +0.03%</text>
+
+  <!-- Tail risk shading (right tail, very subtle) -->
+  <polygon points="640,342 660,352 680,357 700,359 720,360 720,360 700,360 680,360 660,360 640,360" fill="#ffd740" fill-opacity="0.08"/>
+
+  <!-- Risk budget bar -->
+  <text x="400" y="415" text-anchor="middle" fill="#999" font-size="9">Risk Budget Allocation</text>
+  <rect x="180" y="422" width="440" height="10" rx="3" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="180" y="422" width="106" height="10" rx="3" fill="#ef5350" opacity="0.5"/>
+  <rect x="286" y="422" width="158" height="10" fill="#ffd740" opacity="0.4"/>
+  <rect x="444" y="422" width="176" height="10" rx="3" fill="#26a69a" opacity="0.4"/>
+  <text x="233" y="445" text-anchor="middle" fill="#ef5350" font-size="7" opacity="0.7">Tail Risk 24%</text>
+  <text x="365" y="445" text-anchor="middle" fill="#ffd740" font-size="7" opacity="0.7">Market Risk 36%</text>
+  <text x="532" y="445" text-anchor="middle" fill="#26a69a" font-size="7" opacity="0.7">Diversified 40%</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 455)">
+    <rect width="680" height="30" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="15" cy="15" r="4" fill="#00e5ff"/>
+    <text x="25" y="19" fill="#999" font-size="9">Return Distribution</text>
+    <circle cx="150" cy="15" r="4" fill="#ffffff" opacity="0.3"/>
+    <text x="160" y="19" fill="#999" font-size="9">Normal Reference</text>
+    <circle cx="275" cy="15" r="4" fill="#ef5350"/>
+    <text x="285" y="19" fill="#999" font-size="9">VaR Line</text>
+    <circle cx="345" cy="15" r="4" fill="#ef5350" opacity="0.4"/>
+    <text x="355" y="19" fill="#999" font-size="9">CVaR (Tail Risk)</text>
+  </g>
+</svg>

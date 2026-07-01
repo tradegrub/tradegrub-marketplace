@@ -1,0 +1,33 @@
+{
+  "id": "rolling-performance-dashboard",
+  "name": "Rolling Performance Dashboard",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistics",
+  "tags": [
+    "numpy",
+    "performance",
+    "returns",
+    "multi-period",
+    "dashboard"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Multi-period rolling performance tracker showing returns across 5, 10, 20, 50, and 100-bar windows using numpy",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

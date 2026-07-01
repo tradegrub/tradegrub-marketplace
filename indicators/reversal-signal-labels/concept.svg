@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="60" y1="60" x2="60" y2="420"/><line x1="130" y1="60" x2="130" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/><line x1="270" y1="60" x2="270" y2="420"/>
+    <line x1="340" y1="60" x2="340" y2="420"/><line x1="410" y1="60" x2="410" y2="420"/>
+    <line x1="480" y1="60" x2="480" y2="420"/><line x1="550" y1="60" x2="550" y2="420"/>
+    <line x1="620" y1="60" x2="620" y2="420"/><line x1="690" y1="60" x2="690" y2="420"/>
+    <line x1="760" y1="60" x2="760" y2="420"/>
+    <line x1="60" y1="60" x2="760" y2="60"/><line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="180" x2="760" y2="180"/><line x1="60" y1="240" x2="760" y2="240"/>
+    <line x1="60" y1="300" x2="760" y2="300"/><line x1="60" y1="360" x2="760" y2="360"/>
+    <line x1="60" y1="420" x2="760" y2="420"/>
+  </g>
+  <!-- Title -->
+  <text x="60" y="30" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="bold">Reversal Signal Labels</text>
+  <text x="60" y="48" font-family="Arial, sans-serif" font-size="11" fill="#888888">tradegrub.finance</text>
+  <!-- Candlesticks - swing pattern with clear highs and lows -->
+  <g stroke-width="1.2">
+    <!-- Rise to first swing high -->
+    <line x1="85" y1="310" x2="85" y2="340" stroke="#00cc66"/><rect x="81" y="315" width="8" height="18" fill="#00cc66"/>
+    <line x1="110" y1="290" x2="110" y2="325" stroke="#00cc66"/><rect x="106" y="298" width="8" height="18" fill="#00cc66"/>
+    <line x1="135" y1="268" x2="135" y2="300" stroke="#00cc66"/><rect x="131" y="275" width="8" height="16" fill="#00cc66"/>
+    <line x1="160" y1="248" x2="160" y2="282" stroke="#00cc66"/><rect x="156" y="255" width="8" height="18" fill="#00cc66"/>
+    <!-- Swing High 1 - Strong -->
+    <line x1="185" y1="130" x2="185" y2="268" stroke="#00cc66"/><rect x="181" y="140" width="8" height="115" fill="#00cc66"/>
+    <!-- Drop -->
+    <line x1="210" y1="170" x2="210" y2="280" stroke="#ff4444"/><rect x="206" y="180" width="8" height="85" fill="#ff4444"/>
+    <line x1="235" y1="230" x2="235" y2="310" stroke="#ff4444"/><rect x="231" y="248" width="8" height="48" fill="#ff4444"/>
+    <line x1="260" y1="275" x2="260" y2="340" stroke="#ff4444"/><rect x="256" y="290" width="8" height="38" fill="#ff4444"/>
+    <line x1="285" y1="305" x2="285" y2="365" stroke="#ff4444"/><rect x="281" y="318" width="8" height="35" fill="#ff4444"/>
+    <!-- Swing Low 1 - Strong -->
+    <line x1="310" y1="330" x2="310" y2="395" stroke="#ff4444"/><rect x="306" y="345" width="8" height="40" fill="#ff4444"/>
+    <!-- Rise -->
+    <line x1="335" y1="310" x2="335" y2="370" stroke="#00cc66"/><rect x="331" y="318" width="8" height="38" fill="#00cc66"/>
+    <line x1="360" y1="280" x2="360" y2="330" stroke="#00cc66"/><rect x="356" y="288" width="8" height="30" fill="#00cc66"/>
+    <line x1="385" y1="255" x2="385" y2="298" stroke="#00cc66"/><rect x="381" y="262" width="8" height="25" fill="#00cc66"/>
+    <!-- Swing High 2 - Medium -->
+    <line x1="410" y1="178" x2="410" y2="265" stroke="#00cc66"/><rect x="406" y="188" width="8" height="62" fill="#00cc66"/>
+    <!-- Drop -->
+    <line x1="435" y1="210" x2="435" y2="288" stroke="#ff4444"/><rect x="431" y="225" width="8" height="48" fill="#ff4444"/>
+    <line x1="460" y1="260" x2="460" y2="320" stroke="#ff4444"/><rect x="456" y="272" width="8" height="35" fill="#ff4444"/>
+    <!-- Swing Low 2 - Medium -->
+    <line x1="485" y1="290" x2="485" y2="360" stroke="#ff4444"/><rect x="481" y="308" width="8" height="40" fill="#ff4444"/>
+    <!-- Rise -->
+    <line x1="510" y1="278" x2="510" y2="338" stroke="#00cc66"/><rect x="506" y="288" width="8" height="35" fill="#00cc66"/>
+    <line x1="535" y1="258" x2="535" y2="305" stroke="#00cc66"/><rect x="531" y="268" width="8" height="25" fill="#00cc66"/>
+    <!-- Swing High 3 - Weak -->
+    <line x1="560" y1="225" x2="560" y2="278" stroke="#00cc66"/><rect x="556" y="235" width="8" height="28" fill="#00cc66"/>
+    <!-- Small drop -->
+    <line x1="585" y1="248" x2="585" y2="302" stroke="#ff4444"/><rect x="581" y="260" width="8" height="28" fill="#ff4444"/>
+    <line x1="610" y1="272" x2="610" y2="325" stroke="#ff4444"/><rect x="606" y="282" width="8" height="30" fill="#ff4444"/>
+    <!-- Swing Low 3 - Weak -->
+    <line x1="635" y1="295" x2="635" y2="345" stroke="#ff4444"/><rect x="631" y="308" width="8" height="28" fill="#ff4444"/>
+    <!-- Final rise -->
+    <line x1="660" y1="278" x2="660" y2="330" stroke="#00cc66"/><rect x="656" y="288" width="8" height="28" fill="#00cc66"/>
+    <line x1="685" y1="260" x2="685" y2="308" stroke="#00cc66"/><rect x="681" y="268" width="8" height="28" fill="#00cc66"/>
+    <line x1="710" y1="242" x2="710" y2="288" stroke="#00cc66"/><rect x="706" y="250" width="8" height="26" fill="#00cc66"/>
+    <line x1="735" y1="225" x2="735" y2="268" stroke="#00cc66"/><rect x="731" y="232" width="8" height="24" fill="#00cc66"/>
+  </g>
+  <!-- Swing High Labels (downward-pointing) -->
+  <!-- Strong bearish at swing high 1 -->
+  <polygon points="185,108 178,96 192,96" fill="#ff3333" filter="url(#glowStrong)"/>
+  <rect x="160" y="78" width="50" height="16" rx="3" fill="#ff3333" fill-opacity="0.2" stroke="#ff3333" stroke-width="0.8"/>
+  <text x="185" y="90" font-family="Arial, sans-serif" font-size="11" fill="#ff3333" text-anchor="middle" font-weight="bold" filter="url(#glowStrong)">Strong</text>
+  <!-- Medium bearish at swing high 2 -->
+  <polygon points="410,162 404,152 416,152" fill="#ff8c00"/>
+  <rect x="389" y="136" width="42" height="14" rx="3" fill="#ff8c00" fill-opacity="0.15" stroke="#ff8c00" stroke-width="0.6"/>
+  <text x="410" y="147" font-family="Arial, sans-serif" font-size="10" fill="#ff8c00" text-anchor="middle">Medium</text>
+  <!-- Weak bearish at swing high 3 -->
+  <polygon points="560,213" fill="#ffcc00"/>
+  <polygon points="560,214 556,207 564,207" fill="#ffcc00"/>
+  <rect x="543" y="194" width="34" height="12" rx="2" fill="#ffcc00" fill-opacity="0.1" stroke="#ffcc00" stroke-width="0.5"/>
+  <text x="560" y="204" font-family="Arial, sans-serif" font-size="9" fill="#ffcc00" text-anchor="middle">Weak</text>
+  <!-- Swing Low Labels (upward-pointing) -->
+  <!-- Strong bullish at swing low 1 -->
+  <polygon points="310,408 303,420 317,420" fill="#00ff66" filter="url(#glowStrong)"/>
+  <rect x="285" y="422" width="50" height="16" rx="3" fill="#00ff66" fill-opacity="0.2" stroke="#00ff66" stroke-width="0.8"/>
+  <text x="310" y="434" font-family="Arial, sans-serif" font-size="11" fill="#00ff66" text-anchor="middle" font-weight="bold" filter="url(#glowStrong)">Strong</text>
+  <!-- Medium bullish at swing low 2 -->
+  <polygon points="485,372 479,382 491,382" fill="#00b8a9"/>
+  <rect x="464" y="384" width="42" height="14" rx="3" fill="#00b8a9" fill-opacity="0.15" stroke="#00b8a9" stroke-width="0.6"/>
+  <text x="485" y="395" font-family="Arial, sans-serif" font-size="10" fill="#00b8a9" text-anchor="middle">Medium</text>
+  <!-- Weak bullish at swing low 3 -->
+  <polygon points="635,356 631,364 639,364" fill="#88ee88"/>
+  <rect x="618" y="366" width="34" height="12" rx="2" fill="#88ee88" fill-opacity="0.1" stroke="#88ee88" stroke-width="0.5"/>
+  <text x="635" y="376" font-family="Arial, sans-serif" font-size="9" fill="#88ee88" text-anchor="middle">Weak</text>
+  <!-- Legend bar -->
+  <g transform="translate(0,458)">
+    <rect x="55" y="-5" width="700" height="30" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <polygon points="80,10 76,4 84,4" fill="#ff3333"/><text x="89" y="14" font-family="Arial, sans-serif" font-size="10" fill="#ff3333">Strong</text>
+    <polygon points="150,10 146,4 154,4" fill="#ff8c00"/><text x="159" y="14" font-family="Arial, sans-serif" font-size="10" fill="#ff8c00">Medium</text>
+    <polygon points="225,10 222,5 228,5" fill="#ffcc00"/><text x="233" y="14" font-family="Arial, sans-serif" font-size="10" fill="#ffcc00">Weak</text>
+    <text x="310" y="14" font-family="Arial, sans-serif" font-size="10" fill="#666">|</text>
+    <polygon points="340,10 336,16 344,16" fill="#00ff66"/><text x="349" y="14" font-family="Arial, sans-serif" font-size="10" fill="#00ff66">Strong</text>
+    <polygon points="415,10 411,16 419,16" fill="#00b8a9"/><text x="424" y="14" font-family="Arial, sans-serif" font-size="10" fill="#00b8a9">Medium</text>
+    <polygon points="495,10 492,15 498,15" fill="#88ee88"/><text x="503" y="14" font-family="Arial, sans-serif" font-size="10" fill="#88ee88">Weak</text>
+  </g>
+</svg>

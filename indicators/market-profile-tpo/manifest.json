@@ -1,0 +1,12 @@
+{
+  "id": "market-profile-tpo",
+  "name": "Market Profile TPO",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "volume",
+  "tags": ["market-profile", "tpo", "time-price", "value-area", "auction"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Time Price Opportunity analysis showing how much time price spends at each level to identify value areas and single prints"
+}

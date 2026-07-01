@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Higher Low Trendline Tracker</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Price action with higher lows pattern -->
+  <!-- HL1 area -->
+  <line x1="90" y1="320" x2="90" y2="350" stroke="#26a69a" stroke-width="1"/><rect x="86" y="325" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="110" y1="300" x2="110" y2="335" stroke="#26a69a" stroke-width="1"/><rect x="106" y="305" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="130" y1="268" x2="130" y2="310" stroke="#26a69a" stroke-width="1"/><rect x="126" y="275" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="150" y1="240" x2="150" y2="280" stroke="#26a69a" stroke-width="1"/><rect x="146" y="248" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="170" y1="255" x2="170" y2="290" stroke="#ef5350" stroke-width="1"/><rect x="166" y="260" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="190" y1="280" x2="190" y2="315" stroke="#ef5350" stroke-width="1"/><rect x="186" y="285" width="8" height="22" fill="#ef5350" rx="1"/>
+
+  <!-- HL2 area -->
+  <line x1="220" y1="260" x2="220" y2="300" stroke="#26a69a" stroke-width="1"/><rect x="216" y="268" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="240" y1="235" x2="240" y2="272" stroke="#26a69a" stroke-width="1"/><rect x="236" y="240" width="8" height="24" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="208" x2="260" y2="248" stroke="#26a69a" stroke-width="1"/><rect x="256" y="215" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="225" x2="280" y2="260" stroke="#ef5350" stroke-width="1"/><rect x="276" y="230" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="248" x2="300" y2="282" stroke="#ef5350" stroke-width="1"/><rect x="296" y="252" width="8" height="22" fill="#ef5350" rx="1"/>
+
+  <!-- HL3 area -->
+  <line x1="330" y1="228" x2="330" y2="265" stroke="#26a69a" stroke-width="1"/><rect x="326" y="235" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="350" y1="200" x2="350" y2="240" stroke="#26a69a" stroke-width="1"/><rect x="346" y="208" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="370" y1="175" x2="370" y2="215" stroke="#26a69a" stroke-width="1"/><rect x="366" y="180" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="390" y1="150" x2="390" y2="192" stroke="#26a69a" stroke-width="1"/><rect x="386" y="158" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="410" y1="168" x2="410" y2="205" stroke="#ef5350" stroke-width="1"/><rect x="406" y="172" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="430" y1="195" x2="430" y2="235" stroke="#ef5350" stroke-width="1"/><rect x="426" y="200" width="8" height="25" fill="#ef5350" rx="1"/>
+
+  <!-- HL4 area -->
+  <line x1="460" y1="178" x2="460" y2="218" stroke="#26a69a" stroke-width="1"/><rect x="456" y="185" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="480" y1="155" x2="480" y2="195" stroke="#26a69a" stroke-width="1"/><rect x="476" y="162" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="130" x2="500" y2="168" stroke="#26a69a" stroke-width="1"/><rect x="496" y="138" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="520" y1="118" x2="520" y2="152" stroke="#26a69a" stroke-width="1"/><rect x="516" y="122" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="540" y1="140" x2="540" y2="175" stroke="#ef5350" stroke-width="1"/><rect x="536" y="145" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="560" y1="160" x2="560" y2="198" stroke="#ef5350" stroke-width="1"/><rect x="556" y="165" width="8" height="22" fill="#ef5350" rx="1"/>
+
+  <!-- Trendline break candles -->
+  <line x1="590" y1="178" x2="590" y2="218" stroke="#ef5350" stroke-width="1"/><rect x="586" y="182" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="610" y1="200" x2="610" y2="248" stroke="#ef5350" stroke-width="1.5"/><rect x="604" y="208" width="12" height="32" fill="#ef5350" rx="1" filter="url(#glow)"/>
+  <line x1="635" y1="230" x2="635" y2="275" stroke="#ef5350" stroke-width="1"/><rect x="631" y="238" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="655" y1="248" x2="655" y2="288" stroke="#26a69a" stroke-width="1"/><rect x="651" y="260" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="675" y1="265" x2="675" y2="305" stroke="#ef5350" stroke-width="1"/><rect x="671" y="272" width="8" height="25" fill="#ef5350" rx="1"/>
+
+  <!-- Higher Low swing point markers -->
+  <circle cx="195" cy="318" r="6" fill="none" stroke="#00e676" stroke-width="2" filter="url(#softGlow)"/>
+  <text x="195" y="338" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">HL1</text>
+
+  <circle cx="305" cy="285" r="6" fill="none" stroke="#00e676" stroke-width="2" filter="url(#softGlow)"/>
+  <text x="305" y="305" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">HL2</text>
+
+  <circle cx="435" cy="238" r="6" fill="none" stroke="#00e676" stroke-width="2" filter="url(#softGlow)"/>
+  <text x="435" y="258" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">HL3</text>
+
+  <circle cx="565" cy="200" r="6" fill="none" stroke="#00e676" stroke-width="2" filter="url(#softGlow)"/>
+  <text x="565" y="220" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">HL4</text>
+
+  <!-- Trendline connecting higher lows -->
+  <line x1="195" y1="318" x2="680" y2="165" stroke="#00e676" stroke-width="2" stroke-dasharray="6,3" opacity="0.7" filter="url(#softGlow)"/>
+
+  <!-- Extended trendline (projected) -->
+  <line x1="680" y1="165" x2="740" y2="146" stroke="#00e676" stroke-width="1" stroke-dasharray="3,5" opacity="0.3"/>
+
+  <!-- Break signal -->
+  <g filter="url(#softGlow)">
+    <polygon points="608,248 618,248 613,258" fill="#ef5350"/>
+  </g>
+  <rect x="622" y="242" width="105" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="674" y="256" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">TREND BREAK</text>
+
+  <!-- ATR threshold annotation -->
+  <rect x="555" y="85" width="130" height="32" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="620" y="100" text-anchor="middle" fill="#bbb" font-size="9">Break confirmed when</text>
+  <text x="620" y="112" text-anchor="middle" fill="#bbb" font-size="9">close &lt; trendline - ATR*1.5</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="86" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="126" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="166" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="216" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="256" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="296" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="346" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="386" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="426" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="476" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="516" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="556" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="586" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="604" y="388" width="12" height="27" fill="#ef5350" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="631" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="651" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="671" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#00e676"/>
+    <text x="30" y="24" fill="#999" font-size="9">Higher Low Points</text>
+    <line x1="140" y1="12" x2="170" y2="28" stroke="#00e676" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="180" y="24" fill="#999" font-size="9">HL Trendline</text>
+    <circle cx="290" cy="20" r="4" fill="#ef5350"/>
+    <text x="300" y="24" fill="#999" font-size="9">Break Signal</text>
+    <rect x="400" y="12" width="20" height="16" fill="#ef5350" opacity="0.5" rx="2"/>
+    <text x="425" y="24" fill="#999" font-size="9">Volume Surge</text>
+    <circle cx="530" cy="20" r="4" fill="#26a69a"/>
+    <text x="540" y="24" fill="#999" font-size="9">Bullish Candle</text>
+  </g>
+</svg>

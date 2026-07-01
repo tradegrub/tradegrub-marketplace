@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="euphoriaZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="neutralZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#888888" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#888888" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="fearZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4444" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ff4444" stop-opacity="0.12"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="17" font-weight="bold">Sentiment Mood Oscillator</text>
+  <text x="400" y="48" text-anchor="middle" fill="#667788" font-family="Arial, sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Zone backgrounds -->
+  <rect x="60" y="60" width="710" height="123" fill="url(#euphoriaZone)"/>
+  <rect x="60" y="183" width="710" height="124" fill="url(#neutralZone)"/>
+  <rect x="60" y="307" width="710" height="123" fill="url(#fearZone)"/>
+
+  <!-- Zone labels -->
+  <text x="72" y="82" fill="#00ff88" font-family="Arial, sans-serif" font-size="10" opacity="0.5">EUPHORIA</text>
+  <text x="72" y="250" fill="#999999" font-family="Arial, sans-serif" font-size="10" opacity="0.5">NEUTRAL</text>
+  <text x="72" y="422" fill="#ff5555" font-family="Arial, sans-serif" font-size="10" opacity="0.5">FEAR</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="60" y1="122" x2="770" y2="122"/>
+    <line x1="60" y1="183" x2="770" y2="183"/>
+    <line x1="60" y1="245" x2="770" y2="245"/>
+    <line x1="60" y1="307" x2="770" y2="307"/>
+    <line x1="60" y1="368" x2="770" y2="368"/>
+    <line x1="160" y1="60" x2="160" y2="430"/>
+    <line x1="260" y1="60" x2="260" y2="430"/>
+    <line x1="360" y1="60" x2="360" y2="430"/>
+    <line x1="460" y1="60" x2="460" y2="430"/>
+    <line x1="560" y1="60" x2="560" y2="430"/>
+    <line x1="660" y1="60" x2="660" y2="430"/>
+  </g>
+
+  <!-- Center line -->
+  <line x1="60" y1="245" x2="770" y2="245" stroke="#555566" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+
+  <!-- RSI sub-oscillator (cyan, thin) -->
+  <polyline fill="none" stroke="#00d4ff" stroke-width="1.2" opacity="0.55" filter="url(#glow)"
+    points="60,260 100,240 140,220 180,190 220,170 260,195 300,210 340,230 380,270 420,300 460,320 500,340 540,310 580,280 620,250 660,220 700,195 740,180 770,200"/>
+
+  <!-- MFI sub-oscillator (orange, thin) -->
+  <polyline fill="none" stroke="#ff9933" stroke-width="1.2" opacity="0.55" filter="url(#glow)"
+    points="60,270 100,255 140,235 180,210 220,185 260,175 300,200 340,245 380,280 420,310 460,335 500,350 540,325 580,290 620,260 660,235 700,210 740,190 770,210"/>
+
+  <!-- Momentum sub-oscillator (purple, thin) -->
+  <polyline fill="none" stroke="#bb66ff" stroke-width="1.2" opacity="0.55" filter="url(#glow)"
+    points="60,250 100,235 140,210 180,185 220,160 260,180 300,215 340,240 380,265 420,295 460,325 500,345 540,315 580,275 620,245 660,215 700,185 740,175 770,195"/>
+
+  <!-- Composite Mood line (white, thick, dominant) -->
+  <polyline fill="none" stroke="#ffffff" stroke-width="3" opacity="0.95" filter="url(#glowStrong)"
+    points="60,258 100,242 140,218 180,192 220,170 260,182 300,208 340,238 380,272 420,302 460,326 500,344 540,316 580,282 620,252 660,222 700,196 740,182 770,202"/>
+
+  <!-- Y-axis scale -->
+  <g fill="#556677" font-family="Arial, sans-serif" font-size="9" text-anchor="end">
+    <text x="56" y="65">100</text>
+    <text x="56" y="127">80</text>
+    <text x="56" y="188">60</text>
+    <text x="56" y="249">50</text>
+    <text x="56" y="311">40</text>
+    <text x="56" y="372">20</text>
+    <text x="56" y="433">0</text>
+  </g>
+
+  <!-- Legend bar -->
+  <g transform="translate(400, 465)" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">
+    <line x1="-280" y1="0" x2="-258" y2="0" stroke="#00d4ff" stroke-width="1.2"/>
+    <text x="-244" y="4" fill="#00d4ff" opacity="0.7">RSI</text>
+    <line x1="-200" y1="0" x2="-178" y2="0" stroke="#ff9933" stroke-width="1.2"/>
+    <text x="-164" y="4" fill="#ff9933" opacity="0.7">MFI</text>
+    <line x1="-115" y1="0" x2="-93" y2="0" stroke="#bb66ff" stroke-width="1.2"/>
+    <text x="-64" y="4" fill="#bb66ff" opacity="0.7">Momentum</text>
+    <line x1="10" y1="0" x2="32" y2="0" stroke="#ffffff" stroke-width="3"/>
+    <text x="58" y="4" fill="#ffffff" opacity="0.9">Mood</text>
+  </g>
+</svg>

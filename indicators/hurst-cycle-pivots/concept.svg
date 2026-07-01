@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="priceGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fc3f7"/>
+      <stop offset="100%" stop-color="#81d4fa"/>
+    </linearGradient>
+    <linearGradient id="hurstGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffb74d"/>
+      <stop offset="100%" stop-color="#ffa726"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Hurst Cycle Pivots</text>
+  <text x="400" y="46" text-anchor="middle" fill="#7986cb" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="440"/>
+    <line x1="170" y1="60" x2="170" y2="440"/>
+    <line x1="260" y1="60" x2="260" y2="440"/>
+    <line x1="350" y1="60" x2="350" y2="440"/>
+    <line x1="440" y1="60" x2="440" y2="440"/>
+    <line x1="530" y1="60" x2="530" y2="440"/>
+    <line x1="620" y1="60" x2="620" y2="440"/>
+    <line x1="710" y1="60" x2="710" y2="440"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="140" x2="760" y2="140"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="220" x2="760" y2="220"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="330" x2="760" y2="330"/>
+    <line x1="60" y1="370" x2="760" y2="370"/>
+    <line x1="60" y1="410" x2="760" y2="410"/>
+  </g>
+
+  <!-- Panel borders -->
+  <rect x="60" y="60" width="700" height="235" fill="none" stroke="#ffffff" stroke-opacity="0.08" rx="2"/>
+  <rect x="60" y="305" width="700" height="135" fill="none" stroke="#ffffff" stroke-opacity="0.08" rx="2"/>
+
+  <!-- Panel labels -->
+  <text x="65" y="76" fill="#90a4ae" font-family="Arial,sans-serif" font-size="10">Price</text>
+  <text x="65" y="320" fill="#90a4ae" font-family="Arial,sans-serif" font-size="10">Hurst Exponent (H)</text>
+
+  <!-- Lower panel background zones -->
+  <rect x="60" y="305" width="700" height="50" fill="#4caf50" fill-opacity="0.08" rx="1"/>
+  <rect x="60" y="355" width="700" height="35" fill="#9e9e9e" fill-opacity="0.06" rx="1"/>
+  <rect x="60" y="390" width="700" height="50" fill="#f44336" fill-opacity="0.08" rx="1"/>
+
+  <!-- Zone labels -->
+  <text x="765" y="332" text-anchor="end" fill="#66bb6a" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Trending</text>
+  <text x="765" y="376" text-anchor="end" fill="#9e9e9e" font-family="Arial,sans-serif" font-size="9" opacity="0.6">Random</text>
+  <text x="765" y="420" text-anchor="end" fill="#ef5350" font-family="Arial,sans-serif" font-size="9" opacity="0.7">Mean Reverting</text>
+
+  <!-- H axis labels -->
+  <line x1="60" y1="372" x2="760" y2="372" stroke="#9e9e9e" stroke-opacity="0.25" stroke-dasharray="4,4"/>
+  <text x="56" y="376" text-anchor="end" fill="#9e9e9e" font-family="Arial,sans-serif" font-size="8">0.5</text>
+  <text x="56" y="312" text-anchor="end" fill="#66bb6a" font-family="Arial,sans-serif" font-size="8">1.0</text>
+  <text x="56" y="444" text-anchor="end" fill="#ef5350" font-family="Arial,sans-serif" font-size="8">0.0</text>
+
+  <!-- Price line chart -->
+  <polyline points="
+    80,240 110,235 140,220 170,200 200,185 230,170 260,155 290,160
+    320,175 350,190 380,200 410,185 440,165 470,145 500,130 530,120
+    560,135 590,155 620,170 650,180 680,160 710,140 740,125
+  " fill="none" stroke="url(#priceGrad)" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Hurst exponent line -->
+  <polyline points="
+    80,379 110,383 140,375 170,366 200,356 230,345 260,352 290,370
+    320,386 350,393 380,400 410,389 440,366 470,348 500,339 530,332
+    560,343 590,375 620,393 650,402 680,397 710,372 740,359
+  " fill="none" stroke="url(#hurstGrad)" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Bullish pivot markers (H crosses up through 0.5) -->
+  <polygon points="170,192 176,204 164,204" fill="#4caf50" stroke="#66bb6a" stroke-width="0.8" filter="url(#glow)"/>
+  <polygon points="440,157 446,169 434,169" fill="#4caf50" stroke="#66bb6a" stroke-width="0.8" filter="url(#glow)"/>
+  <polygon points="710,132 716,144 704,144" fill="#4caf50" stroke="#66bb6a" stroke-width="0.8" filter="url(#glow)"/>
+
+  <!-- Bearish pivot markers (H crosses down through 0.5) -->
+  <polygon points="290,168 296,156 284,156" fill="#f44336" stroke="#ef5350" stroke-width="0.8" filter="url(#glow)"/>
+  <polygon points="590,147 596,159 584,159" fill="#f44336" stroke="#ef5350" stroke-width="0.8" filter="url(#glow)"/>
+
+  <!-- Diamond regime extreme markers -->
+  <polygon points="350,182 356,190 350,198 344,190" fill="none" stroke="#ff7043" stroke-width="1.2" filter="url(#glow)"/>
+  <polygon points="530,112 536,120 530,128 524,120" fill="none" stroke="#26c6da" stroke-width="1.2" filter="url(#glow)"/>
+
+  <!-- Legend bar -->
+  <rect x="60" y="458" width="700" height="32" fill="#0d1117" fill-opacity="0.5" rx="4"/>
+  <line x1="90" y1="474" x2="115" y2="474" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="120" y="478" fill="#b0bec5" font-family="Arial,sans-serif" font-size="10">Price</text>
+  <line x1="175" y1="474" x2="200" y2="474" stroke="#ffb74d" stroke-width="2"/>
+  <text x="205" y="478" fill="#b0bec5" font-family="Arial,sans-serif" font-size="10">Hurst (H)</text>
+  <polygon points="290,468 296,478 284,478" fill="#4caf50" stroke="#66bb6a" stroke-width="0.8"/>
+  <text x="302" y="478" fill="#b0bec5" font-family="Arial,sans-serif" font-size="10">Bullish Pivot</text>
+  <polygon points="398,478 404,468 392,468" fill="#f44336" stroke="#ef5350" stroke-width="0.8"/>
+  <text x="410" y="478" fill="#b0bec5" font-family="Arial,sans-serif" font-size="10">Bearish Pivot</text>
+  <polygon points="520,468 526,474 520,480 514,474" fill="none" stroke="#ff7043" stroke-width="1.2"/>
+  <text x="532" y="478" fill="#b0bec5" font-family="Arial,sans-serif" font-size="10">Regime Extreme</text>
+  <rect x="640" y="468" width="12" height="10" fill="#4caf50" fill-opacity="0.15" stroke="#4caf50" stroke-opacity="0.3" stroke-width="0.5"/>
+  <rect x="652" y="468" width="8" height="10" fill="#9e9e9e" fill-opacity="0.12" stroke="#9e9e9e" stroke-opacity="0.3" stroke-width="0.5"/>
+  <rect x="660" y="468" width="12" height="10" fill="#f44336" fill-opacity="0.15" stroke="#f44336" stroke-opacity="0.3" stroke-width="0.5"/>
+  <text x="677" y="478" fill="#b0bec5" font-family="Arial,sans-serif" font-size="10">Zones</text>
+</svg>

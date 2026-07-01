@@ -1,0 +1,35 @@
+{
+  "id": "minervini-qualifier",
+  "name": "Trend Template Qualifier",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": [
+    "numpy",
+    "trend-template",
+    "stage-analysis",
+    "screening",
+    "momentum"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Scores stocks 0-6 against stage-2 trend template conditions including moving average alignment, 52-week range position, and relative strength",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "inputs": [],
+  "overlay": false,
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

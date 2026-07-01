@@ -1,0 +1,15 @@
+{
+  "name": "Pyramid Accumulator",
+  "id": "pyramid-accumulator",
+  "version": "1.0.0",
+  "type": "strategy",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Systematic accumulation strategy that pyramids into positions during price weakness and exits the entire position at a configurable profit target above average cost",
+  "category": "systematic",
+  "tags": ["pyramid", "accumulation", "dip-buying", "systematic"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4800
+}

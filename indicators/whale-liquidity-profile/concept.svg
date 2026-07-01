@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Whale Liquidity Profile</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Primary whale level (horizontal support) -->
+  <line x1="80" y1="275" x2="740" y2="275" stroke="#e040fb" stroke-width="2" stroke-opacity="0.7" filter="url(#softGlow)"/>
+  <rect x="85" y="262" width="135" height="18" rx="4" fill="#e040fb" fill-opacity="0.12" stroke="#e040fb" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="152" y="275" text-anchor="middle" fill="#e040fb" font-size="9" font-weight="500">Primary Whale Level</text>
+
+  <!-- Secondary whale level -->
+  <line x1="80" y1="160" x2="740" y2="160" stroke="#e040fb" stroke-width="1.2" stroke-dasharray="6,4" stroke-opacity="0.4"/>
+  <text x="85" y="155" fill="#e040fb" font-size="8" opacity="0.6">Secondary Whale Level</text>
+
+  <!-- Price candles -->
+  <line x1="100" y1="195" x2="100" y2="245" stroke="#26a69a" stroke-width="1"/>
+  <rect x="96" y="205" width="8" height="26" fill="#26a69a" rx="1"/>
+  <line x1="130" y1="185" x2="130" y2="232" stroke="#26a69a" stroke-width="1"/>
+  <rect x="126" y="192" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="160" y1="172" x2="160" y2="218" stroke="#ef5350" stroke-width="1"/>
+  <rect x="156" y="178" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="190" y1="162" x2="190" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="186" y="170" width="8" height="24" fill="#26a69a" rx="1"/>
+
+  <!-- Whale bar (big volume, marked with triangle) -->
+  <line x1="220" y1="148" x2="220" y2="210" stroke="#26a69a" stroke-width="1.5"/>
+  <rect x="214" y="155" width="12" height="40" fill="#26a69a" rx="1" filter="url(#softGlow)"/>
+  <polygon points="214,215 226,215 220,225" fill="#e040fb" filter="url(#softGlow)"/>
+
+  <line x1="250" y1="140" x2="250" y2="185" stroke="#26a69a" stroke-width="1"/>
+  <rect x="246" y="148" width="8" height="24" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="132" x2="280" y2="172" stroke="#ef5350" stroke-width="1"/>
+  <rect x="276" y="138" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="310" y1="140" x2="310" y2="180" stroke="#ef5350" stroke-width="1"/>
+  <rect x="306" y="148" width="8" height="22" fill="#ef5350" rx="1"/>
+
+  <!-- Absorption event (high vol, low range) -->
+  <rect x="332" y="145" width="26" height="30" fill="#ff9800" fill-opacity="0.08" rx="4"/>
+  <line x1="345" y1="152" x2="345" y2="172" stroke="#26a69a" stroke-width="1"/>
+  <rect x="341" y="157" width="8" height="8" fill="#26a69a" rx="1"/>
+  <!-- Diamond marker for absorption -->
+  <polygon points="345,145 350,140 345,135 340,140" fill="#ff9800" filter="url(#softGlow)"/>
+  <rect x="355" y="128" width="72" height="18" rx="4" fill="#ff9800" fill-opacity="0.12" stroke="#ff9800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="391" y="141" text-anchor="middle" fill="#ff9800" font-size="9" font-weight="500">Absorption</text>
+
+  <line x1="375" y1="148" x2="375" y2="188" stroke="#ef5350" stroke-width="1"/>
+  <rect x="371" y="155" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="405" y1="158" x2="405" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="401" y="165" width="8" height="24" fill="#ef5350" rx="1"/>
+  <line x1="435" y1="180" x2="435" y2="225" stroke="#ef5350" stroke-width="1"/>
+  <rect x="431" y="188" width="8" height="26" fill="#ef5350" rx="1"/>
+
+  <!-- Drop toward whale level, bounce -->
+  <line x1="465" y1="215" x2="465" y2="268" stroke="#ef5350" stroke-width="1"/>
+  <rect x="461" y="225" width="8" height="30" fill="#ef5350" rx="1"/>
+  <!-- Bounce at whale level -->
+  <line x1="495" y1="245" x2="495" y2="280" stroke="#26a69a" stroke-width="1.5"/>
+  <rect x="489" y="250" width="12" height="22" fill="#26a69a" rx="1" filter="url(#softGlow)"/>
+  <polygon points="489,285 501,285 495,295" fill="#e040fb" filter="url(#softGlow)"/>
+
+  <!-- Recovery candles -->
+  <line x1="525" y1="222" x2="525" y2="262" stroke="#26a69a" stroke-width="1"/>
+  <rect x="521" y="230" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="555" y1="205" x2="555" y2="245" stroke="#26a69a" stroke-width="1"/>
+  <rect x="551" y="212" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="585" y1="190" x2="585" y2="228" stroke="#ef5350" stroke-width="1"/>
+  <rect x="581" y="195" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="615" y1="178" x2="615" y2="215" stroke="#26a69a" stroke-width="1"/>
+  <rect x="611" y="185" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="645" y1="168" x2="645" y2="202" stroke="#26a69a" stroke-width="1"/>
+  <rect x="641" y="175" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="675" y1="158" x2="675" y2="190" stroke="#26a69a" stroke-width="1"/>
+  <rect x="671" y="165" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="705" y1="150" x2="705" y2="180" stroke="#ef5350" stroke-width="1"/>
+  <rect x="701" y="155" width="8" height="16" fill="#ef5350" rx="1"/>
+
+  <!-- Cumulative Whale Delta line (bottom oscillator, y 340-415) -->
+  <text x="400" y="335" text-anchor="middle" fill="#bbb" font-size="10" font-weight="500">Cumulative Whale Delta</text>
+
+  <!-- Zero line -->
+  <line x1="80" y1="380" x2="740" y2="380" stroke="#888" stroke-width="0.5" stroke-dasharray="2,4" opacity="0.3"/>
+
+  <!-- Delta line - accumulation bias -->
+  <polyline points="100,385 130,380 160,378 190,372 220,358 250,352 280,355 310,360 345,356 375,362 405,368 435,375 465,382 495,370 525,358 555,348 585,352 615,345 645,338 675,332 705,335" stroke="#e040fb" stroke-width="2" fill="none"/>
+
+  <!-- Positive fill -->
+  <polygon points="100,385 130,380 160,378 190,372 220,358 250,352 280,355 310,360 345,356 375,362 405,368 435,375 465,382 495,370 525,358 555,348 585,352 615,345 645,338 675,332 705,335 705,380 100,380" fill="#e040fb" fill-opacity="0.06"/>
+
+  <!-- Volume bars with whale highlight -->
+  <g opacity="0.4">
+    <rect x="96" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="126" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="156" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="186" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+  </g>
+  <!-- Whale bar volume -->
+  <rect x="214" y="385" width="12" height="30" fill="#e040fb" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="246" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="276" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="306" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+  </g>
+  <!-- Absorption bar - high vol but dim colored -->
+  <rect x="339" y="388" width="12" height="27" fill="#ff9800" rx="1" opacity="0.5"/>
+  <g opacity="0.4">
+    <rect x="371" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="401" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="431" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="461" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+  </g>
+  <!-- Bounce whale bar -->
+  <rect x="489" y="387" width="12" height="28" fill="#e040fb" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="521" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="551" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="581" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="611" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="641" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="671" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="701" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#e040fb"/>
+    <text x="30" y="24" fill="#999" font-size="9">Whale Level</text>
+    <circle cx="125" cy="20" r="4" fill="#ff9800"/>
+    <text x="135" y="24" fill="#999" font-size="9">Absorption</text>
+    <polygon points="230,16 235,12 230,8 225,12" fill="#e040fb"/>
+    <text x="242" y="24" fill="#999" font-size="9">Whale Bar</text>
+    <rect x="320" y="12" width="20" height="16" fill="#e040fb" opacity="0.3" rx="2"/>
+    <text x="345" y="24" fill="#999" font-size="9">Cum. Delta</text>
+    <text x="460" y="24" fill="#888" font-size="9">85th Percentile = Whale Threshold</text>
+  </g>
+</svg>

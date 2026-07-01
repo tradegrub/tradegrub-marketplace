@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="flagFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42a5f5" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#42a5f5" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="breakoutGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00e676" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Flag and Pennant Continuation</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- POLE: Strong impulse move up -->
+  <line x1="100" y1="340" x2="100" y2="368" stroke="#26a69a" stroke-width="1"/>
+  <rect x="96" y="345" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="130" y1="310" x2="130" y2="350" stroke="#26a69a" stroke-width="1"/>
+  <rect x="126" y="315" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="160" y1="268" x2="160" y2="318" stroke="#26a69a" stroke-width="1"/>
+  <rect x="156" y="275" width="8" height="32" fill="#26a69a" rx="1"/>
+  <line x1="190" y1="225" x2="190" y2="280" stroke="#26a69a" stroke-width="1"/>
+  <rect x="186" y="232" width="8" height="35" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="178" x2="220" y2="240" stroke="#26a69a" stroke-width="1"/>
+  <rect x="216" y="185" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="140" x2="250" y2="195" stroke="#26a69a" stroke-width="1"/>
+  <rect x="246" y="148" width="8" height="35" fill="#26a69a" rx="1"/>
+
+  <!-- Pole annotation -->
+  <line x1="78" y1="355" x2="78" y2="150" stroke="#26a69a" stroke-width="2" opacity="0.5"/>
+  <polygon points="78,150 73,160 83,160" fill="#26a69a" opacity="0.5"/>
+  <polygon points="78,355 73,345 83,345" fill="#26a69a" opacity="0.5"/>
+  <text x="70" y="255" fill="#26a69a" font-size="10" font-weight="500" transform="rotate(-90,70,255)">POLE (Impulse)</text>
+
+  <!-- FLAG: Counter-trend consolidation channel -->
+  <polygon points="270,148 500,195 500,240 270,195" fill="url(#flagFill)"/>
+  <!-- Upper flag line -->
+  <line x1="270" y1="148" x2="500" y2="195" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.6"/>
+  <!-- Lower flag line -->
+  <line x1="270" y1="195" x2="500" y2="240" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.6"/>
+
+  <!-- Flag annotation -->
+  <rect x="340" y="155" width="110" height="20" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="395" y="169" text-anchor="middle" fill="#bbb" font-size="10">Flag Consolidation</text>
+
+  <!-- Candles inside flag -->
+  <line x1="290" y1="150" x2="290" y2="188" stroke="#ef5350" stroke-width="1"/>
+  <rect x="286" y="158" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="320" y1="162" x2="320" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="316" y="168" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="350" y1="170" x2="350" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="346" y="185" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="380" y1="175" x2="380" y2="218" stroke="#ef5350" stroke-width="1"/>
+  <rect x="376" y="182" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="410" y1="180" x2="410" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="406" y="198" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="440" y1="188" x2="440" y2="228" stroke="#ef5350" stroke-width="1"/>
+  <rect x="436" y="195" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="470" y1="192" x2="470" y2="232" stroke="#26a69a" stroke-width="1"/>
+  <rect x="466" y="205" width="8" height="18" fill="#26a69a" rx="1"/>
+
+  <!-- BREAKOUT candle -->
+  <line x1="510" y1="155" x2="510" y2="210" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="504" y="162" width="12" height="38" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Breakout glow -->
+  <rect x="500" y="150" width="260" height="35" fill="url(#breakoutGlow)" rx="4"/>
+
+  <!-- Post-breakout candles -->
+  <line x1="545" y1="142" x2="545" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="541" y="148" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="575" y1="128" x2="575" y2="162" stroke="#26a69a" stroke-width="1"/>
+  <rect x="571" y="135" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="605" y1="118" x2="605" y2="152" stroke="#ef5350" stroke-width="1"/>
+  <rect x="601" y="125" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="635" y1="108" x2="635" y2="142" stroke="#26a69a" stroke-width="1"/>
+  <rect x="631" y="115" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="665" y1="98" x2="665" y2="132" stroke="#26a69a" stroke-width="1"/>
+  <rect x="661" y="105" width="8" height="18" fill="#26a69a" rx="1"/>
+
+  <!-- Entry line -->
+  <line x1="510" y1="195" x2="700" y2="195" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="705" y="199" fill="#42a5f5" font-size="10">Entry</text>
+
+  <!-- Stop loss -->
+  <line x1="510" y1="245" x2="700" y2="245" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="705" y="249" fill="#ef5350" font-size="10">Stop Loss</text>
+
+  <!-- Take profit -->
+  <line x1="510" y1="98" x2="700" y2="98" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="705" y="102" fill="#00e676" font-size="10">Target (Pole Height)</text>
+
+  <!-- Breakout arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="515,155 525,155 520,142" fill="#00e676"/>
+  </g>
+  <rect x="525" y="115" width="90" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="570" y="130" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BREAKOUT</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="96" y="388" width="8" height="24" fill="#26a69a" rx="1"/>
+    <rect x="126" y="382" width="8" height="30" fill="#26a69a" rx="1"/>
+    <rect x="156" y="378" width="8" height="34" fill="#26a69a" rx="1"/>
+    <rect x="186" y="375" width="8" height="37" fill="#26a69a" rx="1"/>
+    <rect x="216" y="372" width="8" height="40" fill="#26a69a" rx="1"/>
+    <rect x="246" y="370" width="8" height="42" fill="#26a69a" rx="1"/>
+  </g>
+  <!-- Declining volume in flag -->
+  <g opacity="0.4">
+    <rect x="286" y="395" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="316" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="346" y="400" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="376" y="402" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="406" y="403" width="8" height="9" fill="#26a69a" rx="1"/>
+    <rect x="436" y="405" width="8" height="7" fill="#ef5350" rx="1"/>
+    <rect x="466" y="406" width="8" height="6" fill="#26a69a" rx="1"/>
+  </g>
+  <!-- Volume surge on breakout -->
+  <rect x="504" y="372" width="12" height="40" fill="#00e676" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="541" y="385" width="8" height="27" fill="#26a69a" rx="1"/>
+    <rect x="571" y="388" width="8" height="24" fill="#26a69a" rx="1"/>
+    <rect x="601" y="393" width="8" height="19" fill="#ef5350" rx="1"/>
+    <rect x="631" y="390" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="661" y="388" width="8" height="24" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Declining volume annotation -->
+  <path d="M 290,392 L 470,404" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <text x="365" y="388" text-anchor="middle" fill="#888" font-size="8">Declining Volume</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Pole (Impulse)</text>
+    <circle cx="140" cy="20" r="4" fill="#42a5f5"/>
+    <text x="150" y="24" fill="#999" font-size="9">Flag Channel</text>
+    <circle cx="260" cy="20" r="4" fill="#00e676"/>
+    <text x="270" y="24" fill="#999" font-size="9">Breakout Signal</text>
+    <circle cx="390" cy="20" r="4" fill="#ef5350"/>
+    <text x="400" y="24" fill="#999" font-size="9">Stop Loss</text>
+    <rect x="480" y="14" width="20" height="12" fill="#00e676" opacity="0.4" rx="2"/>
+    <text x="505" y="24" fill="#999" font-size="9">Volume Surge</text>
+  </g>
+</svg>

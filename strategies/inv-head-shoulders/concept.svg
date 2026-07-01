@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Inverse Head and Shoulders Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Downtrend candles before pattern -->
+  <line x1="90" y1="95" x2="90" y2="145" stroke="#ef5350" stroke-width="1"/>
+  <rect x="86" y="100" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="115" y1="115" x2="115" y2="170" stroke="#ef5350" stroke-width="1"/>
+  <rect x="111" y="125" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="140" y1="140" x2="140" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="136" y="150" width="8" height="35" fill="#ef5350" rx="1"/>
+
+  <!-- Left Shoulder - dip down then up -->
+  <line x1="170" y1="175" x2="170" y2="250" stroke="#ef5350" stroke-width="1"/>
+  <rect x="166" y="185" width="8" height="45" fill="#ef5350" rx="1"/>
+  <line x1="195" y1="210" x2="195" y2="290" stroke="#ef5350" stroke-width="1"/>
+  <rect x="191" y="225" width="8" height="45" fill="#ef5350" rx="1"/>
+  <line x1="220" y1="230" x2="220" y2="280" stroke="#26a69a" stroke-width="1"/>
+  <rect x="216" y="240" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="245" y1="200" x2="245" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="241" y="210" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="270" y1="175" x2="270" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="266" y="182" width="8" height="25" fill="#26a69a" rx="1"/>
+
+  <!-- Head - deeper dip -->
+  <line x1="300" y1="195" x2="300" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="296" y="205" width="8" height="40" fill="#ef5350" rx="1"/>
+  <line x1="330" y1="240" x2="330" y2="320" stroke="#ef5350" stroke-width="1"/>
+  <rect x="326" y="255" width="8" height="45" fill="#ef5350" rx="1"/>
+  <line x1="355" y1="280" x2="355" y2="370" stroke="#ef5350" stroke-width="1"/>
+  <rect x="351" y="295" width="8" height="55" fill="#ef5350" rx="1"/>
+  <line x1="380" y1="290" x2="380" y2="345" stroke="#26a69a" stroke-width="1"/>
+  <rect x="376" y="300" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="405" y1="240" x2="405" y2="310" stroke="#26a69a" stroke-width="1"/>
+  <rect x="401" y="250" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="430" y1="195" x2="430" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="426" y="205" width="8" height="35" fill="#26a69a" rx="1"/>
+  <line x1="455" y1="170" x2="455" y2="215" stroke="#26a69a" stroke-width="1"/>
+  <rect x="451" y="178" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Right Shoulder - shallower dip -->
+  <line x1="480" y1="195" x2="480" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="476" y="208" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="505" y1="220" x2="505" y2="290" stroke="#ef5350" stroke-width="1"/>
+  <rect x="501" y="235" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="530" y1="225" x2="530" y2="270" stroke="#26a69a" stroke-width="1"/>
+  <rect x="526" y="235" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="555" y1="195" x2="555" y2="245" stroke="#26a69a" stroke-width="1"/>
+  <rect x="551" y="205" width="8" height="25" fill="#26a69a" rx="1"/>
+
+  <!-- Breakout candle -->
+  <line x1="585" y1="155" x2="585" y2="210" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="579" y="160" width="12" height="38" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Post-breakout -->
+  <line x1="615" y1="140" x2="615" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="611" y="145" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="640" y1="128" x2="640" y2="160" stroke="#26a69a" stroke-width="1"/>
+  <rect x="636" y="133" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="665" y1="120" x2="665" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="661" y="125" width="8" height="15" fill="#ef5350" rx="1"/>
+  <line x1="690" y1="110" x2="690" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="686" y="115" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Neckline -->
+  <line x1="250" y1="178" x2="620" y2="168" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+  <text x="625" y="165" fill="#42a5f5" font-size="10" font-weight="500">Neckline</text>
+
+  <!-- Pattern labels -->
+  <rect x="165" y="296" width="95" height="20" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="212" y="310" text-anchor="middle" fill="#bbb" font-size="10">Left Shoulder</text>
+
+  <rect x="325" y="375" width="60" height="20" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="355" y="389" text-anchor="middle" fill="#bbb" font-size="10">Head</text>
+
+  <rect x="475" y="296" width="100" height="20" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="525" y="310" text-anchor="middle" fill="#bbb" font-size="10">Right Shoulder</text>
+
+  <!-- Entry arrow and label -->
+  <g filter="url(#softGlow)">
+    <polygon points="590,150 600,150 595,137" fill="#00e676"/>
+  </g>
+  <rect x="600" y="130" width="85" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="642" y="145" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BREAKOUT</text>
+
+  <!-- Take Profit -->
+  <line x1="585" y1="95" x2="720" y2="95" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="99" fill="#00e676" font-size="10" font-weight="500">Take Profit</text>
+
+  <!-- Entry level -->
+  <line x1="585" y1="168" x2="720" y2="168" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="725" y="172" fill="#42a5f5" font-size="10" font-weight="500">Entry</text>
+
+  <!-- Stop Loss -->
+  <line x1="585" y1="220" x2="720" y2="220" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="224" fill="#ef5350" font-size="10" font-weight="500">Stop Loss</text>
+
+  <!-- Pattern height annotation -->
+  <line x1="355" y1="175" x2="355" y2="370" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <text x="365" y="280" fill="#ff9800" font-size="9" transform="rotate(90,365,280)">Pattern Height</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="86" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="111" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="136" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="166" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="191" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="216" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="241" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="266" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="296" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="326" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="351" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="376" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="401" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="426" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="451" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="476" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="501" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="526" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="551" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="579" y="378" width="12" height="37" fill="#00e676" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="611" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="636" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="661" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="686" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#42a5f5"/>
+    <text x="30" y="24" fill="#999" font-size="9">Neckline</text>
+    <circle cx="110" cy="20" r="4" fill="#00e676"/>
+    <text x="120" y="24" fill="#999" font-size="9">Breakout Signal</text>
+    <circle cx="230" cy="20" r="4" fill="#ef5350"/>
+    <text x="240" y="24" fill="#999" font-size="9">Stop Loss</text>
+    <circle cx="330" cy="20" r="4" fill="#ff9800"/>
+    <text x="340" y="24" fill="#999" font-size="9">Pattern Height</text>
+    <rect x="445" y="12" width="20" height="16" fill="#00e676" opacity="0.5" rx="2"/>
+    <text x="470" y="24" fill="#999" font-size="9">Volume Surge</text>
+  </g>
+</svg>

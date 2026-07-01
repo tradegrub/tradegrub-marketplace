@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Kaufman Adaptive Moving Average</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Chart area -->
+  <rect x="60" y="70" width="700" height="370" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+
+  <!-- Trend up background -->
+  <rect x="60" y="70" width="280" height="370" fill="rgba(0,230,118,0.03)"/>
+  <!-- Choppy background -->
+  <rect x="340" y="70" width="180" height="370" fill="rgba(255,255,255,0.01)"/>
+  <!-- Trend down background -->
+  <rect x="520" y="70" width="120" height="370" fill="rgba(255,23,68,0.03)"/>
+  <rect x="640" y="70" width="120" height="370" fill="rgba(0,230,118,0.03)"/>
+
+  <!-- Candlesticks - uptrend -->
+  <line x1="100" y1="350" x2="100" y2="390" stroke="#26a69a" stroke-width="1"/><rect x="96" y="355" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="140" y1="320" x2="140" y2="370" stroke="#26a69a" stroke-width="1"/><rect x="136" y="325" width="8" height="35" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="280" x2="180" y2="340" stroke="#26a69a" stroke-width="1"/><rect x="176" y="285" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="240" x2="220" y2="300" stroke="#26a69a" stroke-width="1"/><rect x="216" y="245" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="200" x2="260" y2="260" stroke="#26a69a" stroke-width="1"/><rect x="256" y="205" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="300" y1="170" x2="300" y2="230" stroke="#26a69a" stroke-width="1"/><rect x="296" y="175" width="8" height="40" fill="#26a69a" rx="1"/>
+  <!-- Choppy -->
+  <line x1="340" y1="180" x2="340" y2="230" stroke="#ef5350" stroke-width="1"/><rect x="336" y="190" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="380" y1="170" x2="380" y2="220" stroke="#26a69a" stroke-width="1"/><rect x="376" y="175" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="420" y1="185" x2="420" y2="235" stroke="#ef5350" stroke-width="1"/><rect x="416" y="195" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="460" y1="175" x2="460" y2="225" stroke="#26a69a" stroke-width="1"/><rect x="456" y="180" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="190" x2="500" y2="240" stroke="#ef5350" stroke-width="1"/><rect x="496" y="200" width="8" height="28" fill="#ef5350" rx="1"/>
+  <!-- Down -->
+  <line x1="540" y1="200" x2="540" y2="260" stroke="#ef5350" stroke-width="1"/><rect x="536" y="210" width="8" height="38" fill="#ef5350" rx="1"/>
+  <line x1="580" y1="240" x2="580" y2="300" stroke="#ef5350" stroke-width="1"/><rect x="576" y="250" width="8" height="38" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="270" x2="620" y2="330" stroke="#ef5350" stroke-width="1"/><rect x="616" y="280" width="8" height="38" fill="#ef5350" rx="1"/>
+  <!-- Recovery -->
+  <line x1="660" y1="260" x2="660" y2="320" stroke="#26a69a" stroke-width="1"/><rect x="656" y="265" width="8" height="38" fill="#26a69a" rx="1"/>
+  <line x1="700" y1="230" x2="700" y2="290" stroke="#26a69a" stroke-width="1"/><rect x="696" y="235" width="8" height="38" fill="#26a69a" rx="1"/>
+
+  <!-- KAMA line (blue, adapts) - tight in trend, flat in chop -->
+  <polyline points="100,370 140,340 180,300 220,260 260,220 300,190 340,195 380,190 420,195 460,192 500,198 540,220 580,260 620,290 660,280 700,255" fill="none" stroke="#42A5F5" stroke-width="2.5"/>
+
+  <!-- Annotations -->
+  <text x="200" y="420" text-anchor="middle" fill="rgba(0,230,118,0.5)" font-size="11" font-family="Inter,sans-serif">TRENDING - Fast</text>
+  <text x="420" y="420" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="11" font-family="Inter,sans-serif">CHOPPY - Flat</text>
+  <text x="580" y="420" text-anchor="middle" fill="rgba(255,23,68,0.5)" font-size="11" font-family="Inter,sans-serif">TREND</text>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="115" y2="475" stroke="#42A5F5" stroke-width="2.5"/>
+  <text x="120" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">KAMA</text>
+  <rect x="190" y="470" width="20" height="10" fill="rgba(0,230,118,0.15)" rx="2"/>
+  <text x="215" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Rising</text>
+  <rect x="275" y="470" width="20" height="10" fill="rgba(255,23,68,0.15)" rx="2"/>
+  <text x="300" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Falling</text>
+</svg>

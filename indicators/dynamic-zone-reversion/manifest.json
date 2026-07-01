@@ -1,0 +1,34 @@
+{
+  "id": "dynamic-zone-reversion",
+  "name": "Dynamic Zone Reversion",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "numpy",
+    "scipy",
+    "dynamic-zones",
+    "vwap",
+    "mean-reversion",
+    "confluence"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Oscillator-based trading system featuring adaptive dynamic zones, VWAP mean reversion filter, and multi-indicator confluence scoring via numpy and scipy",
+  "official": true,
+  "beta": false,
+  "likes": 1500,
+  "uses": 6200,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

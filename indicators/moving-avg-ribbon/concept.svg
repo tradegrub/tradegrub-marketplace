@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="ribbonBull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef5350" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#42a5f5" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="120" x2="760" y2="120"/><line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="280" x2="760" y2="280"/><line x1="60" y1="360" x2="760" y2="360"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Rainbow MA Ribbon</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- 10 MA lines from fast (red) to slow (blue), with fill between -->
+  <!-- SMA 10 (fastest - red) -->
+  <polyline points="80,280 120,265 160,240 200,210 240,185 280,170 320,160 360,155 400,158 440,170 480,190 520,215 560,240 600,248 640,238 680,220 720,200 760,185" fill="none" stroke="#ef5350" stroke-width="1.5" opacity="0.8"/>
+  <!-- SMA 20 -->
+  <polyline points="80,285 120,272 160,250 200,222 240,198 280,182 320,172 360,168 400,172 440,185 480,205 520,228 560,250 600,255 640,248 680,232 720,215 760,200" fill="none" stroke="#ff7043" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 30 -->
+  <polyline points="80,290 120,278 160,258 200,232 240,210 280,195 320,185 360,180 400,185 440,198 480,218 520,240 560,258 600,262 640,255 680,242 720,228 760,215" fill="none" stroke="#ff9800" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 40 -->
+  <polyline points="80,294 120,284 160,265 200,242 240,222 280,208 320,198 360,192 400,198 440,210 480,230 520,250 560,265 600,268 640,262 680,250 720,238 760,228" fill="none" stroke="#ffc107" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 50 -->
+  <polyline points="80,298 120,289 160,272 200,252 240,234 280,220 320,210 360,205 400,210 440,222 480,240 520,258 560,272 600,275 640,268 680,258 720,248 760,238" fill="none" stroke="#cddc39" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 60 -->
+  <polyline points="80,302 120,294 160,278 200,260 240,244 280,232 320,222 360,218 400,222 440,234 480,250 520,265 560,278 600,280 640,275 680,265 720,255 760,248" fill="none" stroke="#66bb6a" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 70 -->
+  <polyline points="80,305 120,298 160,284 200,268 240,254 280,242 320,232 360,228 400,232 440,244 480,258 520,272 560,284 600,285 640,280 680,272 720,262 760,255" fill="none" stroke="#26a69a" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 80 -->
+  <polyline points="80,308 120,302 160,290 200,275 240,262 280,252 320,242 360,238 400,242 440,252 480,265 520,278 560,288 600,290 640,285 680,278 720,268 760,262" fill="none" stroke="#29b6f6" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 90 -->
+  <polyline points="80,311 120,305 160,295 200,282 240,270 280,260 320,252 360,248 400,252 440,260 480,272 520,284 560,292 600,294 640,290 680,284 720,275 760,268" fill="none" stroke="#42a5f5" stroke-width="1.5" opacity="0.7"/>
+  <!-- SMA 100 (slowest - blue) -->
+  <polyline points="80,314 120,308 160,300 200,288 240,278 280,268 320,260 360,258 400,260 440,268 480,278 520,290 560,298 600,298 640,295 680,288 720,280 760,275" fill="none" stroke="#5c6bc0" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Candlesticks overlaid -->
+  <line x1="100" y1="268" x2="100" y2="298" stroke="#26a69a" stroke-width="1"/><rect x="96" y="275" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="140" y1="248" x2="140" y2="278" stroke="#26a69a" stroke-width="1"/><rect x="136" y="255" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="225" x2="180" y2="258" stroke="#26a69a" stroke-width="1"/><rect x="176" y="232" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="198" x2="220" y2="232" stroke="#26a69a" stroke-width="1"/><rect x="216" y="205" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="172" x2="260" y2="208" stroke="#ef5350" stroke-width="1"/><rect x="256" y="178" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="155" x2="300" y2="192" stroke="#26a69a" stroke-width="1"/><rect x="296" y="162" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="340" y1="145" x2="340" y2="180" stroke="#26a69a" stroke-width="1"/><rect x="336" y="150" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="380" y1="142" x2="380" y2="178" stroke="#ef5350" stroke-width="1"/><rect x="376" y="148" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="420" y1="155" x2="420" y2="190" stroke="#ef5350" stroke-width="1"/><rect x="416" y="160" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="460" y1="175" x2="460" y2="210" stroke="#ef5350" stroke-width="1"/><rect x="456" y="180" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="500" y1="200" x2="500" y2="235" stroke="#ef5350" stroke-width="1"/><rect x="496" y="205" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="540" y1="225" x2="540" y2="258" stroke="#26a69a" stroke-width="1"/><rect x="536" y="235" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="580" y1="235" x2="580" y2="265" stroke="#ef5350" stroke-width="1"/><rect x="576" y="240" width="8" height="15" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="225" x2="620" y2="255" stroke="#26a69a" stroke-width="1"/><rect x="616" y="230" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="660" y1="210" x2="660" y2="245" stroke="#26a69a" stroke-width="1"/><rect x="656" y="218" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="700" y1="192" x2="700" y2="228" stroke="#26a69a" stroke-width="1"/><rect x="696" y="198" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="740" y1="178" x2="740" y2="215" stroke="#26a69a" stroke-width="1"/><rect x="736" y="185" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Annotations -->
+  <!-- Fan-out annotation (expansion) -->
+  <rect x="130" y="85" width="130" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="195" y="100" text-anchor="middle" fill="#bbb" font-size="10">Ribbon Expanding</text>
+  <text x="195" y="115" text-anchor="middle" fill="#26a69a" font-size="9">Strong Uptrend</text>
+  <path d="M 195,120 L 195,155" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Compression annotation -->
+  <rect x="390" y="85" width="130" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="455" y="100" text-anchor="middle" fill="#bbb" font-size="10">Ribbon Compressing</text>
+  <text x="455" y="115" text-anchor="middle" fill="#ff9800" font-size="9">Trend Weakening</text>
+  <path d="M 455,120 L 455,155" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Inversion annotation -->
+  <rect x="560" y="85" width="120" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="620" y="100" text-anchor="middle" fill="#bbb" font-size="10">Ribbon Inverted</text>
+  <text x="620" y="115" text-anchor="middle" fill="#ef5350" font-size="9">Bearish Signal</text>
+  <path d="M 620,120 L 620,230" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="96" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="136" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="176" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="216" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="256" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="296" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="336" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="376" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="416" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="456" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="496" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="536" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="576" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="616" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="656" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="696" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="736" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ef5350"/>
+    <text x="30" y="24" fill="#999" font-size="9">SMA 10 (Fast)</text>
+    <circle cx="130" cy="20" r="4" fill="#ff9800"/>
+    <text x="140" y="24" fill="#999" font-size="9">SMA 30-40</text>
+    <circle cx="220" cy="20" r="4" fill="#cddc39"/>
+    <text x="230" y="24" fill="#999" font-size="9">SMA 50</text>
+    <circle cx="310" cy="20" r="4" fill="#26a69a"/>
+    <text x="320" y="24" fill="#999" font-size="9">SMA 70</text>
+    <circle cx="400" cy="20" r="4" fill="#42a5f5"/>
+    <text x="410" y="24" fill="#999" font-size="9">SMA 90</text>
+    <circle cx="490" cy="20" r="4" fill="#5c6bc0"/>
+    <text x="500" y="24" fill="#999" font-size="9">SMA 100 (Slow)</text>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">WaveTrend Oscillator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart area -->
+  <rect x="60" y="70" width="700" height="160" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+  <!-- Candlesticks -->
+  <line x1="100" y1="120" x2="100" y2="180" stroke="#26a69a" stroke-width="1"/>
+  <rect x="96" y="130" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="150" y1="110" x2="150" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="146" y="115" width="8" height="45" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="100" x2="200" y2="165" stroke="#26a69a" stroke-width="1"/>
+  <rect x="196" y="105" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="95" x2="250" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="246" y="100" width="8" height="45" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="105" x2="300" y2="170" stroke="#ef5350" stroke-width="1"/>
+  <rect x="296" y="115" width="8" height="40" fill="#ef5350" rx="1"/>
+  <line x1="350" y1="120" x2="350" y2="185" stroke="#ef5350" stroke-width="1"/>
+  <rect x="346" y="130" width="8" height="45" fill="#ef5350" rx="1"/>
+  <line x1="400" y1="140" x2="400" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="396" y="150" width="8" height="35" fill="#26a69a" rx="1"/>
+  <line x1="450" y1="130" x2="450" y2="190" stroke="#26a69a" stroke-width="1"/>
+  <rect x="446" y="135" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="115" x2="500" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="496" y="120" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="550" y1="100" x2="550" y2="160" stroke="#26a69a" stroke-width="1"/>
+  <rect x="546" y="105" width="8" height="40" fill="#26a69a" rx="1"/>
+  <line x1="600" y1="95" x2="600" y2="150" stroke="#ef5350" stroke-width="1"/>
+  <rect x="596" y="100" width="8" height="40" fill="#ef5350" rx="1"/>
+  <line x1="650" y1="105" x2="650" y2="160" stroke="#ef5350" stroke-width="1"/>
+  <rect x="646" y="110" width="8" height="40" fill="#ef5350" rx="1"/>
+  <line x1="700" y1="115" x2="700" y2="170" stroke="#26a69a" stroke-width="1"/>
+  <rect x="696" y="120" width="8" height="35" fill="#26a69a" rx="1"/>
+
+  <!-- Oscillator panel -->
+  <rect x="60" y="250" width="700" height="190" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+  <!-- OB/OS zones -->
+  <rect x="60" y="255" width="700" height="35" fill="rgba(239,83,80,0.06)"/>
+  <rect x="60" y="400" width="700" height="40" fill="rgba(38,166,154,0.06)"/>
+  <!-- OB/OS lines -->
+  <line x1="60" y1="275" x2="760" y2="275" stroke="#ef5350" stroke-width="0.7" stroke-dasharray="6,4"/>
+  <line x1="60" y1="345" x2="760" y2="345" stroke="#555" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="60" y1="415" x2="760" y2="415" stroke="#26a69a" stroke-width="0.7" stroke-dasharray="6,4"/>
+  <text x="55" y="278" text-anchor="end" fill="#ef5350" font-size="9" font-family="Inter,sans-serif">60</text>
+  <text x="55" y="348" text-anchor="end" fill="#555" font-size="9" font-family="Inter,sans-serif">0</text>
+  <text x="55" y="418" text-anchor="end" fill="#26a69a" font-size="9" font-family="Inter,sans-serif">-60</text>
+
+  <!-- WT1 line (blue) -->
+  <polyline points="100,400 150,380 200,320 250,280 300,270 350,310 400,370 450,420 500,410 550,350 600,290 650,270 700,300" fill="none" stroke="#42A5F5" stroke-width="2"/>
+  <!-- WT2 line (orange) -->
+  <polyline points="100,395 150,388 200,340 250,300 300,280 350,295 400,350 450,400 500,415 550,380 600,320 650,285 700,290" fill="none" stroke="#FF7043" stroke-width="1.5"/>
+
+  <!-- Buy signal -->
+  <polygon points="450,432 445,442 455,442" fill="#00e676"/>
+  <text x="450" y="452" text-anchor="middle" fill="#00e676" font-size="9" font-family="Inter,sans-serif">Buy</text>
+  <!-- Sell signal -->
+  <polygon points="300,258 295,248 305,248" fill="#ff1744"/>
+  <text x="300" y="246" text-anchor="middle" fill="#ff1744" font-size="9" font-family="Inter,sans-serif">Sell</text>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="105" y2="475" stroke="#42A5F5" stroke-width="2"/>
+  <text x="110" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">WT1</text>
+  <line x1="160" y1="475" x2="185" y2="475" stroke="#FF7043" stroke-width="2"/>
+  <text x="190" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">WT2</text>
+  <polygon points="245,471 240,479 250,479" fill="#00e676"/>
+  <text x="255" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Buy Signal</text>
+  <polygon points="345,479 340,471 350,471" fill="#ff1744"/>
+  <text x="355" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Sell Signal</text>
+</svg>

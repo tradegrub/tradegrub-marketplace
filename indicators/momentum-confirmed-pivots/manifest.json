@@ -1,0 +1,11 @@
+{
+  "name": "Momentum Confirmed Pivots",
+  "id": "momentum-confirmed-pivots",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "price-action",
+  "tags": ["pivots", "momentum", "rsi", "confirmation", "support-resistance"],
+  "description": "Pivot highs and lows filtered by momentum confirmation to reduce false signals",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

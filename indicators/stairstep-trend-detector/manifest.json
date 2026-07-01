@@ -1,0 +1,12 @@
+{
+  "id": "stairstep-trend-detector",
+  "name": "Stair-Step Trend Detector",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Trend",
+  "tags": ["stairstep", "trend", "orderly", "institutional", "steps", "accumulation"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Detects orderly stair-step trending with consistent step sizes indicating institutional activity"
+}

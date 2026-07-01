@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="obZ" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ecca3" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#4ecca3" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="osZ" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e94560" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#e94560" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="pf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.01"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Momentum Confirmed Pivots</text>
+  <text x="400" y="46" text-anchor="middle" fill="#888" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price panel grid -->
+  <g stroke="#fff" stroke-opacity="0.04">
+    <line x1="60" y1="80" x2="760" y2="80"/><line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="160" x2="760" y2="160"/><line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="240" x2="760" y2="240"/><line x1="60" y1="280" x2="760" y2="280"/>
+    <line x1="60" y1="320" x2="760" y2="320"/>
+    <line x1="160" y1="60" x2="160" y2="325"/><line x1="260" y1="60" x2="260" y2="325"/>
+    <line x1="360" y1="60" x2="360" y2="325"/><line x1="460" y1="60" x2="460" y2="325"/>
+    <line x1="560" y1="60" x2="560" y2="325"/><line x1="660" y1="60" x2="660" y2="325"/>
+  </g>
+
+  <!-- Price axis -->
+  <text x="52" y="84" text-anchor="end" fill="#555" font-family="Arial,sans-serif" font-size="8">180</text>
+  <text x="52" y="164" text-anchor="end" fill="#555" font-family="Arial,sans-serif" font-size="8">150</text>
+  <text x="52" y="244" text-anchor="end" fill="#555" font-family="Arial,sans-serif" font-size="8">120</text>
+  <text x="52" y="324" text-anchor="end" fill="#555" font-family="Arial,sans-serif" font-size="8">100</text>
+
+  <!-- Price area fill -->
+  <polygon fill="url(#pf)" points="80,250 110,230 140,260 175,215 210,240 250,280 300,175 350,230 400,195 445,290 500,200 545,160 590,120 630,195 670,170 710,240 740,210 740,325 80,325"/>
+
+  <!-- Price line (cyan) -->
+  <polyline fill="none" stroke="#00e5ff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"
+    points="80,250 110,230 140,260 175,215 210,240 250,280 300,175 350,230 400,195 445,290 500,200 545,160 590,120 630,195 670,170 710,240 740,210"/>
+
+  <!-- Confirmed Pivot Highs (3) -->
+  <g filter="url(#glow)">
+    <circle cx="300" cy="155" r="15" fill="#4ecca3" fill-opacity="0.12" stroke="#4ecca3" stroke-width="1.8"/>
+    <text x="300" y="160" text-anchor="middle" fill="#4ecca3" font-family="Arial,sans-serif" font-size="10" font-weight="bold">PH</text>
+    <circle cx="545" cy="140" r="15" fill="#4ecca3" fill-opacity="0.12" stroke="#4ecca3" stroke-width="1.8"/>
+    <text x="545" y="145" text-anchor="middle" fill="#4ecca3" font-family="Arial,sans-serif" font-size="10" font-weight="bold">PH</text>
+    <circle cx="590" cy="100" r="15" fill="#4ecca3" fill-opacity="0.12" stroke="#4ecca3" stroke-width="1.8"/>
+    <text x="590" y="105" text-anchor="middle" fill="#4ecca3" font-family="Arial,sans-serif" font-size="10" font-weight="bold">PH</text>
+  </g>
+
+  <!-- Confirmed Pivot Lows (3) -->
+  <g filter="url(#glow)">
+    <circle cx="140" cy="280" r="15" fill="#e94560" fill-opacity="0.12" stroke="#e94560" stroke-width="1.8"/>
+    <text x="140" y="285" text-anchor="middle" fill="#e94560" font-family="Arial,sans-serif" font-size="10" font-weight="bold">PL</text>
+    <circle cx="250" cy="300" r="15" fill="#e94560" fill-opacity="0.12" stroke="#e94560" stroke-width="1.8"/>
+    <text x="250" y="305" text-anchor="middle" fill="#e94560" font-family="Arial,sans-serif" font-size="10" font-weight="bold">PL</text>
+    <circle cx="445" cy="310" r="15" fill="#e94560" fill-opacity="0.12" stroke="#e94560" stroke-width="1.8"/>
+    <text x="445" y="315" text-anchor="middle" fill="#e94560" font-family="Arial,sans-serif" font-size="10" font-weight="bold">PL</text>
+  </g>
+
+  <!-- Rejected pivots (2, ghosted at 0.25 opacity) -->
+  <g opacity="0.25">
+    <circle cx="175" cy="195" r="12" fill="none" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="175" y="199" text-anchor="middle" fill="#4ecca3" font-family="Arial,sans-serif" font-size="9">PH</text>
+    <circle cx="630" cy="215" r="12" fill="none" stroke="#e94560" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="630" y="219" text-anchor="middle" fill="#e94560" font-family="Arial,sans-serif" font-size="9">PL</text>
+  </g>
+
+  <!-- Panel separator -->
+  <line x1="60" y1="330" x2="760" y2="330" stroke="#fff" stroke-opacity="0.1"/>
+
+  <!-- RSI panel labels -->
+  <text x="65" y="350" fill="#888" font-family="Arial,sans-serif" font-size="9" font-weight="bold">RSI</text>
+  <text x="52" y="357" text-anchor="end" fill="#666" font-family="Arial,sans-serif" font-size="8">70</text>
+  <text x="52" y="437" text-anchor="end" fill="#666" font-family="Arial,sans-serif" font-size="8">30</text>
+
+  <!-- RSI panel grid -->
+  <g stroke="#fff" stroke-opacity="0.04">
+    <line x1="60" y1="355" x2="760" y2="355"/><line x1="60" y1="375" x2="760" y2="375"/>
+    <line x1="60" y1="395" x2="760" y2="395"/><line x1="60" y1="415" x2="760" y2="415"/>
+    <line x1="60" y1="435" x2="760" y2="435"/>
+    <line x1="160" y1="340" x2="160" y2="445"/><line x1="260" y1="340" x2="260" y2="445"/>
+    <line x1="360" y1="340" x2="360" y2="445"/><line x1="460" y1="340" x2="460" y2="445"/>
+    <line x1="560" y1="340" x2="560" y2="445"/><line x1="660" y1="340" x2="660" y2="445"/>
+  </g>
+
+  <!-- OB/OS zones -->
+  <rect x="60" y="340" width="700" height="15" fill="url(#obZ)"/>
+  <line x1="60" y1="355" x2="760" y2="355" stroke="#4ecca3" stroke-opacity="0.25" stroke-dasharray="5,4"/>
+  <rect x="60" y="435" width="700" height="10" fill="url(#osZ)"/>
+  <line x1="60" y1="435" x2="760" y2="435" stroke="#e94560" stroke-opacity="0.25" stroke-dasharray="5,4"/>
+
+  <!-- RSI line (yellow) — peaks above 70 at PH x-coords, troughs below 30 at PL x-coords -->
+  <polyline fill="none" stroke="#fdd835" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"
+    points="80,400 110,390 140,440 175,382 210,398 250,442 300,348 350,388 400,378 445,443 500,370 545,350 590,344 630,382 670,374 710,405 740,394"/>
+
+  <!-- Vertical confirmation lines -->
+  <g stroke-dasharray="4,4" stroke-width="1">
+    <line x1="300" y1="175" x2="300" y2="348" stroke="#4ecca3" stroke-opacity="0.25"/>
+    <line x1="545" y1="160" x2="545" y2="350" stroke="#4ecca3" stroke-opacity="0.25"/>
+    <line x1="590" y1="120" x2="590" y2="344" stroke="#4ecca3" stroke-opacity="0.25"/>
+    <line x1="140" y1="260" x2="140" y2="440" stroke="#e94560" stroke-opacity="0.25"/>
+    <line x1="250" y1="280" x2="250" y2="442" stroke="#e94560" stroke-opacity="0.25"/>
+    <line x1="445" y1="290" x2="445" y2="443" stroke="#e94560" stroke-opacity="0.25"/>
+  </g>
+
+  <!-- RSI confirmation dots -->
+  <circle cx="300" cy="348" r="4" fill="#4ecca3" opacity="0.85"/>
+  <circle cx="545" cy="350" r="4" fill="#4ecca3" opacity="0.85"/>
+  <circle cx="590" cy="344" r="4" fill="#4ecca3" opacity="0.85"/>
+  <circle cx="140" cy="440" r="4" fill="#e94560" opacity="0.85"/>
+  <circle cx="250" cy="442" r="4" fill="#e94560" opacity="0.85"/>
+  <circle cx="445" cy="443" r="4" fill="#e94560" opacity="0.85"/>
+
+  <!-- Legend bar -->
+  <g transform="translate(0,458)">
+    <rect x="60" y="0" width="700" height="32" rx="5" fill="#0d1117" fill-opacity="0.6" stroke="#fff" stroke-opacity="0.04"/>
+    <line x1="78" y1="16" x2="103" y2="16" stroke="#00e5ff" stroke-width="2"/>
+    <text x="110" y="20" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Price</text>
+    <circle cx="170" cy="16" r="8" fill="#4ecca3" fill-opacity="0.12" stroke="#4ecca3" stroke-width="1.3"/>
+    <text x="170" y="19" text-anchor="middle" fill="#4ecca3" font-family="Arial,sans-serif" font-size="7" font-weight="bold">PH</text>
+    <text x="186" y="20" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Confirmed High</text>
+    <circle cx="300" cy="16" r="8" fill="#e94560" fill-opacity="0.12" stroke="#e94560" stroke-width="1.3"/>
+    <text x="300" y="19" text-anchor="middle" fill="#e94560" font-family="Arial,sans-serif" font-size="7" font-weight="bold">PL</text>
+    <text x="316" y="20" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Confirmed Low</text>
+    <circle cx="420" cy="16" r="7" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+    <text x="433" y="20" fill="#888" font-family="Arial,sans-serif" font-size="10">Rejected</text>
+    <line x1="500" y1="16" x2="525" y2="16" stroke="#fdd835" stroke-width="1.8"/>
+    <text x="532" y="20" fill="#aaa" font-family="Arial,sans-serif" font-size="10">RSI</text>
+    <line x1="568" y1="8" x2="568" y2="24" stroke="#fff" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="578" y="20" fill="#888" font-family="Arial,sans-serif" font-size="10">Confirmation</text>
+    <rect x="668" y="10" width="12" height="5" fill="#4ecca3" fill-opacity="0.15" rx="1"/>
+    <rect x="668" y="18" width="12" height="5" fill="#e94560" fill-opacity="0.15" rx="1"/>
+    <text x="685" y="16" fill="#888" font-family="Arial,sans-serif" font-size="8">OB</text>
+    <text x="685" y="24" fill="#888" font-family="Arial,sans-serif" font-size="8">OS</text>
+  </g>
+</svg>

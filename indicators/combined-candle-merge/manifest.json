@@ -1,0 +1,11 @@
+{
+  "name": "Combined Candle Merge",
+  "id": "combined-candle-merge",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "price-action",
+  "tags": ["candlestick", "merge", "combined", "price-action", "visual"],
+  "description": "Merges consecutive same-direction candles into single aggregate bars showing net movement",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

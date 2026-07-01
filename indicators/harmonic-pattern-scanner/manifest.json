@@ -1,0 +1,12 @@
+{
+  "id": "harmonic-pattern-scanner",
+  "name": "Harmonic Pattern Scanner",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Patterns",
+  "tags": ["harmonic", "fibonacci", "gartley", "butterfly", "bat", "crab", "patterns"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Detects classic harmonic patterns using zigzag swing structure and Fibonacci ratio validation"
+}

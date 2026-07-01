@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="channelFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ab47bc" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ab47bc" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Keltner Channel Reversion Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Channel fill -->
+  <rect x="80" y="120" width="660" height="230" fill="url(#channelFill)" rx="2"/>
+
+  <!-- Upper Keltner Channel -->
+  <path d="M80,130 Q160,125 200,128 Q280,135 340,130 Q400,122 440,125 Q520,132 580,128 Q640,120 720,125" fill="none" stroke="#ab47bc" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="128" fill="#ab47bc" font-size="10" font-weight="500">Upper KC</text>
+
+  <!-- Basis EMA -->
+  <path d="M80,230 Q160,225 200,228 Q280,235 340,230 Q400,222 440,226 Q520,232 580,228 Q640,220 720,225" fill="none" stroke="#ffb74d" stroke-width="2" opacity="0.8"/>
+  <text x="725" y="228" fill="#ffb74d" font-size="10" font-weight="500">Basis (EMA)</text>
+
+  <!-- Lower Keltner Channel -->
+  <path d="M80,330 Q160,325 200,328 Q280,335 340,330 Q400,322 440,326 Q520,332 580,328 Q640,320 720,325" fill="none" stroke="#ab47bc" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="328" fill="#ab47bc" font-size="10" font-weight="500">Lower KC</text>
+
+  <!-- Candlesticks - oscillating within channel -->
+  <!-- Move 1: price drops to lower band -->
+  <line x1="100" y1="210" x2="100" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="96" y="218" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="125" y1="235" x2="125" y2="290" stroke="#ef5350" stroke-width="1"/>
+  <rect x="121" y="245" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="150" y1="270" x2="150" y2="335" stroke="#ef5350" stroke-width="1"/>
+  <rect x="146" y="280" width="8" height="38" fill="#ef5350" rx="1"/>
+
+  <!-- Price crosses back above lower band - BUY signal -->
+  <line x1="180" y1="290" x2="180" y2="340" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="174" y="295" width="12" height="32" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Buy arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="178,285 188,285 183,272" fill="#00e676"/>
+  </g>
+  <rect x="192" y="270" width="70" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="227" y="284" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY LONG</text>
+
+  <!-- Reversion toward basis -->
+  <line x1="210" y1="265" x2="210" y2="310" stroke="#26a69a" stroke-width="1"/>
+  <rect x="206" y="272" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="235" y1="245" x2="235" y2="285" stroke="#26a69a" stroke-width="1"/>
+  <rect x="231" y="252" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Exit at basis -->
+  <line x1="265" y1="220" x2="265" y2="250" stroke="#26a69a" stroke-width="1"/>
+  <rect x="261" y="224" width="8" height="18" fill="#26a69a" rx="1"/>
+  <rect x="280" y="215" width="80" height="20" rx="4" fill="#ffb74d" fill-opacity="0.15" stroke="#ffb74d" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="320" y="229" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="600">EXIT @ Basis</text>
+
+  <!-- Move 2: price rises to upper band -->
+  <line x1="310" y1="195" x2="310" y2="240" stroke="#26a69a" stroke-width="1"/>
+  <rect x="306" y="202" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="340" y1="170" x2="340" y2="215" stroke="#26a69a" stroke-width="1"/>
+  <rect x="336" y="178" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="370" y1="135" x2="370" y2="185" stroke="#26a69a" stroke-width="1"/>
+  <rect x="366" y="142" width="8" height="30" fill="#26a69a" rx="1"/>
+  <line x1="400" y1="118" x2="400" y2="160" stroke="#26a69a" stroke-width="1"/>
+  <rect x="396" y="125" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Price crosses back below upper band - SHORT signal -->
+  <line x1="430" y1="120" x2="430" y2="165" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="424" y="125" width="12" height="30" fill="#ef5350" rx="1" filter="url(#glow)"/>
+
+  <!-- Short arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="428,172 438,172 433,185" fill="#ef5350"/>
+  </g>
+  <rect x="442" y="165" width="85" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="484" y="179" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SELL SHORT</text>
+
+  <!-- Reversion back to basis -->
+  <line x1="460" y1="145" x2="460" y2="190" stroke="#ef5350" stroke-width="1"/>
+  <rect x="456" y="150" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="490" y1="175" x2="490" y2="220" stroke="#ef5350" stroke-width="1"/>
+  <rect x="486" y="182" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="520" y1="200" x2="520" y2="240" stroke="#ef5350" stroke-width="1"/>
+  <rect x="516" y="208" width="8" height="20" fill="#ef5350" rx="1"/>
+
+  <!-- Exit at basis again -->
+  <line x1="550" y1="218" x2="550" y2="245" stroke="#ef5350" stroke-width="1"/>
+  <rect x="546" y="222" width="8" height="15" fill="#ef5350" rx="1"/>
+  <rect x="562" y="220" width="80" height="20" rx="4" fill="#ffb74d" fill-opacity="0.15" stroke="#ffb74d" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="602" y="234" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="600">EXIT @ Basis</text>
+
+  <!-- More candles -->
+  <line x1="580" y1="225" x2="580" y2="270" stroke="#26a69a" stroke-width="1"/>
+  <rect x="576" y="232" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="610" y1="240" x2="610" y2="295" stroke="#ef5350" stroke-width="1"/>
+  <rect x="606" y="250" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="640" y1="265" x2="640" y2="320" stroke="#ef5350" stroke-width="1"/>
+  <rect x="636" y="275" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="670" y1="280" x2="670" y2="340" stroke="#ef5350" stroke-width="1"/>
+  <rect x="666" y="290" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="700" y1="295" x2="700" y2="335" stroke="#26a69a" stroke-width="1"/>
+  <rect x="696" y="300" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Mean reversion arrows -->
+  <path d="M183,340 C200,380 230,380 260,230" fill="none" stroke="#00e676" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
+  <path d="M433,125 C450,90 480,90 545,225" fill="none" stroke="#ef5350" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="96" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="121" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="146" y="390" width="8" height="25" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="174" y="382" width="12" height="33" fill="#00e676" rx="1" opacity="0.6"/>
+  <g opacity="0.4">
+    <rect x="206" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="231" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="261" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="306" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="336" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="366" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="396" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="424" y="385" width="12" height="30" fill="#ef5350" rx="1" opacity="0.6"/>
+  <g opacity="0.4">
+    <rect x="456" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="486" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="516" y="403" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="546" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="576" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="606" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="636" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="666" y="393" width="8" height="22" fill="#ef5350" rx="1"/>
+    <rect x="696" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ab47bc"/>
+    <text x="30" y="24" fill="#999" font-size="9">Keltner Channel</text>
+    <circle cx="145" cy="20" r="4" fill="#ffb74d"/>
+    <text x="155" y="24" fill="#999" font-size="9">Basis (EMA)</text>
+    <circle cx="255" cy="20" r="4" fill="#00e676"/>
+    <text x="265" y="24" fill="#999" font-size="9">Long Entry</text>
+    <circle cx="355" cy="20" r="4" fill="#ef5350"/>
+    <text x="365" y="24" fill="#999" font-size="9">Short Entry</text>
+    <rect x="455" y="12" width="20" height="16" fill="#ffb74d" opacity="0.4" rx="2"/>
+    <text x="480" y="24" fill="#999" font-size="9">Exit at Basis</text>
+  </g>
+</svg>

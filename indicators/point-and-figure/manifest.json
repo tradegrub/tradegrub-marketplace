@@ -1,0 +1,12 @@
+{
+  "id": "point-and-figure",
+  "name": "Point and Figure Overlay",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "price-action",
+  "tags": ["point-and-figure", "pnf", "columns", "reversal", "trend"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Point and Figure chart overlay with X and O columns, box counting, and automatic price target calculation"
+}

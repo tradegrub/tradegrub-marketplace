@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Moving Average Envelope Reversion</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+
+  <!-- Envelope fill -->
+  <polygon points="100,140 200,135 300,130 400,140 500,150 600,145 700,138 700,340 600,345 500,350 400,340 300,330 200,335 100,340" fill="rgba(255,213,79,0.04)"/>
+
+  <!-- Upper envelope -->
+  <polyline points="100,140 200,135 300,130 400,140 500,150 600,145 700,138" fill="none" stroke="#EF5350" stroke-width="1.5"/>
+  <!-- MA -->
+  <polyline points="100,240 200,235 300,230 400,240 500,250 600,245 700,238" fill="none" stroke="#FFD54F" stroke-width="2"/>
+  <!-- Lower envelope -->
+  <polyline points="100,340 200,335 300,330 400,340 500,350 600,345 700,338" fill="none" stroke="#66BB6A" stroke-width="1.5"/>
+
+  <!-- Candlesticks with trades -->
+  <line x1="150" y1="200" x2="150" y2="280" stroke="#666" stroke-width="1"/>
+  <rect x="146" y="220" width="8" height="35" fill="#4CAF50"/>
+  <line x1="250" y1="160" x2="250" y2="240" stroke="#666" stroke-width="1"/>
+  <rect x="246" y="170" width="8" height="45" fill="#4CAF50"/>
+  <!-- Short entry at upper -->
+  <polygon points="250,155 246,145 254,145" fill="#EF5350"/>
+  <text x="260" y="150" fill="#EF5350" font-family="Inter,sans-serif" font-size="9">SHORT</text>
+
+  <line x1="350" y1="210" x2="350" y2="280" stroke="#666" stroke-width="1"/>
+  <rect x="346" y="225" width="8" height="35" fill="#EF5350"/>
+  <!-- Exit at MA -->
+  <text x="360" y="242" fill="#FFD54F" font-family="Inter,sans-serif" font-size="8">EXIT</text>
+
+  <line x1="450" y1="280" x2="450" y2="360" stroke="#666" stroke-width="1"/>
+  <rect x="446" y="300" width="8" height="40" fill="#EF5350"/>
+  <!-- Long entry at lower -->
+  <polygon points="450,370 446,380 454,380" fill="#66BB6A"/>
+  <text x="460" y="375" fill="#66BB6A" font-family="Inter,sans-serif" font-size="9">LONG</text>
+
+  <line x1="550" y1="220" x2="550" y2="300" stroke="#666" stroke-width="1"/>
+  <rect x="546" y="235" width="8" height="40" fill="#4CAF50"/>
+  <!-- Exit at MA -->
+  <text x="560" y="248" fill="#FFD54F" font-family="Inter,sans-serif" font-size="8">EXIT</text>
+
+  <line x1="650" y1="190" x2="650" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="646" y="200" width="8" height="45" fill="#4CAF50"/>
+
+  <!-- Legend -->
+  <rect x="60" y="455" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <circle cx="100" cy="470" r="4" fill="#FFD54F"/>
+  <text x="110" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">MA (20)</text>
+  <circle cx="210" cy="470" r="4" fill="#EF5350"/>
+  <text x="220" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Upper Envelope</text>
+  <circle cx="370" cy="470" r="4" fill="#66BB6A"/>
+  <text x="380" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Lower Envelope</text>
+  <circle cx="530" cy="470" r="4" fill="#42A5F5"/>
+  <text x="540" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Reversion Trades</text>
+</svg>

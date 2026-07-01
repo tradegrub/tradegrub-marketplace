@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="60" y1="60" x2="60" y2="420"/><line x1="130" y1="60" x2="130" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/><line x1="270" y1="60" x2="270" y2="420"/>
+    <line x1="340" y1="60" x2="340" y2="420"/><line x1="410" y1="60" x2="410" y2="420"/>
+    <line x1="480" y1="60" x2="480" y2="420"/><line x1="550" y1="60" x2="550" y2="420"/>
+    <line x1="620" y1="60" x2="620" y2="420"/><line x1="690" y1="60" x2="690" y2="420"/>
+    <line x1="760" y1="60" x2="760" y2="420"/>
+    <line x1="60" y1="60" x2="760" y2="60"/><line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="180" x2="760" y2="180"/><line x1="60" y1="240" x2="760" y2="240"/>
+    <line x1="60" y1="300" x2="760" y2="300"/><line x1="60" y1="360" x2="760" y2="360"/>
+    <line x1="60" y1="420" x2="760" y2="420"/>
+  </g>
+  <!-- Title -->
+  <text x="60" y="30" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="bold">Quarterly Range Reference</text>
+  <text x="60" y="48" font-family="Arial, sans-serif" font-size="11" fill="#888888">tradegrub.finance</text>
+  <!-- Y-axis labels -->
+  <text x="30" y="108" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">420</text>
+  <text x="30" y="168" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">400</text>
+  <text x="30" y="228" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">380</text>
+  <text x="30" y="288" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">360</text>
+  <text x="30" y="348" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">340</text>
+  <text x="30" y="408" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">320</text>
+  <!-- Shading between Q High and Q Low -->
+  <rect x="60" y="130" width="700" height="240" fill="#ffffff" fill-opacity="0.012"/>
+  <!-- Quarterly levels -->
+  <line x1="60" y1="130" x2="760" y2="130" stroke="#ff4444" stroke-width="1.5" stroke-opacity="0.7"/>
+  <text x="62" y="126" font-family="Arial, sans-serif" font-size="9" fill="#ff4444" opacity="0.8">Q High 415.20</text>
+  <line x1="60" y1="240" x2="760" y2="240" stroke="#ff8c00" stroke-width="1.2" stroke-dasharray="8,4" stroke-opacity="0.6"/>
+  <text x="62" y="236" font-family="Arial, sans-serif" font-size="9" fill="#ff8c00" opacity="0.8">Q Open 382.50</text>
+  <line x1="60" y1="370" x2="760" y2="370" stroke="#00cc66" stroke-width="1.5" stroke-opacity="0.7"/>
+  <text x="62" y="366" font-family="Arial, sans-serif" font-size="9" fill="#00cc66" opacity="0.8">Q Low 338.10</text>
+  <!-- Price line - 30 points, uptrend, starts near Q Low, breaks above Q High -->
+  <polyline fill="none" stroke="#88ccff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"
+    points="
+      80,360 103,352 126,365 149,345 172,338 195,350 218,330 241,318
+      264,310 287,298 310,305 333,290 356,278 379,270 402,258 425,250
+      448,238 471,228 494,218 517,208 540,195 563,185 586,178
+      609,165 632,155 655,145 678,135 701,125 724,108 747,88
+    "/>
+  <!-- Price dots at start and end -->
+  <circle cx="80" cy="360" r="3" fill="#88ccff" opacity="0.5"/>
+  <circle cx="747" cy="88" r="4" fill="#88ccff" filter="url(#glow)"/>
+  <!-- Breakout zone highlight -->
+  <rect x="670" y="70" width="95" height="60" rx="4" fill="#00ff88" fill-opacity="0.04"/>
+  <!-- Breakout arrow -->
+  <line x1="720" y1="130" x2="720" y2="95" stroke="#00ff88" stroke-width="2.5" filter="url(#glowStrong)"/>
+  <polygon points="720,82 712,98 728,98" fill="#00ff88" filter="url(#glowStrong)"/>
+  <!-- Breakout label -->
+  <rect x="692" y="68" width="56" height="16" rx="3" fill="#00ff88" fill-opacity="0.15" stroke="#00ff88" stroke-width="0.5" stroke-opacity="0.5"/>
+  <text x="720" y="80" font-family="Arial, sans-serif" font-size="10" fill="#00ff88" text-anchor="middle" font-weight="bold">Breakout!</text>
+  <!-- Current price label -->
+  <rect x="752" y="82" width="44" height="14" rx="2" fill="#88ccff" fill-opacity="0.2"/>
+  <text x="774" y="92" font-family="Arial, sans-serif" font-size="9" fill="#88ccff" text-anchor="middle">425.80</text>
+  <!-- Legend bar -->
+  <g transform="translate(0,455)">
+    <rect x="55" y="-5" width="700" height="30" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <line x1="80" y1="10" x2="110" y2="10" stroke="#ff4444" stroke-width="2"/>
+    <text x="115" y="14" font-family="Arial, sans-serif" font-size="11" fill="#cccccc">Q High</text>
+    <line x1="200" y1="10" x2="230" y2="10" stroke="#ff8c00" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="235" y="14" font-family="Arial, sans-serif" font-size="11" fill="#cccccc">Q Open</text>
+    <line x1="330" y1="10" x2="360" y2="10" stroke="#00cc66" stroke-width="2"/>
+    <text x="365" y="14" font-family="Arial, sans-serif" font-size="11" fill="#cccccc">Q Low</text>
+    <line x1="450" y1="10" x2="480" y2="10" stroke="#88ccff" stroke-width="2"/>
+    <text x="485" y="14" font-family="Arial, sans-serif" font-size="11" fill="#cccccc">Price</text>
+  </g>
+</svg>

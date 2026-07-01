@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="greenBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e676"/>
+      <stop offset="100%" stop-color="#00c853"/>
+    </linearGradient>
+    <linearGradient id="yellowBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffeb3b"/>
+      <stop offset="100%" stop-color="#ffc107"/>
+    </linearGradient>
+    <linearGradient id="redBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff5252"/>
+      <stop offset="100%" stop-color="#d32f2f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Monotonicity Index</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- ========== PANEL 1: Strong Trend (MI = 0.95) ========== -->
+  <rect x="60" y="65" width="680" height="115" rx="6" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <!-- Color bar -->
+  <rect x="68" y="73" width="6" height="99" rx="3" fill="url(#greenBar)"/>
+
+  <!-- Label -->
+  <text x="88" y="86" fill="#00e676" font-size="13" font-weight="600">MI = 0.95</text>
+  <text x="88" y="100" fill="#66bb6a" font-size="10">Strong Trend</text>
+
+  <!-- Stair-step uptrend price line -->
+  <polyline fill="none" stroke="#00e676" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"
+    points="160,160 200,155 220,150 240,148 270,140 300,135 320,130 350,120 380,115 400,108 430,100 460,95 490,88 520,82 550,78 580,76 610,74 640,73 670,72 700,70"/>
+
+  <!-- Stair steps (flat + up pattern) -->
+  <polyline fill="none" stroke="#00e676" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="3,3"
+    points="160,160 190,160 190,152 230,152 230,143 270,143 270,132 310,132 310,120 350,120 350,108 390,108 390,97 430,97 430,88 470,88 470,80 510,80 510,75 550,75 550,72 600,72 600,70 700,70"/>
+
+  <!-- ========== PANEL 2: Choppy (MI = 0.50) ========== -->
+  <rect x="60" y="192" width="680" height="115" rx="6" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <!-- Color bar -->
+  <rect x="68" y="200" width="6" height="99" rx="3" fill="url(#yellowBar)"/>
+
+  <!-- Label -->
+  <text x="88" y="213" fill="#ffeb3b" font-size="13" font-weight="600">MI = 0.50</text>
+  <text x="88" y="227" fill="#fdd835" font-size="10">Choppy</text>
+
+  <!-- Oscillating choppy price -->
+  <polyline fill="none" stroke="#ffeb3b" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"
+    points="160,260 180,240 200,265 220,235 240,258 260,230 280,255 300,238 320,262 340,228 360,250 380,242 400,268 420,232 440,255 460,238 480,260 500,230 520,252 540,245 560,265 580,235 600,248 620,240 640,260 660,238 680,250 700,242"/>
+
+  <!-- ========== PANEL 3: Random Walk (MI = 0.10) ========== -->
+  <rect x="60" y="319" width="680" height="115" rx="6" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <!-- Color bar -->
+  <rect x="68" y="327" width="6" height="99" rx="3" fill="url(#redBar)"/>
+
+  <!-- Label -->
+  <text x="88" y="340" fill="#ff5252" font-size="13" font-weight="600">MI = 0.10</text>
+  <text x="88" y="354" fill="#e57373" font-size="10">Random</text>
+
+  <!-- Random walk messy price -->
+  <polyline fill="none" stroke="#ff5252" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"
+    points="160,380 175,365 185,395 200,370 210,400 225,360 235,385 245,410 260,355 270,390 285,415 295,365 310,395 320,350 335,405 345,370 355,410 370,358 380,400 395,375 405,415 420,360 430,390 445,350 455,405 470,368 480,410 495,355 505,395 520,375 530,408 545,358 555,395 570,380 585,405 595,360 610,398 625,370 635,405 650,362 665,395 675,380 690,400 700,375"/>
+
+  <!-- ========== LEGEND BAR ========== -->
+  <g transform="translate(400, 460)">
+    <!-- Green -->
+    <rect x="-240" y="-8" width="14" height="14" rx="3" fill="url(#greenBar)"/>
+    <text x="-222" y="4" fill="#aaa" font-size="10">High MI (trending)</text>
+    <!-- Yellow -->
+    <rect x="-90" y="-8" width="14" height="14" rx="3" fill="url(#yellowBar)"/>
+    <text x="-72" y="4" fill="#aaa" font-size="10">Mid MI (choppy)</text>
+    <!-- Red -->
+    <rect x="60" y="-8" width="14" height="14" rx="3" fill="url(#redBar)"/>
+    <text x="78" y="4" fill="#aaa" font-size="10">Low MI (random)</text>
+  </g>
+
+  <!-- Axis labels on right side of panels -->
+  <text x="720" y="125" fill="#00e676" fill-opacity="0.5" font-size="9" text-anchor="end">price</text>
+  <text x="720" y="252" fill="#ffeb3b" fill-opacity="0.5" font-size="9" text-anchor="end">price</text>
+  <text x="720" y="379" fill="#ff5252" fill-opacity="0.5" font-size="9" text-anchor="end">price</text>
+</svg>

@@ -1,0 +1,28 @@
+## Trend Template Qualifier
+
+Scores a stock from 0 to 6 based on stage-2 trend template conditions. All six conditions must be met for a stock to qualify as a leading growth candidate.
+
+### Conditions Checked
+
+1. Price above 150-day SMA
+2. Price above 200-day SMA
+3. 150-day SMA above 200-day SMA
+4. Price at least 30% above 52-week low
+5. Price within 25% of 52-week high
+6. Positive relative strength (yearly return > 0%)
+
+### Signals
+
+- **Score 6 (green background)**: All conditions met, stock qualifies
+- **Score 4-5 (green bars)**: Most conditions met, close to qualifying
+- **Score 2-3 (orange bars)**: Partial qualification
+- **Score 0-1 (red bars)**: Does not qualify
+
+### Usage
+
+Look for stocks scoring a full 6 to identify candidates in confirmed stage-2 uptrends. Watch for the score rising from low values as potential early entries before full qualification.
+
+
+## Conceptual Diagram
+
+![Concept](concept.svg)

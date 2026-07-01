@@ -1,0 +1,38 @@
+{
+  "id": "volatility-estimator-suite",
+  "name": "Volatility Estimator Suite",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "volatility",
+  "tags": [
+    "numpy",
+    "volatility",
+    "parkinson",
+    "garman-klass",
+    "rogers-satchell",
+    "yang-zhang"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Four range-based volatility estimators (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang) computed with numpy for comparing realized volatility measures",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "inputs": [
+    {"name": "lookback", "type": "int", "default": 20, "min": 5, "max": 100}
+  ],
+  "overlay": false,
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

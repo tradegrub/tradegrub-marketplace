@@ -1,0 +1,15 @@
+{
+  "name": "Daily Percent Levels",
+  "id": "daily-percent-levels",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Horizontal price levels at fixed percentage intervals from a reference price showing how far price has deviated in percentage terms",
+  "category": "support-resistance",
+  "tags": ["levels", "percentage", "reference", "intraday"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 3600
+}

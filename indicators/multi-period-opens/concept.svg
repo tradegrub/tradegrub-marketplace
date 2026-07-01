@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="600">Multi-Period Opens</text>
+
+  <!-- Yearly Open (green) -->
+  <line x1="80" y1="120" x2="700" y2="120" stroke="#26a69a" stroke-width="2.5"/>
+  <text x="710" y="125" fill="#26a69a" font-size="13" font-weight="500">Yearly Open</text>
+
+  <!-- Monthly Open (orange) -->
+  <line x1="80" y1="210" x2="700" y2="210" stroke="#FF9800" stroke-width="2"/>
+  <text x="710" y="215" fill="#FF9800" font-size="13" font-weight="500">Monthly Open</text>
+
+  <!-- Weekly Open (purple) -->
+  <line x1="80" y1="300" x2="700" y2="300" stroke="#AB47BC" stroke-width="2"/>
+  <text x="710" y="305" fill="#AB47BC" font-size="13" font-weight="500">Weekly Open</text>
+
+  <!-- Daily Open (blue) -->
+  <line x1="80" y1="370" x2="700" y2="370" stroke="#2196F3" stroke-width="2"/>
+  <text x="710" y="375" fill="#2196F3" font-size="13" font-weight="500">Daily Open</text>
+
+  <!-- Price line crossing through all levels -->
+  <path d="M80,400 L120,380 L160,360 L200,340 L240,310 L280,280 L320,260 L360,230 L400,200 L440,180 L480,150 L520,130 L540,140 L560,170 L580,200 L600,230 L620,260 L640,290 L660,320 L680,350 L700,360" fill="none" stroke="#e2e8f0" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Cross markers where price intersects levels -->
+  <!-- Crosses Yearly -->
+  <circle cx="505" cy="120" r="6" fill="none" stroke="#26a69a" stroke-width="2"/>
+  <circle cx="555" cy="120" r="6" fill="none" stroke="#26a69a" stroke-width="2" opacity="0.5"/>
+
+  <!-- Crosses Monthly -->
+  <circle cx="395" cy="210" r="6" fill="none" stroke="#FF9800" stroke-width="2"/>
+  <circle cx="590" cy="210" r="6" fill="none" stroke="#FF9800" stroke-width="2" opacity="0.5"/>
+
+  <!-- Crosses Weekly -->
+  <circle cx="250" cy="300" r="6" fill="none" stroke="#AB47BC" stroke-width="2"/>
+  <circle cx="640" cy="300" r="6" fill="none" stroke="#AB47BC" stroke-width="2" opacity="0.5"/>
+
+  <!-- Crosses Daily -->
+  <circle cx="155" cy="370" r="6" fill="none" stroke="#2196F3" stroke-width="2"/>
+  <circle cx="695" cy="370" r="6" fill="none" stroke="#2196F3" stroke-width="2" opacity="0.5"/>
+
+  <!-- Legend -->
+  <line x1="180" y1="467" x2="196" y2="467" stroke="#e2e8f0" stroke-width="2.5"/>
+  <text x="202" y="470" fill="#e2e8f0" font-size="12">Price</text>
+  <circle cx="262" cy="467" r="4" fill="none" stroke="#787b86" stroke-width="1.5"/>
+  <text x="272" y="470" fill="#787b86" font-size="12">Crosses open level</text>
+
+  <!-- Annotation -->
+  <text x="400" y="450" text-anchor="middle" fill="#787b86" font-size="12">Price action relative to multi-timeframe opening prices</text>
+</svg>

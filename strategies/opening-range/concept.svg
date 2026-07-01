@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="rangeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9800" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ff9800" stop-opacity="0.04"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Opening Range Breakout Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Opening Range zone -->
+  <rect x="80" y="200" width="200" height="80" fill="url(#rangeFill)" rx="2"/>
+  <line x1="80" y1="200" x2="720" y2="200" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="204" fill="#ff9800" font-size="10" font-weight="500">OR High</text>
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="284" fill="#ff9800" font-size="10" font-weight="500">OR Low</text>
+  <line x1="80" y1="240" x2="720" y2="240" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,3" opacity="0.35"/>
+  <text x="725" y="244" fill="#ff9800" font-size="9" opacity="0.6">Midline</text>
+
+  <!-- First 5 bars annotation -->
+  <line x1="80" y1="390" x2="230" y2="390" stroke="#888" stroke-width="1"/>
+  <line x1="80" y1="385" x2="80" y2="395" stroke="#888" stroke-width="1"/>
+  <line x1="230" y1="385" x2="230" y2="395" stroke="#888" stroke-width="1"/>
+  <text x="155" y="405" text-anchor="middle" fill="#888" font-size="9">First 5 Bars</text>
+
+  <!-- Opening range candles (inside range) -->
+  <line x1="100" y1="205" x2="100" y2="270" stroke="#ef5350" stroke-width="1"/>
+  <rect x="96" y="215" width="8" height="35" fill="#ef5350" rx="1"/>
+  <line x1="130" y1="210" x2="130" y2="275" stroke="#26a69a" stroke-width="1"/>
+  <rect x="126" y="240" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="160" y1="208" x2="160" y2="268" stroke="#26a69a" stroke-width="1"/>
+  <rect x="156" y="225" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="190" y1="212" x2="190" y2="272" stroke="#ef5350" stroke-width="1"/>
+  <rect x="186" y="220" width="8" height="32" fill="#ef5350" rx="1"/>
+  <line x1="220" y1="206" x2="220" y2="265" stroke="#26a69a" stroke-width="1"/>
+  <rect x="216" y="230" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Post-range candles consolidating -->
+  <line x1="260" y1="210" x2="260" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="256" y="218" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="290" y1="208" x2="290" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="286" y="225" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="320" y1="205" x2="320" y2="250" stroke="#26a69a" stroke-width="1"/>
+  <rect x="316" y="215" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="350" y1="202" x2="350" y2="245" stroke="#26a69a" stroke-width="1"/>
+  <rect x="346" y="210" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Breakout candle above OR High -->
+  <line x1="390" y1="175" x2="390" y2="220" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="384" y="180" width="12" height="30" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Breakout arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="395,170 405,170 400,157" fill="#00e676"/>
+  </g>
+  <rect x="408" y="155" width="60" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="438" y="170" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BUY</text>
+
+  <!-- Post-breakout candles trending up -->
+  <line x1="420" y1="160" x2="420" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="416" y="165" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="450" y1="148" x2="450" y2="188" stroke="#26a69a" stroke-width="1"/>
+  <rect x="446" y="155" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="480" y1="135" x2="480" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="476" y="140" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="510" y1="128" x2="510" y2="165" stroke="#ef5350" stroke-width="1"/>
+  <rect x="506" y="132" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="540" y1="120" x2="540" y2="155" stroke="#26a69a" stroke-width="1"/>
+  <rect x="536" y="125" width="8" height="18" fill="#26a69a" rx="1"/>
+
+  <!-- Take Profit line -->
+  <line x1="390" y1="115" x2="600" y2="115" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="605" y="119" fill="#00e676" font-size="10" font-weight="500">TP (2x ATR)</text>
+
+  <!-- Entry line -->
+  <line x1="390" y1="200" x2="600" y2="200" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="605" y="204" fill="#42a5f5" font-size="10" font-weight="500">Entry</text>
+
+  <!-- Stop Loss line -->
+  <line x1="390" y1="260" x2="600" y2="260" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="605" y="264" fill="#ef5350" font-size="10" font-weight="500">Stop (1x ATR)</text>
+
+  <!-- Midline fallback annotation -->
+  <rect x="490" y="230" width="110" height="18" rx="4" fill="#ff9800" fill-opacity="0.12" stroke="#ff9800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="545" y="243" text-anchor="middle" fill="#ff9800" font-size="9" font-weight="500">Midline Fallback Exit</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="96" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="126" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="156" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="186" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="216" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="256" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="286" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="316" y="404" width="8" height="11" fill="#26a69a" rx="1"/>
+    <rect x="346" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="384" y="378" width="12" height="37" fill="#00e676" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="416" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="446" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="476" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="506" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="536" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ff9800"/>
+    <text x="30" y="24" fill="#999" font-size="9">Opening Range</text>
+    <circle cx="140" cy="20" r="4" fill="#00e676"/>
+    <text x="150" y="24" fill="#999" font-size="9">Breakout Signal</text>
+    <circle cx="260" cy="20" r="4" fill="#42a5f5"/>
+    <text x="270" y="24" fill="#999" font-size="9">Entry Level</text>
+    <circle cx="360" cy="20" r="4" fill="#ef5350"/>
+    <text x="370" y="24" fill="#999" font-size="9">Stop Loss</text>
+    <rect x="455" y="12" width="20" height="16" fill="#00e676" opacity="0.5" rx="2"/>
+    <text x="480" y="24" fill="#999" font-size="9">Volume Surge</text>
+    <circle cx="570" cy="20" r="4" fill="#ff9800" opacity="0.5"/>
+    <text x="580" y="24" fill="#999" font-size="9">Midline Exit</text>
+  </g>
+</svg>

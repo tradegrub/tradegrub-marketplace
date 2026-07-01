@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Volume Zone Oscillator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <line x1="60" y1="70" x2="60" y2="200" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="200" x2="750" y2="200" stroke="#333" stroke-width="1"/>
+  <polyline points="100,170 160,155 220,145 280,150 340,160 400,170 460,165 520,150 580,140 640,135 700,130" stroke="#e0e0e0" stroke-width="1.5" fill="none"/>
+
+  <!-- VZO subplot -->
+  <line x1="60" y1="230" x2="750" y2="230" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="230" x2="60" y2="440" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="335" x2="750" y2="335" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="55" y="340" text-anchor="end" fill="#666" font-size="8">0</text>
+
+  <!-- OB/OS lines -->
+  <line x1="60" y1="277" x2="750" y2="277" stroke="#ff1744" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="755" y="281" fill="#ff1744" font-size="8">+40</text>
+  <line x1="60" y1="393" x2="750" y2="393" stroke="#00e676" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="755" y="397" fill="#00e676" font-size="8">-40</text>
+
+  <!-- OB zone bg -->
+  <rect x="180" y="230" width="120" height="47" fill="rgba(255,23,68,0.06)"/>
+  <!-- OS zone bg -->
+  <rect x="380" y="393" width="100" height="47" fill="rgba(0,230,118,0.06)"/>
+
+  <!-- Raw VZO -->
+  <polyline points="100,320 160,290 220,265 280,275 340,310 400,360 460,400 520,370 580,320 640,290 700,280" stroke="#42A5F5" stroke-width="1" fill="none" opacity="0.4"/>
+
+  <!-- Smooth VZO -->
+  <polyline points="100,325 160,300 220,275 280,280 340,305 400,350 460,390 520,365 580,330 640,300 700,288" stroke="#FFA726" stroke-width="2" fill="none"/>
+
+  <!-- Annotations -->
+  <text x="230" y="260" text-anchor="middle" fill="#ff1744" font-size="9">Overbought</text>
+  <text x="430" y="420" text-anchor="middle" fill="#00e676" font-size="9">Oversold</text>
+
+  <!-- Legend -->
+  <rect x="200" y="462" width="12" height="12" fill="#42A5F5" rx="2"/>
+  <text x="218" y="473" fill="#aaa" font-size="10">VZO Raw</text>
+  <rect x="310" y="462" width="12" height="12" fill="#FFA726" rx="2"/>
+  <text x="328" y="473" fill="#aaa" font-size="10">VZO Smooth</text>
+  <rect x="430" y="462" width="12" height="12" fill="rgba(255,23,68,0.3)" rx="2"/>
+  <text x="448" y="473" fill="#aaa" font-size="10">OB/OS Zones</text>
+</svg>

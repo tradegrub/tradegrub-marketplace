@@ -1,0 +1,15 @@
+{
+  "name": "Multi Period Opens",
+  "id": "multi-period-opens",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Opening price levels for daily, weekly, monthly, and yearly periods as key institutional reference points",
+  "category": "support-resistance",
+  "tags": ["opens", "levels", "daily", "weekly", "monthly", "reference"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 3800
+}

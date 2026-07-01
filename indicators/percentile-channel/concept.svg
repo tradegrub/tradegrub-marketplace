@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Percentile Channel</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Chart area -->
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+
+  <!-- Channel fill -->
+  <polygon points="100,150 180,140 260,135 340,145 420,155 500,148 580,140 660,135 720,142 720,330 660,340 580,345 500,338 420,345 340,340 260,335 180,338 100,335" fill="rgba(66,165,245,0.06)"/>
+
+  <!-- Upper band -->
+  <polyline points="100,150 180,140 260,135 340,145 420,155 500,148 580,140 660,135 720,142" fill="none" stroke="#EF5350" stroke-width="1.5"/>
+  <!-- Mid band -->
+  <polyline points="100,240 180,235 260,230 340,240 420,250 500,242 580,235 660,232 720,238" fill="none" stroke="#FFD54F" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Lower band -->
+  <polyline points="100,335 180,338 260,335 340,340 420,345 500,338 580,345 660,340 720,338" fill="none" stroke="#66BB6A" stroke-width="1.5"/>
+
+  <!-- Candlesticks -->
+  <line x1="140" y1="200" x2="140" y2="280" stroke="#666" stroke-width="1"/>
+  <rect x="136" y="215" width="8" height="40" fill="#4CAF50"/>
+  <line x1="220" y1="180" x2="220" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="216" y="195" width="8" height="45" fill="#4CAF50"/>
+  <line x1="300" y1="170" x2="300" y2="260" stroke="#666" stroke-width="1"/>
+  <rect x="296" y="180" width="8" height="50" fill="#4CAF50"/>
+  <!-- Touch upper -->
+  <polygon points="300,160 296,150 304,150" fill="#EF5350"/>
+  <line x1="380" y1="200" x2="380" y2="290" stroke="#666" stroke-width="1"/>
+  <rect x="376" y="220" width="8" height="45" fill="#EF5350"/>
+  <line x1="460" y1="250" x2="460" y2="340" stroke="#666" stroke-width="1"/>
+  <rect x="456" y="270" width="8" height="45" fill="#EF5350"/>
+  <!-- Touch lower -->
+  <polygon points="460,355 456,365 464,365" fill="#66BB6A"/>
+  <line x1="540" y1="220" x2="540" y2="310" stroke="#666" stroke-width="1"/>
+  <rect x="536" y="240" width="8" height="40" fill="#4CAF50"/>
+  <line x1="620" y1="190" x2="620" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="616" y="200" width="8" height="45" fill="#4CAF50"/>
+  <line x1="700" y1="200" x2="700" y2="280" stroke="#666" stroke-width="1"/>
+  <rect x="696" y="210" width="8" height="40" fill="#EF5350"/>
+
+  <!-- Labels -->
+  <text x="730" y="145" fill="#EF5350" font-family="Inter,sans-serif" font-size="9">P90</text>
+  <text x="730" y="240" fill="#FFD54F" font-family="Inter,sans-serif" font-size="9">P50</text>
+  <text x="730" y="342" fill="#66BB6A" font-family="Inter,sans-serif" font-size="9">P10</text>
+
+  <!-- Legend -->
+  <rect x="60" y="455" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <circle cx="100" cy="470" r="4" fill="#EF5350"/>
+  <text x="110" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Upper (90th)</text>
+  <circle cx="240" cy="470" r="4" fill="#FFD54F"/>
+  <text x="250" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Median (50th)</text>
+  <circle cx="400" cy="470" r="4" fill="#66BB6A"/>
+  <text x="410" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Lower (10th)</text>
+</svg>

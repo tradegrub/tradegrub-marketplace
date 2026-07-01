@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="idealZone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="120" y1="60" x2="120" y2="400"/>
+    <line x1="220" y1="60" x2="220" y2="400"/>
+    <line x1="320" y1="60" x2="320" y2="400"/>
+    <line x1="420" y1="60" x2="420" y2="400"/>
+    <line x1="520" y1="60" x2="520" y2="400"/>
+    <line x1="620" y1="60" x2="620" y2="400"/>
+    <line x1="720" y1="60" x2="720" y2="400"/>
+    <line x1="120" y1="100" x2="720" y2="100"/>
+    <line x1="120" y1="160" x2="720" y2="160"/>
+    <line x1="120" y1="220" x2="720" y2="220"/>
+    <line x1="120" y1="280" x2="720" y2="280"/>
+    <line x1="120" y1="340" x2="720" y2="340"/>
+    <line x1="120" y1="400" x2="720" y2="400"/>
+  </g>
+
+  <!-- Axes -->
+  <line x1="120" y1="60" x2="120" y2="400" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1.5"/>
+  <line x1="120" y1="400" x2="720" y2="400" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1.5"/>
+
+  <!-- Y-axis label -->
+  <text x="18" y="230" fill="#8892b0" font-family="Arial,sans-serif" font-size="12" transform="rotate(-90,18,230)" text-anchor="middle">Smoothness</text>
+  <text x="110" y="404" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="end">Rough</text>
+  <text x="110" y="280" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="end">Medium</text>
+  <text x="110" y="160" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="end">High</text>
+  <text x="110" y="80" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="end">Highest</text>
+  <line x1="115" y1="400" x2="120" y2="400" stroke="#8892b0" stroke-width="1"/>
+  <line x1="115" y1="280" x2="120" y2="280" stroke="#8892b0" stroke-width="1"/>
+  <line x1="115" y1="160" x2="120" y2="160" stroke="#8892b0" stroke-width="1"/>
+  <line x1="115" y1="80" x2="120" y2="80" stroke="#8892b0" stroke-width="1"/>
+
+  <!-- X-axis label -->
+  <text x="420" y="435" fill="#8892b0" font-family="Arial,sans-serif" font-size="12" text-anchor="middle">Lag</text>
+  <text x="180" y="418" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="middle">Lowest</text>
+  <text x="320" y="418" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="middle">Low</text>
+  <text x="470" y="418" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="middle">Medium</text>
+  <text x="620" y="418" fill="#8892b0" font-family="Arial,sans-serif" font-size="10" text-anchor="middle">High</text>
+  <line x1="180" y1="400" x2="180" y2="405" stroke="#8892b0" stroke-width="1"/>
+  <line x1="320" y1="400" x2="320" y2="405" stroke="#8892b0" stroke-width="1"/>
+  <line x1="470" y1="400" x2="470" y2="405" stroke="#8892b0" stroke-width="1"/>
+  <line x1="620" y1="400" x2="620" y2="405" stroke="#8892b0" stroke-width="1"/>
+
+  <!-- Ideal Zone (top-left: high smoothness + low lag) -->
+  <rect x="120" y="60" width="200" height="180" fill="url(#idealZone)" rx="8"/>
+  <rect x="120" y="60" width="200" height="180" fill="none" stroke="#00ff88" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="6,4" rx="8"/>
+  <text x="220" y="85" fill="#00ff88" font-family="Arial,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" filter="url(#glow)" opacity="0.9">IDEAL ZONE</text>
+
+  <!-- Callout arrow to ideal zone -->
+  <line x1="360" y1="110" x2="325" y2="110" stroke="#00ff88" stroke-opacity="0.6" stroke-width="1"/>
+  <polygon points="325,107 318,110 325,113" fill="#00ff88" opacity="0.6"/>
+  <text x="365" y="107" fill="#00ff88" font-family="Arial,sans-serif" font-size="10" opacity="0.8">High smoothness</text>
+  <text x="365" y="120" fill="#00ff88" font-family="Arial,sans-serif" font-size="10" opacity="0.8">+ Low lag</text>
+
+  <!-- SMA dot: high smoothness, high lag -->
+  <circle cx="600" cy="140" r="10" fill="#ff6b6b" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="600" cy="140" r="4" fill="#ffffff" opacity="0.6"/>
+  <text x="600" y="130" fill="#ff6b6b" font-family="Arial,sans-serif" font-size="11" font-weight="bold" text-anchor="middle" filter="url(#textShadow)">SMA</text>
+
+  <!-- EMA dot: medium smoothness, medium lag -->
+  <circle cx="440" cy="230" r="10" fill="#ffd93d" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="440" cy="230" r="4" fill="#ffffff" opacity="0.6"/>
+  <text x="440" y="220" fill="#ffd93d" font-family="Arial,sans-serif" font-size="11" font-weight="bold" text-anchor="middle" filter="url(#textShadow)">EMA</text>
+
+  <!-- WMA dot: medium-low smoothness, low lag -->
+  <circle cx="310" cy="300" r="10" fill="#6bcb77" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="310" cy="300" r="4" fill="#ffffff" opacity="0.6"/>
+  <text x="310" y="290" fill="#6bcb77" font-family="Arial,sans-serif" font-size="11" font-weight="bold" text-anchor="middle" filter="url(#textShadow)">WMA</text>
+
+  <!-- DEMA dot: high smoothness, low lag -->
+  <circle cx="230" cy="150" r="10" fill="#4d96ff" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="230" cy="150" r="4" fill="#ffffff" opacity="0.6"/>
+  <text x="230" y="140" fill="#4d96ff" font-family="Arial,sans-serif" font-size="11" font-weight="bold" text-anchor="middle" filter="url(#textShadow)">DEMA</text>
+
+  <!-- TEMA dot: highest smoothness, lowest lag -->
+  <circle cx="170" cy="95" r="12" fill="#9b59b6" filter="url(#glowStrong)" opacity="0.95"/>
+  <circle cx="170" cy="95" r="5" fill="#ffffff" opacity="0.7"/>
+  <text x="170" y="118" fill="#9b59b6" font-family="Arial,sans-serif" font-size="11" font-weight="bold" text-anchor="middle" filter="url(#textShadow)">TEMA</text>
+
+  <!-- Diagonal trend line -->
+  <line x1="140" y1="380" x2="700" y2="80" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="8,6"/>
+  <text x="690" y="75" fill="#ffffff" font-family="Arial,sans-serif" font-size="9" opacity="0.15" text-anchor="end">quality tradeoff</text>
+
+  <!-- Title -->
+  <text x="400" y="30" fill="#e0e0ff" font-family="Arial,sans-serif" font-size="17" font-weight="bold" text-anchor="middle" filter="url(#textShadow)">Moving Average Quality Index</text>
+  <text x="400" y="48" fill="#8892b0" font-family="Arial,sans-serif" font-size="11" text-anchor="middle">tradegrub.finance</text>
+
+  <!-- Legend bar at bottom -->
+  <rect x="100" y="455" width="600" height="35" rx="6" fill="#0a0a1a" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.08"/>
+  <circle cx="140" cy="472" r="5" fill="#ff6b6b"/>
+  <text x="152" y="476" fill="#ccd6f6" font-family="Arial,sans-serif" font-size="10">SMA</text>
+  <circle cx="210" cy="472" r="5" fill="#ffd93d"/>
+  <text x="222" y="476" fill="#ccd6f6" font-family="Arial,sans-serif" font-size="10">EMA</text>
+  <circle cx="280" cy="472" r="5" fill="#6bcb77"/>
+  <text x="292" y="476" fill="#ccd6f6" font-family="Arial,sans-serif" font-size="10">WMA</text>
+  <circle cx="350" cy="472" r="5" fill="#4d96ff"/>
+  <text x="362" y="476" fill="#ccd6f6" font-family="Arial,sans-serif" font-size="10">DEMA</text>
+  <circle cx="425" cy="472" r="5" fill="#9b59b6"/>
+  <text x="437" y="476" fill="#ccd6f6" font-family="Arial,sans-serif" font-size="10">TEMA</text>
+  <rect x="505" y="467" width="10" height="10" fill="#00ff88" fill-opacity="0.3" stroke="#00ff88" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="520" y="476" fill="#ccd6f6" font-family="Arial,sans-serif" font-size="10">Ideal Zone</text>
+</svg>

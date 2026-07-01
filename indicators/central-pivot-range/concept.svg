@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#26a69a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Central Pivot Range</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#fff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="60" y1="80" x2="760" y2="80"/>
+    <line x1="60" y1="140" x2="760" y2="140"/>
+    <line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="320" x2="760" y2="320"/>
+    <line x1="60" y1="380" x2="760" y2="380"/>
+    <line x1="60" y1="430" x2="760" y2="430"/>
+    <line x1="140" y1="60" x2="140" y2="440"/>
+    <line x1="230" y1="60" x2="230" y2="440"/>
+    <line x1="320" y1="60" x2="320" y2="440"/>
+    <line x1="410" y1="60" x2="410" y2="440"/>
+    <line x1="500" y1="60" x2="500" y2="440"/>
+    <line x1="590" y1="60" x2="590" y2="440"/>
+    <line x1="680" y1="60" x2="680" y2="440"/>
+  </g>
+
+  <!-- CPR shaded zone (TC to BC) - wider left portion -->
+  <rect x="60" y="215" width="440" height="50" fill="#9b59b6" opacity="0.12" rx="2"/>
+  <!-- CPR shaded zone - narrow right portion (compression) -->
+  <polygon points="500,215 740,235 740,245 500,265" fill="#9b59b6" opacity="0.15"/>
+
+  <!-- Pivot line (yellow dashed) -->
+  <line x1="60" y1="240" x2="740" y2="240" stroke="#f1c40f" stroke-width="1.5" stroke-dasharray="8,5" filter="url(#glow)"/>
+
+  <!-- TC line (cyan) -->
+  <line x1="60" y1="215" x2="500" y2="215" stroke="#00d2ff" stroke-width="1.3" filter="url(#glow)"/>
+  <line x1="500" y1="215" x2="740" y2="235" stroke="#00d2ff" stroke-width="1.3" filter="url(#glow)"/>
+
+  <!-- BC line (magenta) -->
+  <line x1="60" y1="265" x2="500" y2="265" stroke="#e91e9c" stroke-width="1.3" filter="url(#glow)"/>
+  <line x1="500" y1="265" x2="740" y2="245" stroke="#e91e9c" stroke-width="1.3" filter="url(#glow)"/>
+
+  <!-- Right edge labels -->
+  <text x="748" y="243" fill="#f1c40f" font-family="Arial,sans-serif" font-size="11" font-weight="bold">P</text>
+  <text x="748" y="233" fill="#00d2ff" font-family="Arial,sans-serif" font-size="11" font-weight="bold">TC</text>
+  <text x="748" y="253" fill="#e91e9c" font-family="Arial,sans-serif" font-size="11" font-weight="bold">BC</text>
+
+  <!-- Candlesticks -->
+  <line x1="95" y1="155" x2="95" y2="310" stroke="#26a69a" stroke-width="1"/>
+  <rect x="89" y="190" width="12" height="80" fill="#26a69a" rx="1"/>
+
+  <line x1="135" y1="170" x2="135" y2="320" stroke="#ef5350" stroke-width="1"/>
+  <rect x="129" y="180" width="12" height="95" fill="#ef5350" rx="1"/>
+
+  <line x1="175" y1="160" x2="175" y2="295" stroke="#26a69a" stroke-width="1"/>
+  <rect x="169" y="195" width="12" height="70" fill="#26a69a" rx="1"/>
+
+  <line x1="215" y1="175" x2="215" y2="330" stroke="#ef5350" stroke-width="1"/>
+  <rect x="209" y="185" width="12" height="100" fill="#ef5350" rx="1"/>
+
+  <line x1="255" y1="190" x2="255" y2="340" stroke="#ef5350" stroke-width="1"/>
+  <rect x="249" y="200" width="12" height="90" fill="#ef5350" rx="1"/>
+
+  <line x1="295" y1="180" x2="295" y2="335" stroke="#26a69a" stroke-width="1"/>
+  <rect x="289" y="220" width="12" height="75" fill="#26a69a" rx="1"/>
+
+  <line x1="335" y1="165" x2="335" y2="300" stroke="#26a69a" stroke-width="1"/>
+  <rect x="329" y="200" width="12" height="65" fill="#26a69a" rx="1"/>
+
+  <line x1="375" y1="185" x2="375" y2="315" stroke="#ef5350" stroke-width="1"/>
+  <rect x="369" y="195" width="12" height="85" fill="#ef5350" rx="1"/>
+
+  <line x1="415" y1="170" x2="415" y2="290" stroke="#26a69a" stroke-width="1"/>
+  <rect x="409" y="205" width="12" height="55" fill="#26a69a" rx="1"/>
+
+  <line x1="455" y1="195" x2="455" y2="310" stroke="#ef5350" stroke-width="1"/>
+  <rect x="449" y="210" width="12" height="65" fill="#ef5350" rx="1"/>
+
+  <line x1="495" y1="190" x2="495" y2="285" stroke="#26a69a" stroke-width="1"/>
+  <rect x="489" y="215" width="12" height="45" fill="#26a69a" rx="1"/>
+
+  <line x1="545" y1="195" x2="545" y2="275" stroke="#26a69a" stroke-width="1"/>
+  <rect x="539" y="220" width="12" height="35" fill="#26a69a" rx="1"/>
+
+  <line x1="585" y1="210" x2="585" y2="265" stroke="#ef5350" stroke-width="1"/>
+  <rect x="579" y="225" width="12" height="25" fill="#ef5350" rx="1"/>
+
+  <line x1="635" y1="140" x2="635" y2="245" stroke="#26a69a" stroke-width="1.2"/>
+  <rect x="628" y="155" width="14" height="70" fill="#26a69a" rx="1"/>
+
+  <line x1="680" y1="105" x2="680" y2="195" stroke="#26a69a" stroke-width="1.2"/>
+  <rect x="673" y="120" width="14" height="55" fill="#26a69a" rx="1"/>
+
+  <!-- Narrow CPR label -->
+  <text x="570" y="290" text-anchor="middle" fill="#ccc" font-family="Arial,sans-serif" font-size="10" font-style="italic">Narrow CPR</text>
+  <line x1="570" y1="282" x2="570" y2="268" stroke="#ccc" stroke-width="0.7" stroke-dasharray="2,2"/>
+
+  <!-- Breakout arrow -->
+  <line x1="635" y1="148" x2="660" y2="108" stroke="#26a69a" stroke-width="2" marker-end="url(#arrowG)"/>
+  <text x="668" y="105" fill="#26a69a" font-family="Arial,sans-serif" font-size="10" font-weight="bold">Breakout</text>
+
+  <!-- Legend bar -->
+  <g transform="translate(0,455)">
+    <circle cx="180" cy="0" r="5" fill="#f1c40f"/>
+    <text x="190" y="4" fill="#ccc" font-family="Arial,sans-serif" font-size="11">Pivot (P)</text>
+    <circle cx="310" cy="0" r="5" fill="#00d2ff"/>
+    <text x="320" y="4" fill="#ccc" font-family="Arial,sans-serif" font-size="11">Top Central (TC)</text>
+    <circle cx="470" cy="0" r="5" fill="#e91e9c"/>
+    <text x="480" y="4" fill="#ccc" font-family="Arial,sans-serif" font-size="11">Bottom Central (BC)</text>
+    <circle cx="640" cy="0" r="5" fill="#9b59b6" opacity="0.6"/>
+    <text x="650" y="4" fill="#ccc" font-family="Arial,sans-serif" font-size="11">CPR Zone</text>
+  </g>
+</svg>

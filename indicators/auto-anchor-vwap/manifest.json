@@ -1,0 +1,15 @@
+{
+  "name": "Auto Anchor VWAP",
+  "id": "auto-anchor-vwap",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Three simultaneous VWAPs with automatic anchor detection from trend highs and lows using swing point analysis",
+  "category": "volume",
+  "tags": ["vwap", "anchor", "volume", "swing", "trend"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4400
+}

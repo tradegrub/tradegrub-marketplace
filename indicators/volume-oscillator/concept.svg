@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Volume Oscillator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <line x1="60" y1="70" x2="60" y2="220" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="220" x2="750" y2="220" stroke="#333" stroke-width="1"/>
+
+  <polyline points="100,180 160,170 220,155 280,145 340,140 400,150 460,160 520,145 580,130 640,120 700,115" stroke="#e0e0e0" stroke-width="1.5" fill="none"/>
+
+  <!-- Oscillator subplot -->
+  <line x1="60" y1="260" x2="750" y2="260" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="260" x2="60" y2="440" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="350" x2="750" y2="350" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="55" y="355" text-anchor="end" fill="#666" font-size="8">0%</text>
+
+  <!-- Positive zone bg -->
+  <rect x="60" y="260" width="320" height="90" fill="rgba(76,175,80,0.06)"/>
+  <rect x="500" y="260" width="250" height="90" fill="rgba(76,175,80,0.06)"/>
+  <!-- Negative zone bg -->
+  <rect x="380" y="350" width="120" height="90" fill="rgba(255,23,68,0.06)"/>
+
+  <!-- VO line -->
+  <polyline points="100,320 160,310 220,295 280,305 340,325 400,360 460,375 520,340 580,310 640,295 700,285" stroke="#42A5F5" stroke-width="2" fill="none"/>
+
+  <!-- Zero cross markers -->
+  <circle cx="375" cy="350" r="4" fill="#42A5F5" stroke="#fff" stroke-width="1"/>
+  <circle cx="490" cy="350" r="4" fill="#42A5F5" stroke="#fff" stroke-width="1"/>
+
+  <text x="375" y="340" text-anchor="middle" fill="#ff1744" font-size="8">Cross below</text>
+  <text x="490" y="340" text-anchor="middle" fill="#00e676" font-size="8">Cross above</text>
+
+  <!-- Legend -->
+  <rect x="250" y="462" width="12" height="12" fill="#42A5F5" rx="2"/>
+  <text x="268" y="473" fill="#aaa" font-size="10">Volume Oscillator %</text>
+  <rect x="420" y="462" width="12" height="12" fill="rgba(76,175,80,0.3)" rx="2"/>
+  <text x="438" y="473" fill="#aaa" font-size="10">Positive</text>
+  <rect x="520" y="462" width="12" height="12" fill="rgba(255,23,68,0.3)" rx="2"/>
+  <text x="538" y="473" fill="#aaa" font-size="10">Negative</text>
+</svg>

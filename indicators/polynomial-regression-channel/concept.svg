@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Polynomial Regression Channel</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Chart area -->
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10">Price with Polynomial Channel</text>
+
+  <!-- Channel fill -->
+  <path d="M100,320 C200,290 350,200 500,160 C580,140 650,130 740,125 L740,175 C650,180 580,190 500,210 C350,250 200,340 100,370 Z"
+    fill="rgba(66,165,245,0.06)"/>
+
+  <!-- Upper band (red) -->
+  <path d="M100,280 C200,250 350,165 500,125 C580,105 650,98 740,95"
+    fill="none" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Polynomial center (blue) -->
+  <path d="M100,300 C200,270 350,185 500,145 C580,125 650,115 740,110"
+    fill="none" stroke="#42a5f5" stroke-width="2.5"/>
+
+  <!-- Lower band (green) -->
+  <path d="M100,320 C200,290 350,205 500,165 C580,145 650,135 740,128"
+    fill="none" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Candlesticks following the curve -->
+  <line x1="100" y1="290" x2="100" y2="320" stroke="#555" stroke-width="1"/><rect x="96" y="293" width="8" height="18" fill="#4CAF50" rx="1"/>
+  <line x1="140" y1="280" x2="140" y2="312" stroke="#555" stroke-width="1"/><rect x="136" y="285" width="8" height="18" fill="#4CAF50" rx="1"/>
+  <line x1="180" y1="268" x2="180" y2="300" stroke="#555" stroke-width="1"/><rect x="176" y="275" width="8" height="18" fill="#f44336" rx="1"/>
+  <line x1="220" y1="255" x2="220" y2="288" stroke="#555" stroke-width="1"/><rect x="216" y="258" width="8" height="20" fill="#4CAF50" rx="1"/>
+  <line x1="260" y1="238" x2="260" y2="272" stroke="#555" stroke-width="1"/><rect x="256" y="241" width="8" height="22" fill="#4CAF50" rx="1"/>
+  <line x1="300" y1="218" x2="300" y2="252" stroke="#555" stroke-width="1"/><rect x="296" y="221" width="8" height="22" fill="#4CAF50" rx="1"/>
+  <line x1="340" y1="200" x2="340" y2="235" stroke="#555" stroke-width="1"/><rect x="336" y="203" width="8" height="22" fill="#4CAF50" rx="1"/>
+  <line x1="380" y1="185" x2="380" y2="220" stroke="#555" stroke-width="1"/><rect x="376" y="195" width="8" height="18" fill="#f44336" rx="1"/>
+  <line x1="420" y1="172" x2="420" y2="205" stroke="#555" stroke-width="1"/><rect x="416" y="175" width="8" height="20" fill="#4CAF50" rx="1"/>
+  <line x1="460" y1="158" x2="460" y2="192" stroke="#555" stroke-width="1"/><rect x="456" y="161" width="8" height="22" fill="#4CAF50" rx="1"/>
+
+  <!-- Breakout above channel -->
+  <rect x="490" y="95" width="40" height="80" fill="rgba(239,83,80,0.08)" rx="2"/>
+  <line x1="500" y1="100" x2="500" y2="148" stroke="#555" stroke-width="1"/><rect x="496" y="103" width="8" height="30" fill="#4CAF50" rx="1"/>
+  <polygon points="500,92 494,82 506,82" fill="#ef5350"/>
+
+  <line x1="540" y1="135" x2="540" y2="172" stroke="#555" stroke-width="1"/><rect x="536" y="138" width="8" height="22" fill="#f44336" rx="1"/>
+  <line x1="580" y1="128" x2="580" y2="162" stroke="#555" stroke-width="1"/><rect x="576" y="131" width="8" height="20" fill="#4CAF50" rx="1"/>
+
+  <!-- Touch lower band -->
+  <rect x="610" y="140" width="40" height="50" fill="rgba(38,166,154,0.08)" rx="2"/>
+  <line x1="620" y1="135" x2="620" y2="170" stroke="#555" stroke-width="1"/><rect x="616" y="142" width="8" height="22" fill="#f44336" rx="1"/>
+  <polygon points="620,178 614,188 626,188" fill="#26a69a"/>
+
+  <line x1="660" y1="118" x2="660" y2="155" stroke="#555" stroke-width="1"/><rect x="656" y="121" width="8" height="24" fill="#4CAF50" rx="1"/>
+  <line x1="700" y1="108" x2="700" y2="145" stroke="#555" stroke-width="1"/><rect x="696" y="111" width="8" height="24" fill="#4CAF50" rx="1"/>
+
+  <!-- Annotations -->
+  <text x="500" y="78" text-anchor="middle" fill="#ef5350" font-family="Inter,sans-serif" font-size="10">Overbought</text>
+  <text x="630" y="200" text-anchor="middle" fill="#26a69a" font-family="Inter,sans-serif" font-size="10">Oversold</text>
+  <text x="400" y="170" fill="#42a5f5" font-family="Inter,sans-serif" font-size="10" opacity="0.7">Polynomial Fit (degree 3)</text>
+
+  <!-- Legend -->
+  <rect x="60" y="455" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="470" x2="100" y2="470" stroke="#42a5f5" stroke-width="2.5"/>
+  <text x="105" y="474" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Poly Center</text>
+  <line x1="210" y1="470" x2="230" y2="470" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="235" y="474" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Upper Band</text>
+  <line x1="340" y1="470" x2="360" y2="470" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="365" y="474" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Lower Band</text>
+  <polygon points="475,475 469,467 481,467" fill="#ef5350"/>
+  <text x="486" y="474" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Above</text>
+  <polygon points="545,467 539,475 551,475" fill="#26a69a"/>
+  <text x="556" y="474" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Below</text>
+</svg>

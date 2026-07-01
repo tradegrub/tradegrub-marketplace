@@ -1,0 +1,15 @@
+{
+  "name": "Trend Volatility Index",
+  "id": "trend-volatility-index",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Gini mean difference of multiple SMAs normalized to measure trend strength vs consolidation",
+  "category": "trend",
+  "tags": ["trend", "volatility", "consolidation", "gini"],
+  "overlay": false,
+  "inputs": [
+    {"name": "base_length", "type": "int", "default": 5, "min": 2, "max": 20}
+  ]
+}

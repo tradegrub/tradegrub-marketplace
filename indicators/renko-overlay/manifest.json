@@ -1,0 +1,12 @@
+{
+  "id": "renko-overlay",
+  "name": "Renko Overlay",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "price-action",
+  "tags": ["renko", "bricks", "noise-filter", "trend", "overlay"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Overlays Renko-style bricks on the candlestick chart to filter noise and highlight trend direction"
+}

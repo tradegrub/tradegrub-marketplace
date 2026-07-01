@@ -1,0 +1,12 @@
+{
+  "id": "sentiment-mood-oscillator",
+  "name": "Sentiment Mood Oscillator",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Oscillators",
+  "tags": ["sentiment", "mood", "rsi", "mfi", "momentum", "oscillator"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Multi-layered sentiment oscillator combining RSI, MFI, and momentum into a single mood score"
+}

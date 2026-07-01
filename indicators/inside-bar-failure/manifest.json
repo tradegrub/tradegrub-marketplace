@@ -1,0 +1,15 @@
+{
+  "name": "Inside Bar Failure",
+  "id": "inside-bar-failure",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Detects inside bar patterns and identifies breakout failures where the initial breakout reverses, signaling potential strong moves in the opposite direction",
+  "category": "price-action",
+  "tags": ["inside-bar", "failure", "reversal", "price-action", "breakout"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4100
+}

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="600">Double Bollinger Bands</text>
+
+  <!-- Outer bands (2σ) - orange fill -->
+  <path d="M80,120 Q160,100 240,130 Q320,90 400,110 Q480,80 560,100 Q640,70 720,90" fill="none" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.8"/>
+  <path d="M80,380 Q160,400 240,370 Q320,410 400,390 Q480,420 560,400 Q640,430 720,410" fill="none" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.8"/>
+  <!-- Outer band fill -->
+  <path d="M80,120 Q160,100 240,130 Q320,90 400,110 Q480,80 560,100 Q640,70 720,90 L720,160 Q640,130 560,155 Q480,135 400,165 Q320,145 240,175 Q160,155 80,170 Z" fill="#FF9800" opacity="0.1"/>
+  <path d="M80,330 Q160,345 240,325 Q320,355 400,335 Q480,365 560,345 Q640,375 720,355 L720,410 Q640,430 560,400 Q480,420 400,390 Q320,410 240,370 Q160,400 80,380 Z" fill="#FF9800" opacity="0.1"/>
+
+  <!-- Inner bands (1σ) - blue fill -->
+  <path d="M80,170 Q160,155 240,175 Q320,145 400,165 Q480,135 560,155 Q640,130 720,160" fill="none" stroke="#2196F3" stroke-width="1.5" opacity="0.8"/>
+  <path d="M80,330 Q160,345 240,325 Q320,355 400,335 Q480,365 560,345 Q640,375 720,355" fill="none" stroke="#2196F3" stroke-width="1.5" opacity="0.8"/>
+  <!-- Inner band fill -->
+  <path d="M80,170 Q160,155 240,175 Q320,145 400,165 Q480,135 560,155 Q640,130 720,160 L720,355 Q640,375 560,345 Q480,365 400,335 Q320,355 240,325 Q160,345 80,330 Z" fill="#2196F3" opacity="0.08"/>
+
+  <!-- SMA center line -->
+  <path d="M80,250 Q160,245 240,255 Q320,240 400,250 Q480,245 560,250 Q640,240 720,255" fill="none" stroke="#787b86" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- Price line -->
+  <path d="M80,260 Q120,230 160,220 Q200,190 240,210 Q280,240 320,260 Q360,290 400,310 Q440,340 480,370 Q520,350 560,310 Q600,280 640,260 Q680,240 720,230" fill="none" stroke="#e2e8f0" stroke-width="2.5"/>
+
+  <!-- Zone labels -->
+  <!-- Extreme zone top -->
+  <text x="750" y="108" text-anchor="end" fill="#FF9800" font-size="13" font-weight="500">Extreme</text>
+  <!-- Trending zone -->
+  <text x="750" y="158" text-anchor="end" fill="#2196F3" font-size="13" font-weight="500">Trending</text>
+  <!-- Normal zone -->
+  <text x="750" y="255" text-anchor="end" fill="#787b86" font-size="13" font-weight="500">Normal</text>
+  <!-- Trending zone bottom -->
+  <text x="750" y="350" text-anchor="end" fill="#2196F3" font-size="13" font-weight="500">Trending</text>
+  <!-- Extreme zone bottom -->
+  <text x="750" y="405" text-anchor="end" fill="#FF9800" font-size="13" font-weight="500">Extreme</text>
+
+  <!-- Band labels left side -->
+  <text x="60" y="118" text-anchor="end" fill="#FF9800" font-size="11">2σ</text>
+  <text x="60" y="168" text-anchor="end" fill="#2196F3" font-size="11">1σ</text>
+  <text x="60" y="253" text-anchor="end" fill="#787b86" font-size="11">SMA</text>
+  <text x="60" y="333" text-anchor="end" fill="#2196F3" font-size="11">1σ</text>
+  <text x="60" y="383" text-anchor="end" fill="#FF9800" font-size="11">2σ</text>
+
+  <!-- Legend -->
+  <rect x="240" y="455" width="16" height="3" fill="#e2e8f0"/>
+  <text x="262" y="460" fill="#e2e8f0" font-size="12">Price</text>
+  <rect x="310" y="455" width="16" height="3" fill="#787b86"/>
+  <text x="332" y="460" fill="#787b86" font-size="12">SMA</text>
+  <rect x="370" y="455" width="16" height="8" fill="#2196F3" opacity="0.3" rx="1"/>
+  <text x="392" y="460" fill="#2196F3" font-size="12">Inner (1σ)</text>
+  <rect x="470" y="455" width="16" height="8" fill="#FF9800" opacity="0.3" rx="1"/>
+  <text x="492" y="460" fill="#FF9800" font-size="12">Outer (2σ)</text>
+</svg>

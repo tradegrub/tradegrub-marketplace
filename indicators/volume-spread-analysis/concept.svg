@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Volume Spread Analysis</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price area -->
+  <line x1="60" y1="70" x2="60" y2="240" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="240" x2="750" y2="240" stroke="#333" stroke-width="1"/>
+  <text x="55" y="80" text-anchor="end" fill="#666" font-size="9">High</text>
+  <text x="55" y="240" text-anchor="end" fill="#666" font-size="9">Low</text>
+
+  <!-- Candlesticks -->
+  <line x1="100" y1="100" x2="100" y2="190" stroke="#555" stroke-width="1"/>
+  <rect x="94" y="120" width="12" height="50" fill="#4CAF50" rx="1"/>
+  <line x1="150" y1="110" x2="150" y2="200" stroke="#555" stroke-width="1"/>
+  <rect x="144" y="130" width="12" height="40" fill="#4CAF50" rx="1"/>
+  <line x1="200" y1="90" x2="200" y2="210" stroke="#555" stroke-width="1"/>
+  <rect x="194" y="100" width="12" height="80" fill="#00e676" rx="1" stroke="#00e676" stroke-width="2"/>
+  <text x="200" y="225" text-anchor="middle" fill="#00e676" font-size="9" font-weight="600">DEMAND</text>
+  <line x1="250" y1="105" x2="250" y2="180" stroke="#555" stroke-width="1"/>
+  <rect x="244" y="120" width="12" height="35" fill="#4CAF50" rx="1"/>
+  <line x1="300" y1="100" x2="300" y2="175" stroke="#555" stroke-width="1"/>
+  <rect x="294" y="115" width="12" height="30" fill="#4CAF50" rx="1"/>
+  <line x1="350" y1="95" x2="350" y2="170" stroke="#555" stroke-width="1"/>
+  <rect x="344" y="110" width="12" height="25" fill="#888" rx="1"/>
+  <text x="350" y="85" text-anchor="middle" fill="#888" font-size="8">No Supply</text>
+  <line x1="400" y1="100" x2="400" y2="185" stroke="#555" stroke-width="1"/>
+  <rect x="394" y="115" width="12" height="45" fill="#ff1744" rx="1"/>
+  <line x1="450" y1="110" x2="450" y2="200" stroke="#555" stroke-width="1"/>
+  <rect x="444" y="125" width="12" height="50" fill="#ff1744" rx="1"/>
+  <line x1="500" y1="95" x2="500" y2="220" stroke="#555" stroke-width="1"/>
+  <rect x="494" y="110" width="12" height="85" fill="#ff1744" rx="1" stroke="#ff1744" stroke-width="2"/>
+  <text x="500" y="85" text-anchor="middle" fill="#ff1744" font-size="9" font-weight="600">SUPPLY</text>
+  <line x1="550" y1="130" x2="550" y2="210" stroke="#555" stroke-width="1"/>
+  <rect x="544" y="145" width="12" height="40" fill="#ff1744" rx="1"/>
+  <line x1="600" y1="140" x2="600" y2="200" stroke="#555" stroke-width="1"/>
+  <rect x="594" y="155" width="12" height="20" fill="#888" rx="1"/>
+  <line x1="650" y1="135" x2="650" y2="195" stroke="#555" stroke-width="1"/>
+  <rect x="644" y="150" width="12" height="25" fill="#4CAF50" rx="1"/>
+  <line x1="700" y1="125" x2="700" y2="190" stroke="#555" stroke-width="1"/>
+  <rect x="694" y="140" width="12" height="30" fill="#4CAF50" rx="1"/>
+
+  <!-- Volume bars area -->
+  <line x1="60" y1="260" x2="750" y2="260" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="260" x2="60" y2="340" stroke="#333" stroke-width="1"/>
+  <text x="55" y="270" text-anchor="end" fill="#666" font-size="8">Vol</text>
+
+  <rect x="94" y="295" width="12" height="45" fill="rgba(76,175,80,0.5)" rx="1"/>
+  <rect x="144" y="305" width="12" height="35" fill="rgba(76,175,80,0.5)" rx="1"/>
+  <rect x="194" y="270" width="12" height="70" fill="#00e676" rx="1"/>
+  <rect x="244" y="310" width="12" height="30" fill="rgba(76,175,80,0.5)" rx="1"/>
+  <rect x="294" y="315" width="12" height="25" fill="rgba(76,175,80,0.3)" rx="1"/>
+  <rect x="344" y="325" width="12" height="15" fill="rgba(136,136,136,0.4)" rx="1"/>
+  <rect x="394" y="300" width="12" height="40" fill="rgba(255,23,68,0.5)" rx="1"/>
+  <rect x="444" y="295" width="12" height="45" fill="rgba(255,23,68,0.5)" rx="1"/>
+  <rect x="494" y="265" width="12" height="75" fill="#ff1744" rx="1"/>
+  <rect x="544" y="305" width="12" height="35" fill="rgba(255,23,68,0.5)" rx="1"/>
+  <rect x="594" y="325" width="12" height="15" fill="rgba(136,136,136,0.4)" rx="1"/>
+  <rect x="644" y="310" width="12" height="30" fill="rgba(76,175,80,0.5)" rx="1"/>
+  <rect x="694" y="305" width="12" height="35" fill="rgba(76,175,80,0.5)" rx="1"/>
+
+  <!-- Avg volume line -->
+  <polyline points="100,310 150,308 200,305 250,307 300,308 350,310 400,308 450,305 500,300 550,305 600,308 650,310 700,308" stroke="#FFA726" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- VSA Score subplot -->
+  <line x1="60" y1="360" x2="750" y2="360" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="360" x2="60" y2="460" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="410" x2="750" y2="410" stroke="#444" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="55" y="415" text-anchor="end" fill="#666" font-size="8">0</text>
+  <text x="55" y="370" text-anchor="end" fill="#666" font-size="8">VSA</text>
+
+  <polyline points="100,400 150,403 200,375 250,400 300,405 350,408 400,420 450,425 500,445 550,425 600,410 650,400 700,395" stroke="#42A5F5" stroke-width="2" fill="none"/>
+
+  <!-- Legend -->
+  <rect x="100" y="472" width="12" height="12" fill="#00e676" rx="2"/>
+  <text x="118" y="483" fill="#aaa" font-size="10">Demand</text>
+  <rect x="200" y="472" width="12" height="12" fill="#ff1744" rx="2"/>
+  <text x="218" y="483" fill="#aaa" font-size="10">Supply</text>
+  <rect x="300" y="472" width="12" height="12" fill="#42A5F5" rx="2"/>
+  <text x="318" y="483" fill="#aaa" font-size="10">VSA Score</text>
+  <rect x="420" y="472" width="12" height="12" fill="#FFA726" rx="2"/>
+  <text x="438" y="483" fill="#aaa" font-size="10">Avg Volume</text>
+</svg>

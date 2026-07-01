@@ -1,0 +1,15 @@
+{
+  "name": "Band Trend Breakout",
+  "id": "band-trend-breakout",
+  "version": "1.0.0",
+  "type": "strategy",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Adaptive band breakout strategy using EMA center with ATR-scaled width that enters on band breaks and trails exits along the center line",
+  "category": "trend-following",
+  "tags": ["bands", "breakout", "trend", "adaptive", "atr"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4900
+}

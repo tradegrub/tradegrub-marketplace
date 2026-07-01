@@ -1,0 +1,12 @@
+{
+  "id": "volume-surprise-detector",
+  "name": "Volume Surprise Detector",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Volume",
+  "tags": ["volume", "surprise", "zscore", "anomaly", "statistical", "deviation"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Detects statistically significant volume deviations using z-score analysis to flag unusual activity or quiet periods"
+}

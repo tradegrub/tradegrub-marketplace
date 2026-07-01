@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="230"/>
+    <line x1="200" y1="60" x2="200" y2="230"/>
+    <line x1="320" y1="60" x2="320" y2="230"/>
+    <line x1="440" y1="60" x2="440" y2="230"/>
+    <line x1="560" y1="60" x2="560" y2="230"/>
+    <line x1="680" y1="60" x2="680" y2="230"/>
+    <line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Rolling Risk-Adjusted Returns</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance — Sharpe, Sortino, Calmar Ratios</text>
+
+  <!-- Performance zone backgrounds -->
+  <rect x="80" y="60" width="200" height="170" fill="#4CAF50" fill-opacity="0.04" rx="2"/>
+  <text x="180" y="78" text-anchor="middle" fill="#4CAF50" font-size="10" font-weight="500" opacity="0.8">Strong Performance</text>
+  <rect x="340" y="60" width="160" height="170" fill="#ef5350" fill-opacity="0.04" rx="2"/>
+  <text x="420" y="78" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500" opacity="0.8">Weak Performance</text>
+  <rect x="560" y="60" width="200" height="170" fill="#4CAF50" fill-opacity="0.04" rx="2"/>
+  <text x="660" y="78" text-anchor="middle" fill="#4CAF50" font-size="10" font-weight="500" opacity="0.8">Recovery</text>
+
+  <!-- Price candlesticks -->
+  <!-- Uptrend -->
+  <line x1="100" y1="175" x2="100" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="97" y="180" width="6" height="12" fill="#26a69a" rx="1"/>
+  <line x1="130" y1="165" x2="130" y2="192" stroke="#26a69a" stroke-width="1"/>
+  <rect x="127" y="170" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="160" y1="152" x2="160" y2="180" stroke="#26a69a" stroke-width="1"/>
+  <rect x="157" y="158" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="190" y1="140" x2="190" y2="168" stroke="#26a69a" stroke-width="1"/>
+  <rect x="187" y="146" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="128" x2="220" y2="158" stroke="#26a69a" stroke-width="1"/>
+  <rect x="217" y="134" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="118" x2="250" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="247" y="124" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="108" x2="280" y2="140" stroke="#26a69a" stroke-width="1"/>
+  <rect x="277" y="114" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="310" y1="112" x2="310" y2="145" stroke="#ef5350" stroke-width="1"/>
+  <rect x="307" y="116" width="6" height="18" fill="#ef5350" rx="1"/>
+  <!-- Decline -->
+  <line x1="350" y1="125" x2="350" y2="162" stroke="#ef5350" stroke-width="1"/>
+  <rect x="347" y="130" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="380" y1="138" x2="380" y2="178" stroke="#ef5350" stroke-width="1"/>
+  <rect x="377" y="145" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="410" y1="150" x2="410" y2="192" stroke="#ef5350" stroke-width="1"/>
+  <rect x="407" y="158" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="440" y1="162" x2="440" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="437" y="170" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="470" y1="170" x2="470" y2="205" stroke="#ef5350" stroke-width="1"/>
+  <rect x="467" y="178" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="500" y1="175" x2="500" y2="208" stroke="#26a69a" stroke-width="1"/>
+  <rect x="497" y="180" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="530" y1="172" x2="530" y2="204" stroke="#ef5350" stroke-width="1"/>
+  <rect x="527" y="178" width="6" height="16" fill="#ef5350" rx="1"/>
+  <!-- Recovery -->
+  <line x1="575" y1="168" x2="575" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="572" y="172" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="605" y1="155" x2="605" y2="188" stroke="#26a69a" stroke-width="1"/>
+  <rect x="602" y="162" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="635" y1="142" x2="635" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="632" y="148" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="665" y1="130" x2="665" y2="165" stroke="#26a69a" stroke-width="1"/>
+  <rect x="662" y="136" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="695" y1="120" x2="695" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="692" y="126" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="725" y1="112" x2="725" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="722" y="118" width="6" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Sub-pane: Ratios -->
+  <line x1="60" y1="245" x2="760" y2="245" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="65" y="260" fill="#888" font-size="9">Risk-Adjusted Ratios</text>
+
+  <!-- Good threshold line -->
+  <line x1="80" y1="300" x2="760" y2="300" stroke="rgba(76,175,80,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="770" y="303" fill="#4CAF50" font-size="8">1.0</text>
+
+  <!-- Zero line -->
+  <line x1="80" y1="350" x2="760" y2="350" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="770" y="353" fill="#888" font-size="8">0.0</text>
+
+  <!-- Poor threshold line -->
+  <line x1="80" y1="350" x2="760" y2="350" stroke="rgba(239,83,80,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Sharpe curve (blue) -->
+  <polyline points="100,335 130,320 160,305 190,290 220,280 250,278 280,275 310,285 350,320 380,345 410,360 440,370 470,368 500,358 530,355 575,330 605,310 635,295 665,282 695,288 725,280" fill="none" stroke="#42A5F5" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Sortino curve (green) -->
+  <polyline points="100,330 130,312 160,295 190,278 220,268 250,265 280,260 310,275 350,315 380,340 410,355 440,365 470,360 500,348 530,345 575,318 605,298 635,282 665,268 695,275 725,265" fill="none" stroke="#26A69A" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Calmar curve (orange) -->
+  <polyline points="100,340 130,328 160,312 190,300 220,288 250,282 280,278 310,292 350,330 380,355 410,372 440,380 470,375 500,362 530,360 575,338 605,318 635,300 665,288 695,295 725,285" fill="none" stroke="#FF9800" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Performance zone shading in sub-pane -->
+  <rect x="80" y="260" width="240" height="40" fill="#4CAF50" fill-opacity="0.04" rx="2"/>
+  <rect x="340" y="350" width="160" height="40" fill="#ef5350" fill-opacity="0.04" rx="2"/>
+  <rect x="560" y="260" width="200" height="40" fill="#4CAF50" fill-opacity="0.04" rx="2"/>
+
+  <!-- Annotations -->
+  <rect x="160" y="265" width="80" height="16" rx="4" fill="#4CAF50" fill-opacity="0.12" stroke="#4CAF50" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="200" y="277" text-anchor="middle" fill="#4CAF50" font-size="9" font-weight="500">SR &gt; 1.0</text>
+
+  <rect x="380" y="375" width="80" height="16" rx="4" fill="#ef5350" fill-opacity="0.12" stroke="#ef5350" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="420" y="387" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="500">SR &lt; 0.0</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.3">
+    <rect x="97" y="410" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="127" y="408" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="157" y="406" width="6" height="14" fill="#26a69a" rx="1"/>
+    <rect x="187" y="405" width="6" height="15" fill="#26a69a" rx="1"/>
+    <rect x="217" y="404" width="6" height="16" fill="#26a69a" rx="1"/>
+    <rect x="247" y="403" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="277" y="404" width="6" height="16" fill="#26a69a" rx="1"/>
+    <rect x="307" y="408" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="347" y="402" width="6" height="18" fill="#ef5350" rx="1"/>
+    <rect x="377" y="400" width="6" height="20" fill="#ef5350" rx="1"/>
+    <rect x="407" y="402" width="6" height="18" fill="#ef5350" rx="1"/>
+    <rect x="437" y="405" width="6" height="15" fill="#ef5350" rx="1"/>
+    <rect x="467" y="407" width="6" height="13" fill="#ef5350" rx="1"/>
+    <rect x="497" y="410" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="527" y="408" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="572" y="406" width="6" height="14" fill="#26a69a" rx="1"/>
+    <rect x="602" y="404" width="6" height="16" fill="#26a69a" rx="1"/>
+    <rect x="632" y="402" width="6" height="18" fill="#26a69a" rx="1"/>
+    <rect x="662" y="400" width="6" height="20" fill="#26a69a" rx="1"/>
+    <rect x="692" y="405" width="6" height="15" fill="#ef5350" rx="1"/>
+    <rect x="722" y="403" width="6" height="17" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 455)">
+    <rect width="680" height="35" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="18" r="4" fill="#42A5F5"/>
+    <text x="30" y="22" fill="#999" font-size="9">Sharpe Ratio</text>
+    <circle cx="140" cy="18" r="4" fill="#26A69A"/>
+    <text x="150" y="22" fill="#999" font-size="9">Sortino Ratio</text>
+    <circle cx="260" cy="18" r="4" fill="#FF9800"/>
+    <text x="270" y="22" fill="#999" font-size="9">Calmar Ratio</text>
+    <rect x="380" y="10" width="20" height="16" fill="#4CAF50" fill-opacity="0.15" rx="2"/>
+    <text x="405" y="22" fill="#999" font-size="9">Good Zone</text>
+    <rect x="480" y="10" width="20" height="16" fill="#ef5350" fill-opacity="0.15" rx="2"/>
+    <text x="505" y="22" fill="#999" font-size="9">Poor Zone</text>
+    <line x1="580" y1="18" x2="610" y2="18" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="615" y="22" fill="#999" font-size="9">Zero Line</text>
+  </g>
+</svg>

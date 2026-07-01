@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Skew Divergence Oscillator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10">Skewness</text>
+
+  <!-- Zero line -->
+  <line x1="60" y1="250" x2="760" y2="250" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Skewness line -->
+  <polyline points="100,250 150,230 200,200 250,180 300,220 350,260 400,290 450,310 500,280 550,250 600,220 650,260 700,270"
+    fill="none" stroke="#42A5F5" stroke-width="2.5"/>
+
+  <!-- Bearish divergence marker -->
+  <polygon points="250,160 243,170 257,170" fill="#EF5350"/>
+  <!-- Bullish divergence marker -->
+  <polygon points="450,330 443,320 457,320" fill="#26A69A"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="110" y2="475" stroke="#42A5F5" stroke-width="2.5"/>
+  <text x="115" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Skewness</text>
+  <polygon points="280,480 273,470 287,470" fill="#EF5350"/>
+  <text x="295" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Bearish Div</text>
+  <polygon points="450,470 443,480 457,480" fill="#26A69A"/>
+  <text x="465" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Bullish Div</text>
+</svg>

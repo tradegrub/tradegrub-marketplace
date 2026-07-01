@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="120" x2="760" y2="120"/><line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="280" x2="760" y2="280"/><line x1="60" y1="360" x2="760" y2="360"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Annual Range Reference</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Annual High line (green dashed) -->
+  <line x1="80" y1="100" x2="740" y2="100" stroke="#4CAF50" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+  <rect x="640" y="85" width="100" height="20" rx="4" fill="#4CAF50" fill-opacity="0.12" stroke="#4CAF50" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="690" y="99" text-anchor="middle" fill="#4CAF50" font-size="10" font-weight="500">High $185.40</text>
+
+  <!-- Annual Open line (yellow dashed) -->
+  <line x1="80" y1="200" x2="740" y2="200" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+  <rect x="640" y="185" width="100" height="20" rx="4" fill="#FFD700" fill-opacity="0.12" stroke="#FFD700" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="690" y="199" text-anchor="middle" fill="#FFD700" font-size="10" font-weight="500">Open $152.20</text>
+
+  <!-- Annual Low line (red dashed) -->
+  <line x1="80" y1="320" x2="740" y2="320" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+  <rect x="640" y="305" width="100" height="20" rx="4" fill="#ef5350" fill-opacity="0.12" stroke="#ef5350" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="690" y="319" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500">Low $128.50</text>
+
+  <!-- Price line (cyan) - realistic movement interacting with reference levels -->
+  <polyline points="80,210 105,215 130,225 155,235 180,250 205,268 230,285 255,300 280,312 305,318 330,315 355,305 380,290 405,272 430,255 455,238 480,220 505,205 530,192 555,178 580,165 605,155 630,148 655,142 680,138 710,135 740,130" fill="none" stroke="#00bcd4" stroke-width="2.5" filter="url(#softGlow)"/>
+
+  <!-- Price interacting with Annual Low - bounce annotation -->
+  <rect x="255" y="335" width="115" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="312" y="350" text-anchor="middle" fill="#bbb" font-size="10">Bounces off Low</text>
+  <path d="M 305,335 C 305,330 305,322 305,318" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Price breaking through Open level -->
+  <rect x="425" y="175" width="125" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="487" y="190" text-anchor="middle" fill="#bbb" font-size="10">Breaks Above Open</text>
+  <path d="M 487,197 C 487,200 487,205 487,210" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Approaching Annual High -->
+  <rect x="580" y="108" width="125" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="642" y="123" text-anchor="middle" fill="#bbb" font-size="10">Approaching High</text>
+  <path d="M 642,130 C 642,135 642,140 642,148" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Distance percentage annotation boxes -->
+  <rect x="85" y="72" width="130" height="52" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.1"/>
+  <text x="95" y="90" fill="#4CAF50" font-size="10" font-weight="500">% from High: -8.2%</text>
+  <text x="95" y="106" fill="#FFD700" font-size="10" font-weight="500">% from Open: +12.4%</text>
+  <text x="95" y="122" fill="#ef5350" font-size="10" font-weight="500">% from Low: +33.1%</text>
+
+  <!-- Current price marker -->
+  <circle cx="740" cy="130" r="4" fill="#00bcd4" filter="url(#glow)"/>
+  <rect x="745" y="122" width="45" height="18" rx="4" fill="#00bcd4" fill-opacity="0.15" stroke="#00bcd4" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="767" y="135" text-anchor="middle" fill="#00bcd4" font-size="9" font-weight="600">$170.20</text>
+
+  <!-- Price axis labels -->
+  <text x="68" y="104" text-anchor="end" fill="#555" font-size="8">$185</text>
+  <text x="68" y="204" text-anchor="end" fill="#555" font-size="8">$152</text>
+  <text x="68" y="324" text-anchor="end" fill="#555" font-size="8">$128</text>
+
+  <!-- Shaded zone between high and low for context -->
+  <rect x="80" y="100" width="660" height="220" fill="#ffffff" fill-opacity="0.015" rx="2"/>
+
+  <!-- Candlesticks along the price path for realism -->
+  <g opacity="0.6">
+    <line x1="90" y1="205" x2="90" y2="220" stroke="#ef5350" stroke-width="1"/><rect x="87" y="208" width="6" height="8" fill="#ef5350" rx="1"/>
+    <line x1="115" y1="210" x2="115" y2="228" stroke="#ef5350" stroke-width="1"/><rect x="112" y="213" width="6" height="10" fill="#ef5350" rx="1"/>
+    <line x1="140" y1="220" x2="140" y2="238" stroke="#ef5350" stroke-width="1"/><rect x="137" y="222" width="6" height="10" fill="#ef5350" rx="1"/>
+    <line x1="165" y1="230" x2="165" y2="252" stroke="#ef5350" stroke-width="1"/><rect x="162" y="233" width="6" height="12" fill="#ef5350" rx="1"/>
+    <line x1="190" y1="245" x2="190" y2="265" stroke="#ef5350" stroke-width="1"/><rect x="187" y="248" width="6" height="12" fill="#ef5350" rx="1"/>
+    <line x1="215" y1="262" x2="215" y2="280" stroke="#ef5350" stroke-width="1"/><rect x="212" y="265" width="6" height="10" fill="#ef5350" rx="1"/>
+    <line x1="240" y1="280" x2="240" y2="298" stroke="#ef5350" stroke-width="1"/><rect x="237" y="283" width="6" height="10" fill="#ef5350" rx="1"/>
+    <line x1="265" y1="295" x2="265" y2="312" stroke="#ef5350" stroke-width="1"/><rect x="262" y="298" width="6" height="8" fill="#ef5350" rx="1"/>
+    <line x1="290" y1="308" x2="290" y2="322" stroke="#ef5350" stroke-width="1"/><rect x="287" y="310" width="6" height="6" fill="#ef5350" rx="1"/>
+    <line x1="315" y1="312" x2="315" y2="322" stroke="#26a69a" stroke-width="1"/><rect x="312" y="313" width="6" height="5" fill="#26a69a" rx="1"/>
+    <line x1="340" y1="308" x2="340" y2="320" stroke="#26a69a" stroke-width="1"/><rect x="337" y="310" width="6" height="6" fill="#26a69a" rx="1"/>
+    <line x1="365" y1="298" x2="365" y2="312" stroke="#26a69a" stroke-width="1"/><rect x="362" y="300" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="390" y1="284" x2="390" y2="298" stroke="#26a69a" stroke-width="1"/><rect x="387" y="286" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="415" y1="266" x2="415" y2="280" stroke="#26a69a" stroke-width="1"/><rect x="412" y="268" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="440" y1="248" x2="440" y2="262" stroke="#26a69a" stroke-width="1"/><rect x="437" y="250" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="465" y1="232" x2="465" y2="245" stroke="#26a69a" stroke-width="1"/><rect x="462" y="234" width="6" height="7" fill="#26a69a" rx="1"/>
+    <line x1="490" y1="215" x2="490" y2="228" stroke="#26a69a" stroke-width="1"/><rect x="487" y="217" width="6" height="7" fill="#26a69a" rx="1"/>
+    <line x1="515" y1="198" x2="515" y2="212" stroke="#26a69a" stroke-width="1"/><rect x="512" y="200" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="540" y1="185" x2="540" y2="200" stroke="#26a69a" stroke-width="1"/><rect x="537" y="188" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="565" y1="172" x2="565" y2="185" stroke="#26a69a" stroke-width="1"/><rect x="562" y="174" width="6" height="7" fill="#26a69a" rx="1"/>
+    <line x1="590" y1="158" x2="590" y2="172" stroke="#26a69a" stroke-width="1"/><rect x="587" y="160" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="615" y1="148" x2="615" y2="162" stroke="#26a69a" stroke-width="1"/><rect x="612" y="150" width="6" height="8" fill="#26a69a" rx="1"/>
+    <line x1="640" y1="142" x2="640" y2="155" stroke="#26a69a" stroke-width="1"/><rect x="637" y="144" width="6" height="7" fill="#26a69a" rx="1"/>
+    <line x1="665" y1="135" x2="665" y2="148" stroke="#26a69a" stroke-width="1"/><rect x="662" y="137" width="6" height="7" fill="#26a69a" rx="1"/>
+    <line x1="690" y1="130" x2="690" y2="142" stroke="#ef5350" stroke-width="1"/><rect x="687" y="132" width="6" height="6" fill="#ef5350" rx="1"/>
+    <line x1="715" y1="128" x2="715" y2="140" stroke="#26a69a" stroke-width="1"/><rect x="712" y="130" width="6" height="6" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Volume bars -->
+  <g opacity="0.45">
+    <rect x="87" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="112" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="137" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="162" y="392" width="8" height="23" fill="#ef5350" rx="1"/>
+    <rect x="187" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="212" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="237" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="262" y="402" width="8" height="13" fill="#ef5350" rx="1"/>
+    <rect x="287" y="405" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="312" y="390" width="8" height="25" fill="#26a69a" rx="1"/>
+    <rect x="337" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="362" y="396" width="8" height="19" fill="#26a69a" rx="1"/>
+    <rect x="387" y="399" width="8" height="16" fill="#26a69a" rx="1"/>
+    <rect x="412" y="401" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="437" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="462" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="487" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="512" y="401" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="537" y="399" width="8" height="16" fill="#26a69a" rx="1"/>
+    <rect x="562" y="397" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="587" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="612" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="637" y="401" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="662" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="687" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="712" y="402" width="8" height="13" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#00bcd4"/>
+    <text x="30" y="24" fill="#999" font-size="9">Price</text>
+    <circle cx="100" cy="20" r="4" fill="#4CAF50"/>
+    <text x="110" y="24" fill="#999" font-size="9">Annual High</text>
+    <circle cx="220" cy="20" r="4" fill="#FFD700"/>
+    <text x="230" y="24" fill="#999" font-size="9">Annual Open</text>
+    <circle cx="345" cy="20" r="4" fill="#ef5350"/>
+    <text x="355" y="24" fill="#999" font-size="9">Annual Low</text>
+  </g>
+</svg>

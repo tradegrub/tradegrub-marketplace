@@ -1,0 +1,11 @@
+{
+  "name": "Volumetric Candle Intensity",
+  "id": "volumetric-candle-intensity",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "volume",
+  "tags": ["volume", "intensity", "stddev", "candle-weight", "histogram"],
+  "description": "Volume normalized by standard deviation with directional coloring showing candle weight intensity",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

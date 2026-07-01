@@ -1,0 +1,12 @@
+{
+  "id": "probabilistic-breakout-forecast",
+  "name": "Probabilistic Breakout Forecast",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Volatility",
+  "tags": ["breakout", "probability", "forecast", "consolidation", "range", "statistical"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Calculates statistical probability of breakout from current range using volatility compression and time-in-range analysis"
+}

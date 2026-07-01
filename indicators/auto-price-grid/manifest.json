@@ -1,0 +1,15 @@
+{
+  "name": "Auto Price Grid",
+  "id": "auto-price-grid",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Automatic horizontal price grid from high to low divided into equal steps with zone highlighting showing where current price sits within the grid",
+  "category": "support-resistance",
+  "tags": ["grid", "levels", "zones", "price-action"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 3500
+}

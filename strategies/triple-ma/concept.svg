@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="fillZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26a69a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#26a69a" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Triple Moving Average Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Candles -->
+  <line x1="90" y1="275" x2="90" y2="315" stroke="#ef5350" stroke-width="1"/>
+  <rect x="87" y="282" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="110" y1="268" x2="110" y2="308" stroke="#26a69a" stroke-width="1"/>
+  <rect x="107" y="285" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="130" y1="262" x2="130" y2="305" stroke="#ef5350" stroke-width="1"/>
+  <rect x="127" y="270" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="150" y1="255" x2="150" y2="298" stroke="#26a69a" stroke-width="1"/>
+  <rect x="147" y="272" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="170" y1="248" x2="170" y2="290" stroke="#26a69a" stroke-width="1"/>
+  <rect x="167" y="262" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="190" y1="240" x2="190" y2="282" stroke="#ef5350" stroke-width="1"/>
+  <rect x="187" y="248" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="210" y1="242" x2="210" y2="280" stroke="#26a69a" stroke-width="1"/>
+  <rect x="207" y="258" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="230" y1="235" x2="230" y2="275" stroke="#26a69a" stroke-width="1"/>
+  <rect x="227" y="248" width="6" height="18" fill="#26a69a" rx="1"/>
+  <!-- Crossover area -->
+  <line x1="260" y1="228" x2="260" y2="268" stroke="#26a69a" stroke-width="1"/>
+  <rect x="257" y="238" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="220" x2="280" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="277" y="230" width="6" height="22" fill="#26a69a" rx="1"/>
+  <!-- Signal candle -->
+  <line x1="305" y1="208" x2="305" y2="252" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="300" y="215" width="10" height="28" fill="#00e676" rx="1" filter="url(#glow)"/>
+  <!-- Uptrend continuation -->
+  <line x1="330" y1="198" x2="330" y2="238" stroke="#26a69a" stroke-width="1"/>
+  <rect x="327" y="208" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="350" y1="188" x2="350" y2="228" stroke="#26a69a" stroke-width="1"/>
+  <rect x="347" y="198" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="370" y1="180" x2="370" y2="220" stroke="#ef5350" stroke-width="1"/>
+  <rect x="367" y="188" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="390" y1="172" x2="390" y2="212" stroke="#26a69a" stroke-width="1"/>
+  <rect x="387" y="182" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="410" y1="165" x2="410" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="407" y="175" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="430" y1="158" x2="430" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="427" y="168" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="450" y1="152" x2="450" y2="192" stroke="#26a69a" stroke-width="1"/>
+  <rect x="447" y="162" width="6" height="22" fill="#26a69a" rx="1"/>
+  <!-- Crossunder - exit -->
+  <line x1="475" y1="148" x2="475" y2="192" stroke="#ef5350" stroke-width="1"/>
+  <rect x="472" y="155" width="6" height="28" fill="#ef5350" rx="1"/>
+  <line x1="495" y1="155" x2="495" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="492" y="162" width="6" height="28" fill="#ef5350" rx="1"/>
+  <line x1="515" y1="162" x2="515" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="512" y="185" width="6" height="12" fill="#26a69a" rx="1"/>
+  <line x1="535" y1="168" x2="535" y2="212" stroke="#ef5350" stroke-width="1"/>
+  <rect x="532" y="175" width="6" height="25" fill="#ef5350" rx="1"/>
+
+  <!-- Fast SMA (10) -->
+  <polyline points="90,278 130,268 170,255 210,250 250,242 305,222 350,195 390,180 430,168 470,160 510,168 535,178" fill="none" stroke="#00e676" stroke-width="2" opacity="0.85"/>
+  <text x="545" y="180" fill="#00e676" font-size="9" font-weight="500">Fast SMA(10)</text>
+
+  <!-- Mid SMA (20) -->
+  <polyline points="90,288 130,280 170,270 210,262 250,255 305,240 350,218 390,200 430,188 470,178 510,175 535,180" fill="none" stroke="#ff9800" stroke-width="2" opacity="0.85"/>
+  <text x="545" y="183" fill="#ff9800" font-size="9" font-weight="500">Mid SMA(20)</text>
+
+  <!-- Slow SMA (50) -->
+  <polyline points="90,300 130,295 170,290 210,285 250,278 305,268 350,255 390,242 430,232 470,225 510,220 535,218" fill="none" stroke="#ab47bc" stroke-width="2" stroke-dasharray="6,3" opacity="0.75"/>
+  <text x="545" y="222" fill="#ab47bc" font-size="9" font-weight="500">Slow SMA(50)</text>
+
+  <!-- Crossover highlight -->
+  <circle cx="305" cy="230" r="8" fill="none" stroke="#00e676" stroke-width="1.5" opacity="0.6"/>
+  <g filter="url(#softGlow)">
+    <polygon points="305,200 313,200 309,190" fill="#00e676"/>
+  </g>
+  <rect x="318" y="190" width="120" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="378" y="204" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY (cross + filter)</text>
+
+  <!-- Mid > Slow annotation -->
+  <rect x="250" y="282" width="130" height="16" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="315" y="293" text-anchor="middle" fill="#bbb" font-size="9">Mid > Slow = trend OK</text>
+
+  <!-- Exit crossunder -->
+  <circle cx="490" cy="170" r="8" fill="none" stroke="#ef5350" stroke-width="1.5" opacity="0.6"/>
+  <rect x="500" y="145" width="85" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="542" y="159" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">EXIT (cross)</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="87" y="400" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="107" y="402" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="127" y="398" width="6" height="14" fill="#ef5350" rx="1"/>
+    <rect x="147" y="402" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="167" y="400" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="187" y="402" width="6" height="10" fill="#ef5350" rx="1"/>
+    <rect x="207" y="400" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="227" y="398" width="6" height="14" fill="#26a69a" rx="1"/>
+    <rect x="257" y="395" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="277" y="393" width="6" height="19" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="300" y="382" width="10" height="30" fill="#00e676" rx="1" opacity="0.6" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="327" y="395" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="347" y="393" width="6" height="19" fill="#26a69a" rx="1"/>
+    <rect x="367" y="400" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="387" y="395" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="407" y="393" width="6" height="19" fill="#26a69a" rx="1"/>
+    <rect x="427" y="395" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="447" y="398" width="6" height="14" fill="#26a69a" rx="1"/>
+    <rect x="472" y="395" width="6" height="17" fill="#ef5350" rx="1"/>
+    <rect x="492" y="393" width="6" height="19" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#00e676"/>
+    <text x="30" y="24" fill="#999" font-size="9">Fast SMA (10)</text>
+    <circle cx="140" cy="20" r="4" fill="#ff9800"/>
+    <text x="150" y="24" fill="#999" font-size="9">Mid SMA (20)</text>
+    <circle cx="260" cy="20" r="4" fill="#ab47bc"/>
+    <text x="270" y="24" fill="#999" font-size="9">Slow SMA (50)</text>
+    <circle cx="390" cy="20" r="4" fill="#00e676"/>
+    <text x="400" y="24" fill="#999" font-size="9">Crossover Buy</text>
+    <circle cx="505" cy="20" r="4" fill="#ef5350"/>
+    <text x="515" y="24" fill="#999" font-size="9">Crossunder Exit</text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "id": "traders-dynamic-index",
+  "name": "Traders Dynamic Index",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "tdi",
+    "rsi",
+    "bollinger",
+    "momentum",
+    "composite"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Composite indicator combining RSI with Bollinger Bands on RSI and RSI moving averages for trend and momentum analysis",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

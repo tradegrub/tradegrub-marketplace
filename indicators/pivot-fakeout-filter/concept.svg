@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Pivot Fakeout Filter</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- R1 level with tolerance band -->
+  <rect x="60" y="110" width="680" height="24" fill="#ef5350" fill-opacity="0.06" rx="2"/>
+  <line x1="60" y1="122" x2="740" y2="122" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+  <text x="745" y="126" fill="#ef5350" font-size="10">R1</text>
+  <text x="745" y="112" fill="#787b86" font-size="8">tolerance</text>
+
+  <!-- PP level with tolerance band -->
+  <rect x="60" y="238" width="680" height="24" fill="#FF9800" fill-opacity="0.06" rx="2"/>
+  <line x1="60" y1="250" x2="740" y2="250" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+  <text x="745" y="254" fill="#FF9800" font-size="10">PP</text>
+
+  <!-- S1 level with tolerance band -->
+  <rect x="60" y="358" width="680" height="24" fill="#26a69a" fill-opacity="0.06" rx="2"/>
+  <line x1="60" y1="370" x2="740" y2="370" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+  <text x="745" y="374" fill="#26a69a" font-size="10">S1</text>
+
+  <!-- Price line that pokes through R1 but reverses (fakeout) -->
+  <polyline points="80,300 120,280 160,260 200,245 240,230 280,200 320,160 340,108 360,115 380,130 400,145 440,170 480,200 520,235 540,250 560,260 600,280 640,310 680,330"
+    fill="none" stroke="#2196F3" stroke-width="2.5"/>
+
+  <!-- Fakeout zone at R1 -->
+  <circle cx="340" cy="108" r="6" fill="none" stroke="#ef5350" stroke-width="2"/>
+  <line x1="346" y1="102" x2="380" y2="80" stroke="#ef5350" stroke-width="1" opacity="0.6"/>
+  <rect x="380" y="68" width="90" height="22" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="425" y="83" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">FAKEOUT</text>
+
+  <!-- Arrow showing price pokes through then returns -->
+  <path d="M 325,140 Q 335,95 345,108" fill="none" stroke="#FF9800" stroke-width="1.5" opacity="0.7"/>
+  <polygon points="345,108 340,100 350,102" fill="#FF9800" opacity="0.7"/>
+
+  <!-- Filtered signal marker -->
+  <g filter="url(#glow)">
+    <line x1="340" y1="108" x2="340" y2="122" stroke="#ef5350" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- "Within tolerance" annotation -->
+  <text x="270" y="98" fill="#787b86" font-size="9">Wick pierces R1</text>
+  <text x="270" y="110" fill="#787b86" font-size="9">but closes inside band</text>
+
+  <!-- X mark on the fakeout - signal filtered -->
+  <g transform="translate(340,108)" filter="url(#glow)">
+    <line x1="-6" y1="-6" x2="6" y2="6" stroke="#ef5350" stroke-width="2.5"/>
+    <line x1="6" y1="-6" x2="-6" y2="6" stroke="#ef5350" stroke-width="2.5"/>
+  </g>
+
+  <!-- Valid bounce at PP -->
+  <circle cx="540" cy="250" r="6" fill="none" stroke="#26a69a" stroke-width="2"/>
+  <rect x="550" y="240" width="80" height="20" rx="4" fill="#26a69a" fill-opacity="0.15" stroke="#26a69a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="590" y="254" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">VALID</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <rect x="10" y="12" width="20" height="16" fill="#ef5350" opacity="0.15" rx="2" stroke="#ef5350" stroke-width="0.5"/>
+    <text x="35" y="24" fill="#999" font-size="9">Tolerance Band</text>
+    <circle cx="165" cy="20" r="4" fill="#2196F3"/>
+    <text x="175" y="24" fill="#999" font-size="9">Price</text>
+    <g transform="translate(230,14)">
+      <line x1="0" y1="0" x2="6" y2="6" stroke="#ef5350" stroke-width="2"/>
+      <line x1="6" y1="0" x2="0" y2="6" stroke="#ef5350" stroke-width="2"/>
+    </g>
+    <text x="245" y="24" fill="#999" font-size="9">Filtered Fakeout</text>
+    <circle cx="375" cy="20" r="4" fill="#26a69a"/>
+    <text x="385" y="24" fill="#999" font-size="9">Valid Pivot Signal</text>
+  </g>
+</svg>

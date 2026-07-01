@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Moving Average Crossover Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Fast MA (9-period) -->
+  <path d="M80,310 Q120,300 160,285 Q200,265 240,240 Q280,220 320,200 Q340,195 360,205 Q400,225 430,210 Q460,185 490,160 Q520,140 550,130 Q580,125 610,135 Q640,150 670,165 Q700,175 730,170" fill="none" stroke="#42a5f5" stroke-width="2" opacity="0.9"/>
+  <text x="735" y="173" fill="#42a5f5" font-size="10" font-weight="500">Fast MA (9)</text>
+
+  <!-- Slow MA (21-period) -->
+  <path d="M80,290 Q120,285 160,278 Q200,268 240,255 Q280,240 320,225 Q340,218 360,215 Q400,210 430,205 Q460,200 490,195 Q520,188 550,180 Q580,175 610,172 Q640,170 670,172 Q700,178 730,182" fill="none" stroke="#ff9800" stroke-width="2" opacity="0.9"/>
+  <text x="735" y="185" fill="#ff9800" font-size="10" font-weight="500">Slow MA (21)</text>
+
+  <!-- Candlesticks -->
+  <line x1="95" y1="290" x2="95" y2="340" stroke="#ef5350" stroke-width="1"/>
+  <rect x="91" y="298" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="120" y1="275" x2="120" y2="330" stroke="#ef5350" stroke-width="1"/>
+  <rect x="116" y="285" width="8" height="30" fill="#ef5350" rx="1"/>
+  <line x1="145" y1="260" x2="145" y2="310" stroke="#26a69a" stroke-width="1"/>
+  <rect x="141" y="275" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="170" y1="248" x2="170" y2="295" stroke="#26a69a" stroke-width="1"/>
+  <rect x="166" y="258" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="195" y1="235" x2="195" y2="278" stroke="#26a69a" stroke-width="1"/>
+  <rect x="191" y="242" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="218" x2="220" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="216" y="225" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Golden cross point - BUY -->
+  <circle cx="250" cy="245" r="8" fill="none" stroke="#00e676" stroke-width="2" filter="url(#glow)"/>
+  <g filter="url(#softGlow)">
+    <polygon points="248,215 258,215 253,202" fill="#00e676"/>
+  </g>
+  <rect x="262" y="198" width="65" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="294" y="213" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BUY</text>
+  <text x="253" y="268" text-anchor="middle" fill="#00e676" font-size="8">Golden Cross</text>
+
+  <!-- Uptrend candles -->
+  <line x1="250" y1="215" x2="250" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="246" y="222" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="275" y1="195" x2="275" y2="240" stroke="#26a69a" stroke-width="1"/>
+  <rect x="271" y="202" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="300" y1="182" x2="300" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="296" y="190" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="325" y1="175" x2="325" y2="215" stroke="#ef5350" stroke-width="1"/>
+  <rect x="321" y="180" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="350" y1="185" x2="350" y2="228" stroke="#ef5350" stroke-width="1"/>
+  <rect x="346" y="195" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="375" y1="195" x2="375" y2="240" stroke="#ef5350" stroke-width="1"/>
+  <rect x="371" y="205" width="8" height="25" fill="#ef5350" rx="1"/>
+
+  <!-- Death cross point - EXIT -->
+  <circle cx="400" cy="215" r="8" fill="none" stroke="#ef5350" stroke-width="2" filter="url(#glow)"/>
+  <g filter="url(#softGlow)">
+    <polygon points="398,245 408,245 403,258" fill="#ef5350"/>
+  </g>
+  <rect x="412" y="238" width="65" height="22" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="444" y="253" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="600">EXIT</text>
+  <text x="403" y="280" text-anchor="middle" fill="#ef5350" font-size="8">Death Cross</text>
+
+  <!-- Continued candles -->
+  <line x1="405" y1="195" x2="405" y2="235" stroke="#ef5350" stroke-width="1"/>
+  <rect x="401" y="200" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="430" y1="180" x2="430" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="426" y="190" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="455" y1="162" x2="455" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="451" y="170" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="480" y1="145" x2="480" y2="185" stroke="#26a69a" stroke-width="1"/>
+  <rect x="476" y="152" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Second golden cross - BUY -->
+  <circle cx="500" cy="190" r="8" fill="none" stroke="#00e676" stroke-width="2" filter="url(#glow)"/>
+  <g filter="url(#softGlow)">
+    <polygon points="498,160 508,160 503,147" fill="#00e676"/>
+  </g>
+  <rect x="512" y="143" width="65" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="544" y="158" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BUY</text>
+
+  <line x1="510" y1="130" x2="510" y2="170" stroke="#26a69a" stroke-width="1"/>
+  <rect x="506" y="138" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="540" y1="115" x2="540" y2="155" stroke="#26a69a" stroke-width="1"/>
+  <rect x="536" y="122" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="565" y1="108" x2="565" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="561" y="115" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="590" y1="115" x2="590" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="586" y="120" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="615" y1="125" x2="615" y2="165" stroke="#ef5350" stroke-width="1"/>
+  <rect x="611" y="132" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="640" y1="138" x2="640" y2="178" stroke="#ef5350" stroke-width="1"/>
+  <rect x="636" y="145" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="665" y1="148" x2="665" y2="190" stroke="#26a69a" stroke-width="1"/>
+  <rect x="661" y="155" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="690" y1="155" x2="690" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="686" y="165" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="715" y1="148" x2="715" y2="192" stroke="#26a69a" stroke-width="1"/>
+  <rect x="711" y="158" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="91" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="116" y="397" width="8" height="18" fill="#ef5350" rx="1"/>
+    <rect x="141" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="166" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="191" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="216" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="246" y="388" width="8" height="27" fill="#26a69a" rx="1"/>
+    <rect x="271" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="296" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="321" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="346" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="371" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="401" y="390" width="8" height="25" fill="#ef5350" rx="1"/>
+    <rect x="426" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="451" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="476" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="506" y="387" width="8" height="28" fill="#26a69a" rx="1"/>
+    <rect x="536" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="561" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="586" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="611" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="636" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="661" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="686" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="711" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#42a5f5"/>
+    <text x="30" y="24" fill="#999" font-size="9">Fast MA (9)</text>
+    <circle cx="120" cy="20" r="4" fill="#ff9800"/>
+    <text x="130" y="24" fill="#999" font-size="9">Slow MA (21)</text>
+    <circle cx="230" cy="20" r="4" fill="#00e676"/>
+    <text x="240" y="24" fill="#999" font-size="9">Golden Cross (Buy)</text>
+    <circle cx="370" cy="20" r="4" fill="#ef5350"/>
+    <text x="380" y="24" fill="#999" font-size="9">Death Cross (Exit)</text>
+  </g>
+</svg>

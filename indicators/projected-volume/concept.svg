@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+  <text x="30" y="35" font-family="Arial,sans-serif" font-size="17" fill="white" font-weight="bold">Projected Volume Estimate</text>
+  <text x="30" y="52" font-family="Arial,sans-serif" font-size="11" fill="#888">tradegrub.finance</text>
+  <!-- Grid lines -->
+  <line x1="60" y1="80" x2="740" y2="80" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="60" y1="130" x2="740" y2="130" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="60" y1="180" x2="740" y2="180" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="60" y1="230" x2="740" y2="230" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="60" y1="280" x2="740" y2="280" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="60" y1="330" x2="740" y2="330" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="60" y1="380" x2="740" y2="380" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="160" y1="70" x2="160" y2="400" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="280" y1="70" x2="280" y2="400" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="400" y1="70" x2="400" y2="400" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="520" y1="70" x2="520" y2="400" stroke="#fff" stroke-opacity="0.04"/>
+  <line x1="640" y1="70" x2="640" y2="400" stroke="#fff" stroke-opacity="0.04"/>
+  <!-- Historical volume bars (gray) -->
+  <rect x="80" y="310" width="38" height="90" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="130" y="280" width="38" height="120" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="180" y="340" width="38" height="60" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="230" y="250" width="38" height="150" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="280" y="300" width="38" height="100" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="330" y="320" width="38" height="80" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="380" y="220" width="38" height="180" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="430" y="290" width="38" height="110" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="480" y="260" width="38" height="140" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="530" y="310" width="38" height="90" rx="2" fill="#555" opacity="0.7"/>
+  <rect x="580" y="240" width="38" height="160" rx="2" fill="#555" opacity="0.7"/>
+  <!-- Last bar: solid green actual portion -->
+  <rect x="630" y="300" width="38" height="100" rx="2" fill="#00cc66" opacity="0.85"/>
+  <!-- Last bar: dashed green projected extension -->
+  <rect x="630" y="160" width="38" height="140" rx="2" fill="none" stroke="#00cc66" stroke-width="2" stroke-dasharray="6,4"/>
+  <!-- Projected label -->
+  <text x="672" y="150" font-family="Arial,sans-serif" font-size="12" fill="#00ff88" font-weight="bold" filter="url(#glow)">Projected: 2.4M</text>
+  <!-- Average volume dashed line -->
+  <line x1="60" y1="275" x2="740" y2="275" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.6"/>
+  <text x="742" y="279" font-family="Arial,sans-serif" font-size="10" fill="#ffd700" opacity="0.7">Avg</text>
+  <!-- Pace text -->
+  <text x="400" y="435" font-family="Arial,sans-serif" font-size="15" fill="#00ff88" text-anchor="middle" font-weight="bold" filter="url(#glow)">142% of Average Pace</text>
+  <!-- Legend bar -->
+  <rect x="0" y="460" width="800" height="40" fill="#111" opacity="0.5"/>
+  <rect x="180" y="474" width="16" height="12" rx="2" fill="#555" opacity="0.7"/>
+  <text x="202" y="484" font-family="Arial,sans-serif" font-size="11" fill="#aaa">Actual Volume</text>
+  <rect x="330" y="474" width="16" height="12" rx="2" fill="none" stroke="#00cc66" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="352" y="484" font-family="Arial,sans-serif" font-size="11" fill="#aaa">Projected</text>
+  <line x1="460" y1="480" x2="490" y2="480" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
+  <text x="496" y="484" font-family="Arial,sans-serif" font-size="11" fill="#aaa">Average</text>
+</svg>

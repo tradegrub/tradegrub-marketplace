@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="envFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9b59b6" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#8e44ad" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#9b59b6" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowS">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowBuy">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSell">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+
+  <g stroke="#fff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="430"/>
+    <line x1="140" y1="60" x2="140" y2="430"/>
+    <line x1="200" y1="60" x2="200" y2="430"/>
+    <line x1="260" y1="60" x2="260" y2="430"/>
+    <line x1="320" y1="60" x2="320" y2="430"/>
+    <line x1="380" y1="60" x2="380" y2="430"/>
+    <line x1="440" y1="60" x2="440" y2="430"/>
+    <line x1="500" y1="60" x2="500" y2="430"/>
+    <line x1="560" y1="60" x2="560" y2="430"/>
+    <line x1="620" y1="60" x2="620" y2="430"/>
+    <line x1="680" y1="60" x2="680" y2="430"/>
+    <line x1="740" y1="60" x2="740" y2="430"/>
+    <line x1="80" y1="100" x2="760" y2="100"/>
+    <line x1="80" y1="150" x2="760" y2="150"/>
+    <line x1="80" y1="200" x2="760" y2="200"/>
+    <line x1="80" y1="250" x2="760" y2="250"/>
+    <line x1="80" y1="300" x2="760" y2="300"/>
+    <line x1="80" y1="350" x2="760" y2="350"/>
+    <line x1="80" y1="400" x2="760" y2="400"/>
+    <line x1="80" y1="430" x2="760" y2="430"/>
+  </g>
+
+  <text x="420" y="32" text-anchor="middle" fill="#e0e0e0" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold">Nadaraya-Watson Envelope</text>
+  <text x="420" y="50" text-anchor="middle" fill="#777" font-family="Arial,Helvetica,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <g fill="#555" font-family="Arial,sans-serif" font-size="9.5" text-anchor="end">
+    <text x="75" y="103">220</text>
+    <text x="75" y="153">200</text>
+    <text x="75" y="203">180</text>
+    <text x="75" y="253">160</text>
+    <text x="75" y="303">140</text>
+    <text x="75" y="353">120</text>
+    <text x="75" y="403">100</text>
+  </g>
+
+  <g fill="#555" font-family="Arial,sans-serif" font-size="9" text-anchor="middle">
+    <text x="110" y="445">Jan</text>
+    <text x="220" y="445">Feb</text>
+    <text x="330" y="445">Mar</text>
+    <text x="440" y="445">Apr</text>
+    <text x="550" y="445">May</text>
+    <text x="660" y="445">Jun</text>
+    <text x="740" y="445">Jul</text>
+  </g>
+
+  <path d="M95,340 C120,335 140,322 165,310 S210,285 240,278 S280,268 310,258 S340,245 360,240 S390,242 420,248 S455,232 480,215 S510,195 535,185 S560,178 585,175 S615,180 640,185 S670,178 700,165 S730,148 750,140
+           L750,230 C730,238 700,255 670,268 S640,275 615,272 S585,265 560,268 S535,275 510,285 S480,305 455,322 S420,340 390,335 S360,332 340,338 S310,352 280,362 S240,375 210,382 S165,405 140,415 C120,420 105,425 95,428 Z"
+        fill="url(#envFill)" opacity="0.8"/>
+
+  <path d="M95,340 C120,335 140,322 165,310 S210,285 240,278 S280,268 310,258 S340,245 360,240 S390,242 420,248 S455,232 480,215 S510,195 535,185 S560,178 585,175 S615,180 640,185 S670,178 700,165 S730,148 750,140"
+        fill="none" stroke="#9b59b6" stroke-opacity="0.55" stroke-width="1.3" stroke-dasharray="7,4" stroke-linecap="round"/>
+
+  <path d="M95,428 C120,420 140,415 165,405 S210,382 240,375 S280,362 310,352 S340,338 360,332 S390,335 420,340 S455,322 480,305 S510,285 535,275 S560,268 585,265 S615,272 640,275 S670,268 700,255 S730,238 750,230"
+        fill="none" stroke="#9b59b6" stroke-opacity="0.55" stroke-width="1.3" stroke-dasharray="7,4" stroke-linecap="round"/>
+
+  <path d="M95,384 C115,378 135,370 160,358 S205,335 235,326 S275,315 305,305 S340,292 360,286 S390,288 420,294 S450,278 480,260 S510,240 535,230 S560,222 585,220 S615,226 640,230 S670,222 700,210 S730,194 750,185"
+        fill="none" stroke="url(#curveGrad)" stroke-width="2.8" filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g fill="#78909c" fill-opacity="0.6">
+    <circle cx="98" cy="390" r="2"/>
+    <circle cx="108" cy="378" r="2"/>
+    <circle cx="115" cy="395" r="2"/>
+    <circle cx="125" cy="370" r="2"/>
+    <circle cx="133" cy="382" r="2"/>
+    <circle cx="142" cy="365" r="2"/>
+    <circle cx="150" cy="372" r="2"/>
+    <circle cx="162" cy="355" r="2"/>
+    <circle cx="172" cy="342" r="2"/>
+    <circle cx="182" cy="350" r="2"/>
+    <circle cx="192" cy="335" r="2"/>
+    <circle cx="202" cy="340" r="2"/>
+    <circle cx="212" cy="328" r="2"/>
+    <circle cx="222" cy="332" r="2"/>
+    <circle cx="235" cy="322" r="2"/>
+    <circle cx="248" cy="310" r="2"/>
+    <circle cx="258" cy="318" r="2"/>
+    <circle cx="268" cy="305" r="2"/>
+    <circle cx="278" cy="312" r="2"/>
+    <circle cx="288" cy="302" r="2"/>
+    <circle cx="300" cy="308" r="2"/>
+    <circle cx="312" cy="298" r="2"/>
+    <circle cx="322" cy="295" r="2"/>
+    <circle cx="332" cy="288" r="2"/>
+    <circle cx="345" cy="282" r="2"/>
+    <circle cx="355" cy="290" r="2"/>
+    <circle cx="368" cy="280" r="2"/>
+    <circle cx="378" cy="285" r="2"/>
+    <circle cx="388" cy="248" r="2.2"/>
+    <circle cx="398" cy="278" r="2"/>
+    <circle cx="408" cy="290" r="2"/>
+    <circle cx="418" cy="296" r="2"/>
+    <circle cx="430" cy="285" r="2"/>
+    <circle cx="442" cy="270" r="2"/>
+    <circle cx="455" cy="258" r="2"/>
+    <circle cx="468" cy="265" r="2"/>
+    <circle cx="478" cy="255" r="2"/>
+    <circle cx="490" cy="242" r="2"/>
+    <circle cx="502" cy="248" r="2"/>
+    <circle cx="515" cy="235" r="2"/>
+    <circle cx="525" cy="228" r="2"/>
+    <circle cx="538" cy="225" r="2"/>
+    <circle cx="550" cy="220" r="2"/>
+    <circle cx="562" cy="228" r="2"/>
+    <circle cx="575" cy="218" r="2"/>
+    <circle cx="588" cy="222" r="2"/>
+    <circle cx="600" cy="225" r="2"/>
+    <circle cx="612" cy="232" r="2"/>
+    <circle cx="625" cy="228" r="2"/>
+    <circle cx="638" cy="224" r="2"/>
+    <circle cx="652" cy="215" r="2"/>
+    <circle cx="665" cy="208" r="2"/>
+    <circle cx="678" cy="212" r="2"/>
+    <circle cx="690" cy="198" r="2"/>
+    <circle cx="700" cy="205" r="2"/>
+    <circle cx="712" cy="195" r="2"/>
+    <circle cx="725" cy="188" r="2"/>
+    <circle cx="738" cy="182" r="2"/>
+    <circle cx="748" cy="190" r="2"/>
+  </g>
+
+  <path d="M98,390 L108,378 L115,395 L125,370 L133,382 L142,365 L150,372 L162,355 L172,342 L182,350 L192,335 L202,340 L212,328 L222,332 L235,322 L248,310 L258,318 L268,305 L278,312 L288,302 L300,308 L312,298 L322,295 L332,288 L345,282 L355,290 L368,280 L378,285 L388,248 L398,278 L408,290 L418,296 L430,285 L442,270 L455,258 L468,265 L478,255 L490,242 L502,248 L515,235 L525,228 L538,225 L550,220 L562,228 L575,218 L588,222 L600,225 L612,232 L625,228 L638,224 L652,215 L665,208 L678,212 L690,198 L700,205 L712,195 L725,188 L738,182 L748,190"
+        fill="none" stroke="#78909c" stroke-opacity="0.2" stroke-width="0.6"/>
+
+  <text x="450" y="248" fill="#c084fc" font-family="Arial,sans-serif" font-size="10" font-style="italic" opacity="0.9">Kernel Regression</text>
+  <line x1="470" y1="250" x2="470" y2="258" stroke="#c084fc" stroke-opacity="0.3" stroke-width="0.7"/>
+
+  <text x="590" y="168" fill="#9b59b6" font-family="Arial,sans-serif" font-size="9" opacity="0.5">Upper Band</text>
+  <text x="590" y="280" fill="#9b59b6" font-family="Arial,sans-serif" font-size="9" opacity="0.5">Lower Band</text>
+
+  <g filter="url(#glowBuy)">
+    <polygon points="115,420 122,408 108,408" fill="#00e676" fill-opacity="0.9"/>
+    <text x="115" y="433" text-anchor="middle" fill="#00e676" font-family="Arial,sans-serif" font-size="8" font-weight="bold" opacity="0.9">BUY</text>
+  </g>
+  <g filter="url(#glowBuy)">
+    <polygon points="355,338 362,326 348,326" fill="#00e676" fill-opacity="0.9"/>
+    <text x="355" y="350" text-anchor="middle" fill="#00e676" font-family="Arial,sans-serif" font-size="8" font-weight="bold" opacity="0.9">BUY</text>
+  </g>
+  <g filter="url(#glowBuy)">
+    <polygon points="612,278 619,266 605,266" fill="#00e676" fill-opacity="0.9"/>
+    <text x="612" y="290" text-anchor="middle" fill="#00e676" font-family="Arial,sans-serif" font-size="8" font-weight="bold" opacity="0.9">BUY</text>
+  </g>
+
+  <g filter="url(#glowSell)">
+    <polygon points="388,238 394,248 382,248" fill="#ff5252" fill-opacity="0.9"/>
+    <text x="388" y="234" text-anchor="middle" fill="#ff5252" font-family="Arial,sans-serif" font-size="8" font-weight="bold" opacity="0.9">SELL</text>
+  </g>
+  <g filter="url(#glowSell)">
+    <polygon points="690,158 696,168 684,168" fill="#ff5252" fill-opacity="0.9"/>
+    <text x="690" y="154" text-anchor="middle" fill="#ff5252" font-family="Arial,sans-serif" font-size="8" font-weight="bold" opacity="0.9">SELL</text>
+  </g>
+
+  <rect x="80" y="455" width="680" height="34" rx="6" fill="#0d1117" fill-opacity="0.75" stroke="#333" stroke-width="0.5"/>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="10">
+    <circle cx="108" cy="472" r="2.5" fill="#78909c" fill-opacity="0.7"/>
+    <text x="118" y="476" fill="#999">Price</text>
+    <line x1="162" y1="472" x2="196" y2="472" stroke="url(#curveGrad)" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="204" y="476" fill="#999">Kernel Regression</text>
+    <line x1="332" y1="472" x2="366" y2="472" stroke="#9b59b6" stroke-width="1.3" stroke-dasharray="7,4" stroke-opacity="0.6"/>
+    <text x="374" y="476" fill="#999">ATR Envelope</text>
+    <polygon points="478,476 484,466 472,466" fill="#00e676"/>
+    <text x="492" y="476" fill="#999">Buy Signal</text>
+    <polygon points="562,466 568,476 556,476" fill="#ff5252"/>
+    <text x="576" y="476" fill="#999">Sell Signal</text>
+  </g>
+
+</svg>

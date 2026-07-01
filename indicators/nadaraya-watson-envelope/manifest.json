@@ -1,0 +1,12 @@
+{
+  "id": "nadaraya-watson-envelope",
+  "name": "Nadaraya-Watson Envelope",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Trend",
+  "tags": ["kernel", "regression", "envelope", "nadaraya-watson", "gaussian", "channel"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Non-parametric kernel regression price channel using Gaussian kernel with ATR-based envelopes"
+}

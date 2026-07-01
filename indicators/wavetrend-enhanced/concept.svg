@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="400" y="60" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="28" font-weight="bold">WaveTrend Enhanced</text>
+  <text x="400" y="100" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="14">Channel Index Oscillator with Divergence Detection</text>
+  <!-- Overbought / Oversold lines -->
+  <line x1="60" y1="150" x2="740" y2="150" stroke="#ff4444" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="750" y="154" fill="#ff4444" font-family="Arial, sans-serif" font-size="11">+60</text>
+  <line x1="60" y1="290" x2="740" y2="290" stroke="#888" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="750" y="294" fill="#888" font-family="Arial, sans-serif" font-size="11">0</text>
+  <line x1="60" y1="430" x2="740" y2="430" stroke="#44ff44" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="750" y="434" fill="#44ff44" font-family="Arial, sans-serif" font-size="11">-60</text>
+  <!-- WT1 line (aqua) -->
+  <polyline fill="none" stroke="#00e5ff" stroke-width="2"
+    points="80,290 120,260 160,200 200,160 240,170 280,220 320,290 360,350 400,410 440,400 480,370 520,310 560,280 600,250 640,230 680,260 720,290"/>
+  <!-- WT2 line (orange) -->
+  <polyline fill="none" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="4,2"
+    points="80,290 120,270 160,220 200,180 240,190 280,240 320,290 360,340 400,390 440,395 480,375 520,320 560,290 600,265 640,245 680,255 720,285"/>
+  <!-- Fill area hint -->
+  <polygon fill="#00e5ff" opacity="0.08"
+    points="80,290 120,260 160,200 200,160 240,170 280,220 320,290 360,350 400,410 440,400 480,370 520,310 560,280 600,250 640,230 680,260 720,290 720,285 680,255 640,245 600,265 560,290 520,320 480,375 440,395 400,390 360,340 320,290 280,240 240,190 200,180 160,220 120,270 80,290"/>
+  <!-- Divergence marker -->
+  <polygon points="440,420 435,430 445,430" fill="#44ff44"/>
+  <text x="440" y="445" text-anchor="middle" fill="#44ff44" font-family="Arial, sans-serif" font-size="10">Bullish Div</text>
+  <!-- Legend -->
+  <line x1="100" y1="475" x2="130" y2="475" stroke="#00e5ff" stroke-width="2"/>
+  <text x="135" y="479" fill="#ccc" font-family="Arial, sans-serif" font-size="12">WT1</text>
+  <line x1="200" y1="475" x2="230" y2="475" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="235" y="479" fill="#ccc" font-family="Arial, sans-serif" font-size="12">WT2</text>
+  <polygon points="330,470 325,480 335,480" fill="#44ff44"/>
+  <text x="345" y="479" fill="#ccc" font-family="Arial, sans-serif" font-size="12">Divergence</text>
+</svg>

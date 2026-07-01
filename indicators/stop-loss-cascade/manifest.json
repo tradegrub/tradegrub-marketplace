@@ -1,0 +1,16 @@
+{
+  "name": "Stop Loss Cascade Detector",
+  "id": "stop-loss-cascade",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Detects where stop losses cluster near swing levels and models cascade breakout potential",
+  "category": "price-action",
+  "tags": ["stops", "cascade", "breakout", "swing", "liquidity"],
+  "overlay": false,
+  "inputs": [
+    {"name": "swing_lookback", "type": "int", "default": 20, "min": 5, "max": 100},
+    {"name": "cluster_atr_mult", "type": "float", "default": 0.5, "min": 0.1, "max": 3.0}
+  ]
+}

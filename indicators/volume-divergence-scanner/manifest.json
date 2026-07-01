@@ -1,0 +1,15 @@
+{
+  "name": "Volume Divergence Scanner",
+  "id": "volume-divergence-scanner",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Swing point analysis to detect bullish and bearish divergences between price movement and volume, with configurable lookback and divergence strength scoring",
+  "category": "volume",
+  "tags": ["volume", "divergence", "swing", "reversal"],
+  "languages": ["python"],
+  "overlay": false,
+  "official": true,
+  "likes": 4200
+}

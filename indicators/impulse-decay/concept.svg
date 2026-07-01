@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Impulse Decay Coefficient</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10">Decay (0-100%)</text>
+
+  <!-- 100 line -->
+  <line x1="60" y1="110" x2="760" y2="110" stroke="#EF5350" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="765" y="114" fill="#EF5350" font-family="Inter,sans-serif" font-size="9">100</text>
+
+  <!-- 50 line -->
+  <line x1="60" y1="250" x2="760" y2="250" stroke="#FFA726" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="765" y="254" fill="#FFA726" font-family="Inter,sans-serif" font-size="9">50</text>
+
+  <!-- Zero line -->
+  <line x1="60" y1="390" x2="760" y2="390" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Decay curve: rises from impulse, resets -->
+  <polyline points="100,390 150,390 200,390 230,390 250,350 280,280 310,200 340,150 370,120 400,105 420,390 470,390 520,390 550,360 580,300 610,240 640,200 670,180 700,390"
+    fill="none" stroke="#FF7043" stroke-width="2.5"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="110" y2="475" stroke="#FF7043" stroke-width="2.5"/>
+  <text x="115" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Decay Coefficient</text>
+  <line x1="310" y1="475" x2="340" y2="475" stroke="#EF5350" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="345" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Full Absorption (100)</text>
+</svg>

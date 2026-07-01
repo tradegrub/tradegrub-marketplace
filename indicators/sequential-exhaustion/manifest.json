@@ -1,0 +1,1 @@
+{"name": "Sequential Exhaustion Counter", "id": "sequential-exhaustion", "version": "1.0.0", "type": "indicator", "author": "TradeGrub", "license": "Apache-2.0", "description": "DeMark-style sequential counting system with setup and countdown phases", "category": "price-action", "tags": ["demark", "exhaustion", "reversal", "sequential"], "overlay": false, "inputs": []}

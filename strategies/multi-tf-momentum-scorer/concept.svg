@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="200"/><line x1="200" y1="60" x2="200" y2="200"/>
+    <line x1="320" y1="60" x2="320" y2="200"/><line x1="440" y1="60" x2="440" y2="200"/>
+    <line x1="560" y1="60" x2="560" y2="200"/><line x1="680" y1="60" x2="680" y2="200"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="150" x2="760" y2="150"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Multi-Timeframe Momentum Scorer</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Price panel (small top) -->
+  <text x="65" y="72" fill="#888" font-size="9">Price</text>
+  <line x1="100" y1="148" x2="100" y2="185" stroke="#ef5350" stroke-width="1"/>
+  <rect x="96" y="155" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="130" y1="142" x2="130" y2="178" stroke="#26a69a" stroke-width="1"/>
+  <rect x="126" y="150" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="165" y1="135" x2="165" y2="172" stroke="#26a69a" stroke-width="1"/>
+  <rect x="161" y="142" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="125" x2="200" y2="162" stroke="#26a69a" stroke-width="1"/>
+  <rect x="196" y="132" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="240" y1="112" x2="240" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="236" y="118" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="100" x2="280" y2="138" stroke="#26a69a" stroke-width="1"/>
+  <rect x="276" y="108" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="320" y1="92" x2="320" y2="128" stroke="#26a69a" stroke-width="1"/>
+  <rect x="316" y="98" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="360" y1="85" x2="360" y2="122" stroke="#ef5350" stroke-width="1"/>
+  <rect x="356" y="92" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="400" y1="90" x2="400" y2="128" stroke="#ef5350" stroke-width="1"/>
+  <rect x="396" y="98" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="440" y1="100" x2="440" y2="138" stroke="#ef5350" stroke-width="1"/>
+  <rect x="436" y="108" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="480" y1="115" x2="480" y2="152" stroke="#ef5350" stroke-width="1"/>
+  <rect x="476" y="122" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="520" y1="128" x2="520" y2="165" stroke="#ef5350" stroke-width="1"/>
+  <rect x="516" y="135" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="560" y1="138" x2="560" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="556" y="148" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="600" y1="128" x2="600" y2="165" stroke="#26a69a" stroke-width="1"/>
+  <rect x="596" y="135" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="640" y1="115" x2="640" y2="152" stroke="#26a69a" stroke-width="1"/>
+  <rect x="636" y="122" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="680" y1="105" x2="680" y2="142" stroke="#26a69a" stroke-width="1"/>
+  <rect x="676" y="112" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="720" y1="95" x2="720" y2="132" stroke="#26a69a" stroke-width="1"/>
+  <rect x="716" y="102" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- BUY and EXIT signals -->
+  <g filter="url(#softGlow)">
+    <polygon points="163,132 173,132 168,119" fill="#00e676"/>
+  </g>
+  <rect x="175" y="118" width="40" height="16" rx="3" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="195" y="130" text-anchor="middle" fill="#00e676" font-size="9" font-weight="600">BUY</text>
+
+  <g filter="url(#softGlow)">
+    <polygon points="438,142 448,142 443,155" fill="#ef5350"/>
+  </g>
+  <rect x="450" y="140" width="40" height="16" rx="3" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="470" y="152" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="600">EXIT</text>
+
+  <g filter="url(#softGlow)">
+    <polygon points="558,138 568,138 563,125" fill="#00e676"/>
+  </g>
+  <rect x="570" y="122" width="40" height="16" rx="3" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="590" y="134" text-anchor="middle" fill="#00e676" font-size="9" font-weight="600">BUY</text>
+
+  <!-- Separator -->
+  <line x1="60" y1="210" x2="760" y2="210" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- Timeframe score heatmap rows -->
+  <text x="65" y="230" fill="#888" font-size="9">TF Scores</text>
+
+  <!-- TF labels -->
+  <text x="75" y="250" fill="#42a5f5" font-size="8" text-anchor="end">5-bar</text>
+  <text x="75" y="270" fill="#26a69a" font-size="8" text-anchor="end">10-bar</text>
+  <text x="75" y="290" fill="#ff9800" font-size="8" text-anchor="end">20-bar</text>
+  <text x="75" y="310" fill="#ab47bc" font-size="8" text-anchor="end">40-bar</text>
+  <text x="75" y="330" fill="#ef5350" font-size="8" text-anchor="end">80-bar</text>
+
+  <!-- TF1 (5-bar) fast oscillator -->
+  <path d="M95,255 Q130,245 165,240 Q200,232 240,228 Q280,225 320,222 Q360,228 400,238 Q440,250 480,258 Q520,262 550,260 Q570,252 600,242 Q630,235 660,228 Q690,225 720,222" fill="none" stroke="#42a5f5" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- TF2 (10-bar) -->
+  <path d="M95,275 Q130,268 165,262 Q200,255 240,248 Q280,242 320,238 Q360,242 400,252 Q440,265 480,272 Q520,278 550,275 Q570,268 600,260 Q630,252 660,248 Q690,242 720,240" fill="none" stroke="#26a69a" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- TF3 (20-bar) -->
+  <path d="M95,295 Q130,290 165,285 Q200,278 240,272 Q280,268 320,262 Q360,265 400,275 Q440,285 480,292 Q520,295 550,293 Q570,288 600,280 Q630,275 660,270 Q690,265 720,262" fill="none" stroke="#ff9800" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- TF4 (40-bar) -->
+  <path d="M95,312 Q130,310 165,305 Q200,300 240,295 Q280,290 320,285 Q360,288 400,295 Q440,302 480,310 Q520,315 550,312 Q570,308 600,302 Q630,295 660,290 Q690,288 720,285" fill="none" stroke="#ab47bc" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- TF5 (80-bar) -->
+  <path d="M95,330 Q130,328 165,326 Q200,322 240,318 Q280,315 320,312 Q360,314 400,318 Q440,325 480,330 Q520,332 550,330 Q570,328 600,322 Q630,318 660,315 Q690,312 720,310" fill="none" stroke="#ef5350" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Consensus region highlights -->
+  <rect x="155" y="218" width="195" height="120" rx="3" fill="#00e676" fill-opacity="0.04" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.12"/>
+  <text x="252" y="348" text-anchor="middle" fill="#00e676" font-size="8">5/5 Bullish</text>
+
+  <rect x="545" y="218" width="190" height="120" rx="3" fill="#00e676" fill-opacity="0.04" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.12"/>
+  <text x="640" y="348" text-anchor="middle" fill="#00e676" font-size="8">5/5 Bullish</text>
+
+  <!-- Composite score panel -->
+  <line x1="60" y1="355" x2="760" y2="355" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  <text x="65" y="370" fill="#888" font-size="9">Composite</text>
+
+  <!-- Threshold line -->
+  <line x1="80" y1="385" x2="740" y2="385" stroke="#00e676" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
+  <text x="745" y="388" fill="#00e676" font-size="7">Threshold</text>
+  <line x1="80" y1="415" x2="740" y2="415" stroke="#ef5350" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
+  <text x="745" y="418" fill="#ef5350" font-size="7">Threshold</text>
+
+  <!-- Zero/neutral -->
+  <line x1="80" y1="400" x2="740" y2="400" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+
+  <!-- Composite score line -->
+  <path d="M95,410 Q130,408 165,398 Q200,388 240,378 Q280,372 320,368 Q360,372 400,385 Q440,398 480,410 Q520,415 550,412 Q570,402 600,390 Q630,380 660,372 Q690,368 720,365" fill="none" stroke="#e0e0e0" stroke-width="2" opacity="0.9"/>
+
+  <!-- Confidence bar annotation -->
+  <rect x="220" y="365" width="120" height="18" rx="4" fill="#00e676" fill-opacity="0.1" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="280" y="378" text-anchor="middle" fill="#00e676" font-size="8" font-weight="500">High Confidence (85%)</text>
+
+  <!-- Feature weights -->
+  <g transform="translate(85, 425)">
+    <rect width="200" height="18" rx="3" fill="#ffffff" fill-opacity="0.04"/>
+    <text x="5" y="13" fill="#42a5f5" font-size="8">RSI 35%</text>
+    <text x="55" y="13" fill="#ff9800" font-size="8">ROC 35%</text>
+    <text x="105" y="13" fill="#ab47bc" font-size="8">Trend 30%</text>
+    <text x="160" y="13" fill="#888" font-size="8">per TF</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#42a5f5"/>
+    <text x="30" y="24" fill="#999" font-size="9">TF1 (5)</text>
+    <circle cx="85" cy="20" r="4" fill="#26a69a"/>
+    <text x="95" y="24" fill="#999" font-size="9">TF2 (10)</text>
+    <circle cx="155" cy="20" r="4" fill="#ff9800"/>
+    <text x="165" y="24" fill="#999" font-size="9">TF3 (20)</text>
+    <circle cx="225" cy="20" r="4" fill="#ab47bc"/>
+    <text x="235" y="24" fill="#999" font-size="9">TF4 (40)</text>
+    <circle cx="295" cy="20" r="4" fill="#ef5350"/>
+    <text x="305" y="24" fill="#999" font-size="9">TF5 (80)</text>
+    <circle cx="370" cy="20" r="4" fill="#e0e0e0"/>
+    <text x="380" y="24" fill="#999" font-size="9">Composite Score</text>
+    <circle cx="490" cy="20" r="4" fill="#00e676"/>
+    <text x="500" y="24" fill="#999" font-size="9">Consensus</text>
+  </g>
+</svg>

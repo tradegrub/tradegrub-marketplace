@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Three Bar Reversal Detector</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+
+  <!-- Three White Soldiers section -->
+  <text x="180" y="95" text-anchor="middle" fill="#00e676" font-family="Inter,sans-serif" font-size="11" font-weight="600">Three White Soldiers</text>
+  <!-- Downtrend before -->
+  <line x1="100" y1="180" x2="100" y2="260" stroke="#666" stroke-width="1"/>
+  <rect x="95" y="190" width="10" height="50" fill="#EF5350"/>
+  <line x1="130" y1="210" x2="130" y2="290" stroke="#666" stroke-width="1"/>
+  <rect x="125" y="220" width="10" height="50" fill="#EF5350"/>
+  <!-- Soldiers -->
+  <line x1="170" y1="260" x2="170" y2="330" stroke="#666" stroke-width="1"/>
+  <rect x="165" y="270" width="10" height="45" fill="#4CAF50" stroke="#00e676" stroke-width="1"/>
+  <line x1="200" y1="230" x2="200" y2="300" stroke="#666" stroke-width="1"/>
+  <rect x="195" y="240" width="10" height="45" fill="#4CAF50" stroke="#00e676" stroke-width="1"/>
+  <line x1="230" y1="200" x2="230" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="225" y="210" width="10" height="45" fill="#4CAF50" stroke="#00e676" stroke-width="1"/>
+  <polygon points="230,345 225,355 235,355" fill="#00e676"/>
+
+  <!-- Three Black Crows section -->
+  <text x="430" y="95" text-anchor="middle" fill="#FF5252" font-family="Inter,sans-serif" font-size="11" font-weight="600">Three Black Crows</text>
+  <!-- Uptrend before -->
+  <line x1="350" y1="220" x2="350" y2="300" stroke="#666" stroke-width="1"/>
+  <rect x="345" y="230" width="10" height="50" fill="#4CAF50"/>
+  <line x1="380" y1="190" x2="380" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="375" y="200" width="10" height="50" fill="#4CAF50"/>
+  <!-- Crows -->
+  <line x1="420" y1="170" x2="420" y2="240" stroke="#666" stroke-width="1"/>
+  <rect x="415" y="180" width="10" height="45" fill="#EF5350" stroke="#FF5252" stroke-width="1"/>
+  <line x1="450" y1="200" x2="450" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="445" y="210" width="10" height="45" fill="#EF5350" stroke="#FF5252" stroke-width="1"/>
+  <line x1="480" y1="230" x2="480" y2="300" stroke="#666" stroke-width="1"/>
+  <rect x="475" y="240" width="10" height="45" fill="#EF5350" stroke="#FF5252" stroke-width="1"/>
+  <polygon points="480,165 475,155 485,155" fill="#FF5252"/>
+
+  <!-- Three Inside Up section -->
+  <text x="650" y="95" text-anchor="middle" fill="#66BB6A" font-family="Inter,sans-serif" font-size="11" font-weight="600">Three Inside Up</text>
+  <line x1="610" y1="200" x2="610" y2="320" stroke="#666" stroke-width="1"/>
+  <rect x="605" y="210" width="10" height="85" fill="#EF5350"/>
+  <line x1="645" y1="240" x2="645" y2="290" stroke="#666" stroke-width="1"/>
+  <rect x="640" y="250" width="10" height="25" fill="#4CAF50"/>
+  <line x1="680" y1="210" x2="680" y2="280" stroke="#666" stroke-width="1"/>
+  <rect x="675" y="220" width="10" height="45" fill="#4CAF50" stroke="#66BB6A" stroke-width="1"/>
+  <polygon points="680,335 675,345 685,345" fill="#66BB6A"/>
+
+  <!-- Legend -->
+  <rect x="60" y="455" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <circle cx="100" cy="470" r="4" fill="#00e676"/>
+  <text x="110" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">White Soldiers</text>
+  <circle cx="250" cy="470" r="4" fill="#FF5252"/>
+  <text x="260" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Black Crows</text>
+  <circle cx="390" cy="470" r="4" fill="#66BB6A"/>
+  <text x="400" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Inside Up</text>
+  <circle cx="510" cy="470" r="4" fill="#EF5350"/>
+  <text x="520" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Inside Down</text>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="120" x2="760" y2="120"/><line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="280" x2="760" y2="280"/><line x1="60" y1="360" x2="760" y2="360"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Consolidation Scanner</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Consolidation Zone 1 (x=160 to x=320, sideways around y=250) -->
+  <rect x="160" y="235" width="160" height="50" rx="4" fill="#9c27b0" fill-opacity="0.08" stroke="#9c27b0" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4,2"/>
+  <!-- Upper bound of zone 1 -->
+  <line x1="160" y1="235" x2="320" y2="235" stroke="#9c27b0" stroke-width="0.8" stroke-opacity="0.3"/>
+  <!-- Lower bound of zone 1 -->
+  <line x1="160" y1="285" x2="320" y2="285" stroke="#9c27b0" stroke-width="0.8" stroke-opacity="0.3"/>
+
+  <!-- Consolidation Zone 2 (x=480 to x=620, sideways around y=170, tighter) -->
+  <rect x="480" y="158" width="140" height="38" rx="4" fill="#9c27b0" fill-opacity="0.08" stroke="#9c27b0" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4,2"/>
+  <line x1="480" y1="158" x2="620" y2="158" stroke="#9c27b0" stroke-width="0.8" stroke-opacity="0.3"/>
+  <line x1="480" y1="196" x2="620" y2="196" stroke="#9c27b0" stroke-width="0.8" stroke-opacity="0.3"/>
+
+  <!-- Price line (cyan) - downtrend into zone1, sideways, breakout up, trend up, into zone2, sideways, breakdown -->
+  <polyline points="80,180 100,190 120,205 140,220 160,240 180,255 200,260 220,248 240,258 260,245 280,262 300,252 320,248 340,235 360,218 380,200 400,185 420,175 440,168 460,172 480,175 500,180 520,172 540,182 560,170 580,178 600,168 620,172 640,182 660,200 680,220 700,242 720,260 740,278" fill="none" stroke="#00bcd4" stroke-width="2.5" filter="url(#softGlow)"/>
+
+  <!-- Consolidation Zone 1 label -->
+  <text x="240" y="310" text-anchor="middle" fill="#ce93d8" font-size="10" opacity="0.8">Consolidation Zone</text>
+
+  <!-- Consolidation Zone 2 label -->
+  <text x="550" y="210" text-anchor="middle" fill="#ce93d8" font-size="10" opacity="0.8">Consolidation Zone</text>
+
+  <!-- Squeeze Width annotation on zone 2 (showing narrowing) -->
+  <line x1="625" y1="158" x2="625" y2="196" stroke="#ce93d8" stroke-width="1" opacity="0.5"/>
+  <line x1="622" y1="158" x2="628" y2="158" stroke="#ce93d8" stroke-width="1" opacity="0.5"/>
+  <line x1="622" y1="196" x2="628" y2="196" stroke="#ce93d8" stroke-width="1" opacity="0.5"/>
+  <rect x="630" y="168" width="85" height="18" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="672" y="181" text-anchor="middle" fill="#ce93d8" font-size="9">Squeeze Width</text>
+
+  <!-- Bullish Breakout arrow at exit of zone 1 (x=320, pointing up) -->
+  <g filter="url(#glow)">
+    <polygon points="315,230 325,230 320,215" fill="#00e676"/>
+  </g>
+  <rect x="328" y="210" width="65" height="18" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="360" y="223" text-anchor="middle" fill="#00e676" font-size="9" font-weight="600">Breakout</text>
+
+  <!-- Annotation for uptrend between zones -->
+  <rect x="370" y="142" width="95" height="20" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="417" y="156" text-anchor="middle" fill="#bbb" font-size="10">Trending Up</text>
+  <path d="M 400,162 C 400,170 400,178 400,185" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Bearish Breakdown arrow at exit of zone 2 (x=620, pointing down) -->
+  <g filter="url(#glow)">
+    <polygon points="615,200 625,200 620,215" fill="#ef5350"/>
+  </g>
+  <rect x="628" y="205" width="75" height="18" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="665" y="218" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="600">Breakdown</text>
+
+  <!-- Annotation: Trending Down after breakdown -->
+  <rect x="660" y="260" width="100" height="20" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="710" y="274" text-anchor="middle" fill="#bbb" font-size="10">Trending Down</text>
+  <path d="M 700,260 C 700,252 700,248 700,242" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="86" y="398" width="8" height="18" fill="#ef5350" rx="1"/>
+    <rect x="106" y="400" width="8" height="16" fill="#ef5350" rx="1"/>
+    <rect x="126" y="402" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="146" y="405" width="8" height="11" fill="#ef5350" rx="1"/>
+    <rect x="166" y="407" width="8" height="9" fill="#26a69a" rx="1"/>
+    <rect x="186" y="408" width="8" height="8" fill="#ef5350" rx="1"/>
+    <rect x="206" y="409" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="226" y="408" width="8" height="8" fill="#26a69a" rx="1"/>
+    <rect x="246" y="409" width="8" height="7" fill="#ef5350" rx="1"/>
+    <rect x="266" y="410" width="8" height="6" fill="#26a69a" rx="1"/>
+    <rect x="286" y="409" width="8" height="7" fill="#ef5350" rx="1"/>
+    <rect x="306" y="408" width="8" height="8" fill="#26a69a" rx="1"/>
+    <rect x="326" y="395" width="8" height="21" fill="#26a69a" rx="1"/>
+    <rect x="346" y="392" width="8" height="24" fill="#26a69a" rx="1"/>
+    <rect x="366" y="396" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="386" y="400" width="8" height="16" fill="#26a69a" rx="1"/>
+    <rect x="406" y="403" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="426" y="405" width="8" height="11" fill="#26a69a" rx="1"/>
+    <rect x="446" y="406" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="466" y="407" width="8" height="9" fill="#26a69a" rx="1"/>
+    <rect x="486" y="409" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="506" y="410" width="8" height="6" fill="#ef5350" rx="1"/>
+    <rect x="526" y="409" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="546" y="410" width="8" height="6" fill="#ef5350" rx="1"/>
+    <rect x="566" y="409" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="586" y="410" width="8" height="6" fill="#ef5350" rx="1"/>
+    <rect x="606" y="408" width="8" height="8" fill="#26a69a" rx="1"/>
+    <rect x="626" y="395" width="8" height="21" fill="#ef5350" rx="1"/>
+    <rect x="646" y="392" width="8" height="24" fill="#ef5350" rx="1"/>
+    <rect x="666" y="396" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="686" y="398" width="8" height="18" fill="#ef5350" rx="1"/>
+    <rect x="706" y="400" width="8" height="16" fill="#ef5350" rx="1"/>
+    <rect x="726" y="402" width="8" height="14" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#00bcd4"/>
+    <text x="30" y="24" fill="#999" font-size="9">Price</text>
+    <rect x="90" y="14" width="12" height="12" rx="2" fill="#9c27b0" fill-opacity="0.3"/>
+    <text x="108" y="24" fill="#999" font-size="9">Consolidation Zone</text>
+    <circle cx="250" cy="20" r="4" fill="#00e676"/>
+    <text x="260" y="24" fill="#999" font-size="9">Bullish Breakout</text>
+    <circle cx="380" cy="20" r="4" fill="#ef5350"/>
+    <text x="390" y="24" fill="#999" font-size="9">Bearish Breakdown</text>
+  </g>
+</svg>

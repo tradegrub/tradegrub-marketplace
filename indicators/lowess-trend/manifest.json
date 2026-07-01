@@ -1,0 +1,15 @@
+{
+  "name": "LOWESS Trend",
+  "id": "lowess-trend",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Locally weighted scatterplot smoothing trend line with breakout detection",
+  "category": "trend",
+  "tags": ["trend", "smoothing", "regression", "breakout"],
+  "overlay": true,
+  "inputs": [
+    {"name": "bandwidth", "type": "int", "default": 20, "min": 5, "max": 100}
+  ]
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">McGinley Dynamic Indicator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="370" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+
+  <!-- Candlesticks -->
+  <line x1="100" y1="300" x2="100" y2="350" stroke="#26a69a" stroke-width="1"/><rect x="97" y="305" width="6" height="35" fill="#26a69a" rx="1"/>
+  <line x1="140" y1="270" x2="140" y2="330" stroke="#26a69a" stroke-width="1"/><rect x="137" y="275" width="6" height="40" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="240" x2="180" y2="300" stroke="#26a69a" stroke-width="1"/><rect x="177" y="245" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="200" x2="220" y2="260" stroke="#26a69a" stroke-width="1"/><rect x="217" y="205" width="6" height="40" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="170" x2="260" y2="230" stroke="#26a69a" stroke-width="1"/><rect x="257" y="175" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="300" y1="150" x2="300" y2="210" stroke="#ef5350" stroke-width="1"/><rect x="297" y="160" width="6" height="38" fill="#ef5350" rx="1"/>
+  <line x1="340" y1="160" x2="340" y2="220" stroke="#ef5350" stroke-width="1"/><rect x="337" y="170" width="6" height="35" fill="#ef5350" rx="1"/>
+  <line x1="380" y1="175" x2="380" y2="235" stroke="#26a69a" stroke-width="1"/><rect x="377" y="180" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="420" y1="160" x2="420" y2="220" stroke="#26a69a" stroke-width="1"/><rect x="417" y="165" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="460" y1="140" x2="460" y2="200" stroke="#26a69a" stroke-width="1"/><rect x="457" y="145" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="120" x2="500" y2="180" stroke="#26a69a" stroke-width="1"/><rect x="497" y="125" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="540" y1="130" x2="540" y2="190" stroke="#ef5350" stroke-width="1"/><rect x="537" y="140" width="6" height="38" fill="#ef5350" rx="1"/>
+  <line x1="580" y1="145" x2="580" y2="205" stroke="#ef5350" stroke-width="1"/><rect x="577" y="155" width="6" height="38" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="165" x2="620" y2="225" stroke="#ef5350" stroke-width="1"/><rect x="617" y="175" width="6" height="38" fill="#ef5350" rx="1"/>
+  <line x1="660" y1="180" x2="660" y2="240" stroke="#26a69a" stroke-width="1"/><rect x="657" y="185" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="700" y1="160" x2="700" y2="220" stroke="#26a69a" stroke-width="1"/><rect x="697" y="165" width="6" height="38" fill="#26a69a" rx="1"/>
+
+  <!-- SMA reference (faint) -->
+  <polyline points="100,340 140,315 180,285 220,250 260,220 300,200 340,200 380,210 420,200 460,185 500,165 540,165 580,175 620,195 660,210 700,200" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- McGinley Dynamic (blue, hugs price) -->
+  <polyline points="100,330 140,300 180,265 220,230 260,195 300,178 340,185 380,195 420,180 460,162 500,145 540,148 580,162 620,185 660,200 700,185" fill="none" stroke="#42A5F5" stroke-width="2.5"/>
+
+  <!-- Annotation showing gap -->
+  <line x1="260" y1="195" x2="260" y2="220" stroke="rgba(66,165,245,0.5)" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="275" y="210" fill="rgba(66,165,245,0.6)" font-size="9" font-family="Inter,sans-serif">Less lag</text>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="115" y2="475" stroke="#42A5F5" stroke-width="2.5"/>
+  <text x="120" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">McGinley Dynamic</text>
+  <line x1="270" y1="475" x2="305" y2="475" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="310" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">SMA Reference</text>
+</svg>

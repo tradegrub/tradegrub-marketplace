@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Expectancy Calculator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Zero line -->
+  <line x1="60" y1="260" x2="740" y2="260" stroke="#555555" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="745" y="264" fill="#555" font-family="Inter,sans-serif" font-size="9">0</text>
+
+  <!-- Positive bg -->
+  <rect x="60" y="70" width="300" height="350" fill="rgba(76,175,80,0.04)" rx="2"/>
+  <rect x="480" y="70" width="260" height="350" fill="rgba(76,175,80,0.04)" rx="2"/>
+  <!-- Negative bg -->
+  <rect x="360" y="70" width="120" height="350" fill="rgba(255,82,82,0.04)" rx="2"/>
+
+  <!-- Expectancy (blue) -->
+  <polyline points="80,200 120,190 160,180 200,195 240,210 280,220 320,240 360,270 400,290 440,280 480,250 520,220 560,200 600,190 640,185 680,195 720,200" fill="none" stroke="#42a5f5" stroke-width="2"/>
+
+  <!-- Smoothed (orange) -->
+  <polyline points="80,210 120,205 160,198 200,200 240,210 280,220 320,235 360,255 400,270 440,272 480,258 520,238 560,218 600,205 640,198 680,198 720,200" fill="none" stroke="#ffa726" stroke-width="1.5"/>
+
+  <!-- Edge ratio (purple, different scale shown in lower area) -->
+  <polyline points="80,330 120,325 160,320 200,328 240,335 280,340 320,350 360,365 400,370 440,360 480,345 520,330 560,320 600,315 640,312 680,318 720,322" fill="none" stroke="#ab47bc" stroke-width="1"/>
+
+  <!-- Labels -->
+  <text x="200" y="170" fill="rgba(76,175,80,0.6)" font-family="Inter,sans-serif" font-size="11">Positive Edge</text>
+  <text x="380" y="305" fill="rgba(255,82,82,0.6)" font-family="Inter,sans-serif" font-size="11">No Edge</text>
+
+  <!-- Legend -->
+  <g transform="translate(100, 445)">
+    <rect x="0" y="0" width="600" height="35" fill="rgba(255,255,255,0.03)" rx="6"/>
+    <line x1="20" y1="18" x2="45" y2="18" stroke="#42a5f5" stroke-width="2"/>
+    <text x="50" y="22" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Expectancy</text>
+    <line x1="150" y1="18" x2="175" y2="18" stroke="#ffa726" stroke-width="1.5"/>
+    <text x="180" y="22" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Smoothed</text>
+    <line x1="260" y1="18" x2="285" y2="18" stroke="#ab47bc" stroke-width="1"/>
+    <text x="290" y="22" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Edge Ratio</text>
+    <rect x="380" y="10" width="14" height="14" fill="rgba(76,175,80,0.15)" rx="2"/>
+    <text x="399" y="22" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Positive</text>
+    <rect x="460" y="10" width="14" height="14" fill="rgba(255,82,82,0.15)" rx="2"/>
+    <text x="479" y="22" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Negative</text>
+  </g>
+</svg>

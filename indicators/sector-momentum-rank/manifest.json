@@ -1,0 +1,29 @@
+{
+  "id": "sector-momentum-rank",
+  "name": "Momentum Rank",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": ["momentum", "rank", "percentile", "multi-timeframe", "returns"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Ranks current momentum across multiple timeframes as a weighted percentile composite score",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": ["python"],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "overlay": false,
+  "inputs": [
+    {"name": "lookback", "type": "int", "default": 200, "min": 50, "max": 500}
+  ],
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

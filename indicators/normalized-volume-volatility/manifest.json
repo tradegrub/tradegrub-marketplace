@@ -1,0 +1,15 @@
+{
+  "name": "Normalized Volume Volatility",
+  "id": "normalized-volume-volatility",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Volume and volatility normalized against historical statistical baselines with linear regression trend overlay for identifying unusual market activity",
+  "category": "volume",
+  "tags": ["volume", "volatility", "normalized", "statistics", "regression"],
+  "languages": ["python"],
+  "overlay": false,
+  "official": true,
+  "likes": 3700
+}

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="600">Three-Candle Sweep</text>
+
+  <!-- ===== BULLISH EXAMPLE (left side) ===== -->
+  <text x="220" y="75" text-anchor="middle" fill="#26a69a" font-size="15" font-weight="600">Bullish Sweep</text>
+
+  <!-- Red candle 1 (going down) -->
+  <!-- wick -->
+  <line x1="130" y1="120" x2="130" y2="310" stroke="#ef5350" stroke-width="1.5"/>
+  <!-- body: open high, close low -->
+  <rect x="118" y="145" width="24" height="70" fill="#ef5350" rx="2"/>
+  <text x="130" y="138" text-anchor="middle" fill="#787b86" font-size="9">Open</text>
+
+  <!-- Red candle 2 (going lower) -->
+  <line x1="200" y1="160" x2="200" y2="350" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="188" y="190" width="24" height="80" fill="#ef5350" rx="2"/>
+
+  <!-- Green sweep candle 3 (sweeps up through both bodies) -->
+  <line x1="280" y1="100" x2="280" y2="340" stroke="#26a69a" stroke-width="1.5"/>
+  <rect x="268" y="120" width="24" height="175" fill="#26a69a" rx="2"/>
+
+  <!-- Sweep zone highlight -->
+  <rect x="105" y="145" width="205" height="125" fill="#26a69a" opacity="0.08" rx="4" stroke="#26a69a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Sweep arrow -->
+  <path d="M310,300 Q340,200 310,120" fill="none" stroke="#26a69a" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="310,120 304,135 316,135" fill="#26a69a"/>
+  <text x="350" y="200" fill="#26a69a" font-size="13" font-weight="600">Sweep</text>
+  <text x="350" y="216" fill="#26a69a" font-size="10">closes above</text>
+  <text x="350" y="230" fill="#26a69a" font-size="10">both bodies</text>
+
+  <!-- Candle labels -->
+  <text x="130" y="330" text-anchor="middle" fill="#787b86" font-size="10">C1</text>
+  <text x="200" y="370" text-anchor="middle" fill="#787b86" font-size="10">C2</text>
+  <text x="280" y="360" text-anchor="middle" fill="#787b86" font-size="10">C3</text>
+
+  <!-- ===== BEARISH EXAMPLE (right side) ===== -->
+  <text x="600" y="75" text-anchor="middle" fill="#ef5350" font-size="15" font-weight="600">Bearish Sweep</text>
+
+  <!-- Green candle 1 (going up) -->
+  <line x1="520" y1="130" x2="520" y2="320" stroke="#26a69a" stroke-width="1.5"/>
+  <rect x="508" y="170" width="24" height="70" fill="#26a69a" rx="2"/>
+
+  <!-- Green candle 2 (going higher) -->
+  <line x1="590" y1="100" x2="590" y2="280" stroke="#26a69a" stroke-width="1.5"/>
+  <rect x="578" y="130" width="24" height="80" fill="#26a69a" rx="2"/>
+
+  <!-- Red sweep candle 3 (sweeps down through both bodies) -->
+  <line x1="670" y1="110" x2="670" y2="350" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="658" y="150" width="24" height="175" fill="#ef5350" rx="2"/>
+
+  <!-- Sweep zone highlight -->
+  <rect x="495" y="170" width="205" height="120" fill="#ef5350" opacity="0.08" rx="4" stroke="#ef5350" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Sweep arrow -->
+  <path d="M700,150 Q730,240 700,325" fill="none" stroke="#ef5350" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="700,325 694,312 706,312" fill="#ef5350"/>
+  <text x="735" y="230" fill="#ef5350" font-size="13" font-weight="600">Sweep</text>
+  <text x="735" y="246" fill="#ef5350" font-size="10">closes below</text>
+  <text x="735" y="260" fill="#ef5350" font-size="10">both bodies</text>
+
+  <!-- Candle labels -->
+  <text x="520" y="340" text-anchor="middle" fill="#787b86" font-size="10">C1</text>
+  <text x="590" y="300" text-anchor="middle" fill="#787b86" font-size="10">C2</text>
+  <text x="670" y="370" text-anchor="middle" fill="#787b86" font-size="10">C3</text>
+
+  <!-- Divider -->
+  <line x1="415" y1="65" x2="415" y2="390" stroke="#787b86" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.5"/>
+
+  <!-- Legend -->
+  <rect x="200" y="430" width="14" height="14" fill="#ef5350" rx="2"/>
+  <text x="220" y="442" fill="#e2e8f0" font-size="12">Bearish Candle</text>
+
+  <rect x="370" y="430" width="14" height="14" fill="#26a69a" rx="2"/>
+  <text x="390" y="442" fill="#e2e8f0" font-size="12">Bullish Candle</text>
+
+  <text x="400" y="475" text-anchor="middle" fill="#787b86" font-size="11">Third candle's body engulfs the bodies of both preceding candles</text>
+</svg>

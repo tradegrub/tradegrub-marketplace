@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="ribbonFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4466" stop-opacity="0.06"/>
+      <stop offset="50%" stop-color="#33cc66" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#aa44dd" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="50" y1="60" x2="50" y2="420"/><line x1="150" y1="60" x2="150" y2="420"/>
+    <line x1="250" y1="60" x2="250" y2="420"/><line x1="350" y1="60" x2="350" y2="420"/>
+    <line x1="450" y1="60" x2="450" y2="420"/><line x1="550" y1="60" x2="550" y2="420"/>
+    <line x1="650" y1="60" x2="650" y2="420"/><line x1="750" y1="60" x2="750" y2="420"/>
+    <line x1="50" y1="100" x2="760" y2="100"/><line x1="50" y1="160" x2="760" y2="160"/>
+    <line x1="50" y1="220" x2="760" y2="220"/><line x1="50" y1="280" x2="760" y2="280"/>
+    <line x1="50" y1="340" x2="760" y2="340"/><line x1="50" y1="400" x2="760" y2="400"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="32" fill="#e0e0e0" font-size="17" font-weight="600" text-anchor="middle">Harmonic Adaptive Ribbon</text>
+  <text x="400" y="50" fill="#8888aa" font-size="11" text-anchor="middle">tradegrub.finance</text>
+
+  <!-- MA Ribbon Lines - 8 lines from fast (red) to slow (violet) -->
+  <!-- The ribbon fans wide in trending zones, converges in consolidation -->
+
+  <!-- MA 5 - Red (fastest) -->
+  <path d="M60,310 C80,305 100,295 120,270 C140,245 160,210 180,185 C200,160 220,145 240,140 C260,135 280,138 300,155 C320,172 340,200 360,220 C380,240 400,248 420,245 C440,242 460,230 480,210 C500,190 520,165 540,150 C560,135 580,130 600,140 C620,150 640,170 660,195 C680,220 700,240 720,250 C740,260 755,262 760,263"
+        fill="none" stroke="#ff4466" stroke-width="2.2" stroke-linecap="round" opacity="0.92" filter="url(#softglow)"/>
+
+  <!-- MA 8 - Orange-Red -->
+  <path d="M60,312 C80,308 100,300 120,278 C140,256 160,222 180,198 C200,174 220,158 240,152 C260,146 280,148 300,162 C320,176 340,205 360,225 C380,245 400,254 420,252 C440,250 460,238 480,220 C500,202 520,178 540,162 C560,146 580,140 600,148 C620,156 640,176 660,200 C680,224 700,244 720,254 C740,264 755,267 760,268"
+        fill="none" stroke="#ff6633" stroke-width="2.2" stroke-linecap="round" opacity="0.90" filter="url(#softglow)"/>
+
+  <!-- MA 13 - Orange -->
+  <path d="M60,315 C80,312 100,306 120,288 C140,270 160,238 180,216 C200,194 220,176 240,168 C260,160 280,160 300,172 C320,184 340,212 360,232 C380,252 400,262 420,260 C440,258 460,248 480,232 C500,216 520,194 540,178 C560,162 580,155 600,160 C620,165 640,184 660,208 C680,232 700,250 720,260 C740,270 755,273 760,274"
+        fill="none" stroke="#ff9922" stroke-width="2.0" stroke-linecap="round" opacity="0.88" filter="url(#softglow)"/>
+
+  <!-- MA 21 - Yellow -->
+  <path d="M60,318 C80,316 100,312 120,298 C140,284 160,256 180,236 C200,216 220,200 240,190 C260,180 280,178 300,186 C320,194 340,220 360,240 C380,260 400,270 420,270 C440,270 460,262 480,248 C500,234 520,214 540,198 C560,182 580,174 600,178 C620,182 640,198 660,220 C680,242 700,258 720,268 C740,278 755,280 760,281"
+        fill="none" stroke="#eecc22" stroke-width="2.0" stroke-linecap="round" opacity="0.88" filter="url(#softglow)"/>
+
+  <!-- MA 34 - Green -->
+  <path d="M60,322 C80,320 100,318 120,310 C140,302 160,280 180,262 C200,244 220,228 240,218 C260,208 280,204 300,208 C320,212 340,232 360,250 C380,268 400,278 420,280 C440,282 460,276 480,264 C500,252 520,234 540,220 C560,206 580,198 600,200 C620,202 640,214 660,234 C680,254 700,268 720,276 C740,284 755,286 760,287"
+        fill="none" stroke="#33cc66" stroke-width="1.8" stroke-linecap="round" opacity="0.86" filter="url(#softglow)"/>
+
+  <!-- MA 55 - Blue -->
+  <path d="M60,326 C80,325 100,324 120,320 C140,316 160,300 180,284 C200,268 220,254 240,244 C260,234 280,230 300,232 C320,234 340,248 360,262 C380,276 400,286 420,290 C440,294 460,290 480,280 C500,270 520,254 540,242 C560,230 580,224 600,224 C620,224 640,234 660,250 C680,266 700,278 720,286 C740,292 755,294 760,295"
+        fill="none" stroke="#3388ee" stroke-width="1.8" stroke-linecap="round" opacity="0.84" filter="url(#softglow)"/>
+
+  <!-- MA 89 - Indigo -->
+  <path d="M60,330 C80,329 100,328 120,326 C140,324 160,314 180,302 C200,290 220,278 240,268 C260,258 280,254 300,254 C320,254 340,264 360,276 C380,288 400,296 420,300 C440,304 460,302 480,296 C500,290 520,276 540,264 C560,252 580,246 600,246 C620,246 640,252 660,264 C680,276 700,286 720,292 C740,298 755,300 760,301"
+        fill="none" stroke="#6644cc" stroke-width="1.6" stroke-linecap="round" opacity="0.82" filter="url(#softglow)"/>
+
+  <!-- MA 144 - Violet (slowest) -->
+  <path d="M60,334 C80,333 100,332 120,331 C140,330 160,324 180,316 C200,308 220,298 240,290 C260,282 280,278 300,276 C320,274 340,280 360,288 C380,296 400,304 420,308 C440,312 460,312 480,308 C500,304 520,294 540,284 C560,274 580,268 600,266 C620,264 640,268 660,278 C680,288 700,296 720,300 C740,304 755,306 760,307"
+        fill="none" stroke="#aa44dd" stroke-width="1.6" stroke-linecap="round" opacity="0.80" filter="url(#softglow)"/>
+
+  <!-- Semi-transparent ribbon fill between fastest and slowest -->
+  <path d="M60,310 C80,305 100,295 120,270 C140,245 160,210 180,185 C200,160 220,145 240,140 C260,135 280,138 300,155 C320,172 340,200 360,220 C380,240 400,248 420,245 C440,242 460,230 480,210 C500,190 520,165 540,150 C560,135 580,130 600,140 C620,150 640,170 660,195 C680,220 700,240 720,250 C740,260 755,262 760,263
+        L760,307 C755,306 740,304 720,300 C700,296 680,288 660,278 C640,268 620,264 600,266 C580,268 560,274 540,284 C520,294 500,304 480,308 C460,312 440,312 420,308 C400,304 380,296 360,288 C340,280 320,274 300,276 C280,278 260,282 240,290 C220,298 200,308 180,316 C160,324 140,330 120,331 C100,332 80,333 60,334 Z"
+        fill="url(#bg)" fill-opacity="0" stroke="none"/>
+
+  <path d="M60,310 C80,305 100,295 120,270 C140,245 160,210 180,185 C200,160 220,145 240,140 C260,135 280,138 300,155 C320,172 340,200 360,220 C380,240 400,248 420,245 C440,242 460,230 480,210 C500,190 520,165 540,150 C560,135 580,130 600,140 C620,150 640,170 660,195 C680,220 700,240 720,250 C740,260 755,262 760,263
+        L760,307 C755,306 740,304 720,300 C700,296 680,288 660,278 C640,268 620,264 600,266 C580,268 560,274 540,284 C520,294 500,304 480,308 C460,312 440,312 420,308 C400,304 380,296 360,288 C340,280 320,274 300,276 C280,278 260,282 240,290 C220,298 200,308 180,316 C160,324 140,330 120,331 C100,332 80,333 60,334 Z"
+        fill="url(#ribbonFill)"/>
+
+  <!-- Annotations -->
+  <!-- Wide ribbon zone label -->
+  <text x="188" y="130" fill="#55ddaa" font-size="10" opacity="0.7" text-anchor="middle">Wide (Trending Up)</text>
+  <line x1="188" y1="133" x2="188" y2="150" stroke="#55ddaa" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- Narrow/convergence zone -->
+  <text x="420" y="320" fill="#ddaa55" font-size="10" opacity="0.7" text-anchor="middle">Narrow (Consolidation)</text>
+  <line x1="420" y1="310" x2="420" y2="316" stroke="#ddaa55" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- Wide ribbon zone label 2 -->
+  <text x="550" y="138" fill="#55ddaa" font-size="10" opacity="0.7" text-anchor="middle">Wide (Trending Up)</text>
+  <line x1="550" y1="141" x2="550" y2="158" stroke="#55ddaa" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- Cycle label -->
+  <rect x="620" y="88" width="120" height="24" rx="4" fill="#1a1a2e" fill-opacity="0.85" stroke="#55ddaa" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="680" y="104" fill="#55ddaa" font-size="11" font-weight="500" text-anchor="middle" filter="url(#glow)">Cycle: 21 bars</text>
+
+  <!-- Legend bar at bottom -->
+  <rect x="50" y="440" width="710" height="44" rx="6" fill="#0d0d1a" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <g font-size="10" text-anchor="middle">
+    <!-- MA 5 -->
+    <line x1="90" y1="456" x2="118" y2="456" stroke="#ff4466" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="104" y="472" fill="#aaaacc">MA 5</text>
+
+    <!-- MA 8 -->
+    <line x1="160" y1="456" x2="188" y2="456" stroke="#ff6633" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="174" y="472" fill="#aaaacc">MA 8</text>
+
+    <!-- MA 13 -->
+    <line x1="230" y1="456" x2="258" y2="456" stroke="#ff9922" stroke-width="2.0" stroke-linecap="round"/>
+    <text x="244" y="472" fill="#aaaacc">MA 13</text>
+
+    <!-- MA 21 -->
+    <line x1="300" y1="456" x2="328" y2="456" stroke="#eecc22" stroke-width="2.0" stroke-linecap="round"/>
+    <text x="314" y="472" fill="#aaaacc">MA 21</text>
+
+    <!-- MA 34 -->
+    <line x1="380" y1="456" x2="408" y2="456" stroke="#33cc66" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="394" y="472" fill="#aaaacc">MA 34</text>
+
+    <!-- MA 55 -->
+    <line x1="460" y1="456" x2="488" y2="456" stroke="#3388ee" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="474" y="472" fill="#aaaacc">MA 55</text>
+
+    <!-- MA 89 -->
+    <line x1="540" y1="456" x2="568" y2="456" stroke="#6644cc" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="554" y="472" fill="#aaaacc">MA 89</text>
+
+    <!-- MA 144 -->
+    <line x1="625" y1="456" x2="653" y2="456" stroke="#aa44dd" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="639" y="472" fill="#aaaacc">MA 144</text>
+  </g>
+</svg>

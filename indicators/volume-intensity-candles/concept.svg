@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="80" y1="55" x2="80" y2="420"/><line x1="160" y1="55" x2="160" y2="420"/>
+    <line x1="240" y1="55" x2="240" y2="420"/><line x1="320" y1="55" x2="320" y2="420"/>
+    <line x1="400" y1="55" x2="400" y2="420"/><line x1="480" y1="55" x2="480" y2="420"/>
+    <line x1="560" y1="55" x2="560" y2="420"/><line x1="640" y1="55" x2="640" y2="420"/>
+    <line x1="720" y1="55" x2="720" y2="420"/>
+    <line x1="50" y1="90" x2="760" y2="90"/><line x1="50" y1="140" x2="760" y2="140"/>
+    <line x1="50" y1="190" x2="760" y2="190"/><line x1="50" y1="240" x2="760" y2="240"/>
+    <line x1="50" y1="290" x2="760" y2="290"/><line x1="50" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <!-- Title -->
+  <text x="30" y="30" font-family="Arial, sans-serif" font-size="17" fill="#ffffff" font-weight="bold">Volume Intensity Candles</text>
+  <text x="30" y="46" font-family="Arial, sans-serif" font-size="11" fill="#888888">tradegrub.finance</text>
+
+  <!-- Y-axis price labels -->
+  <text x="15" y="94" font-family="Arial, sans-serif" font-size="9" fill="#555">185</text>
+  <text x="15" y="144" font-family="Arial, sans-serif" font-size="9" fill="#555">180</text>
+  <text x="15" y="194" font-family="Arial, sans-serif" font-size="9" fill="#555">175</text>
+  <text x="15" y="244" font-family="Arial, sans-serif" font-size="9" fill="#555">170</text>
+  <text x="15" y="294" font-family="Arial, sans-serif" font-size="9" fill="#555">165</text>
+  <text x="15" y="344" font-family="Arial, sans-serif" font-size="9" fill="#555">160</text>
+
+  <!-- 25 Candlesticks with volume-based intensity -->
+  <!-- c1: green, low vol -->
+  <line x1="68" y1="235" x2="68" y2="290" stroke="#00cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="63" y="255" width="10" height="25" fill="#00cc66" opacity="0.25"/>
+  <!-- c2: red, low vol -->
+  <line x1="96" y1="250" x2="96" y2="305" stroke="#ee4444" stroke-width="1" opacity="0.25"/>
+  <rect x="91" y="260" width="10" height="30" fill="#ee4444" opacity="0.25"/>
+  <!-- c3: green, med vol -->
+  <line x1="124" y1="230" x2="124" y2="280" stroke="#00cc66" stroke-width="1" opacity="0.6"/>
+  <rect x="119" y="240" width="10" height="28" fill="#00cc66" opacity="0.6"/>
+  <!-- c4: red, low vol -->
+  <line x1="152" y1="245" x2="152" y2="295" stroke="#ee4444" stroke-width="1" opacity="0.25"/>
+  <rect x="147" y="255" width="10" height="25" fill="#ee4444" opacity="0.25"/>
+  <!-- c5: green, HIGH vol - glow -->
+  <line x1="180" y1="200" x2="180" y2="280" stroke="#00ff77" stroke-width="1.5" filter="url(#glowStrong)"/>
+  <rect x="174" y="215" width="12" height="45" fill="#00ff77" filter="url(#glowStrong)"/>
+  <!-- c6: green, med vol -->
+  <line x1="208" y1="195" x2="208" y2="250" stroke="#00cc66" stroke-width="1" opacity="0.6"/>
+  <rect x="203" y="205" width="10" height="30" fill="#00cc66" opacity="0.6"/>
+  <!-- c7: red, med vol -->
+  <line x1="236" y1="200" x2="236" y2="260" stroke="#ee4444" stroke-width="1" opacity="0.6"/>
+  <rect x="231" y="210" width="10" height="35" fill="#ee4444" opacity="0.6"/>
+  <!-- c8: red, low vol -->
+  <line x1="264" y1="215" x2="264" y2="255" stroke="#ee4444" stroke-width="1" opacity="0.25"/>
+  <rect x="259" y="220" width="10" height="22" fill="#ee4444" opacity="0.25"/>
+  <!-- c9: green, low vol -->
+  <line x1="292" y1="210" x2="292" y2="250" stroke="#00cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="287" y="218" width="10" height="20" fill="#00cc66" opacity="0.25"/>
+  <!-- c10: red, HIGH vol - glow -->
+  <line x1="320" y1="190" x2="320" y2="290" stroke="#ff3333" stroke-width="1.5" filter="url(#glowStrong)"/>
+  <rect x="314" y="210" width="12" height="55" fill="#ff3333" filter="url(#glowStrong)"/>
+  <!-- c11: red, med vol -->
+  <line x1="348" y1="230" x2="348" y2="290" stroke="#ee4444" stroke-width="1" opacity="0.6"/>
+  <rect x="343" y="245" width="10" height="30" fill="#ee4444" opacity="0.6"/>
+  <!-- c12: green, low vol -->
+  <line x1="376" y1="235" x2="376" y2="275" stroke="#00cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="371" y="242" width="10" height="20" fill="#00cc66" opacity="0.25"/>
+  <!-- c13: green, med vol -->
+  <line x1="404" y1="215" x2="404" y2="265" stroke="#00cc66" stroke-width="1" opacity="0.6"/>
+  <rect x="399" y="225" width="10" height="28" fill="#00cc66" opacity="0.6"/>
+  <!-- c14: red, low vol -->
+  <line x1="432" y1="225" x2="432" y2="260" stroke="#ee4444" stroke-width="1" opacity="0.25"/>
+  <rect x="427" y="230" width="10" height="18" fill="#ee4444" opacity="0.25"/>
+  <!-- c15: green, med vol -->
+  <line x1="460" y1="200" x2="460" y2="255" stroke="#00cc66" stroke-width="1" opacity="0.6"/>
+  <rect x="455" y="210" width="10" height="30" fill="#00cc66" opacity="0.6"/>
+  <!-- c16: green, HIGH vol - glow -->
+  <line x1="488" y1="150" x2="488" y2="240" stroke="#00ff77" stroke-width="1.5" filter="url(#glowStrong)"/>
+  <rect x="482" y="165" width="12" height="50" fill="#00ff77" filter="url(#glowStrong)"/>
+  <!-- c17: green, med vol -->
+  <line x1="516" y1="140" x2="516" y2="195" stroke="#00cc66" stroke-width="1" opacity="0.6"/>
+  <rect x="511" y="150" width="10" height="30" fill="#00cc66" opacity="0.6"/>
+  <!-- c18: red, low vol -->
+  <line x1="544" y1="145" x2="544" y2="185" stroke="#ee4444" stroke-width="1" opacity="0.25"/>
+  <rect x="539" y="152" width="10" height="22" fill="#ee4444" opacity="0.25"/>
+  <!-- c19: red, med vol -->
+  <line x1="572" y1="155" x2="572" y2="210" stroke="#ee4444" stroke-width="1" opacity="0.6"/>
+  <rect x="567" y="165" width="10" height="30" fill="#ee4444" opacity="0.6"/>
+  <!-- c20: green, low vol -->
+  <line x1="600" y1="160" x2="600" y2="200" stroke="#00cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="595" y="168" width="10" height="20" fill="#00cc66" opacity="0.25"/>
+  <!-- c21: red, HIGH vol - glow -->
+  <line x1="628" y1="145" x2="628" y2="250" stroke="#ff3333" stroke-width="1.5" filter="url(#glowStrong)"/>
+  <rect x="622" y="160" width="12" height="60" fill="#ff3333" filter="url(#glowStrong)"/>
+  <!-- c22: red, med vol -->
+  <line x1="656" y1="185" x2="656" y2="245" stroke="#ee4444" stroke-width="1" opacity="0.6"/>
+  <rect x="651" y="195" width="10" height="35" fill="#ee4444" opacity="0.6"/>
+  <!-- c23: green, low vol -->
+  <line x1="684" y1="195" x2="684" y2="235" stroke="#00cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="679" y="202" width="10" height="20" fill="#00cc66" opacity="0.25"/>
+  <!-- c24: green, med vol -->
+  <line x1="712" y1="180" x2="712" y2="230" stroke="#00cc66" stroke-width="1" opacity="0.6"/>
+  <rect x="707" y="190" width="10" height="28" fill="#00cc66" opacity="0.6"/>
+  <!-- c25: green, low vol -->
+  <line x1="740" y1="185" x2="740" y2="220" stroke="#00cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="735" y="192" width="10" height="18" fill="#00cc66" opacity="0.25"/>
+
+  <!-- Separator -->
+  <line x1="50" y1="348" x2="760" y2="348" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Volume bars (y: 355-420) matching candle intensity -->
+  <rect x="63" y="405" width="10" height="15" fill="#00cc66" opacity="0.25"/>
+  <rect x="91" y="400" width="10" height="20" fill="#ee4444" opacity="0.25"/>
+  <rect x="119" y="385" width="10" height="35" fill="#00cc66" opacity="0.6"/>
+  <rect x="147" y="402" width="10" height="18" fill="#ee4444" opacity="0.25"/>
+  <rect x="174" y="355" width="12" height="65" fill="#00ff77" filter="url(#glow)"/>
+  <rect x="203" y="380" width="10" height="40" fill="#00cc66" opacity="0.6"/>
+  <rect x="231" y="382" width="10" height="38" fill="#ee4444" opacity="0.6"/>
+  <rect x="259" y="405" width="10" height="15" fill="#ee4444" opacity="0.25"/>
+  <rect x="287" y="408" width="10" height="12" fill="#00cc66" opacity="0.25"/>
+  <rect x="314" y="348" width="12" height="72" fill="#ff3333" filter="url(#glow)"/>
+  <rect x="343" y="385" width="10" height="35" fill="#ee4444" opacity="0.6"/>
+  <rect x="371" y="406" width="10" height="14" fill="#00cc66" opacity="0.25"/>
+  <rect x="399" y="388" width="10" height="32" fill="#00cc66" opacity="0.6"/>
+  <rect x="427" y="407" width="10" height="13" fill="#ee4444" opacity="0.25"/>
+  <rect x="455" y="383" width="10" height="37" fill="#00cc66" opacity="0.6"/>
+  <rect x="482" y="345" width="12" height="75" fill="#00ff77" filter="url(#glow)"/>
+  <rect x="511" y="382" width="10" height="38" fill="#00cc66" opacity="0.6"/>
+  <rect x="539" y="405" width="10" height="15" fill="#ee4444" opacity="0.25"/>
+  <rect x="567" y="385" width="10" height="35" fill="#ee4444" opacity="0.6"/>
+  <rect x="595" y="406" width="10" height="14" fill="#00cc66" opacity="0.25"/>
+  <rect x="622" y="350" width="12" height="70" fill="#ff3333" filter="url(#glow)"/>
+  <rect x="651" y="383" width="10" height="37" fill="#ee4444" opacity="0.6"/>
+  <rect x="679" y="407" width="10" height="13" fill="#00cc66" opacity="0.25"/>
+  <rect x="707" y="386" width="10" height="34" fill="#00cc66" opacity="0.6"/>
+  <rect x="735" y="408" width="10" height="12" fill="#00cc66" opacity="0.25"/>
+
+  <!-- Volume label -->
+  <text x="18" y="390" font-family="Arial, sans-serif" font-size="9" fill="#555" transform="rotate(-90,18,390)">Volume</text>
+
+  <!-- Legend bar -->
+  <rect x="50" y="450" width="710" height="40" rx="4" fill="#0d0d1a" opacity="0.6"/>
+  <rect x="80" y="463" width="18" height="14" fill="#00cc66" opacity="0.25" rx="2"/>
+  <text x="104" y="475" font-family="Arial, sans-serif" font-size="10" fill="#777">Low Vol (0-25%)</text>
+  <rect x="260" y="463" width="18" height="14" fill="#00cc66" opacity="0.6" rx="2"/>
+  <text x="284" y="475" font-family="Arial, sans-serif" font-size="10" fill="#aaa">Med Vol (25-75%)</text>
+  <rect x="460" y="463" width="18" height="14" fill="#00ff77" rx="2" filter="url(#glow)"/>
+  <text x="484" y="475" font-family="Arial, sans-serif" font-size="10" fill="#dddddd" font-weight="bold">High Vol (75-100%)</text>
+  <text x="670" y="475" font-family="Arial, sans-serif" font-size="9" fill="#555">Opacity = Vol Percentile</text>
+</svg>

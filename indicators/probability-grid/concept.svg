@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Probability Reversal Grid</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="380" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10">Reversal Probability (%)</text>
+
+  <!-- High reversal bg -->
+  <rect x="230" y="70" width="60" height="50" fill="rgba(233,30,99,0.08)"/>
+  <rect x="490" y="70" width="80" height="50" fill="rgba(233,30,99,0.08)"/>
+
+  <!-- 70 line -->
+  <line x1="60" y1="120" x2="760" y2="120" stroke="#FF9800" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+  <text x="765" y="124" fill="#FF9800" font-family="Inter,sans-serif" font-size="9">70%</text>
+  <!-- 50 line -->
+  <line x1="60" y1="260" x2="760" y2="260" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="765" y="264" fill="#888" font-family="Inter,sans-serif" font-size="9">50%</text>
+
+  <!-- Probability line -->
+  <polyline points="100,280 150,260 200,230 260,100 320,200 380,270 430,250 500,90 540,110 580,220 620,260 660,240 700,270"
+    fill="none" stroke="#E91E63" stroke-width="2.5"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="110" y2="475" stroke="#E91E63" stroke-width="2.5"/>
+  <text x="115" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Reversal Probability</text>
+  <line x1="330" y1="475" x2="360" y2="475" stroke="#FF9800" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="365" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">High Reversal (70%)</text>
+  <rect x="550" y="468" width="20" height="14" fill="rgba(233,30,99,0.15)" rx="2"/>
+  <text x="575" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">High Probability Zone</text>
+</svg>

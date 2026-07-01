@@ -1,0 +1,34 @@
+{
+  "id": "regime-detector",
+  "name": "Market Regime Detector",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "volatility",
+  "tags": [
+    "sklearn",
+    "kmeans",
+    "clustering",
+    "regime",
+    "volatility",
+    "machine-learning"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Uses scikit-learn KMeans clustering on ATR%, returns, volume ratio, and return volatility features to automatically classify market conditions into trending, ranging, and volatile regimes",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

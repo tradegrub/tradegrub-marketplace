@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="channelFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef5350" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ef5350" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="breakoutGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00e676" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Descending Channel Breakout Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Channel fill area -->
+  <polygon points="80,110 560,280 560,370 80,200" fill="url(#channelFill)"/>
+
+  <!-- Upper channel line (regression of highs) -->
+  <line x1="80" y1="110" x2="560" y2="280" stroke="#ef5350" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
+  <text x="85" y="102" fill="#ef5350" font-size="10" font-weight="500">Upper Channel (linreg highs)</text>
+
+  <!-- Lower channel line (regression of lows) -->
+  <line x1="80" y1="200" x2="560" y2="370" stroke="#26a69a" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
+  <text x="85" y="215" fill="#26a69a" font-size="10" font-weight="500">Lower Channel (linreg lows)</text>
+
+  <!-- Candlesticks inside channel -->
+  <!-- Candle 1 - bearish -->
+  <line x1="110" y1="118" x2="110" y2="175" stroke="#ef5350" stroke-width="1"/>
+  <rect x="106" y="130" width="8" height="30" fill="#ef5350" rx="1"/>
+  <!-- Candle 2 - bullish -->
+  <line x1="140" y1="135" x2="140" y2="190" stroke="#26a69a" stroke-width="1"/>
+  <rect x="136" y="150" width="8" height="25" fill="#26a69a" rx="1"/>
+  <!-- Candle 3 - bearish -->
+  <line x1="170" y1="145" x2="170" y2="210" stroke="#ef5350" stroke-width="1"/>
+  <rect x="166" y="155" width="8" height="38" fill="#ef5350" rx="1"/>
+  <!-- Candle 4 - bearish -->
+  <line x1="200" y1="165" x2="200" y2="230" stroke="#ef5350" stroke-width="1"/>
+  <rect x="196" y="175" width="8" height="35" fill="#ef5350" rx="1"/>
+  <!-- Candle 5 - bullish small -->
+  <line x1="230" y1="180" x2="230" y2="240" stroke="#26a69a" stroke-width="1"/>
+  <rect x="226" y="210" width="8" height="18" fill="#26a69a" rx="1"/>
+  <!-- Candle 6 - bearish -->
+  <line x1="260" y1="195" x2="260" y2="265" stroke="#ef5350" stroke-width="1"/>
+  <rect x="256" y="205" width="8" height="40" fill="#ef5350" rx="1"/>
+  <!-- Candle 7 - bearish -->
+  <line x1="290" y1="210" x2="290" y2="280" stroke="#ef5350" stroke-width="1"/>
+  <rect x="286" y="220" width="8" height="38" fill="#ef5350" rx="1"/>
+  <!-- Candle 8 - bullish -->
+  <line x1="320" y1="225" x2="320" y2="295" stroke="#26a69a" stroke-width="1"/>
+  <rect x="316" y="255" width="8" height="22" fill="#26a69a" rx="1"/>
+  <!-- Candle 9 - bearish -->
+  <line x1="350" y1="240" x2="350" y2="310" stroke="#ef5350" stroke-width="1"/>
+  <rect x="346" y="248" width="8" height="40" fill="#ef5350" rx="1"/>
+  <!-- Candle 10 - bearish doji -->
+  <line x1="380" y1="255" x2="380" y2="325" stroke="#ef5350" stroke-width="1"/>
+  <rect x="376" y="275" width="8" height="8" fill="#ef5350" rx="1"/>
+  <!-- Candle 11 - bullish hammer (bottom) -->
+  <line x1="410" y1="260" x2="410" y2="345" stroke="#26a69a" stroke-width="1"/>
+  <rect x="406" y="268" width="8" height="15" fill="#26a69a" rx="1"/>
+  <!-- Candle 12 - bullish -->
+  <line x1="440" y1="255" x2="440" y2="330" stroke="#26a69a" stroke-width="1"/>
+  <rect x="436" y="275" width="8" height="30" fill="#26a69a" rx="1"/>
+  <!-- Candle 13 - bullish strong -->
+  <line x1="470" y1="248" x2="470" y2="310" stroke="#26a69a" stroke-width="1"/>
+  <rect x="466" y="255" width="8" height="35" fill="#26a69a" rx="1"/>
+  <!-- Candle 14 - bullish (approaching upper) -->
+  <line x1="500" y1="240" x2="500" y2="295" stroke="#26a69a" stroke-width="1"/>
+  <rect x="496" y="248" width="8" height="30" fill="#26a69a" rx="1"/>
+  <!-- Candle 15 - BREAKOUT candle (big bullish, breaks above upper channel) -->
+  <line x1="540" y1="235" x2="540" y2="290" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="534" y="240" width="12" height="38" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Breakout zone highlight -->
+  <rect x="530" y="230" x2="760" width="230" height="50" fill="url(#breakoutGlow)" rx="4"/>
+
+  <!-- Post-breakout candles -->
+  <line x1="575" y1="220" x2="575" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="571" y="225" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="605" y1="208" x2="605" y2="248" stroke="#26a69a" stroke-width="1"/>
+  <rect x="601" y="215" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="635" y1="195" x2="635" y2="235" stroke="#ef5350" stroke-width="1"/>
+  <rect x="631" y="200" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="665" y1="185" x2="665" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="661" y="190" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="695" y1="170" x2="695" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="691" y="175" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Take Profit line -->
+  <line x1="540" y1="172" x2="730" y2="172" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="735" y="176" fill="#00e676" font-size="10" font-weight="500">Take Profit (2x ATR)</text>
+
+  <!-- Entry line -->
+  <line x1="540" y1="240" x2="730" y2="240" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="735" y="244" fill="#42a5f5" font-size="10" font-weight="500">Entry</text>
+
+  <!-- Stop Loss line -->
+  <line x1="540" y1="295" x2="730" y2="295" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="735" y="299" fill="#ef5350" font-size="10" font-weight="500">Stop Loss (ATR)</text>
+
+  <!-- Breakout arrow and label -->
+  <g filter="url(#softGlow)">
+    <polygon points="545,225 555,225 550,212" fill="#00e676"/>
+  </g>
+  <rect x="555" y="205" width="85" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="597" y="220" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BREAKOUT</text>
+
+  <!-- Descending channel annotation -->
+  <path d="M 300,140 C 280,120 250,115 230,120" fill="none" stroke="#888" stroke-width="1"/>
+  <polygon points="228,118 228,124 222,121" fill="#888"/>
+  <rect x="290" y="130" width="160" height="22" rx="4" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="370" y="145" text-anchor="middle" fill="#bbb" font-size="11">Descending Parallel Channel</text>
+
+  <!-- RSI Oversold annotation -->
+  <rect x="370" y="338" width="85" height="18" rx="4" fill="#ff9800" fill-opacity="0.12" stroke="#ff9800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="412" y="351" text-anchor="middle" fill="#ff9800" font-size="9" font-weight="500">RSI Oversold</text>
+  <line x1="410" y1="330" x2="410" y2="338" stroke="#ff9800" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Volume surge annotation -->
+  <!-- Volume bars at bottom -->
+  <g opacity="0.5">
+    <rect x="106" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="136" y="400" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="166" y="390" width="8" height="25" fill="#ef5350" rx="1"/>
+    <rect x="196" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="226" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="256" y="398" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="286" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="316" y="403" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="346" y="400" width="8" height="15" fill="#ef5350" rx="1"/>
+    <rect x="376" y="407" width="8" height="8" fill="#ef5350" rx="1"/>
+    <rect x="406" y="405" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="436" y="398" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="466" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="496" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+  </g>
+  <!-- Big volume bar on breakout -->
+  <rect x="534" y="370" width="12" height="45" fill="#00e676" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="571" y="388" width="8" height="27" fill="#26a69a" rx="1"/>
+    <rect x="601" y="390" width="8" height="25" fill="#26a69a" rx="1"/>
+    <rect x="631" y="395" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="661" y="393" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="691" y="395" width="8" height="20" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Volume surge label -->
+  <path d="M 540,365 C 540,355 520,350 510,352" fill="none" stroke="#00e676" stroke-width="1" opacity="0.6"/>
+  <text x="475" y="356" fill="#00e676" font-size="9" font-weight="500">Volume Surge</text>
+
+  <!-- Volume avg line -->
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#888" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="710" y="403" fill="#666" font-size="8">Avg Vol</text>
+
+  <!-- Slope arrows -->
+  <g opacity="0.5">
+    <line x1="155" y1="145" x2="185" y2="160" stroke="#ef5350" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+    <text x="148" y="140" fill="#ef5350" font-size="8">slope &lt; 0</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ef5350"/>
+    <text x="30" y="24" fill="#999" font-size="9">Upper Channel</text>
+    <circle cx="130" cy="20" r="4" fill="#26a69a"/>
+    <text x="140" y="24" fill="#999" font-size="9">Lower Channel</text>
+    <circle cx="240" cy="20" r="4" fill="#00e676"/>
+    <text x="250" y="24" fill="#999" font-size="9">Breakout Signal</text>
+    <circle cx="360" cy="20" r="4" fill="#42a5f5"/>
+    <text x="370" y="24" fill="#999" font-size="9">Entry Level</text>
+    <circle cx="460" cy="20" r="4" fill="#ff9800"/>
+    <text x="470" y="24" fill="#999" font-size="9">RSI Filter</text>
+    <rect x="555" y="12" width="20" height="16" fill="#00e676" opacity="0.5" rx="2"/>
+    <text x="580" y="24" fill="#999" font-size="9">Volume Surge</text>
+  </g>
+</svg>

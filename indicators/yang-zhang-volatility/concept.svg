@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Yang-Zhang Volatility</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart with gaps -->
+  <line x1="60" y1="70" x2="60" y2="200" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="200" x2="750" y2="200" stroke="#333" stroke-width="1"/>
+  <text x="55" y="80" text-anchor="end" fill="#666" font-size="9">Price</text>
+
+  <!-- Candles with visible gaps -->
+  <line x1="100" y1="120" x2="100" y2="175" stroke="#555" stroke-width="1"/>
+  <rect x="95" y="135" width="10" height="25" fill="#4CAF50" rx="1"/>
+  <line x1="160" y1="105" x2="160" y2="160" stroke="#555" stroke-width="1"/>
+  <rect x="155" y="115" width="10" height="25" fill="#4CAF50" rx="1"/>
+  <!-- Gap up -->
+  <line x1="155" y1="135" x2="165" y2="115" stroke="#FFA726" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="175" y="105" fill="#FFA726" font-size="7">gap</text>
+  <line x1="220" y1="100" x2="220" y2="155" stroke="#555" stroke-width="1"/>
+  <rect x="215" y="110" width="10" height="25" fill="#ff1744" rx="1"/>
+  <line x1="280" y1="130" x2="280" y2="180" stroke="#555" stroke-width="1"/>
+  <rect x="275" y="140" width="10" height="25" fill="#ff1744" rx="1"/>
+  <!-- Gap down -->
+  <line x1="215" y1="135" x2="225" y2="140" stroke="#ff1744" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="340" y1="135" x2="340" y2="175" stroke="#555" stroke-width="1"/>
+  <rect x="335" y="145" width="10" height="18" fill="#4CAF50" rx="1"/>
+  <line x1="400" y1="140" x2="400" y2="170" stroke="#555" stroke-width="1"/>
+  <rect x="395" y="148" width="10" height="12" fill="#4CAF50" rx="1"/>
+  <line x1="460" y1="130" x2="460" y2="165" stroke="#555" stroke-width="1"/>
+  <rect x="455" y="140" width="10" height="15" fill="#ff1744" rx="1"/>
+  <line x1="520" y1="110" x2="520" y2="170" stroke="#555" stroke-width="1"/>
+  <rect x="515" y="120" width="10" height="30" fill="#4CAF50" rx="1"/>
+  <!-- Gap up -->
+  <line x1="455" y1="140" x2="465" y2="120" stroke="#FFA726" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="580" y1="105" x2="580" y2="160" stroke="#555" stroke-width="1"/>
+  <rect x="575" y="115" width="10" height="25" fill="#4CAF50" rx="1"/>
+  <line x1="640" y1="100" x2="640" y2="150" stroke="#555" stroke-width="1"/>
+  <rect x="635" y="110" width="10" height="22" fill="#4CAF50" rx="1"/>
+  <line x1="700" y1="95" x2="700" y2="145" stroke="#555" stroke-width="1"/>
+  <rect x="695" y="105" width="10" height="22" fill="#4CAF50" rx="1"/>
+
+  <!-- Volatility subplot -->
+  <line x1="60" y1="230" x2="750" y2="230" stroke="#333" stroke-width="1"/>
+  <line x1="60" y1="230" x2="60" y2="430" stroke="#333" stroke-width="1"/>
+  <text x="30" y="330" text-anchor="middle" fill="#666" font-size="9" transform="rotate(-90,30,330)">Vol %</text>
+
+  <!-- Component lines (faded) -->
+  <polyline points="100,350 160,330 220,300 280,320 340,350 400,360 460,355 520,310 580,300 640,325 700,340" stroke="#ff1744" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,3"/>
+  <polyline points="100,370 160,355 220,340 280,350 340,365 400,370 460,365 520,345 580,335 640,350 700,358" stroke="#00e676" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,3"/>
+  <polyline points="100,360 160,345 220,320 280,335 340,358 400,365 460,360 520,330 580,318 640,338 700,348" stroke="#AB47BC" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="3,3"/>
+
+  <!-- YZ raw -->
+  <polyline points="100,355 160,330 220,290 280,320 340,350 400,362 460,355 520,310 580,295 640,325 700,340" stroke="#42A5F5" stroke-width="1" fill="none" opacity="0.5"/>
+
+  <!-- YZ smooth -->
+  <polyline points="100,358 160,340 220,310 280,325 340,348 400,358 460,358 520,330 580,310 640,328 700,338" stroke="#FFA726" stroke-width="2.5" fill="none"/>
+
+  <!-- Annotation -->
+  <text x="200" y="275" fill="#42A5F5" font-size="9">Spike from gaps +</text>
+  <text x="200" y="287" fill="#42A5F5" font-size="9">intraday range</text>
+
+  <!-- Legend -->
+  <rect x="100" y="455" width="12" height="12" fill="#42A5F5" rx="2"/>
+  <text x="118" y="466" fill="#aaa" font-size="10">YZ Raw</text>
+  <rect x="200" y="455" width="12" height="12" fill="#FFA726" rx="2"/>
+  <text x="218" y="466" fill="#aaa" font-size="10">YZ Smooth</text>
+  <rect x="320" y="455" width="12" height="12" fill="#ff1744" rx="2"/>
+  <text x="338" y="466" fill="#aaa" font-size="10">Overnight</text>
+  <rect x="430" y="455" width="12" height="12" fill="#00e676" rx="2"/>
+  <text x="448" y="466" fill="#aaa" font-size="10">Close</text>
+  <rect x="520" y="455" width="12" height="12" fill="#AB47BC" rx="2"/>
+  <text x="538" y="466" fill="#aaa" font-size="10">Rogers-Satchell</text>
+</svg>

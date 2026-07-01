@@ -1,0 +1,38 @@
+{
+  "id": "hurst-cycle-pivots",
+  "name": "Hurst Cycle Pivots",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "cycles",
+  "tags": [
+    "numpy",
+    "hurst",
+    "cycles",
+    "mean-reversion",
+    "rescaled-range"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Rolling Hurst exponent via R/S analysis to identify trending vs mean-reverting regimes and cycle pivot points",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "inputs": [
+    {"name": "lookback", "type": "int", "default": 50, "min": 20, "max": 200},
+    {"name": "rs_periods", "type": "int", "default": 20, "min": 5, "max": 50}
+  ],
+  "overlay": false,
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}
