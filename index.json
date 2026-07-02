@@ -498,39 +498,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "chande-momentum-oscillator",
-    "name": "Chande Momentum Oscillator",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "momentum",
-    "tags": [
-      "cmo",
-      "chande",
-      "momentum",
-      "up-down",
-      "oscillator"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Momentum oscillator using ratio of up-sum to down-sum over a period for raw momentum measurement",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "chart-pattern-scanner",
     "name": "Chart Pattern Scanner",
     "author": "tradegrub",
@@ -929,39 +896,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "demand-index",
-    "name": "Demand Index",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volume",
-    "tags": [
-      "demand",
-      "buying-pressure",
-      "selling-pressure",
-      "index",
-      "composite"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Combines price and volume into a single index measuring net buying or selling pressure",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "directional-vortex-scanner",
     "name": "Directional Vortex Scanner",
     "author": "tradegrub",
@@ -1218,39 +1152,6 @@
     "beta": false,
     "likes": 1500,
     "uses": 6200,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "ehlers-fisher-transform",
-    "name": "Fisher Transform",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "momentum",
-    "tags": [
-      "fisher",
-      "transform",
-      "gaussian",
-      "turning-points",
-      "oscillator"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Gaussian normalization converting price to near-normal distribution for sharper turning point identification",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
     "language": "Python",
     "languages": [
       "python"
@@ -1856,39 +1757,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "garman-klass-volatility",
-    "name": "Garman-Klass Volatility",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volatility",
-    "tags": [
-      "garman-klass",
-      "ohlc-volatility",
-      "efficient",
-      "estimator",
-      "risk"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "OHLC-based volatility estimator more efficient than close-to-close using full bar range information",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "gradient-boosted-signals",
     "name": "Gradient Boosted Signals",
     "author": "tradegrub",
@@ -2019,39 +1887,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "hilbert-transform",
-    "name": "Hilbert Transform Trendline",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "mathematical",
-    "tags": [
-      "hilbert",
-      "transform",
-      "phase",
-      "cycle",
-      "dominant-period"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Uses Hilbert Transform to compute instantaneous phase and dominant cycle period from price data",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "historical-volatility-cone",
     "name": "Historical Volatility Cone",
     "author": "tradegrub",
@@ -2103,39 +1938,6 @@
     "price": 0,
     "currency": "USD",
     "description": "HP filter separating price into smooth trend and cyclical components for detrended analysis",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "hurst-exponent",
-    "name": "Hurst Exponent",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "statistical",
-    "tags": [
-      "hurst",
-      "mean-reversion",
-      "trending",
-      "persistence",
-      "random-walk"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Estimates mean-reverting vs trending tendency of price series where H less than 0.5 indicates mean reversion",
     "official": true,
     "beta": true,
     "likes": 0,
@@ -2301,39 +2103,6 @@
     "price": 0,
     "currency": "USD",
     "description": "Detects island reversal patterns formed by gaps on both sides of an isolated price cluster",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "jurik-moving-average",
-    "name": "Jurik Moving Average",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "jma",
-      "jurik",
-      "smooth",
-      "moving-average",
-      "trend"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Ultra-smooth low-lag moving average using adaptive smoothing for minimal noise and fast response",
     "official": true,
     "beta": true,
     "likes": 0,
@@ -3309,38 +3078,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "negative-volume-index",
-    "name": "Negative Volume Index",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volume",
-    "tags": [
-      "nvi",
-      "negative-volume",
-      "smart-money",
-      "quiet-days"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Focuses on price action during declining volume days to track smart money accumulation",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "neural-weight-oscillator",
     "name": "Neural Weight Oscillator",
     "author": "tradegrub",
@@ -3540,39 +3277,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "parkinson-volatility",
-    "name": "Parkinson Volatility",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volatility",
-    "tags": [
-      "parkinson",
-      "high-low",
-      "volatility",
-      "range",
-      "estimator"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "High-low range based volatility estimator for more efficient variance measurement from intraday extremes",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "percentile-channel",
     "name": "Percentile Channel",
     "author": "tradegrub",
@@ -3672,39 +3376,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "polarized-fractal-efficiency",
-    "name": "Polarized Fractal Efficiency",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "pfe",
-      "fractal",
-      "efficiency",
-      "trend-strength",
-      "directional"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Measures trending efficiency of price movement using fractal geometry concepts to gauge trend strength",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "polynomial-regression-channel",
     "name": "Polynomial Regression Channel",
     "author": "tradegrub",
@@ -3723,38 +3394,6 @@
     "price": 0,
     "currency": "USD",
     "description": "Fits polynomial curve to price with standard deviation bands for non-linear trend channel analysis",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "positive-volume-index",
-    "name": "Positive Volume Index",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volume",
-    "tags": [
-      "pvi",
-      "positive-volume",
-      "smart-money",
-      "trend"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Tracks price changes on days when volume increases to detect informed trader activity",
     "official": true,
     "beta": true,
     "likes": 0,
@@ -3821,39 +3460,6 @@
     "price": 0,
     "currency": "USD",
     "description": "Uses matplotlib and numpy to compute rolling price distributions, showing z-scores, percentile ranks, and probability density to highlight statistically extreme price levels",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "price-momentum-oscillator",
-    "name": "Price Momentum Oscillator",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "momentum",
-    "tags": [
-      "pmo",
-      "momentum",
-      "rate-of-change",
-      "smoothed",
-      "oscillator"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Double-smoothed rate of change oscillator providing clean momentum measurement with signal line crossovers",
     "official": true,
     "beta": true,
     "likes": 0,
@@ -4001,39 +3607,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "random-walk-index",
-    "name": "Random Walk Index",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "rwi",
-      "random-walk",
-      "trend",
-      "noise",
-      "efficiency"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Determines if price is in a random walk or meaningful trend by comparing actual range to expected random range",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "range-indicator",
     "name": "N-Bar Range Indicator",
     "author": "tradegrub",
@@ -4119,40 +3692,6 @@
     "description": "Gradient boosted classifier detecting bull bear and range regimes from multi-feature technical input",
     "official": true,
     "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "regime-detector",
-    "name": "Market Regime Detector",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volatility",
-    "tags": [
-      "sklearn",
-      "kmeans",
-      "clustering",
-      "regime",
-      "volatility",
-      "machine-learning"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Uses scikit-learn KMeans clustering on ATR%, returns, volume ratio, and return volatility features to automatically classify market conditions into trending, ranging, and volatile regimes",
-    "official": true,
-    "beta": false,
     "likes": 0,
     "uses": 0,
     "language": "Python",
@@ -5090,39 +4629,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "traders-dynamic-index",
-    "name": "Traders Dynamic Index",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "momentum",
-    "tags": [
-      "tdi",
-      "rsi",
-      "bollinger",
-      "momentum",
-      "composite"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Composite indicator combining RSI with Bollinger Bands on RSI and RSI moving averages for trend and momentum analysis",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "trailing-stop-optimizer",
     "name": "Trailing Stop Optimizer",
     "author": "tradegrub",
@@ -5347,39 +4853,6 @@
     "beta": false,
     "likes": 1500,
     "uses": 6200,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "ulcer-index",
-    "name": "Ulcer Index",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "risk",
-    "tags": [
-      "ulcer",
-      "drawdown",
-      "depth",
-      "duration",
-      "risk"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Measures downside volatility capturing depth and duration of drawdowns as a comprehensive risk metric",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
     "language": "Python",
     "languages": [
       "python"
@@ -5690,38 +5163,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "volume-oscillator",
-    "name": "Volume Oscillator",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volume",
-    "tags": [
-      "volume-oscillator",
-      "fast-slow",
-      "trend",
-      "participation"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Percentage difference between fast and slow volume moving averages for participation trend analysis",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "volume-profile-heatmap",
     "name": "Volume Profile Distribution",
     "author": "tradegrub",
@@ -5912,39 +5353,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "volume-zone-oscillator",
-    "name": "Volume Zone Oscillator",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volume",
-    "tags": [
-      "vzo",
-      "volume-zone",
-      "up-volume",
-      "down-volume",
-      "oscillator"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Classifies volume into up-volume and down-volume zones with bounded oscillator output",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "vwap-deviation-zscore",
     "name": "VWAP Deviation Z-Score",
     "author": "tradegrub",
@@ -6070,38 +5478,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "wavetrend-oscillator",
-    "name": "WaveTrend Oscillator",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "momentum",
-    "tags": [
-      "wavetrend",
-      "oscillator",
-      "momentum",
-      "cycle"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "EMA-smoothed channel-normalized oscillator for cycle detection with overbought/oversold signals",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "weighted-sma-signal",
     "name": "Weighted SMA Signal",
     "author": "tradegrub",
@@ -6167,39 +5543,6 @@
     "backtest_summary": {},
     "created": "2026-06-27",
     "updated": "2026-06-27"
-  },
-  {
-    "id": "yang-zhang-volatility",
-    "name": "Yang-Zhang Volatility",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volatility",
-    "tags": [
-      "yang-zhang",
-      "volatility",
-      "overnight",
-      "drift",
-      "estimator"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Combined volatility estimator handling overnight jumps and intraday drift for more accurate risk measurement",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
   },
   {
     "id": "zero-lag-ema",
@@ -6396,38 +5739,6 @@
     "updated": "2026-06-27"
   },
   {
-    "id": "atr-trailing-stop",
-    "name": "ATR Trailing Stop",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "volatility",
-    "tags": [
-      "atr",
-      "trailing-stop",
-      "volatility",
-      "trend"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "ATR-based trailing stop strategy that adapts exit levels to current volatility",
-    "official": true,
-    "beta": false,
-    "likes": 2541,
-    "uses": 12847,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
-  },
-  {
     "id": "base-breakout",
     "name": "Flat Base Breakout",
     "author": "tradegrub",
@@ -6518,30 +5829,6 @@
     "languages": [
       "python"
     ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
-  },
-  {
-    "id": "bollinger-bands",
-    "name": "Bollinger Bands",
-    "author": "TradeGrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "mean-reversion",
-    "tags": [
-      "bollinger",
-      "bands",
-      "mean-reversion",
-      "volatility"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Buy below the lower Bollinger Band and sell above the upper band for mean-reversion trades.",
     "min_platform_version": "2.0",
     "screenshots": [],
     "backtest_summary": {},
@@ -6839,39 +6126,6 @@
     "backtest_summary": {},
     "created": "2026-06-30",
     "updated": "2026-06-30"
-  },
-  {
-    "id": "elder-impulse",
-    "name": "Elder Impulse System",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "elder",
-      "impulse",
-      "ema",
-      "macd",
-      "trend"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Elder Impulse System combining EMA slope and MACD histogram direction for trend entries.",
-    "official": true,
-    "beta": false,
-    "likes": 2734,
-    "uses": 13560,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
   },
   {
     "id": "ema-crossover",
@@ -7198,38 +6452,6 @@
     "updated": "2026-06-27"
   },
   {
-    "id": "ichimoku-cloud",
-    "name": "Ichimoku Cloud",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "ichimoku",
-      "cloud",
-      "trend-following",
-      "japanese"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Ichimoku cloud strategy entering long when price is above the cloud and Tenkan crosses above Kijun.",
-    "official": true,
-    "beta": false,
-    "likes": 2890,
-    "uses": 14200,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
-  },
-  {
     "id": "ichimoku-rsi",
     "name": "Ichimoku Cloud + RSI",
     "author": "tradegrub",
@@ -7294,38 +6516,6 @@
     "backtest_summary": {},
     "created": "2026-06-27",
     "updated": "2026-06-27"
-  },
-  {
-    "id": "inv-head-shoulders",
-    "name": "Inverse Head and Shoulders",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "pattern",
-    "tags": [
-      "head-shoulders",
-      "inverse",
-      "reversal",
-      "neckline"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Scans for inverse head and shoulders bottoming patterns using three successive lows with the middle lowest, entering on neckline break.",
-    "official": true,
-    "beta": false,
-    "likes": 1890,
-    "uses": 9123,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
   },
   {
     "id": "keltner-reversion",
@@ -7774,38 +6964,6 @@
     "updated": "2026-06-27"
   },
   {
-    "id": "opening-range",
-    "name": "Opening Range Breakout",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "breakout",
-    "tags": [
-      "opening-range",
-      "breakout",
-      "intraday",
-      "orb"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Trades breakouts from the high and low of the first N bars with ATR-based targets and stops",
-    "official": true,
-    "beta": false,
-    "likes": 2105,
-    "uses": 12340,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
-  },
-  {
     "id": "optimized-crossover-strategy",
     "name": "Optimized Crossover Strategy",
     "author": "tradegrub",
@@ -8068,38 +7226,6 @@
     "updated": "2026-06-27"
   },
   {
-    "id": "rsi-divergence",
-    "name": "RSI Divergence",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "mean-reversion",
-    "tags": [
-      "rsi",
-      "divergence",
-      "mean-reversion",
-      "momentum"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Detects bullish and bearish RSI divergences to trade mean reversion setups at price extremes.",
-    "official": true,
-    "beta": false,
-    "likes": 2780,
-    "uses": 13200,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
-  },
-  {
     "id": "rsi-macd-combo",
     "name": "RSI + MACD Combo",
     "author": "tradegrub",
@@ -8186,39 +7312,6 @@
     "backtest_summary": {},
     "created": "2026-06-30",
     "updated": "2026-06-30"
-  },
-  {
-    "id": "squeeze-momentum",
-    "name": "Squeeze Momentum",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "momentum",
-    "tags": [
-      "squeeze",
-      "bollinger",
-      "keltner",
-      "volatility-breakout",
-      "momentum"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Bollinger/Keltner squeeze momentum burst strategy for volatility breakout trading.",
-    "official": true,
-    "beta": false,
-    "likes": 2567,
-    "uses": 13489,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
   },
   {
     "id": "stdev-channel",
@@ -8338,29 +7431,6 @@
     "likes": 567,
     "uses": 2800,
     "language": "Python",
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-27",
-    "updated": "2026-06-27"
-  },
-  {
-    "id": "supertrend",
-    "name": "Supertrend",
-    "author": "TradeGrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "supertrend",
-      "atr",
-      "trend-following"
-    ],
-    "type": "strategy",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Buy and sell on Supertrend direction flips using ATR-based trailing bands.",
     "min_platform_version": "2.0",
     "screenshots": [],
     "backtest_summary": {},
@@ -9622,28 +8692,6 @@
     "likes": 0
   },
   {
-    "id": "central-pivot-range",
-    "name": "Central Pivot Range",
-    "version": "1.0.0",
-    "author": "TradeGrub Community",
-    "license": "Apache-2.0",
-    "category": "Support/Resistance",
-    "tags": [
-      "cpr",
-      "pivot",
-      "support",
-      "resistance",
-      "intraday",
-      "breakout"
-    ],
-    "type": "indicator",
-    "language": "python",
-    "description": "Central Pivot Range with TC/BC levels, narrow CPR breakout detection, and pivot zone highlighting",
-    "overlay": true,
-    "official": true,
-    "likes": 0
-  },
-  {
     "id": "gann-square-levels",
     "name": "Gann Square Levels",
     "version": "1.0.0",
@@ -10768,26 +9816,6 @@
     "type": "indicator",
     "language": "python",
     "description": "Compute average historical returns by cycle position to project seasonal direction",
-    "overlay": false,
-    "official": true,
-    "likes": 0
-  },
-  {
-    "id": "ease-of-movement",
-    "name": "Ease of Movement",
-    "version": "1.0.0",
-    "author": "TradeGrub Community",
-    "license": "Apache-2.0",
-    "category": "Volume",
-    "tags": [
-      "emv",
-      "volume",
-      "ease-of-movement",
-      "momentum"
-    ],
-    "type": "indicator",
-    "language": "python",
-    "description": "Classic EMV indicator measuring price movement efficiency relative to volume",
     "overlay": false,
     "official": true,
     "likes": 0
