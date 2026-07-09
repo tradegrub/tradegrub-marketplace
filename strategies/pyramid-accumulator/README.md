@@ -2,6 +2,10 @@
 
 Systematic accumulation strategy that builds a position by buying into price weakness and exits the entire position when a profit target is reached.
 
+## Concept
+
+![Concept](concept.svg)
+
 ## How It Works
 
 1. A simple moving average (SMA) defines the trend baseline

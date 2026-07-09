@@ -2,6 +2,10 @@
 
 Dollar cost averaging strategy with configurable safety orders.
 
+## Concept
+
+![Concept](concept.svg)
+
 ## How it works
 
 1. **Base order**: Opens a long position when price crosses below the SMA.

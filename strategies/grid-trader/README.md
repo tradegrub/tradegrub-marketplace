@@ -2,6 +2,10 @@
 
 A grid trading strategy that places entries at lower price levels and exits at upper levels, built for ranging and sideways markets.
 
+## Concept
+
+![Concept](concept.svg)
+
 ## How It Works
 
 The strategy calculates a set of evenly spaced grid levels centered on a simple moving average (SMA). When price drops below a lower grid level, a long entry is triggered. When price rises above a grid level above the reference, the position is closed.

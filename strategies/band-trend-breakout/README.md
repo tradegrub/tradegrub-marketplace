@@ -2,6 +2,10 @@
 
 Adaptive band breakout strategy that uses an EMA center line with ATR-scaled width to identify trend starts and trail exits.
 
+## Concept
+
+![Concept](concept.svg)
+
 ## How It Works
 
 1. A center line is calculated as an EMA of the close price.

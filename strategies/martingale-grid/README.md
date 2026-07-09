@@ -2,6 +2,10 @@
 
 Grid trading strategy with martingale position sizing. Places buy orders at percentage-based depth intervals below an initial entry. Each subsequent order size increases by a configurable multiplier. Take profit is calculated from the average entry price and stop loss is fixed from the first order price.
 
+## Concept
+
+![Concept](concept.svg)
+
 ## Parameters
 
 | Parameter | Default | Range | Description |

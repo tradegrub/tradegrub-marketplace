@@ -2,6 +2,10 @@
 
 Mean reversion strategy that combines the Relative Momentum Index (RMI) with Bollinger Bands applied to the RMI itself. RMI is a variation of RSI that measures price change over N bars (the momentum period) instead of just 1 bar, producing a smoother oscillator that filters out noise.
 
+## Concept
+
+![Concept](concept.svg)
+
 ## How It Works
 
 1. **RMI Calculation**: Measures momentum by comparing the current close to the close N bars ago, then smooths gains and losses with an exponential moving average.
