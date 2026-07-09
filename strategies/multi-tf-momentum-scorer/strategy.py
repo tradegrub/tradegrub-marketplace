@@ -113,16 +113,25 @@ short_entry = strong_bear & ~prev_bear
 long_exit = ~strong_bull & prev_bull
 short_exit = ~strong_bear & prev_bear
 
+in_position = None
 for i in range(n):
     strategy.set_bar_index(i)
-    if long_entry[i]:
+    if long_entry[i] and in_position != "long":
+        if in_position == "short":
+            strategy.close("Short")
         strategy.entry("Long", strategy.LONG)
-    elif short_entry[i]:
+        in_position = "long"
+    elif short_entry[i] and in_position != "short":
+        if in_position == "long":
+            strategy.close("Long")
         strategy.entry("Short", strategy.SHORT)
-    elif long_exit[i]:
+        in_position = "short"
+    elif long_exit[i] and in_position == "long":
         strategy.close("Long")
-    elif short_exit[i]:
+        in_position = None
+    elif short_exit[i] and in_position == "short":
         strategy.close("Short")
+        in_position = None
 
 # --- Sub-pane plots: individual TF score lines ---
 tf_colors = ["#69E1FB", "#26a69a", "#ff9800", "#ab47bc", "#ef5350",
