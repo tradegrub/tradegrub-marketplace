@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Multi TF Momentum Scorer", overlay=True)
+indicator("Multi-TF Momentum Scorer", overlay=False)
 
 # Inputs
 base_period = input.int(5, "Base Period", minval=2, maxval=20)
@@ -24,10 +24,8 @@ num_tf = len(tf_periods)
 
 # --- Resample close data at each timeframe resolution ---
 def resample_close(data, period):
-    """Downsample by taking every period-th bar, then interpolate back."""
     indices = np.arange(0, len(data), period)
     sampled = data[indices]
-    # Interpolate back to full length
     full = np.interp(np.arange(len(data)), indices, sampled)
     return full
 
@@ -38,7 +36,6 @@ def calc_rsi(source, length):
     delta = np.diff(source, prepend=source[0])
     gains = np.where(delta > 0, delta, 0.0)
     losses = np.where(delta < 0, -delta, 0.0)
-    # Exponential moving average of gains/losses
     avg_gain = np.zeros(len(source))
     avg_loss = np.zeros(len(source))
     avg_gain[length] = np.mean(gains[1:length + 1])
@@ -69,7 +66,6 @@ def calc_trend_score(source, length):
         window = source[i - length:i]
         y_mean = np.mean(window)
         slope = np.sum((x - x_mean) * (window - y_mean)) / x_var
-        # Normalize slope by price level
         scores[i] = slope / (y_mean + 1e-10) * length
     return np.clip(scores, -1.0, 1.0)
 
@@ -78,28 +74,18 @@ tf_scores = np.zeros((num_tf, n))
 tf_weights = np.zeros(num_tf)
 
 for idx, (period, resampled_data) in enumerate(zip(tf_periods, resampled)):
-    # RSI momentum: map 0-100 to -1 to +1
     rsi = calc_rsi(resampled_data, rsi_len)
     rsi_score = (rsi - 50.0) / 50.0
-
-    # ROC momentum: sign and magnitude
     roc = calc_roc(resampled_data, min(roc_len, period))
     roc_score = np.clip(roc / 5.0, -1.0, 1.0)
-
-    # Trend alignment
     trend = calc_trend_score(resampled_data, min(period, 30))
-
-    # Composite score for this timeframe
     tf_scores[idx] = np.average(
         [rsi_score, roc_score, trend],
         axis=0,
         weights=[0.35, 0.35, 0.30]
     )
-
-    # Higher timeframes get more weight (log scale)
     tf_weights[idx] = np.log(period + 1)
 
-# Normalize weights
 tf_weights = tf_weights / np.sum(tf_weights)
 
 # --- Composite Multi-TF Score ---
@@ -108,7 +94,7 @@ for idx in range(num_tf):
     composite += tf_weights[idx] * tf_scores[idx]
 
 # --- Consensus: how many timeframes agree on direction ---
-directions = np.sign(tf_scores)  # (num_tf, n)
+directions = np.sign(tf_scores)
 consensus_up = np.sum(directions > 0, axis=0) / num_tf
 consensus_down = np.sum(directions < 0, axis=0) / num_tf
 consensus = np.maximum(consensus_up, consensus_down)
@@ -121,7 +107,6 @@ position_pct = np.clip(confidence * max_risk, 0, max_risk) if use_sizing else np
 strong_bull = (composite > 0.2) & (consensus_up >= consensus_thresh)
 strong_bear = (composite < -0.2) & (consensus_down >= consensus_thresh)
 
-# Detect signal transitions
 prev_bull = np.roll(strong_bull, 1)
 prev_bear = np.roll(strong_bear, 1)
 prev_bull[0] = False
@@ -139,17 +124,16 @@ cooldown = 20
 for i in range(n):
     if long_entry[i]:
         strategy.entry("Long", strategy.LONG)
-
         if (i - last_signal_idx) > cooldown:
             last_signal_idx = i
             if show_labels:
                 label.new(
                     x=i, y=float(low[i]),
-                    text="LONG\nMulti-TF",
+                    text="BUY",
                     style=label.style_label_up,
                     color="#00e676",
                     textcolor="#000000",
-                    size="normal"
+                    size="small"
                 )
             if show_levels:
                 entry_price = float(close[i])
@@ -158,35 +142,25 @@ for i in range(n):
                 end_bar = min(i + 30, n - 1)
                 line.new(x1=i, y1=entry_price, x2=end_bar, y2=entry_price,
                          color="#42a5f5", width=1, style=line.style_dashed)
-                label.new(x=i + 2, y=entry_price, text="Entry",
-                          style=label.style_label_left, color="rgba(66,165,245,0.2)",
-                          textcolor="#42a5f5", size="small")
                 line.new(x1=i, y1=sl_price, x2=end_bar, y2=sl_price,
                          color="#ef5350", width=1, style=line.style_dashed)
-                label.new(x=i + 2, y=sl_price, text="Stop Loss",
-                          style=label.style_label_left, color="rgba(239,83,80,0.2)",
-                          textcolor="#ef5350", size="small")
                 line.new(x1=i, y1=tp_price, x2=end_bar, y2=tp_price,
                          color="#00e676", width=1, style=line.style_dashed)
-                label.new(x=i + 2, y=tp_price, text="Take Profit",
-                          style=label.style_label_left, color="rgba(0,230,118,0.2)",
-                          textcolor="#00e676", size="small")
                 box.new(left=i, top=tp_price, right=end_bar, bottom=sl_price,
-                        border_color="rgba(66,165,245,0.15)", bgcolor="rgba(66,165,245,0.03)")
+                        border_color="rgba(66,165,245,0.15)", bgcolor="rgba(66,165,245,0.05)")
 
     elif short_entry[i]:
         strategy.entry("Short", strategy.SHORT)
-
         if (i - last_signal_idx) > cooldown:
             last_signal_idx = i
             if show_labels:
                 label.new(
                     x=i, y=float(high[i]),
-                    text="SHORT\nMulti-TF",
+                    text="EXIT",
                     style=label.style_label_down,
                     color="#ef5350",
                     textcolor="#ffffff",
-                    size="normal"
+                    size="small"
                 )
             if show_levels:
                 entry_price = float(close[i])
@@ -195,38 +169,70 @@ for i in range(n):
                 end_bar = min(i + 30, n - 1)
                 line.new(x1=i, y1=entry_price, x2=end_bar, y2=entry_price,
                          color="#42a5f5", width=1, style=line.style_dashed)
-                label.new(x=i + 2, y=entry_price, text="Entry",
-                          style=label.style_label_left, color="rgba(66,165,245,0.2)",
-                          textcolor="#42a5f5", size="small")
                 line.new(x1=i, y1=sl_price, x2=end_bar, y2=sl_price,
                          color="#ef5350", width=1, style=line.style_dashed)
-                label.new(x=i + 2, y=sl_price, text="Stop Loss",
-                          style=label.style_label_left, color="rgba(239,83,80,0.2)",
-                          textcolor="#ef5350", size="small")
                 line.new(x1=i, y1=tp_price, x2=end_bar, y2=tp_price,
                          color="#00e676", width=1, style=line.style_dashed)
-                label.new(x=i + 2, y=tp_price, text="Take Profit",
-                          style=label.style_label_left, color="rgba(0,230,118,0.2)",
-                          textcolor="#00e676", size="small")
                 box.new(left=i, top=sl_price, right=end_bar, bottom=tp_price,
-                        border_color="rgba(239,83,80,0.15)", bgcolor="rgba(239,83,80,0.03)")
+                        border_color="rgba(239,83,80,0.15)", bgcolor="rgba(239,83,80,0.05)")
 
     elif long_exit[i]:
         strategy.close("Long")
+        if show_labels and (i - last_signal_idx) > cooldown:
+            last_signal_idx = i
+            label.new(
+                x=i, y=float(high[i]),
+                text="EXIT",
+                style=label.style_label_down,
+                color="#ff9800",
+                textcolor="#000000",
+                size="small"
+            )
     elif short_exit[i]:
         strategy.close("Short")
+        if show_labels and (i - last_signal_idx) > cooldown:
+            last_signal_idx = i
+            label.new(
+                x=i, y=float(low[i]),
+                text="EXIT",
+                style=label.style_label_up,
+                color="#ff9800",
+                textcolor="#000000",
+                size="small"
+            )
 
-# --- Plots ---
-plot(composite, title="Composite Score", color="#2196F3")
-plot(consensus_up, title="Bull Consensus", color="rgba(76,175,80,0.5)")
-plot(consensus_down, title="Bear Consensus", color="rgba(244,67,54,0.5)")
-hline(0, title="Zero Line", color="gray")
-hline(consensus_thresh, title="Consensus Threshold", color="green")
+# --- Sub-pane plots: individual TF score lines ---
+tf_colors = ["#69E1FB", "#26a69a", "#ff9800", "#ab47bc", "#ef5350",
+             "#42a5f5", "#66bb6a", "#ffa726"]
 
-plot(confidence, title="Confidence", color="#FF9800")
-plot(position_pct, title="Position %", color="#9C27B0")
+for idx in range(num_tf):
+    period = tf_periods[idx]
+    color = tf_colors[idx % len(tf_colors)]
+    plot(tf_scores[idx], title=f"TF {period}-bar", color=color, linewidth=1)
 
-bgcolor(strong_bull, color="rgba(76,175,80,0.08)")
-bgcolor(strong_bear, color="rgba(244,67,54,0.08)")
+# Composite score (thicker white line)
+plot(composite, title="Composite", color="#e0e0e0", linewidth=2)
 
-plotarrow(np.where(long_entry, 1, np.where(short_entry, -1, 0)), title="Signals", colorup="green", colordown="red")
+# Threshold lines
+h_upper = hline(consensus_thresh, title="Bull Threshold", color="rgba(0,230,118,0.4)", linestyle="dashed")
+h_lower = hline(-consensus_thresh, title="Bear Threshold", color="rgba(239,83,80,0.4)", linestyle="dashed")
+hline(0, title="Zero", color="rgba(255,255,255,0.15)")
+
+# Shade consensus zones on the sub-pane
+bull_bg = np.where(strong_bull, "rgba(76,175,80,0.12)", np.nan)
+bear_bg = np.where(strong_bear, "rgba(244,67,54,0.12)", np.nan)
+bgcolor(bull_bg, title="Bull Zone")
+bgcolor(bear_bg, title="Bear Zone")
+
+# Consensus labels in sub-pane at key moments
+for i in range(1, n):
+    if long_entry[i] and (i - last_signal_idx) > cooldown // 2:
+        bull_count = int(np.sum(directions[:, i] > 0))
+        label.new(
+            x=i, y=float(composite[i]) - 0.15,
+            text=f"{bull_count}/{num_tf} Bullish",
+            style=label.style_label_up,
+            color="rgba(76,175,80,0.3)",
+            textcolor="#66bb6a",
+            size="tiny"
+        )
