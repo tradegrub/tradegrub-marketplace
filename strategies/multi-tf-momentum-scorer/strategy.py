@@ -2,6 +2,7 @@ from tg_scripting import *
 import numpy as np
 
 indicator("Multi-TF Momentum Scorer", overlay=False)
+strategy.set_metadata("defaultRisk", 10)
 
 # Inputs
 base_period = input.int(5, "Base Period", minval=2, maxval=20)
