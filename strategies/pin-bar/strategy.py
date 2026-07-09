@@ -24,25 +24,24 @@ body_ratio = np.where(candle_range > 0, body / candle_range, 1.0)
 upper_ratio = np.where(candle_range > 0, upper_wick / candle_range, 0)
 lower_ratio = np.where(candle_range > 0, lower_wick / candle_range, 0)
 
-# Bullish pin bar: long lower tail, small body near top
-bull_pin = (body_ratio[-1] <= nose_ratio and
-            lower_ratio[-1] >= tail_ratio and
-            close[-1] < trend_sma[-1])
+bull_pin = ((body_ratio <= nose_ratio) &
+            (lower_ratio >= tail_ratio) &
+            (close < trend_sma))
+bear_pin = ((body_ratio <= nose_ratio) &
+            (upper_ratio >= tail_ratio) &
+            (close > trend_sma))
 
-# Bearish pin bar: long upper tail, small body near bottom
-bear_pin = (body_ratio[-1] <= nose_ratio and
-            upper_ratio[-1] >= tail_ratio and
-            close[-1] > trend_sma[-1])
-
-if bull_pin:
-    strategy.entry("Long", strategy.LONG)
-    strategy.exit("Long Exit", "Long", stop=low[-1] - atr[-1] * 0.3,
-                  limit=close[-1] + atr[-1] * atr_mult)
-
-if bear_pin:
-    strategy.entry("Short", strategy.SHORT)
-    strategy.exit("Short Exit", "Short", stop=high[-1] + atr[-1] * 0.3,
-                  limit=close[-1] - atr[-1] * atr_mult)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if bull_pin[i]:
+        strategy.entry("Long", strategy.LONG)
+        strategy.exit("Long Exit", "Long", stop=low[i] - atr[i] * 0.3,
+                      limit=close[i] + atr[i] * atr_mult)
+    if bear_pin[i]:
+        strategy.entry("Short", strategy.SHORT)
+        strategy.exit("Short Exit", "Short", stop=high[i] + atr[i] * 0.3,
+                      limit=close[i] - atr[i] * atr_mult)
 
 plot(trend_sma, title="Trend SMA", color="orange")
 plot(body_ratio, title="Body Ratio", color="blue")

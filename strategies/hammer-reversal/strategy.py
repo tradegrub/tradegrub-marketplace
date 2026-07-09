@@ -18,27 +18,26 @@ upper_wick = high - np.maximum(close, open)
 lower_wick = np.minimum(close, open) - low
 candle_range = high - low
 
-# Hammer: small body at top, long lower wick, in downtrend
-is_hammer = ((lower_wick[-1] > body[-1] * wick_ratio) and
-             (upper_wick[-1] < body[-1] * 0.5) and
-             (body[-1] > 0) and
-             (close[-1] < trend_sma[-1]))
+is_hammer = ((lower_wick > body * wick_ratio) &
+             (upper_wick < body * 0.5) &
+             (body > 0) &
+             (close < trend_sma))
+is_shooting_star = ((upper_wick > body * wick_ratio) &
+                    (lower_wick < body * 0.5) &
+                    (body > 0) &
+                    (close > trend_sma))
 
-# Shooting star: small body at bottom, long upper wick, in uptrend
-is_shooting_star = ((upper_wick[-1] > body[-1] * wick_ratio) and
-                    (lower_wick[-1] < body[-1] * 0.5) and
-                    (body[-1] > 0) and
-                    (close[-1] > trend_sma[-1]))
-
-if is_hammer:
-    strategy.entry("Long", strategy.LONG)
-    strategy.exit("Long SL", "Long", stop=low[-1] - atr[-1] * 0.5,
-                  limit=close[-1] + atr[-1] * atr_mult)
-
-if is_shooting_star:
-    strategy.entry("Short", strategy.SHORT)
-    strategy.exit("Short SL", "Short", stop=high[-1] + atr[-1] * 0.5,
-                  limit=close[-1] - atr[-1] * atr_mult)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if is_hammer[i]:
+        strategy.entry("Long", strategy.LONG)
+        strategy.exit("Long SL", "Long", stop=low[i] - atr[i] * 0.5,
+                      limit=close[i] + atr[i] * atr_mult)
+    if is_shooting_star[i]:
+        strategy.entry("Short", strategy.SHORT)
+        strategy.exit("Short SL", "Short", stop=high[i] + atr[i] * 0.5,
+                      limit=close[i] - atr[i] * atr_mult)
 
 plot(trend_sma, title="Trend SMA", color="orange")
 plotshape(is_hammer, title="Hammer", style="triangleup", location="belowbar", color="green")

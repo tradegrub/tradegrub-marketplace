@@ -21,26 +21,29 @@ atr = ta.atr(high, low, close, atr_length)
 long_signal = ta.crossover(close, or_high)
 short_signal = ta.crossunder(close, or_low)
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Take profit and stop loss based on ATR
-strategy.exit("Long TP/SL", from_entry="Long",
-              limit=close[-1] + atr[-1] * atr_tp_mult,
-              stop=close[-1] - atr[-1] * atr_sl_mult)
-strategy.exit("Short TP/SL", from_entry="Short",
-              limit=close[-1] - atr[-1] * atr_tp_mult,
-              stop=close[-1] + atr[-1] * atr_sl_mult)
+    # Take profit and stop loss based on ATR
+    strategy.exit("Long TP/SL", from_entry="Long",
+                  limit=close[i] + atr[i] * atr_tp_mult,
+                  stop=close[i] - atr[i] * atr_sl_mult)
+    strategy.exit("Short TP/SL", from_entry="Short",
+                  limit=close[i] - atr[i] * atr_tp_mult,
+                  stop=close[i] + atr[i] * atr_sl_mult)
 
-# Exit at midline as fallback
-if ta.crossunder(close, or_mid)[-1]:
-    strategy.close("Long")
+    # Exit at midline as fallback
+    if ta.crossunder(close, or_mid)[i]:
+        strategy.close("Long")
 
-if ta.crossover(close, or_mid)[-1]:
-    strategy.close("Short")
+    if ta.crossover(close, or_mid)[i]:
+        strategy.close("Short")
 
 p1 = plot(or_high, title="OR High", color="green")
 p2 = plot(or_low, title="OR Low", color="red")

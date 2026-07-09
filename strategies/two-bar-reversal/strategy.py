@@ -18,30 +18,31 @@ body_ratio = np.where(candle_range > 0, body / candle_range, 0)
 
 # Bullish two-bar reversal: strong bearish bar followed by strong bullish bar
 # Bar 2 close > Bar 1 open, Bar 2 open < Bar 1 close
-bar1_bearish = close[-2] < open[-2] and body_ratio[-2] >= min_body
-bar2_bullish = close[-1] > open[-1] and body_ratio[-1] >= min_body
-
-bull_2bar = (bar1_bearish and bar2_bullish and
-             close[-1] > open[-2] and open[-1] <= close[-2])
+prev_open = np.roll(open, 1)
+prev_close = np.roll(close, 1)
+bar1_bearish = (prev_close < prev_open) & (np.roll(body_ratio, 1) >= min_body)
+bar2_bullish = (close > open) & (body_ratio >= min_body)
+bull_2bar = bar1_bearish & bar2_bullish & (close > prev_open) & (open <= prev_close)
 
 # Bearish two-bar reversal: strong bullish bar followed by strong bearish bar
-bar1_bullish = close[-2] > open[-2] and body_ratio[-2] >= min_body
-bar2_bearish = close[-1] < open[-1] and body_ratio[-1] >= min_body
+bar1_bullish = (prev_close > prev_open) & (np.roll(body_ratio, 1) >= min_body)
+bar2_bearish = (close < open) & (body_ratio >= min_body)
+bear_2bar = bar1_bullish & bar2_bearish & (close < prev_open) & (open >= prev_close)
 
-bear_2bar = (bar1_bullish and bar2_bearish and
-             close[-1] < open[-2] and open[-1] >= close[-2])
+n = len(close)
+for i in range(2, n):
+    strategy.set_bar_index(i)
+    if bull_2bar[i]:
+        strategy.entry("Long", strategy.LONG)
+        strategy.exit("Long Exit", "Long",
+                      stop=min(low[i], low[i-1]) - atr[i] * 0.3,
+                      limit=close[i] + atr[i] * atr_mult)
 
-if bull_2bar:
-    strategy.entry("Long", strategy.LONG)
-    strategy.exit("Long Exit", "Long",
-                  stop=min(low[-1], low[-2]) - atr[-1] * 0.3,
-                  limit=close[-1] + atr[-1] * atr_mult)
-
-if bear_2bar:
-    strategy.entry("Short", strategy.SHORT)
-    strategy.exit("Short Exit", "Short",
-                  stop=max(high[-1], high[-2]) + atr[-1] * 0.3,
-                  limit=close[-1] - atr[-1] * atr_mult)
+    if bear_2bar[i]:
+        strategy.entry("Short", strategy.SHORT)
+        strategy.exit("Short Exit", "Short",
+                  stop=max(high[i], high[i-1]) + atr[i] * 0.3,
+                  limit=close[i] - atr[i] * atr_mult)
 
 plot(body_ratio, title="Body Ratio", color="blue")
 hline(min_body, title="Min Body", color="gray")

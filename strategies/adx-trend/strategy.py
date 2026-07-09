@@ -12,14 +12,17 @@ show_levels = input.bool(True, "Show Entry/Stop/TP Levels")
 
 plus_di, minus_di, adx_val = ta.dmi(high, low, close, di_len)
 
-strong_trend = adx_val[-1] > adx_thresh
-di_cross_up = ta.crossover(plus_di, minus_di)[-1]
-di_cross_down = ta.crossunder(plus_di, minus_di)[-1]
 
-if di_cross_up and strong_trend:
-    strategy.entry("Long", strategy.LONG)
-if di_cross_down:
-    strategy.close("Long")
+di_cross_up = ta.crossover(plus_di, minus_di)
+di_cross_down = ta.crossunder(plus_di, minus_di)
+
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if di_cross_up[i] and (adx_val[i] > adx_thresh):
+        strategy.entry("Long", strategy.LONG)
+    if di_cross_down[i]:
+        strategy.close("Long")
 
 plot(plus_di, title="+DI", color="green")
 plot(minus_di, title="-DI", color="red")

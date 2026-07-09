@@ -27,21 +27,24 @@ in_squeeze = bbw < bbw_threshold
 long_signal = ta.crossover(close, upper) & in_squeeze
 short_signal = ta.crossunder(close, lower) & in_squeeze
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit when price returns inside bands
-if ta.crossunder(close, basis)[-1]:
-    strategy.close("Long")
+    # Exit when price returns inside bands
+    if ta.crossunder(close, basis)[i]:
+        strategy.close("Long")
 
-if ta.crossover(close, basis)[-1]:
-    strategy.close("Short")
+    if ta.crossover(close, basis)[i]:
+        strategy.close("Short")
 
-strategy.exit("Long SL", from_entry="Long", trail_offset=atr[-1] * atr_sl_mult)
-strategy.exit("Short SL", from_entry="Short", trail_offset=atr[-1] * atr_sl_mult)
+    strategy.exit("Long SL", from_entry="Long", trail_offset=atr[i] * atr_sl_mult)
+    strategy.exit("Short SL", from_entry="Short", trail_offset=atr[i] * atr_sl_mult)
 
 p1 = plot(upper, title="BB Upper", color="blue")
 p2 = plot(lower, title="BB Lower", color="blue")

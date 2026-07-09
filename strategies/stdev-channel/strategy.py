@@ -17,17 +17,20 @@ upper = basis + stdev * mult
 lower = basis - stdev * mult
 
 # Mean reversion from channel extremes
-if ta.crossover(close, lower)[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if ta.crossover(close, lower)[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if ta.crossunder(close, upper)[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if ta.crossunder(close, upper)[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit at regression line
-if ta.crossunder(close, basis)[-1]:
-    strategy.close("Long")
-if ta.crossover(close, basis)[-1]:
-    strategy.close("Short")
+    # Exit at regression line
+    if ta.crossunder(close, basis)[i]:
+        strategy.close("Long")
+    if ta.crossover(close, basis)[i]:
+        strategy.close("Short")
 
 plot(upper, title="Upper Channel", color="red")
 plot(basis, title="Regression Line", color="blue")

@@ -25,21 +25,24 @@ else:
     long_signal = ta.crossover(high, range_high)
     short_signal = ta.crossunder(low, range_low)
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit at midline or ATR stop
-if ta.crossunder(close, range_mid)[-1]:
-    strategy.close("Long")
+    # Exit at midline or ATR stop
+    if ta.crossunder(close, range_mid)[i]:
+        strategy.close("Long")
 
-if ta.crossover(close, range_mid)[-1]:
-    strategy.close("Short")
+    if ta.crossover(close, range_mid)[i]:
+        strategy.close("Short")
 
-strategy.exit("Long SL", from_entry="Long", trail_offset=atr[-1] * atr_sl_mult)
-strategy.exit("Short SL", from_entry="Short", trail_offset=atr[-1] * atr_sl_mult)
+    strategy.exit("Long SL", from_entry="Long", trail_offset=atr[i] * atr_sl_mult)
+    strategy.exit("Short SL", from_entry="Short", trail_offset=atr[i] * atr_sl_mult)
 
 p1 = plot(range_high, title="Range High", color="green")
 p2 = plot(range_low, title="Range Low", color="red")

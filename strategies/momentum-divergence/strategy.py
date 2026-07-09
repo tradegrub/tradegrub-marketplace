@@ -21,16 +21,21 @@ price_high = ta.highest(close, lookback)
 rsi_high = ta.highest(rsi, lookback)
 
 # Bullish divergence: price makes new low but RSI makes higher low
-bullish_div = close[-1] <= price_low[-1] and rsi[-1] > rsi_low[-2] and rsi[-1] < os_level
+prev_rsi_low = np.roll(rsi_low, 1)
+bullish_div = (close <= price_low) & (rsi > prev_rsi_low) & (rsi < os_level)
 
 # Bearish divergence: price makes new high but RSI makes lower high
-bearish_div = close[-1] >= price_high[-1] and rsi[-1] < rsi_high[-2] and rsi[-1] > ob_level
+prev_rsi_high = np.roll(rsi_high, 1)
+bearish_div = (close >= price_high) & (rsi < prev_rsi_high) & (rsi > ob_level)
 
-if bullish_div:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if bullish_div[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if bearish_div:
-    strategy.close("Long")
+    if bearish_div[i]:
+        strategy.close("Long")
 
 plot(rsi, title="RSI", color="purple")
 hline(ob_level, title="Overbought", color="red")

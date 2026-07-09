@@ -29,19 +29,22 @@ if require_trend:
     long_signal = long_signal & (close > trend_ma)
     short_signal = short_signal & (close < trend_ma)
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# TP and SL based on ATR
-strategy.exit("Long TP/SL", from_entry="Long",
-              limit=close[-1] + atr[-1] * atr_tp_mult,
-              stop=prev_low[-1] - atr[-1] * atr_sl_mult)
-strategy.exit("Short TP/SL", from_entry="Short",
-              limit=close[-1] - atr[-1] * atr_tp_mult,
-              stop=prev_high[-1] + atr[-1] * atr_sl_mult)
+    # TP and SL based on ATR
+    strategy.exit("Long TP/SL", from_entry="Long",
+                  limit=close[i] + atr[i] * atr_tp_mult,
+                  stop=prev_low[i] - atr[i] * atr_sl_mult)
+    strategy.exit("Short TP/SL", from_entry="Short",
+              limit=close[i] - atr[i] * atr_tp_mult,
+              stop=prev_high[i] + atr[i] * atr_sl_mult)
 
 plot(trend_ma, title="Trend MA", color="blue")
 bgcolor(inside_bar, color="rgba(156, 39, 176, 0.1)")

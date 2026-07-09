@@ -15,31 +15,39 @@ body = np.abs(close - open)
 candle_range = high - low
 body_ratio = np.where(candle_range > 0, body / candle_range, 0)
 
-prev_body = np.abs(close[-2] - open[-2])
-curr_body = np.abs(close[-1] - open[-1])
+# Array-based conditions for engulfing patterns
+prev_bearish = np.roll(close, 1) < np.roll(open, 1)
+prev_bullish = np.roll(close, 1) > np.roll(open, 1)
+curr_bullish = close > open
+curr_bearish = close < open
+prev_open = np.roll(open, 1)
+prev_close = np.roll(close, 1)
 
-prev_bearish = close[-2] < open[-2]
-prev_bullish = close[-2] > open[-2]
-curr_bullish = close[-1] > open[-1]
-curr_bearish = close[-1] < open[-1]
+
+
+
+
 
 # Bullish engulfing: prev bearish, curr bullish, curr body engulfs prev body
-bullish_engulf = (prev_bearish and curr_bullish and
-                  close[-1] > open[-2] and open[-1] < close[-2] and
-                  body_ratio[-1] >= min_body_ratio)
+bullish_engulf = (prev_bearish & curr_bullish &
+                  (close > prev_open) & (open < prev_close) &
+                  (body_ratio >= min_body_ratio))
 
 # Bearish engulfing: prev bullish, curr bearish, curr body engulfs prev body
-bearish_engulf = (prev_bullish and curr_bearish and
-                  close[-1] < open[-2] and open[-1] > close[-2] and
-                  body_ratio[-1] >= min_body_ratio)
+bearish_engulf = (prev_bullish & curr_bearish &
+                  (close < prev_open) & (open > prev_close) &
+                  (body_ratio >= min_body_ratio))
 
-if bullish_engulf:
-    strategy.entry("Long", strategy.LONG)
-    strategy.exit("Long SL", "Long", stop=close[-1] - atr[-1] * atr_mult)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if bullish_engulf[i]:
+        strategy.entry("Long", strategy.LONG)
+        strategy.exit("Long SL", "Long", stop=close[i] - atr[i] * atr_mult)
 
-if bearish_engulf:
-    strategy.entry("Short", strategy.SHORT)
-    strategy.exit("Short SL", "Short", stop=close[-1] + atr[-1] * atr_mult)
+    if bearish_engulf[i]:
+        strategy.entry("Short", strategy.SHORT)
+        strategy.exit("Short SL", "Short", stop=close[i] + atr[i] * atr_mult)
 
 plot(body_ratio, title="Body Ratio", color="blue")
 hline(min_body_ratio, title="Min Ratio", color="gray")

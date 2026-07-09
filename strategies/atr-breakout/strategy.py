@@ -22,21 +22,24 @@ lower_band = basis - atr * atr_mult
 long_signal = ta.crossover(close, upper_band)
 short_signal = ta.crossunder(close, lower_band)
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit using tighter ATR band
-exit_upper = basis + atr * exit_mult
-exit_lower = basis - atr * exit_mult
+    # Exit using tighter ATR band
+    exit_upper = basis + atr * exit_mult
+    exit_lower = basis - atr * exit_mult
 
-if ta.crossunder(close, exit_lower)[-1]:
-    strategy.close("Long")
+    if ta.crossunder(close, exit_lower)[i]:
+        strategy.close("Long")
 
-if ta.crossover(close, exit_upper)[-1]:
-    strategy.close("Short")
+    if ta.crossover(close, exit_upper)[i]:
+        strategy.close("Short")
 
 p1 = plot(upper_band, title="Upper ATR Band", color="green")
 p2 = plot(lower_band, title="Lower ATR Band", color="red")

@@ -16,17 +16,20 @@ linreg = ta.linreg(close, reg_length)
 deviation_pct = ((close - linreg) / linreg) * 100
 
 # Enter when price deviates too far from regression
-if deviation_pct[-1] < -dev_threshold and deviation_pct[-2] >= -dev_threshold:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if deviation_pct[i] < -dev_threshold and deviation_pct[i-1] >= -dev_threshold:
+        strategy.entry("Long", strategy.LONG)
 
-if deviation_pct[-1] > dev_threshold and deviation_pct[-2] <= dev_threshold:
-    strategy.entry("Short", strategy.SHORT)
+    if deviation_pct[i] > dev_threshold and deviation_pct[i-1] <= dev_threshold:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit when deviation normalizes
-if deviation_pct[-1] > -exit_pct and deviation_pct[-2] <= -exit_pct:
-    strategy.close("Long")
-if deviation_pct[-1] < exit_pct and deviation_pct[-2] >= exit_pct:
-    strategy.close("Short")
+    # Exit when deviation normalizes
+    if deviation_pct[i] > -exit_pct and deviation_pct[i-1] <= -exit_pct:
+        strategy.close("Long")
+    if deviation_pct[i] < exit_pct and deviation_pct[i-1] >= exit_pct:
+        strategy.close("Short")
 
 plot(deviation_pct, title="Deviation %", color="purple")
 hline(dev_threshold, title="Upper Threshold", color="red")

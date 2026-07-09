@@ -13,19 +13,22 @@ show_levels = input.bool(True, "Show Entry/Stop/TP Levels")
 upper, basis, lower = ta.bb(close, length, mult)
 
 # Buy when price crosses above lower band (bounce off support)
-if ta.crossover(close, lower)[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if ta.crossover(close, lower)[i]:
+        strategy.entry("Long", strategy.LONG)
 
-# Sell when price crosses below upper band (bounce off resistance)
-if ta.crossunder(close, upper)[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    # Sell when price crosses below upper band (bounce off resistance)
+    if ta.crossunder(close, upper)[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit at basis if enabled
-if exit_at_basis:
-    if ta.crossover(close, basis)[-1]:
-        strategy.close("Short")
-    if ta.crossunder(close, basis)[-1]:
-        strategy.close("Long")
+    # Exit at basis if enabled
+    if exit_at_basis:
+        if ta.crossover(close, basis)[i]:
+            strategy.close("Short")
+        if ta.crossunder(close, basis)[i]:
+            strategy.close("Long")
 
 plot(upper, title="Upper Band", color="red")
 plot(basis, title="Basis", color="gray")

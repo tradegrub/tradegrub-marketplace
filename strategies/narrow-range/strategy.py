@@ -33,19 +33,22 @@ prev_low = np.roll(low, 1)
 long_signal = nr_prev & (close > prev_high) & vol_surge
 short_signal = nr_prev & (close < prev_low) & vol_surge
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# ATR-based exits
-strategy.exit("Long TP/SL", from_entry="Long",
-              limit=close[-1] + atr[-1] * atr_tp_mult,
-              stop=close[-1] - atr[-1] * atr_sl_mult)
-strategy.exit("Short TP/SL", from_entry="Short",
-              limit=close[-1] - atr[-1] * atr_tp_mult,
-              stop=close[-1] + atr[-1] * atr_sl_mult)
+    # ATR-based exits
+    strategy.exit("Long TP/SL", from_entry="Long",
+                  limit=close[i] + atr[i] * atr_tp_mult,
+                  stop=close[i] - atr[i] * atr_sl_mult)
+    strategy.exit("Short TP/SL", from_entry="Short",
+              limit=close[i] - atr[i] * atr_tp_mult,
+              stop=close[i] + atr[i] * atr_sl_mult)
 
 plot(atr, title="ATR", color="purple")
 bgcolor(is_nr, color="rgba(255, 193, 7, 0.15)")

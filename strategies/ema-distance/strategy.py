@@ -16,18 +16,21 @@ ema = ta.ema(close, ema_length)
 dist = ((close - ema) / ema) * 100
 
 # Enter long when price is too far below EMA
-if dist[-1] < -distance_pct and dist[-2] >= -distance_pct:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if dist[i] < -distance_pct and dist[i-1] >= -distance_pct:
+        strategy.entry("Long", strategy.LONG)
 
-# Enter short when price is too far above EMA
-if dist[-1] > distance_pct and dist[-2] <= distance_pct:
-    strategy.entry("Short", strategy.SHORT)
+    # Enter short when price is too far above EMA
+    if dist[i] > distance_pct and dist[i-1] <= distance_pct:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit when price returns near EMA
-if dist[-1] > -exit_pct and dist[-2] <= -exit_pct:
-    strategy.close("Long")
-if dist[-1] < exit_pct and dist[-2] >= exit_pct:
-    strategy.close("Short")
+    # Exit when price returns near EMA
+    if dist[i] > -exit_pct and dist[i-1] <= -exit_pct:
+        strategy.close("Long")
+    if dist[i] < exit_pct and dist[i-1] >= exit_pct:
+        strategy.close("Short")
 
 plot(ema, title="EMA", color="orange")
 plot(dist, title="EMA Distance %", color="blue")

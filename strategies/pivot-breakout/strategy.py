@@ -23,19 +23,22 @@ vol_confirm = volume > avg_vol * vol_mult if use_volume else np.ones(len(close),
 long_signal = (close > pivot_high) & vol_confirm
 short_signal = (close < pivot_low) & vol_confirm
 
-if long_signal[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_signal[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_signal[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_signal[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit when price returns to mid range
-mid = (pivot_high + pivot_low) / 2
-if ta.crossunder(close, mid)[-1]:
-    strategy.close("Long")
+    # Exit when price returns to mid range
+    mid = (pivot_high + pivot_low) / 2
+    if ta.crossunder(close, mid)[i]:
+        strategy.close("Long")
 
-if ta.crossover(close, mid)[-1]:
-    strategy.close("Short")
+    if ta.crossover(close, mid)[i]:
+        strategy.close("Short")
 
 p1 = plot(pivot_high, title="Pivot High", color="green")
 p2 = plot(pivot_low, title="Pivot Low", color="red")

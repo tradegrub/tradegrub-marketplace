@@ -14,13 +14,16 @@ fast_ema = ta.ema(close, fast_len)
 slow_ema = ta.ema(close, slow_len)
 trend_ema = ta.ema(close, trend_len)
 
-long_cond = ta.crossover(fast_ema, slow_ema)[-1] and close[-1] > trend_ema[-1]
-exit_cond = ta.crossunder(fast_ema, slow_ema)[-1]
 
-if long_cond:
-    strategy.entry("Long", strategy.LONG)
-if exit_cond:
-    strategy.close("Long")
+exit_cond = ta.crossunder(fast_ema, slow_ema)
+
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if (ta.crossover(fast_ema, slow_ema)[i] and close[i] > trend_ema[i]):
+        strategy.entry("Long", strategy.LONG)
+    if exit_cond[i]:
+        strategy.close("Long")
 
 p1 = plot(fast_ema, title="Fast EMA", color="orange")
 p2 = plot(slow_ema, title="Slow EMA", color="blue")

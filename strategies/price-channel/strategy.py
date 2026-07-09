@@ -17,20 +17,23 @@ exit_high = ta.highest(high, exit_length)
 exit_low = ta.lowest(low, exit_length)
 
 # Enter long on highest high breakout
-if close[-1] > highest_high[-2]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if close[i] > highest_high[i-1]:
+        strategy.entry("Long", strategy.LONG)
 
-# Enter short on lowest low breakdown
-if close[-1] < lowest_low[-2]:
-    strategy.entry("Short", strategy.SHORT)
+    # Enter short on lowest low breakdown
+    if close[i] < lowest_low[i-1]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit long at exit channel low
-if close[-1] < exit_low[-2]:
-    strategy.close("Long")
+    # Exit long at exit channel low
+    if close[i] < exit_low[i-1]:
+        strategy.close("Long")
 
-# Exit short at exit channel high
-if close[-1] > exit_high[-2]:
-    strategy.close("Short")
+    # Exit short at exit channel high
+    if close[i] > exit_high[i-1]:
+        strategy.close("Short")
 
 p1 = plot(highest_high, title="Channel High", color="green")
 p2 = plot(lowest_low, title="Channel Low", color="red")

@@ -19,19 +19,19 @@ width_min = ta.lowest(bb_width, lookback)
 is_squeeze = bb_width <= width_min * 1.05
 
 # Expansion breakout after squeeze
-expanding = bb_width[-1] > bb_width[-2] * 1.1
-
-if is_squeeze[-2] and expanding:
-    if close[-1] > basis[-1]:
-        strategy.entry("Long", strategy.LONG)
-    else:
-        strategy.entry("Short", strategy.SHORT)
-
-# Exit when price returns to basis
-if ta.crossunder(close, basis)[-1]:
-    strategy.close("Long")
-if ta.crossover(close, basis)[-1]:
-    strategy.close("Short")
+n = len(close)
+for i in range(2, n):
+    strategy.set_bar_index(i)
+    expanding_i = bb_width[i] > bb_width[i-1] * 1.1
+    if is_squeeze[i-1] and expanding_i:
+        if close[i] > basis[i]:
+            strategy.entry("Long", strategy.LONG)
+        else:
+            strategy.entry("Short", strategy.SHORT)
+    if ta.crossunder(close, basis)[i]:
+        strategy.close("Long")
+    if ta.crossover(close, basis)[i]:
+        strategy.close("Short")
 
 plot(bb_width, title="BB Width", color="blue")
 plot(width_min * 1.05, title="Squeeze Level", color="red")

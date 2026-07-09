@@ -24,18 +24,21 @@ long_exit = ta.crossunder(close, center)
 short_exit = ta.crossover(close, center)
 
 # Strategy entries
-if long_entry[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_entry[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_entry[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_entry[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Strategy exits (trailing to center)
-if long_exit[-1]:
-    strategy.close("Long")
+    # Strategy exits (trailing to center)
+    if long_exit[i]:
+        strategy.close("Long")
 
-if short_exit[-1]:
-    strategy.close("Short")
+    if short_exit[i]:
+        strategy.close("Short")
 
 # Plot bands
 p_upper = plot(upper_band, title="Upper Band", color="green")

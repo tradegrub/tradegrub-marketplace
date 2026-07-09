@@ -14,13 +14,16 @@ fast_sma = ta.sma(close, fast_len)
 mid_sma = ta.sma(close, mid_len)
 slow_sma = ta.sma(close, slow_len)
 
-long_cond = ta.crossover(fast_sma, mid_sma)[-1] and mid_sma[-1] > slow_sma[-1]
-exit_cond = ta.crossunder(fast_sma, mid_sma)[-1]
 
-if long_cond:
-    strategy.entry("Long", strategy.LONG)
-if exit_cond:
-    strategy.close("Long")
+exit_cond = ta.crossunder(fast_sma, mid_sma)
+
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if (ta.crossover(fast_sma, mid_sma)[i] and mid_sma[i] > slow_sma[i]):
+        strategy.entry("Long", strategy.LONG)
+    if exit_cond[i]:
+        strategy.close("Long")
 
 p1 = plot(fast_sma, title="Fast SMA", color="lime")
 p2 = plot(mid_sma, title="Mid SMA", color="orange")

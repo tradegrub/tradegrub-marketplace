@@ -23,19 +23,22 @@ bull_bounce = near_vwap & (close > trend_sma) & (close > vwap_val)
 # Bearish rejection: price near VWAP in downtrend
 bear_reject = near_vwap & (close < trend_sma) & (close < vwap_val)
 
-if bull_bounce[-1]:
-    strategy.entry("Long", strategy.LONG)
-if bear_reject[-1]:
-    strategy.entry("Short", strategy.SHORT)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if bull_bounce[i]:
+        strategy.entry("Long", strategy.LONG)
+    if bear_reject[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit when price moves away from VWAP by exit_mult * ATR
-long_exit = close[-1] > vwap_val[-1] + exit_mult * atr[-1]
-short_exit = close[-1] < vwap_val[-1] - exit_mult * atr[-1]
+    # Exit when price moves away from VWAP by exit_mult * ATR
+    long_exit = close[i] > vwap_val[i] + exit_mult * atr[i]
+    short_exit = close[i] < vwap_val[i] - exit_mult * atr[i]
 
-if long_exit:
-    strategy.close("Long")
-if short_exit:
-    strategy.close("Short")
+    if long_exit:
+        strategy.close("Long")
+    if short_exit:
+        strategy.close("Short")
 
 plot(vwap_val, title="VWAP", color="blue")
 plot(trend_sma, title="Trend SMA", color="orange")

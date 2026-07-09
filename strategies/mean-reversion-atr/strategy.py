@@ -17,17 +17,20 @@ upper_band = sma + atr * atr_mult
 lower_band = sma - atr * atr_mult
 
 # Enter when price reverts from ATR extremes
-if ta.crossover(close, lower_band)[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if ta.crossover(close, lower_band)[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if ta.crossunder(close, upper_band)[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if ta.crossunder(close, upper_band)[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit at SMA
-if ta.crossunder(close, sma)[-1]:
-    strategy.close("Long")
-if ta.crossover(close, sma)[-1]:
-    strategy.close("Short")
+    # Exit at SMA
+    if ta.crossunder(close, sma)[i]:
+        strategy.close("Long")
+    if ta.crossover(close, sma)[i]:
+        strategy.close("Short")
 
 plot(sma, title="SMA", color="blue")
 plot(upper_band, title="Upper ATR Band", color="red")

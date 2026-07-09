@@ -21,23 +21,26 @@ atr = ta.atr(high, low, close, atr_length)
 long_entry = ta.crossover(close, entry_upper)
 short_entry = ta.crossunder(close, entry_lower)
 
-if long_entry[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if long_entry[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if short_entry[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if short_entry[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit on opposite exit channel break
-if ta.crossunder(close, exit_lower)[-1]:
-    strategy.close("Long")
+    # Exit on opposite exit channel break
+    if ta.crossunder(close, exit_lower)[i]:
+        strategy.close("Long")
 
-if ta.crossover(close, exit_upper)[-1]:
-    strategy.close("Short")
+    if ta.crossover(close, exit_upper)[i]:
+        strategy.close("Short")
 
-# Optional ATR trailing stop
-if use_atr_stop:
-    strategy.exit("Long SL", from_entry="Long", trail_offset=atr[-1] * atr_mult)
-    strategy.exit("Short SL", from_entry="Short", trail_offset=atr[-1] * atr_mult)
+    # Optional ATR trailing stop
+    if use_atr_stop:
+        strategy.exit("Long SL", from_entry="Long", trail_offset=atr[i] * atr_mult)
+        strategy.exit("Short SL", from_entry="Short", trail_offset=atr[i] * atr_mult)
 
 p1 = plot(entry_upper, title="Entry Upper", color="green")
 p2 = plot(entry_lower, title="Entry Lower", color="red")

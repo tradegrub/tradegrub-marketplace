@@ -22,38 +22,37 @@ for i in range(1, len(close)):
 ha_high = np.maximum(high, np.maximum(ha_open, ha_close))
 ha_low = np.minimum(low, np.minimum(ha_open, ha_close))
 
-# HA trend signals
-ha_bullish = ha_close[-1] > ha_open[-1]
-ha_bearish = ha_close[-1] < ha_open[-1]
-
-# No lower wick on bullish = strong trend up
-ha_strong_bull = ha_bullish and (ha_low[-1] == np.minimum(ha_open[-1], ha_close[-1]))
-# No upper wick on bearish = strong trend down
-ha_strong_bear = ha_bearish and (ha_high[-1] == np.maximum(ha_open[-1], ha_close[-1]))
-
 # EMA trend confirmation on HA close
 fast_ema = ta.ema(ha_close, ema_fast)
 slow_ema = ta.ema(ha_close, ema_slow)
 atr = ta.atr(high, low, close, atr_len)
 
-bull_trend = fast_ema[-1] > slow_ema[-1]
-bear_trend = fast_ema[-1] < slow_ema[-1]
+# HA trend signals (array-based)
+ha_bullish = ha_close > ha_open
+ha_bearish = ha_close < ha_open
+prev_ha_bearish = np.roll(ha_bearish, 1)
+prev_ha_bullish = np.roll(ha_bullish, 1)
+bull_trend = fast_ema > slow_ema
+bear_trend = fast_ema < slow_ema
 
 # Entry on HA color flip with EMA confirmation
-ha_flip_bull = ha_bullish and (ha_close[-2] < ha_open[-2]) and bull_trend
-ha_flip_bear = ha_bearish and (ha_close[-2] > ha_open[-2]) and bear_trend
+ha_flip_bull = ha_bullish & prev_ha_bearish & bull_trend
+ha_flip_bear = ha_bearish & prev_ha_bullish & bear_trend
 
-if ha_flip_bull:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if ha_flip_bull[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if ha_flip_bear:
-    strategy.entry("Short", strategy.SHORT)
+    if ha_flip_bear[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Trailing stop exits
-if ha_bearish and bull_trend == False:
-    strategy.close("Long")
-if ha_bullish and bear_trend == False:
-    strategy.close("Short")
+    # Trailing stop exits
+    if ha_bearish[i] and not bull_trend[i]:
+        strategy.close("Long")
+    if ha_bullish[i] and not bear_trend[i]:
+        strategy.close("Short")
 
 plotcandle(ha_open, ha_high, ha_low, ha_close, title="Heikin-Ashi")
 plot(fast_ema, title="Fast EMA", color="blue")

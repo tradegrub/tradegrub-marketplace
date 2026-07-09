@@ -30,11 +30,14 @@ atr = ta.atr(high, low, close, 14)
 buy_thresh = threshold * 100
 sell_thresh = (1 - threshold) * 100
 
-cur = score[-1]
-if cur > buy_thresh:
-    strategy.entry("ML Long", strategy.LONG)
-if cur < sell_thresh:
-    strategy.close("ML Long")
+
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if (score[i]) > buy_thresh:
+        strategy.entry("ML Long", strategy.LONG)
+    if (score[i]) < sell_thresh:
+        strategy.close("ML Long")
 
 plot(score, title="ML Score", color="cyan")
 hline(buy_thresh, title="Buy Threshold", color="green", linestyle="dashed")

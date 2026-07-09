@@ -15,18 +15,21 @@ lower = basis * (1 - pct / 100)
 atr = ta.atr(high, low, close, 14)
 
 # Enter long on upper envelope breakout
-if ta.crossover(close, upper)[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if ta.crossover(close, upper)[i]:
+        strategy.entry("Long", strategy.LONG)
 
-# Enter short on lower envelope breakdown
-if ta.crossunder(close, lower)[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    # Enter short on lower envelope breakdown
+    if ta.crossunder(close, lower)[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit at basis
-if ta.crossunder(close, basis)[-1]:
-    strategy.close("Long")
-if ta.crossover(close, basis)[-1]:
-    strategy.close("Short")
+    # Exit at basis
+    if ta.crossunder(close, basis)[i]:
+        strategy.close("Long")
+    if ta.crossover(close, basis)[i]:
+        strategy.close("Short")
 
 p1 = plot(upper, title="Upper Envelope", color="green")
 p2 = plot(lower, title="Lower Envelope", color="red")

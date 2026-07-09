@@ -15,18 +15,21 @@ chop = ta.chop(high, low, close, chop_length)
 fast = ta.ema(close, ema_fast)
 slow = ta.ema(close, ema_slow)
 
-is_trending = chop[-1] < chop_threshold
+
 
 # Only trade when market is trending (low choppiness)
-if is_trending and ta.crossover(fast, slow)[-1]:
-    strategy.entry("Long", strategy.LONG)
+n = len(close)
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if (chop[i] < chop_threshold) and ta.crossover(fast, slow)[i]:
+        strategy.entry("Long", strategy.LONG)
 
-if is_trending and ta.crossunder(fast, slow)[-1]:
-    strategy.entry("Short", strategy.SHORT)
+    if is_trending and ta.crossunder(fast, slow)[i]:
+        strategy.entry("Short", strategy.SHORT)
 
-# Exit if market becomes choppy
-if chop[-1] > 61.8:
-    strategy.close_all()
+    # Exit if market becomes choppy
+    if chop[i] > 61.8:
+        strategy.close_all()
 
 plot(chop, title="Choppiness Index", color="purple")
 hline(chop_threshold, title="Trend Threshold", color="green")
