@@ -100,8 +100,12 @@ consensus_up = np.sum(directions > 0, axis=0) / num_tf
 consensus_down = np.sum(directions < 0, axis=0) / num_tf
 
 # --- Entry/Exit Signals ---
-strong_bull = (composite > 0.2) & (consensus_up >= consensus_thresh)
-strong_bear = (composite < -0.2) & (consensus_down >= consensus_thresh)
+entry_thresh = input.float(0.35, "Entry Threshold", minval=0.1, maxval=0.8)
+exit_thresh = input.float(0.1, "Exit Threshold", minval=0.0, maxval=0.5)
+min_bars = input.int(10, "Min Bars Between Trades", minval=1, maxval=50)
+
+strong_bull = (composite > entry_thresh) & (consensus_up >= consensus_thresh)
+strong_bear = (composite < -entry_thresh) & (consensus_down >= consensus_thresh)
 
 prev_bull = np.roll(strong_bull, 1)
 prev_bear = np.roll(strong_bear, 1)
@@ -110,22 +114,25 @@ prev_bear[0] = False
 
 long_entry = strong_bull & ~prev_bull
 short_entry = strong_bear & ~prev_bear
-long_exit = ~strong_bull & prev_bull
-short_exit = ~strong_bear & prev_bear
+long_exit = (composite < exit_thresh) & prev_bull
+short_exit = (composite > -exit_thresh) & prev_bear
 
 in_position = None
+last_trade_bar = -min_bars
 for i in range(n):
     strategy.set_bar_index(i)
-    if long_entry[i] and in_position != "long":
+    if long_entry[i] and in_position != "long" and (i - last_trade_bar) >= min_bars:
         if in_position == "short":
             strategy.close("Short")
         strategy.entry("Long", strategy.LONG)
         in_position = "long"
-    elif short_entry[i] and in_position != "short":
+        last_trade_bar = i
+    elif short_entry[i] and in_position != "short" and (i - last_trade_bar) >= min_bars:
         if in_position == "long":
             strategy.close("Long")
         strategy.entry("Short", strategy.SHORT)
         in_position = "short"
+        last_trade_bar = i
     elif long_exit[i] and in_position == "long":
         strategy.close("Long")
         in_position = None
