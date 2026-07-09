@@ -26,8 +26,8 @@ low_sign_change = np.diff(low_sign)
 
 # Swing highs: sign goes from +1 to -1 (value = -2)
 # Swing lows: sign goes from -1 to +1 (value = +2)
-swing_high_raw = np.pad(high_sign_change == -2, (2, 0), constant_values=False)
-swing_low_raw = np.pad(low_sign_change == 2, (2, 0), constant_values=False)
+swing_high_raw = np.pad(high_sign_change == -2, (1, 1), constant_values=False)
+swing_low_raw = np.pad(low_sign_change == 2, (1, 1), constant_values=False)
 
 # Confirm swings with neighborhood check (must be highest/lowest in window)
 swing_high_mask = np.zeros(n, dtype=bool)
@@ -134,20 +134,15 @@ def detect_triangle(sh_idx, sh_val, sl_idx, sl_val, tol):
             signals[signal_bar] = -50.0
             triangle_type[signal_bar] = 5
 
-        # Wedge: both converging
-        elif sh_slope_norm < -tol * 0.3 and sl_slope_norm > tol * 0.3:
-            # Falling wedge (bullish)
-            if sh_slope_norm < 0 and sl_slope_norm < 0:
-                signals[signal_bar] = 40.0
-                triangle_type[signal_bar] = 6
-            # Rising wedge (bearish)
-            elif sh_slope_norm > 0 and sl_slope_norm > 0:
-                signals[signal_bar] = -40.0
-                triangle_type[signal_bar] = 6
-            else:
-                # Symmetric converging
-                signals[signal_bar] = 30.0
-                triangle_type[signal_bar] = 6
+        # Falling wedge (bullish): both slopes negative, upper steeper
+        elif sh_slope_norm < -tol * 0.3 and sl_slope_norm < -tol * 0.3 and sh_slope_norm < sl_slope_norm:
+            signals[signal_bar] = 40.0
+            triangle_type[signal_bar] = 6
+
+        # Rising wedge (bearish): both slopes positive, lower steeper
+        elif sh_slope_norm > tol * 0.3 and sl_slope_norm > tol * 0.3 and sl_slope_norm > sh_slope_norm:
+            signals[signal_bar] = -40.0
+            triangle_type[signal_bar] = 6
 
     return signals, triangle_type
 
