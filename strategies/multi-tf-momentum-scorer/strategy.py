@@ -29,7 +29,9 @@ def resample_close(data, period):
     full = np.interp(np.arange(len(data)), indices, sampled)
     return full
 
-close_np = np.array(close, dtype=np.float64)
+close_np = np.asarray(close).astype(np.float64)
+high_np = np.asarray(high).astype(np.float64)
+low_np = np.asarray(low).astype(np.float64)
 resampled = [resample_close(close_np, p) for p in tf_periods]
 
 # --- Multi-period RSI calculation (vectorized) ---
