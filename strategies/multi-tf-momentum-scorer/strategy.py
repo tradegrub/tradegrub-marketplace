@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Multi-TF Momentum Scorer", overlay=False)
+indicator("Multi-TF Momentum Scorer", overlay=True)
 
 # Inputs
 base_period = input.int(5, "Base Period", minval=2, maxval=20)
@@ -16,6 +16,9 @@ show_labels = input.bool(True, "Show Labels")
 show_levels = input.bool(True, "Show Entry/Stop/TP Levels")
 
 n = len(close)
+close_np = np.asarray(close).astype(np.float64)
+high_np = np.asarray(high).astype(np.float64)
+low_np = np.asarray(low).astype(np.float64)
 
 # --- Generate synthetic timeframe lookback periods ---
 tf_periods = [int(base_period * (tf_multiplier ** i)) for i in range(num_timeframes)]
@@ -29,9 +32,6 @@ def resample_close(data, period):
     full = np.interp(np.arange(len(data)), indices, sampled)
     return full
 
-close_np = np.asarray(close).astype(np.float64)
-high_np = np.asarray(high).astype(np.float64)
-low_np = np.asarray(low).astype(np.float64)
 resampled = [resample_close(close_np, p) for p in tf_periods]
 
 # --- Multi-period RSI calculation (vectorized) ---
@@ -131,7 +131,7 @@ for i in range(n):
             last_signal_idx = i
             if show_labels:
                 label.new(
-                    x=i, y=float(low[i]),
+                    x=i, y=float(low_np[i]),
                     text="BUY",
                     style=label.style_label_up,
                     color="#00e676",
@@ -139,9 +139,10 @@ for i in range(n):
                     size="small"
                 )
             if show_levels:
-                entry_price = float(close[i])
-                sl_price = float(close[i] - atr[i] * 2.0)
-                tp_price = float(close[i] + atr[i] * 4.0)
+                entry_price = float(close_np[i])
+                atr_val = float(atr[i]) if not np.isnan(float(atr[i])) else entry_price * 0.02
+                sl_price = entry_price - atr_val * 2.0
+                tp_price = entry_price + atr_val * 4.0
                 end_bar = min(i + 30, n - 1)
                 line.new(x1=i, y1=entry_price, x2=end_bar, y2=entry_price,
                          color="#42a5f5", width=1, style=line.style_dashed)
@@ -158,7 +159,7 @@ for i in range(n):
             last_signal_idx = i
             if show_labels:
                 label.new(
-                    x=i, y=float(high[i]),
+                    x=i, y=float(high_np[i]),
                     text="EXIT",
                     style=label.style_label_down,
                     color="#ef5350",
@@ -166,9 +167,10 @@ for i in range(n):
                     size="small"
                 )
             if show_levels:
-                entry_price = float(close[i])
-                sl_price = float(close[i] + atr[i] * 2.0)
-                tp_price = float(close[i] - atr[i] * 4.0)
+                entry_price = float(close_np[i])
+                atr_val = float(atr[i]) if not np.isnan(float(atr[i])) else entry_price * 0.02
+                sl_price = entry_price + atr_val * 2.0
+                tp_price = entry_price - atr_val * 4.0
                 end_bar = min(i + 30, n - 1)
                 line.new(x1=i, y1=entry_price, x2=end_bar, y2=entry_price,
                          color="#42a5f5", width=1, style=line.style_dashed)
@@ -184,7 +186,7 @@ for i in range(n):
         if show_labels and (i - last_signal_idx) > cooldown:
             last_signal_idx = i
             label.new(
-                x=i, y=float(high[i]),
+                x=i, y=float(high_np[i]),
                 text="EXIT",
                 style=label.style_label_down,
                 color="#ff9800",
@@ -196,7 +198,7 @@ for i in range(n):
         if show_labels and (i - last_signal_idx) > cooldown:
             last_signal_idx = i
             label.new(
-                x=i, y=float(low[i]),
+                x=i, y=float(low_np[i]),
                 text="EXIT",
                 style=label.style_label_up,
                 color="#ff9800",
@@ -204,38 +206,25 @@ for i in range(n):
                 size="small"
             )
 
-# --- Sub-pane plots: individual TF score lines ---
+# --- Sub-pane: individual TF score lines (overlay=False forces sub-pane) ---
 tf_colors = ["#69E1FB", "#26a69a", "#ff9800", "#ab47bc", "#ef5350",
              "#42a5f5", "#66bb6a", "#ffa726"]
 
 for idx in range(num_tf):
     period = tf_periods[idx]
     color = tf_colors[idx % len(tf_colors)]
-    plot(tf_scores[idx], title=f"TF {period}-bar", color=color, linewidth=1)
+    plot(tf_scores[idx], title=f"TF {period}-bar", color=color, linewidth=1, overlay=False)
 
-# Composite score (thicker white line)
-plot(composite, title="Composite", color="#e0e0e0", linewidth=2)
+# Composite score (thicker white line in sub-pane)
+plot(composite, title="Composite", color="#e0e0e0", linewidth=2, overlay=False)
 
-# Threshold lines
-h_upper = hline(consensus_thresh, title="Bull Threshold", color="rgba(0,230,118,0.4)", linestyle="dashed")
-h_lower = hline(-consensus_thresh, title="Bear Threshold", color="rgba(239,83,80,0.4)", linestyle="dashed")
-hline(0, title="Zero", color="rgba(255,255,255,0.15)")
+# Threshold lines in sub-pane
+hline(consensus_thresh, title="Bull Threshold", color="rgba(0,230,118,0.4)", linestyle="dashed", overlay=False)
+hline(-consensus_thresh, title="Bear Threshold", color="rgba(239,83,80,0.4)", linestyle="dashed", overlay=False)
+hline(0, title="Zero", color="rgba(255,255,255,0.15)", overlay=False)
 
-# Shade consensus zones on the sub-pane
-bull_bg = [("rgba(76,175,80,0.12)" if strong_bull[i] else None) for i in range(n)]
-bear_bg = [("rgba(244,67,54,0.12)" if strong_bear[i] else None) for i in range(n)]
+# Shade consensus zones on price chart
+bull_bg = [("rgba(76,175,80,0.08)" if strong_bull[i] else None) for i in range(n)]
+bear_bg = [("rgba(244,67,54,0.08)" if strong_bear[i] else None) for i in range(n)]
 bgcolor(bull_bg, title="Bull Zone")
 bgcolor(bear_bg, title="Bear Zone")
-
-# Consensus labels in sub-pane at key moments
-for i in range(1, n):
-    if long_entry[i] and (i - last_signal_idx) > cooldown // 2:
-        bull_count = int(np.sum(directions[:, i] > 0))
-        label.new(
-            x=i, y=float(composite[i]) - 0.15,
-            text=f"{bull_count}/{num_tf} Bullish",
-            style=label.style_label_up,
-            color="rgba(76,175,80,0.3)",
-            textcolor="#66bb6a",
-            size="tiny"
-        )
