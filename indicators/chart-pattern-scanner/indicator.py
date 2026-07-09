@@ -247,6 +247,12 @@ if display_list:
     table.cell(legend, 1, 0, text="Score", text_color="rgba(255,255,255,0.45)", text_size="tiny")
     table.cell(legend, 2, 0, text="Bias", text_color="rgba(255,255,255,0.45)", text_size="tiny")
 
+    _type_to_param = {
+        "double_top": "show_double_top", "double_bottom": "show_double_bottom",
+        "hs": "show_head_&_shoulders", "ihs": "show_inv_head_&_shoulders",
+        "triangle": "show_triangles_&_wedges",
+    }
+
     for row_i, det in enumerate(display_list[:num_rows]):
         r = row_i + 1
         is_bear = det["score"] < 0
@@ -261,9 +267,10 @@ if display_list:
             if bd_bar > 0:
                 bias_text = "Breakout"
 
-        table.cell(legend, 0, r, text=det["name"], text_color="#e0e0e0", text_size="tiny", text_halign="left")
-        table.cell(legend, 1, r, text=str(int(abs(det["score"]))), text_color=sc_col, text_size="tiny")
-        table.cell(legend, 2, r, text=bias_text, text_color=sc_col, text_size="tiny")
+        toggle_id = "toggle:" + _type_to_param.get(det["type"], "")
+        table.cell(legend, 0, r, text=det["name"], text_color="#e0e0e0", text_size="tiny", text_halign="left", tooltip=toggle_id)
+        table.cell(legend, 1, r, text=str(int(abs(det["score"]))), text_color=sc_col, text_size="tiny", tooltip=toggle_id)
+        table.cell(legend, 2, r, text=bias_text, text_color=sc_col, text_size="tiny", tooltip=toggle_id)
 
 # --- Draw on-chart annotations ---
 for det in display_list:
