@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Cloud Breakdown", overlay=True)
+strategy("Cloud Breakdown", overlay=True)
 
 tenkan_len = input.int(9, "Tenkan Period", minval=5, maxval=30)
 kijun_len = input.int(26, "Kijun Period", minval=15, maxval=60)

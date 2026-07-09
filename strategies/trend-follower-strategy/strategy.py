@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Trend Follower Strategy", overlay=True)
+strategy("Trend Follower Strategy", overlay=True)
 
 atr_len = input.int(10, "ATR Length", minval=5, maxval=30)
 base_mult = input.float(3.0, "Base Multiplier", minval=1.0, maxval=6.0, step=0.5)

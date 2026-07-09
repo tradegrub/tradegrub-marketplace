@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Base Breakout", overlay=True)
+strategy("Base Breakout", overlay=True)
 
 base_len = input.int(20, "Base Length", minval=10, maxval=60)
 range_pct = input.float(5.0, "Max Range %", minval=1.0, maxval=15.0)

@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Channel Rider", overlay=True)
+strategy("Channel Rider", overlay=True)
 
 length = input.int(50, "Regression Length", minval=10, maxval=200)
 mult = input.float(2.0, "Channel Width", minval=0.5, maxval=4.0)

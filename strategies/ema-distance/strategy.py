@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("EMA Distance", overlay=True)
+strategy("EMA Distance", overlay=True)
 
 ema_length = input.int(21, "EMA Length", minval=5, maxval=200)
 distance_pct = input.float(3.0, "Distance Threshold %", minval=1.0, maxval=15.0)

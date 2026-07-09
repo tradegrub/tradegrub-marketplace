@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Complete Trade Planner", overlay=True)
+strategy("Complete Trade Planner", overlay=True)
 
 rsi_len = input.int(14, "RSI Length", minval=5, maxval=30)
 ma_len = input.int(20, "MA Length", minval=10, maxval=50)

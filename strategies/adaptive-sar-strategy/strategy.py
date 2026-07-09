@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Adaptive SAR Strategy", overlay=True)
+strategy("Adaptive SAR Strategy", overlay=True)
 
 af_start = input.float(0.02, "AF Start", minval=0.01, maxval=0.1, step=0.01)
 af_max = input.float(0.2, "AF Max", minval=0.1, maxval=0.5, step=0.05)

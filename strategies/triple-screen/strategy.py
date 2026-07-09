@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Triple Screen", overlay=True)
+strategy("Triple Screen", overlay=True)
 
 # Inputs - Elder Triple Screen
 ema_len = input.int(13, "Trend EMA Length", minval=5, maxval=100)

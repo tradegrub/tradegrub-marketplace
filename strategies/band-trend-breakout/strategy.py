@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Band Trend Breakout", overlay=True)
+strategy("Band Trend Breakout", overlay=True)
 
 ema_len = input.int(20, "EMA Length", minval=5, maxval=100)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)

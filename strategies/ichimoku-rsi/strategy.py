@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Ichimoku RSI", overlay=True)
+strategy("Ichimoku RSI", overlay=True)
 
 # Inputs
 tenkan_len = input.int(9, "Tenkan-sen Period", minval=2, maxval=50)

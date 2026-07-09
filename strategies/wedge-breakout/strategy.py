@@ -1,6 +1,6 @@
 from tg_scripting import *
 
-indicator("Wedge Breakout", overlay=True)
+strategy("Wedge Breakout", overlay=True)
 
 lookback = input.int(20, "Lookback Period", minval=10, maxval=50)
 vol_mult = input.float(1.5, "Volume Multiplier", minval=1.0, maxval=3.0)

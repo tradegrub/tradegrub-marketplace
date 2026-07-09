@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Inside Bar Breakout", overlay=True)
+strategy("Inside Bar Breakout", overlay=True)
 
 atr_length = input.int(14, "ATR Length", minval=5, maxval=50)
 atr_tp_mult = input.float(2.0, "ATR Take Profit Multiplier", minval=1.0, maxval=5.0)

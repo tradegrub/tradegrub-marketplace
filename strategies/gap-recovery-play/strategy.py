@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Gap Recovery Play", overlay=True)
+strategy("Gap Recovery Play", overlay=True)
 
 gap_pct = input.float(3.0, "Gap Down Threshold %", minval=1.0, maxval=10.0)
 recovery_pct = input.float(50.0, "Recovery Fill %", minval=20.0, maxval=100.0)

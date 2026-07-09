@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Markov Regime Strategy", overlay=True)
+strategy("Markov Regime Strategy", overlay=True)
 
 ret_len = input.int(10, "Return Length", minval=2, maxval=50)
 threshold = input.float(0.5, "State Threshold %", minval=0.1, maxval=5.0)

@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Zscore Reversion", overlay=True)
+strategy("Zscore Reversion", overlay=True)
 
 length = input.int(20, "Lookback Length", minval=5, maxval=200)
 entry_z = input.float(2.0, "Entry Z-Score", minval=1.0, maxval=4.0)

@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Inv Head Shoulders", overlay=True)
+strategy("Inv Head Shoulders", overlay=True)
 
 lookback = input.int(50, "Lookback Period", minval=20, maxval=200)
 shoulder_tol = input.float(2.0, "Shoulder Tolerance %", minval=0.5, maxval=10.0)

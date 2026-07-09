@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("MA Crossover", overlay=True)
+strategy("MA Crossover", overlay=True)
 
 fast_period = input.int(9, "Fast Period", minval=2, maxval=200)
 slow_period = input.int(21, "Slow Period", minval=2, maxval=500)

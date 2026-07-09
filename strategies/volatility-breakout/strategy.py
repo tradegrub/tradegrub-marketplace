@@ -1,7 +1,7 @@
 # Volatility Breakout (Bollinger Band Width Expansion)
 from tg_scripting import *
 
-indicator("Volatility Breakout", overlay=True)
+strategy("Volatility Breakout", overlay=True)
 
 bb_length = input.int(20, "BB Length", minval=10, maxval=50)
 bb_mult = input.float(2.0, "BB Multiplier", minval=1.0, maxval=4.0)

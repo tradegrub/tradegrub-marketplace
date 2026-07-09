@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Trend Exhaustion", overlay=True)
+strategy("Trend Exhaustion", overlay=True)
 
 ma_len = input.int(50, "MA Length", minval=10, maxval=200)
 rsi_len = input.int(14, "RSI Length", minval=5, maxval=30)

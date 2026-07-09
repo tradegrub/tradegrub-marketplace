@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Narrow Range", overlay=True)
+strategy("Narrow Range", overlay=True)
 
 nr_period = input.int(7, "NR Period", minval=4, maxval=14)
 atr_length = input.int(14, "ATR Length", minval=5, maxval=50)

@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Keltner Reversion", overlay=True)
+strategy("Keltner Reversion", overlay=True)
 
 length = input.int(20, "KC Length", minval=5, maxval=200)
 mult = input.float(1.5, "ATR Multiplier", minval=0.5, maxval=5.0)

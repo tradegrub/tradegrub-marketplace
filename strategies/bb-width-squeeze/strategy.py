@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("BB Width Squeeze", overlay=True)
+strategy("BB Width Squeeze", overlay=True)
 
 bb_length = input.int(20, "BB Length", minval=5, maxval=200)
 bb_mult = input.float(2.0, "BB Multiplier", minval=0.5, maxval=5.0)

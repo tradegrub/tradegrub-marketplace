@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Triple MA", overlay=True)
+strategy("Triple MA", overlay=True)
 
 fast_len = input.int(10, "Fast SMA", minval=2, maxval=50)
 mid_len = input.int(20, "Mid SMA", minval=5, maxval=100)

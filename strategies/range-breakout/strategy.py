@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Range Breakout", overlay=True)
+strategy("Range Breakout", overlay=True)
 
 length = input.int(20, "Range Lookback", minval=5, maxval=100)
 atr_length = input.int(14, "ATR Length", minval=5, maxval=50)

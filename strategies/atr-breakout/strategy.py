@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("ATR Breakout", overlay=True)
+strategy("ATR Breakout", overlay=True)
 
 atr_length = input.int(14, "ATR Length", minval=5, maxval=50)
 atr_mult = input.float(1.5, "ATR Breakout Multiplier", minval=0.5, maxval=4.0)

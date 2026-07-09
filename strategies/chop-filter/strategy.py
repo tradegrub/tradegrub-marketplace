@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Chop Filter", overlay=True)
+strategy("Chop Filter", overlay=True)
 
 chop_length = input.int(14, "Choppiness Length", minval=5, maxval=50)
 ema_fast = input.int(12, "Fast EMA", minval=5, maxval=50)

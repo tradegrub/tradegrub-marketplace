@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Triangle Breakout", overlay=True)
+strategy("Triangle Breakout", overlay=True)
 
 lookback = input.int(50, "Lookback Period", minval=20, maxval=100)
 pivot_len = input.int(5, "Pivot Length", minval=2, maxval=10)

@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("MA RSI BB", overlay=True)
+strategy("MA RSI BB", overlay=True)
 
 # Inputs
 ma_len = input.int(50, "Moving Average Length", minval=5, maxval=200)

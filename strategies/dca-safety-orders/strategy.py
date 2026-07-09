@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Safety Order DCA", overlay=True)
+strategy("Safety Order DCA", overlay=True)
 
 # --- Inputs ---
 initial_drop = input.float(1.0, "Initial Drop %", minval=0.1, maxval=10.0)

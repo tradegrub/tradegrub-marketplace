@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Martingale Grid", overlay=True)
+strategy("Martingale Grid", overlay=True)
 
 grid_depth = input.float(1.5, "Grid Depth %", minval=0.5, maxval=5.0)
 multiplier = input.float(1.5, "Martingale Multiplier", minval=1.0, maxval=4.0)

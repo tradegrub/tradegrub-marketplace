@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("ADX Trend", overlay=True)
+strategy("ADX Trend", overlay=True)
 
 di_len = input.int(14, "DI Length", minval=5, maxval=50)
 adx_len = input.int(14, "ADX Smoothing", minval=5, maxval=50)

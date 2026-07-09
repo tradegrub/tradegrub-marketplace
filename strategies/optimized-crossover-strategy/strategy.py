@@ -2,7 +2,7 @@ from tg_scripting import *
 import numpy as np
 from scipy.optimize import minimize_scalar
 
-indicator("Optimized Crossover Strategy", overlay=True)
+strategy("Optimized Crossover Strategy", overlay=True)
 
 train_window = input.int(100, "Training Window", minval=50, maxval=200)
 reopt_period = input.int(50, "Re-optimize Every", minval=20, maxval=100)

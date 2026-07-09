@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Pyramid Accumulator", overlay=True)
+strategy("Pyramid Accumulator", overlay=True)
 
 sma_len = input.int(50, "SMA Length", minval=10, maxval=200)
 rsi_len = input.int(14, "RSI Length", minval=5, maxval=30)

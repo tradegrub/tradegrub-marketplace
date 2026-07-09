@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Moving Average Envelope Reversion", overlay=True)
+strategy("Moving Average Envelope Reversion", overlay=True)
 
 ma_len = input.int(20, "MA Length", minval=5, maxval=200)
 env_pct = input.float(2.0, "Envelope %", minval=0.5, maxval=10.0, step=0.1)

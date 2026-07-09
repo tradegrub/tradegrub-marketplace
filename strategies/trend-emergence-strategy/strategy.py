@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Trend Emergence Strategy", overlay=True)
+strategy("Trend Emergence Strategy", overlay=True)
 
 aroon_len = input.int(25, "Aroon Length", minval=10, maxval=60)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=30)

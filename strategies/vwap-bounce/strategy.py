@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("VWAP Bounce", overlay=True)
+strategy("VWAP Bounce", overlay=True)
 
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)
 bounce_mult = input.float(0.5, "Bounce ATR Multiplier", minval=0.1, maxval=2.0)

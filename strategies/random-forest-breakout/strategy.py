@@ -2,7 +2,7 @@ from tg_scripting import *
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
-indicator("Random Forest Breakout", overlay=True)
+strategy("Random Forest Breakout", overlay=True)
 
 length = input.int(20, "Lookback Length", minval=10, maxval=50)
 n_trees = input.int(50, "Number of Trees", minval=10, maxval=200)

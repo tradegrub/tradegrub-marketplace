@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Stdev Channel", overlay=True)
+strategy("Stdev Channel", overlay=True)
 
 length = input.int(50, "Channel Length", minval=10, maxval=200)
 mult = input.float(2.0, "Std Dev Multiplier", minval=0.5, maxval=4.0)

@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("RMI Band Reversal", overlay=False)
+strategy("RMI Band Reversal", overlay=False)
 
 rmi_len = input.int(14, "RMI Length", minval=2, maxval=50)
 momentum = input.int(5, "Momentum Period", minval=1, maxval=20)

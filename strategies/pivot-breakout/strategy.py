@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Pivot Breakout", overlay=True)
+strategy("Pivot Breakout", overlay=True)
 
 lookback = input.int(5, "Pivot Lookback", minval=2, maxval=20)
 confirm_bars = input.int(2, "Confirmation Bars", minval=1, maxval=5)
