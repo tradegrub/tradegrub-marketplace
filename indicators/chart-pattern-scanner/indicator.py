@@ -44,16 +44,14 @@ sl_idx = np.where(swing_low_mask)[0]
 sh_val = high[sh_idx]
 sl_val = low[sl_idx]
 
-# --- Soft pastel palette (distinct from candle red/green) ---
-COL_BEAR_LINE = "rgba(244,143,177,0.65)"
-COL_BULL_LINE = "rgba(128,222,197,0.65)"
-COL_BEAR_TEXT = "#f48fb1"
-COL_BULL_TEXT = "#80deab"
-COL_NECK = "rgba(179,157,219,0.50)"
-COL_NECK_TEXT = "#b39ddb"
-COL_LABEL = "rgba(207,216,220,0.70)"
-COL_WEDGE_LINE = "rgba(144,202,249,0.60)"
-COL_WEDGE_TEXT = "#90caf9"
+# --- Distinct palette: amber for bearish, blue for bullish, lavender for necklines ---
+COL_BEAR_LINE = "#ffab40"
+COL_BULL_LINE = "#42a5f5"
+COL_BEAR_TEXT = "#ffab40"
+COL_BULL_TEXT = "#42a5f5"
+COL_NECK = "#b388ff"
+COL_WEDGE = "#80cbc4"
+COL_PT_LABEL = "#cfd8dc"
 
 def _find_neckline_lows(start_bar, end_bar):
     mask = (sl_idx >= start_bar) & (sl_idx <= end_bar)
@@ -88,7 +86,7 @@ def _detect_breakdown(neckline_y, after_bar, direction, scan_bars=20):
             return b
     return -1
 
-def _offset_y(bar_idx, is_above, pct=0.012):
+def _label_y(bar_idx, is_above, pct=0.018):
     if is_above:
         return float(high[bar_idx]) * (1 + pct)
     return float(low[bar_idx]) * (1 - pct)
@@ -236,18 +234,18 @@ for det in sorted(detections, key=lambda x: abs(x["score"]), reverse=True):
     drawn_bars.add(bar)
     display_list.append(det)
 
-# --- Legend table (bottom-left, avoids quote bar overlap) ---
+# --- Legend table (top-left, clears quote bar) ---
 if display_list:
     num_rows = min(len(display_list), 8)
     legend = table.new(
-        position=table.position.bottom_left,
+        position=table.position.top_left,
         columns=3, rows=num_rows + 1,
-        bgcolor="rgba(19,23,34,0.80)",
-        border_width=0, frame_width=1, frame_color="rgba(255,255,255,0.06)"
+        bgcolor="rgba(19,23,34,0.85)",
+        border_width=0, frame_width=1, frame_color="rgba(255,255,255,0.08)"
     )
-    table.cell(legend, 0, 0, text="Pattern", text_color="rgba(255,255,255,0.4)", text_size="tiny", text_halign="left")
-    table.cell(legend, 1, 0, text="Score", text_color="rgba(255,255,255,0.4)", text_size="tiny")
-    table.cell(legend, 2, 0, text="Bias", text_color="rgba(255,255,255,0.4)", text_size="tiny")
+    table.cell(legend, 0, 0, text="Pattern", text_color="rgba(255,255,255,0.45)", text_size="tiny", text_halign="left")
+    table.cell(legend, 1, 0, text="Score", text_color="rgba(255,255,255,0.45)", text_size="tiny")
+    table.cell(legend, 2, 0, text="Bias", text_color="rgba(255,255,255,0.45)", text_size="tiny")
 
     for row_i, det in enumerate(display_list[:num_rows]):
         r = row_i + 1
@@ -263,7 +261,7 @@ if display_list:
             if bd_bar > 0:
                 bias_text = "Breakout"
 
-        table.cell(legend, 0, r, text=det["name"], text_color="rgba(207,216,220,0.85)", text_size="tiny", text_halign="left")
+        table.cell(legend, 0, r, text=det["name"], text_color="#e0e0e0", text_size="tiny", text_halign="left")
         table.cell(legend, 1, r, text=str(int(abs(det["score"]))), text_color=sc_col, text_size="tiny")
         table.cell(legend, 2, r, text=bias_text, text_color=sc_col, text_size="tiny")
 
@@ -280,10 +278,10 @@ for det in display_list:
     if ptype == "double_top":
         p1, p2 = det["p1"], det["p2"]
         neck_y = det["neckline_y"]
-        label.new(x=p1[0], y=_offset_y(p1[0], True), text="P1", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
-        label.new(x=p2[0], y=_offset_y(p2[0], True), text="P2", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
+        label.new(x=p1[0], y=_label_y(p1[0], True), text="P1", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
+        label.new(x=p2[0], y=_label_y(p2[0], True), text="P2", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
         line.new(x1=p1[0], y1=p1[1], x2=p2[0], y2=p2[1], color=line_col, width=1, style="dashed")
         line.new(x1=p1[0], y1=neck_y, x2=min(p2[0] + 10, n - 1), y2=neck_y,
                  color=COL_NECK, width=1, style="dotted")
@@ -291,10 +289,10 @@ for det in display_list:
     elif ptype == "double_bottom":
         p1, p2 = det["p1"], det["p2"]
         neck_y = det["neckline_y"]
-        label.new(x=p1[0], y=_offset_y(p1[0], False), text="P1", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
-        label.new(x=p2[0], y=_offset_y(p2[0], False), text="P2", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
+        label.new(x=p1[0], y=_label_y(p1[0], False), text="P1", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
+        label.new(x=p2[0], y=_label_y(p2[0], False), text="P2", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
         line.new(x1=p1[0], y1=p1[1], x2=p2[0], y2=p2[1], color=line_col, width=1, style="dashed")
         line.new(x1=p1[0], y1=neck_y, x2=min(p2[0] + 10, n - 1), y2=neck_y,
                  color=COL_NECK, width=1, style="dotted")
@@ -303,12 +301,12 @@ for det in display_list:
         s1, head, s2 = det["s1"], det["head"], det["s2"]
         neck_pts = det.get("neckline_pts", [])
         neck_y = det["neckline_y"]
-        label.new(x=s1[0], y=_offset_y(s1[0], True), text="S1", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
-        label.new(x=head[0], y=_offset_y(head[0], True), text="H", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
-        label.new(x=s2[0], y=_offset_y(s2[0], True), text="S2", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
+        label.new(x=s1[0], y=_label_y(s1[0], True), text="S1", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
+        label.new(x=head[0], y=_label_y(head[0], True), text="H", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
+        label.new(x=s2[0], y=_label_y(s2[0], True), text="S2", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
         line.new(x1=s1[0], y1=s1[1], x2=head[0], y2=head[1], color=line_col, width=1, style="dashed")
         line.new(x1=head[0], y1=head[1], x2=s2[0], y2=s2[1], color=line_col, width=1, style="dashed")
         if len(neck_pts) >= 2:
@@ -329,12 +327,12 @@ for det in display_list:
         s1, head, s2 = det["s1"], det["head"], det["s2"]
         neck_pts = det.get("neckline_pts", [])
         neck_y = det["neckline_y"]
-        label.new(x=s1[0], y=_offset_y(s1[0], False), text="S1", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
-        label.new(x=head[0], y=_offset_y(head[0], False), text="H", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
-        label.new(x=s2[0], y=_offset_y(s2[0], False), text="S2", style=label.style_none,
-                  color="rgba(0,0,0,0)", textcolor=COL_LABEL, size="tiny")
+        label.new(x=s1[0], y=_label_y(s1[0], False), text="S1", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
+        label.new(x=head[0], y=_label_y(head[0], False), text="H", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
+        label.new(x=s2[0], y=_label_y(s2[0], False), text="S2", style=label.style_none,
+                  color="rgba(0,0,0,0)", textcolor=COL_PT_LABEL, size="tiny")
         line.new(x1=s1[0], y1=s1[1], x2=head[0], y2=head[1], color=line_col, width=1, style="dashed")
         line.new(x1=head[0], y1=head[1], x2=s2[0], y2=s2[1], color=line_col, width=1, style="dashed")
         if len(neck_pts) >= 2:
@@ -354,14 +352,14 @@ for det in display_list:
     elif ptype == "triangle":
         res = det["res_line"]
         sup = det["sup_line"]
-        line.new(x1=res[0], y1=res[1], x2=res[2], y2=res[3], color=COL_WEDGE_LINE, width=1, style="solid")
-        line.new(x1=sup[0], y1=sup[1], x2=sup[2], y2=sup[3], color=COL_WEDGE_LINE, width=1, style="solid")
+        line.new(x1=res[0], y1=res[1], x2=res[2], y2=res[3], color=COL_WEDGE, width=1, style="solid")
+        line.new(x1=sup[0], y1=sup[1], x2=sup[2], y2=sup[3], color=COL_WEDGE, width=1, style="solid")
 
-# --- Plots (minimal, pastel arrows offset from candles) ---
+# --- Plots ---
 bullish_mask = pattern_score > 0
 bearish_mask = pattern_score < 0
-plotshape(bullish_mask, title="Bullish Signal", style="triangleup", location="belowbar", color="rgba(128,222,197,0.45)", size="tiny")
-plotshape(bearish_mask, title="Bearish Signal", style="triangledown", location="abovebar", color="rgba(244,143,177,0.45)", size="tiny")
+plotshape(bullish_mask, title="Bullish Signal", style="triangleup", location="belowbar", color="rgba(66,165,245,0.55)", size="tiny")
+plotshape(bearish_mask, title="Bearish Signal", style="triangledown", location="abovebar", color="rgba(255,171,64,0.55)", size="tiny")
 
-plot(pattern_smooth, title="Pattern Score", color="rgba(179,136,255,0.7)")
+plot(pattern_smooth, title="Pattern Score", color="#b388ff")
 hline(0.0, title="Zero", color="rgba(120,144,156,0.4)")
