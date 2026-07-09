@@ -21,6 +21,7 @@ plot(ref.tolist(), title="Reference SMA", color="#2196F3", linewidth=2)
 in_position = False
 
 for i in range(sma_len, n):
+    strategy.set_bar_index(i)
     if np.isnan(ref[i]):
         continue
 

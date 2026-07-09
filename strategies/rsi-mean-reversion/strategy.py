@@ -15,6 +15,7 @@ rsi = ta.rsi(close, length)
 buy = ta.crossover(rsi, oversold)
 sell = ta.crossunder(rsi, overbought)
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if buy[i]:
         strategy.entry("Long", strategy.LONG)
     if sell[i]:

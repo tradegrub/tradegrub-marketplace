@@ -51,6 +51,7 @@ entry_price = 0.0
 trail_stop = 0.0
 
 for i in range(ma_len, n):
+    strategy.set_bar_index(i)
     if long_score[i] >= min_signals and not in_long:
         strategy.entry("Long", strategy.LONG)
         in_long = True

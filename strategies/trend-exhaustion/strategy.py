@@ -44,6 +44,7 @@ n = len(close)
 last_signal_idx = -100
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if bull_exhaustion[i]:
         strategy.entry("Long", strategy.LONG)
     elif bear_exhaustion[i]:

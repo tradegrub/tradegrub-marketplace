@@ -76,6 +76,7 @@ last_signal_idx = -100
 triangle_label_placed = False
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if bull_break[i] and (ascending[i] or symmetrical[i]):
         strategy.entry("Long", strategy.LONG)
     elif bear_break[i] and (descending[i] or symmetrical[i]):

@@ -28,6 +28,7 @@ n = len(close)
 last_signal_idx = -100
 
 for i in range(1, len(close)):
+    strategy.set_bar_index(i)
     if is_gap_up[i]:
         strategy.entry("Short Gap", strategy.SHORT)
         strategy.exit("Short Exit", "Short Gap",

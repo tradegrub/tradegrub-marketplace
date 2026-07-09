@@ -28,6 +28,7 @@ avg_entry = 0.0
 last_buy_bar = -cooldown - 1
 
 for i in range(sma_len, n):
+    strategy.set_bar_index(i)
     price = close_arr[i]
 
     # Exit: sell entire position when profit target is hit

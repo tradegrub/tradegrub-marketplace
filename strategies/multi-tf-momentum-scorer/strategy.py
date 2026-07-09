@@ -114,6 +114,7 @@ long_exit = ~strong_bull & prev_bull
 short_exit = ~strong_bear & prev_bear
 
 for i in range(n):
+    strategy.set_bar_index(i)
     if long_entry[i]:
         strategy.entry("Long", strategy.LONG)
     elif short_entry[i]:

@@ -32,6 +32,7 @@ long_cond = bullish_trend & stoch_cross_up & (k_smooth < stoch_ob)
 short_cond = bearish_trend & stoch_cross_down & (k_smooth > stoch_os)
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if long_cond[i]:
         strategy.entry("Long", strategy.LONG)
     elif short_cond[i]:

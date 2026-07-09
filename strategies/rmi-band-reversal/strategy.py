@@ -53,6 +53,7 @@ in_long = False
 in_short = False
 
 for i in range(1, n):
+    strategy.set_bar_index(i)
     if rmi[i] > bb_lower[i] and rmi[i - 1] <= bb_lower[i - 1] and rmi[i] < 40:
         strategy.entry("Long", strategy.LONG)
         in_long = True

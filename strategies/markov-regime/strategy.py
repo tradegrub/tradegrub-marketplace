@@ -69,6 +69,7 @@ in_short = False
 entry_price_tracked = 0.0
 
 for i in range(n):
+    strategy.set_bar_index(i)
     if long_signal[i] and not in_long:
         strategy.entry("Long", strategy.LONG)
         in_long = True

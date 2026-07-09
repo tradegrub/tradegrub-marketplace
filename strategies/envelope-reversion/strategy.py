@@ -26,6 +26,7 @@ in_long = False
 in_short = False
 
 for i in range(1, n):
+    strategy.set_bar_index(i)
     if not in_long and src[i] <= lower_env[i] and src[i - 1] > lower_env[i - 1]:
         long_entry[i] = True
         in_long = True

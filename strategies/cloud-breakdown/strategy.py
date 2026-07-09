@@ -49,6 +49,7 @@ exit_bars = 30
 cloud_label_placed = False
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if entry_signal[i]:
         strategy.entry("Short", strategy.SHORT)
 

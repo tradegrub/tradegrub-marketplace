@@ -46,6 +46,7 @@ in_long = False
 in_short = False
 entry_price = 0.0
 for i in range(1, n):
+    strategy.set_bar_index(i)
     if trend[i] == 1 and trend[i-1] != 1:
         strategy.entry("Long", strategy.LONG)
         in_long = True

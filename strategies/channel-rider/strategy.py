@@ -43,6 +43,7 @@ exit_bars = 30
 channel_label_placed = False
 
 for i in range(length, n):
+    strategy.set_bar_index(i)
     if long_signal[i]:
         sl = close[i] - atr[i] * atr_sl_mult
         tp = close[i] + atr[i] * atr_tp_mult

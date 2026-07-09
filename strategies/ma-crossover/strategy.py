@@ -15,6 +15,7 @@ slow_ma = ta.sma(close, slow_period)
 buy = ta.crossover(fast_ma, slow_ma)
 sell = ta.crossunder(fast_ma, slow_ma)
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if buy[i]:
         strategy.entry("Long", strategy.LONG)
     if sell[i]:

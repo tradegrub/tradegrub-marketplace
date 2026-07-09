@@ -20,6 +20,7 @@ slow_bull = close > st_slow_line
 slow_bear = close < st_slow_line
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     # Enter long when both supertrends are bullish
     if fast_bull[i] and slow_bull[i]:
         strategy.entry("Long", strategy.LONG)

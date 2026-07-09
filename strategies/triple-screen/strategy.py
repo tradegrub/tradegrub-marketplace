@@ -38,6 +38,7 @@ atr = ta.atr(high, low, close, ema_len)
 last_signal_idx = -100
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if long_cond[i]:
         strategy.entry("Long", strategy.LONG)
     elif short_cond[i]:

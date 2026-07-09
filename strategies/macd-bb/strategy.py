@@ -31,6 +31,7 @@ last_signal_idx = -100
 cooldown = 20
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if long_cond[i]:
         strategy.entry("Long", strategy.LONG)
 

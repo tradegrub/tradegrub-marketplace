@@ -43,6 +43,7 @@ last_signal_idx = -100
 wedge_label_placed = False
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if falling_wedge[i] & break_up[i]:
         strategy.entry("Long", strategy.LONG)
         plotshape(i, title="Bull Breakout", style="triangleup", color="green")

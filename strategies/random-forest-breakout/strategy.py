@@ -64,6 +64,7 @@ for i in range(1, n):
 
 in_position = False
 for i in range(n):
+    strategy.set_bar_index(i)
     if long_signal[i] and not in_position:
         strategy.entry("Long", strategy.LONG)
         sl = src[i] - atr_vals[i] * atr_mult

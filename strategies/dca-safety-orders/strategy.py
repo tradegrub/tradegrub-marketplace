@@ -31,6 +31,7 @@ total_cost = 0.0
 filled_orders = 0
 
 for i in range(sma_len, n):
+    strategy.set_bar_index(i)
     price = float(close[i])
 
     if not in_deal:

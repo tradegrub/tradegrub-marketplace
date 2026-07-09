@@ -42,6 +42,7 @@ n = len(close)
 last_signal_idx = -100
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if bull_pole[i] & bull_flag[i] & bull_break[i] & vol_ok[i]:
         strategy.entry("Long", strategy.LONG)
         strategy.exit("Long", stop=close[i] - atr_stop * atr[i], limit=close[i] + atr_target * atr[i])

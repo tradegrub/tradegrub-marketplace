@@ -33,6 +33,7 @@ sl_price = 0.0
 level_start_bar = 0
 
 for i in range(1, n):
+    strategy.set_bar_index(i)
     if in_grid:
         current_price = float(close[i])
 

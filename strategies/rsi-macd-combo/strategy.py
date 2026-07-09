@@ -26,6 +26,7 @@ short_cond = (macd_bear_cross) & (rsi > rsi_os) & (rsi < rsi_ob)
 
 # Entries
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if long_cond[i]:
         strategy.entry("Long", strategy.LONG)
     elif short_cond[i]:

@@ -40,6 +40,7 @@ exit_bars = 30
 base_label_placed = False
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if entry_signal[i]:
         strategy.entry("Long", strategy.LONG)
         strategy.exit("Long", stop=close[i] - atr[i] * atr_stop,

@@ -43,6 +43,7 @@ in_long = False
 in_short = False
 entry_price = 0.0
 for i in range(mom_len, n):
+    strategy.set_bar_index(i)
     if long_sig[i] and not in_long:
         strategy.entry("Long", strategy.LONG)
         in_long = True

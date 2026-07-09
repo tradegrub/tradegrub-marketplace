@@ -42,6 +42,7 @@ n = len(close)
 last_signal_idx = -100
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if long_cond[i]:
         strategy.entry("Long", strategy.LONG)
         strategy.exit("Long SL", from_entry="Long", stop=close[i] - atr[i] * atr_mult)

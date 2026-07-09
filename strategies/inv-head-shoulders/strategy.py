@@ -37,6 +37,7 @@ last_signal_idx = -100
 exit_bars = 30
 
 for i in range(len(close)):
+    strategy.set_bar_index(i)
     if pattern_valid[i]:
         stop_price = close[i] - atr[i] * atr_mult
         take_price = close[i] + pattern_height[i] * target_mult

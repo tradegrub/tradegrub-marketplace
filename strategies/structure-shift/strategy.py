@@ -50,6 +50,7 @@ for i in range(swing_len, len(close)):
     trend[i] = cur_trend
 
 for i in range(swing_len, len(close)):
+    strategy.set_bar_index(i)
     bull_signal = choch_bull[i] if use_choch_only else (bos_bull[i] | choch_bull[i])
     bear_signal = choch_bear[i] if use_choch_only else (bos_bear[i] | choch_bear[i])
 

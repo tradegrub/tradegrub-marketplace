@@ -54,6 +54,7 @@ last_breakout_idx = -100
 
 bars_held = 0
 for i in range(length, n):
+    strategy.set_bar_index(i)
     # Label the descending channel zone once near the middle
     if show_labels and not channel_label_placed and descending[i]:
         channel_start = max(0, i - length)
