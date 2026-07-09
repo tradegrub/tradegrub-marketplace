@@ -24,7 +24,7 @@ for i in range(1, n):
     if (chop[i] < chop_threshold) and ta.crossover(fast, slow)[i]:
         strategy.entry("Long", strategy.LONG)
 
-    if is_trending and ta.crossunder(fast, slow)[i]:
+    if (chop[i] < chop_threshold) and ta.crossunder(fast, slow)[i]:
         strategy.entry("Short", strategy.SHORT)
 
     # Exit if market becomes choppy
