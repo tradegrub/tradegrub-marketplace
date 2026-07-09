@@ -219,8 +219,8 @@ h_lower = hline(-consensus_thresh, title="Bear Threshold", color="rgba(239,83,80
 hline(0, title="Zero", color="rgba(255,255,255,0.15)")
 
 # Shade consensus zones on the sub-pane
-bull_bg = np.where(strong_bull, "rgba(76,175,80,0.12)", np.nan)
-bear_bg = np.where(strong_bear, "rgba(244,67,54,0.12)", np.nan)
+bull_bg = [("rgba(76,175,80,0.12)" if strong_bull[i] else None) for i in range(n)]
+bear_bg = [("rgba(244,67,54,0.12)" if strong_bear[i] else None) for i in range(n)]
 bgcolor(bull_bg, title="Bull Zone")
 bgcolor(bear_bg, title="Bear Zone")
 
