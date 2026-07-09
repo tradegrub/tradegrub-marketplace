@@ -1,7 +1,7 @@
 # Heikin-Ashi Trend Following Strategy
 from tg_scripting import *
 
-strategy("Heikin Ashi Trend", overlay=True)
+indicator("Heikin Ashi Trend", overlay=True)
 
 ema_fast = input.int(8, "Fast EMA Length", minval=3, maxval=20)
 ema_slow = input.int(21, "Slow EMA Length", minval=10, maxval=50)

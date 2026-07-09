@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Moving Avg Envelope", overlay=True)
+indicator("Moving Avg Envelope", overlay=True)
 
 length = input.int(20, "MA Length", minval=5, maxval=200)
 pct = input.float(2.5, "Envelope Percent", minval=0.5, maxval=10.0)

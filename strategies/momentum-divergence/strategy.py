@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Momentum Divergence", overlay=True)
+indicator("Momentum Divergence", overlay=True)
 
 rsi_length = input.int(14, "RSI Length", minval=2, maxval=50)
 lookback = input.int(20, "Divergence Lookback", minval=5, maxval=50)

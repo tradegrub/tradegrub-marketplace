@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Grid Level Trader", overlay=True)
+indicator("Grid Level Trader", overlay=True)
 
 grid_spacing = input.float(2.0, "Grid Spacing (%)", minval=0.1, maxval=10.0, step=0.5)
 num_grids = input.int(5, "Number of Grid Levels", minval=1, maxval=20)

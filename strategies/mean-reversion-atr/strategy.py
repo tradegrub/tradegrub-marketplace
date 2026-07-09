@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Mean Reversion ATR", overlay=True)
+indicator("Mean Reversion ATR", overlay=True)
 
 sma_length = input.int(50, "SMA Length", minval=10, maxval=200)
 atr_length = input.int(14, "ATR Length", minval=5, maxval=50)

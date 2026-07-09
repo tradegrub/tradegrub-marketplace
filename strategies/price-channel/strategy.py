@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Price Channel", overlay=True)
+indicator("Price Channel", overlay=True)
 
 entry_length = input.int(20, "Entry Channel Length", minval=5, maxval=100)
 exit_length = input.int(10, "Exit Channel Length", minval=3, maxval=50)

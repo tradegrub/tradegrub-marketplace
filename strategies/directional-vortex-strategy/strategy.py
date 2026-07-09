@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Directional Vortex Strategy", overlay=True)
+indicator("Directional Vortex Strategy", overlay=True)
 
 length = input.int(14, "Vortex Length", minval=5, maxval=50)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=30)

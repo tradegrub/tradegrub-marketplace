@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("ML Momentum Score", overlay=True)
+indicator("ML Momentum Score", overlay=True)
 
 lookback = input.int(200, "Training Lookback", minval=50, maxval=500)
 threshold = input.float(0.6, "Signal Threshold", minval=0.5, maxval=0.9)

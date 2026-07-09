@@ -1,7 +1,7 @@
 # Engulfing Candle Strategy
 from tg_scripting import *
 
-strategy("Engulfing Candle", overlay=True)
+indicator("Engulfing Candle", overlay=True)
 
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)
 atr_mult = input.float(1.5, "ATR Stop Multiplier", minval=0.5, maxval=5.0)

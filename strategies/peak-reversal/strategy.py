@@ -2,7 +2,7 @@ from tg_scripting import *
 import numpy as np
 from scipy.signal import argrelextrema
 
-strategy("Savitzky-Golay Peak Reversal", overlay=True)
+indicator("Savitzky-Golay Peak Reversal", overlay=True)
 
 order = input.int(5, "Peak Order", minval=2, maxval=20)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)

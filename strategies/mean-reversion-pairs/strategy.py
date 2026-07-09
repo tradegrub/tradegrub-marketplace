@@ -2,7 +2,7 @@ from tg_scripting import *
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-strategy("Statistical Mean Reversion", overlay=True)
+indicator("Statistical Mean Reversion", overlay=True)
 
 smooth_len = input.int(50, "Smoothing Period", minval=10, maxval=200)
 zscore_len = input.int(20, "Z-Score Lookback", minval=5, maxval=100)

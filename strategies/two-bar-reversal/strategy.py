@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Two Bar Reversal", overlay=True)
+indicator("Two Bar Reversal", overlay=True)
 
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)
 atr_mult = input.float(1.5, "ATR Target Multiplier", minval=1.0, maxval=5.0)

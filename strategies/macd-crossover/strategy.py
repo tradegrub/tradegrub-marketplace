@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("MACD Crossover", overlay=True)
+indicator("MACD Crossover", overlay=True)
 
 fast_length = input.int(12, "Fast Length", minval=2, maxval=100)
 slow_length = input.int(26, "Slow Length", minval=2, maxval=200)

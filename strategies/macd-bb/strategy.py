@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("MACD BB", overlay=True)
+indicator("MACD BB", overlay=True)
 
 # Inputs
 macd_fast = input.int(12, "MACD Fast", minval=2, maxval=50)

@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Opening Range", overlay=True)
+indicator("Opening Range", overlay=True)
 
 or_bars = input.int(5, "Opening Range Bars", minval=1, maxval=30)
 atr_length = input.int(14, "ATR Length", minval=5, maxval=50)

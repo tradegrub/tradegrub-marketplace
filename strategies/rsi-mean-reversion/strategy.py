@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("RSI Mean Reversion", overlay=True)
+indicator("RSI Mean Reversion", overlay=True)
 
 length = input.int(14, "RSI Length", minval=2, maxval=100)
 oversold = input.int(30, "Oversold Level", minval=5, maxval=50)

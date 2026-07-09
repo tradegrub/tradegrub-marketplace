@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("RSI MACD Combo", overlay=True)
+indicator("RSI MACD Combo", overlay=True)
 
 # Inputs
 rsi_len = input.int(14, "RSI Length", minval=2, maxval=50)

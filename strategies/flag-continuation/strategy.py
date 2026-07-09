@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Flag Continuation", overlay=True)
+indicator("Flag Continuation", overlay=True)
 
 pole_len = input.int(10, "Pole Lookback", minval=5, maxval=30)
 flag_len = input.int(5, "Flag Length", minval=3, maxval=15)

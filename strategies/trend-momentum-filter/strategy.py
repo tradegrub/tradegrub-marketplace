@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Trend Momentum Filter", overlay=True)
+indicator("Trend Momentum Filter", overlay=True)
 
 # Inputs
 adx_dilen = input.int(14, "DI Length", minval=2, maxval=50)

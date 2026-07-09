@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Smooth Momentum Strategy", overlay=True)
+indicator("Smooth Momentum Strategy", overlay=True)
 
 mom_len = input.int(14, "Momentum Length", minval=5, maxval=30)
 smooth_stages = input.int(3, "Smoothing Stages", minval=1, maxval=5)

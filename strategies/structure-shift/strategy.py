@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Structure Shift", overlay=True)
+indicator("Structure Shift", overlay=True)
 
 swing_len = input.int(5, "Swing Length", minval=2, maxval=20)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)

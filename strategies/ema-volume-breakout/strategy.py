@@ -1,6 +1,6 @@
 from tg_scripting import *
 
-strategy("EMA Volume Breakout", overlay=True)
+indicator("EMA Volume Breakout", overlay=True)
 
 # Inputs
 ema_fast = input.int(9, "Fast EMA", minval=2, maxval=50)

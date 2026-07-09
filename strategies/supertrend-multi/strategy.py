@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Supertrend Multi", overlay=True)
+indicator("Supertrend Multi", overlay=True)
 
 length1 = input.int(10, "Fast Supertrend Length", minval=3, maxval=50)
 mult1 = input.float(2.0, "Fast Multiplier", minval=0.5, maxval=5.0)

@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Dynamic RSI Strategy", overlay=True)
+indicator("Dynamic RSI Strategy", overlay=True)
 
 base_len = input.int(14, "Base RSI Length", minval=5, maxval=30)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=30)

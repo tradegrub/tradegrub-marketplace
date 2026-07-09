@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("ADX Stoch", overlay=True)
+indicator("ADX Stoch", overlay=True)
 
 # Inputs
 adx_dilen = input.int(14, "DI Length", minval=2, maxval=50)

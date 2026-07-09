@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Gap Fill", overlay=True)
+indicator("Gap Fill", overlay=True)
 
 min_gap_atr = input.float(0.5, "Min Gap Size (ATR mult)", minval=0.2, maxval=3.0)
 atr_len = input.int(14, "ATR Length", minval=5, maxval=50)

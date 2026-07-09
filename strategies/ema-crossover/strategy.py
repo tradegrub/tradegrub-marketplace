@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("EMA Crossover", overlay=True)
+indicator("EMA Crossover", overlay=True)
 
 fast_len = input.int(9, "Fast EMA Length", minval=2, maxval=50)
 slow_len = input.int(21, "Slow EMA Length", minval=5, maxval=200)

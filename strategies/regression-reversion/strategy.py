@@ -2,7 +2,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Regression Reversion", overlay=True)
+indicator("Regression Reversion", overlay=True)
 
 reg_length = input.int(50, "Regression Length", minval=10, maxval=200)
 dev_threshold = input.float(2.0, "Deviation Threshold %", minval=0.5, maxval=10.0)

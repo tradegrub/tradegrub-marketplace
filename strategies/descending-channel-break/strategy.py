@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Descending Channel Break", overlay=True)
+indicator("Descending Channel Break", overlay=True)
 
 length = input.int(20, "Channel Length", minval=10, maxval=100)
 vol_mult = input.float(1.5, "Volume Multiplier", minval=1.0, maxval=5.0)

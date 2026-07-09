@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Trend Volatility Combo", overlay=True)
+indicator("Trend Volatility Combo", overlay=True)
 
 # Inputs
 st_len = input.int(10, "Supertrend Length", minval=5, maxval=50)

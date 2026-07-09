@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-strategy("Supertrend Pro", overlay=True)
+indicator("Supertrend Pro", overlay=True)
 
 atr_period = input.int(10, "ATR Period", minval=1, maxval=100)
 multiplier = input.float(3.0, "Multiplier", minval=0.5, maxval=10.0)
