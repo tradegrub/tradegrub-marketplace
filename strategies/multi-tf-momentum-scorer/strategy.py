@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Multi-TF Momentum Scorer", overlay=True)
+indicator("Multi-TF Momentum Scorer", overlay=False)
 
 # Inputs
 base_period = input.int(5, "Base Period", minval=2, maxval=20)
@@ -12,8 +12,6 @@ rsi_len = input.int(14, "RSI Length", minval=5, maxval=30)
 roc_len = input.int(10, "ROC Length", minval=3, maxval=30)
 use_sizing = input.bool(True, "Confidence-Weighted Sizing")
 max_risk = input.float(2.0, "Max Risk %", minval=0.5, maxval=5.0)
-show_labels = input.bool(True, "Show Labels")
-show_levels = input.bool(True, "Show Entry/Stop/TP Levels")
 
 n = len(close)
 close_np = np.asarray(close).astype(np.float64)
@@ -100,11 +98,6 @@ for idx in range(num_tf):
 directions = np.sign(tf_scores)
 consensus_up = np.sum(directions > 0, axis=0) / num_tf
 consensus_down = np.sum(directions < 0, axis=0) / num_tf
-consensus = np.maximum(consensus_up, consensus_down)
-
-# --- Confidence-weighted position sizing ---
-confidence = np.abs(composite) * consensus
-position_pct = np.clip(confidence * max_risk, 0, max_risk) if use_sizing else np.full(n, max_risk)
 
 # --- Entry/Exit Signals ---
 strong_bull = (composite > 0.2) & (consensus_up >= consensus_thresh)
@@ -120,111 +113,50 @@ short_entry = strong_bear & ~prev_bear
 long_exit = ~strong_bull & prev_bull
 short_exit = ~strong_bear & prev_bear
 
-atr = ta.atr(high, low, close, 14)
-last_signal_idx = -100
-cooldown = 20
-
 for i in range(n):
     if long_entry[i]:
         strategy.entry("Long", strategy.LONG)
-        if (i - last_signal_idx) > cooldown:
-            last_signal_idx = i
-            if show_labels:
-                label.new(
-                    x=i, y=float(low_np[i]),
-                    text="BUY",
-                    style=label.style_label_up,
-                    color="#00e676",
-                    textcolor="#000000",
-                    size="small"
-                )
-            if show_levels:
-                entry_price = float(close_np[i])
-                atr_val = float(atr[i]) if not np.isnan(float(atr[i])) else entry_price * 0.02
-                sl_price = entry_price - atr_val * 2.0
-                tp_price = entry_price + atr_val * 4.0
-                end_bar = min(i + 30, n - 1)
-                line.new(x1=i, y1=entry_price, x2=end_bar, y2=entry_price,
-                         color="#42a5f5", width=1, style=line.style_dashed)
-                line.new(x1=i, y1=sl_price, x2=end_bar, y2=sl_price,
-                         color="#ef5350", width=1, style=line.style_dashed)
-                line.new(x1=i, y1=tp_price, x2=end_bar, y2=tp_price,
-                         color="#00e676", width=1, style=line.style_dashed)
-                box.new(left=i, top=tp_price, right=end_bar, bottom=sl_price,
-                        border_color="rgba(66,165,245,0.15)", bgcolor="rgba(66,165,245,0.05)")
-
     elif short_entry[i]:
         strategy.entry("Short", strategy.SHORT)
-        if (i - last_signal_idx) > cooldown:
-            last_signal_idx = i
-            if show_labels:
-                label.new(
-                    x=i, y=float(high_np[i]),
-                    text="EXIT",
-                    style=label.style_label_down,
-                    color="#ef5350",
-                    textcolor="#ffffff",
-                    size="small"
-                )
-            if show_levels:
-                entry_price = float(close_np[i])
-                atr_val = float(atr[i]) if not np.isnan(float(atr[i])) else entry_price * 0.02
-                sl_price = entry_price + atr_val * 2.0
-                tp_price = entry_price - atr_val * 4.0
-                end_bar = min(i + 30, n - 1)
-                line.new(x1=i, y1=entry_price, x2=end_bar, y2=entry_price,
-                         color="#42a5f5", width=1, style=line.style_dashed)
-                line.new(x1=i, y1=sl_price, x2=end_bar, y2=sl_price,
-                         color="#ef5350", width=1, style=line.style_dashed)
-                line.new(x1=i, y1=tp_price, x2=end_bar, y2=tp_price,
-                         color="#00e676", width=1, style=line.style_dashed)
-                box.new(left=i, top=sl_price, right=end_bar, bottom=tp_price,
-                        border_color="rgba(239,83,80,0.15)", bgcolor="rgba(239,83,80,0.05)")
-
     elif long_exit[i]:
         strategy.close("Long")
-        if show_labels and (i - last_signal_idx) > cooldown:
-            last_signal_idx = i
-            label.new(
-                x=i, y=float(high_np[i]),
-                text="EXIT",
-                style=label.style_label_down,
-                color="#ff9800",
-                textcolor="#000000",
-                size="small"
-            )
     elif short_exit[i]:
         strategy.close("Short")
-        if show_labels and (i - last_signal_idx) > cooldown:
-            last_signal_idx = i
-            label.new(
-                x=i, y=float(low_np[i]),
-                text="EXIT",
-                style=label.style_label_up,
-                color="#ff9800",
-                textcolor="#000000",
-                size="small"
-            )
 
-# --- Sub-pane: individual TF score lines (overlay=False forces sub-pane) ---
+# --- Sub-pane plots: individual TF score lines ---
 tf_colors = ["#69E1FB", "#26a69a", "#ff9800", "#ab47bc", "#ef5350",
              "#42a5f5", "#66bb6a", "#ffa726"]
 
 for idx in range(num_tf):
     period = tf_periods[idx]
     color = tf_colors[idx % len(tf_colors)]
-    plot(tf_scores[idx], title=f"TF {period}-bar", color=color, linewidth=1, overlay=False)
+    plot(tf_scores[idx], title=f"TF {period}-bar", color=color, linewidth=1)
 
-# Composite score (thicker white line in sub-pane)
-plot(composite, title="Composite", color="#e0e0e0", linewidth=2, overlay=False)
+# Composite score (thicker white line)
+plot(composite, title="Composite", color="#e0e0e0", linewidth=2)
 
-# Threshold lines in sub-pane
-hline(consensus_thresh, title="Bull Threshold", color="rgba(0,230,118,0.4)", linestyle="dashed", overlay=False)
-hline(-consensus_thresh, title="Bear Threshold", color="rgba(239,83,80,0.4)", linestyle="dashed", overlay=False)
-hline(0, title="Zero", color="rgba(255,255,255,0.15)", overlay=False)
+# Threshold lines
+hline(consensus_thresh, title="Bull Threshold", color="rgba(0,230,118,0.4)", linestyle="dashed")
+hline(-consensus_thresh, title="Bear Threshold", color="rgba(239,83,80,0.4)", linestyle="dashed")
+hline(0, title="Zero", color="rgba(255,255,255,0.15)")
 
-# Shade consensus zones on price chart
-bull_bg = [("rgba(76,175,80,0.08)" if strong_bull[i] else None) for i in range(n)]
-bear_bg = [("rgba(244,67,54,0.08)" if strong_bear[i] else None) for i in range(n)]
+# Shade consensus zones
+bull_bg = [("rgba(76,175,80,0.12)" if strong_bull[i] else None) for i in range(n)]
+bear_bg = [("rgba(244,67,54,0.12)" if strong_bear[i] else None) for i in range(n)]
 bgcolor(bull_bg, title="Bull Zone")
 bgcolor(bear_bg, title="Bear Zone")
+
+# Signal markers using plotshape
+buy_sig = np.where(long_entry, composite, np.nan)
+sell_sig = np.where(short_entry, composite, np.nan)
+exit_bull = np.where(long_exit, composite, np.nan)
+exit_bear = np.where(short_exit, composite, np.nan)
+
+plotshape(buy_sig, title="Buy", style="triangleup", location="absolute",
+          color="#00e676", text="BUY", textcolor="#00e676", size="small")
+plotshape(sell_sig, title="Sell", style="triangledown", location="absolute",
+          color="#ef5350", text="SELL", textcolor="#ef5350", size="small")
+plotshape(exit_bull, title="Exit Long", style="xcross", location="absolute",
+          color="#ff9800", text="EXIT", textcolor="#ff9800", size="tiny")
+plotshape(exit_bear, title="Exit Short", style="xcross", location="absolute",
+          color="#ff9800", text="EXIT", textcolor="#ff9800", size="tiny")
