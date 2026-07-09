@@ -138,7 +138,5 @@ _exit_signal = (prev_long & ~long_cond) | (prev_short & ~short_cond)
 plotshape(_exit_signal, title="Exit", style="xcross", location="abovebar", color="orange")
 
 # --- Consensus zone backgrounds ---
-_bull_zone = [("rgba(76,175,80,0.12)" if long_cond[i] else None) for i in range(n)]
-_bear_zone = [("rgba(244,67,54,0.12)" if short_cond[i] else None) for i in range(n)]
-bgcolor(_bull_zone, title="Bullish Consensus")
-bgcolor(_bear_zone, title="Bearish Consensus")
+bgcolor(long_cond, color="rgba(76,175,80,0.12)", title="Bullish Consensus")
+bgcolor(short_cond, color="rgba(244,67,54,0.12)", title="Bearish Consensus")

@@ -101,3 +101,6 @@ plot(gap_size, title="Gap Size", color="purple")
 hline(0, title="Zero Line", color="gray")
 plotshape(is_gap_up, title="Gap Up", style="triangledown", location="abovebar", color="red")
 plotshape(is_gap_down, title="Gap Down", style="triangleup", location="belowbar", color="green")
+
+is_gap = is_gap_up | is_gap_down
+bgcolor([("rgba(255,152,0,0.10)" if is_gap[i] else None) for i in range(n)], title="Gap Zone")

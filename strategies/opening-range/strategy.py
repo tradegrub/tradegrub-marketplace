@@ -55,6 +55,17 @@ plotshape(short_signal, title="Short Breakout", style="triangledown", location="
 
 bgcolor([("rgba(76,175,80,0.08)" if long_signal[i] else None) for i in range(n)], title="Bull Zone")
 bgcolor([("rgba(244,67,54,0.08)" if short_signal[i] else None) for i in range(n)], title="Bear Zone")
+
+# Midline fallback exit markers (reuses the same crossover/crossunder conditions
+# already evaluated bar-by-bar inside the strategy loop above)
+exit_long_signal = ta.crossunder(close, or_mid)
+exit_short_signal = ta.crossover(close, or_mid)
+plotshape(exit_long_signal, title="Long Midline Exit", style="xcross", location="abovebar", color="orange")
+plotshape(exit_short_signal, title="Short Midline Exit", style="xcross", location="belowbar", color="orange")
+
+# Highlight the opening range formation window (first N bars), matching the concept's orange zone
+or_zone_bg = [("rgba(255,152,0,0.12)" if i < or_bars else None) for i in range(n)]
+bgcolor(or_zone_bg, title="Opening Range Zone")
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

@@ -64,3 +64,13 @@ for i in range(aroon_len, n):
 
 plotshape(long_sig.tolist(), title="Long", style="triangleup", location="belowbar", color="#00e676", size="small")
 plotshape(short_sig.tolist(), title="Short", style="triangledown", location="abovebar", color="#ff1744", size="small")
+
+plot(aroon_up.tolist(), title="Aroon Up", color="#26a69a", linewidth=2)
+plot(aroon_down.tolist(), title="Aroon Down", color="#ef5350", linewidth=2)
+hline(aroon_thresh, title="Aroon Threshold", color="#ffeb3b", linestyle="dashed")
+
+bg_colors = [
+    ("rgba(0,230,118,0.08)" if long_sig[i] else ("rgba(255,23,68,0.08)" if short_sig[i] else None))
+    for i in range(n)
+]
+bgcolor(bg_colors, title="Signal Zone")

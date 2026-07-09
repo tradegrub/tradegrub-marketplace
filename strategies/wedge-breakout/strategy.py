@@ -35,10 +35,19 @@ break_up = (close > upper_line) & vol_surge
 break_down = (close < lower_line) & vol_surge
 
 if show_wedge:
-    plot(upper_line, title="Upper Trendline", color="red")
-    plot(lower_line, title="Lower Trendline", color="green")
+    p1 = plot(upper_line, title="Upper Trendline", color="red")
+    p2 = plot(lower_line, title="Lower Trendline", color="green")
+    fill(p1, p2, color="rgba(66,165,245,0.05)", title="Wedge Zone")
 
 n = len(close)
+
+long_signal = falling_wedge & break_up
+short_signal = rising_wedge & break_down
+plotshape(long_signal, title="Bull Breakout", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(short_signal, title="Bear Breakout", shape="triangledown", location="abovebar", color="#ef5350", size="small")
+
+bgcolor([("rgba(38,166,154,0.05)" if falling_wedge[i] else None) for i in range(n)], title="Falling Wedge Zone")
+bgcolor([("rgba(239,83,80,0.05)" if rising_wedge[i] else None) for i in range(n)], title="Rising Wedge Zone")
 last_signal_idx = -100
 wedge_label_placed = False
 
@@ -46,11 +55,9 @@ for i in range(len(close)):
     strategy.set_bar_index(i)
     if falling_wedge[i] & break_up[i]:
         strategy.entry("Long", strategy.LONG)
-        plotshape(i, title="Bull Breakout", style="triangleup", color="green")
 
     if rising_wedge[i] & break_down[i]:
         strategy.entry("Short", strategy.SHORT)
-        plotshape(i, title="Bear Breakout", style="triangledown", color="red")
 
     if strategy.position_size > 0:
         stop = strategy.position_avg_price - atr[i] * atr_mult

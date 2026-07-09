@@ -76,5 +76,7 @@ for i in range(len(close)):
 
 plot(macd_line, title="MACD", color="blue")
 plot(signal_line, title="Signal", color="orange")
+hline(0, title="Zero Line", color="gray")
+
 plotshape(buy, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676", size="small")
 plotshape(sell, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350", size="small")

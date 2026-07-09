@@ -86,6 +86,15 @@ plotshape(short_signal, title="Short Entry", style="triangledown", location="abo
 bgcolor([("rgba(76,175,80,0.08)" if long_signal[i] else None) for i in range(n)], title="Bull Zone")
 bgcolor([("rgba(244,67,54,0.08)" if short_signal[i] else None) for i in range(n)], title="Bear Zone")
 
+# Circle markers on the confirmed swing peaks/troughs, matching the concept's
+# ring markers on the smoothed price extrema
+peak_marker = np.zeros(n, dtype=bool)
+peak_marker[peak_idx] = True
+trough_marker = np.zeros(n, dtype=bool)
+trough_marker[trough_idx] = True
+plotshape(peak_marker.tolist(), title="Peak Marker", style="circle", location="abovebar", color="#ef5350", size="tiny")
+plotshape(trough_marker.tolist(), title="Trough Marker", style="circle", location="belowbar", color="#00e676", size="tiny")
+
 last_long_ann = -100
 last_short_ann = -100
 cooldown = 20

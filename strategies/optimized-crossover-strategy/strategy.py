@@ -96,7 +96,25 @@ for i in range(train_window, n):
         if cl[i] >= sl:
             in_short = False
 
-plot(fast_ma_arr.tolist(), title="Fast MA", color="#26c6da", linewidth=1)
-plot(slow_ma_arr.tolist(), title="Slow MA", color="#ef5350", linewidth=1)
+p_fast = plot(fast_ma_arr.tolist(), title="Fast MA", color="#26c6da", linewidth=1)
+p_slow = plot(slow_ma_arr.tolist(), title="Slow MA", color="#ef5350", linewidth=1)
 plotshape(long_sig.tolist(), title="Long", style="triangleup", location="belowbar", color="#00e676", size="small")
 plotshape(short_sig.tolist(), title="Short", style="triangledown", location="abovebar", color="#ff1744", size="small")
+
+# Fill the fast/slow MA channel, tinting green when the fast MA leads (bullish)
+# and red when the slow MA leads (bearish) - mirrors the crossover concept diagram
+ma_fill_colors = [
+    ("rgba(76,175,80,0.10)" if fast_ma_arr[i] > slow_ma_arr[i] else "rgba(244,67,54,0.10)")
+    for i in range(n)
+]
+fill(p_fast, p_slow, color=ma_fill_colors, title="MA Channel")
+
+# Shade alternating walk-forward optimization windows like the concept diagram
+window_bg = [None] * n
+for i in range(n):
+    if i >= train_window:
+        window_num = (i - train_window) // reopt_period
+        window_bg[i] = (
+            "rgba(66,165,245,0.03)" if window_num % 2 == 0 else "rgba(255,152,0,0.03)"
+        )
+bgcolor(window_bg, title="Walk-Forward Window")
