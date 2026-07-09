@@ -78,3 +78,8 @@ for i in range(n):
 plotshape(long_signal.tolist(), title="Breakout Signal", style="triangleup",
           location="belowbar", color="#00e676")
 plot(breakout_prob.tolist(), title="Breakout Probability", color="#ff9800", linewidth=1)
+hline(prob_thresh, title="Probability Threshold", color="#ffeb3b", linestyle="dashed")
+
+bg_colors = [("rgba(76,175,80,0.12)" if breakout_prob[i] > prob_thresh else
+              ("rgba(255,82,82,0.12)" if breakout_prob[i] < 0.4 else None)) for i in range(n)]
+bgcolor(bg_colors, title="Probability Zone")

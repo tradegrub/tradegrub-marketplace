@@ -36,6 +36,10 @@ hline(entry_z, title="Upper Threshold", color="red")
 hline(-entry_z, title="Lower Threshold", color="green")
 hline(0, title="Zero Line", color="gray")
 
+plotshape(cross_up_neg, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(cross_down_pos, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350", size="small")
+bgcolor([("rgba(76,175,80,0.08)" if up_neg[i] else None) for i in range(n)], title="Bull Zone")
+bgcolor([("rgba(244,67,54,0.08)" if down_pos[i] else None) for i in range(n)], title="Bear Zone")
 # --- Rich annotations ---
 n = len(close)
 atr = ta.atr(high, low, close, 14)

@@ -86,4 +86,18 @@ for i in range(1, n):
         if cl[i] >= sl:
             in_short = False
 
-plot(sar.tolist(), title="Adaptive SAR", color="#ff9800", linewidth=1)
+bull_sar = np.array([sar[i] if cl[i] > sar[i] else np.nan for i in range(n)])
+bear_sar = np.array([sar[i] if cl[i] <= sar[i] else np.nan for i in range(n)])
+plot(bull_sar.tolist(), title="Bullish SAR", color="#26a69a", style="circles", linewidth=1)
+plot(bear_sar.tolist(), title="Bearish SAR", color="#ff9800", style="circles", linewidth=1)
+
+buy_signal = [False] * n
+exit_signal = [False] * n
+for i in range(1, n):
+    if cl[i] > sar[i] and cl[i-1] <= sar[i-1]:
+        buy_signal[i] = True
+    elif cl[i] < sar[i] and cl[i-1] >= sar[i-1]:
+        exit_signal[i] = True
+
+plotshape(buy_signal, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676")
+plotshape(exit_signal, title="Exit Signal", style="triangledown", location="abovebar", color="#ef5350")

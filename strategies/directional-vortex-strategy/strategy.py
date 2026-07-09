@@ -72,5 +72,9 @@ for i in range(length, n):
         if cl[i] >= sl or cl[i] <= tp:
             in_short = False
 
+plot(vi_p.tolist(), title="VI+", color="#26a69a", linewidth=2)
+plot(vi_m.tolist(), title="VI-", color="#ef5350", linewidth=2)
+hline(1.0, title="Reference", color="rgba(255,255,255,0.15)", linestyle="dashed")
+
 plotshape(long_sig.tolist(), title="Long", style="triangleup", location="belowbar", color="#00e676", size="small")
 plotshape(short_sig.tolist(), title="Short", style="triangledown", location="abovebar", color="#ff1744", size="small")

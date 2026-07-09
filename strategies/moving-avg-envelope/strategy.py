@@ -36,6 +36,16 @@ p2 = plot(lower, title="Lower Envelope", color="red")
 plot(basis, title="MA Basis", color="blue")
 fill(p1, p2, color="rgba(100, 181, 246, 0.08)")
 
+# --- Entry / exit markers ---
+_cross_up = ta.crossover(close, upper)
+_cross_down = ta.crossunder(close, lower)
+_exit_long = ta.crossunder(close, basis)
+_exit_short = ta.crossover(close, basis)
+plotshape(_cross_up, title="Long Entry", style="triangleup", location="belowbar", color="green")
+plotshape(_cross_down, title="Short Entry", style="triangledown", location="abovebar", color="red")
+plotshape(_exit_long, title="Exit Long", style="xcross", location="abovebar", color="orange")
+plotshape(_exit_short, title="Exit Short", style="xcross", location="belowbar", color="orange")
+
 # --- Rich annotations ---
 n = len(close)
 cross_up = ta.crossover(close, upper)

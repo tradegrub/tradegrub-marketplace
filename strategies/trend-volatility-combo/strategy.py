@@ -104,8 +104,17 @@ for i in range(len(close)):
                     border_color="rgba(239,83,80,0.15)", bgcolor="rgba(239,83,80,0.03)")
 
 # Plots
-plot(supertrend, title="Supertrend", color="blue")
+st_bull_line = [supertrend[i] if st_bullish[i] else np.nan for i in range(n)]
+st_bear_line = [supertrend[i] if st_bearish[i] else np.nan for i in range(n)]
+plot(st_bull_line, title="Bullish ST", color="#26a69a", linewidth=2)
+plot(st_bear_line, title="Bearish ST", color="#ef5350", linewidth=2)
 plot(atr, title="ATR", color="orange")
+
+plotshape(long_cond, title="Buy (confirmed)", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(short_cond, title="Sell (confirmed)", shape="triangledown", location="abovebar", color="#ef5350", size="small")
+plotshape(st_flip_bull & ~vol_confirmed, title="Rejected Bull Flip", shape="xcross", location="abovebar", color="#ef5350", size="tiny")
+plotshape(st_flip_bear & ~vol_confirmed, title="Rejected Bear Flip", shape="xcross", location="belowbar", color="#ef5350", size="tiny")
+
 bgcolor(vol_confirmed, color="rgba(0, 200, 0, 0.05)")
 bgcolor(st_bullish, color="rgba(0, 255, 0, 0.05)")
 bgcolor(st_bearish, color="rgba(255, 0, 0, 0.05)")

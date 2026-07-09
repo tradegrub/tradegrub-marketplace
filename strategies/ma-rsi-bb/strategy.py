@@ -110,3 +110,10 @@ p_lower = plot(bb_lower, title="BB Lower", color="green")
 plot(bb_basis, title="BB Basis", color="gray")
 plot(ma, title="SMA", color="blue")
 fill(p_upper, p_lower, color="rgba(100, 100, 255, 0.1)")
+
+plotshape(long_cond, title="Long Entry", shape="triangleup", location="belowbar", color="green")
+plotshape(short_cond, title="Short Entry", shape="triangledown", location="abovebar", color="red")
+
+uptrend = close > ma
+bgcolor_vals = [("rgba(76,175,80,0.08)" if uptrend[i] else "rgba(244,67,54,0.08)") for i in range(n)]
+bgcolor(bgcolor_vals)

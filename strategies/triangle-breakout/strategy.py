@@ -60,9 +60,10 @@ if use_volume:
     bull_break = bull_break & (volume > vol_sma * 1.2)
     bear_break = bear_break & (volume > vol_sma * 1.2)
 
-plot(upper_line, title="Upper", color="red")
-plot(lower_line, title="Lower", color="green")
+upper_plot = plot(upper_line, title="Upper", color="red")
+lower_plot = plot(lower_line, title="Lower", color="green")
 plot(mid_line, title="Mid", color="gray", linewidth=1)
+fill(upper_plot, lower_plot, color="rgba(66,165,245,0.06)", title="Triangle Zone")
 
 bgcolor(ascending, color="rgba(0,200,0,0.05)")
 bgcolor(descending, color="rgba(200,0,0,0.05)")

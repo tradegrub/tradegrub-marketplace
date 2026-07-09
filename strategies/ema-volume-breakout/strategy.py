@@ -107,6 +107,12 @@ for i in range(len(close)):
 # Plots
 plot(ema_f, title="Fast EMA", color="green")
 plot(ema_s, title="Slow EMA", color="red")
-plot(high_break, title="Breakout High", color="teal")
+plot(high_break, title="Breakout High", color="#42a5f5")
 plot(low_break, title="Breakout Low", color="maroon")
 bgcolor(volume_surge, color="rgba(0, 150, 255, 0.1)")
+
+plotshape(long_cond, title="Breakout Signal", style="triangleup", location="belowbar", color="#00e676")
+plotshape(short_cond, title="Breakdown Signal", style="triangledown", location="abovebar", color="#ef5350")
+
+# Highlight breakout/breakdown bars to match the glow zone in the concept art
+bgcolor([("rgba(0,230,118,0.12)" if long_cond[i] else ("rgba(239,83,80,0.12)" if short_cond[i] else None)) for i in range(n)])

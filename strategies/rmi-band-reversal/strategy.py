@@ -79,3 +79,21 @@ plot(bb_mid.tolist(), title="BB Mid", color="#FF9800")
 fill(p_upper, p_lower, color="rgba(33,150,243,0.08)")
 hline(60, title="Overbought", color="#ef5350", linestyle="dashed")
 hline(40, title="Oversold", color="#26a69a", linestyle="dashed")
+
+rmi_prev = np.roll(rmi, 1)
+rmi_prev[0] = rmi[0]
+bb_lower_prev = np.roll(bb_lower, 1)
+bb_lower_prev[0] = bb_lower[0]
+bb_upper_prev = np.roll(bb_upper, 1)
+bb_upper_prev[0] = bb_upper[0]
+
+buy_signal = (rmi > bb_lower) & (rmi_prev <= bb_lower_prev) & (rmi < 40)
+sell_signal = (rmi < bb_upper) & (rmi_prev >= bb_upper_prev) & (rmi > 60)
+buy_signal[0] = False
+sell_signal[0] = False
+plotshape(buy_signal.tolist(), title="Buy Signal", style="triangleup", location="belowbar", color="#26a69a")
+plotshape(sell_signal.tolist(), title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350")
+
+bg_colors = [("rgba(38,166,154,0.10)" if rmi[i] < bb_lower[i] else
+              ("rgba(239,83,80,0.10)" if rmi[i] > bb_upper[i] else None)) for i in range(n)]
+bgcolor(bg_colors, title="RMI Zone")

@@ -42,6 +42,8 @@ plot(trend_ema, title="Trend EMA", color="orange")
 plotshape(bull_3bar, title="Bull 3-Bar", style="triangleup", location="belowbar", color="green")
 plotshape(bear_3bar, title="Bear 3-Bar", style="triangledown", location="abovebar", color="red")
 
+bgcolor([("rgba(76,175,80,0.08)" if bull_close[i] else None) for i in range(n)], title="Bull Zone")
+bgcolor([("rgba(244,67,54,0.08)" if bear[i] else None) for i in range(n)], title="Bear Zone")
 # --- Rich annotations ---
 n = len(close)
 exit_bars = 30

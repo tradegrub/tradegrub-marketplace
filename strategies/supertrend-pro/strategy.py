@@ -32,6 +32,14 @@ plot(supertrend, title="SuperTrend", color="green" if bull else "red", linewidth
 plotshape(ta.crossover(direction, 0), title="Buy", shape="triangleup", location="belowbar", color="green", size="small")
 plotshape(ta.crossunder(direction, 0), title="Sell", shape="triangledown", location="abovebar", color="red", size="small")
 
+bgcolor([("rgba(76,175,80,0.08)" if direction[i] > 0 else "rgba(239,83,80,0.08)") for i in range(n)], title="Trend Zone")
+
+# ATR trailing stop line (distinct dashed line, matches concept's "ATR Trailing Stop")
+trail_stop = np.array([
+    (close[i] - atr_val[i] * multiplier) if direction[i] > 0 else (close[i] + atr_val[i] * multiplier)
+    for i in range(n)
+])
+plot(trail_stop, title="ATR Trailing Stop", color="#42a5f5", style="dashed", linewidth=1)
 # --- Rich annotations ---
 n = len(close)
 cross_up = ta.crossover(direction, 0)

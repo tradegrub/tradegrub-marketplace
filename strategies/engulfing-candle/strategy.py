@@ -54,6 +54,9 @@ hline(min_body_ratio, title="Min Ratio", color="gray")
 plotshape(bullish_engulf, title="Bull Engulf", style="triangleup", location="belowbar", color="green")
 plotshape(bearish_engulf, title="Bear Engulf", style="triangledown", location="abovebar", color="red")
 
+# Highlight the engulfing bar itself to match the glowing candle in the concept art
+bgcolor([("rgba(76,175,80,0.12)" if bullish_engulf[i] else ("rgba(244,67,54,0.12)" if bearish_engulf[i] else None)) for i in range(n)])
+
 # --- Rich annotations ---
 n = len(close)
 prev_bearish_arr = np.roll(close, 1) < np.roll(open, 1)

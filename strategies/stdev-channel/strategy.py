@@ -37,6 +37,11 @@ plot(basis, title="Regression Line", color="blue")
 plot(lower, title="Lower Channel", color="green")
 fill("Upper Channel", "Lower Channel", color="rgba(63, 81, 181, 0.08)")
 
+_long_entries = ta.crossover(close, lower)
+_short_entries = ta.crossunder(close, upper)
+plotshape(list(_long_entries), title="Buy", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(list(_short_entries), title="Sell", style="triangledown", location="abovebar", color="#ff5252", size="small")
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

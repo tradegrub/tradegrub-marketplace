@@ -29,12 +29,16 @@ downtrend = close < trend_ema
 long_signal = (close <= lower) & (~require_trend | uptrend) & (~rsi_filter | (rsi < 35))
 short_signal = (close >= upper) & (~require_trend | downtrend) & (~rsi_filter | (rsi > 65))
 
-plot(mid, color="white", title="Midline")
-plot(upper, color="red", title="Upper Band")
-plot(lower, color="green", title="Lower Band")
+p_mid = plot(mid, color="#42a5f5", title="Midline")
+p_upper = plot(upper, color="#26a69a", title="Upper Band")
+p_lower = plot(lower, color="#ef5350", title="Lower Band")
 plot(trend_ema, color="orange", linewidth=1, title="Trend EMA")
+fill(p_upper, p_lower, color="rgba(66,165,245,0.05)")
 bgcolor(long_signal, color="rgba(0,255,0,0.08)")
 bgcolor(short_signal, color="rgba(255,0,0,0.08)")
+
+plotshape(long_signal, title="Buy at Lower", style="triangleup", location="belowbar", color="#00e676")
+plotshape(short_signal, title="Sell at Upper", style="triangledown", location="abovebar", color="#ef5350")
 
 n = len(close)
 last_signal_idx = -100

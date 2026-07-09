@@ -33,6 +33,11 @@ plot(basis, title="KC Basis", color="orange")
 plot(lower, title="KC Lower", color="green")
 fill("KC Upper", "KC Lower", color="rgba(255, 152, 0, 0.08)")
 
+plotshape(ta.crossover(close, lower), title="Long Entry", shape="triangleup", location="belowbar", color="green")
+plotshape(ta.crossunder(close, upper), title="Short Entry", shape="triangledown", location="abovebar", color="red")
+plotshape(ta.crossover(close, basis), title="Exit Short", shape="xcross", location="belowbar", color="orange")
+plotshape(ta.crossunder(close, basis), title="Exit Long", shape="xcross", location="abovebar", color="orange")
+
 # --- Rich annotations ---
 n = len(close)
 cross_up_lower = ta.crossover(close, lower)

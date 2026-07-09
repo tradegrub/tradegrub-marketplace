@@ -30,14 +30,17 @@ for i in range(1, n):
         if ta.crossunder(close, basis)[i]:
             strategy.close("Long")
 
-plot(upper, title="Upper Band", color="red")
-plot(basis, title="Basis", color="gray")
-plot(lower, title="Lower Band", color="green")
-fill("Upper Band", "Lower Band", color="rgba(33, 150, 243, 0.08)")
+p_upper = plot(upper, title="Upper Band", color="#9c27b0")
+plot(basis, title="Basis", color="#42a5f5")
+p_lower = plot(lower, title="Lower Band", color="#9c27b0")
+fill(p_upper, p_lower, color="rgba(156,39,176,0.06)")
 
 # --- Rich annotations ---
 cross_up = ta.crossover(close, lower)
 cross_down = ta.crossunder(close, upper)
+
+plotshape(cross_up, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676")
+plotshape(cross_down, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350")
 atr = ta.atr(high, low, close, 14)
 n = len(close)
 last_signal_idx = -100

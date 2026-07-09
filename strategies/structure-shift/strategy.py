@@ -70,6 +70,14 @@ plotshape(bos_bear, title="BOS Down", shape="triangledown", location="abovebar",
 plotshape(choch_bull, title="CHoCH Up", shape="diamond", location="belowbar", color="lime")
 plotshape(choch_bear, title="CHoCH Down", shape="diamond", location="abovebar", color="orange")
 
+# Structure zone background: green tint while in uptrend, red tint while in downtrend
+_bg_n = len(close)
+bg_colors = [
+    ("rgba(38,166,154,0.08)" if trend[i] > 0 else ("rgba(239,83,80,0.08)" if trend[i] < 0 else None))
+    for i in range(_bg_n)
+]
+bgcolor(bg_colors, title="Structure Trend Zone")
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

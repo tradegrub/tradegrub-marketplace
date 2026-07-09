@@ -31,6 +31,7 @@ for i in range(1, n):
     if deviation_pct[i] < exit_pct and deviation_pct[i-1] >= exit_pct:
         strategy.close("Short")
 
+plot(linreg, title="Linear Regression", color="#42a5f5", linewidth=2)
 plot(deviation_pct, title="Deviation %", color="purple")
 hline(dev_threshold, title="Upper Threshold", color="red")
 hline(-dev_threshold, title="Lower Threshold", color="green")
@@ -38,6 +39,16 @@ hline(0, title="Zero", color="gray")
 
 bgcolor(deviation_pct[-1] < -dev_threshold, color="rgba(76, 175, 80, 0.1)")
 bgcolor(deviation_pct[-1] > dev_threshold, color="rgba(244, 67, 54, 0.1)")
+
+dev_arr = np.array(deviation_pct, dtype=float)
+dev_prev = np.roll(dev_arr, 1)
+dev_prev[0] = dev_arr[0]
+buy_signal = (dev_arr < -dev_threshold) & (dev_prev >= -dev_threshold)
+sell_signal = (dev_arr > dev_threshold) & (dev_prev <= dev_threshold)
+buy_signal[0] = False
+sell_signal[0] = False
+plotshape(buy_signal.tolist(), title="Buy Signal", style="triangleup", location="belowbar", color="#00e676")
+plotshape(sell_signal.tolist(), title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350")
 
 # --- Rich annotations ---
 n = len(close)

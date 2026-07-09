@@ -41,14 +41,18 @@ take_profit = close + (atr * atr_mult * 2)
 
 plot(upper, title="Upper Channel", color="#ef5350", linewidth=2)
 plot(lower, title="Lower Channel", color="#26a69a", linewidth=2)
+fill(upper, lower, title="Channel Fill", color="rgba(239,83,80,0.08)")
 
 bgcolor(descending, color="rgba(255,0,0,0.04)")
 
 plotshape(breakout, title="Breakout", shape="triangleup", location="belowbar", color="#00e676", size="small")
 
+n = len(close)
+breakout_zone = [(breakout[max(0, i - 3):i + 1].any() if hasattr(breakout, "any") else any(breakout[max(0, i - 3):i + 1])) for i in range(n)]
+bgcolor([("rgba(0,230,118,0.10)" if breakout_zone[i] else None) for i in range(n)])
+
 # --- Rich annotations: labels, lines, boxes on chart ---
 
-n = len(close)
 channel_label_placed = False
 last_breakout_idx = -100
 

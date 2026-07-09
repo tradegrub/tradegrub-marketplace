@@ -39,12 +39,16 @@ for i in range(len(close)):
         strategy.entry("Short", strategy.SHORT)
 
 # Plots
-plot(adx_val, title="ADX", color="blue")
-hline(adx_thresh, title="ADX Threshold", color="gray")
+plot(adx_val, title="ADX", color="#e0e0e0")
+hline(adx_thresh, title="ADX Threshold", color="#ff9800")
 plot(k_smooth, title="Stoch %K", color="green")
 plot(d_line, title="Stoch %D", color="red")
 hline(stoch_ob, title="Overbought", color="red")
 hline(stoch_os, title="Oversold", color="green")
+bgcolor(trending, color="rgba(38,166,154,0.04)")
+
+plotshape(long_cond, title="Long Entry", style="triangleup", location="belowbar", color="#00e676")
+plotshape(short_cond, title="Short Entry", style="triangledown", location="abovebar", color="#ef5350")
 
 # --- Rich annotations ---
 atr = ta.atr(high, low, close, 14)

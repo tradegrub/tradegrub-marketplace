@@ -42,6 +42,7 @@ for i in range(1, n):
 plot(score, title="ML Score", color="cyan")
 hline(buy_thresh, title="Buy Threshold", color="green", linestyle="dashed")
 hline(sell_thresh, title="Sell Threshold", color="red", linestyle="dashed")
+hline(50, title="Midline", color="gray", linestyle="dotted")
 
 # --- Rich annotations ---
 n = len(close)
@@ -53,6 +54,16 @@ prev_score = np.roll(score, 1)
 prev_score[0] = 50
 bull_cross = (score > buy_thresh) & (prev_score <= buy_thresh)
 bear_cross = (score < sell_thresh) & (prev_score >= sell_thresh)
+
+# Entry/exit markers
+plotshape(bull_cross, title="ML Long", style="triangleup", location="belowbar", color="#00e676")
+plotshape(bear_cross, title="ML Exit", style="xcross", location="absolute", color="#ff9800")
+
+# Zone shading: above buy threshold (bullish), below sell threshold (bearish)
+above_buy = np.array([score[i] > buy_thresh for i in range(n)])
+below_sell = np.array([score[i] < sell_thresh for i in range(n)])
+bgcolor(above_buy, color="rgba(76,175,80,0.12)")
+bgcolor(below_sell, color="rgba(244,67,54,0.12)")
 
 for i in range(lookback, n):
     if bull_cross[i] and (i - last_signal_idx) > cooldown:

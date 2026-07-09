@@ -102,7 +102,10 @@ for i in range(len(close)):
     elif close[i] < head_low[i]:
         strategy.close("Long")
 
+exit_signal = (~pattern_valid) & (close < head_low)
+
 plot(neckline_sma, title="Neckline", color="blue")
 plot(head_low, title="Head Low", color="red")
 plotshape(pattern_valid, title="IHS Signal", shape="triangleup", location="belowbar", color="green")
+plotshape(exit_signal, title="Exit Signal", shape="xcross", location="abovebar", color="orange")
 bgcolor(pattern_valid, color="rgba(0,200,0,0.1)")

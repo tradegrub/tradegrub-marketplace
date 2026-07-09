@@ -130,3 +130,15 @@ plot(rsi, title="RSI", color="blue")
 plot(cci / 4 + 50, title="CCI (scaled)", color="orange")
 plot(k_smooth, title="Stochastic %K", color="purple")
 hline(50, title="Midline", color="gray")
+
+# --- Entry / exit markers ---
+plotshape(new_long, title="Buy", style="triangleup", location="belowbar", color="green")
+plotshape(new_short, title="Sell", style="triangledown", location="abovebar", color="red")
+_exit_signal = (prev_long & ~long_cond) | (prev_short & ~short_cond)
+plotshape(_exit_signal, title="Exit", style="xcross", location="abovebar", color="orange")
+
+# --- Consensus zone backgrounds ---
+_bull_zone = [("rgba(76,175,80,0.12)" if long_cond[i] else None) for i in range(n)]
+_bear_zone = [("rgba(244,67,54,0.12)" if short_cond[i] else None) for i in range(n)]
+bgcolor(_bull_zone, title="Bullish Consensus")
+bgcolor(_bear_zone, title="Bearish Consensus")

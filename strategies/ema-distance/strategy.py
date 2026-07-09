@@ -38,6 +38,16 @@ hline(distance_pct, title="Upper Distance", color="red")
 hline(-distance_pct, title="Lower Distance", color="green")
 hline(0, title="Zero", color="gray")
 
+# --- Entry markers + zone highlighting to match concept art ---
+long_signal = [(dist[i] < -distance_pct and dist[i - 1] >= -distance_pct) if i > 0 else False for i in range(n)]
+short_signal = [(dist[i] > distance_pct and dist[i - 1] <= distance_pct) if i > 0 else False for i in range(n)]
+plotshape(long_signal, title="Buy Signal (Oversold)", style="triangleup", location="belowbar", color="#00e676")
+plotshape(short_signal, title="Short Signal (Overbought)", style="triangledown", location="abovebar", color="#ef5350")
+
+overbought_zone = [dist[i] > distance_pct for i in range(n)]
+oversold_zone = [dist[i] < -distance_pct for i in range(n)]
+bgcolor([("rgba(244,67,54,0.12)" if overbought_zone[i] else ("rgba(76,175,80,0.12)" if oversold_zone[i] else None)) for i in range(n)])
+
 # --- Rich annotations ---
 n = len(close)
 atr_ann = ta.atr(high, low, close, 14)

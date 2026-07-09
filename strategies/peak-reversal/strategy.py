@@ -83,6 +83,8 @@ for i in range(n):
 
 plotshape(long_signal, title="Long Entry", style="triangleup", location="belowbar", color="#00e676")
 plotshape(short_signal, title="Short Entry", style="triangledown", location="abovebar", color="#ff1744")
+bgcolor([("rgba(76,175,80,0.08)" if long_signal[i] else None) for i in range(n)], title="Bull Zone")
+bgcolor([("rgba(244,67,54,0.08)" if short_signal[i] else None) for i in range(n)], title="Bear Zone")
 
 last_long_ann = -100
 last_short_ann = -100

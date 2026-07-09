@@ -38,9 +38,12 @@ exit_signal = ta.crossover(tenkan, kijun) | (close > cloud_top)
 
 plot(tenkan, title="Tenkan", color="blue")
 plot(kijun, title="Kijun", color="red")
-plot(senkou_a, title="Senkou A", color="green")
-plot(senkou_b, title="Senkou B", color="red")
+p_senkou_a = plot(senkou_a, title="Senkou A", color="green")
+p_senkou_b = plot(senkou_b, title="Senkou B", color="red")
+fill(p_senkou_a, p_senkou_b, color="rgba(38,166,154,0.08)")
 bgcolor(price_below_cloud, color="rgba(255,0,0,0.05)")
+plotshape(exit_signal, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(tk_cross_bear, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350", size="small")
 
 n = len(close)
 last_signal_idx = -100

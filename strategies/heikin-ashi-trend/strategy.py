@@ -60,6 +60,12 @@ plot(slow_ema, title="Slow EMA", color="red")
 plotshape(ha_flip_bull, title="HA Bull Flip", style="triangleup", location="belowbar", color="green")
 plotshape(ha_flip_bear, title="HA Bear Flip", style="triangledown", location="abovebar", color="red")
 
+trend_bg_vals = [
+    ("rgba(76,175,80,0.12)" if bull_trend[i] else ("rgba(244,67,54,0.12)" if bear_trend[i] else None))
+    for i in range(n)
+]
+bgcolor(trend_bg_vals)
+
 # --- Rich annotations ---
 n = len(close)
 ha_bull_arr = ha_close > ha_open

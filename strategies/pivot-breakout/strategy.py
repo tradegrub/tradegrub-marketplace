@@ -48,6 +48,10 @@ fill(p1, p2, color="rgba(100, 100, 200, 0.06)")
 plotshape(long_signal, title="Long Breakout", style="triangleup", location="belowbar", color="green")
 plotshape(short_signal, title="Short Breakout", style="triangledown", location="abovebar", color="red")
 
+# Zone shading for breakout confirmation bars
+bgcolor([("rgba(76,175,80,0.12)" if long_signal[i] else None) for i in range(n)])
+bgcolor([("rgba(244,67,54,0.12)" if short_signal[i] else None) for i in range(n)])
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

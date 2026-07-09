@@ -111,3 +111,8 @@ for i in range(len(close)):
 plotshape(bull_pole & bull_flag & bull_break & vol_ok, style="triangleup", location="belowbar", color="green", title="Bull Flag")
 plotshape(bear_pole & bear_flag & bear_break & vol_ok, style="triangledown", location="abovebar", color="red", title="Bear Flag")
 plot(atr, title="ATR", color="gray", display="none")
+
+flag_active = bull_flag | bear_flag
+p_flag_high = plot([(float(flag_high[i]) if flag_active[i] else None) for i in range(n)], title="Flag High", color="#42a5f5", linewidth=1)
+p_flag_low = plot([(float(flag_low[i]) if flag_active[i] else None) for i in range(n)], title="Flag Low", color="#42a5f5", linewidth=1)
+fill(p_flag_high, p_flag_low, color="rgba(66,165,245,0.08)", title="Flag Channel")

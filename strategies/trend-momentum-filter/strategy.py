@@ -87,7 +87,16 @@ for i in range(len(close)):
                     border_color="rgba(239,83,80,0.15)", bgcolor="rgba(239,83,80,0.03)")
 
 # Plots
-plot(adx_val, title="ADX", color="blue")
-plot(plus_di, title="+DI", color="green")
-plot(minus_di, title="-DI", color="red")
-hline(adx_thresh, title="Trend Threshold", color="gray")
+plot(adx_val, title="ADX", color="#42a5f5", linewidth=2)
+plot(plus_di, title="+DI", color="#26a69a")
+plot(minus_di, title="-DI", color="#ef5350")
+plot(rsi, title="RSI", color="#ab47bc", linewidth=2)
+hline(adx_thresh, title="Trend Threshold", color="#42a5f5", linestyle="dashed")
+hline(rsi_ob, title="RSI Long Level", color="#00e676", linestyle="dashed")
+hline(rsi_os, title="RSI Short Level", color="#ef5350", linestyle="dashed")
+hline(50, title="RSI Midline", color="gray", linestyle="dotted")
+
+plotshape(long_cond, title="Long Signal", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(short_cond, title="Short Signal", shape="triangledown", location="abovebar", color="#ef5350", size="small")
+
+bgcolor([("rgba(66,165,245,0.06)" if trending[i] else None) for i in range(n)], title="Trending Zone")

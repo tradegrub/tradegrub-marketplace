@@ -29,6 +29,7 @@ if use_volume:
     bear_exhaustion = bear_exhaustion & vol_spike
     bull_exhaustion = bull_exhaustion & vol_spike
 
+plot(ma, title="EMA Baseline", color="#ff9800", linewidth=2)
 plot(distance, title="MA Distance", color="white")
 hline(dist_mult, title="Upper Threshold", color="red", linestyle="dashed")
 hline(-dist_mult, title="Lower Threshold", color="green", linestyle="dashed")

@@ -42,6 +42,16 @@ hline(ob_level, title="Overbought", color="red")
 hline(os_level, title="Oversold", color="green")
 hline(50, title="Midline", color="gray")
 
+# Entry/exit markers
+plotshape(bullish_div, title="Bullish Divergence", style="triangleup", location="belowbar", color="#00e676")
+plotshape(bearish_div, title="Bearish Divergence / Exit", style="xcross", location="absolute", color="#ff9800")
+
+# Overbought/oversold zone shading
+ob_zone = np.array([rsi[i] > ob_level for i in range(n)])
+os_zone = np.array([rsi[i] < os_level for i in range(n)])
+bgcolor(ob_zone, color="rgba(244,67,54,0.12)")
+bgcolor(os_zone, color="rgba(76,175,80,0.12)")
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

@@ -38,6 +38,9 @@ hline(rsi_oversold, title="Oversold", color="gray", panel=1)
 plotshape(entry_signal, title="Gap Recovery", style="triangleup", location="belowbar", color="green")
 
 n = len(close)
+gap_bg_vals = [("rgba(244,67,54,0.12)" if gap_down[i] else None) for i in range(n)]
+bgcolor(gap_bg_vals)
+
 last_signal_idx = -100
 
 for i in range(len(close)):

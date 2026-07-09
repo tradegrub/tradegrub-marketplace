@@ -38,6 +38,15 @@ hline(rsi_ob, title="Overbought", color="red")
 hline(rsi_os, title="Oversold", color="green")
 plot(macd_line, title="MACD", color="blue")
 plot(signal_line, title="Signal", color="orange")
+hline(0, title="Zero Line", color="gray")
+
+plotshape(long_cond.tolist(), title="Long", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(short_cond.tolist(), title="Short", style="triangledown", location="abovebar", color="#ff5252", size="small")
+
+# RSI OK zone highlight around confirmed crossover bars
+_n_bg = len(close)
+_rsi_ok_bg = [("rgba(0,230,118,0.08)" if (bool(long_cond[i]) or bool(short_cond[i])) else None) for i in range(_n_bg)]
+bgcolor(_rsi_ok_bg, title="RSI OK Zone")
 
 # --- Rich annotations ---
 n = len(close)

@@ -39,6 +39,8 @@ p1 = plot(highest_high, title="Channel High", color="green")
 p2 = plot(lowest_low, title="Channel Low", color="red")
 plot(mid, title="Midline", color="gray")
 fill(p1, p2, color="rgba(255, 193, 7, 0.08)")
+plot(exit_high, title="Exit High", color="orange")
+plot(exit_low, title="Exit Low", color="orange")
 
 # --- Rich annotations ---
 n = len(close)
@@ -53,6 +55,9 @@ for i in range(1, n):
         long_sig[i] = True
     if close[i] < lowest_low[i - 1]:
         short_sig[i] = True
+
+plotshape(long_sig, title="Long Breakout", style="triangleup", location="belowbar", color="green")
+plotshape(short_sig, title="Short Breakout", style="triangledown", location="abovebar", color="red")
 
 for i in range(entry_length, n):
     if long_sig[i] and (i - last_signal_idx) > cooldown:

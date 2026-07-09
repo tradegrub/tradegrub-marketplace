@@ -25,10 +25,13 @@ for i in range(1, n):
     if exit_cond[i]:
         strategy.close("Long")
 
-p1 = plot(fast_ema, title="Fast EMA", color="orange")
-p2 = plot(slow_ema, title="Slow EMA", color="blue")
-plot(trend_ema, title="Trend Filter", color="gray")
+p1 = plot(fast_ema, title="Fast EMA", color="#42a5f5")
+p2 = plot(slow_ema, title="Slow EMA", color="#ef5350")
+plot(trend_ema, title="Trend Filter", color="#ff9800", style="dashed")
 fill(p1, p2, color="rgba(0,150,255,0.1)")
+
+# Shade bars where price is below the trend filter ("No Longs" zone in the concept)
+bgcolor([("rgba(255,152,0,0.08)" if close[i] < trend_ema[i] else None) for i in range(n)])
 
 # --- Rich annotations ---
 n = len(close)
@@ -36,6 +39,10 @@ cross_up = ta.crossover(fast_ema, slow_ema)
 cross_down = ta.crossunder(fast_ema, slow_ema)
 atr_ann = ta.atr(high, low, close, 14)
 last_signal_idx = -100
+
+# Crossover markers to match the BUY SIGNAL / Death Cross annotations in the concept
+plotshape(cross_up, title="Golden Cross", style="triangleup", location="belowbar", color="#00e676")
+plotshape(cross_down, title="Death Cross", style="xcross", location="abovebar", color="#ef5350")
 
 for i in range(1, n):
     if i - last_signal_idx < 15:

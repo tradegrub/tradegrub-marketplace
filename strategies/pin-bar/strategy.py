@@ -48,6 +48,11 @@ plot(body_ratio, title="Body Ratio", color="blue")
 plotshape(bull_pin, title="Bull Pin", style="triangleup", location="belowbar", color="green")
 plotshape(bear_pin, title="Bear Pin", style="triangledown", location="abovebar", color="red")
 
+# Rejection zone shading: bullish pin bars (long tail rejection of lower prices)
+# shade green, bearish pin bars (rejection of higher prices) shade red
+bgcolor([("rgba(76,175,80,0.12)" if bull_pin[i] else None) for i in range(n)])
+bgcolor([("rgba(244,67,54,0.12)" if bear_pin[i] else None) for i in range(n)])
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

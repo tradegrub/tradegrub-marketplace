@@ -30,6 +30,11 @@ p2 = plot(mid_sma, title="Mid SMA", color="orange")
 p3 = plot(slow_sma, title="Slow SMA", color="red")
 fill(p1, p2, color="rgba(0,255,0,0.08)")
 
+buy_cond = ta.crossover(fast_sma, mid_sma) & (mid_sma > slow_sma)
+plotshape(buy_cond, title="Buy (cross + filter)", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(exit_cond, title="Exit (cross)", shape="triangledown", location="abovebar", color="#ef5350", size="small")
+bgcolor([("rgba(38,166,154,0.05)" if mid_sma[i] > slow_sma[i] else None) for i in range(n)], title="Trend OK Zone")
+
 # --- Rich annotations ---
 n = len(close)
 cross_up = ta.crossover(fast_sma, mid_sma)

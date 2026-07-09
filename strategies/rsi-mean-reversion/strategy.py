@@ -22,6 +22,20 @@ for i in range(len(close)):
         strategy.close("Long")
 
 plot(rsi, title="RSI", color="purple")
+hline(overbought, title="Overbought", color="red")
+hline(oversold, title="Oversold", color="green")
+
+plotshape(buy.tolist(), title="Buy", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(sell.tolist(), title="Exit", style="xcross", location="abovebar", color="#ff9800", size="small")
+
+# Oversold/overbought zone shading on price panel
+_n_bg = len(close)
+_zone_bg = [
+    ("rgba(0,230,118,0.10)" if rsi[i] <= oversold else
+     ("rgba(239,83,80,0.10)" if rsi[i] >= overbought else None))
+    for i in range(_n_bg)
+]
+bgcolor(_zone_bg, title="RSI Zone")
 
 # --- Rich annotations ---
 n = len(close)

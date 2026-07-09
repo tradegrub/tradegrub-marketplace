@@ -103,6 +103,7 @@ plot(smoothed, title="Smoothed (EMA)", color="#ff9800", linewidth=2)
 # Entry markers
 plotshape(long_signal, title="Long Entry", style="triangleup", location="belowbar", color="#00e676")
 plotshape(short_signal, title="Short Entry", style="triangledown", location="abovebar", color="#ff1744")
+plotshape(exit_long_signal | exit_short_signal, title="Exit (Mean)", style="xcross", location="absolute", color="#ff9800")
 
 # Background shading for overbought/oversold zones
 ob_zone = np.array([not np.isnan(zscore[i]) and zscore[i] > entry_z for i in range(n)])

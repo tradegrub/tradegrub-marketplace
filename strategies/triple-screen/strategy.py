@@ -98,8 +98,14 @@ for i in range(len(close)):
                     border_color="rgba(239,83,80,0.15)", bgcolor="rgba(239,83,80,0.03)")
 
 # Plots
-plot(ema_trend, title="Trend EMA", color="blue")
-plot(hist, title="MACD Histogram", color="teal")
-plot(stoch_smooth, title="Stochastic %K", color="purple")
-hline(stoch_ob, title="Stoch OB", color="red")
-hline(stoch_os, title="Stoch OS", color="green")
+plot(ema_trend, title="Trend EMA", color="#ff9800", linewidth=2)
+plot(hist, title="MACD Histogram", color="#ab47bc")
+plot(stoch_smooth, title="Stochastic %K", color="#42a5f5", linewidth=2)
+hline(stoch_ob, title="Stoch OB", color="#ef5350", linestyle="dashed")
+hline(stoch_os, title="Stoch OS", color="#00e676", linestyle="dashed")
+
+plotshape(long_cond, title="Buy (all 3 align)", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(short_cond, title="Sell (all 3 align)", shape="triangledown", location="abovebar", color="#ef5350", size="small")
+
+bgcolor([("rgba(76,175,80,0.08)" if long_cond[i] else None) for i in range(n)], title="Bull Zone")
+bgcolor([("rgba(244,67,54,0.08)" if short_cond[i] else None) for i in range(n)], title="Bear Zone")

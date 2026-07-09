@@ -52,6 +52,14 @@ fill(p1, p2, color="rgba(0, 150, 136, 0.06)")
 plotshape(long_signal, title="Long Breakout", style="triangleup", location="belowbar", color="green")
 plotshape(short_signal, title="Short Breakout", style="triangledown", location="abovebar", color="red")
 
+exit_long_signal = ta.crossunder(close, range_mid)
+exit_short_signal = ta.crossover(close, range_mid)
+plotshape(exit_long_signal, title="Long Exit", style="xcross", location="abovebar", color="#ff9800")
+plotshape(exit_short_signal, title="Short Exit", style="xcross", location="belowbar", color="#ff9800")
+
+bg_colors = [("rgba(156,39,176,0.06)" if (close[i] <= range_high[i] and close[i] >= range_low[i]) else None) for i in range(n)]
+bgcolor(bg_colors, title="Range Zone")
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

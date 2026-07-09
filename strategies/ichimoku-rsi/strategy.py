@@ -101,3 +101,11 @@ plot(kijun, title="Kijun-sen", color="red")
 p_a = plot(senkou_a, title="Senkou A", color="green")
 p_b = plot(senkou_b, title="Senkou B", color="maroon")
 fill(p_a, p_b, color="rgba(0, 255, 0, 0.1)")
+
+plot(rsi, title="RSI", color="purple", panel=1)
+hline(rsi_ob, title="Overbought", color="red", panel=1)
+hline(50, title="Midline", color="gray", panel=1)
+hline(rsi_os, title="Oversold", color="green", panel=1)
+
+plotshape(long_cond, title="Long Signal", style="triangleup", location="belowbar", color="green")
+plotshape(short_cond, title="Short Signal", style="triangledown", location="abovebar", color="red")

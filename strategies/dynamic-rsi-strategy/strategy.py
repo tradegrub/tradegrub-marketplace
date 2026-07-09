@@ -73,3 +73,12 @@ for i in range(base_len, n):
 
 plotshape(long_sig.tolist(), title="Long", style="triangleup", location="belowbar", color="#00e676", size="small")
 plotshape(short_sig.tolist(), title="Short", style="triangledown", location="abovebar", color="#ff1744", size="small")
+
+# RSI line and its dynamic overbought/oversold bands (matches concept sub-panel)
+plot(rsi_arr.tolist(), title="RSI", color="#ab47bc", width=2)
+ob_plot = plot(ob_level.tolist(), title="Overbought Band", color="#ff9800", style="dashed")
+os_plot = plot(os_level.tolist(), title="Oversold Band", color="#42a5f5", style="dashed")
+fill(ob_plot, os_plot, color="rgba(171,71,188,0.04)")
+
+# Highlight bars where a buy/exit signal fires
+bgcolor([("rgba(0,230,118,0.12)" if long_sig[i] else ("rgba(239,83,80,0.12)" if short_sig[i] else None)) for i in range(n)])

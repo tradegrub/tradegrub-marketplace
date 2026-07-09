@@ -69,4 +69,13 @@ for i in range(1, n):
         if cl[i] >= trend_line[i] or cl[i] <= tp:
             in_short = False
 
-plot(trend_line.tolist(), title="Dynamic Trend", color="#ff9800", linewidth=2)
+uptrend_line = [trend_line[i] if trend[i] == 1 else np.nan for i in range(n)]
+downtrend_line = [trend_line[i] if trend[i] == -1 else np.nan for i in range(n)]
+plot(uptrend_line, title="Supertrend (Bullish)", color="#26a69a", linewidth=2)
+plot(downtrend_line, title="Supertrend (Bearish)", color="#ef5350", linewidth=2)
+
+buy_signal = [trend[i] == 1 and trend[i-1] != 1 for i in range(n)]
+exit_signal = [trend[i] == -1 and trend[i-1] != -1 for i in range(n)]
+
+plotshape(buy_signal, title="Buy Signal", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(exit_signal, title="Exit Signal", shape="triangledown", location="abovebar", color="#ef5350", size="small")

@@ -34,12 +34,19 @@ for i in range(1, n):
 plot(chop, title="Choppiness Index", color="purple")
 hline(chop_threshold, title="Trend Threshold", color="green")
 hline(61.8, title="Chop Threshold", color="red")
-plot(fast, title="Fast EMA", color="blue")
-plot(slow, title="Slow EMA", color="orange")
+plot(fast, title="Fast EMA", color="#26a69a")
+plot(slow, title="Slow EMA", color="#ef5350")
+
+is_trending = chop < chop_threshold
+is_choppy = chop > 61.8
+bgcolor(is_trending, color="rgba(38,166,154,0.05)")
+bgcolor(is_choppy, color="rgba(239,83,80,0.05)")
 
 # --- Rich annotations ---
 ema_cross_up = ta.crossover(fast, slow)
 ema_cross_down = ta.crossunder(fast, slow)
+plotshape(is_trending & ema_cross_up, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(is_trending & ema_cross_down, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350", size="small")
 atr = ta.atr(high, low, close, 14)
 n = len(close)
 last_signal_idx = -100

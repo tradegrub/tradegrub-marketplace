@@ -33,15 +33,36 @@ for i in range(len(close)):
     if fast_bull[i]:
         strategy.close("Short")
 
-plot(st_fast_line, title="Fast Supertrend", color="green")
-plot(st_slow_line, title="Slow Supertrend", color="red")
+p_fast = plot(st_fast_line, title="Fast Supertrend", color="green")
+p_slow = plot(st_slow_line, title="Slow Supertrend", color="red")
 plot(close, title="Close", color="gray")
+fill(p_fast, p_slow, title="Supertrend Cloud", color="rgba(171,71,188,0.08)")
 
 # --- Rich annotations ---
 n = len(close)
 atr = ta.atr(high, low, close, length2)
 last_long_idx = -100
 last_short_idx = -100
+
+# Both-agree / disagree zone backgrounds and entry/exit markers
+_both_bull = fast_bull & slow_bull
+_both_bear = fast_bear & slow_bear
+_disagree = (fast_bull != slow_bull)
+bg_colors = [
+    ("rgba(0,230,118,0.10)" if _both_bull[i] else
+     ("rgba(239,83,80,0.10)" if _both_bear[i] else
+      ("rgba(255,152,0,0.08)" if _disagree[i] else None)))
+    for i in range(n)
+]
+bgcolor(bg_colors, title="Agreement Zone")
+
+_long_entry_marker = _both_bull & ~np.concatenate(([False], _both_bull[:-1]))
+_short_entry_marker = _both_bear & ~np.concatenate(([False], _both_bear[:-1]))
+_fast_flip_exit = (fast_bear & np.concatenate(([False], fast_bull[:-1]))) | \
+                  (fast_bull & np.concatenate(([False], fast_bear[:-1])))
+plotshape(_long_entry_marker, title="Long Entry", style="triangleup", location="belowbar", color="#00e676")
+plotshape(_short_entry_marker, title="Short Entry", style="triangledown", location="abovebar", color="#ef5350")
+plotshape(_fast_flip_exit, title="Fast Flip Exit", style="xcross", location="abovebar", color="#ff9800")
 
 for i in range(max(length1, length2), n):
     both_bull = fast_bull[i] and slow_bull[i]

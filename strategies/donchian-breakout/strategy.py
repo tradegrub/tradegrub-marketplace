@@ -52,6 +52,9 @@ fill(p1, p2, color="rgba(0, 150, 136, 0.06)")
 plotshape(long_entry, title="Long Signal", style="triangleup", location="belowbar", color="green")
 plotshape(short_entry, title="Short Signal", style="triangledown", location="abovebar", color="red")
 
+# Highlight breakout bars to match the glowing breakout candle in the concept art
+bgcolor([("rgba(0,230,118,0.12)" if long_entry[i] else ("rgba(239,83,80,0.12)" if short_entry[i] else None)) for i in range(n)])
+
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

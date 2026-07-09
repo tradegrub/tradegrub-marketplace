@@ -33,10 +33,28 @@ for i in range(2, n):
     if ta.crossover(close, basis)[i]:
         strategy.close("Short")
 
-plot(bb_width, title="BB Width", color="blue")
-plot(width_min * 1.05, title="Squeeze Level", color="red")
+p_bb_upper = plot(upper, title="Upper Band", color="#9c27b0")
+plot(basis, title="Basis", color="#42a5f5")
+p_bb_lower = plot(lower, title="Lower Band", color="#9c27b0")
+fill(p_bb_upper, p_bb_lower, color="rgba(156,39,176,0.06)")
 
-bgcolor(is_squeeze[-1], color="rgba(255, 235, 59, 0.15)")
+plot(bb_width, title="BB Width", color="#ff9800")
+plot(width_min * 1.05, title="Squeeze Level", color="#ff9800")
+
+bgcolor(is_squeeze, color="rgba(255, 235, 59, 0.12)")
+
+expand_long = np.zeros(n, dtype=bool)
+expand_short = np.zeros(n, dtype=bool)
+for i in range(2, n):
+    _expanding = bb_width[i] > bb_width[i-1] * 1.1
+    if is_squeeze[i-1] and _expanding:
+        if close[i] > basis[i]:
+            expand_long[i] = True
+        else:
+            expand_short[i] = True
+
+plotshape(expand_long.tolist(), title="Long Expansion", style="triangleup", location="belowbar", color="#00e676")
+plotshape(expand_short.tolist(), title="Short Expansion", style="triangledown", location="abovebar", color="#ef5350")
 
 # --- Rich annotations ---
 atr = ta.atr(high, low, close, 14)

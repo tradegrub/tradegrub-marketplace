@@ -53,6 +53,8 @@ fill(p1, p2, color="rgba(255, 152, 0, 0.06)")
 plotshape(long_signal, title="Long Breakout", style="triangleup", location="belowbar", color="green")
 plotshape(short_signal, title="Short Breakout", style="triangledown", location="abovebar", color="red")
 
+bgcolor([("rgba(76,175,80,0.08)" if long_signal[i] else None) for i in range(n)], title="Bull Zone")
+bgcolor([("rgba(244,67,54,0.08)" if short_signal[i] else None) for i in range(n)], title="Bear Zone")
 # --- Rich annotations ---
 n = len(close)
 last_signal_idx = -100

@@ -26,8 +26,14 @@ for i in range(1, n):
 
 plot(plus_di, title="+DI", color="green")
 plot(minus_di, title="-DI", color="red")
-plot(adx_val, title="ADX", color="blue")
-hline(adx_thresh, title="Threshold", color="gray")
+plot(adx_val, title="ADX", color="#e0e0e0")
+hline(adx_thresh, title="Threshold", color="#ff9800")
+
+no_trade_zone = adx_val <= adx_thresh
+bgcolor(no_trade_zone, color="rgba(239,83,80,0.04)")
+
+plotshape(di_cross_up & (adx_val > adx_thresh), title="Long Entry", style="triangleup", location="belowbar", color="#00e676")
+plotshape(di_cross_down, title="Exit", style="triangledown", location="abovebar", color="#ef5350")
 
 # --- Rich annotations ---
 atr = ta.atr(high, low, close, 14)

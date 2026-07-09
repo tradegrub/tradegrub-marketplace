@@ -27,11 +27,12 @@ above_ema = close > ema_val if use_ema_filter else np.ones(len(close), dtype=boo
 
 entry_signal = is_flat & breakout & vol_surge & above_ema
 
-plot(base_high, title="Base High", color="gray", linewidth=1)
-plot(base_low, title="Base Low", color="gray", linewidth=1)
+p_high = plot(base_high, title="Base High", color="#42a5f5", linewidth=1)
+p_low = plot(base_low, title="Base Low", color="#42a5f5", linewidth=1)
 plot(ema_val, title="EMA Filter", color="blue", linewidth=1)
+fill(p_high, p_low, color="rgba(66,165,245,0.05)")
 bgcolor(is_flat, color="rgba(100,149,237,0.08)")
-plotshape(entry_signal, title="Breakout", shape="triangleup", location="belowbar", color="green")
+plotshape(entry_signal, title="Breakout", style="triangleup", location="belowbar", color="#00e676")
 
 n = len(close)
 last_signal_idx = -100

@@ -49,6 +49,8 @@ hline(min_body, title="Min Body", color="gray")
 plotshape(bull_2bar, title="Bull 2-Bar", style="triangleup", location="belowbar", color="green")
 plotshape(bear_2bar, title="Bear 2-Bar", style="triangledown", location="abovebar", color="red")
 
+bgcolor([("rgba(76,175,80,0.08)" if bull_2bar[i] else None) for i in range(n)], title="Bull Zone")
+bgcolor([("rgba(244,67,54,0.08)" if bear_2bar[i] else None) for i in range(n)], title="Bear Zone")
 # --- Rich annotations ---
 n = len(close)
 exit_bars = 30

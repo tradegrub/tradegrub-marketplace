@@ -39,12 +39,21 @@ for i in range(2, n):
         strategy.exit("Short Exit", "Short", stop=high[i-1] + atr[i] * 0.5,
                       limit=close[i] - atr[i] * atr_mult)
 
-plot(support, title="Support", color="green")
-plot(resistance, title="Resistance", color="red")
+plot(support, title="Support", color="#42a5f5")
+plot(resistance, title="Resistance", color="#ef5350")
 plot(body_pct, title="Body Pct", color="blue")
 hline(doji_pct, title="Doji Threshold", color="gray")
-plotshape(bull_confirm, title="Bull Doji", style="triangleup", location="belowbar", color="green")
-plotshape(bear_confirm, title="Bear Doji", style="triangledown", location="abovebar", color="red")
+
+doji_arr = body_pct <= doji_pct
+near_support_arr = (low - support) < atr * 0.3
+near_resistance_arr = (resistance - high) < atr * 0.3
+doji_at_extreme = doji_arr & (near_support_arr | near_resistance_arr)
+
+plotshape(doji_at_extreme, title="Doji", style="xcross", location="abovebar", color="#ff9800", size="small")
+plotshape(bull_confirm, title="Bull Doji", style="triangleup", location="belowbar", color="#00e676")
+plotshape(bear_confirm, title="Bear Doji", style="triangledown", location="abovebar", color="#ef5350")
+
+bgcolor([("rgba(255,152,0,0.10)" if doji_at_extreme[i] else None) for i in range(n)])
 
 # --- Rich annotations ---
 last_signal_idx = -100

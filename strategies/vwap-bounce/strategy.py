@@ -40,10 +40,15 @@ for i in range(1, n):
     if short_exit:
         strategy.close("Short")
 
-plot(vwap_val, title="VWAP", color="blue")
-plot(trend_sma, title="Trend SMA", color="orange")
-bgcolor(bull_bounce[-1], color="rgba(0,255,0,0.1)")
-bgcolor(bear_reject[-1], color="rgba(255,0,0,0.1)")
+plot(vwap_val, title="VWAP", color="#ab47bc", linewidth=2)
+plot(trend_sma, title="Trend SMA", color="#ff9800")
+
+plotshape(bull_bounce, title="Buy (bounce)", shape="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(bear_reject, title="Sell (reject)", shape="triangledown", location="abovebar", color="#ef5350", size="small")
+
+bgcolor([("rgba(171,71,188,0.06)" if near_vwap[i] else None) for i in range(n)], title="VWAP Proximity Zone")
+bgcolor([("rgba(0,255,0,0.1)" if bull_bounce[i] else None) for i in range(n)], title="Bounce Zone")
+bgcolor([("rgba(255,0,0,0.1)" if bear_reject[i] else None) for i in range(n)], title="Rejection Zone")
 
 # --- Rich annotations ---
 n = len(close)

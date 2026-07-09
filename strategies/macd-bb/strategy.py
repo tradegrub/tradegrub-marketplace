@@ -113,3 +113,7 @@ plot(bb_basis, title="BB Middle", color="gray")
 fill(p_upper, p_lower, color="rgba(150, 150, 255, 0.1)")
 plot(macd_line, title="MACD Line", color="blue")
 plot(signal_line, title="Signal Line", color="orange")
+hline(0, title="Zero Line", color="gray", linestyle="dashed")
+
+plotshape(long_cond, title="Long Entry", shape="triangleup", location="belowbar", color="green")
+plotshape(short_cond, title="Short Entry", shape="triangledown", location="abovebar", color="red")

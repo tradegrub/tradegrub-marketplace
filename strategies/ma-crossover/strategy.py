@@ -23,6 +23,14 @@ for i in range(len(close)):
 
 plot(fast_ma, title="Fast MA", color="blue")
 plot(slow_ma, title="Slow MA", color="orange")
+fill("Fast MA", "Slow MA", color="rgba(255, 152, 0, 0.08)")
+
+plotshape(buy, title="Golden Cross", shape="triangleup", location="belowbar", color="green")
+plotshape(sell, title="Death Cross", shape="triangledown", location="abovebar", color="red")
+
+trend_bull = fast_ma > slow_ma
+bgcolor_vals = [("rgba(76,175,80,0.08)" if trend_bull[i] else "rgba(244,67,54,0.08)") for i in range(len(close))]
+bgcolor(bgcolor_vals)
 
 # --- Rich annotations ---
 n = len(close)
