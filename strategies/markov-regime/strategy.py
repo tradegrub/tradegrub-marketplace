@@ -103,17 +103,29 @@ for i in range(n):
             in_short = False
 
 # Background coloring for regime zones
-for i in range(window + 1, n):
-    if bull_prob[i] >= 0.5:
-        bgcolor("rgba(0,230,118,0.05)")
-    elif bear_prob[i] >= 0.5:
-        bgcolor("rgba(255,23,68,0.05)")
-    else:
-        bgcolor("rgba(66,165,245,0.03)")
+bgcolor_vals = [
+    (
+        "rgba(0,230,118,0.12)" if (i > window and bull_prob[i] >= 0.5)
+        else "rgba(255,23,68,0.12)" if (i > window and bear_prob[i] >= 0.5)
+        else "rgba(66,165,245,0.10)" if i > window
+        else None
+    )
+    for i in range(n)
+]
+bgcolor(bgcolor_vals)
+
+# Entry threshold reference line
+hline(entry_prob, title="Entry Threshold", color="#ffc107")
+hline(0.5, title="50% Regime Line", color="gray")
 
 # Plot signals
 plotshape(long_signal, title="Long Entry", style="triangleup", location="belowbar", color="#00e676")
 plotshape(short_signal, title="Short Entry", style="triangledown", location="abovebar", color="#ff1744")
+
+# Regime probability lines
+plot(bull_prob, title="Bull Probability", color="#00e676")
+plot(bear_prob, title="Bear Probability", color="#ff1744")
+plot(neutral_prob, title="Neutral Probability", color="#42a5f5")
 
 # Labels and level annotations
 last_long_ann = -100

@@ -37,14 +37,20 @@ plot(upper_band, title="Upper ATR Band", color="red")
 plot(lower_band, title="Lower ATR Band", color="green")
 fill("Upper ATR Band", "Lower ATR Band", color="rgba(33, 150, 243, 0.06)")
 
-plotshape(cross_up_lower, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676", size="small")
-plotshape(cross_down_upper, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350", size="small")
-bgcolor([("rgba(76,175,80,0.08)" if up_lower[i] else None) for i in range(n)], title="Bull Zone")
-bgcolor([("rgba(244,67,54,0.08)" if down_upper[i] else None) for i in range(n)], title="Bear Zone")
 # --- Rich annotations ---
-n = len(close)
 cross_up_lower = ta.crossover(close, lower_band)
 cross_down_upper = ta.crossunder(close, upper_band)
+
+plotshape(cross_up_lower, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676", size="small")
+plotshape(cross_down_upper, title="Sell Signal", style="triangledown", location="abovebar", color="#ef5350", size="small")
+
+bgcolor_vals = [
+    ("rgba(76,175,80,0.08)" if float(close[i]) <= float(lower_band[i]) else
+     "rgba(244,67,54,0.08)" if float(close[i]) >= float(upper_band[i]) else None)
+    for i in range(n)
+]
+bgcolor(bgcolor_vals)
+
 last_signal_idx = -100
 cooldown = 20
 
