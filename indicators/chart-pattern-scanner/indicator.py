@@ -1,6 +1,6 @@
 from tg_scripting import *
 
-indicator("Chart Pattern Scanner", overlay=True)
+indicator("Chart Pattern Scanner", overlay=True, max_labels_count=500, max_lines_count=500)
 
 # --- Inputs ---
 swing_len = input.int(5, "Swing Detection Length", minval=2, maxval=20)
