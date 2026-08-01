@@ -1,0 +1,15 @@
+{
+  "name": "Bar Behavior Analysis",
+  "id": "bar-behavior-analysis",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Statistical analysis of bar behavior showing the probability of bullish or bearish follow-through on subsequent bars",
+  "category": "statistics",
+  "tags": ["statistics", "probability", "bar-analysis", "odds", "follow-through"],
+  "languages": ["python"],
+  "overlay": false,
+  "official": true,
+  "likes": 4200
+}

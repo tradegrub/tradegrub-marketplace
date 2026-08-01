@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="600">Daily Percent Levels</text>
+
+  <!-- Reference price line -->
+  <line x1="80" y1="250" x2="720" y2="250" stroke="#787b86" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="740" y="254" fill="#787b86" font-size="12">Ref Price</text>
+
+  <!-- Green levels above -->
+  <line x1="80" y1="218" x2="720" y2="218" stroke="#26a69a" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+  <text x="740" y="222" fill="#26a69a" font-size="11">+0.5%</text>
+
+  <line x1="80" y1="186" x2="720" y2="186" stroke="#26a69a" stroke-width="1" stroke-dasharray="5,4" opacity="0.7"/>
+  <text x="740" y="190" fill="#26a69a" font-size="11">+1.0%</text>
+
+  <line x1="80" y1="154" x2="720" y2="154" stroke="#26a69a" stroke-width="1" stroke-dasharray="5,4" opacity="0.8"/>
+  <text x="740" y="158" fill="#26a69a" font-size="11">+1.5%</text>
+
+  <line x1="80" y1="122" x2="720" y2="122" stroke="#26a69a" stroke-width="1" stroke-dasharray="5,4" opacity="0.9"/>
+  <text x="740" y="126" fill="#26a69a" font-size="11">+2.0%</text>
+
+  <!-- Red levels below -->
+  <line x1="80" y1="282" x2="720" y2="282" stroke="#ef5350" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+  <text x="740" y="286" fill="#ef5350" font-size="11">-0.5%</text>
+
+  <line x1="80" y1="314" x2="720" y2="314" stroke="#ef5350" stroke-width="1" stroke-dasharray="5,4" opacity="0.7"/>
+  <text x="740" y="318" fill="#ef5350" font-size="11">-1.0%</text>
+
+  <line x1="80" y1="346" x2="720" y2="346" stroke="#ef5350" stroke-width="1" stroke-dasharray="5,4" opacity="0.8"/>
+  <text x="740" y="350" fill="#ef5350" font-size="11">-1.5%</text>
+
+  <line x1="80" y1="378" x2="720" y2="378" stroke="#ef5350" stroke-width="1" stroke-dasharray="5,4" opacity="0.9"/>
+  <text x="740" y="382" fill="#ef5350" font-size="11">-2.0%</text>
+
+  <!-- Price line weaving between levels -->
+  <polyline points="80,250 120,240 160,220 200,200 240,190 280,210 320,235 360,260 400,290 440,310 480,300 520,270 560,240 600,215 640,195 680,175 720,160"
+    fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Axis labels -->
+  <text x="400" y="470" text-anchor="middle" fill="#787b86" font-size="12">Time</text>
+  <text x="50" y="250" text-anchor="middle" fill="#787b86" font-size="12" transform="rotate(-90,50,250)">Price</text>
+</svg>

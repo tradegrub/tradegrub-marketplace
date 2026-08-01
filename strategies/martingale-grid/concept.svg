@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="600">Martingale Grid Strategy</text>
+
+  <!-- Grid levels (dashed horizontal lines) -->
+  <line x1="80" y1="100" x2="720" y2="100" stroke="#787b86" stroke-width="0.5" stroke-dasharray="6,4"/>
+  <line x1="80" y1="160" x2="720" y2="160" stroke="#787b86" stroke-width="0.5" stroke-dasharray="6,4"/>
+  <line x1="80" y1="220" x2="720" y2="220" stroke="#787b86" stroke-width="0.5" stroke-dasharray="6,4"/>
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#787b86" stroke-width="0.5" stroke-dasharray="6,4"/>
+  <line x1="80" y1="340" x2="720" y2="340" stroke="#787b86" stroke-width="0.5" stroke-dasharray="6,4"/>
+
+  <!-- Grid level labels -->
+  <text x="45" y="104" text-anchor="middle" fill="#787b86" font-size="11">Grid 1</text>
+  <text x="45" y="164" text-anchor="middle" fill="#787b86" font-size="11">Grid 2</text>
+  <text x="45" y="224" text-anchor="middle" fill="#787b86" font-size="11">Grid 3</text>
+  <text x="45" y="284" text-anchor="middle" fill="#787b86" font-size="11">Grid 4</text>
+  <text x="45" y="344" text-anchor="middle" fill="#787b86" font-size="11">Grid 5</text>
+
+  <!-- Take-profit line -->
+  <line x1="80" y1="80" x2="720" y2="80" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="740" y="84" fill="#26a69a" font-size="11" font-weight="600">Take Profit</text>
+
+  <!-- Stop-loss line -->
+  <line x1="80" y1="400" x2="720" y2="400" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="740" y="404" fill="#ef5350" font-size="11" font-weight="600">Stop Loss</text>
+
+  <!-- Price line declining then recovering -->
+  <polyline points="100,90 140,105 180,130 210,155 250,170 280,210 310,230 340,270 370,290 400,330 420,345 440,340 460,310 480,270 500,230 520,190 540,150 570,120 600,95 640,80"
+    fill="none" stroke="#2196F3" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Buy arrows at grid levels - progressively larger -->
+  <!-- Grid 1 hit: small buy -->
+  <polygon points="180,108 174,120 186,120" fill="#26a69a"/>
+  <text x="180" y="135" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">1x</text>
+
+  <!-- Grid 2 hit: medium buy -->
+  <polygon points="250,168 242,184 258,184" fill="#26a69a"/>
+  <text x="250" y="200" text-anchor="middle" fill="#26a69a" font-size="11" font-weight="600">2x</text>
+
+  <!-- Grid 3 hit: larger buy -->
+  <polygon points="310,218 299,238 321,238" fill="#26a69a"/>
+  <text x="310" y="255" text-anchor="middle" fill="#26a69a" font-size="12" font-weight="600">4x</text>
+
+  <!-- Grid 4 hit: even larger buy -->
+  <polygon points="370,278 356,302 384,302" fill="#26a69a"/>
+  <text x="370" y="318" text-anchor="middle" fill="#26a69a" font-size="13" font-weight="600">8x</text>
+
+  <!-- Grid 5 hit: largest buy -->
+  <polygon points="420,338 403,368 437,368" fill="#26a69a"/>
+  <text x="420" y="385" text-anchor="middle" fill="#26a69a" font-size="14" font-weight="600">16x</text>
+
+  <!-- Recovery arrow to take profit -->
+  <line x1="630" y1="90" x2="630" y2="82" stroke="#26a69a" stroke-width="2"/>
+  <polygon points="630,75 624,85 636,85" fill="#26a69a"/>
+
+  <!-- Legend -->
+  <rect x="100" y="440" width="12" height="12" fill="#2196F3" rx="2"/>
+  <text x="118" y="451" fill="#e2e8f0" font-size="12">Price</text>
+
+  <rect x="200" y="440" width="12" height="12" fill="#26a69a" rx="2"/>
+  <text x="218" y="451" fill="#e2e8f0" font-size="12">Buy Orders (doubling size)</text>
+
+  <rect x="440" y="440" width="12" height="12" fill="#ef5350" rx="2"/>
+  <text x="458" y="451" fill="#e2e8f0" font-size="12">Stop Loss</text>
+
+  <text x="400" y="480" text-anchor="middle" fill="#787b86" font-size="11">Each grid level doubles position size to lower average entry price</text>
+</svg>

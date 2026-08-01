@@ -1,0 +1,16 @@
+{
+  "name": "Logarithmic Moving Average",
+  "id": "log-moving-average",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Moving average with logarithmic weighting and signal line crossovers",
+  "category": "trend",
+  "tags": ["moving-average", "trend", "weighted", "crossover"],
+  "overlay": true,
+  "inputs": [
+    {"name": "length", "type": "int", "default": 20, "min": 2, "max": 200},
+    {"name": "signal_length", "type": "int", "default": 9, "min": 2, "max": 50}
+  ]
+}

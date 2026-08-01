@@ -1,0 +1,15 @@
+{
+  "name": "RMI Band Reversal",
+  "id": "rmi-band-reversal",
+  "version": "1.0.0",
+  "type": "strategy",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Mean reversion strategy using Relative Momentum Index with Bollinger Bands to identify oversold and overbought reversals with momentum confirmation",
+  "category": "mean-reversion",
+  "tags": ["rmi", "bollinger", "mean-reversion", "momentum"],
+  "languages": ["python"],
+  "overlay": false,
+  "official": true,
+  "likes": 4500
+}

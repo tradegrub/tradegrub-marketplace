@@ -1,0 +1,11 @@
+{
+  "name": "Supertrend Fibonacci Levels",
+  "id": "supertrend-fibonacci-levels",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "trend",
+  "tags": ["supertrend", "fibonacci", "retracement", "levels", "trend"],
+  "description": "Supertrend with automatic Fibonacci retracement levels drawn from each trend swing",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

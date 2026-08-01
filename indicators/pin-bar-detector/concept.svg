@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Pin Bar Detector</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="360" fill="rgba(255,255,255,0.02)" rx="4"/>
+
+  <!-- Trend MA -->
+  <polyline points="100,250 180,240 260,220 340,200 420,210 500,230 580,260 660,280 720,290" fill="none" stroke="#FFD54F" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Normal candles -->
+  <line x1="120" y1="220" x2="120" y2="290" stroke="#666" stroke-width="1"/>
+  <rect x="116" y="235" width="8" height="35" fill="#4CAF50"/>
+  <line x1="180" y1="200" x2="180" y2="270" stroke="#666" stroke-width="1"/>
+  <rect x="176" y="210" width="8" height="40" fill="#4CAF50"/>
+  <line x1="240" y1="180" x2="240" y2="250" stroke="#666" stroke-width="1"/>
+  <rect x="236" y="190" width="8" height="35" fill="#4CAF50"/>
+
+  <!-- Bearish pin bar (long upper wick) -->
+  <line x1="310" y1="120" x2="310" y2="230" stroke="#00e676" stroke-width="2"/>
+  <rect x="305" y="210" width="10" height="15" fill="#EF5350" stroke="#FF5252" stroke-width="1"/>
+  <polygon points="310,115 305,105 315,105" fill="#FF5252"/>
+  <text x="310" y="98" text-anchor="middle" fill="#FF5252" font-family="Inter,sans-serif" font-size="10">Bearish Pin</text>
+  <!-- Annotation -->
+  <line x1="325" y1="130" x2="370" y2="130" stroke="#888" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="375" y="134" fill="#888" font-family="Inter,sans-serif" font-size="9">Long upper wick</text>
+  <line x1="325" y1="215" x2="370" y2="215" stroke="#888" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="375" y="219" fill="#888" font-family="Inter,sans-serif" font-size="9">Small body</text>
+
+  <!-- Normal candles -->
+  <line x1="440" y1="210" x2="440" y2="290" stroke="#666" stroke-width="1"/>
+  <rect x="436" y="225" width="8" height="40" fill="#EF5350"/>
+  <line x1="500" y1="240" x2="500" y2="320" stroke="#666" stroke-width="1"/>
+  <rect x="496" y="255" width="8" height="40" fill="#EF5350"/>
+  <line x1="560" y1="260" x2="560" y2="340" stroke="#666" stroke-width="1"/>
+  <rect x="556" y="275" width="8" height="40" fill="#EF5350"/>
+
+  <!-- Bullish pin bar (long lower wick) -->
+  <line x1="630" y1="280" x2="630" y2="400" stroke="#00e676" stroke-width="2"/>
+  <rect x="625" y="285" width="10" height="15" fill="#4CAF50" stroke="#00e676" stroke-width="1"/>
+  <polygon points="630,410 625,420 635,420" fill="#00e676"/>
+  <text x="630" y="435" text-anchor="middle" fill="#00e676" font-family="Inter,sans-serif" font-size="10">Bullish Pin</text>
+  <!-- Annotation -->
+  <line x1="645" y1="370" x2="690" y2="370" stroke="#888" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="695" y="374" fill="#888" font-family="Inter,sans-serif" font-size="9">Long lower wick</text>
+
+  <!-- Legend -->
+  <rect x="60" y="455" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <circle cx="100" cy="470" r="4" fill="#00e676"/>
+  <text x="110" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Bullish Pin</text>
+  <circle cx="230" cy="470" r="4" fill="#FF5252"/>
+  <text x="240" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Bearish Pin</text>
+  <circle cx="360" cy="470" r="4" fill="#FFD54F"/>
+  <text x="370" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Trend MA</text>
+  <circle cx="480" cy="470" r="4" fill="#42A5F5"/>
+  <text x="490" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Strength Score</text>
+</svg>

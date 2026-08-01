@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Fractal Adaptive Smoother</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Trending zone background (left) -->
+  <rect x="80" y="60" width="250" height="200" fill="#26a69a" fill-opacity="0.03" rx="2"/>
+  <text x="205" y="75" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="500" opacity="0.7">TRENDING (FD ~1.2)</text>
+
+  <!-- Choppy zone background (middle) -->
+  <rect x="330" y="60" width="200" height="200" fill="#ef5350" fill-opacity="0.03" rx="2"/>
+  <text x="430" y="75" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="500" opacity="0.7">CHOPPY (FD ~1.7)</text>
+
+  <!-- Trending zone (right) -->
+  <rect x="530" y="60" width="220" height="200" fill="#26a69a" fill-opacity="0.03" rx="2"/>
+  <text x="640" y="75" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="500" opacity="0.7">TRENDING (FD ~1.2)</text>
+
+  <!-- Price candles - trending, then choppy, then trending down -->
+  <!-- Uptrend (responsive smoother) -->
+  <line x1="100" y1="215" x2="100" y2="240" stroke="#26a69a" stroke-width="1"/><rect x="97" y="218" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="120" y1="200" x2="120" y2="228" stroke="#26a69a" stroke-width="1"/><rect x="117" y="204" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="140" y1="188" x2="140" y2="215" stroke="#26a69a" stroke-width="1"/><rect x="137" y="192" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="160" y1="172" x2="160" y2="200" stroke="#26a69a" stroke-width="1"/><rect x="157" y="176" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="158" x2="180" y2="185" stroke="#26a69a" stroke-width="1"/><rect x="177" y="162" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="142" x2="200" y2="170" stroke="#26a69a" stroke-width="1"/><rect x="197" y="146" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="128" x2="220" y2="155" stroke="#26a69a" stroke-width="1"/><rect x="217" y="132" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="240" y1="115" x2="240" y2="142" stroke="#26a69a" stroke-width="1"/><rect x="237" y="118" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="102" x2="260" y2="130" stroke="#26a69a" stroke-width="1"/><rect x="257" y="106" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="92" x2="280" y2="118" stroke="#26a69a" stroke-width="1"/><rect x="277" y="96" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="300" y1="85" x2="300" y2="110" stroke="#26a69a" stroke-width="1"/><rect x="297" y="88" width="6" height="14" fill="#26a69a" rx="1"/>
+
+  <!-- Choppy zone candles -->
+  <line x1="330" y1="92" x2="330" y2="120" stroke="#ef5350" stroke-width="1"/><rect x="327" y="95" width="6" height="16" fill="#ef5350" rx="1"/>
+  <line x1="350" y1="100" x2="350" y2="128" stroke="#26a69a" stroke-width="1"/><rect x="347" y="108" width="6" height="12" fill="#26a69a" rx="1"/>
+  <line x1="370" y1="88" x2="370" y2="118" stroke="#ef5350" stroke-width="1"/><rect x="367" y="92" width="6" height="15" fill="#ef5350" rx="1"/>
+  <line x1="390" y1="95" x2="390" y2="125" stroke="#26a69a" stroke-width="1"/><rect x="387" y="105" width="6" height="12" fill="#26a69a" rx="1"/>
+  <line x1="410" y1="85" x2="410" y2="115" stroke="#ef5350" stroke-width="1"/><rect x="407" y="88" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="430" y1="92" x2="430" y2="120" stroke="#26a69a" stroke-width="1"/><rect x="427" y="100" width="6" height="12" fill="#26a69a" rx="1"/>
+  <line x1="450" y1="88" x2="450" y2="118" stroke="#ef5350" stroke-width="1"/><rect x="447" y="92" width="6" height="15" fill="#ef5350" rx="1"/>
+  <line x1="470" y1="95" x2="470" y2="122" stroke="#26a69a" stroke-width="1"/><rect x="467" y="102" width="6" height="12" fill="#26a69a" rx="1"/>
+  <line x1="490" y1="90" x2="490" y2="118" stroke="#ef5350" stroke-width="1"/><rect x="487" y="94" width="6" height="14" fill="#ef5350" rx="1"/>
+  <line x1="510" y1="95" x2="510" y2="122" stroke="#26a69a" stroke-width="1"/><rect x="507" y="102" width="6" height="12" fill="#26a69a" rx="1"/>
+
+  <!-- Downtrend (responsive again) -->
+  <line x1="540" y1="100" x2="540" y2="130" stroke="#ef5350" stroke-width="1"/><rect x="537" y="104" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="560" y1="115" x2="560" y2="145" stroke="#ef5350" stroke-width="1"/><rect x="557" y="118" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="580" y1="130" x2="580" y2="162" stroke="#ef5350" stroke-width="1"/><rect x="577" y="134" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="600" y1="148" x2="600" y2="180" stroke="#ef5350" stroke-width="1"/><rect x="597" y="152" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="165" x2="620" y2="198" stroke="#ef5350" stroke-width="1"/><rect x="617" y="170" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="640" y1="182" x2="640" y2="215" stroke="#ef5350" stroke-width="1"/><rect x="637" y="186" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="660" y1="198" x2="660" y2="230" stroke="#ef5350" stroke-width="1"/><rect x="657" y="202" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="680" y1="215" x2="680" y2="248" stroke="#ef5350" stroke-width="1"/><rect x="677" y="220" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="700" y1="232" x2="700" y2="260" stroke="#ef5350" stroke-width="1"/><rect x="697" y="235" width="6" height="18" fill="#ef5350" rx="1"/>
+
+  <!-- Adaptive smoother line (responsive in trends, flat in chop) -->
+  <polyline fill="none" stroke="#42a5f5" stroke-width="2.5" opacity="0.9"
+    points="100,225 120,210 140,196 160,180 180,166 200,150 220,138 240,125 260,112 280,102 300,94 330,98 350,100 370,100 390,102 410,100 430,102 450,100 470,102 490,100 510,102 540,110 560,125 580,142 600,158 620,175 640,192 660,208 680,225 700,242"/>
+
+  <!-- Upper adaptive band -->
+  <polyline fill="none" stroke="#42a5f5" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"
+    points="100,210 120,195 140,180 160,164 180,148 200,132 220,118 240,105 260,92 280,82 300,74 330,82 350,88 370,85 390,88 410,82 430,88 450,85 470,88 490,82 510,88 540,95 560,110 580,126 600,142 620,158 640,175 660,192 680,208 700,225"/>
+
+  <!-- Lower adaptive band -->
+  <polyline fill="none" stroke="#42a5f5" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"
+    points="100,240 120,225 140,212 160,196 180,184 200,168 220,158 240,145 260,132 280,122 300,114 330,114 350,112 370,115 390,116 410,118 430,116 450,115 470,116 490,118 510,116 540,125 560,140 580,158 600,174 620,192 640,209 660,224 680,242 700,259"/>
+
+  <!-- Band width annotations -->
+  <line x1="200" y1="132" x2="200" y2="168" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+  <text x="186" y="155" fill="#00e676" font-size="7" text-anchor="end">Wide</text>
+
+  <line x1="430" y1="88" x2="430" y2="116" stroke="#ef5350" stroke-width="1" opacity="0.5"/>
+  <text x="442" y="105" fill="#ef5350" font-size="7">Tight</text>
+
+  <!-- Separator -->
+  <line x1="60" y1="275" x2="760" y2="275" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="65" y="290" fill="#666" font-size="9">Fractal Dim.</text>
+
+  <!-- Fractal dimension oscillator (y=290 to y=400) -->
+  <!-- FD 1.0 at y=295, FD 2.0 at y=395 -->
+  <!-- FD 1.5 midline -->
+  <line x1="80" y1="345" x2="740" y2="345" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.15"/>
+  <text x="745" y="349" fill="#666" font-size="8">1.5</text>
+  <text x="72" y="300" text-anchor="end" fill="#666" font-size="8">1.0</text>
+  <text x="72" y="400" text-anchor="end" fill="#666" font-size="8">2.0</text>
+
+  <!-- FD line -->
+  <polyline fill="none" stroke="#ab47bc" stroke-width="1.8" opacity="0.9"
+    points="100,325 120,320 140,318 160,315 180,312 200,310 220,312 240,315 260,318 280,320 300,322 330,355 350,362 370,368 390,370 410,372 430,368 450,370 470,368 490,365 510,360 540,330 560,322 580,318 600,315 620,312 640,315 660,318 680,320 700,322"/>
+
+  <!-- FD zone labels -->
+  <text x="200" y="390" text-anchor="middle" fill="#26a69a" font-size="9" opacity="0.7">Low FD = Fast Alpha</text>
+  <text x="430" y="390" text-anchor="middle" fill="#ef5350" font-size="9" opacity="0.7">High FD = Slow Alpha</text>
+  <text x="640" y="390" text-anchor="middle" fill="#26a69a" font-size="9" opacity="0.7">Low FD = Fast Alpha</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.35">
+    <rect x="97" y="410" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="137" y="408" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="177" y="405" width="6" height="15" fill="#26a69a" rx="1"/>
+    <rect x="217" y="407" width="6" height="13" fill="#26a69a" rx="1"/>
+    <rect x="257" y="408" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="297" y="410" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="347" y="412" width="6" height="8" fill="#26a69a" rx="1"/>
+    <rect x="397" y="413" width="6" height="7" fill="#ef5350" rx="1"/>
+    <rect x="447" y="412" width="6" height="8" fill="#ef5350" rx="1"/>
+    <rect x="497" y="413" width="6" height="7" fill="#26a69a" rx="1"/>
+    <rect x="557" y="408" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="597" y="405" width="6" height="15" fill="#ef5350" rx="1"/>
+    <rect x="637" y="407" width="6" height="13" fill="#ef5350" rx="1"/>
+    <rect x="677" y="408" width="6" height="12" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#42a5f5"/>
+    <text x="30" y="24" fill="#999" font-size="9">Adaptive Smoother</text>
+    <circle cx="160" cy="20" r="4" fill="#ab47bc"/>
+    <text x="170" y="24" fill="#999" font-size="9">Fractal Dimension</text>
+    <rect x="290" y="12" width="20" height="16" fill="#26a69a" opacity="0.3" rx="2"/>
+    <text x="315" y="24" fill="#999" font-size="9">Trend Regime</text>
+    <rect x="410" y="12" width="20" height="16" fill="#ef5350" opacity="0.3" rx="2"/>
+    <text x="435" y="24" fill="#999" font-size="9">Choppy Regime</text>
+    <line x1="540" y1="12" x2="540" y2="28" stroke="#42a5f5" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="550" y="24" fill="#999" font-size="9">Adaptive Bands</text>
+  </g>
+</svg>

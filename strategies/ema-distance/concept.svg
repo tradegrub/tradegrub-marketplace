@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="distFillUp" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#00e676" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="distFillDown" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef5350" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ef5350" stop-opacity="0.12"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="170" x2="760" y2="170"/>
+    <line x1="60" y1="240" x2="760" y2="240"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">EMA Distance Reversion</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Price panel top 55% -->
+  <!-- EMA line -->
+  <path d="M 80,180 Q 160,185 240,190 Q 320,192 400,188 Q 480,182 560,178 Q 640,175 720,180" fill="none" stroke="#ff9800" stroke-width="2" opacity="0.7"/>
+  <text x="725" y="177" fill="#ff9800" font-size="9">EMA(20)</text>
+
+  <!-- Candles - price oscillating around EMA, with extreme stretches -->
+  <!-- Normal range -->
+  <line x1="100" y1="172" x2="100" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="96" y="178" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="130" y1="175" x2="130" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="126" y="180" width="8" height="14" fill="#ef5350" rx="1"/>
+  <line x1="160" y1="170" x2="160" y2="195" stroke="#26a69a" stroke-width="1"/>
+  <rect x="156" y="175" width="8" height="12" fill="#26a69a" rx="1"/>
+  <!-- Price stretching FAR above EMA -->
+  <line x1="190" y1="150" x2="190" y2="180" stroke="#26a69a" stroke-width="1"/>
+  <rect x="186" y="155" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="130" x2="220" y2="162" stroke="#26a69a" stroke-width="1"/>
+  <rect x="216" y="135" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="108" x2="250" y2="145" stroke="#26a69a" stroke-width="1"/>
+  <rect x="246" y="112" width="8" height="22" fill="#26a69a" rx="1"/>
+  <!-- Over-extended: SHORT signal -->
+  <line x1="280" y1="95" x2="280" y2="135" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="274" y="100" width="12" height="28" fill="#ef5350" rx="1" filter="url(#glow)"/>
+
+  <!-- Distance fill between price and EMA (above) -->
+  <polygon points="190,160 220,140 250,118 280,105 280,190 250,190 220,188 190,186" fill="url(#distFillUp)" opacity="0.5"/>
+
+  <!-- Short signal annotation -->
+  <g filter="url(#softGlow)">
+    <polygon points="280,92 290,92 285,82" fill="#ef5350" transform="rotate(180,285,87)"/>
+  </g>
+  <rect x="295" y="82" width="105" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="347" y="96" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SHORT (Fade)</text>
+
+  <!-- Reversion back -->
+  <line x1="310" y1="110" x2="310" y2="148" stroke="#ef5350" stroke-width="1"/>
+  <rect x="306" y="115" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="340" y1="140" x2="340" y2="172" stroke="#ef5350" stroke-width="1"/>
+  <rect x="336" y="145" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="370" y1="162" x2="370" y2="198" stroke="#ef5350" stroke-width="1"/>
+  <rect x="366" y="168" width="8" height="22" fill="#ef5350" rx="1"/>
+  <!-- Back to normal -->
+  <line x1="400" y1="178" x2="400" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="396" y="182" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="430" y1="182" x2="430" y2="205" stroke="#ef5350" stroke-width="1"/>
+  <rect x="426" y="185" width="8" height="12" fill="#ef5350" rx="1"/>
+  <!-- Price dropping FAR below EMA -->
+  <line x1="460" y1="195" x2="460" y2="225" stroke="#ef5350" stroke-width="1"/>
+  <rect x="456" y="200" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="490" y1="215" x2="490" y2="248" stroke="#ef5350" stroke-width="1"/>
+  <rect x="486" y="220" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="520" y1="235" x2="520" y2="268" stroke="#ef5350" stroke-width="1"/>
+  <rect x="516" y="240" width="8" height="20" fill="#ef5350" rx="1"/>
+  <!-- Over-extended below: LONG signal -->
+  <line x1="550" y1="248" x2="550" y2="285" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="544" y="255" width="12" height="22" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- Distance fill below -->
+  <polygon points="460,205 490,225 520,245 550,260 550,178 520,178 490,180 460,182" fill="url(#distFillDown)" opacity="0.5"/>
+
+  <!-- Long signal annotation -->
+  <g filter="url(#softGlow)">
+    <polygon points="550,290 560,290 555,300" fill="#00e676" transform="rotate(180,555,295)"/>
+  </g>
+  <rect x="565" y="268" width="95" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="612" y="282" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY (Fade)</text>
+
+  <!-- Recovery candles -->
+  <line x1="580" y1="240" x2="580" y2="270" stroke="#26a69a" stroke-width="1"/>
+  <rect x="576" y="245" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="610" y1="225" x2="610" y2="252" stroke="#26a69a" stroke-width="1"/>
+  <rect x="606" y="228" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="640" y1="210" x2="640" y2="238" stroke="#26a69a" stroke-width="1"/>
+  <rect x="636" y="215" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="670" y1="185" x2="670" y2="210" stroke="#ef5350" stroke-width="1"/>
+  <rect x="666" y="188" width="8" height="14" fill="#ef5350" rx="1"/>
+  <line x1="700" y1="175" x2="700" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="696" y="178" width="8" height="12" fill="#26a69a" rx="1"/>
+
+  <!-- Distance % oscillator panel (bottom 30%) -->
+  <line x1="60" y1="310" x2="760" y2="310" stroke="#888" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="65" y="305" fill="#888" font-size="8">EMA Distance %</text>
+  <!-- Zero line -->
+  <line x1="60" y1="365" x2="760" y2="365" stroke="#888" stroke-width="0.8" opacity="0.3"/>
+  <text x="45" y="368" fill="#666" font-size="8">0%</text>
+  <!-- Overbought threshold -->
+  <line x1="60" y1="325" x2="760" y2="325" stroke="#ef5350" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="762" y="328" fill="#ef5350" font-size="8">+3%</text>
+  <!-- Oversold threshold -->
+  <line x1="60" y1="405" x2="760" y2="405" stroke="#00e676" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="762" y="408" fill="#00e676" font-size="8">-3%</text>
+
+  <!-- Distance % line -->
+  <path d="M 100,360 Q 130,358 160,355 Q 190,345 220,335 Q 250,320 280,312 Q 310,330 340,345 Q 370,358 400,363 Q 430,368 460,375 Q 490,388 520,398 Q 550,410 580,395 Q 610,380 640,368 Q 670,362 700,365" fill="none" stroke="#42a5f5" stroke-width="2" opacity="0.8"/>
+
+  <!-- Overbought zone highlight -->
+  <rect x="250" y="310" width="50" height="15" fill="#ef5350" fill-opacity="0.1" rx="2"/>
+  <!-- Oversold zone highlight -->
+  <rect x="530" y="405" width="40" height="10" fill="#00e676" fill-opacity="0.1" rx="2"/>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ff9800"/>
+    <text x="30" y="24" fill="#999" font-size="9">EMA(20)</text>
+    <circle cx="110" cy="20" r="4" fill="#42a5f5"/>
+    <text x="120" y="24" fill="#999" font-size="9">Distance %</text>
+    <circle cx="210" cy="20" r="4" fill="#00e676"/>
+    <text x="220" y="24" fill="#999" font-size="9">Buy Signal (Oversold)</text>
+    <circle cx="370" cy="20" r="4" fill="#ef5350"/>
+    <text x="380" y="24" fill="#999" font-size="9">Short Signal (Overbought)</text>
+    <rect x="545" y="14" width="30" height="12" fill="#00e676" opacity="0.3" rx="2"/>
+    <text x="580" y="24" fill="#999" font-size="9">Distance Fill</text>
+  </g>
+</svg>

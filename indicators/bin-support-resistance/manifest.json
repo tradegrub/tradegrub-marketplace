@@ -1,0 +1,16 @@
+{
+  "name": "Statistical Bin S/R",
+  "id": "bin-support-resistance",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Finds support and resistance levels by grouping price action into statistical bins",
+  "category": "price-action",
+  "tags": ["support", "resistance", "bins", "histogram", "levels"],
+  "overlay": true,
+  "inputs": [
+    {"name": "lookback", "type": "int", "default": 100, "min": 20, "max": 500},
+    {"name": "num_bins", "type": "int", "default": 20, "min": 5, "max": 100}
+  ]
+}

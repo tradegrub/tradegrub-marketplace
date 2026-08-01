@@ -1,0 +1,33 @@
+{
+  "id": "smooth-dual-weight-crossover",
+  "name": "Smooth Dual-Weight Crossover",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": [
+    "numpy",
+    "crossover",
+    "dual-weight",
+    "low-lag",
+    "adaptive"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Low-lag dual-weight moving average crossover using numpy cascaded smoothing with minimal phase distortion",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

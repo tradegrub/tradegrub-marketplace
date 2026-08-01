@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="100" y1="80" x2="100" y2="440"/><line x1="200" y1="80" x2="200" y2="440"/>
+    <line x1="300" y1="80" x2="300" y2="440"/><line x1="400" y1="80" x2="400" y2="440"/>
+    <line x1="500" y1="80" x2="500" y2="440"/><line x1="600" y1="80" x2="600" y2="440"/>
+    <line x1="700" y1="80" x2="700" y2="440"/>
+    <line x1="60" y1="120" x2="740" y2="120"/><line x1="60" y1="180" x2="740" y2="180"/>
+    <line x1="60" y1="240" x2="740" y2="240"/><line x1="60" y1="300" x2="740" y2="300"/>
+    <line x1="60" y1="360" x2="740" y2="360"/><line x1="60" y1="420" x2="740" y2="420"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Fibonacci Confluence Mapper</text>
+  <text x="400" y="54" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- Price line with swing highs and lows -->
+  <polyline points="80,340 120,310 150,360 195,280 240,330 290,250 340,290 390,200 430,260 470,170 510,230 550,190 590,240 630,160 670,210 710,150" fill="none" stroke="#8899bb" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Swing point markers -->
+  <circle cx="150" cy="360" r="3.5" fill="#ff6b6b" opacity="0.8"/>
+  <circle cx="195" cy="280" r="3.5" fill="#66bb6a" opacity="0.8"/>
+  <circle cx="240" cy="330" r="3.5" fill="#ff6b6b" opacity="0.8"/>
+  <circle cx="290" cy="250" r="3.5" fill="#66bb6a" opacity="0.8"/>
+  <circle cx="390" cy="200" r="3.5" fill="#66bb6a" opacity="0.8"/>
+  <circle cx="470" cy="170" r="3.5" fill="#66bb6a" opacity="0.8"/>
+  <circle cx="630" cy="160" r="3.5" fill="#66bb6a" opacity="0.8"/>
+  <circle cx="340" cy="290" r="3.5" fill="#ff6b6b" opacity="0.8"/>
+  <circle cx="590" cy="240" r="3.5" fill="#ff6b6b" opacity="0.8"/>
+
+  <!-- Fib retracements from Swing A (cyan) - from low 360 to high 170 -->
+  <line x1="150" y1="287" x2="520" y2="287" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="522" y="291" fill="#4fc3f7" font-size="9" opacity="0.8">0.382</text>
+  <line x1="150" y1="265" x2="520" y2="265" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="522" y="269" fill="#4fc3f7" font-size="9" opacity="0.8">0.500</text>
+  <line x1="150" y1="243" x2="520" y2="243" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="522" y="247" fill="#4fc3f7" font-size="9" opacity="0.8">0.618</text>
+
+  <!-- Fib retracements from Swing B (purple) - from low 330 to high 170 -->
+  <line x1="240" y1="269" x2="600" y2="269" stroke="#ce93d8" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="602" y="273" fill="#ce93d8" font-size="9" opacity="0.8">0.382</text>
+  <line x1="240" y1="250" x2="600" y2="250" stroke="#ce93d8" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="602" y="254" fill="#ce93d8" font-size="9" opacity="0.8">0.500</text>
+  <line x1="240" y1="231" x2="600" y2="231" stroke="#ce93d8" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="602" y="235" fill="#ce93d8" font-size="9" opacity="0.8">0.618</text>
+
+  <!-- Fib retracements from Swing C (orange) - from low 290 to high 160 -->
+  <line x1="340" y1="240" x2="680" y2="240" stroke="#ff9800" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="682" y="244" fill="#ff9800" font-size="9" opacity="0.8">0.382</text>
+  <line x1="340" y1="225" x2="680" y2="225" stroke="#ff9800" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="682" y="229" fill="#ff9800" font-size="9" opacity="0.8">0.500</text>
+  <line x1="340" y1="210" x2="680" y2="210" stroke="#ff9800" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+
+  <!-- Confluence Zone 1: around y=240-250 where cyan 0.618, purple 0.500, orange 0.382 cluster -->
+  <rect x="340" y="237" width="180" height="16" fill="#ffd740" opacity="0.12" rx="2" filter="url(#glowStrong)"/>
+  <rect x="340" y="237" width="180" height="16" fill="none" stroke="#ffd740" stroke-width="1" opacity="0.4" rx="2"/>
+  <text x="432" y="233" text-anchor="middle" fill="#ffd740" font-size="8.5" font-weight="600" opacity="0.9">CONFLUENCE ZONE</text>
+
+  <!-- Confluence Zone 2: around y=265-269 where cyan 0.500, purple 0.382 cluster -->
+  <rect x="240" y="262" width="280" height="10" fill="#ffd740" opacity="0.07" rx="2"/>
+  <rect x="240" y="262" width="280" height="10" fill="none" stroke="#ffd740" stroke-width="0.7" opacity="0.3" rx="2"/>
+
+  <!-- Right edge density/heat bar -->
+  <rect x="748" y="100" width="14" height="320" fill="none" stroke="#444466" stroke-width="0.5" rx="3"/>
+  <!-- Heat segments from top (strong) to bottom (weak) -->
+  <rect x="750" y="102" width="10" height="30" fill="#1a237e" rx="2" opacity="0.4"/>
+  <rect x="750" y="134" width="10" height="30" fill="#1a237e" rx="2" opacity="0.4"/>
+  <rect x="750" y="166" width="10" height="30" fill="#283593" rx="2" opacity="0.5"/>
+  <rect x="750" y="198" width="10" height="30" fill="#e65100" rx="2" opacity="0.6"/>
+  <rect x="750" y="230" width="10" height="30" fill="#ff6f00" rx="2" opacity="0.85"/>
+  <rect x="750" y="262" width="10" height="30" fill="#ffab00" rx="2" opacity="0.65"/>
+  <rect x="750" y="294" width="10" height="30" fill="#283593" rx="2" opacity="0.5"/>
+  <rect x="750" y="326" width="10" height="30" fill="#1a237e" rx="2" opacity="0.4"/>
+  <rect x="750" y="358" width="10" height="30" fill="#1a237e" rx="2" opacity="0.35"/>
+  <rect x="750" y="390" width="10" height="30" fill="#0d1333" rx="2" opacity="0.3"/>
+  <text x="755" y="96" text-anchor="middle" fill="#8888aa" font-size="7">Density</text>
+
+  <!-- Legend bar at bottom -->
+  <line x1="60" y1="460" x2="740" y2="460" stroke="#333355" stroke-width="0.5"/>
+  <rect x="80" y="472" width="10" height="10" fill="#4fc3f7" rx="2"/>
+  <text x="96" y="481" fill="#aaaacc" font-size="10">Swing A Fibs</text>
+  <rect x="200" y="472" width="10" height="10" fill="#ce93d8" rx="2"/>
+  <text x="216" y="481" fill="#aaaacc" font-size="10">Swing B Fibs</text>
+  <rect x="330" y="472" width="10" height="10" fill="#ff9800" rx="2"/>
+  <text x="346" y="481" fill="#aaaacc" font-size="10">Swing C Fibs</text>
+  <rect x="470" y="472" width="10" height="10" fill="#ffd740" rx="2" opacity="0.5"/>
+  <text x="486" y="481" fill="#aaaacc" font-size="10">Confluence Zone</text>
+  <circle cx="625" cy="477" r="3.5" fill="#66bb6a" opacity="0.8"/>
+  <text x="634" y="481" fill="#aaaacc" font-size="10">Swing High</text>
+  <circle cx="715" cy="477" r="3.5" fill="#ff6b6b" opacity="0.8"/>
+  <text x="724" y="481" fill="#aaaacc" font-size="10">Low</text>
+</svg>

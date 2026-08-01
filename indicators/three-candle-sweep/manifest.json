@@ -1,0 +1,15 @@
+{
+  "name": "Three Candle Sweep",
+  "id": "three-candle-sweep",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Three-candle price action pattern that identifies potential liquidity sweeps where the third candle reverses through the bodies of the two preceding candles",
+  "category": "price-action",
+  "tags": ["price-action", "candles", "sweep", "reversal", "liquidity"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4300
+}

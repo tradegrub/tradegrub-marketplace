@@ -1,0 +1,20 @@
+{
+  "id": "volume-profile-poc",
+  "name": "Volume Profile POC",
+  "author": "mike_l",
+  "version": "1.0.0",
+  "category": "volume",
+  "tags": ["volume-profile", "poc", "value-area", "market-profile"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Horizontal volume profile with Point of Control, Value Area High/Low. Configurable lookback and row count.",
+  "likes": 234,
+  "uses": 980,
+  "language": "Python",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}

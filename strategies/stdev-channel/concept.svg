@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="channelFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42a5f5" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#42a5f5" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Std Dev Channel Reversion</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Channel fill polygon (sloped upward) -->
+  <polygon points="80,180 720,100 720,310 80,390" fill="url(#channelFill)"/>
+
+  <!-- Upper channel (linreg + 2 stdev) -->
+  <line x1="80" y1="180" x2="720" y2="100" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="98" fill="#ef5350" font-size="9" font-weight="500">+2 StDev</text>
+
+  <!-- Regression line (basis) -->
+  <line x1="80" y1="285" x2="720" y2="205" stroke="#42a5f5" stroke-width="2" opacity="0.8"/>
+  <text x="725" y="208" fill="#42a5f5" font-size="9" font-weight="500">LinReg Basis</text>
+
+  <!-- Lower channel (linreg - 2 stdev) -->
+  <line x1="80" y1="390" x2="720" y2="310" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="314" fill="#00e676" font-size="9" font-weight="500">-2 StDev</text>
+
+  <!-- Candles oscillating within channel -->
+  <line x1="100" y1="260" x2="100" y2="310" stroke="#26a69a" stroke-width="1"/>
+  <rect x="97" y="275" width="6" height="22" fill="#26a69a" rx="1"/>
+  <line x1="125" y1="250" x2="125" y2="295" stroke="#ef5350" stroke-width="1"/>
+  <rect x="122" y="258" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="150" y1="240" x2="150" y2="285" stroke="#26a69a" stroke-width="1"/>
+  <rect x="147" y="258" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="175" y1="225" x2="175" y2="275" stroke="#26a69a" stroke-width="1"/>
+  <rect x="172" y="240" width="6" height="20" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="210" x2="200" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="197" y="222" width="6" height="22" fill="#26a69a" rx="1"/>
+  <!-- Price touches upper channel - SELL -->
+  <line x1="225" y1="188" x2="225" y2="238" stroke="#26a69a" stroke-width="1"/>
+  <rect x="222" y="195" width="6" height="25" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="180" x2="250" y2="228" stroke="#26a69a" stroke-width="1"/>
+  <rect x="247" y="185" width="6" height="25" fill="#26a69a" rx="1"/>
+
+  <!-- SELL at upper channel -->
+  <g filter="url(#softGlow)">
+    <polygon points="247,230 255,230 251,242" fill="#ef5350"/>
+  </g>
+  <rect x="260" y="222" width="55" height="20" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="287" y="236" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SELL</text>
+
+  <!-- Price reverts to basis -->
+  <line x1="275" y1="195" x2="275" y2="242" stroke="#ef5350" stroke-width="1"/>
+  <rect x="272" y="200" width="6" height="25" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="210" x2="300" y2="255" stroke="#ef5350" stroke-width="1"/>
+  <rect x="297" y="218" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="325" y1="220" x2="325" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="322" y="228" width="6" height="18" fill="#ef5350" rx="1"/>
+
+  <!-- EXIT at basis annotation -->
+  <rect x="338" y="230" width="80" height="18" rx="4" fill="#42a5f5" fill-opacity="0.12" stroke="#42a5f5" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="378" y="243" text-anchor="middle" fill="#42a5f5" font-size="9" font-weight="500">EXIT at Basis</text>
+
+  <line x1="350" y1="225" x2="350" y2="265" stroke="#26a69a" stroke-width="1"/>
+  <rect x="347" y="238" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="375" y1="230" x2="375" y2="270" stroke="#ef5350" stroke-width="1"/>
+  <rect x="372" y="235" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="400" y1="240" x2="400" y2="280" stroke="#ef5350" stroke-width="1"/>
+  <rect x="397" y="248" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="425" y1="248" x2="425" y2="290" stroke="#ef5350" stroke-width="1"/>
+  <rect x="422" y="255" width="6" height="22" fill="#ef5350" rx="1"/>
+  <line x1="450" y1="258" x2="450" y2="300" stroke="#ef5350" stroke-width="1"/>
+  <rect x="447" y="265" width="6" height="22" fill="#ef5350" rx="1"/>
+  <!-- Price touches lower channel - BUY -->
+  <line x1="475" y1="268" x2="475" y2="318" stroke="#ef5350" stroke-width="1"/>
+  <rect x="472" y="278" width="6" height="28" fill="#ef5350" rx="1"/>
+  <line x1="500" y1="278" x2="500" y2="330" stroke="#ef5350" stroke-width="1"/>
+  <rect x="497" y="288" width="6" height="30" fill="#ef5350" rx="1"/>
+
+  <!-- BUY at lower channel -->
+  <line x1="530" y1="275" x2="530" y2="328" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="525" y="282" width="10" height="30" fill="#00e676" rx="1" filter="url(#glow)"/>
+  <g filter="url(#softGlow)">
+    <polygon points="526,275 534,275 530,263" fill="#00e676"/>
+  </g>
+  <rect x="542" y="265" width="50" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="567" y="279" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY</text>
+
+  <!-- Recovery candles back to basis -->
+  <line x1="560" y1="265" x2="560" y2="305" stroke="#26a69a" stroke-width="1"/>
+  <rect x="557" y="272" width="6" height="20" fill="#26a69a" rx="1"/>
+  <line x1="585" y1="252" x2="585" y2="290" stroke="#26a69a" stroke-width="1"/>
+  <rect x="582" y="260" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="610" y1="240" x2="610" y2="278" stroke="#26a69a" stroke-width="1"/>
+  <rect x="607" y="248" width="6" height="18" fill="#26a69a" rx="1"/>
+  <line x1="635" y1="230" x2="635" y2="265" stroke="#26a69a" stroke-width="1"/>
+  <rect x="632" y="238" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="660" y1="222" x2="660" y2="255" stroke="#ef5350" stroke-width="1"/>
+  <rect x="657" y="228" width="6" height="14" fill="#ef5350" rx="1"/>
+  <line x1="685" y1="215" x2="685" y2="248" stroke="#26a69a" stroke-width="1"/>
+  <rect x="682" y="220" width="6" height="16" fill="#26a69a" rx="1"/>
+
+  <!-- Reversion arrows -->
+  <path d="M 255,210 C 280,230 310,240 330,245" fill="none" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+  <path d="M 530,300 C 560,280 590,265 620,250" fill="none" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="97" y="405" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="122" y="403" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="147" y="405" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="172" y="402" width="6" height="13" fill="#26a69a" rx="1"/>
+    <rect x="197" y="400" width="6" height="15" fill="#26a69a" rx="1"/>
+    <rect x="222" y="398" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="247" y="396" width="6" height="19" fill="#26a69a" rx="1"/>
+    <rect x="272" y="400" width="6" height="15" fill="#ef5350" rx="1"/>
+    <rect x="297" y="403" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="322" y="405" width="6" height="10" fill="#ef5350" rx="1"/>
+    <rect x="347" y="405" width="6" height="10" fill="#26a69a" rx="1"/>
+    <rect x="372" y="406" width="6" height="9" fill="#ef5350" rx="1"/>
+    <rect x="397" y="405" width="6" height="10" fill="#ef5350" rx="1"/>
+    <rect x="422" y="403" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="447" y="400" width="6" height="15" fill="#ef5350" rx="1"/>
+    <rect x="472" y="398" width="6" height="17" fill="#ef5350" rx="1"/>
+    <rect x="497" y="395" width="6" height="20" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="525" y="390" width="10" height="25" fill="#00e676" rx="1" opacity="0.6" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="557" y="398" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="582" y="400" width="6" height="15" fill="#26a69a" rx="1"/>
+    <rect x="607" y="402" width="6" height="13" fill="#26a69a" rx="1"/>
+    <rect x="632" y="403" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="657" y="405" width="6" height="10" fill="#ef5350" rx="1"/>
+    <rect x="682" y="403" width="6" height="12" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#42a5f5"/>
+    <text x="30" y="24" fill="#999" font-size="9">Regression Basis</text>
+    <circle cx="150" cy="20" r="4" fill="#ef5350"/>
+    <text x="160" y="24" fill="#999" font-size="9">Upper Channel (+2sd)</text>
+    <circle cx="300" cy="20" r="4" fill="#00e676"/>
+    <text x="310" y="24" fill="#999" font-size="9">Lower Channel (-2sd)</text>
+    <rect x="460" y="12" width="20" height="16" fill="#42a5f5" opacity="0.2" rx="2"/>
+    <text x="485" y="24" fill="#999" font-size="9">Channel Zone</text>
+    <circle cx="570" cy="20" r="4" fill="#888"/>
+    <text x="580" y="24" fill="#999" font-size="9">Mean Reversion</text>
+  </g>
+</svg>

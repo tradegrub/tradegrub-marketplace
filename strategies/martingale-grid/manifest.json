@@ -1,0 +1,15 @@
+{
+  "name": "Martingale Grid",
+  "id": "martingale-grid",
+  "version": "1.0.0",
+  "type": "strategy",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Grid trading with martingale position sizing where each subsequent order increases by a configurable multiplier, with take profit from average entry and fixed stop loss",
+  "category": "systematic",
+  "tags": ["grid", "martingale", "systematic", "position-sizing"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4100
+}

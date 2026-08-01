@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glowCyan">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowGreen">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowRed">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowDot">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="legendBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#16213e" stop-opacity="0.95"/>
+    </linearGradient>
+    <clipPath id="upperClip"><rect x="50" y="55" width="720" height="210"/></clipPath>
+    <clipPath id="lowerClip"><rect x="50" y="275" width="720" height="155"/></clipPath>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid: upper panel -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="50" y1="90" x2="770" y2="90"/><line x1="50" y1="130" x2="770" y2="130"/>
+    <line x1="50" y1="170" x2="770" y2="170"/><line x1="50" y1="210" x2="770" y2="210"/>
+    <line x1="50" y1="250" x2="770" y2="250"/>
+    <!-- Grid: lower panel -->
+    <line x1="50" y1="310" x2="770" y2="310"/><line x1="50" y1="350" x2="770" y2="350"/>
+    <line x1="50" y1="390" x2="770" y2="390"/>
+    <!-- Verticals -->
+    <line x1="120" y1="55" x2="120" y2="430"/><line x1="200" y1="55" x2="200" y2="430"/>
+    <line x1="280" y1="55" x2="280" y2="430"/><line x1="360" y1="55" x2="360" y2="430"/>
+    <line x1="440" y1="55" x2="440" y2="430"/><line x1="520" y1="55" x2="520" y2="430"/>
+    <line x1="600" y1="55" x2="600" y2="430"/><line x1="680" y1="55" x2="680" y2="430"/>
+    <line x1="760" y1="55" x2="760" y2="430"/>
+  </g>
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#e0e0e0">Price Velocity Index</text>
+  <text x="400" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#888888">tradegrub.finance</text>
+  <!-- Panel divider -->
+  <line x1="50" y1="270" x2="770" y2="270" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+  <!-- Panel labels -->
+  <text x="55" y="68" font-family="Arial,sans-serif" font-size="9" fill="#666666">PRICE</text>
+  <text x="55" y="288" font-family="Arial,sans-serif" font-size="9" fill="#666666">VELOCITY</text>
+  <!-- Zero line in lower panel -->
+  <line x1="50" y1="350" x2="770" y2="350" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="46" y="354" text-anchor="end" font-family="Arial,sans-serif" font-size="8" fill="#666666">0</text>
+  <!-- Upper panel: Price line -->
+  <polyline filter="url(#glowCyan)" fill="none" stroke="#80deea" stroke-width="2" clip-path="url(#upperClip)"
+    points="70,230 95,225 120,218 145,210 170,195 195,185 220,178 245,168 270,155 295,148 320,140 345,128 370,120 395,115 420,108 445,105 470,110 495,118 520,130 545,145 570,155 595,168 620,178 645,190 670,200 695,215 720,228 745,240"/>
+  <!-- Lower panel: Velocity line with green/red segments -->
+  <!-- Green segment (positive velocity, price accelerating up) -->
+  <polyline fill="none" stroke="#00e676" stroke-width="1.8" clip-path="url(#lowerClip)"
+    points="70,350 95,342 120,335 145,328 170,315 195,310 220,308 245,305 270,310 295,315 320,318 345,322 370,328 395,332 420,338 445,345"/>
+  <!-- Red segment (negative velocity, price decelerating/falling) -->
+  <polyline fill="none" stroke="#ff5252" stroke-width="1.8" clip-path="url(#lowerClip)"
+    points="445,345 470,355 495,362 520,370 545,378 570,382 595,385 620,388 645,390 670,392 695,395 720,398 745,400"/>
+  <!-- Zero cross highlight -->
+  <circle cx="445" cy="350" r="4" fill="#ffd740" filter="url(#glowDot)"/>
+  <!-- Acceleration dots: green side (large = fast, small = slow) -->
+  <g filter="url(#glowDot)">
+    <!-- Accelerating phase: dots get bigger -->
+    <circle cx="95" cy="342" r="2" fill="#00e676" fill-opacity="0.7"/>
+    <circle cx="120" cy="335" r="2.8" fill="#00e676" fill-opacity="0.75"/>
+    <circle cx="145" cy="328" r="3.5" fill="#00e676" fill-opacity="0.8"/>
+    <circle cx="170" cy="315" r="5" fill="#00e676" fill-opacity="0.85"/>
+    <circle cx="195" cy="310" r="5.5" fill="#00e676" fill-opacity="0.9"/>
+    <circle cx="220" cy="308" r="6" fill="#00e676" fill-opacity="0.95"/>
+    <circle cx="245" cy="305" r="6.5" fill="#00e676"/>
+    <!-- Decelerating phase: dots shrink -->
+    <circle cx="270" cy="310" r="5.5" fill="#00e676" fill-opacity="0.9"/>
+    <circle cx="295" cy="315" r="4.5" fill="#00e676" fill-opacity="0.8"/>
+    <circle cx="320" cy="318" r="3.5" fill="#00e676" fill-opacity="0.7"/>
+    <circle cx="345" cy="322" r="2.8" fill="#00e676" fill-opacity="0.6"/>
+    <circle cx="370" cy="328" r="2.2" fill="#00e676" fill-opacity="0.5"/>
+    <circle cx="395" cy="332" r="1.8" fill="#00e676" fill-opacity="0.45"/>
+    <circle cx="420" cy="338" r="1.5" fill="#00e676" fill-opacity="0.4"/>
+  </g>
+  <!-- Acceleration dots: red side -->
+  <g filter="url(#glowDot)">
+    <circle cx="470" cy="355" r="2" fill="#ff5252" fill-opacity="0.5"/>
+    <circle cx="495" cy="362" r="2.8" fill="#ff5252" fill-opacity="0.6"/>
+    <circle cx="520" cy="370" r="3.8" fill="#ff5252" fill-opacity="0.7"/>
+    <circle cx="545" cy="378" r="5" fill="#ff5252" fill-opacity="0.8"/>
+    <circle cx="570" cy="382" r="5.5" fill="#ff5252" fill-opacity="0.85"/>
+    <circle cx="595" cy="385" r="6" fill="#ff5252" fill-opacity="0.9"/>
+    <circle cx="620" cy="388" r="5.5" fill="#ff5252" fill-opacity="0.85"/>
+    <circle cx="645" cy="390" r="4.5" fill="#ff5252" fill-opacity="0.75"/>
+    <circle cx="670" cy="392" r="3.5" fill="#ff5252" fill-opacity="0.65"/>
+    <circle cx="695" cy="395" r="2.5" fill="#ff5252" fill-opacity="0.55"/>
+    <circle cx="720" cy="398" r="2" fill="#ff5252" fill-opacity="0.45"/>
+    <circle cx="745" cy="400" r="1.5" fill="#ff5252" fill-opacity="0.4"/>
+  </g>
+  <!-- Callouts -->
+  <g font-family="Arial,sans-serif" font-size="10">
+    <!-- Acceleration callout (green side, big dots) -->
+    <line x1="220" y1="298" x2="220" y2="290" stroke="#00e676" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <rect x="180" y="278" width="80" height="14" rx="3" fill="#00e676" fill-opacity="0.12" stroke="#00e676" stroke-width="0.5"/>
+    <text x="220" y="289" text-anchor="middle" fill="#00e676" font-size="9">Acceleration</text>
+    <!-- Deceleration callout (green side, shrinking dots) -->
+    <line x1="345" y1="314" x2="345" y2="296" stroke="#ffab40" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <rect x="300" y="283" width="90" height="14" rx="3" fill="#ffab40" fill-opacity="0.12" stroke="#ffab40" stroke-width="0.5"/>
+    <text x="345" y="294" text-anchor="middle" fill="#ffab40" font-size="9">Deceleration</text>
+    <!-- Zero Cross callout -->
+    <line x1="445" y1="342" x2="445" y2="296" stroke="#ffd740" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <rect x="415" y="283" width="60" height="14" rx="3" fill="#ffd740" fill-opacity="0.12" stroke="#ffd740" stroke-width="0.5"/>
+    <text x="445" y="294" text-anchor="middle" fill="#ffd740" font-weight="bold" font-size="9">Zero Cross</text>
+    <!-- Deceleration warning on red side -->
+    <line x1="670" y1="385" x2="670" y2="370" stroke="#ffab40" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <rect x="630" y="358" width="80" height="14" rx="3" fill="#ffab40" fill-opacity="0.12" stroke="#ffab40" stroke-width="0.5"/>
+    <text x="670" y="369" text-anchor="middle" fill="#ffab40" font-size="9">Deceleration</text>
+  </g>
+  <!-- Legend bar -->
+  <rect x="0" y="440" width="800" height="60" fill="url(#legendBg)"/>
+  <line x1="0" y1="440" x2="800" y2="440" stroke="#ffffff" stroke-opacity="0.08"/>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#cccccc">
+    <line x1="110" y1="464" x2="140" y2="464" stroke="#80deea" stroke-width="2"/>
+    <text x="148" y="469">Price</text>
+    <line x1="230" y1="464" x2="250" y2="464" stroke="#00e676" stroke-width="2"/>
+    <line x1="250" y1="464" x2="270" y2="464" stroke="#ff5252" stroke-width="2"/>
+    <text x="278" y="469">Velocity</text>
+    <circle cx="390" cy="464" r="5" fill="#00e676" fill-opacity="0.8"/><circle cx="402" cy="464" r="3" fill="#00e676" fill-opacity="0.5"/><circle cx="410" cy="464" r="1.8" fill="#00e676" fill-opacity="0.35"/>
+    <text x="420" y="469">Acceleration Dots</text>
+  </g>
+</svg>

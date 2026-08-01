@@ -1,0 +1,190 @@
+#!/usr/bin/env python3
+"""Compile-and-run gate for marketplace scripts.
+
+Executes every indicator/strategy Python script against synthetic OHLCV data
+using the real tg_scripting runtime. Any script that raises an exception fails
+the gate and blocks publishing.
+
+Usage:
+    python validate_scripts.py                # validate all scripts
+    python validate_scripts.py strategies/wedge-breakout  # validate one
+"""
+
+import sys
+import os
+import json
+import glob
+import traceback
+import time
+import numpy as np
+
+# Add tg_scripting to path
+CHART_PLATFORM = os.path.expanduser("~/StudioProjects/chart-platform")
+TG_PKG = os.path.join(CHART_PLATFORM, "website/public/scripts/pyodide-packages")
+sys.path.insert(0, TG_PKG)
+
+from tg_scripting.context import ScriptContext
+
+MARKETPLACE_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+
+def make_mock_bars(n=200):
+    """Generate realistic synthetic OHLCV bars."""
+    np.random.seed(42)
+    base = 100.0
+    prices = [base]
+    for _ in range(n - 1):
+        prices.append(prices[-1] * (1 + np.random.normal(0, 0.02)))
+    bars = []
+    t = 1700000000000
+    for i, p in enumerate(prices):
+        h = p * (1 + abs(np.random.normal(0, 0.005)))
+        l = p * (1 - abs(np.random.normal(0, 0.005)))
+        o = p * (1 + np.random.normal(0, 0.003))
+        v = max(1000, int(np.random.normal(1_000_000, 300_000)))
+        bars.append({"time": t + i * 86400000, "open": o, "high": h, "low": l, "close": p, "volume": v})
+    return bars
+
+
+def validate_script(script_path):
+    """Run a single script through ScriptContext. Returns (success, error_msg)."""
+    try:
+        with open(script_path, "r") as f:
+            source = f.read()
+
+        # Compile first (syntax check)
+        compile(source, script_path, "exec")
+
+        # Execute with mock data
+        bars = make_mock_bars()
+        ctx = ScriptContext(bars)
+        ns = ctx.build_namespace()
+
+        # Add numpy and common imports
+        ns["__builtins__"] = __builtins__
+        exec(source, ns)
+
+        return True, None
+    except SyntaxError as e:
+        return False, f"SyntaxError: {e}"
+    except Exception as e:
+        return False, f"{type(e).__name__}: {e}"
+
+
+def find_all_scripts(filter_path=None):
+    """Find all marketplace script files."""
+    scripts = []
+    for kind, pyname in [("indicators", "indicator.py"), ("strategies", "strategy.py")]:
+        pattern = os.path.join(MARKETPLACE_ROOT, kind, "*", pyname)
+        for path in sorted(glob.glob(pattern)):
+            rel = os.path.relpath(path, MARKETPLACE_ROOT)
+            folder = os.path.dirname(rel)
+            if filter_path and filter_path not in folder:
+                continue
+            scripts.append((folder, path))
+    return scripts
+
+
+def check_index_parity():
+    """Every script folder must have an index.json entry, and vice versa.
+
+    index.json is maintained by hand (see CONTRIBUTING.md), and the app reads
+    ONLY that file -- it never lists the repo. So a folder missing from the
+    index is a script that exists, passes this gate, and is invisible to every
+    user. That is exactly how 11 scripts went unpublished from the initial
+    commit until 2026-07-31 without anything failing.
+
+    The app resolves a folder as (strategies|indicators)/<id> keyed off `type`,
+    so an id may legitimately appear twice -- once as an indicator and once as
+    a strategy. Parity is therefore checked on (type-folder, id), not id alone.
+
+    Returns a list of human-readable problems; empty means the index is honest.
+    """
+    index_path = os.path.join(MARKETPLACE_ROOT, "index.json")
+    with open(index_path) as f:
+        entries = json.load(f)
+
+    indexed = set()
+    problems = []
+    for e in entries:
+        kind = "strategies" if e.get("type") == "strategy" else "indicators"
+        key = (kind, e.get("id"))
+        if key in indexed:
+            problems.append(f"index.json lists {kind}/{e.get('id')} more than once")
+        indexed.add(key)
+
+    on_disk = {
+        (kind, os.path.basename(os.path.dirname(path)))
+        for kind, path in (
+            (k, p)
+            for k, pyname in (("indicators", "indicator.py"), ("strategies", "strategy.py"))
+            for p in glob.glob(os.path.join(MARKETPLACE_ROOT, k, "*", pyname))
+        )
+    }
+
+    for kind, sid in sorted(on_disk - indexed):
+        problems.append(f"{kind}/{sid} exists on disk but is NOT in index.json (invisible in-app)")
+    for kind, sid in sorted(indexed - on_disk):
+        problems.append(f"{kind}/{sid} is in index.json but has no folder (broken install)")
+    return problems
+
+
+def main():
+    filter_path = sys.argv[1] if len(sys.argv) > 1 else None
+    scripts = find_all_scripts(filter_path)
+
+    if not scripts:
+        print("No scripts found.")
+        return 1
+
+    # Parity is a whole-repo property, so only assert it on a full run.
+    index_problems = [] if filter_path else check_index_parity()
+
+    passed = 0
+    failed = 0
+    errors = []
+
+    print(f"\nValidating {len(scripts)} marketplace scripts...\n")
+    print(f"{'Script':<45} {'Status':<10} {'Time':>8}")
+    print("-" * 65)
+
+    for folder, path in scripts:
+        start = time.time()
+        ok, err = validate_script(path)
+        elapsed = time.time() - start
+
+        if ok:
+            passed += 1
+            status = "PASS"
+        else:
+            failed += 1
+            status = "FAIL"
+            errors.append((folder, err))
+
+        print(f"{folder:<45} {status:<10} {elapsed:>7.2f}s")
+
+    print("-" * 65)
+    print(f"\nTotal: {len(scripts)} | Passed: {passed} | Failed: {failed}\n")
+
+    if errors:
+        print("FAILURES:\n")
+        for folder, err in errors:
+            print(f"  {folder}")
+            print(f"    {err}\n")
+
+    if index_problems:
+        print("INDEX PARITY FAILURES:\n")
+        for p in index_problems:
+            print(f"  {p}")
+        print("\n  index.json is what the app reads. A script missing from it "
+              "ships to nobody.\n")
+
+    if errors or index_problems:
+        return 1
+
+    print("All scripts validated successfully; index.json matches the tree.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

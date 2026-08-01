@@ -1,0 +1,11 @@
+{
+  "name": "Supertrend Fakeout Filter",
+  "id": "supertrend-fakeout-filter",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "trend",
+  "tags": ["supertrend", "fakeout", "filter", "trend-reversal", "atr"],
+  "description": "Supertrend with post-flip distance validation to filter false reversals",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

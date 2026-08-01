@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="scoreBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00c853"/>
+      <stop offset="100%" stop-color="#69f0ae"/>
+    </linearGradient>
+    <linearGradient id="priceFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Trend Template Qualifier</text>
+  <text x="400" y="55" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Divider line -->
+  <line x1="395" y1="75" x2="395" y2="410" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- LEFT SIDE: Scorecard Checklist -->
+  <text x="50" y="95" fill="#aaa" font-size="12" font-weight="600" letter-spacing="1">QUALIFICATION CHECK</text>
+
+  <!-- Condition 1: Pass -->
+  <g transform="translate(50, 115)">
+    <rect width="22" height="22" rx="4" fill="#1b5e20" opacity="0.5"/>
+    <text x="11" y="16" text-anchor="middle" fill="#69f0ae" font-size="14" font-weight="700">&#x2713;</text>
+    <text x="32" y="16" fill="#c8e6c9" font-size="13">Above 200 SMA</text>
+  </g>
+
+  <!-- Condition 2: Pass -->
+  <g transform="translate(50, 150)">
+    <rect width="22" height="22" rx="4" fill="#1b5e20" opacity="0.5"/>
+    <text x="11" y="16" text-anchor="middle" fill="#69f0ae" font-size="14" font-weight="700">&#x2713;</text>
+    <text x="32" y="16" fill="#c8e6c9" font-size="13">Above 150 SMA</text>
+  </g>
+
+  <!-- Condition 3: Pass -->
+  <g transform="translate(50, 185)">
+    <rect width="22" height="22" rx="4" fill="#1b5e20" opacity="0.5"/>
+    <text x="11" y="16" text-anchor="middle" fill="#69f0ae" font-size="14" font-weight="700">&#x2713;</text>
+    <text x="32" y="16" fill="#c8e6c9" font-size="13">150 SMA &gt; 200 SMA</text>
+  </g>
+
+  <!-- Condition 4: Pass -->
+  <g transform="translate(50, 220)">
+    <rect width="22" height="22" rx="4" fill="#1b5e20" opacity="0.5"/>
+    <text x="11" y="16" text-anchor="middle" fill="#69f0ae" font-size="14" font-weight="700">&#x2713;</text>
+    <text x="32" y="16" fill="#c8e6c9" font-size="13">Above 50 SMA</text>
+  </g>
+
+  <!-- Condition 5: Pass -->
+  <g transform="translate(50, 255)">
+    <rect width="22" height="22" rx="4" fill="#1b5e20" opacity="0.5"/>
+    <text x="11" y="16" text-anchor="middle" fill="#69f0ae" font-size="14" font-weight="700">&#x2713;</text>
+    <text x="32" y="16" fill="#c8e6c9" font-size="13">Price &gt; 52w Low + 30%</text>
+  </g>
+
+  <!-- Condition 6: Fail -->
+  <g transform="translate(50, 290)">
+    <rect width="22" height="22" rx="4" fill="#b71c1c" opacity="0.5"/>
+    <text x="11" y="16" text-anchor="middle" fill="#ef5350" font-size="14" font-weight="700">&#x2717;</text>
+    <text x="32" y="16" fill="#ef9a9a" font-size="13">Within 25% of 52w High</text>
+  </g>
+
+  <!-- Score section -->
+  <text x="50" y="345" fill="#aaa" font-size="12" font-weight="600" letter-spacing="1">SCORE</text>
+
+  <!-- Score bar background -->
+  <rect x="50" y="355" width="300" height="24" rx="12" fill="#ffffff" fill-opacity="0.06"/>
+  <!-- Score bar fill (5/6 = 83.3%) -->
+  <rect x="50" y="355" width="250" height="24" rx="12" fill="url(#scoreBar)" filter="url(#glow)"/>
+  <!-- Score text -->
+  <text x="200" y="372" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="700">5 / 6</text>
+
+  <!-- Score label -->
+  <text x="50" y="400" fill="#69f0ae" font-size="12" font-weight="600">NEAR QUALIFYING</text>
+  <text x="250" y="400" fill="#888" font-size="11">6/6 required for Stage 2 entry</text>
+
+  <!-- RIGHT SIDE: Mini Price Chart -->
+  <text x="430" y="95" fill="#aaa" font-size="12" font-weight="600" letter-spacing="1">PRICE vs MOVING AVERAGES</text>
+
+  <!-- Chart area background -->
+  <rect x="420" y="105" width="350" height="250" rx="6" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.04"/>
+
+  <!-- Y-axis labels -->
+  <text x="425" y="125" fill="#666" font-size="9">$220</text>
+  <text x="425" y="185" fill="#666" font-size="9">$180</text>
+  <text x="425" y="245" fill="#666" font-size="9">$140</text>
+  <text x="425" y="305" fill="#666" font-size="9">$100</text>
+  <text x="425" y="345" fill="#666" font-size="9">$80</text>
+
+  <!-- Chart grid -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="0.5">
+    <line x1="455" y1="120" x2="760" y2="120"/>
+    <line x1="455" y1="180" x2="760" y2="180"/>
+    <line x1="455" y1="240" x2="760" y2="240"/>
+    <line x1="455" y1="300" x2="760" y2="300"/>
+    <line x1="455" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <!-- 200 SMA (slowest, bottom) -->
+  <polyline fill="none" stroke="#ef5350" stroke-width="1.5" stroke-opacity="0.7"
+    points="460,310 490,305 520,298 550,290 580,280 610,268 640,258 670,250 700,245 730,240 755,238"/>
+
+  <!-- 150 SMA (middle) -->
+  <polyline fill="none" stroke="#ffa726" stroke-width="1.5" stroke-opacity="0.7"
+    points="460,295 490,288 520,278 550,265 580,252 610,240 640,230 670,222 700,218 730,215 755,212"/>
+
+  <!-- 50 SMA (fastest) -->
+  <polyline fill="none" stroke="#42a5f5" stroke-width="1.5" stroke-opacity="0.8"
+    points="460,280 490,268 520,252 550,240 580,225 610,215 640,200 670,190 700,185 730,195 755,200"/>
+
+  <!-- Price line (above all MAs except near end where it drops near 50 SMA) -->
+  <polyline fill="url(#priceFill)" stroke="none"
+    points="460,270 490,255 520,238 550,225 580,210 610,195 640,178 670,165 700,160 730,175 755,185 755,350 460,350"/>
+  <polyline fill="none" stroke="#4fc3f7" stroke-width="2" filter="url(#glow)"
+    points="460,270 490,255 520,238 550,225 580,210 610,195 640,178 670,165 700,160 730,175 755,185"/>
+
+  <!-- 52-week high line (dashed) -->
+  <line x1="455" y1="148" x2="760" y2="148" stroke="#fff176" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.5"/>
+  <text x="762" y="152" fill="#fff176" font-size="8" fill-opacity="0.7">52w Hi</text>
+
+  <!-- 52-week low + 30% line (dashed) -->
+  <line x1="455" y1="285" x2="760" y2="285" stroke="#ce93d8" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.4"/>
+  <text x="762" y="289" fill="#ce93d8" font-size="8" fill-opacity="0.6">Low+30%</text>
+
+  <!-- Chart MA legend -->
+  <g transform="translate(470, 365)">
+    <line x1="0" y1="0" x2="14" y2="0" stroke="#4fc3f7" stroke-width="2"/>
+    <text x="18" y="4" fill="#999" font-size="9">Price</text>
+    <line x1="60" y1="0" x2="74" y2="0" stroke="#42a5f5" stroke-width="1.5"/>
+    <text x="78" y="4" fill="#999" font-size="9">50 SMA</text>
+    <line x1="130" y1="0" x2="144" y2="0" stroke="#ffa726" stroke-width="1.5"/>
+    <text x="148" y="4" fill="#999" font-size="9">150 SMA</text>
+    <line x1="210" y1="0" x2="224" y2="0" stroke="#ef5350" stroke-width="1.5"/>
+    <text x="228" y="4" fill="#999" font-size="9">200 SMA</text>
+  </g>
+
+  <!-- Bottom legend bar -->
+  <rect x="0" y="430" width="800" height="70" rx="0" fill="#0d1117" fill-opacity="0.6"/>
+  <line x1="0" y1="430" x2="800" y2="430" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <text x="50" y="455" fill="#aaa" font-size="11" font-weight="600">MINERVINI TREND TEMPLATE</text>
+  <text x="50" y="475" fill="#666" font-size="10">Screens stocks against Mark Minervini's Stage 2 criteria using moving averages and 52-week range position.</text>
+
+  <g transform="translate(580, 448)">
+    <rect width="10" height="10" rx="2" fill="#69f0ae"/>
+    <text x="14" y="9" fill="#999" font-size="10">Pass</text>
+    <rect x="55" width="10" height="10" rx="2" fill="#ef5350"/>
+    <text x="69" y="9" fill="#999" font-size="10">Fail</text>
+    <rect x="110" width="10" height="10" rx="2" fill="#4fc3f7"/>
+    <text x="124" y="9" fill="#999" font-size="10">Price</text>
+  </g>
+
+  <text x="620" y="478" fill="#555" font-size="9">Conditions: 5/6 met | Status: Near Qualifying</text>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "name": "Effort vs Results Oscillator",
+  "id": "effort-vs-results",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Wyckoff effort-result principle measuring volume effort against price movement results",
+  "category": "volume",
+  "tags": ["wyckoff", "effort", "volume", "divergence", "accumulation"],
+  "overlay": false,
+  "inputs": [
+    {"name": "length", "type": "int", "default": 14, "min": 2, "max": 100}
+  ]
+}

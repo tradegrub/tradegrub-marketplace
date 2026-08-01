@@ -1,0 +1,15 @@
+{
+  "name": "MA Deviation Channel",
+  "id": "ma-deviation-channel",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Dynamic channels based on historical percentage deviation from a moving average, showing average and extreme deviation levels for overbought and oversold identification",
+  "category": "volatility",
+  "tags": ["deviation", "channel", "moving-average", "volatility", "overbought"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 3900
+}

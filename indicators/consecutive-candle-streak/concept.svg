@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="80" y1="100" x2="620" y2="100"/>
+    <line x1="80" y1="140" x2="620" y2="140"/>
+    <line x1="80" y1="180" x2="620" y2="180"/>
+    <line x1="80" y1="220" x2="620" y2="220"/>
+    <line x1="80" y1="260" x2="620" y2="260"/>
+    <line x1="80" y1="300" x2="620" y2="300"/>
+    <line x1="80" y1="340" x2="620" y2="340"/>
+    <line x1="140" y1="80" x2="140" y2="360"/>
+    <line x1="220" y1="80" x2="220" y2="360"/>
+    <line x1="300" y1="80" x2="300" y2="360"/>
+    <line x1="380" y1="80" x2="380" y2="360"/>
+    <line x1="460" y1="80" x2="460" y2="360"/>
+    <line x1="540" y1="80" x2="540" y2="360"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Consecutive Candle Streak</text>
+  <text x="400" y="56" text-anchor="middle" fill="#666688" font-size="11">tradegrub.finance</text>
+
+  <!-- Candlesticks: mixed candles then 5 green then 3 red -->
+  <!-- Candle 1: neutral red -->
+  <line x1="105" y1="145" x2="105" y2="285" stroke="#f44336" stroke-width="1"/>
+  <rect x="98" y="170" width="14" height="90" fill="#f44336" rx="1"/>
+
+  <!-- Candle 2: neutral green -->
+  <line x1="145" y1="155" x2="145" y2="275" stroke="#4caf50" stroke-width="1"/>
+  <rect x="138" y="175" width="14" height="70" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 3: neutral red -->
+  <line x1="185" y1="165" x2="185" y2="300" stroke="#f44336" stroke-width="1"/>
+  <rect x="178" y="190" width="14" height="85" fill="#f44336" rx="1"/>
+
+  <!-- GREEN STREAK: Candles 4-8 (5 consecutive green, rising) -->
+  <!-- Green 1 -->
+  <line x1="225" y1="200" x2="225" y2="310" stroke="#4caf50" stroke-width="1"/>
+  <rect x="218" y="225" width="14" height="60" fill="#4caf50" rx="1"/>
+  <text x="225" y="340" text-anchor="middle" fill="#4caf50" font-size="13" font-weight="700" filter="url(#glow)">1</text>
+
+  <!-- Green 2 -->
+  <line x1="265" y1="180" x2="265" y2="290" stroke="#4caf50" stroke-width="1"/>
+  <rect x="258" y="200" width="14" height="65" fill="#4caf50" rx="1"/>
+  <text x="265" y="340" text-anchor="middle" fill="#4caf50" font-size="13" font-weight="700" filter="url(#glow)">2</text>
+
+  <!-- Green 3 -->
+  <line x1="305" y1="155" x2="305" y2="270" stroke="#4caf50" stroke-width="1"/>
+  <rect x="298" y="175" width="14" height="70" fill="#4caf50" rx="1"/>
+  <text x="305" y="340" text-anchor="middle" fill="#4caf50" font-size="13" font-weight="700" filter="url(#glow)">3</text>
+
+  <!-- Green 4 -->
+  <line x1="345" y1="130" x2="345" y2="250" stroke="#4caf50" stroke-width="1"/>
+  <rect x="338" y="148" width="14" height="75" fill="#4caf50" rx="1"/>
+  <text x="345" y="340" text-anchor="middle" fill="#4caf50" font-size="13" font-weight="700" filter="url(#glow)">4</text>
+
+  <!-- Green 5 (tallest, exhaustion) -->
+  <line x1="385" y1="100" x2="385" y2="230" stroke="#4caf50" stroke-width="1"/>
+  <rect x="378" y="115" width="14" height="85" fill="#4caf50" rx="1"/>
+  <text x="385" y="340" text-anchor="middle" fill="#4caf50" font-size="13" font-weight="700" filter="url(#glow)">5</text>
+
+  <!-- Exhaustion Warning callout -->
+  <line x1="385" y1="88" x2="385" y2="98" stroke="#ffab40" stroke-width="1" opacity="0.6"/>
+  <g filter="url(#glowStrong)">
+    <rect x="340" y="68" width="130" height="22" rx="4" fill="#ffab40" opacity="0.15" stroke="#ffab40" stroke-width="0.8"/>
+    <text x="355" y="83" fill="#ffab40" font-size="11" font-weight="600">⚠ Exhaustion Warning</text>
+  </g>
+
+  <!-- RED STREAK: Candles 9-11 (3 consecutive red, falling) -->
+  <!-- Red 1 -->
+  <line x1="435" y1="120" x2="435" y2="280" stroke="#f44336" stroke-width="1"/>
+  <rect x="428" y="140" width="14" height="110" fill="#f44336" rx="1"/>
+  <text x="435" y="340" text-anchor="middle" fill="#f44336" font-size="13" font-weight="700" filter="url(#glow)">1</text>
+
+  <!-- Red 2 -->
+  <line x1="475" y1="150" x2="475" y2="310" stroke="#f44336" stroke-width="1"/>
+  <rect x="468" y="175" width="14" height="105" fill="#f44336" rx="1"/>
+  <text x="475" y="340" text-anchor="middle" fill="#f44336" font-size="13" font-weight="700" filter="url(#glow)">2</text>
+
+  <!-- Red 3 -->
+  <line x1="515" y1="185" x2="515" y2="330" stroke="#f44336" stroke-width="1"/>
+  <rect x="508" y="210" width="14" height="95" fill="#f44336" rx="1"/>
+  <text x="515" y="340" text-anchor="middle" fill="#f44336" font-size="13" font-weight="700" filter="url(#glow)">3</text>
+
+  <!-- Candle 12: recovery green -->
+  <line x1="555" y1="195" x2="555" y2="310" stroke="#4caf50" stroke-width="1"/>
+  <rect x="548" y="220" width="14" height="65" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 13: small green -->
+  <line x1="595" y1="200" x2="595" y2="290" stroke="#4caf50" stroke-width="1"/>
+  <rect x="588" y="215" width="14" height="50" fill="#4caf50" rx="1"/>
+
+  <!-- Streak count label -->
+  <text x="80" y="340" fill="#555577" font-size="9">STREAK</text>
+
+  <!-- Right side: Streak Length Distribution Histogram -->
+  <rect x="650" y="80" width="130" height="280" rx="4" fill="#ffffff" opacity="0.02" stroke="#444466" stroke-width="0.5"/>
+  <text x="715" y="100" text-anchor="middle" fill="#8888aa" font-size="10" font-weight="600">Streak Distribution</text>
+
+  <!-- Histogram bars (streak length vs frequency) -->
+  <!-- Label: length -->
+  <text x="668" y="320" fill="#666688" font-size="8">1</text>
+  <text x="688" y="320" fill="#666688" font-size="8">2</text>
+  <text x="708" y="320" fill="#666688" font-size="8">3</text>
+  <text x="728" y="320" fill="#666688" font-size="8">4</text>
+  <text x="748" y="320" fill="#666688" font-size="8">5+</text>
+
+  <!-- Green histogram bars -->
+  <rect x="662" y="200" width="8" height="108" fill="#4caf50" opacity="0.7" rx="1"/>
+  <rect x="682" y="230" width="8" height="78" fill="#4caf50" opacity="0.7" rx="1"/>
+  <rect x="702" y="258" width="8" height="50" fill="#4caf50" opacity="0.7" rx="1"/>
+  <rect x="722" y="278" width="8" height="30" fill="#4caf50" opacity="0.7" rx="1"/>
+  <rect x="742" y="293" width="8" height="15" fill="#4caf50" opacity="0.7" rx="1"/>
+
+  <!-- Red histogram bars (offset right) -->
+  <rect x="672" y="215" width="8" height="93" fill="#f44336" opacity="0.7" rx="1"/>
+  <rect x="692" y="248" width="8" height="60" fill="#f44336" opacity="0.7" rx="1"/>
+  <rect x="712" y="273" width="8" height="35" fill="#f44336" opacity="0.7" rx="1"/>
+  <rect x="732" y="290" width="8" height="18" fill="#f44336" opacity="0.7" rx="1"/>
+  <rect x="752" y="300" width="8" height="8" fill="#f44336" opacity="0.7" rx="1"/>
+
+  <!-- Histogram axis label -->
+  <text x="715" y="338" text-anchor="middle" fill="#555577" font-size="8">Streak Length</text>
+
+  <!-- Histogram legend -->
+  <rect x="670" y="115" width="8" height="8" fill="#4caf50" opacity="0.7" rx="1"/>
+  <text x="682" y="123" fill="#8888aa" font-size="8">Bullish</text>
+  <rect x="720" y="115" width="8" height="8" fill="#f44336" opacity="0.7" rx="1"/>
+  <text x="732" y="123" fill="#8888aa" font-size="8">Bearish</text>
+
+  <!-- Bottom legend bar -->
+  <rect x="80" y="380" width="700" height="36" rx="4" fill="#ffffff" opacity="0.03"/>
+  <rect x="110" y="392" width="12" height="12" fill="#4caf50" rx="2"/>
+  <text x="128" y="402" fill="#aaaacc" font-size="11">Bullish Streak</text>
+  <rect x="250" y="392" width="12" height="12" fill="#f44336" rx="2"/>
+  <text x="268" y="402" fill="#aaaacc" font-size="11">Bearish Streak</text>
+  <rect x="390" y="392" width="12" height="12" fill="#ffab40" rx="2" opacity="0.8"/>
+  <text x="408" y="402" fill="#aaaacc" font-size="11">Exhaustion Signal</text>
+  <text x="560" y="402" fill="#666688" font-size="11">Numbers = consecutive candle count</text>
+
+  <!-- Category label -->
+  <text x="400" y="460" text-anchor="middle" fill="#555577" font-size="10">Momentum</text>
+</svg>

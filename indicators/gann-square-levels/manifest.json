@@ -1,0 +1,12 @@
+{
+  "id": "gann-square-levels",
+  "name": "Gann Square Levels",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Support/Resistance",
+  "tags": ["gann", "square-of-nine", "levels", "support", "resistance", "price-levels"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Gann Square of Nine price levels calculated from significant highs and lows using the square root method"
+}

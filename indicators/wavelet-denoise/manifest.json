@@ -1,0 +1,34 @@
+{
+  "id": "wavelet-denoise",
+  "name": "Wavelet Denoise Filter",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistical",
+  "tags": [
+    "scipy",
+    "wavelet",
+    "denoise",
+    "filter",
+    "trend",
+    "signal-processing"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Uses scipy.signal Butterworth low-pass filtering for wavelet-like denoising to extract clean trend signals and measure signal-to-noise ratio in price data",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

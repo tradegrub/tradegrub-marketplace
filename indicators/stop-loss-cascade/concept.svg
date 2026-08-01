@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="clusterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4444" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff4444" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="cascadeArrow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6644"/>
+      <stop offset="100%" stop-color="#cc2200"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="warningGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Stop Loss Cascade Detector</text>
+  <text x="400" y="56" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="100" x2="740" y2="100"/>
+    <line x1="80" y1="150" x2="740" y2="150"/>
+    <line x1="80" y1="200" x2="740" y2="200"/>
+    <line x1="80" y1="250" x2="740" y2="250"/>
+    <line x1="80" y1="300" x2="740" y2="300"/>
+    <line x1="80" y1="350" x2="740" y2="350"/>
+    <line x1="80" y1="400" x2="740" y2="400"/>
+    <line x1="160" y1="75" x2="160" y2="420"/>
+    <line x1="260" y1="75" x2="260" y2="420"/>
+    <line x1="360" y1="75" x2="360" y2="420"/>
+    <line x1="460" y1="75" x2="460" y2="420"/>
+    <line x1="560" y1="75" x2="560" y2="420"/>
+    <line x1="660" y1="75" x2="660" y2="420"/>
+  </g>
+
+  <!-- Price axis labels -->
+  <text x="72" y="104" text-anchor="end" fill="#555577" font-size="9">$48</text>
+  <text x="72" y="154" text-anchor="end" fill="#555577" font-size="9">$46</text>
+  <text x="72" y="204" text-anchor="end" fill="#555577" font-size="9">$44</text>
+  <text x="72" y="254" text-anchor="end" fill="#555577" font-size="9">$42</text>
+  <text x="72" y="304" text-anchor="end" fill="#555577" font-size="9">$40</text>
+  <text x="72" y="354" text-anchor="end" fill="#555577" font-size="9">$38</text>
+  <text x="72" y="404" text-anchor="end" fill="#555577" font-size="9">$36</text>
+
+  <!-- Stop Cluster shaded zone (red danger zone around $40-$41 area) -->
+  <rect x="300" y="270" width="260" height="50" fill="url(#clusterGrad)" rx="3"/>
+  <rect x="300" y="270" width="260" height="1" fill="#ff4444" opacity="0.4"/>
+  <rect x="300" y="319" width="260" height="1" fill="#ff4444" opacity="0.4"/>
+  <text x="565" y="287" fill="#ff6655" font-size="9" font-weight="500" opacity="0.8">Stop Cluster</text>
+
+  <!-- Red tick marks at swing lows (clustered stop-loss levels) -->
+  <g stroke="#ff4444" stroke-width="1.5" opacity="0.85">
+    <line x1="320" y1="290" x2="320" y2="300"/>
+    <line x1="335" y1="293" x2="335" y2="303"/>
+    <line x1="348" y1="288" x2="348" y2="298"/>
+    <line x1="365" y1="295" x2="365" y2="305"/>
+    <line x1="378" y1="290" x2="378" y2="300"/>
+    <line x1="392" y1="292" x2="392" y2="302"/>
+    <line x1="408" y1="287" x2="408" y2="297"/>
+    <line x1="420" y1="294" x2="420" y2="304"/>
+    <line x1="435" y1="289" x2="435" y2="299"/>
+    <line x1="448" y1="291" x2="448" y2="301"/>
+    <line x1="462" y1="286" x2="462" y2="296"/>
+    <line x1="475" y1="293" x2="475" y2="303"/>
+    <line x1="490" y1="288" x2="490" y2="298"/>
+    <line x1="505" y1="291" x2="505" y2="301"/>
+    <line x1="520" y1="290" x2="520" y2="300"/>
+    <line x1="535" y1="294" x2="535" y2="304"/>
+    <line x1="545" y1="287" x2="545" y2="297"/>
+  </g>
+
+  <!-- Price line: approach from above, then cascade break -->
+  <polyline
+    points="90,130 130,145 160,125 195,140 230,120 265,150 300,160 340,180 380,200 420,220 460,240 490,260 510,275"
+    fill="none" stroke="#4fc3f7" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Price enters cluster zone -->
+  <polyline
+    points="510,275 525,285 535,290"
+    fill="none" stroke="#ffaa44" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Cascade waterfall (dramatic drop through stops) -->
+  <polyline
+    points="535,290 545,310 550,330 555,355 558,375 560,395 565,410"
+    fill="none" stroke="#ff4444" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- Cascade arrow head -->
+  <polygon points="565,415 558,405 572,405" fill="#ff4444" opacity="0.9"/>
+
+  <!-- Small circles at swing lows where stops cluster -->
+  <circle cx="265" cy="150" r="3" fill="#ffaa44" opacity="0.7"/>
+  <circle cx="300" cy="160" r="3" fill="#ffaa44" opacity="0.7"/>
+  <circle cx="380" cy="200" r="3" fill="#ffaa44" opacity="0.7"/>
+
+  <!-- Cascade arrow annotation -->
+  <g transform="translate(590, 340)">
+    <text fill="#ff6644" font-size="10" font-weight="500" opacity="0.9">Cascade</text>
+    <text y="13" fill="#ff6644" font-size="10" font-weight="500" opacity="0.9">Triggered</text>
+    <line x1="-8" y1="-5" x2="-8" y2="16" stroke="#ff6644" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Break point label -->
+  <text x="540" y="278" fill="#ffaa44" font-size="9" opacity="0.8">Break</text>
+
+  <!-- Warning label: Cascade Risk: High -->
+  <g transform="translate(600, 100)">
+    <rect x="0" y="0" width="130" height="30" rx="4" fill="#441111" stroke="#ff4444" stroke-width="1" opacity="0.8"/>
+    <text x="10" y="14" fill="#ff6644" font-size="9" font-weight="600" filter="url(#warningGlow)">Cascade Risk:</text>
+    <text x="90" y="14" fill="#ff2222" font-size="9" font-weight="700" filter="url(#warningGlow)">HIGH</text>
+    <circle cx="125" cy="11" r="3" fill="#ff2222" opacity="0.9"/>
+  </g>
+
+  <!-- Approaching price label -->
+  <text x="420" y="235" fill="#4fc3f7" font-size="9" opacity="0.6">Price approaching cluster</text>
+
+  <!-- Legend bar at bottom -->
+  <g transform="translate(0, 455)">
+    <line x1="80" y1="0" x2="740" y2="0" stroke="#333355" stroke-width="0.5"/>
+    <line x1="100" y1="12" x2="120" y2="12" stroke="#4fc3f7" stroke-width="2"/>
+    <text x="125" y="16" fill="#8888aa" font-size="10">Price</text>
+    <line x1="190" y1="8" x2="190" y2="16" stroke="#ff4444" stroke-width="1.5"/>
+    <line x1="196" y1="8" x2="196" y2="16" stroke="#ff4444" stroke-width="1.5"/>
+    <line x1="202" y1="8" x2="202" y2="16" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="210" y="16" fill="#8888aa" font-size="10">Stop Levels</text>
+    <rect x="300" y="6" width="20" height="10" fill="#ff4444" opacity="0.2" rx="1"/>
+    <text x="325" y="16" fill="#8888aa" font-size="10">Cluster Zone</text>
+    <polygon points="430,7 425,17 435,17" fill="#ff4444" opacity="0.8"/>
+    <text x="440" y="16" fill="#8888aa" font-size="10">Cascade</text>
+    <circle cx="520" cy="12" r="3" fill="#ffaa44" opacity="0.7"/>
+    <text x="528" y="16" fill="#8888aa" font-size="10">Swing Low</text>
+  </g>
+</svg>

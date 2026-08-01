@@ -1,0 +1,11 @@
+{
+  "name": "Multi-Oscillator Divergence",
+  "id": "multi-oscillator-divergence",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "momentum",
+  "tags": ["divergence", "rsi", "macd", "stochastic", "multi-oscillator"],
+  "description": "Aggregated divergence detection across RSI, MACD histogram, and Stochastic for high-confidence signals",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}

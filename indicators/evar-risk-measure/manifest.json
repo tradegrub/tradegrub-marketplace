@@ -1,0 +1,35 @@
+{
+  "id": "evar-risk-measure",
+  "name": "Entropy Risk Measure",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "risk",
+  "tags": [
+    "numpy",
+    "scipy",
+    "risk",
+    "var",
+    "entropy",
+    "position-sizing",
+    "cornish-fisher"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Entropy-adjusted Value at Risk using Cornish-Fisher expansion with skewness and kurtosis correction, plus suggested position sizing",
+  "official": true,
+  "beta": false,
+  "likes": 870,
+  "uses": 3600,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

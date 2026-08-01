@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Volatility Ratio</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <rect x="60" y="70" width="700" height="150" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <line x1="100" y1="120" x2="100" y2="170" stroke="#666" stroke-width="1"/><rect x="96" y="130" width="8" height="25" fill="#4CAF50"/>
+  <line x1="160" y1="125" x2="160" y2="165" stroke="#666" stroke-width="1"/><rect x="156" y="132" width="8" height="20" fill="#4CAF50"/>
+  <line x1="220" y1="130" x2="220" y2="160" stroke="#666" stroke-width="1"/><rect x="216" y="135" width="8" height="15" fill="#EF5350"/>
+  <line x1="280" y1="128" x2="280" y2="162" stroke="#666" stroke-width="1"/><rect x="276" y="133" width="8" height="18" fill="#4CAF50"/>
+  <line x1="340" y1="100" x2="340" y2="185" stroke="#666" stroke-width="1"/><rect x="336" y="110" width="8" height="55" fill="#EF5350"/>
+  <line x1="400" y1="95" x2="400" y2="195" stroke="#666" stroke-width="1"/><rect x="396" y="105" width="8" height="65" fill="#4CAF50"/>
+  <line x1="460" y1="90" x2="460" y2="190" stroke="#666" stroke-width="1"/><rect x="456" y="100" width="8" height="60" fill="#4CAF50"/>
+  <line x1="520" y1="110" x2="520" y2="170" stroke="#666" stroke-width="1"/><rect x="516" y="120" width="8" height="35" fill="#EF5350"/>
+  <line x1="580" y1="115" x2="580" y2="160" stroke="#666" stroke-width="1"/><rect x="576" y="122" width="8" height="25" fill="#4CAF50"/>
+  <line x1="640" y1="120" x2="640" y2="155" stroke="#666" stroke-width="1"/><rect x="636" y="125" width="8" height="20" fill="#4CAF50"/>
+  <line x1="700" y1="118" x2="700" y2="158" stroke="#666" stroke-width="1"/><rect x="696" y="125" width="8" height="22" fill="#EF5350"/>
+
+  <!-- Contraction bg -->
+  <rect x="80" y="70" width="200" height="150" fill="rgba(76,175,80,0.06)"/>
+  <!-- Expansion bg -->
+  <rect x="310" y="70" width="200" height="150" fill="rgba(244,67,54,0.06)"/>
+
+  <!-- Ratio subplot -->
+  <rect x="60" y="250" width="700" height="180" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="270" fill="#888" font-family="Inter,sans-serif" font-size="10">Vol Ratio</text>
+
+  <!-- Neutral line at 1.0 = y340 -->
+  <line x1="60" y1="340" x2="760" y2="340" stroke="#888888" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="762" y="344" fill="#888" font-family="Inter,sans-serif" font-size="9">1.0</text>
+  <!-- Expansion threshold y=300 -->
+  <line x1="60" y1="300" x2="760" y2="300" stroke="#EF5350" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="762" y="304" fill="#EF5350" font-family="Inter,sans-serif" font-size="9">1.5</text>
+  <!-- Contraction threshold y=370 -->
+  <line x1="60" y1="370" x2="760" y2="370" stroke="#66BB6A" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="762" y="374" fill="#66BB6A" font-family="Inter,sans-serif" font-size="9">0.7</text>
+
+  <!-- Ratio line -->
+  <polyline points="100,380 160,375 220,385 280,365 340,280 400,270 460,290 520,330 580,360 640,375 700,370" fill="none" stroke="#42A5F5" stroke-width="2"/>
+
+  <!-- Annotations -->
+  <text x="180" y="245" text-anchor="middle" fill="#66BB6A" font-family="Inter,sans-serif" font-size="10">Contraction</text>
+  <text x="410" y="245" text-anchor="middle" fill="#EF5350" font-family="Inter,sans-serif" font-size="10">Expansion</text>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="100" y2="475" stroke="#42A5F5" stroke-width="2"/>
+  <text x="105" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Vol Ratio</text>
+  <rect x="220" y="470" width="10" height="10" fill="rgba(244,67,54,0.3)"/>
+  <text x="235" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Expansion</text>
+  <rect x="350" y="470" width="10" height="10" fill="rgba(76,175,80,0.3)"/>
+  <text x="365" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Contraction</text>
+</svg>

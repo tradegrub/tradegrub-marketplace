@@ -1,0 +1,34 @@
+{
+  "id": "cycle-channel-oscillator",
+  "name": "Cycle Channel Oscillator",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "numpy",
+    "scipy",
+    "hurst",
+    "cycle",
+    "channel",
+    "oscillator"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Measures price position within a cycle-derived channel and displays it as an oscillator for divergence detection and overbought/oversold analysis using scipy",
+  "official": true,
+  "beta": false,
+  "likes": 1500,
+  "uses": 6200,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

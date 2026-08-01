@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="breakoutGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00e676" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Inside Bar Breakout Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Uptrend context candles -->
+  <line x1="90" y1="298" x2="90" y2="340" stroke="#26a69a" stroke-width="1"/>
+  <rect x="86" y="305" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="120" y1="282" x2="120" y2="325" stroke="#26a69a" stroke-width="1"/>
+  <rect x="116" y="290" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="150" y1="268" x2="150" y2="308" stroke="#ef5350" stroke-width="1"/>
+  <rect x="146" y="272" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="180" y1="248" x2="180" y2="290" stroke="#26a69a" stroke-width="1"/>
+  <rect x="176" y="255" width="8" height="25" fill="#26a69a" rx="1"/>
+
+  <!-- MA trend filter -->
+  <path d="M 80,310 Q 160,298 240,282 Q 320,268 400,258 Q 480,250 560,245 Q 640,242 720,240" fill="none" stroke="#ff9800" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+  <text x="725" y="237" fill="#ff9800" font-size="8">MA Trend Filter</text>
+
+  <!-- MOTHER BAR (large, wide candle) -->
+  <line x1="240" y1="155" x2="240" y2="310" stroke="#26a69a" stroke-width="2"/>
+  <rect x="228" y="175" width="24" height="110" fill="#26a69a" rx="2" opacity="0.8"/>
+
+  <!-- Mother bar range lines -->
+  <line x1="215" y1="155" x2="450" y2="155" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
+  <text x="455" y="159" fill="#42a5f5" font-size="9">Mother Bar High</text>
+  <line x1="215" y1="310" x2="450" y2="310" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
+  <text x="455" y="314" fill="#42a5f5" font-size="9">Mother Bar Low</text>
+
+  <!-- Mother bar label -->
+  <text x="240" y="330" text-anchor="middle" fill="#bbb" font-size="10" font-weight="500">Mother Bar</text>
+
+  <!-- INSIDE BAR (smaller, contained within mother) -->
+  <line x1="300" y1="185" x2="300" y2="280" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="290" y="205" width="20" height="55" fill="#ef5350" rx="2" opacity="0.8"/>
+
+  <!-- Inside bar containment brackets -->
+  <line x1="315" y1="165" x2="325" y2="165" stroke="#888" stroke-width="0.8" opacity="0.5"/>
+  <line x1="325" y1="165" x2="325" y2="300" stroke="#888" stroke-width="0.8" opacity="0.5"/>
+  <line x1="315" y1="300" x2="325" y2="300" stroke="#888" stroke-width="0.8" opacity="0.5"/>
+  <text x="332" y="230" fill="#bbb" font-size="9">Range inside</text>
+  <text x="332" y="242" fill="#bbb" font-size="9">mother bar</text>
+
+  <!-- Inside bar label -->
+  <text x="300" y="330" text-anchor="middle" fill="#bbb" font-size="10" font-weight="500">Inside Bar</text>
+
+  <!-- Energy compression annotation -->
+  <rect x="220" y="80" width="160" height="32" rx="6" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="300" y="95" text-anchor="middle" fill="#bbb" font-size="10">Energy Compression</text>
+  <text x="300" y="107" text-anchor="middle" fill="#888" font-size="8">Indecision before breakout</text>
+
+  <!-- BREAKOUT candle (breaks above mother bar high) -->
+  <line x1="370" y1="115" x2="370" y2="175" stroke="#00e676" stroke-width="2"/>
+  <rect x="360" y="122" width="20" height="42" fill="#00e676" rx="2" filter="url(#glow)"/>
+
+  <!-- Breakout glow -->
+  <rect x="355" y="110" width="400" height="35" fill="url(#breakoutGlow)" rx="4"/>
+
+  <!-- Breakout arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="365,112 375,112 370,98" fill="#00e676"/>
+  </g>
+  <rect x="385" y="90" width="130" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="450" y="105" text-anchor="middle" fill="#00e676" font-size="11" font-weight="600">BREAKOUT BUY</text>
+
+  <!-- Entry line at mother bar high -->
+  <line x1="370" y1="155" x2="730" y2="155" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="735" y="159" fill="#42a5f5" font-size="9">Entry</text>
+
+  <!-- Stop loss at mother bar low -->
+  <line x1="370" y1="310" x2="730" y2="310" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="735" y="314" fill="#ef5350" font-size="9">Stop (MB Low)</text>
+
+  <!-- Take profit -->
+  <line x1="370" y1="95" x2="730" y2="95" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="735" y="99" fill="#00e676" font-size="9">Take Profit (ATR)</text>
+
+  <!-- Post-breakout candles -->
+  <line x1="420" y1="105" x2="420" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="416" y="112" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="460" y1="100" x2="460" y2="138" stroke="#26a69a" stroke-width="1"/>
+  <rect x="456" y="105" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="95" x2="500" y2="132" stroke="#ef5350" stroke-width="1"/>
+  <rect x="496" y="100" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="540" y1="88" x2="540" y2="125" stroke="#26a69a" stroke-width="1"/>
+  <rect x="536" y="95" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="580" y1="82" x2="580" y2="118" stroke="#26a69a" stroke-width="1"/>
+  <rect x="576" y="88" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="620" y1="78" x2="620" y2="112" stroke="#ef5350" stroke-width="1"/>
+  <rect x="616" y="82" width="8" height="20" fill="#ef5350" rx="1"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.5">
+    <rect x="86" y="395" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="116" y="393" width="8" height="19" fill="#26a69a" rx="1"/>
+    <rect x="146" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="176" y="395" width="8" height="17" fill="#26a69a" rx="1"/>
+  </g>
+  <!-- Mother bar volume -->
+  <rect x="228" y="380" width="24" height="32" fill="#26a69a" rx="1" opacity="0.5"/>
+  <!-- Inside bar low volume (contraction) -->
+  <rect x="290" y="402" width="20" height="10" fill="#ef5350" rx="1" opacity="0.4"/>
+  <text x="300" y="398" text-anchor="middle" fill="#888" font-size="7">Low Vol</text>
+  <!-- Breakout volume surge -->
+  <rect x="360" y="372" width="20" height="40" fill="#00e676" rx="1" opacity="0.7" filter="url(#softGlow)"/>
+  <text x="355" y="368" fill="#00e676" font-size="8">Vol Surge</text>
+  <g opacity="0.4">
+    <rect x="416" y="388" width="8" height="24" fill="#26a69a" rx="1"/>
+    <rect x="456" y="390" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="496" y="395" width="8" height="17" fill="#ef5350" rx="1"/>
+    <rect x="536" y="393" width="8" height="19" fill="#26a69a" rx="1"/>
+    <rect x="576" y="395" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="616" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Mother Bar</text>
+    <circle cx="130" cy="20" r="4" fill="#ef5350"/>
+    <text x="140" y="24" fill="#999" font-size="9">Inside Bar</text>
+    <circle cx="230" cy="20" r="4" fill="#00e676"/>
+    <text x="240" y="24" fill="#999" font-size="9">Breakout Signal</text>
+    <circle cx="360" cy="20" r="4" fill="#42a5f5"/>
+    <text x="370" y="24" fill="#999" font-size="9">Entry / MB Range</text>
+    <circle cx="500" cy="20" r="4" fill="#ff9800"/>
+    <text x="510" y="24" fill="#999" font-size="9">MA Filter</text>
+  </g>
+</svg>

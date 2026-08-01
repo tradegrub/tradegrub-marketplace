@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Fractal Adaptive Moving Average</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="370" fill="none" stroke="#333" stroke-width="0.5" rx="4"/>
+
+  <!-- Background shading -->
+  <rect x="60" y="70" width="300" height="370" fill="rgba(0,230,118,0.03)"/>
+  <rect x="520" y="70" width="240" height="370" fill="rgba(255,23,68,0.03)"/>
+
+  <!-- Candlesticks -->
+  <line x1="100" y1="340" x2="100" y2="380" stroke="#26a69a" stroke-width="1"/><rect x="97" y="345" width="6" height="28" fill="#26a69a" rx="1"/>
+  <line x1="140" y1="310" x2="140" y2="360" stroke="#26a69a" stroke-width="1"/><rect x="137" y="315" width="6" height="35" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="270" x2="180" y2="325" stroke="#26a69a" stroke-width="1"/><rect x="177" y="275" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="220" x2="220" y2="285" stroke="#26a69a" stroke-width="1"/><rect x="217" y="225" width="6" height="45" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="180" x2="260" y2="240" stroke="#26a69a" stroke-width="1"/><rect x="257" y="185" width="6" height="40" fill="#26a69a" rx="1"/>
+  <line x1="300" y1="150" x2="300" y2="210" stroke="#26a69a" stroke-width="1"/><rect x="297" y="155" width="6" height="40" fill="#26a69a" rx="1"/>
+  <line x1="340" y1="135" x2="340" y2="195" stroke="#26a69a" stroke-width="1"/><rect x="337" y="140" width="6" height="38" fill="#26a69a" rx="1"/>
+  <line x1="380" y1="130" x2="380" y2="185" stroke="#ef5350" stroke-width="1"/><rect x="377" y="140" width="6" height="35" fill="#ef5350" rx="1"/>
+  <line x1="420" y1="125" x2="420" y2="175" stroke="#26a69a" stroke-width="1"/><rect x="417" y="128" width="6" height="35" fill="#26a69a" rx="1"/>
+  <line x1="460" y1="120" x2="460" y2="170" stroke="#ef5350" stroke-width="1"/><rect x="457" y="130" width="6" height="30" fill="#ef5350" rx="1"/>
+  <line x1="500" y1="130" x2="500" y2="180" stroke="#ef5350" stroke-width="1"/><rect x="497" y="140" width="6" height="30" fill="#ef5350" rx="1"/>
+  <line x1="540" y1="160" x2="540" y2="220" stroke="#ef5350" stroke-width="1"/><rect x="537" y="170" width="6" height="38" fill="#ef5350" rx="1"/>
+  <line x1="580" y1="200" x2="580" y2="265" stroke="#ef5350" stroke-width="1"/><rect x="577" y="210" width="6" height="42" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="240" x2="620" y2="305" stroke="#ef5350" stroke-width="1"/><rect x="617" y="250" width="6" height="42" fill="#ef5350" rx="1"/>
+  <line x1="660" y1="280" x2="660" y2="340" stroke="#ef5350" stroke-width="1"/><rect x="657" y="288" width="6" height="40" fill="#ef5350" rx="1"/>
+  <line x1="700" y1="295" x2="700" y2="355" stroke="#26a69a" stroke-width="1"/><rect x="697" y="300" width="6" height="38" fill="#26a69a" rx="1"/>
+
+  <!-- FRAMA line (purple) -->
+  <polyline points="100,360 140,330 180,290 220,245 260,200 300,170 340,155 380,148 420,140 460,138 500,148 540,180 580,225 620,268 660,305 700,320" fill="none" stroke="#AB47BC" stroke-width="2.5"/>
+
+  <!-- Annotations -->
+  <text x="200" y="415" text-anchor="middle" fill="rgba(171,71,188,0.6)" font-size="11" font-family="Inter,sans-serif">Low Fractal Dim. = Fast</text>
+  <text x="430" y="110" text-anchor="middle" fill="rgba(171,71,188,0.4)" font-size="11" font-family="Inter,sans-serif">High Fractal Dim. = Slow</text>
+  <text x="610" y="415" text-anchor="middle" fill="rgba(171,71,188,0.6)" font-size="11" font-family="Inter,sans-serif">Low Fractal Dim. = Fast</text>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="115" y2="475" stroke="#AB47BC" stroke-width="2.5"/>
+  <text x="120" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">FRAMA</text>
+  <rect x="200" y="470" width="20" height="10" fill="rgba(0,230,118,0.15)" rx="2"/>
+  <text x="225" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Rising</text>
+  <rect x="285" y="470" width="20" height="10" fill="rgba(255,23,68,0.15)" rx="2"/>
+  <text x="310" y="479" fill="#aaa" font-size="11" font-family="Inter,sans-serif">Falling</text>
+</svg>

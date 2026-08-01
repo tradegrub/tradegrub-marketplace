@@ -1,0 +1,33 @@
+{
+  "id": "filtered-momentum-measure",
+  "name": "Filtered Momentum Measure",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "numpy",
+    "momentum",
+    "filtered",
+    "smoothed-price",
+    "adaptive"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Momentum oscillator applied to adaptively smoothed price series, reducing false signals from price noise using numpy filtering",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

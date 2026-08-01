@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Movement Probability</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="380" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10">Probability (%)</text>
+
+  <!-- 50 line -->
+  <line x1="60" y1="260" x2="760" y2="260" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="765" y="264" fill="#888" font-family="Inter,sans-serif" font-size="9">50%</text>
+  <!-- 65 line -->
+  <line x1="60" y1="195" x2="760" y2="195" stroke="#FF9800" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+  <text x="765" y="199" fill="#FF9800" font-family="Inter,sans-serif" font-size="9">65%</text>
+
+  <!-- Up probability -->
+  <polyline points="100,250 150,240 200,230 250,200 300,180 350,220 400,260 450,270 500,290 550,310 600,280 650,240 700,220"
+    fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Down probability (mirror) -->
+  <polyline points="100,270 150,280 200,290 250,320 300,340 350,300 400,260 450,250 500,230 550,210 600,240 650,280 700,300"
+    fill="none" stroke="#f44336" stroke-width="2.5"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="110" y2="475" stroke="#4CAF50" stroke-width="2.5"/>
+  <text x="115" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Up Probability</text>
+  <line x1="280" y1="475" x2="310" y2="475" stroke="#f44336" stroke-width="2.5"/>
+  <text x="315" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Down Probability</text>
+  <line x1="480" y1="475" x2="510" y2="475" stroke="#FF9800" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="515" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">High Prob (65%)</text>
+</svg>

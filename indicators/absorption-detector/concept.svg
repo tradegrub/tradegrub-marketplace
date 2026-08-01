@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Absorption Detector</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <rect x="60" y="70" width="700" height="180" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10">Absorption Ratio (Z-Score)</text>
+
+  <!-- Zero line -->
+  <line x1="60" y1="250" x2="760" y2="250" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Threshold line -->
+  <line x1="60" y1="130" x2="760" y2="130" stroke="#FF9800" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+  <text x="765" y="134" fill="#FF9800" font-family="Inter,sans-serif" font-size="9">2.0</text>
+
+  <!-- Absorption bg highlights -->
+  <rect x="270" y="70" width="40" height="180" fill="rgba(33,150,243,0.08)"/>
+  <rect x="530" y="70" width="40" height="180" fill="rgba(33,150,243,0.08)"/>
+
+  <!-- Score line -->
+  <polyline points="100,240 150,245 200,235 250,220 290,100 330,210 380,245 430,240 480,235 550,95 590,220 640,240 700,248"
+    fill="none" stroke="#2196F3" stroke-width="2.5"/>
+
+  <!-- Diamonds at spikes -->
+  <polygon points="290,85 282,95 290,105 298,95" fill="#FF9800"/>
+  <polygon points="550,80 542,90 550,100 558,90" fill="#FF9800"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="110" y2="475" stroke="#2196F3" stroke-width="2.5"/>
+  <text x="115" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Absorption Ratio</text>
+  <polygon points="280,480 272,472 280,464 288,472" fill="#FF9800"/>
+  <text x="295" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Absorption Event</text>
+  <line x1="440" y1="475" x2="470" y2="475" stroke="#FF9800" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="475" y="479" fill="#ccc" font-family="Inter,sans-serif" font-size="11">Threshold (2.0)</text>
+</svg>

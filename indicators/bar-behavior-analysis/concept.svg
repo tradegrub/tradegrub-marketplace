@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <clipPath id="chartArea">
+      <rect x="80" y="60" width="640" height="380"/>
+    </clipPath>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="600">Bar Behavior Analysis</text>
+
+  <!-- Y-axis labels -->
+  <text x="70" y="68" text-anchor="end" fill="#787b86" font-size="12">100%</text>
+  <text x="70" y="253" text-anchor="end" fill="#787b86" font-size="12">50%</text>
+  <text x="70" y="443" text-anchor="end" fill="#787b86" font-size="12">0%</text>
+
+  <!-- 50% center line -->
+  <line x1="80" y1="250" x2="720" y2="250" stroke="#787b86" stroke-width="1.5" stroke-dasharray="8,4"/>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="60" x2="720" y2="60" stroke="#787b86" stroke-width="0.5" opacity="0.3"/>
+  <line x1="80" y1="440" x2="720" y2="440" stroke="#787b86" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Bullish probability line (green) -->
+  <path d="M80,280 L120,260 L160,230 L200,200 L240,170 L280,150 L320,130 L360,160 L400,190 L440,220 L480,250 L520,270 L560,290 L600,260 L640,220 L680,180 L720,160" fill="none" stroke="#26a69a" stroke-width="2.5" clip-path="url(#chartArea)"/>
+
+  <!-- Bearish probability line (red) -->
+  <path d="M80,220 L120,240 L160,270 L200,300 L240,330 L280,350 L320,370 L360,340 L400,310 L440,280 L480,250 L520,230 L560,210 L600,240 L640,280 L680,320 L720,340" fill="none" stroke="#ef5350" stroke-width="2.5" clip-path="url(#chartArea)"/>
+
+  <!-- Green shading where bullish > 50% -->
+  <path d="M80,250 L80,280 L120,260 L160,230 L200,200 L240,170 L280,150 L320,130 L340,145 L340,250 Z" fill="#26a69a" opacity="0.15" clip-path="url(#chartArea)"/>
+  <path d="M580,250 L600,260 L640,220 L680,180 L720,160 L720,250 Z" fill="#26a69a" opacity="0.15" clip-path="url(#chartArea)"/>
+
+  <!-- Red shading where bearish > 50% (bullish below 50) -->
+  <path d="M340,250 L360,160 L400,190 L440,220 L480,250 L480,250 Z" fill="#26a69a" opacity="0.1" clip-path="url(#chartArea)"/>
+  <path d="M340,250 L340,250 L360,340 L400,310 L440,280 L480,250 Z" fill="#ef5350" opacity="0.15" clip-path="url(#chartArea)"/>
+  <path d="M480,250 L520,270 L560,290 L580,275 L580,250 Z" fill="#ef5350" opacity="0.15" clip-path="url(#chartArea)"/>
+
+  <!-- Axis -->
+  <line x1="80" y1="60" x2="80" y2="440" stroke="#787b86" stroke-width="1" opacity="0.5"/>
+  <line x1="80" y1="440" x2="720" y2="440" stroke="#787b86" stroke-width="1" opacity="0.5"/>
+
+  <!-- Labels on lines -->
+  <text x="310" y="118" fill="#26a69a" font-size="13" font-weight="500">Bullish</text>
+  <text x="300" y="388" fill="#ef5350" font-size="13" font-weight="500">Bearish</text>
+
+  <!-- 50% label -->
+  <text x="735" y="254" fill="#787b86" font-size="12">50%</text>
+
+  <!-- Legend -->
+  <line x1="260" y1="472" x2="280" y2="472" stroke="#26a69a" stroke-width="2.5"/>
+  <text x="286" y="475" fill="#26a69a" font-size="12">Bullish Probability</text>
+  <line x1="430" y1="472" x2="450" y2="472" stroke="#ef5350" stroke-width="2.5"/>
+  <text x="456" y="475" fill="#ef5350" font-size="12">Bearish Probability</text>
+</svg>

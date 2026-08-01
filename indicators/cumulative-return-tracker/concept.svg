@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="100" y1="80" x2="100" y2="420"/>
+    <line x1="160" y1="80" x2="160" y2="420"/>
+    <line x1="220" y1="80" x2="220" y2="420"/>
+    <line x1="280" y1="80" x2="280" y2="420"/>
+    <line x1="340" y1="80" x2="340" y2="420"/>
+    <line x1="400" y1="80" x2="400" y2="420"/>
+    <line x1="460" y1="80" x2="460" y2="420"/>
+    <line x1="520" y1="80" x2="520" y2="420"/>
+    <line x1="580" y1="80" x2="580" y2="420"/>
+    <line x1="640" y1="80" x2="640" y2="420"/>
+    <line x1="700" y1="80" x2="700" y2="420"/>
+    <line x1="80" y1="100" x2="740" y2="100"/>
+    <line x1="80" y1="140" x2="740" y2="140"/>
+    <line x1="80" y1="180" x2="740" y2="180"/>
+    <line x1="80" y1="220" x2="740" y2="220"/>
+    <line x1="80" y1="260" x2="740" y2="260"/>
+    <line x1="80" y1="300" x2="740" y2="300"/>
+    <line x1="80" y1="340" x2="740" y2="340"/>
+    <line x1="80" y1="380" x2="740" y2="380"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Cumulative Return Tracker</text>
+  <text x="400" y="52" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Y-axis labels -->
+  <text x="72" y="384" text-anchor="end" fill="#666" font-size="9">0%</text>
+  <text x="72" y="344" text-anchor="end" fill="#666" font-size="9">5%</text>
+  <text x="72" y="304" text-anchor="end" fill="#666" font-size="9">10%</text>
+  <text x="72" y="264" text-anchor="end" fill="#666" font-size="9">15%</text>
+  <text x="72" y="224" text-anchor="end" fill="#666" font-size="9">20%</text>
+  <text x="72" y="184" text-anchor="end" fill="#666" font-size="9">25%</text>
+  <text x="72" y="144" text-anchor="end" fill="#666" font-size="9">30%</text>
+  <text x="72" y="104" text-anchor="end" fill="#666" font-size="9">35%</text>
+
+  <!-- X-axis time labels -->
+  <text x="100" y="400" text-anchor="middle" fill="#555" font-size="8">Jan</text>
+  <text x="160" y="400" text-anchor="middle" fill="#555" font-size="8">Feb</text>
+  <text x="220" y="400" text-anchor="middle" fill="#555" font-size="8">Mar</text>
+  <text x="280" y="400" text-anchor="middle" fill="#555" font-size="8">Apr</text>
+  <text x="340" y="400" text-anchor="middle" fill="#555" font-size="8">May</text>
+  <text x="400" y="400" text-anchor="middle" fill="#555" font-size="8">Jun</text>
+  <text x="460" y="400" text-anchor="middle" fill="#555" font-size="8">Jul</text>
+  <text x="520" y="400" text-anchor="middle" fill="#555" font-size="8">Aug</text>
+  <text x="580" y="400" text-anchor="middle" fill="#555" font-size="8">Sep</text>
+  <text x="640" y="400" text-anchor="middle" fill="#555" font-size="8">Oct</text>
+  <text x="700" y="400" text-anchor="middle" fill="#555" font-size="8">Nov</text>
+
+  <!-- Zero baseline -->
+  <line x1="80" y1="380" x2="740" y2="380" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- Drawdown shaded areas (red polygons between equity curve and watermark) -->
+  <!-- Drawdown 1: bars ~5-9 (around Apr) equity dips below watermark -->
+  <polygon points="250,248 265,260 280,275 295,290 310,298 325,290 340,270 340,230 325,230 310,230 295,230 280,230 265,230 250,230" fill="#EF5350" fill-opacity="0.10"/>
+  <!-- Drawdown 2: bars ~14-19 (around Aug-Sep) deeper drawdown -->
+  <polygon points="440,195 460,210 480,235 500,255 520,270 540,280 560,268 580,240 580,170 560,170 540,170 520,170 500,170 480,170 460,170 440,170" fill="#EF5350" fill-opacity="0.10"/>
+  <!-- Drawdown 3: bars ~24-26 (around Nov) small pullback -->
+  <polygon points="660,132 675,142 690,150 705,145 705,118 690,118 675,118 660,118" fill="#EF5350" fill-opacity="0.10"/>
+
+  <!-- Peak watermark line (green dashed, staircase shape - only goes up) -->
+  <polyline points="100,375 115,368 130,358 145,345 160,330 175,315 190,298 205,278 220,255 235,238 250,230 265,230 280,230 295,230 310,230 325,230 340,230 355,212 370,198 385,185 400,178 415,172 430,170 440,170 460,170 480,170 500,170 520,170 540,170 560,170 580,170 595,148 610,135 625,122 640,118 660,118 675,118 690,118 705,118 720,108 735,100" fill="none" stroke="#4CAF50" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.65"/>
+
+  <!-- Equity curve (cyan, detailed ~30 points) -->
+  <polyline points="100,375 115,368 130,358 145,345 160,330 175,315 190,298 205,278 220,255 235,238 250,248 265,260 280,275 295,290 310,298 325,290 340,270 355,212 370,198 385,185 400,178 415,172 430,170 440,195 460,210 480,235 500,255 520,270 540,280 560,268 580,240 595,148 610,135 625,122 640,118 660,132 675,142 690,150 705,145 720,108 735,100" fill="none" stroke="#42d4f5" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- Small dots on equity curve at key points -->
+  <circle cx="100" cy="375" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="235" cy="238" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="310" cy="298" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="430" cy="170" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="540" cy="280" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="640" cy="118" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="690" cy="150" r="2.5" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="735" cy="100" r="2.5" fill="#42d4f5" opacity="0.6"/>
+
+  <!-- Drawdown percentage labels with small pointer lines -->
+  <text x="310" y="315" text-anchor="middle" fill="#EF5350" font-size="10" font-weight="600">-5.2%</text>
+  <line x1="310" y1="305" x2="310" y2="298" stroke="#EF5350" stroke-width="0.8" opacity="0.5"/>
+
+  <text x="540" y="296" text-anchor="middle" fill="#EF5350" font-size="10" font-weight="600">-12.8%</text>
+  <line x1="540" y1="286" x2="540" y2="280" stroke="#EF5350" stroke-width="0.8" opacity="0.5"/>
+
+  <text x="690" y="168" text-anchor="middle" fill="#EF5350" font-size="10" font-weight="600">-3.1%</text>
+  <line x1="690" y1="158" x2="690" y2="150" stroke="#EF5350" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Drawdown duration brackets (subtle) -->
+  <line x1="250" y1="388" x2="340" y2="388" stroke="#EF5350" stroke-width="0.8" opacity="0.3"/>
+  <text x="295" y="396" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.5">32 days</text>
+
+  <line x1="440" y1="388" x2="580" y2="388" stroke="#EF5350" stroke-width="0.8" opacity="0.3"/>
+  <text x="510" y="396" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.5">58 days</text>
+
+  <line x1="660" y1="388" x2="705" y2="388" stroke="#EF5350" stroke-width="0.8" opacity="0.3"/>
+  <text x="682" y="396" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.5">14 days</text>
+
+  <!-- Total Return annotation box -->
+  <rect x="560" y="80" width="170" height="34" rx="5" fill="#1a1a2e" fill-opacity="0.88" stroke="#4CAF50" stroke-width="1.2"/>
+  <text x="645" y="95" text-anchor="middle" fill="#4CAF50" font-size="12" font-weight="700">+47.3% Total Return</text>
+  <text x="645" y="108" text-anchor="middle" fill="#4CAF50" font-size="8" opacity="0.6">since inception</text>
+
+  <!-- Max DD annotation box -->
+  <rect x="388" y="320" width="142" height="34" rx="5" fill="#1a1a2e" fill-opacity="0.88" stroke="#EF5350" stroke-width="1.2"/>
+  <text x="459" y="336" text-anchor="middle" fill="#EF5350" font-size="11" font-weight="600">Max DD: -12.8%</text>
+  <text x="459" y="348" text-anchor="middle" fill="#EF5350" font-size="8" opacity="0.6">Aug-Sep recovery</text>
+  <!-- Pointer line from annotation to deepest trough -->
+  <line x1="459" y1="318" x2="540" y2="284" stroke="#EF5350" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+
+  <!-- Current value marker -->
+  <circle cx="735" cy="100" r="4" fill="none" stroke="#42d4f5" stroke-width="1.5" filter="url(#softGlow)"/>
+  <circle cx="735" cy="100" r="1.5" fill="#42d4f5"/>
+
+  <!-- Right edge current value label -->
+  <text x="748" y="104" fill="#42d4f5" font-size="9" font-weight="500">35.2%</text>
+
+  <!-- Axis borders -->
+  <line x1="80" y1="80" x2="80" y2="388" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="80" y1="388" x2="740" y2="388" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- Legend bar -->
+  <g transform="translate(60, 440)">
+    <rect width="680" height="30" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="15" r="4" fill="#42d4f5"/>
+    <text x="30" y="19" fill="#999" font-size="9">Equity Curve</text>
+    <circle cx="130" cy="15" r="4" fill="#4CAF50"/>
+    <text x="140" y="19" fill="#999" font-size="9">Peak Watermark</text>
+    <rect x="248" y="11" width="10" height="8" rx="1" fill="#EF5350" fill-opacity="0.15" stroke="#EF5350" stroke-width="0.5"/>
+    <text x="264" y="19" fill="#999" font-size="9">Drawdown</text>
+    <circle cx="340" cy="15" r="4" fill="#FFD700"/>
+    <text x="350" y="19" fill="#999" font-size="9">Total Return</text>
+  </g>
+</svg>

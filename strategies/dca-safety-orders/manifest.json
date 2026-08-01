@@ -1,0 +1,15 @@
+{
+  "name": "Safety Order DCA",
+  "id": "dca-safety-orders",
+  "version": "1.0.0",
+  "type": "strategy",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Dollar cost averaging with configurable safety orders that increase position size at progressively lower prices and exit all at a target profit above average entry",
+  "category": "systematic",
+  "tags": ["dca", "safety-orders", "accumulation", "systematic"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 6200
+}

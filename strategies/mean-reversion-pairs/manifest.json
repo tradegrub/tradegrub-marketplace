@@ -1,0 +1,34 @@
+{
+  "id": "mean-reversion-pairs",
+  "name": "Statistical Mean Reversion",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "mean-reversion",
+  "tags": [
+    "sklearn",
+    "pairs-trading",
+    "mean-reversion",
+    "zscore",
+    "regression",
+    "statistical"
+  ],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Statistical mean-reversion strategy using scikit-learn linear regression for hedge ratio computation and z-score based entry/exit signals on the price-vs-smoothed spread",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

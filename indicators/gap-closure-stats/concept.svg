@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Gap Closure Probability</text>
+  <text x="400" y="54" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#555577" stroke-width="0.5" opacity="0.04">
+    <line x1="60" y1="80" x2="740" y2="80"/>
+    <line x1="60" y1="130" x2="740" y2="130"/>
+    <line x1="60" y1="180" x2="740" y2="180"/>
+    <line x1="60" y1="230" x2="740" y2="230"/>
+    <line x1="60" y1="280" x2="740" y2="280"/>
+    <line x1="60" y1="330" x2="740" y2="330"/>
+    <line x1="60" y1="380" x2="740" y2="380"/>
+    <line x1="60" y1="430" x2="740" y2="430"/>
+    <line x1="120" y1="70" x2="120" y2="440"/>
+    <line x1="200" y1="70" x2="200" y2="440"/>
+    <line x1="280" y1="70" x2="280" y2="440"/>
+    <line x1="360" y1="70" x2="360" y2="440"/>
+    <line x1="440" y1="70" x2="440" y2="440"/>
+    <line x1="520" y1="70" x2="520" y2="440"/>
+    <line x1="600" y1="70" x2="600" y2="440"/>
+    <line x1="680" y1="70" x2="680" y2="440"/>
+  </g>
+
+  <!-- Candle 1: green -->
+  <line x1="100" y1="320" x2="100" y2="380" stroke="#4caf50" stroke-width="1"/>
+  <rect x="94" y="340" width="12" height="30" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 2: green -->
+  <line x1="140" y1="300" x2="140" y2="360" stroke="#4caf50" stroke-width="1"/>
+  <rect x="134" y="310" width="12" height="35" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 3: green (before gap 1) -->
+  <line x1="180" y1="270" x2="180" y2="330" stroke="#4caf50" stroke-width="1"/>
+  <rect x="174" y="280" width="12" height="30" fill="#4caf50" rx="1"/>
+
+  <!-- GAP 1 (filled) highlight -->
+  <rect x="192" y="230" width="30" height="50" fill="#4caf50" opacity="0.12" rx="3"/>
+
+  <!-- Candle 4: green (gap up, open above prev close) -->
+  <line x1="210" y1="200" x2="210" y2="260" stroke="#4caf50" stroke-width="1"/>
+  <rect x="204" y="210" width="12" height="20" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 5: red (fills gap 1 downward) -->
+  <line x1="250" y1="220" x2="250" y2="310" stroke="#ef5350" stroke-width="1"/>
+  <rect x="244" y="240" width="12" height="50" fill="#ef5350" rx="1"/>
+
+  <!-- Gap 1 fill dashed line -->
+  <line x1="186" y1="280" x2="260" y2="280" stroke="#4caf50" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+  <!-- Checkmark for filled gap -->
+  <text x="222" y="258" fill="#4caf50" font-size="14" text-anchor="middle" filter="url(#glow)">&#x2713;</text>
+  <text x="222" y="246" fill="#4caf50" font-size="7" text-anchor="middle">FILLED</text>
+
+  <!-- Candle 6: green -->
+  <line x1="290" y1="250" x2="290" y2="310" stroke="#4caf50" stroke-width="1"/>
+  <rect x="284" y="260" width="12" height="30" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 7: green -->
+  <line x1="330" y1="230" x2="330" y2="290" stroke="#4caf50" stroke-width="1"/>
+  <rect x="324" y="240" width="12" height="30" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 8: red (before gap 2) -->
+  <line x1="370" y1="220" x2="370" y2="280" stroke="#ef5350" stroke-width="1"/>
+  <rect x="364" y="230" width="12" height="30" fill="#ef5350" rx="1"/>
+
+  <!-- GAP 2 (filled) highlight -->
+  <rect x="382" y="180" width="30" height="50" fill="#4caf50" opacity="0.12" rx="3"/>
+
+  <!-- Candle 9: green (gap up) -->
+  <line x1="400" y1="150" x2="400" y2="210" stroke="#4caf50" stroke-width="1"/>
+  <rect x="394" y="160" width="12" height="20" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 10: red -->
+  <line x1="440" y1="165" x2="440" y2="250" stroke="#ef5350" stroke-width="1"/>
+  <rect x="434" y="180" width="12" height="50" fill="#ef5350" rx="1"/>
+
+  <!-- Gap 2 fill dashed line -->
+  <line x1="376" y1="230" x2="450" y2="230" stroke="#4caf50" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+  <!-- Checkmark for filled gap 2 -->
+  <text x="415" y="208" fill="#4caf50" font-size="14" text-anchor="middle" filter="url(#glow)">&#x2713;</text>
+  <text x="415" y="196" fill="#4caf50" font-size="7" text-anchor="middle">FILLED</text>
+
+  <!-- Candle 11: green -->
+  <line x1="480" y1="200" x2="480" y2="260" stroke="#4caf50" stroke-width="1"/>
+  <rect x="474" y="210" width="12" height="30" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 12: green -->
+  <line x1="520" y1="180" x2="520" y2="240" stroke="#4caf50" stroke-width="1"/>
+  <rect x="514" y="190" width="12" height="28" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 13: red (before gap 3) -->
+  <line x1="560" y1="170" x2="560" y2="230" stroke="#ef5350" stroke-width="1"/>
+  <rect x="554" y="180" width="12" height="30" fill="#ef5350" rx="1"/>
+
+  <!-- GAP 3 (unfilled) highlight -->
+  <rect x="572" y="120" width="30" height="60" fill="#ef5350" opacity="0.10" rx="3"/>
+
+  <!-- Candle 14: green (gap up, stays high) -->
+  <line x1="590" y1="90" x2="590" y2="150" stroke="#4caf50" stroke-width="1"/>
+  <rect x="584" y="100" width="12" height="20" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 15: green (stays above gap) -->
+  <line x1="630" y1="85" x2="630" y2="130" stroke="#4caf50" stroke-width="1"/>
+  <rect x="624" y="95" width="12" height="20" fill="#4caf50" rx="1"/>
+
+  <!-- Candle 16: red (slight pullback but not filling) -->
+  <line x1="670" y1="100" x2="670" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="664" y="110" width="12" height="30" fill="#ef5350" rx="1"/>
+
+  <!-- Gap 3 unfilled dashed line -->
+  <line x1="566" y1="180" x2="680" y2="180" stroke="#ef5350" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <!-- X for unfilled gap -->
+  <text x="630" y="170" fill="#ef5350" font-size="14" text-anchor="middle" filter="url(#glow)">&#x2717;</text>
+  <text x="630" y="158" fill="#ef5350" font-size="7" text-anchor="middle">OPEN</text>
+
+  <!-- Probability gauge badge -->
+  <rect x="620" y="68" width="110" height="38" rx="6" fill="#1a1a2e" stroke="#4caf50" stroke-width="1.5" opacity="0.95"/>
+  <text x="675" y="82" text-anchor="middle" fill="#8a8aaa" font-size="8">FILL RATE</text>
+  <text x="675" y="99" text-anchor="middle" fill="#4caf50" font-size="18" font-weight="700" filter="url(#glow)">72%</text>
+
+  <!-- Timer badge -->
+  <rect x="620" y="112" width="110" height="24" rx="5" fill="#1a1a2e" stroke="#6a6a8a" stroke-width="1" opacity="0.9"/>
+  <text x="675" y="128" text-anchor="middle" fill="#b0b0cc" font-size="10">Avg Fill: 3 bars</text>
+
+  <!-- Legend bar -->
+  <rect x="60" y="458" width="680" height="30" rx="5" fill="#111128" opacity="0.7"/>
+  <rect x="80" y="467" width="10" height="10" fill="#4caf50" rx="2"/>
+  <text x="96" y="477" fill="#8a8aaa" font-size="10">Green candle</text>
+  <rect x="185" y="467" width="10" height="10" fill="#ef5350" rx="2"/>
+  <text x="201" y="477" fill="#8a8aaa" font-size="10">Red candle</text>
+  <rect x="280" y="467" width="14" height="10" fill="#4caf50" opacity="0.2" rx="2" stroke="#4caf50" stroke-width="0.5"/>
+  <text x="300" y="477" fill="#8a8aaa" font-size="10">Filled gap</text>
+  <rect x="380" y="467" width="14" height="10" fill="#ef5350" opacity="0.15" rx="2" stroke="#ef5350" stroke-width="0.5"/>
+  <text x="400" y="477" fill="#8a8aaa" font-size="10">Open gap</text>
+  <line x1="480" y1="472" x2="500" y2="472" stroke="#4caf50" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="506" y="477" fill="#8a8aaa" font-size="10">Fill level</text>
+  <text x="580" y="477" fill="#4caf50" font-size="11">&#x2713; Closed</text>
+  <text x="650" y="477" fill="#ef5350" font-size="11">&#x2717; Open</text>
+</svg>

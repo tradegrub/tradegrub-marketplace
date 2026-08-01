@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="distZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffab40" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffab40" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#8888aa" stroke-width="0.5" opacity="0.04">
+    <line x1="80" y1="80" x2="80" y2="420"/><line x1="180" y1="80" x2="180" y2="420"/>
+    <line x1="280" y1="80" x2="280" y2="420"/><line x1="380" y1="80" x2="380" y2="420"/>
+    <line x1="480" y1="80" x2="480" y2="420"/><line x1="580" y1="80" x2="580" y2="420"/>
+    <line x1="680" y1="80" x2="680" y2="420"/><line x1="760" y1="80" x2="760" y2="420"/>
+    <line x1="80" y1="120" x2="760" y2="120"/><line x1="80" y1="180" x2="760" y2="180"/>
+    <line x1="80" y1="240" x2="760" y2="240"/><line x1="80" y1="300" x2="760" y2="300"/>
+    <line x1="80" y1="360" x2="760" y2="360"/><line x1="80" y1="420" x2="760" y2="420"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Supertrend Fakeout Filter</text>
+  <text x="400" y="56" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- Price line -->
+  <polyline points="90,310 120,295 150,280 180,270 210,275 240,260 270,250 300,240 330,235 360,225 390,230 410,245 425,260 440,250 455,235 470,220 490,210 510,200 530,195 555,190 580,185 610,195 640,210 660,225 685,215 710,200 740,190"
+    fill="none" stroke="#b0bec5" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Supertrend: bullish (green) segment 1 -->
+  <polyline points="90,340 120,330 150,320 180,310 210,312 240,300 270,290 300,280 330,275 360,265"
+    fill="none" stroke="#00e676" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- Supertrend: fakeout flip to bearish (red) - brief -->
+  <polyline points="360,265 390,215 410,210 425,215"
+    fill="none" stroke="#ff1744" stroke-width="2.5" stroke-dasharray="6,3" filter="url(#glow)"/>
+
+  <!-- Supertrend: flips back to bullish (green) - fakeout resolved -->
+  <polyline points="425,215 440,280 455,275 470,265 490,255 510,248 530,242 555,238 580,235"
+    fill="none" stroke="#00e676" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- Supertrend: valid flip to bearish (red) -->
+  <polyline points="580,235 580,170 610,172 640,178 660,183 685,178 710,172 740,168"
+    fill="none" stroke="#ff1744" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- Distance validation zone (shaded) near valid flip -->
+  <rect x="565" y="170" width="50" height="65" fill="url(#distZone)" rx="3"/>
+  <text x="590" y="167" text-anchor="middle" fill="#ffab40" font-size="9" opacity="0.7">Min Distance</text>
+  <line x1="565" y1="170" x2="615" y2="170" stroke="#ffab40" stroke-width="0.7" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="565" y1="235" x2="615" y2="235" stroke="#ffab40" stroke-width="0.7" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="590" y1="173" x2="590" y2="232" stroke="#ffab40" stroke-width="0.7" opacity="0.4" marker-end="none"/>
+  <!-- arrows -->
+  <polygon points="587,177 590,173 593,177" fill="#ffab40" opacity="0.5"/>
+  <polygon points="587,228 590,232 593,228" fill="#ffab40" opacity="0.5"/>
+
+  <!-- Fakeout zone highlight -->
+  <rect x="350" y="195" width="90" height="85" fill="#ff1744" opacity="0.06" rx="4"/>
+
+  <!-- Fakeout X mark -->
+  <g transform="translate(393,198)" stroke="#ff1744" stroke-width="2.5" opacity="0.9">
+    <line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/>
+  </g>
+  <text x="393" y="185" text-anchor="middle" fill="#ff1744" font-size="12" font-weight="600">Filtered</text>
+  <text x="393" y="296" text-anchor="middle" fill="#ff5252" font-size="9" opacity="0.7">Too close, flipped back</text>
+
+  <!-- Valid flip checkmark -->
+  <g transform="translate(590,155)">
+    <polyline points="-6,0 -2,5 7,-6" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="590" y="147" text-anchor="middle" fill="#00e676" font-size="12" font-weight="600">Confirmed</text>
+
+  <!-- Annotation lines -->
+  <line x1="393" y1="204" x2="393" y2="245" stroke="#ff1744" stroke-width="0.7" stroke-dasharray="2,2" opacity="0.5"/>
+  <line x1="590" y1="161" x2="590" y2="170" stroke="#00e676" stroke-width="0.7" stroke-dasharray="2,2" opacity="0.5"/>
+
+  <!-- Legend bar -->
+  <g transform="translate(0,455)">
+    <rect x="140" y="0" width="520" height="28" fill="#1a1a2e" rx="4" stroke="#333355" stroke-width="0.5"/>
+    <line x1="160" y1="14" x2="180" y2="14" stroke="#b0bec5" stroke-width="2"/>
+    <text x="186" y="18" fill="#8888aa" font-size="10">Price</text>
+    <line x1="240" y1="14" x2="260" y2="14" stroke="#00e676" stroke-width="2"/>
+    <text x="266" y="18" fill="#8888aa" font-size="10">Bullish Supertrend</text>
+    <line x1="390" y1="14" x2="410" y2="14" stroke="#ff1744" stroke-width="2"/>
+    <text x="416" y="18" fill="#8888aa" font-size="10">Bearish Supertrend</text>
+    <rect x="535" y="8" width="12" height="12" fill="url(#distZone)" stroke="#ffab40" stroke-width="0.5" rx="2"/>
+    <text x="553" y="18" fill="#8888aa" font-size="10">Distance Zone</text>
+  </g>
+</svg>

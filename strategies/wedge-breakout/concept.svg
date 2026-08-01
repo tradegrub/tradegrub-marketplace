@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="wedgeFillR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef5350" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ef5350" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="wedgeFillG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26a69a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#26a69a" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/>
+    <line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/>
+    <line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/>
+    <line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/>
+    <line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Wedge Pattern Breakout Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- LEFT: Falling Wedge (Bullish) -->
+  <text x="200" y="78" text-anchor="middle" fill="#26a69a" font-size="12" font-weight="600">Falling Wedge (Bullish)</text>
+
+  <!-- Falling wedge lines - both slopes negative, converging -->
+  <polygon points="80,120 80,180 340,280 340,260" fill="url(#wedgeFillG)"/>
+  <line x1="80" y1="120" x2="340" y2="260" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <line x1="80" y1="180" x2="340" y2="280" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="85" y="115" fill="#ef5350" font-size="8">Upper (falling)</text>
+  <text x="85" y="195" fill="#26a69a" font-size="8">Lower (falling faster)</text>
+
+  <!-- Candles inside falling wedge -->
+  <line x1="100" y1="125" x2="100" y2="170" stroke="#ef5350" stroke-width="1"/>
+  <rect x="96" y="132" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="130" y1="145" x2="130" y2="192" stroke="#26a69a" stroke-width="1"/>
+  <rect x="126" y="168" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="160" y1="160" x2="160" y2="210" stroke="#ef5350" stroke-width="1"/>
+  <rect x="156" y="168" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="190" y1="178" x2="190" y2="228" stroke="#26a69a" stroke-width="1"/>
+  <rect x="186" y="205" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="195" x2="220" y2="242" stroke="#ef5350" stroke-width="1"/>
+  <rect x="216" y="202" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="250" y1="215" x2="250" y2="258" stroke="#26a69a" stroke-width="1"/>
+  <rect x="246" y="238" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="280" y1="228" x2="280" y2="270" stroke="#ef5350" stroke-width="1"/>
+  <rect x="276" y="235" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="310" y1="242" x2="310" y2="278" stroke="#26a69a" stroke-width="1"/>
+  <rect x="306" y="260" width="8" height="10" fill="#26a69a" rx="1"/>
+
+  <!-- Breakout candle from falling wedge -->
+  <line x1="345" y1="228" x2="345" y2="278" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="339" y="235" width="12" height="30" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <!-- BUY arrow -->
+  <g filter="url(#softGlow)">
+    <polygon points="345,222 353,222 349,212" fill="#00e676"/>
+  </g>
+  <rect x="358" y="212" width="48" height="18" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="382" y="225" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY</text>
+
+  <!-- Stop and TP for falling wedge -->
+  <line x1="339" y1="290" x2="410" y2="290" stroke="#ef5350" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="412" y="293" fill="#ef5350" font-size="8">Stop</text>
+  <line x1="339" y1="195" x2="410" y2="195" stroke="#00e676" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="412" y="198" fill="#00e676" font-size="8">TP (2:1)</text>
+
+  <!-- Divider -->
+  <line x1="420" y1="70" x2="420" y2="380" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- RIGHT: Rising Wedge (Bearish) -->
+  <text x="600" y="78" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="600">Rising Wedge (Bearish)</text>
+
+  <!-- Rising wedge lines - both slopes positive, converging -->
+  <polygon points="450,310 450,250 720,130 720,150" fill="url(#wedgeFillR)"/>
+  <line x1="450" y1="250" x2="720" y2="130" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <line x1="450" y1="310" x2="720" y2="150" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+  <text x="725" y="128" fill="#ef5350" font-size="8">Upper (rising slower)</text>
+  <text x="725" y="153" fill="#26a69a" font-size="8">Lower (rising)</text>
+
+  <!-- Candles inside rising wedge -->
+  <line x1="470" y1="248" x2="470" y2="302" stroke="#26a69a" stroke-width="1"/>
+  <rect x="466" y="268" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="232" x2="500" y2="288" stroke="#ef5350" stroke-width="1"/>
+  <rect x="496" y="240" width="8" height="28" fill="#ef5350" rx="1"/>
+  <line x1="530" y1="218" x2="530" y2="272" stroke="#26a69a" stroke-width="1"/>
+  <rect x="526" y="245" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="560" y1="202" x2="560" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="556" y="225" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="590" y1="188" x2="590" y2="238" stroke="#ef5350" stroke-width="1"/>
+  <rect x="586" y="195" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="620" y1="175" x2="620" y2="222" stroke="#26a69a" stroke-width="1"/>
+  <rect x="616" y="195" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="650" y1="162" x2="650" y2="208" stroke="#26a69a" stroke-width="1"/>
+  <rect x="646" y="180" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="680" y1="150" x2="680" y2="195" stroke="#ef5350" stroke-width="1"/>
+  <rect x="676" y="158" width="8" height="22" fill="#ef5350" rx="1"/>
+
+  <!-- Breakdown candle -->
+  <line x1="710" y1="155" x2="710" y2="218" stroke="#ef5350" stroke-width="1.5"/>
+  <rect x="704" y="165" width="12" height="40" fill="#ef5350" rx="1" filter="url(#glow)"/>
+
+  <!-- SELL arrow -->
+  <polygon points="710,225 718,225 714,235" fill="#ef5350" filter="url(#softGlow)"/>
+  <rect x="658" y="238" width="55" height="18" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="685" y="251" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SELL</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="96" y="400" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="126" y="402" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="156" y="398" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="186" y="402" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="216" y="400" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="246" y="405" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="276" y="403" width="8" height="9" fill="#ef5350" rx="1"/>
+    <rect x="306" y="406" width="8" height="6" fill="#26a69a" rx="1"/>
+  </g>
+  <rect x="339" y="382" width="12" height="30" fill="#00e676" rx="1" opacity="0.6" filter="url(#softGlow)"/>
+  <text x="335" y="378" fill="#00e676" font-size="8" text-anchor="end">Vol surge</text>
+  <g opacity="0.4">
+    <rect x="466" y="400" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="496" y="402" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="526" y="400" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="556" y="398" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="586" y="402" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="616" y="405" width="8" height="7" fill="#26a69a" rx="1"/>
+    <rect x="646" y="406" width="8" height="6" fill="#26a69a" rx="1"/>
+    <rect x="676" y="405" width="8" height="7" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="704" y="382" width="12" height="30" fill="#ef5350" rx="1" opacity="0.6"/>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Falling Wedge</text>
+    <circle cx="135" cy="20" r="4" fill="#ef5350"/>
+    <text x="145" y="24" fill="#999" font-size="9">Rising Wedge</text>
+    <circle cx="250" cy="20" r="4" fill="#00e676"/>
+    <text x="260" y="24" fill="#999" font-size="9">Long Breakout</text>
+    <circle cx="375" cy="20" r="4" fill="#ef5350"/>
+    <text x="385" y="24" fill="#999" font-size="9">Short Breakdown</text>
+    <rect x="505" y="12" width="20" height="16" fill="#00e676" opacity="0.5" rx="2"/>
+    <text x="530" y="24" fill="#999" font-size="9">Volume Surge</text>
+  </g>
+</svg>

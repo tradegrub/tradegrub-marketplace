@@ -1,0 +1,12 @@
+{
+  "id": "fibonacci-confluence-mapper",
+  "name": "Fibonacci Confluence Mapper",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Support/Resistance",
+  "tags": ["fibonacci", "confluence", "support", "resistance", "retracement", "zones"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Finds where multiple Fibonacci retracement levels from different swings cluster together as high-probability zones"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "buying-pressure-oscillator",
+  "name": "Buying Pressure Oscillator",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "numpy",
+    "wave",
+    "cycle",
+    "buying-pressure",
+    "short-term"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Short-term oscillator measuring buying and selling pressure cycles over configurable time intervals for momentum analysis using numpy cycle detection",
+  "official": true,
+  "beta": false,
+  "likes": 1500,
+  "uses": 6200,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

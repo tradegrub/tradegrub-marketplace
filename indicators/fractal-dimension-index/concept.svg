@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="zoneGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d4a2e" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0f6b3a" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="zoneGray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a4a" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4a4a5a" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="zonePurple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b2fa0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#4a1a6e" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="priceFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fdiStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="chartClip">
+      <rect x="60" y="55" width="680" height="360"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" filter="url(#textGlow)">Fractal Dimension Index</text>
+  <text x="400" y="46" text-anchor="middle" fill="#7a8ba8" font-family="Arial, Helvetica, sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="0.5">
+    <line x1="60" y1="55" x2="740" y2="55"/>
+    <line x1="60" y1="115" x2="740" y2="115"/>
+    <line x1="60" y1="175" x2="740" y2="175"/>
+    <line x1="60" y1="235" x2="740" y2="235"/>
+    <line x1="60" y1="295" x2="740" y2="295"/>
+    <line x1="60" y1="355" x2="740" y2="355"/>
+    <line x1="60" y1="415" x2="740" y2="415"/>
+    <line x1="145" y1="55" x2="145" y2="415"/>
+    <line x1="230" y1="55" x2="230" y2="415"/>
+    <line x1="315" y1="55" x2="315" y2="415"/>
+    <line x1="400" y1="55" x2="400" y2="415"/>
+    <line x1="485" y1="55" x2="485" y2="415"/>
+    <line x1="570" y1="55" x2="570" y2="415"/>
+    <line x1="655" y1="55" x2="655" y2="415"/>
+  </g>
+
+  <!-- Chart area clipped -->
+  <g clip-path="url(#chartClip)">
+
+    <!-- Zone: Mean Reverting (top, D>1.7) purple -->
+    <rect x="60" y="55" width="680" height="120" fill="url(#zonePurple)"/>
+
+    <!-- Zone: Random Walk (middle, D~1.5) gray -->
+    <rect x="60" y="175" width="680" height="120" fill="url(#zoneGray)"/>
+
+    <!-- Zone: Trending (bottom, D<1.3) green -->
+    <rect x="60" y="295" width="680" height="120" fill="url(#zoneGreen)"/>
+
+    <!-- Zone boundary lines -->
+    <line x1="60" y1="175" x2="740" y2="175" stroke="#8855cc" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="6,4"/>
+    <line x1="60" y1="295" x2="740" y2="295" stroke="#44aa66" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="6,4"/>
+
+    <!-- Subtle price line (upper portion) -->
+    <polyline fill="none" stroke="#4fc3f7" stroke-opacity="0.2" stroke-width="1.2"
+      points="60,200 80,195 100,185 120,190 140,175 160,165 180,170 200,155 220,148 240,152 260,140 280,135 300,142 320,138 340,130 360,125 380,135 400,128 420,120 440,125 460,118 480,122 500,115 520,108 540,112 560,105 580,110 600,102 620,98 640,105 660,95 680,100 700,92 720,88 740,94"/>
+    <!-- Price fill area -->
+    <polygon fill="url(#priceFill)"
+      points="60,200 80,195 100,185 120,190 140,175 160,165 180,170 200,155 220,148 240,152 260,140 280,135 300,142 320,138 340,130 360,125 380,135 400,128 420,120 440,125 460,118 480,122 500,115 520,108 540,112 560,105 580,110 600,102 620,98 640,105 660,95 680,100 700,92 720,88 740,94 740,250 60,250"/>
+
+    <!-- FDI line glow layer -->
+    <polyline fill="none" stroke="#00e5ff" stroke-opacity="0.4" stroke-width="6" filter="url(#glowStrong)" stroke-linejoin="round" stroke-linecap="round"
+      points="60,310 75,305 90,290 105,270 120,250 135,235 150,220 165,200 180,185 195,170 210,155 225,140 240,120 255,100 270,85 285,95 300,110 315,130 330,155 345,180 360,210 375,240 390,270 405,300 420,320 435,340 450,360 465,370 480,350 495,320 510,290 525,260 540,230 555,200 570,175 585,150 600,130 615,160 630,195 645,230 660,260 675,290 690,310 705,330 720,345 735,355"/>
+    <!-- Main FDI line -->
+    <polyline fill="none" stroke="url(#fdiStroke)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"
+      points="60,310 75,305 90,290 105,270 120,250 135,235 150,220 165,200 180,185 195,170 210,155 225,140 240,120 255,100 270,85 285,95 300,110 315,130 330,155 345,180 360,210 375,240 390,270 405,300 420,320 435,340 450,360 465,370 480,350 495,320 510,290 525,260 540,230 555,200 570,175 585,150 600,130 615,160 630,195 645,230 660,260 675,290 690,310 705,330 720,345 735,355"/>
+
+    <!-- FDI dot at current position -->
+    <circle cx="735" cy="355" r="4" fill="#00e5ff" filter="url(#glow)"/>
+    <circle cx="735" cy="355" r="2" fill="#ffffff"/>
+
+  </g>
+
+  <!-- Y-axis labels -->
+  <text x="54" y="80" text-anchor="end" fill="#9a7fd4" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">2.0</text>
+  <text x="54" y="120" text-anchor="end" fill="#9a7fd4" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">1.8</text>
+  <text x="54" y="180" text-anchor="end" fill="#8888aa" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">1.7</text>
+  <text x="54" y="240" text-anchor="end" fill="#8888aa" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">1.5</text>
+  <text x="54" y="300" text-anchor="end" fill="#55aa77" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">1.3</text>
+  <text x="54" y="360" text-anchor="end" fill="#55aa77" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">1.1</text>
+  <text x="54" y="418" text-anchor="end" fill="#55aa77" font-family="Arial, Helvetica, sans-serif" font-size="9" opacity="0.7">1.0</text>
+
+  <!-- Zone labels (right side) -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold">
+    <text x="748" y="108" fill="#b87fff" opacity="0.8">Mean</text>
+    <text x="748" y="120" fill="#b87fff" opacity="0.8">Reverting</text>
+    <text x="748" y="134" fill="#9a7fd4" opacity="0.5" font-size="8" font-weight="normal">D &gt; 1.7</text>
+
+    <text x="748" y="228" fill="#9999bb" opacity="0.7">Random</text>
+    <text x="748" y="240" fill="#9999bb" opacity="0.7">Walk</text>
+    <text x="748" y="254" fill="#8888aa" opacity="0.5" font-size="8" font-weight="normal">D ~ 1.5</text>
+
+    <text x="748" y="338" fill="#44dd77" opacity="0.7">Trending</text>
+    <text x="748" y="354" fill="#44aa66" opacity="0.5" font-size="8" font-weight="normal">D &lt; 1.3</text>
+  </g>
+
+  <!-- Axis borders -->
+  <line x1="60" y1="55" x2="60" y2="415" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="60" y1="415" x2="740" y2="415" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- Legend bar at bottom -->
+  <rect x="100" y="440" width="600" height="40" rx="6" fill="#0d0d1a" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- Legend items -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="10">
+    <line x1="125" y1="460" x2="155" y2="460" stroke="#00e5ff" stroke-width="2" filter="url(#glow)"/>
+    <circle cx="140" cy="460" r="2.5" fill="#00e5ff" filter="url(#glow)"/>
+    <text x="162" y="464" fill="#c0d0e0">FDI Line</text>
+
+    <line x1="235" y1="460" x2="265" y2="460" stroke="#4fc3f7" stroke-width="1.2" stroke-opacity="0.4"/>
+    <text x="272" y="464" fill="#7a8ba8">Price</text>
+
+    <rect x="330" y="453" width="14" height="14" rx="2" fill="#0f6b3a" fill-opacity="0.5"/>
+    <text x="350" y="464" fill="#44dd77" opacity="0.8">Trending (D&lt;1.3)</text>
+
+    <rect x="475" y="453" width="14" height="14" rx="2" fill="#4a4a5a" fill-opacity="0.4"/>
+    <text x="495" y="464" fill="#9999bb" opacity="0.8">Random (D~1.5)</text>
+
+    <rect x="610" y="453" width="14" height="14" rx="2" fill="#6b2fa0" fill-opacity="0.5"/>
+    <text x="630" y="464" fill="#b87fff" opacity="0.8">Reverting (D&gt;1.7)</text>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Wavelet Multi-Resolution Analysis</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- D1 - High frequency -->
+  <rect x="60" y="65" width="700" height="90" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="82" fill="#42A5F5" font-family="Inter,sans-serif" font-size="10">D1 (High Freq)</text>
+  <line x1="60" y1="110" x2="760" y2="110" stroke="#333" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <polyline points="90,110 105,95 120,120 135,100 150,118 165,98 180,115 195,102 210,112 225,98 240,118 255,95 270,120 285,100 300,115 315,98 330,112 345,105 360,110 375,102 390,118 405,95 420,115 435,100 450,118 465,95 480,112 495,105 510,115 525,98 540,118 555,100 570,112 585,98 600,120 615,95 630,115 645,102 660,110 675,100 690,118 705,95 720,110 735,105" fill="none" stroke="#42A5F5" stroke-width="1.5"/>
+
+  <!-- D2 - Medium frequency -->
+  <rect x="60" y="165" width="700" height="90" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="182" fill="#AB47BC" font-family="Inter,sans-serif" font-size="10">D2 (Medium Freq)</text>
+  <line x1="60" y1="210" x2="760" y2="210" stroke="#333" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <polyline points="90,210 120,195 150,225 180,195 210,220 240,200 270,215 300,195 330,225 360,200 390,215 420,195 450,225 480,200 510,215 540,195 570,220 600,200 630,215 660,195 690,225 720,205" fill="none" stroke="#AB47BC" stroke-width="1.5"/>
+
+  <!-- D3 - Low frequency -->
+  <rect x="60" y="265" width="700" height="90" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="282" fill="#FFA726" font-family="Inter,sans-serif" font-size="10">D3 (Low Freq)</text>
+  <line x1="60" y1="310" x2="760" y2="310" stroke="#333" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <polyline points="90,310 150,290 210,325 270,295 330,320 390,300 450,315 510,295 570,320 630,300 690,310 720,305" fill="none" stroke="#FFA726" stroke-width="1.5"/>
+
+  <!-- Approximation -->
+  <rect x="60" y="365" width="700" height="75" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="382" fill="#fff" font-family="Inter,sans-serif" font-size="10">Approximation (Trend)</text>
+  <line x1="60" y1="402" x2="760" y2="402" stroke="#333" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <polyline points="90,410 180,405 270,398 360,395 450,400 540,405 630,395 720,390" fill="none" stroke="#fff" stroke-width="2"/>
+
+  <!-- Legend -->
+  <rect x="120" y="455" width="560" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="145" y1="470" x2="175" y2="470" stroke="#42A5F5" stroke-width="2"/>
+  <text x="180" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">D1</text>
+  <line x1="225" y1="470" x2="255" y2="470" stroke="#AB47BC" stroke-width="2"/>
+  <text x="260" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">D2</text>
+  <line x1="305" y1="470" x2="335" y2="470" stroke="#FFA726" stroke-width="2"/>
+  <text x="340" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">D3</text>
+  <line x1="385" y1="470" x2="415" y2="470" stroke="#fff" stroke-width="2"/>
+  <text x="420" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Approx</text>
+  <text x="510" y="474" fill="#666" font-family="Inter,sans-serif" font-size="10">Scale Decomposition</text>
+</svg>

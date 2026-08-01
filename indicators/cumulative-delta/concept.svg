@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Cumulative Delta Volume</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price panel (top half) -->
+  <text x="85" y="80" fill="#666" font-family="Inter,sans-serif" font-size="9">Price</text>
+  <line x1="80" y1="85" x2="740" y2="85" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
+
+  <!-- Price candles - uptrend -->
+  <line x1="100" y1="200" x2="100" y2="230" stroke="#26a69a" stroke-width="1"/>
+  <rect x="97" y="206" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="125" y1="190" x2="125" y2="222" stroke="#26a69a" stroke-width="1"/>
+  <rect x="122" y="196" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="150" y1="178" x2="150" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="147" y="184" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="175" y1="165" x2="175" y2="198" stroke="#26a69a" stroke-width="1"/>
+  <rect x="172" y="172" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="155" x2="200" y2="185" stroke="#26a69a" stroke-width="1"/>
+  <rect x="197" y="160" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="225" y1="145" x2="225" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="222" y="150" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="135" x2="250" y2="165" stroke="#26a69a" stroke-width="1"/>
+  <rect x="247" y="140" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="275" y1="125" x2="275" y2="155" stroke="#26a69a" stroke-width="1"/>
+  <rect x="272" y="130" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="300" y1="118" x2="300" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="297" y="122" width="6" height="16" fill="#26a69a" rx="1"/>
+  <!-- Price continues up but delta diverges -->
+  <line x1="325" y1="112" x2="325" y2="140" stroke="#26a69a" stroke-width="1"/>
+  <rect x="322" y="116" width="6" height="15" fill="#26a69a" rx="1"/>
+  <line x1="350" y1="108" x2="350" y2="135" stroke="#26a69a" stroke-width="1"/>
+  <rect x="347" y="112" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="375" y1="105" x2="375" y2="130" stroke="#26a69a" stroke-width="1"/>
+  <rect x="372" y="108" width="6" height="14" fill="#26a69a" rx="1"/>
+  <line x1="400" y1="100" x2="400" y2="128" stroke="#26a69a" stroke-width="1"/>
+  <rect x="397" y="104" width="6" height="14" fill="#26a69a" rx="1"/>
+
+  <!-- Divergence annotation -->
+  <line x1="310" y1="95" x2="410" y2="95" stroke="#ff1744" stroke-width="1" stroke-dasharray="3,2" stroke-opacity="0.5"/>
+  <text x="360" y="90" text-anchor="middle" fill="#ff1744" font-family="Inter,sans-serif" font-size="9">Bear Divergence</text>
+  <polygon points="400,96 408,96 404,102" fill="#ff1744" fill-opacity="0.6"/>
+
+  <!-- Reversal -->
+  <line x1="425" y1="105" x2="425" y2="135" stroke="#ef5350" stroke-width="1"/>
+  <rect x="422" y="110" width="6" height="16" fill="#ef5350" rx="1"/>
+  <line x1="450" y1="115" x2="450" y2="148" stroke="#ef5350" stroke-width="1"/>
+  <rect x="447" y="120" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="475" y1="130" x2="475" y2="165" stroke="#ef5350" stroke-width="1"/>
+  <rect x="472" y="135" width="6" height="20" fill="#ef5350" rx="1"/>
+  <line x1="500" y1="148" x2="500" y2="185" stroke="#ef5350" stroke-width="1"/>
+  <rect x="497" y="155" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="525" y1="165" x2="525" y2="200" stroke="#ef5350" stroke-width="1"/>
+  <rect x="522" y="172" width="6" height="18" fill="#ef5350" rx="1"/>
+  <line x1="550" y1="178" x2="550" y2="212" stroke="#26a69a" stroke-width="1"/>
+  <rect x="547" y="185" width="6" height="16" fill="#26a69a" rx="1"/>
+  <line x1="575" y1="185" x2="575" y2="218" stroke="#ef5350" stroke-width="1"/>
+  <rect x="572" y="192" width="6" height="16" fill="#ef5350" rx="1"/>
+
+  <!-- Separator -->
+  <line x1="80" y1="250" x2="740" y2="250" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.08"/>
+  <text x="85" y="268" fill="#666" font-family="Inter,sans-serif" font-size="9">Cum Delta</text>
+
+  <!-- Zero line -->
+  <line x1="80" y1="340" x2="740" y2="340" stroke="#555555" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Cumulative delta line - rises then falls (divergence) -->
+  <polyline points="100,380 125,370 150,355 175,340 200,322 225,305 250,290 275,278 300,270 325,275 350,282 375,290 400,300 425,312 450,325 475,340 500,355 525,368 550,375 575,380" fill="none" stroke="#42A5F5" stroke-width="2"/>
+
+  <!-- Delta MA -->
+  <polyline points="100,378 125,372 150,360 175,348 200,335 225,320 250,305 275,292 300,280 325,278 350,280 375,285 400,292 425,302 450,315 475,328 500,342 525,355 550,365 575,372" fill="none" stroke="#ff9800" stroke-width="1" stroke-opacity="0.7"/>
+
+  <!-- Rising bg -->
+  <rect x="90" y="270" width="230" height="120" fill="#00e676" fill-opacity="0.04" rx="2"/>
+  <!-- Falling bg -->
+  <rect x="320" y="270" width="270" height="120" fill="#ff1744" fill-opacity="0.04" rx="2"/>
+
+  <!-- Legend -->
+  <g transform="translate(80, 440)">
+    <rect width="640" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <line x1="15" y1="20" x2="35" y2="20" stroke="#42A5F5" stroke-width="2"/>
+    <text x="40" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Cum Delta</text>
+    <line x1="130" y1="20" x2="150" y2="20" stroke="#ff9800" stroke-width="1"/>
+    <text x="155" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Delta MA</text>
+    <line x1="230" y1="20" x2="250" y2="20" stroke="#555" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="255" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Zero Line</text>
+    <rect x="340" y="14" width="14" height="12" fill="#00e676" fill-opacity="0.2" rx="2"/>
+    <text x="360" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Rising Delta</text>
+    <rect x="450" y="14" width="14" height="12" fill="#ff1744" fill-opacity="0.2" rx="2"/>
+    <text x="470" y="24" fill="#999" font-family="Inter,sans-serif" font-size="9">Falling Delta</text>
+  </g>
+</svg>

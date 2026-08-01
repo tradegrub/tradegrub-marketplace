@@ -1,0 +1,39 @@
+{
+  "id": "linear-predictive-filter",
+  "name": "Linear Predictive Filter",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "cycles",
+  "tags": [
+    "numpy",
+    "lpc",
+    "prediction",
+    "cycles",
+    "yule-walker",
+    "autocorrelation"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Linear Predictive Coding via Yule-Walker equations to extract dominant cycles and predict the next price value",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "inputs": [
+    {"name": "order", "type": "int", "default": 10, "min": 4, "max": 30},
+    {"name": "lookback", "type": "int", "default": 100, "min": 50, "max": 300}
+  ],
+  "overlay": false,
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

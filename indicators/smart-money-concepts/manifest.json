@@ -1,0 +1,22 @@
+{
+  "id": "smart-money-concepts",
+  "name": "Smart Money Concepts",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "structure",
+  "tags": ["smc", "order-blocks", "fair-value-gap", "break-of-structure", "multi-timeframe"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Identifies order blocks, fair value gaps, and break-of-structure levels. Multi-timeframe analysis with alerts.",
+  "official": true,
+  "likes": 891,
+  "uses": 4500,
+  "language": "Python",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}

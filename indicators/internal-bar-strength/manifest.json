@@ -1,0 +1,33 @@
+{
+  "id": "internal-bar-strength",
+  "name": "Internal Bar Strength",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "momentum",
+  "tags": [
+    "numpy",
+    "bar-strength",
+    "internal",
+    "smoothed",
+    "adaptive"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Smoothed bar strength oscillator measuring close position within bar range with adaptive scaling and configurable signal line for mean reversion signals",
+  "official": true,
+  "beta": false,
+  "likes": 1500,
+  "uses": 6200,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

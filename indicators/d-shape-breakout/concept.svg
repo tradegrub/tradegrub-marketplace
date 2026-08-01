@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="100" y1="60" x2="100" y2="440"/>
+    <line x1="200" y1="60" x2="200" y2="440"/>
+    <line x1="300" y1="60" x2="300" y2="440"/>
+    <line x1="400" y1="60" x2="400" y2="440"/>
+    <line x1="500" y1="60" x2="500" y2="440"/>
+    <line x1="600" y1="60" x2="600" y2="440"/>
+    <line x1="700" y1="60" x2="700" y2="440"/>
+    <line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="280" x2="760" y2="280"/>
+    <line x1="60" y1="360" x2="760" y2="360"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="17" font-weight="bold">D-Shape Breakout</text>
+  <text x="400" y="52" text-anchor="middle" fill="#888888" font-family="Arial, sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Main arc (dashed cyan semi-circle acting as curved support) -->
+  <path d="M 120,340 Q 120,140 320,140 Q 520,140 520,340"
+        fill="none" stroke="#00e5ff" stroke-width="2" stroke-dasharray="8,5" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Price line tracing along the arc then breaking out -->
+  <polyline points="80,350 110,342 140,330 165,305 185,275 205,240 230,195 260,165 290,150 320,148 350,152 375,165 400,185 420,210 440,245 455,270 465,290 475,310 485,325 490,330 500,310 510,270 520,220 535,160 555,110 575,90"
+            fill="none" stroke="#4fc3f7" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Breakout arrow at pierce point -->
+  <line x1="500" y1="330" x2="555" y2="110" stroke="#00e676" stroke-width="2" stroke-dasharray="4,3" opacity="0.5"/>
+  <polygon points="575,85 565,105 580,100" fill="#00e676" filter="url(#glowStrong)"/>
+  <circle cx="500" cy="325" r="5" fill="none" stroke="#ffab40" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Breakout callout -->
+  <rect x="568" y="72" width="90" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1"/>
+  <text x="613" y="87" text-anchor="middle" fill="#00e676" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Breakout</text>
+
+  <!-- Second smaller arc forming (right side) -->
+  <path d="M 580,370 Q 580,260 660,260 Q 740,260 740,370"
+        fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.45" filter="url(#glow)"/>
+
+  <!-- Price line along second arc -->
+  <polyline points="575,90 590,120 600,160 615,220 630,270 645,290 660,275 670,265 680,270 695,285 710,310 725,340 735,360"
+            fill="none" stroke="#4fc3f7" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- "Forming" label for second arc -->
+  <text x="660" y="250" text-anchor="middle" fill="#00e5ff" font-family="Arial, sans-serif" font-size="10" opacity="0.6">Forming</text>
+
+  <!-- Price axis labels -->
+  <text x="52" y="124" text-anchor="end" fill="#666" font-family="Arial, sans-serif" font-size="9">180</text>
+  <text x="52" y="204" text-anchor="end" fill="#666" font-family="Arial, sans-serif" font-size="9">160</text>
+  <text x="52" y="284" text-anchor="end" fill="#666" font-family="Arial, sans-serif" font-size="9">140</text>
+  <text x="52" y="364" text-anchor="end" fill="#666" font-family="Arial, sans-serif" font-size="9">120</text>
+
+  <!-- Legend bar -->
+  <rect x="0" y="455" width="800" height="45" rx="0" fill="#0d0d1a" fill-opacity="0.6"/>
+  <line x1="0" y1="455" x2="800" y2="455" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <!-- Legend items -->
+  <line x1="120" y1="477" x2="150" y2="477" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="157" y="481" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Price</text>
+
+  <line x1="230" y1="477" x2="260" y2="477" stroke="#00e5ff" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="267" y="481" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">D-Shape Arc</text>
+
+  <circle cx="390" cy="477" r="4" fill="none" stroke="#ffab40" stroke-width="2"/>
+  <text x="400" y="481" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Pierce Point</text>
+
+  <polygon points="510,473 505,481 515,481" fill="#00e676"/>
+  <text x="523" y="481" fill="#aaaaaa" font-family="Arial, sans-serif" font-size="11">Breakout Signal</text>
+
+  <text x="715" y="481" fill="#555555" font-family="Arial, sans-serif" font-size="10">Price-Action</text>
+</svg>

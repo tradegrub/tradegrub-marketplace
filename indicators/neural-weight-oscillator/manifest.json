@@ -1,0 +1,16 @@
+{
+  "name": "Neural Weight Oscillator",
+  "id": "neural-weight-oscillator",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Self-weighting multi-factor oscillator that adapts sub-score weights by recent predictive accuracy",
+  "category": "oscillators",
+  "tags": ["adaptive", "multi-factor", "oscillator", "momentum", "trend"],
+  "overlay": false,
+  "inputs": [
+    {"name": "lookback", "type": "int", "default": 20, "min": 5, "max": 100},
+    {"name": "weight_period", "type": "int", "default": 50, "min": 10, "max": 200}
+  ]
+}

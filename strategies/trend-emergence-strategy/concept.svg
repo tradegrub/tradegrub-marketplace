@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="280"/><line x1="200" y1="60" x2="200" y2="280"/>
+    <line x1="320" y1="60" x2="320" y2="280"/><line x1="440" y1="60" x2="440" y2="280"/>
+    <line x1="560" y1="60" x2="560" y2="280"/><line x1="680" y1="60" x2="680" y2="280"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="170" x2="760" y2="170"/>
+    <line x1="60" y1="240" x2="760" y2="240"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Trend Emergence Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Candlesticks: downtrend, bottom, uptrend, pullback (28 candles) -->
+  <line x1="85" y1="140" x2="85" y2="185" stroke="#ef5350" stroke-width="1"/>
+  <rect x="81" y="148" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="110" y1="155" x2="110" y2="198" stroke="#ef5350" stroke-width="1"/>
+  <rect x="106" y="162" width="8" height="24" fill="#ef5350" rx="1"/>
+  <line x1="135" y1="168" x2="135" y2="210" stroke="#ef5350" stroke-width="1"/>
+  <rect x="131" y="175" width="8" height="24" fill="#ef5350" rx="1"/>
+  <line x1="160" y1="178" x2="160" y2="222" stroke="#ef5350" stroke-width="1"/>
+  <rect x="156" y="185" width="8" height="26" fill="#ef5350" rx="1"/>
+  <line x1="185" y1="192" x2="185" y2="235" stroke="#ef5350" stroke-width="1"/>
+  <rect x="181" y="198" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="210" y1="205" x2="210" y2="248" stroke="#ef5350" stroke-width="1"/>
+  <rect x="206" y="212" width="8" height="24" fill="#ef5350" rx="1"/>
+  <line x1="235" y1="218" x2="235" y2="258" stroke="#26a69a" stroke-width="1"/>
+  <rect x="231" y="235" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="230" x2="260" y2="265" stroke="#26a69a" stroke-width="1"/>
+  <rect x="256" y="245" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="285" y1="238" x2="285" y2="268" stroke="#ef5350" stroke-width="1"/>
+  <rect x="281" y="242" width="8" height="16" fill="#ef5350" rx="1"/>
+  <line x1="310" y1="235" x2="310" y2="262" stroke="#26a69a" stroke-width="1"/>
+  <rect x="306" y="245" width="8" height="10" fill="#26a69a" rx="1"/>
+  <line x1="335" y1="225" x2="335" y2="255" stroke="#26a69a" stroke-width="1"/>
+  <rect x="331" y="235" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="360" y1="210" x2="360" y2="248" stroke="#26a69a" stroke-width="1"/>
+  <rect x="356" y="218" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="385" y1="195" x2="385" y2="235" stroke="#26a69a" stroke-width="1"/>
+  <rect x="381" y="202" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="410" y1="180" x2="410" y2="218" stroke="#26a69a" stroke-width="1"/>
+  <rect x="406" y="188" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="435" y1="165" x2="435" y2="202" stroke="#26a69a" stroke-width="1"/>
+  <rect x="431" y="172" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="460" y1="150" x2="460" y2="188" stroke="#26a69a" stroke-width="1"/>
+  <rect x="456" y="158" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="485" y1="138" x2="485" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="481" y="145" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="510" y1="125" x2="510" y2="162" stroke="#26a69a" stroke-width="1"/>
+  <rect x="506" y="132" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="535" y1="115" x2="535" y2="150" stroke="#26a69a" stroke-width="1"/>
+  <rect x="531" y="122" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="560" y1="108" x2="560" y2="142" stroke="#26a69a" stroke-width="1"/>
+  <rect x="556" y="115" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="585" y1="112" x2="585" y2="148" stroke="#ef5350" stroke-width="1"/>
+  <rect x="581" y="118" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="610" y1="120" x2="610" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="606" y="125" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="635" y1="128" x2="635" y2="162" stroke="#ef5350" stroke-width="1"/>
+  <rect x="631" y="132" width="8" height="20" fill="#ef5350" rx="1"/>
+  <line x1="660" y1="135" x2="660" y2="168" stroke="#ef5350" stroke-width="1"/>
+  <rect x="656" y="140" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="685" y1="140" x2="685" y2="172" stroke="#ef5350" stroke-width="1"/>
+  <rect x="681" y="145" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="710" y1="148" x2="710" y2="178" stroke="#26a69a" stroke-width="1"/>
+  <rect x="706" y="158" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="735" y1="142" x2="735" y2="172" stroke="#26a69a" stroke-width="1"/>
+  <rect x="731" y="150" width="8" height="14" fill="#26a69a" rx="1"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="81" y="400" width="8" height="18" fill="#ef5350" rx="1"/>
+    <rect x="106" y="395" width="8" height="23" fill="#ef5350" rx="1"/>
+    <rect x="131" y="398" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="156" y="392" width="8" height="26" fill="#ef5350" rx="1"/>
+    <rect x="181" y="396" width="8" height="22" fill="#ef5350" rx="1"/>
+    <rect x="206" y="400" width="8" height="18" fill="#ef5350" rx="1"/>
+    <rect x="231" y="405" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="256" y="406" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="281" y="408" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="306" y="406" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="331" y="402" width="8" height="16" fill="#26a69a" rx="1"/>
+    <rect x="356" y="395" width="8" height="23" fill="#26a69a" rx="1"/>
+    <rect x="381" y="390" width="8" height="28" fill="#26a69a" rx="1"/>
+    <rect x="406" y="392" width="8" height="26" fill="#26a69a" rx="1"/>
+    <rect x="431" y="396" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="456" y="398" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="481" y="400" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="506" y="402" width="8" height="16" fill="#26a69a" rx="1"/>
+    <rect x="531" y="404" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="556" y="405" width="8" height="13" fill="#26a69a" rx="1"/>
+    <rect x="581" y="398" width="8" height="20" fill="#ef5350" rx="1"/>
+    <rect x="606" y="396" width="8" height="22" fill="#ef5350" rx="1"/>
+    <rect x="631" y="400" width="8" height="18" fill="#ef5350" rx="1"/>
+    <rect x="656" y="402" width="8" height="16" fill="#ef5350" rx="1"/>
+    <rect x="681" y="404" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="706" y="406" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="731" y="404" width="8" height="14" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Separator -->
+  <line x1="60" y1="290" x2="760" y2="290" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="65" y="305" fill="#888" font-size="9">Aroon</text>
+
+  <!-- Aroon panel: 100=310, 50=345, 0=380 -->
+  <line x1="80" y1="345" x2="740" y2="345" stroke="#ffeb3b" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="745" y="348" fill="#ffeb3b" font-size="8" opacity="0.6">50</text>
+  <text x="745" y="313" fill="#666" font-size="8">100</text>
+  <text x="745" y="383" fill="#666" font-size="8">0</text>
+
+  <!-- Aroon Up (green) - low in downtrend, rises in uptrend -->
+  <path d="M85,375 L110,378 L135,372 L160,370 L185,368 L210,365 L235,358 L260,348 L285,355 L310,342 L335,330 L360,318 L385,312 L410,310 L435,312 L460,310 L485,312 L510,310 L535,312 L560,310 L585,325 L610,338 L635,348 L660,355 L685,362 L710,352 L735,340" fill="none" stroke="#26a69a" stroke-width="2"/>
+
+  <!-- Aroon Down (red) - high in downtrend, falls in uptrend -->
+  <path d="M85,315 L110,312 L135,310 L160,312 L185,310 L210,312 L235,320 L260,335 L285,328 L310,345 L335,355 L360,365 L385,372 L410,375 L435,370 L460,372 L485,375 L510,378 L535,372 L560,375 L585,358 L610,345 L635,335 L660,328 L685,322 L710,330 L735,342" fill="none" stroke="#ef5350" stroke-width="2"/>
+
+  <!-- BUY signal at crossover x=335 -->
+  <circle cx="335" cy="342" r="8" fill="none" stroke="#00e676" stroke-width="2" filter="url(#glow)"/>
+  <line x1="335" y1="280" x2="335" y2="335" stroke="#00e676" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <g filter="url(#softGlow)">
+    <polygon points="333,228 343,228 338,215" fill="#00e676"/>
+  </g>
+  <rect x="288" y="200" width="50" height="18" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="313" y="213" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY</text>
+
+  <!-- EXIT signal at x=635 -->
+  <circle cx="635" cy="342" r="8" fill="none" stroke="#ef5350" stroke-width="2" filter="url(#glow)"/>
+  <line x1="635" y1="280" x2="635" y2="335" stroke="#ef5350" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <g filter="url(#softGlow)">
+    <polygon points="633,155 643,155 638,168" fill="#ef5350"/>
+  </g>
+  <rect x="590" y="140" width="50" height="18" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="615" y="153" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">EXIT</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Aroon Up</text>
+    <circle cx="110" cy="20" r="4" fill="#ef5350"/>
+    <text x="120" y="24" fill="#999" font-size="9">Aroon Down</text>
+    <line x1="210" y1="20" x2="240" y2="20" stroke="#ffeb3b" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+    <text x="248" y="24" fill="#999" font-size="9">Threshold (50)</text>
+    <circle cx="380" cy="20" r="4" fill="#00e676"/>
+    <text x="390" y="24" fill="#999" font-size="9">Buy Signal</text>
+    <circle cx="480" cy="20" r="4" fill="#ef5350"/>
+    <text x="490" y="24" fill="#999" font-size="9">Exit Signal</text>
+  </g>
+</svg>

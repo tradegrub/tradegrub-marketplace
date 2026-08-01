@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Trend Intensity Index</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart area -->
+  <rect x="60" y="70" width="700" height="180" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <!-- Candlesticks -->
+  <line x1="100" y1="120" x2="100" y2="200" stroke="#666" stroke-width="1"/>
+  <rect x="96" y="140" width="8" height="40" fill="#4CAF50" rx="1"/>
+  <line x1="160" y1="110" x2="160" y2="190" stroke="#666" stroke-width="1"/>
+  <rect x="156" y="120" width="8" height="50" fill="#4CAF50" rx="1"/>
+  <line x1="220" y1="100" x2="220" y2="180" stroke="#666" stroke-width="1"/>
+  <rect x="216" y="110" width="8" height="45" fill="#4CAF50" rx="1"/>
+  <line x1="280" y1="95" x2="280" y2="175" stroke="#666" stroke-width="1"/>
+  <rect x="276" y="105" width="8" height="50" fill="#4CAF50" rx="1"/>
+  <line x1="340" y1="100" x2="340" y2="185" stroke="#666" stroke-width="1"/>
+  <rect x="336" y="130" width="8" height="40" fill="#ff5252" rx="1"/>
+  <line x1="400" y1="115" x2="400" y2="200" stroke="#666" stroke-width="1"/>
+  <rect x="396" y="140" width="8" height="45" fill="#ff5252" rx="1"/>
+  <line x1="460" y1="130" x2="460" y2="210" stroke="#666" stroke-width="1"/>
+  <rect x="456" y="150" width="8" height="40" fill="#ff5252" rx="1"/>
+  <line x1="520" y1="140" x2="520" y2="220" stroke="#666" stroke-width="1"/>
+  <rect x="516" y="160" width="8" height="40" fill="#ff5252" rx="1"/>
+  <line x1="580" y1="150" x2="580" y2="215" stroke="#666" stroke-width="1"/>
+  <rect x="576" y="155" width="8" height="40" fill="#4CAF50" rx="1"/>
+  <line x1="640" y1="130" x2="640" y2="200" stroke="#666" stroke-width="1"/>
+  <rect x="636" y="140" width="8" height="40" fill="#4CAF50" rx="1"/>
+  <line x1="700" y1="120" x2="700" y2="190" stroke="#666" stroke-width="1"/>
+  <rect x="696" y="130" width="8" height="40" fill="#4CAF50" rx="1"/>
+
+  <!-- TII subplot -->
+  <rect x="60" y="270" width="700" height="180" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="290" fill="#888" font-family="Inter,sans-serif" font-size="10">100</text>
+  <text x="70" y="340" fill="#888" font-family="Inter,sans-serif" font-size="10">80</text>
+  <text x="70" y="370" fill="#888" font-family="Inter,sans-serif" font-size="10">50</text>
+  <text x="70" y="410" fill="#888" font-family="Inter,sans-serif" font-size="10">20</text>
+  <text x="70" y="445" fill="#888" font-family="Inter,sans-serif" font-size="10">0</text>
+
+  <!-- Overbought/oversold zones -->
+  <rect x="95" y="275" width="660" height="60" fill="rgba(76,175,80,0.06)"/>
+  <rect x="95" y="405" width="660" height="40" fill="rgba(255,82,82,0.06)"/>
+
+  <!-- Threshold lines -->
+  <line x1="95" y1="335" x2="755" y2="335" stroke="#4CAF50" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="95" y1="405" x2="755" y2="405" stroke="#ff5252" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="95" y1="370" x2="755" y2="370" stroke="#666" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+
+  <!-- TII line -->
+  <polyline points="100,310 160,295 220,285 280,280 340,320 400,360 460,400 520,415 580,380 640,340 700,310"
+            fill="none" stroke="#42A5F5" stroke-width="2"/>
+
+  <!-- Legend -->
+  <rect x="200" y="465" width="400" height="25" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <rect x="220" y="474" width="12" height="3" fill="#42A5F5"/>
+  <text x="238" y="480" fill="#aaa" font-family="Inter,sans-serif" font-size="10">TII</text>
+  <rect x="280" y="474" width="12" height="3" fill="#4CAF50" stroke-dasharray="3,2"/>
+  <text x="298" y="480" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Overbought (80)</text>
+  <rect x="410" y="474" width="12" height="3" fill="#ff5252"/>
+  <text x="428" y="480" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Oversold (20)</text>
+</svg>

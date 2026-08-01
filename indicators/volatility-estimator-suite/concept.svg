@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="30" y="35" fill="#e0e0e0" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Volatility Estimator Suite</text>
+  <text x="30" y="52" fill="#888" font-family="Arial,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Suite Comparison label -->
+  <text x="30" y="72" fill="#aaa" font-family="Arial,sans-serif" font-size="12">Suite Comparison</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="60" y1="90" x2="60" y2="430"/>
+    <line x1="200" y1="90" x2="200" y2="430"/>
+    <line x1="340" y1="90" x2="340" y2="430"/>
+    <line x1="480" y1="90" x2="480" y2="430"/>
+    <line x1="620" y1="90" x2="620" y2="430"/>
+    <line x1="760" y1="90" x2="760" y2="430"/>
+    <line x1="60" y1="150" x2="760" y2="150"/>
+    <line x1="60" y1="220" x2="760" y2="220"/>
+    <line x1="60" y1="290" x2="760" y2="290"/>
+    <line x1="60" y1="360" x2="760" y2="360"/>
+    <line x1="60" y1="430" x2="760" y2="430"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <text x="20" y="155" fill="#555" font-family="Arial,sans-serif" font-size="9">40%</text>
+  <text x="20" y="225" fill="#555" font-family="Arial,sans-serif" font-size="9">30%</text>
+  <text x="20" y="295" fill="#555" font-family="Arial,sans-serif" font-size="9">20%</text>
+  <text x="20" y="365" fill="#555" font-family="Arial,sans-serif" font-size="9">10%</text>
+
+  <!-- Parkinson (cyan) - smooth rolling wave -->
+  <polyline fill="none" stroke="#00d4ff" stroke-width="2" filter="url(#glow)" opacity="0.9"
+    points="60,310 90,305 120,295 150,280 180,270 210,265 240,275 270,290 300,285 330,270 360,255 390,240 420,235 450,245 480,260 510,255 540,240 570,230 600,225 630,235 660,250 690,245 720,235 750,225"/>
+
+  <!-- Garman-Klass (orange) - slightly more reactive -->
+  <polyline fill="none" stroke="#ff8c00" stroke-width="2" filter="url(#glow)" opacity="0.9"
+    points="60,320 90,310 120,290 150,270 180,260 210,270 240,290 270,310 300,295 330,265 360,245 390,225 420,220 450,240 480,270 510,260 540,235 570,215 600,210 630,225 660,255 690,240 720,220 750,210"/>
+
+  <!-- Rogers-Satchell (green) - moderate oscillation -->
+  <polyline fill="none" stroke="#00e676" stroke-width="2" filter="url(#glow)" opacity="0.9"
+    points="60,300 90,295 120,305 150,285 180,275 210,260 240,270 270,285 300,275 330,260 360,250 390,235 420,230 450,250 480,265 510,250 540,230 570,220 600,215 630,240 660,260 690,250 720,230 750,220"/>
+
+  <!-- Yang-Zhang (purple) - most volatile/spiky -->
+  <polyline fill="none" stroke="#b388ff" stroke-width="2" filter="url(#glow)" opacity="0.9"
+    points="60,330 90,300 120,280 150,300 180,265 210,250 240,280 270,305 300,270 330,250 360,235 390,260 420,225 450,255 480,275 510,245 540,220 570,240 600,205 630,230 660,265 690,235 720,210 750,200"/>
+
+  <!-- Comparison table inset (top-right) -->
+  <rect x="580" y="85" width="175" height="105" rx="4" fill="#0d1117" stroke="#333" stroke-width="1" opacity="0.85"/>
+  <text x="590" y="103" fill="#ccc" font-family="Arial,sans-serif" font-size="10" font-weight="bold">Estimator</text>
+  <text x="720" y="103" fill="#ccc" font-family="Arial,sans-serif" font-size="10" font-weight="bold" text-anchor="end">Value</text>
+  <line x1="585" y1="108" x2="750" y2="108" stroke="#333" stroke-width="0.5"/>
+
+  <circle cx="593" cy="122" r="3" fill="#00d4ff"/>
+  <text x="602" y="126" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Parkinson</text>
+  <text x="745" y="126" fill="#00d4ff" font-family="monospace" font-size="10" text-anchor="end">22.5%</text>
+
+  <circle cx="593" cy="142" r="3" fill="#ff8c00"/>
+  <text x="602" y="146" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Garman-Klass</text>
+  <text x="745" y="146" fill="#ff8c00" font-family="monospace" font-size="10" text-anchor="end">21.0%</text>
+
+  <circle cx="593" cy="162" r="3" fill="#00e676"/>
+  <text x="602" y="166" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Rogers-Satchell</text>
+  <text x="745" y="166" fill="#00e676" font-family="monospace" font-size="10" text-anchor="end">22.0%</text>
+
+  <circle cx="593" cy="182" r="3" fill="#b388ff"/>
+  <text x="602" y="186" fill="#aaa" font-family="Arial,sans-serif" font-size="10">Yang-Zhang</text>
+  <text x="745" y="186" fill="#b388ff" font-family="monospace" font-size="10" text-anchor="end">20.0%</text>
+
+  <!-- Legend bar at bottom -->
+  <rect x="0" y="450" width="800" height="50" fill="#0d1117" opacity="0.6"/>
+  <circle cx="120" cy="475" r="4" fill="#00d4ff"/>
+  <text x="130" y="479" fill="#aaa" font-family="Arial,sans-serif" font-size="11">Parkinson</text>
+
+  <circle cx="270" cy="475" r="4" fill="#ff8c00"/>
+  <text x="280" y="479" fill="#aaa" font-family="Arial,sans-serif" font-size="11">Garman-Klass</text>
+
+  <circle cx="440" cy="475" r="4" fill="#00e676"/>
+  <text x="450" y="479" fill="#aaa" font-family="Arial,sans-serif" font-size="11">Rogers-Satchell</text>
+
+  <circle cx="620" cy="475" r="4" fill="#b388ff"/>
+  <text x="630" y="479" fill="#aaa" font-family="Arial,sans-serif" font-size="11">Yang-Zhang</text>
+</svg>

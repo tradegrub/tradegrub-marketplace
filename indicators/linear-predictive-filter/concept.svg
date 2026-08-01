@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="17" font-weight="bold">Linear Predictive Filter</text>
+  <text x="400" y="48" text-anchor="middle" fill="#607090" font-family="Arial, sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Upper panel border -->
+  <rect x="60" y="58" width="680" height="245" fill="none" stroke="#ffffff08" stroke-width="1" rx="4"/>
+
+  <!-- Grid lines - upper panel -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="60" y1="108" x2="740" y2="108"/>
+    <line x1="60" y1="158" x2="740" y2="158"/>
+    <line x1="60" y1="208" x2="740" y2="208"/>
+    <line x1="60" y1="258" x2="740" y2="258"/>
+    <line x1="160" y1="58" x2="160" y2="303"/>
+    <line x1="260" y1="58" x2="260" y2="303"/>
+    <line x1="360" y1="58" x2="360" y2="303"/>
+    <line x1="460" y1="58" x2="460" y2="303"/>
+    <line x1="560" y1="58" x2="560" y2="303"/>
+    <line x1="660" y1="58" x2="660" y2="303"/>
+  </g>
+
+  <!-- Price line (dim white) -->
+  <polyline fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.25"
+    points="80,220 100,215 120,225 140,210 160,200 180,205 200,190 220,195 240,180 260,185 280,170 300,175 320,160 340,155 360,165 380,150 400,145 420,155 440,140 460,135 480,145 500,130 520,125 540,135 560,120 580,115 600,110 620,105 640,100 660,95"/>
+
+  <!-- Predicted line (cyan, smooth) -->
+  <polyline fill="none" stroke="#00d4ff" stroke-width="2" filter="url(#glow)"
+    points="80,218 100,214 120,222 140,208 160,199 180,203 200,189 220,193 240,179 260,183 280,169 300,173 320,159 340,154 360,162 380,149 400,144 420,152 440,139 460,134 480,142 500,129 520,124 540,132 560,119 580,114 600,109 620,104 640,99 660,94"/>
+
+  <!-- Projection (dashed cyan extending forward) -->
+  <polyline fill="none" stroke="#00d4ff" stroke-width="2" stroke-dasharray="6,4" opacity="0.7" filter="url(#glow)"
+    points="660,94 680,90 700,87 720,85 735,83"/>
+
+  <!-- Projection endpoint dot -->
+  <circle cx="735" cy="83" r="3" fill="#00d4ff" opacity="0.8" filter="url(#glowStrong)"/>
+
+  <!-- Predicted label -->
+  <rect x="645" y="66" width="130" height="18" rx="3" fill="#00d4ff" opacity="0.12"/>
+  <text x="710" y="78" text-anchor="middle" fill="#00d4ff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Predicted Next: $185.40</text>
+
+  <!-- Upper panel Y-axis labels -->
+  <text x="55" y="112" text-anchor="end" fill="#505878" font-family="Arial, sans-serif" font-size="9">$190</text>
+  <text x="55" y="162" text-anchor="end" fill="#505878" font-family="Arial, sans-serif" font-size="9">$180</text>
+  <text x="55" y="212" text-anchor="end" fill="#505878" font-family="Arial, sans-serif" font-size="9">$170</text>
+  <text x="55" y="262" text-anchor="end" fill="#505878" font-family="Arial, sans-serif" font-size="9">$160</text>
+
+  <!-- Separator -->
+  <line x1="60" y1="318" x2="740" y2="318" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Lower panel border -->
+  <rect x="60" y="325" width="680" height="130" fill="none" stroke="#ffffff08" stroke-width="1" rx="4"/>
+
+  <!-- Grid lines - lower panel -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="60" y1="358" x2="740" y2="358"/>
+    <line x1="60" y1="390" x2="740" y2="390"/>
+    <line x1="60" y1="422" x2="740" y2="422"/>
+    <line x1="160" y1="325" x2="160" y2="455"/>
+    <line x1="260" y1="325" x2="260" y2="455"/>
+    <line x1="360" y1="325" x2="360" y2="455"/>
+    <line x1="460" y1="325" x2="460" y2="455"/>
+    <line x1="560" y1="325" x2="560" y2="455"/>
+    <line x1="660" y1="325" x2="660" y2="455"/>
+  </g>
+
+  <!-- Zero line for cycle -->
+  <line x1="60" y1="390" x2="740" y2="390" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Cycle wave (oscillating, amber/gold) -->
+  <polyline fill="none" stroke="#ffa726" stroke-width="1.8" filter="url(#glow)"
+    points="80,390 95,375 110,362 125,358 140,362 155,375 170,390 185,405 200,418 215,422 230,418 245,405 260,390 275,375 290,362 305,358 320,362 335,375 350,390 365,405 380,418 395,422 410,418 425,405 440,390 455,375 470,362 485,358 500,362 515,375 530,390 545,405 560,418 575,422 590,418 605,405 620,390 635,375 650,362 665,358"/>
+
+  <!-- Cycle period markers -->
+  <line x1="125" y1="340" x2="125" y2="350" stroke="#ffa726" stroke-width="1" opacity="0.4"/>
+  <line x1="305" y1="340" x2="305" y2="350" stroke="#ffa726" stroke-width="1" opacity="0.4"/>
+  <line x1="125" y1="342" x2="305" y2="342" stroke="#ffa726" stroke-width="1" opacity="0.3" stroke-dasharray="3,2"/>
+  <text x="215" y="339" text-anchor="middle" fill="#ffa726" font-family="Arial, sans-serif" font-size="9" opacity="0.6">18 bars</text>
+
+  <!-- Dominant cycle label -->
+  <rect x="560" y="332" width="140" height="18" rx="3" fill="#ffa726" opacity="0.1"/>
+  <text x="630" y="344" text-anchor="middle" fill="#ffa726" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Dominant Cycle: 18 bars</text>
+
+  <!-- Legend bar -->
+  <rect x="60" y="468" width="680" height="24" rx="4" fill="#ffffff" opacity="0.03"/>
+  <g font-family="Arial, sans-serif" font-size="10">
+    <line x1="160" y1="480" x2="185" y2="480" stroke="#ffffff" stroke-width="1.5" opacity="0.35"/>
+    <text x="190" y="484" fill="#808898">Price</text>
+    <line x1="280" y1="480" x2="305" y2="480" stroke="#00d4ff" stroke-width="2"/>
+    <text x="310" y="484" fill="#808898">Predicted</text>
+    <line x1="420" y1="480" x2="445" y2="480" stroke="#00d4ff" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+    <text x="450" y="484" fill="#808898">Projection</text>
+    <line x1="560" y1="480" x2="585" y2="480" stroke="#ffa726" stroke-width="1.8"/>
+    <text x="590" y="484" fill="#808898">Cycle</text>
+  </g>
+</svg>

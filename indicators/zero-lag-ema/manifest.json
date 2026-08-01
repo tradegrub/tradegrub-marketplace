@@ -1,0 +1,33 @@
+{
+  "id": "zero-lag-ema",
+  "name": "Zero Lag EMA",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": [
+    "zlema",
+    "zero-lag",
+    "ema",
+    "moving-average",
+    "trend"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "EMA variant that reduces lag by adding error correction term for faster trend detection",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

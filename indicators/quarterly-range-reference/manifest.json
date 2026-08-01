@@ -1,0 +1,33 @@
+{
+  "id": "quarterly-range-reference",
+  "name": "Quarterly Range Reference",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "support-resistance",
+  "tags": [
+    "numpy",
+    "quarterly",
+    "high-low",
+    "range",
+    "reference-levels"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Tracks and displays rolling 63-bar quarterly high, low, and open reference levels with breakout detection using numpy",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="270"/><line x1="200" y1="60" x2="200" y2="270"/>
+    <line x1="320" y1="60" x2="320" y2="270"/><line x1="440" y1="60" x2="440" y2="270"/>
+    <line x1="560" y1="60" x2="560" y2="270"/><line x1="680" y1="60" x2="680" y2="270"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="160" x2="760" y2="160"/>
+    <line x1="60" y1="220" x2="760" y2="220"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">ML Momentum Score Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Price panel (top 55%) -->
+  <line x1="100" y1="190" x2="100" y2="235" stroke="#ef5350" stroke-width="1"/>
+  <rect x="96" y="198" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="125" y1="195" x2="125" y2="240" stroke="#ef5350" stroke-width="1"/>
+  <rect x="121" y="205" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="150" y1="200" x2="150" y2="248" stroke="#26a69a" stroke-width="1"/>
+  <rect x="146" y="215" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="175" y1="190" x2="175" y2="232" stroke="#26a69a" stroke-width="1"/>
+  <rect x="171" y="198" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="178" x2="200" y2="218" stroke="#26a69a" stroke-width="1"/>
+  <rect x="196" y="185" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="230" y1="162" x2="230" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="226" y="170" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="148" x2="260" y2="185" stroke="#26a69a" stroke-width="1"/>
+  <rect x="256" y="155" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="290" y1="135" x2="290" y2="172" stroke="#26a69a" stroke-width="1"/>
+  <rect x="286" y="142" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="320" y1="120" x2="320" y2="158" stroke="#26a69a" stroke-width="1"/>
+  <rect x="316" y="128" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="350" y1="110" x2="350" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="346" y="118" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="380" y1="100" x2="380" y2="138" stroke="#26a69a" stroke-width="1"/>
+  <rect x="376" y="108" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="410" y1="95" x2="410" y2="132" stroke="#ef5350" stroke-width="1"/>
+  <rect x="406" y="100" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="440" y1="102" x2="440" y2="142" stroke="#ef5350" stroke-width="1"/>
+  <rect x="436" y="108" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="470" y1="115" x2="470" y2="155" stroke="#ef5350" stroke-width="1"/>
+  <rect x="466" y="122" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="500" y1="130" x2="500" y2="172" stroke="#ef5350" stroke-width="1"/>
+  <rect x="496" y="138" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="530" y1="148" x2="530" y2="190" stroke="#ef5350" stroke-width="1"/>
+  <rect x="526" y="158" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="560" y1="158" x2="560" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="556" y="168" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="590" y1="148" x2="590" y2="188" stroke="#26a69a" stroke-width="1"/>
+  <rect x="586" y="155" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="620" y1="135" x2="620" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="616" y="142" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="650" y1="122" x2="650" y2="162" stroke="#26a69a" stroke-width="1"/>
+  <rect x="646" y="130" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="680" y1="112" x2="680" y2="152" stroke="#26a69a" stroke-width="1"/>
+  <rect x="676" y="120" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="710" y1="105" x2="710" y2="142" stroke="#26a69a" stroke-width="1"/>
+  <rect x="706" y="112" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Separator -->
+  <line x1="60" y1="280" x2="760" y2="280" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="65" y="295" fill="#888" font-size="9">ML Score (0-100)</text>
+
+  <!-- Score panel (bottom 40%) -->
+  <!-- Score axis labels -->
+  <text x="72" y="308" fill="#666" font-size="8" text-anchor="end">80</text>
+  <text x="72" y="348" fill="#666" font-size="8" text-anchor="end">60</text>
+  <text x="72" y="388" fill="#666" font-size="8" text-anchor="end">40</text>
+  <text x="72" y="420" fill="#666" font-size="8" text-anchor="end">20</text>
+
+  <!-- Buy threshold (60) -->
+  <line x1="80" y1="345" x2="740" y2="345" stroke="#00e676" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+  <text x="745" y="348" fill="#00e676" font-size="8">Buy (60)</text>
+
+  <!-- Sell threshold (40) -->
+  <line x1="80" y1="385" x2="740" y2="385" stroke="#ef5350" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+  <text x="745" y="388" fill="#ef5350" font-size="8">Sell (40)</text>
+
+  <!-- 50 midline -->
+  <line x1="80" y1="365" x2="740" y2="365" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- ML Score line -->
+  <path d="M100,395 Q125,390 150,378 Q175,365 200,348 Q230,330 260,315 Q290,305 320,300 Q350,298 380,302 Q410,315 440,338 Q470,358 500,378 Q530,392 550,395 Q570,390 590,372 Q610,352 630,332 Q650,318 670,308 Q690,302 710,305" fill="none" stroke="#ab47bc" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- Score above buy threshold - highlighted region -->
+  <rect x="185" y="298" width="210" height="47" rx="3" fill="#00e676" fill-opacity="0.06"/>
+
+  <!-- BUY signal where score crosses above 60 -->
+  <circle cx="195" cy="348" r="5" fill="#00e676" filter="url(#softGlow)"/>
+  <line x1="195" y1="270" x2="195" y2="340" stroke="#00e676" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <rect x="140" y="255" width="50" height="18" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="165" y="268" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY</text>
+
+  <!-- EXIT signal where score drops below 40 -->
+  <circle cx="510" cy="385" r="5" fill="#ef5350" filter="url(#softGlow)"/>
+  <line x1="510" y1="270" x2="510" y2="378" stroke="#ef5350" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <rect x="460" y="255" width="50" height="18" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="485" y="268" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">EXIT</text>
+
+  <!-- Second BUY -->
+  <circle cx="585" cy="348" r="5" fill="#00e676" filter="url(#softGlow)"/>
+  <line x1="585" y1="270" x2="585" y2="340" stroke="#00e676" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <rect x="560" y="255" width="50" height="18" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="585" y="268" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY</text>
+
+  <!-- Feature weight boxes -->
+  <g transform="translate(85, 420)">
+    <rect width="155" height="22" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+    <text x="8" y="16" fill="#42a5f5" font-size="9" font-weight="500">RSI 30%</text>
+    <text x="55" y="16" fill="#ff9800" font-size="9" font-weight="500">MACD 25%</text>
+    <text x="108" y="16" fill="#26a69a" font-size="9" font-weight="500">Vol 20%</text>
+  </g>
+  <g transform="translate(250, 420)">
+    <rect width="80" height="22" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+    <text x="8" y="16" fill="#ab47bc" font-size="9" font-weight="500">ROC 25%</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ab47bc"/>
+    <text x="30" y="24" fill="#999" font-size="9">ML Score</text>
+    <circle cx="110" cy="20" r="4" fill="#00e676"/>
+    <text x="120" y="24" fill="#999" font-size="9">Buy Threshold (60)</text>
+    <circle cx="250" cy="20" r="4" fill="#ef5350"/>
+    <text x="260" y="24" fill="#999" font-size="9">Sell Threshold (40)</text>
+    <circle cx="395" cy="20" r="4" fill="#42a5f5"/>
+    <text x="405" y="24" fill="#999" font-size="9">RSI</text>
+    <circle cx="445" cy="20" r="4" fill="#ff9800"/>
+    <text x="455" y="24" fill="#999" font-size="9">MACD</text>
+    <circle cx="505" cy="20" r="4" fill="#26a69a"/>
+    <text x="515" y="24" fill="#999" font-size="9">Volume</text>
+    <circle cx="575" cy="20" r="4" fill="#ab47bc"/>
+    <text x="585" y="24" fill="#999" font-size="9">ROC</text>
+  </g>
+</svg>

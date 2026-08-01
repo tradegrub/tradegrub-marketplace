@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="80" x2="80" y2="410" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="200" y1="80" x2="200" y2="410" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="320" y1="80" x2="320" y2="410" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="440" y1="80" x2="440" y2="410" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="560" y1="80" x2="560" y2="410" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="680" y1="80" x2="680" y2="410" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="100" x2="740" y2="100" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="140" x2="740" y2="140" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="180" x2="740" y2="180" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="220" x2="740" y2="220" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="290" x2="740" y2="290" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="330" x2="740" y2="330" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="370" x2="740" y2="370" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="80" y1="400" x2="740" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Cointegration Spread</text>
+  <text x="400" y="48" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- Panel divider -->
+  <line x1="80" y1="250" x2="740" y2="250" stroke="#444466" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+  <!-- Upper panel: Two price lines diverging and converging -->
+  <!-- Blue line (Asset A) -->
+  <polyline points="90,180 130,170 170,155 210,140 250,120 290,100 330,90 370,105 410,130 450,150 490,160 530,145 570,125 610,110 650,100 690,95 730,90"
+    fill="none" stroke="#4fc3f7" stroke-width="2" filter="url(#glow)"/>
+  <!-- Orange line (Asset B) -->
+  <polyline points="90,175 130,168 170,160 210,158 250,162 290,170 330,175 370,165 410,148 450,138 490,135 530,140 570,148 610,140 650,130 690,118 730,108"
+    fill="none" stroke="#ff9800" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Panel label -->
+  <text x="85" y="72" fill="#6a6a8a" font-size="10">Price Pair</text>
+  <text x="85" y="268" fill="#6a6a8a" font-size="10">Spread</text>
+
+  <!-- Lower panel: Spread as mean-reverting oscillator -->
+  <!-- Zero line -->
+  <line x1="80" y1="330" x2="740" y2="330" stroke="#888899" stroke-width="0.8" opacity="0.5"/>
+  <text x="74" y="334" text-anchor="end" fill="#6a6a8a" font-size="9">0</text>
+
+  <!-- Bollinger-style upper band (dashed) -->
+  <polyline points="90,290 130,288 170,285 210,282 250,278 290,275 330,278 370,282 410,286 450,290 490,288 530,284 570,280 610,276 650,278 690,282 730,286"
+    fill="none" stroke="#7e57c2" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+  <!-- Bollinger-style lower band (dashed) -->
+  <polyline points="90,370 130,372 170,375 210,378 250,382 290,385 330,382 370,378 410,374 450,370 490,372 530,376 570,380 610,384 650,382 690,378 730,374"
+    fill="none" stroke="#7e57c2" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+
+  <!-- Spread line (green #66bb6a) -->
+  <polyline points="90,325 130,322 170,310 210,295 250,278 290,268 330,272 370,290 410,315 450,338 490,350 530,358 570,345 610,322 650,305 690,318 730,330"
+    fill="none" stroke="#66bb6a" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Zero crossing highlight -->
+  <circle cx="410" cy="315" r="4" fill="none" stroke="#ffeb3b" stroke-width="1.5" filter="url(#glowStrong)"/>
+  <circle cx="650" cy="305" r="4" fill="none" stroke="#ffeb3b" stroke-width="1.5" filter="url(#glowStrong)"/>
+
+  <!-- Mean Reversion Signal callout -->
+  <line x1="470" y1="295" x2="418" y2="312" stroke="#ffeb3b" stroke-width="1" opacity="0.7" marker-end="url(#arrowhead)"/>
+  <text x="475" y="292" fill="#ffeb3b" font-size="10" font-weight="500">Mean Reversion Signal</text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#ffeb3b" opacity="0.7"/>
+    </marker>
+  </defs>
+
+  <!-- Legend bar at bottom -->
+  <rect x="80" y="438" width="660" height="1" fill="#333355" opacity="0.5"/>
+  <rect x="180" y="453" width="10" height="10" fill="#4fc3f7" rx="2"/>
+  <text x="196" y="463" fill="#aaaacc" font-size="11">Asset A</text>
+  <rect x="270" y="453" width="10" height="10" fill="#ff9800" rx="2"/>
+  <text x="286" y="463" fill="#aaaacc" font-size="11">Asset B</text>
+  <rect x="360" y="453" width="10" height="10" fill="#66bb6a" rx="2"/>
+  <text x="376" y="463" fill="#aaaacc" font-size="11">Spread</text>
+  <line x1="460" y1="453" x2="480" y2="453" stroke="#7e57c2" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="460" y1="463" x2="480" y2="463" stroke="#7e57c2" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="488" y="463" fill="#aaaacc" font-size="11">Bands</text>
+  <circle cx="555" cy="458" r="4" fill="none" stroke="#ffeb3b" stroke-width="1.2"/>
+  <text x="565" y="463" fill="#aaaacc" font-size="11">Signal</text>
+</svg>

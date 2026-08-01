@@ -1,0 +1,12 @@
+{
+  "id": "halftrend-indicator",
+  "name": "HalfTrend Indicator",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Trend",
+  "tags": ["trend", "atr", "halftrend", "channel", "direction"],
+  "type": "indicator",
+  "language": "python",
+  "description": "ATR-based trend indicator using channel midpoint logic with directional flip signals"
+}

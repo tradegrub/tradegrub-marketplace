@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Effort vs Results</text>
+  <text x="400" y="54" text-anchor="middle" fill="#666688" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="80" y1="100" x2="750" y2="100"/>
+    <line x1="80" y1="150" x2="750" y2="150"/>
+    <line x1="80" y1="200" x2="750" y2="200"/>
+    <line x1="80" y1="250" x2="750" y2="250"/>
+    <line x1="80" y1="300" x2="750" y2="300"/>
+    <line x1="80" y1="350" x2="750" y2="350"/>
+    <line x1="80" y1="400" x2="750" y2="400"/>
+  </g>
+
+  <!-- Axis -->
+  <line x1="80" y1="410" x2="750" y2="410" stroke="#444466" stroke-width="0.5"/>
+
+  <!-- Axis labels -->
+  <text x="40" y="108" fill="#666688" font-size="9" text-anchor="middle">High</text>
+  <text x="40" y="408" fill="#666688" font-size="9" text-anchor="middle">Low</text>
+
+  <!-- Period labels -->
+  <g fill="#555577" font-size="9" text-anchor="middle">
+    <text x="120" y="425">P1</text>
+    <text x="190" y="425">P2</text>
+    <text x="260" y="425">P3</text>
+    <text x="330" y="425">P4</text>
+    <text x="400" y="425">P5</text>
+    <text x="470" y="425">P6</text>
+    <text x="540" y="425">P7</text>
+    <text x="610" y="425">P8</text>
+    <text x="680" y="425">P9</text>
+  </g>
+
+  <!-- Bars: blue=volume(effort), orange=price change(result) -->
+  <!-- P1: moderate effort, moderate result -->
+  <rect x="105" y="250" width="16" height="160" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="123" y="270" width="16" height="140" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P2: low effort, low result -->
+  <rect x="175" y="330" width="16" height="80" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="193" y="340" width="16" height="70" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P3: high effort, high result -->
+  <rect x="245" y="150" width="16" height="260" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="263" y="170" width="16" height="240" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P4: moderate effort, moderate result -->
+  <rect x="315" y="270" width="16" height="140" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="333" y="290" width="16" height="120" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P5: HIGH effort, LOW result (anomaly) -->
+  <rect x="385" y="110" width="16" height="300" fill="#42a5f5" rx="2" opacity="0.9" filter="url(#glow)"/>
+  <rect x="403" y="380" width="16" height="30" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P6: high effort, low result -->
+  <rect x="455" y="140" width="16" height="270" fill="#42a5f5" rx="2" opacity="0.9" filter="url(#glow)"/>
+  <rect x="473" y="370" width="16" height="40" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P7: moderate effort, moderate result -->
+  <rect x="525" y="240" width="16" height="170" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="543" y="260" width="16" height="150" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P8: low effort, moderate result -->
+  <rect x="595" y="320" width="16" height="90" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="613" y="280" width="16" height="130" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- P9: moderate effort, moderate result -->
+  <rect x="665" y="260" width="16" height="150" fill="#42a5f5" rx="2" opacity="0.85"/>
+  <rect x="683" y="280" width="16" height="130" fill="#ff9800" rx="2" opacity="0.85"/>
+
+  <!-- Annotation: High Effort Low Result -->
+  <g fill="#ef5350" font-size="10" font-weight="500">
+    <text x="440" y="90">High Effort</text>
+    <text x="440" y="103">Low Result</text>
+  </g>
+  <!-- Arrow pointing to P5 -->
+  <line x1="440" y1="107" x2="405" y2="140" stroke="#ef5350" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef5350"/>
+    </marker>
+  </defs>
+
+  <!-- Absorption label -->
+  <rect x="370" y="68" width="80" height="18" fill="#ef5350" rx="3" opacity="0.15"/>
+  <text x="410" y="80" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">Absorption</text>
+
+  <!-- Legend bar -->
+  <g transform="translate(0, 450)">
+    <rect x="250" y="0" width="300" height="30" fill="#111122" rx="4" opacity="0.6"/>
+    <rect x="280" y="9" width="12" height="12" fill="#42a5f5" rx="2"/>
+    <text x="298" y="19" fill="#aaaacc" font-size="11">Volume (Effort)</text>
+    <rect x="420" y="9" width="12" height="12" fill="#ff9800" rx="2"/>
+    <text x="438" y="19" fill="#aaaacc" font-size="11">Price Change (Result)</text>
+  </g>
+</svg>

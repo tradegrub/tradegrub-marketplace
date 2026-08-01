@@ -1,0 +1,12 @@
+{
+  "id": "wyckoff-phase-detector",
+  "name": "Wyckoff Phase Detector",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Volume",
+  "tags": ["wyckoff", "accumulation", "distribution", "spring", "volume", "phases"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Detects Wyckoff accumulation and distribution phases using volume patterns and structural price action"
+}

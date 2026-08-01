@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glowGreen">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowRed">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowYellow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="legendBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#16213e" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="160" y1="60" x2="160" y2="420"/>
+    <line x1="240" y1="60" x2="240" y2="420"/><line x1="320" y1="60" x2="320" y2="420"/>
+    <line x1="400" y1="60" x2="400" y2="420"/><line x1="480" y1="60" x2="480" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="640" y1="60" x2="640" y2="420"/>
+    <line x1="720" y1="60" x2="720" y2="420"/>
+    <line x1="50" y1="100" x2="770" y2="100"/><line x1="50" y1="150" x2="770" y2="150"/>
+    <line x1="50" y1="200" x2="770" y2="200"/><line x1="50" y1="250" x2="770" y2="250"/>
+    <line x1="50" y1="300" x2="770" y2="300"/><line x1="50" y1="350" x2="770" y2="350"/>
+    <line x1="50" y1="400" x2="770" y2="400"/>
+  </g>
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#e0e0e0">Optimized Trend Tracker</text>
+  <text x="400" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#888888">tradegrub.finance</text>
+  <!-- Y-axis -->
+  <g font-family="Arial,sans-serif" font-size="9" fill="#555555" text-anchor="end">
+    <text x="46" y="103">180</text><text x="46" y="153">170</text><text x="46" y="203">160</text>
+    <text x="46" y="253">150</text><text x="46" y="303">140</text><text x="46" y="353">130</text>
+    <text x="46" y="403">120</text>
+  </g>
+  <!-- Candles: Uptrend (1-14) -->
+  <g>
+    <line x1="75" y1="375" x2="75" y2="345" stroke="#555" stroke-width="1"/><rect x="71" y="352" width="8" height="16" fill="#00c853" rx="1"/>
+    <line x1="100" y1="362" x2="100" y2="328" stroke="#555" stroke-width="1"/><rect x="96" y="335" width="8" height="18" fill="#00c853" rx="1"/>
+    <line x1="125" y1="348" x2="125" y2="312" stroke="#555" stroke-width="1"/><rect x="121" y="318" width="8" height="14" fill="#ff1744" rx="1"/>
+    <line x1="150" y1="332" x2="150" y2="292" stroke="#555" stroke-width="1"/><rect x="146" y="298" width="8" height="22" fill="#00c853" rx="1"/>
+    <line x1="175" y1="312" x2="175" y2="272" stroke="#555" stroke-width="1"/><rect x="171" y="278" width="8" height="20" fill="#00c853" rx="1"/>
+    <line x1="200" y1="292" x2="200" y2="255" stroke="#555" stroke-width="1"/><rect x="196" y="260" width="8" height="20" fill="#00c853" rx="1"/>
+    <line x1="225" y1="275" x2="225" y2="242" stroke="#555" stroke-width="1"/><rect x="221" y="248" width="8" height="14" fill="#ff1744" rx="1"/>
+    <line x1="250" y1="260" x2="250" y2="222" stroke="#555" stroke-width="1"/><rect x="246" y="228" width="8" height="20" fill="#00c853" rx="1"/>
+    <line x1="275" y1="242" x2="275" y2="198" stroke="#555" stroke-width="1"/><rect x="271" y="205" width="8" height="22" fill="#00c853" rx="1"/>
+    <line x1="300" y1="218" x2="300" y2="178" stroke="#555" stroke-width="1"/><rect x="296" y="185" width="8" height="18" fill="#00c853" rx="1"/>
+    <line x1="325" y1="198" x2="325" y2="162" stroke="#555" stroke-width="1"/><rect x="321" y="168" width="8" height="16" fill="#00c853" rx="1"/>
+    <line x1="350" y1="180" x2="350" y2="148" stroke="#555" stroke-width="1"/><rect x="346" y="152" width="8" height="16" fill="#ff1744" rx="1"/>
+    <line x1="375" y1="165" x2="375" y2="130" stroke="#555" stroke-width="1"/><rect x="371" y="135" width="8" height="18" fill="#00c853" rx="1"/>
+    <line x1="400" y1="150" x2="400" y2="112" stroke="#555" stroke-width="1"/><rect x="396" y="118" width="8" height="20" fill="#00c853" rx="1"/>
+  </g>
+  <!-- Candles: Peak/flip (15-17) -->
+  <g>
+    <line x1="425" y1="135" x2="425" y2="100" stroke="#555" stroke-width="1"/><rect x="421" y="105" width="8" height="18" fill="#00c853" rx="1"/>
+    <line x1="450" y1="120" x2="450" y2="95" stroke="#555" stroke-width="1"/><rect x="446" y="98" width="8" height="14" fill="#ff1744" rx="1"/>
+    <line x1="475" y1="108" x2="475" y2="125" stroke="#555" stroke-width="1"/><rect x="471" y="110" width="8" height="12" fill="#ff1744" rx="1"/>
+  </g>
+  <!-- Candles: Downtrend (18-28) -->
+  <g>
+    <line x1="500" y1="118" x2="500" y2="155" stroke="#555" stroke-width="1"/><rect x="496" y="125" width="8" height="22" fill="#ff1744" rx="1"/>
+    <line x1="525" y1="142" x2="525" y2="180" stroke="#555" stroke-width="1"/><rect x="521" y="148" width="8" height="20" fill="#ff1744" rx="1"/>
+    <line x1="550" y1="165" x2="550" y2="200" stroke="#555" stroke-width="1"/><rect x="546" y="172" width="8" height="18" fill="#ff1744" rx="1"/>
+    <line x1="575" y1="185" x2="575" y2="215" stroke="#555" stroke-width="1"/><rect x="571" y="190" width="8" height="14" fill="#00c853" rx="1"/>
+    <line x1="600" y1="198" x2="600" y2="240" stroke="#555" stroke-width="1"/><rect x="596" y="205" width="8" height="24" fill="#ff1744" rx="1"/>
+    <line x1="625" y1="225" x2="625" y2="268" stroke="#555" stroke-width="1"/><rect x="621" y="232" width="8" height="24" fill="#ff1744" rx="1"/>
+    <line x1="650" y1="252" x2="650" y2="285" stroke="#555" stroke-width="1"/><rect x="646" y="258" width="8" height="16" fill="#00c853" rx="1"/>
+    <line x1="675" y1="270" x2="675" y2="310" stroke="#555" stroke-width="1"/><rect x="671" y="278" width="8" height="22" fill="#ff1744" rx="1"/>
+    <line x1="700" y1="295" x2="700" y2="338" stroke="#555" stroke-width="1"/><rect x="696" y="302" width="8" height="24" fill="#ff1744" rx="1"/>
+    <line x1="725" y1="322" x2="725" y2="362" stroke="#555" stroke-width="1"/><rect x="721" y="328" width="8" height="22" fill="#ff1744" rx="1"/>
+    <line x1="750" y1="345" x2="750" y2="388" stroke="#555" stroke-width="1"/><rect x="746" y="352" width="8" height="24" fill="#ff1744" rx="1"/>
+  </g>
+  <!-- OTT Line: Uptrend (green stepped, below price) -->
+  <polyline filter="url(#glowGreen)" fill="none" stroke="#00e676" stroke-width="2.5"
+    points="75,385 100,385 100,370 125,370 150,370 150,345 175,345 200,345 200,308 225,308 250,308 250,272 275,272 300,272 300,238 325,238 350,238 350,205 375,205 400,205 400,175 425,175 450,175"/>
+  <!-- OTT Line: Downtrend (red stepped, above price) -->
+  <polyline filter="url(#glowRed)" fill="none" stroke="#ff5252" stroke-width="2.5"
+    points="450,95 475,95 500,95 525,95 525,118 550,118 575,118 575,155 600,155 625,155 625,195 650,195 675,195 675,240 700,240 725,240 725,288 750,288"/>
+  <!-- Band edges: uptrend upper -->
+  <polyline fill="none" stroke="#00e676" stroke-width="0.7" stroke-dasharray="5,4" stroke-opacity="0.4"
+    points="75,377 100,377 100,362 125,362 150,362 150,337 175,337 200,337 200,300 225,300 250,300 250,264 275,264 300,264 300,230 325,230 350,230 350,197 375,197 400,197 400,167 425,167 450,167"/>
+  <!-- Band edges: uptrend lower -->
+  <polyline fill="none" stroke="#00e676" stroke-width="0.7" stroke-dasharray="5,4" stroke-opacity="0.4"
+    points="75,393 100,393 100,378 125,378 150,378 150,353 175,353 200,353 200,316 225,316 250,316 250,280 275,280 300,280 300,246 325,246 350,246 350,213 375,213 400,213 400,183 425,183 450,183"/>
+  <!-- Band edges: downtrend upper -->
+  <polyline fill="none" stroke="#ff5252" stroke-width="0.7" stroke-dasharray="5,4" stroke-opacity="0.4"
+    points="450,87 475,87 500,87 525,87 525,110 550,110 575,110 575,147 600,147 625,147 625,187 650,187 675,187 675,232 700,232 725,232 725,280 750,280"/>
+  <!-- Band edges: downtrend lower -->
+  <polyline fill="none" stroke="#ff5252" stroke-width="0.7" stroke-dasharray="5,4" stroke-opacity="0.4"
+    points="450,103 475,103 500,103 525,103 525,126 550,126 575,126 575,163 600,163 625,163 625,203 650,203 675,203 675,248 700,248 725,248 725,296 750,296"/>
+  <!-- Trend Flip marker -->
+  <circle cx="450" cy="175" r="6" fill="none" stroke="#ffd740" stroke-width="1.8" filter="url(#glowYellow)"/>
+  <circle cx="450" cy="175" r="2.5" fill="#ffd740"/>
+  <!-- Callouts -->
+  <g font-family="Arial,sans-serif" font-size="10">
+    <rect x="140" y="392" width="125" height="18" rx="4" fill="#00e676" fill-opacity="0.12" stroke="#00e676" stroke-width="0.6"/>
+    <text x="202" y="405" text-anchor="middle" fill="#00e676">Uptrend (OTT below)</text>
+    <rect x="570" y="130" width="135" height="18" rx="4" fill="#ff5252" fill-opacity="0.12" stroke="#ff5252" stroke-width="0.6"/>
+    <text x="637" y="143" text-anchor="middle" fill="#ff5252">Downtrend (OTT above)</text>
+    <line x1="450" y1="162" x2="450" y2="82" stroke="#ffd740" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <rect x="410" y="66" width="80" height="18" rx="4" fill="#ffd740" fill-opacity="0.12" stroke="#ffd740" stroke-width="0.6"/>
+    <text x="450" y="79" text-anchor="middle" fill="#ffd740" font-weight="bold">Trend Flip</text>
+  </g>
+  <!-- Legend bar -->
+  <rect x="0" y="440" width="800" height="60" fill="url(#legendBg)"/>
+  <line x1="0" y1="440" x2="800" y2="440" stroke="#ffffff" stroke-opacity="0.08"/>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#cccccc">
+    <rect x="80" y="458" width="12" height="12" fill="#00c853" rx="1"/><rect x="94" y="458" width="12" height="12" fill="#ff1744" rx="1"/>
+    <text x="114" y="469">Price</text>
+    <line x1="195" y1="464" x2="225" y2="464" stroke="#00e676" stroke-width="2.5"/>
+    <text x="233" y="469">OTT Line (Up)</text>
+    <line x1="365" y1="464" x2="395" y2="464" stroke="#ff5252" stroke-width="2.5"/>
+    <text x="403" y="469">OTT Line (Down)</text>
+    <line x1="545" y1="464" x2="575" y2="464" stroke="#aaaaaa" stroke-width="0.8" stroke-dasharray="4,4"/>
+    <text x="583" y="469">Band Edges</text>
+  </g>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="volScale" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#2a2a4a"/>
+      <stop offset="50%" stop-color="#5588cc"/>
+      <stop offset="100%" stop-color="#eeff88"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">Volumetric Candle Intensity</text>
+  <text x="400" y="48" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+  <!-- Grid lines -->
+  <line x1="60" y1="80" x2="700" y2="80" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="130" x2="700" y2="130" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="180" x2="700" y2="180" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="230" x2="700" y2="230" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="280" x2="700" y2="280" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="330" x2="700" y2="330" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="380" x2="700" y2="380" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="60" y1="430" x2="700" y2="430" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <!-- Vertical grid -->
+  <line x1="140" y1="60" x2="140" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="220" y1="60" x2="220" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="300" y1="60" x2="300" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="380" y1="60" x2="380" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="460" y1="60" x2="460" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="540" y1="60" x2="540" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+  <line x1="620" y1="60" x2="620" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+
+  <!-- Candles: wick then body. Volume controls width and opacity. -->
+  <!-- Candle 1: LOW volume, down (red), thin+faded -->
+  <line x1="95" y1="200" x2="95" y2="350" stroke="#cc4444" stroke-width="1" opacity="0.3"/>
+  <rect x="90" y="240" width="10" height="70" fill="#cc4444" opacity="0.25" rx="1"/>
+
+  <!-- Candle 2: LOW volume, up (green), thin+faded -->
+  <line x1="135" y1="210" x2="135" y2="360" stroke="#44cc66" stroke-width="1" opacity="0.3"/>
+  <rect x="130" y="260" width="10" height="60" fill="#44cc66" opacity="0.25" rx="1"/>
+
+  <!-- Candle 3: MEDIUM volume, down (red) -->
+  <line x1="178" y1="180" x2="178" y2="340" stroke="#cc4444" stroke-width="1" opacity="0.55"/>
+  <rect x="168" y="210" width="20" height="80" fill="#cc4444" opacity="0.5" rx="1"/>
+
+  <!-- Candle 4: LOW volume, up (green), thin -->
+  <line x1="220" y1="230" x2="220" y2="370" stroke="#44cc66" stroke-width="1" opacity="0.3"/>
+  <rect x="215" y="270" width="10" height="55" fill="#44cc66" opacity="0.2" rx="1"/>
+
+  <!-- Candle 5: HIGH volume, up (green), WIDE+bright -->
+  <line x1="270" y1="120" x2="270" y2="330" stroke="#44cc66" stroke-width="1.5" opacity="0.9"/>
+  <rect x="248" y="160" width="44" height="110" fill="#44cc66" opacity="0.9" rx="2" filter="url(#glow)"/>
+
+  <!-- Candle 6: MEDIUM volume, down (red) -->
+  <line x1="325" y1="170" x2="325" y2="330" stroke="#cc4444" stroke-width="1" opacity="0.55"/>
+  <rect x="315" y="200" width="20" height="85" fill="#cc4444" opacity="0.5" rx="1"/>
+
+  <!-- Candle 7: LOW volume, up (green), thin -->
+  <line x1="365" y1="220" x2="365" y2="350" stroke="#44cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="360" y="250" width="10" height="60" fill="#44cc66" opacity="0.2" rx="1"/>
+
+  <!-- Candle 8: VERY HIGH volume, down (red), WIDEST+brightest -->
+  <line x1="420" y1="100" x2="420" y2="380" stroke="#cc4444" stroke-width="2" opacity="0.95"/>
+  <rect x="394" y="140" width="52" height="160" fill="#cc4444" opacity="0.95" rx="2" filter="url(#glow)"/>
+
+  <!-- Candle 9: MEDIUM volume, up (green) -->
+  <line x1="480" y1="180" x2="480" y2="340" stroke="#44cc66" stroke-width="1" opacity="0.55"/>
+  <rect x="470" y="220" width="20" height="75" fill="#44cc66" opacity="0.5" rx="1"/>
+
+  <!-- Candle 10: LOW volume, down (red), thin -->
+  <line x1="520" y1="230" x2="520" y2="350" stroke="#cc4444" stroke-width="1" opacity="0.25"/>
+  <rect x="515" y="260" width="10" height="50" fill="#cc4444" opacity="0.2" rx="1"/>
+
+  <!-- Candle 11: HIGH volume, up (green), wide+bright -->
+  <line x1="570" y1="130" x2="570" y2="320" stroke="#44cc66" stroke-width="1.5" opacity="0.85"/>
+  <rect x="550" y="170" width="40" height="100" fill="#44cc66" opacity="0.85" rx="2" filter="url(#glow)"/>
+
+  <!-- Candle 12: MEDIUM-LOW volume, down (red) -->
+  <line x1="620" y1="200" x2="620" y2="340" stroke="#cc4444" stroke-width="1" opacity="0.35"/>
+  <rect x="612" y="230" width="16" height="65" fill="#cc4444" opacity="0.35" rx="1"/>
+
+  <!-- Candle 13: LOW volume, up (green) -->
+  <line x1="660" y1="210" x2="660" y2="330" stroke="#44cc66" stroke-width="1" opacity="0.25"/>
+  <rect x="655" y="240" width="10" height="50" fill="#44cc66" opacity="0.2" rx="1"/>
+
+  <!-- Labels: High Intensity -->
+  <line x1="420" y1="92" x2="420" y2="82" stroke="#aaaacc" stroke-width="0.5"/>
+  <text x="420" y="76" text-anchor="middle" fill="#ccccee" font-size="10" font-weight="500">High Intensity</text>
+
+  <!-- Labels: Low Intensity -->
+  <line x1="365" y1="358" x2="365" y2="372" stroke="#aaaacc" stroke-width="0.5"/>
+  <text x="365" y="385" text-anchor="middle" fill="#777799" font-size="10">Low Intensity</text>
+
+  <!-- Volume percentile color scale bar (right side) -->
+  <rect x="730" y="80" width="14" height="340" fill="url(#volScale)" rx="3" opacity="0.9"/>
+  <text x="737" y="74" text-anchor="middle" fill="#aaaacc" font-size="9">100%</text>
+  <text x="737" y="434" text-anchor="middle" fill="#666688" font-size="9">0%</text>
+  <text x="737" y="254" text-anchor="middle" fill="#8888aa" font-size="8" writing-mode="tb">Volume Percentile</text>
+
+  <!-- Legend bar at bottom -->
+  <rect x="180" y="460" width="12" height="12" fill="#44cc66" opacity="0.85" rx="2"/>
+  <text x="198" y="471" fill="#aaaacc" font-size="11">Up candle</text>
+  <rect x="280" y="460" width="12" height="12" fill="#cc4444" opacity="0.85" rx="2"/>
+  <text x="298" y="471" fill="#aaaacc" font-size="11">Down candle</text>
+  <rect x="400" y="460" width="30" height="12" fill="#44cc66" opacity="0.9" rx="2"/>
+  <text x="436" y="471" fill="#aaaacc" font-size="11">Wide = high vol</text>
+  <rect x="550" y="460" width="8" height="12" fill="#44cc66" opacity="0.25" rx="1"/>
+  <text x="564" y="471" fill="#aaaacc" font-size="11">Thin = low vol</text>
+</svg>

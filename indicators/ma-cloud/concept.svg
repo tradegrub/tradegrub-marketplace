@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">MA Cloud</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Bullish cloud fill (fast MA above slow MA) -->
+  <polygon points="90,310 120,290 150,268 180,245 210,225 240,210 270,200 300,198 330,205 330,245 300,238 270,240 240,248 210,260 180,278 150,298 120,318 90,338" fill="#26a69a" opacity="0.12"/>
+
+  <!-- Crossover transition -->
+  <polygon points="330,205 360,220 390,238 390,255 360,245 330,245" fill="#ffffff" opacity="0.04"/>
+
+  <!-- Bearish cloud fill -->
+  <polygon points="390,238 420,255 450,268 480,275 510,278 540,272 540,248 510,252 480,248 450,240 420,228 390,218" fill="#ef5350" opacity="0.12"/>
+
+  <!-- Second crossover transition -->
+  <polygon points="540,272 570,265 600,252 600,228 570,238 540,248" fill="#ffffff" opacity="0.04"/>
+
+  <!-- Bullish cloud fill (right) -->
+  <polygon points="600,252 630,238 660,220 690,205 720,195 740,190 740,218 720,222 690,232 660,245 630,262 600,275" fill="#26a69a" opacity="0.12"/>
+
+  <!-- Fast MA (20) -->
+  <polyline fill="none" stroke="#26a69a" stroke-width="2.2" opacity="0.9"
+    points="90,310 120,290 150,268 180,245 210,225 240,210 270,200 300,198 330,205 360,220 390,238 420,255 450,268 480,275 510,278 540,272 570,258 600,238 630,218 660,200 690,185 720,175 740,170"/>
+
+  <!-- Slow MA (50) -->
+  <polyline fill="none" stroke="#ef5350" stroke-width="2.2" opacity="0.9"
+    points="90,338 120,318 150,298 180,278 210,260 240,248 270,240 300,238 330,245 360,255 390,265 420,270 450,270 480,268 510,262 540,255 570,248 600,240 630,232 660,225 690,218 720,212 740,208"/>
+
+  <!-- Candlesticks (semi-transparent behind cloud) -->
+  <g opacity="0.5">
+    <line x1="100" y1="295" x2="100" y2="325" stroke="#26a69a" stroke-width="1"/><rect x="97" y="298" width="6" height="18" fill="#26a69a" rx="1"/>
+    <line x1="140" y1="260" x2="140" y2="292" stroke="#26a69a" stroke-width="1"/><rect x="137" y="265" width="6" height="18" fill="#26a69a" rx="1"/>
+    <line x1="180" y1="235" x2="180" y2="268" stroke="#26a69a" stroke-width="1"/><rect x="177" y="240" width="6" height="18" fill="#26a69a" rx="1"/>
+    <line x1="220" y1="215" x2="220" y2="248" stroke="#26a69a" stroke-width="1"/><rect x="217" y="220" width="6" height="18" fill="#26a69a" rx="1"/>
+    <line x1="260" y1="192" x2="260" y2="225" stroke="#26a69a" stroke-width="1"/><rect x="257" y="196" width="6" height="18" fill="#26a69a" rx="1"/>
+    <line x1="300" y1="188" x2="300" y2="218" stroke="#ef5350" stroke-width="1"/><rect x="297" y="192" width="6" height="15" fill="#ef5350" rx="1"/>
+    <line x1="340" y1="198" x2="340" y2="232" stroke="#ef5350" stroke-width="1"/><rect x="337" y="202" width="6" height="20" fill="#ef5350" rx="1"/>
+    <line x1="380" y1="225" x2="380" y2="258" stroke="#ef5350" stroke-width="1"/><rect x="377" y="230" width="6" height="18" fill="#ef5350" rx="1"/>
+    <line x1="420" y1="245" x2="420" y2="275" stroke="#ef5350" stroke-width="1"/><rect x="417" y="250" width="6" height="16" fill="#ef5350" rx="1"/>
+    <line x1="460" y1="258" x2="460" y2="288" stroke="#ef5350" stroke-width="1"/><rect x="457" y="262" width="6" height="16" fill="#ef5350" rx="1"/>
+    <line x1="500" y1="268" x2="500" y2="295" stroke="#ef5350" stroke-width="1"/><rect x="497" y="272" width="6" height="14" fill="#ef5350" rx="1"/>
+    <line x1="540" y1="260" x2="540" y2="288" stroke="#26a69a" stroke-width="1"/><rect x="537" y="268" width="6" height="12" fill="#26a69a" rx="1"/>
+    <line x1="580" y1="242" x2="580" y2="272" stroke="#26a69a" stroke-width="1"/><rect x="577" y="248" width="6" height="14" fill="#26a69a" rx="1"/>
+    <line x1="620" y1="210" x2="620" y2="245" stroke="#26a69a" stroke-width="1"/><rect x="617" y="218" width="6" height="16" fill="#26a69a" rx="1"/>
+    <line x1="660" y1="190" x2="660" y2="222" stroke="#26a69a" stroke-width="1"/><rect x="657" y="195" width="6" height="18" fill="#26a69a" rx="1"/>
+    <line x1="700" y1="172" x2="700" y2="205" stroke="#26a69a" stroke-width="1"/><rect x="697" y="178" width="6" height="16" fill="#26a69a" rx="1"/>
+    <line x1="730" y1="162" x2="730" y2="192" stroke="#26a69a" stroke-width="1"/><rect x="727" y="168" width="6" height="15" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Crossover 1 annotation (bullish to bearish) -->
+  <circle cx="330" cy="225" r="8" fill="none" stroke="#ff9800" stroke-width="2" filter="url(#softGlow)"/>
+  <rect x="270" y="145" width="120" height="22" rx="4" fill="#ef5350" fill-opacity="0.12" stroke="#ef5350" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="330" y="160" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500">Bearish Crossover</text>
+  <line x1="330" y1="167" x2="330" y2="216" stroke="#888" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Crossover 2 annotation (bearish to bullish) -->
+  <circle cx="565" cy="252" r="8" fill="none" stroke="#ff9800" stroke-width="2" filter="url(#softGlow)"/>
+  <rect x="505" y="295" width="120" height="22" rx="4" fill="#00e676" fill-opacity="0.12" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="565" y="310" text-anchor="middle" fill="#00e676" font-size="10" font-weight="500">Bullish Crossover</text>
+  <line x1="565" y1="261" x2="565" y2="295" stroke="#888" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Cloud thickness annotation -->
+  <line x1="200" y1="225" x2="200" y2="260" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+  <text x="165" y="248" fill="#00e676" font-size="8" text-anchor="end">Thick cloud</text>
+  <text x="165" y="258" fill="#00e676" font-size="8" text-anchor="end">= strong trend</text>
+
+  <!-- Thin cloud annotation -->
+  <line x1="310" y1="198" x2="310" y2="238" stroke="#ff9800" stroke-width="1" opacity="0.5"/>
+  <text x="290" y="178" fill="#ff9800" font-size="8" text-anchor="end">Thin = weak</text>
+
+  <!-- Bullish/Bearish zone labels -->
+  <rect x="120" y="340" width="100" height="18" rx="4" fill="#26a69a" fill-opacity="0.08"/>
+  <text x="170" y="353" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="500">Bullish Cloud</text>
+
+  <rect x="420" y="285" width="90" height="18" rx="4" fill="#ef5350" fill-opacity="0.08"/>
+  <text x="465" y="298" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="500">Bearish Cloud</text>
+
+  <rect x="640" y="248" width="100" height="18" rx="4" fill="#26a69a" fill-opacity="0.08"/>
+  <text x="690" y="261" text-anchor="middle" fill="#26a69a" font-size="9" font-weight="500">Bullish Cloud</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="97" y="400" width="6" height="15" fill="#26a69a" rx="1"/>
+    <rect x="137" y="398" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="177" y="395" width="6" height="20" fill="#26a69a" rx="1"/>
+    <rect x="217" y="397" width="6" height="18" fill="#26a69a" rx="1"/>
+    <rect x="257" y="398" width="6" height="17" fill="#26a69a" rx="1"/>
+    <rect x="297" y="403" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="337" y="400" width="6" height="15" fill="#ef5350" rx="1"/>
+    <rect x="377" y="402" width="6" height="13" fill="#ef5350" rx="1"/>
+    <rect x="417" y="403" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="457" y="405" width="6" height="10" fill="#ef5350" rx="1"/>
+    <rect x="497" y="405" width="6" height="10" fill="#ef5350" rx="1"/>
+    <rect x="537" y="403" width="6" height="12" fill="#26a69a" rx="1"/>
+    <rect x="577" y="400" width="6" height="15" fill="#26a69a" rx="1"/>
+    <rect x="617" y="397" width="6" height="18" fill="#26a69a" rx="1"/>
+    <rect x="657" y="395" width="6" height="20" fill="#26a69a" rx="1"/>
+    <rect x="697" y="397" width="6" height="18" fill="#26a69a" rx="1"/>
+    <rect x="727" y="398" width="6" height="17" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Fast MA (20)</text>
+    <circle cx="130" cy="20" r="4" fill="#ef5350"/>
+    <text x="140" y="24" fill="#999" font-size="9">Slow MA (50)</text>
+    <rect x="230" y="12" width="20" height="16" fill="#26a69a" opacity="0.3" rx="2"/>
+    <text x="255" y="24" fill="#999" font-size="9">Bullish Cloud</text>
+    <rect x="350" y="12" width="20" height="16" fill="#ef5350" opacity="0.3" rx="2"/>
+    <text x="375" y="24" fill="#999" font-size="9">Bearish Cloud</text>
+    <circle cx="470" cy="20" r="4" fill="#ff9800"/>
+    <text x="480" y="24" fill="#999" font-size="9">Crossover</text>
+    <circle cx="560" cy="20" r="4" fill="#00e676"/>
+    <text x="570" y="24" fill="#999" font-size="9">Bullish Signal</text>
+  </g>
+</svg>

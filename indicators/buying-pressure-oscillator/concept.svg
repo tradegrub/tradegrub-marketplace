@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="150" x2="760" y2="150"/>
+    <line x1="60" y1="200" x2="760" y2="200"/><line x1="60" y1="280" x2="760" y2="280"/>
+    <line x1="60" y1="360" x2="760" y2="360"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Buying Pressure Oscillator</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Subtle price line in upper area y70-200 -->
+  <polyline points="80,170 105,165 130,160 155,155 180,162 205,170 230,175 255,168 280,158 305,150 330,145 355,140 380,148 405,158 430,168 455,175 480,170 505,160 530,150 555,145 580,142 605,148 630,155 655,162 680,158 710,150 740,145" fill="none" stroke="#00bcd4" stroke-width="1.5" opacity="0.3" filter="url(#softGlow)"/>
+  <text x="745" y="143" fill="#00bcd4" font-size="9" opacity="0.4">Price</text>
+
+  <!-- Separator -->
+  <line x1="60" y1="220" x2="760" y2="220" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="65" y="238" fill="#555" font-size="9">PRESSURE</text>
+
+  <!-- Zero line -->
+  <line x1="80" y1="350" x2="740" y2="350" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="68" y="354" fill="#555" font-size="9" text-anchor="end">0</text>
+
+  <!-- Histogram bars - green above zero, red below -->
+  <!-- Cycle 1: buying pressure builds then fades -->
+  <rect x="84" y="340" width="14" height="10" fill="#26a69a" opacity="0.6" rx="1"/>
+  <rect x="104" y="332" width="14" height="18" fill="#26a69a" opacity="0.7" rx="1"/>
+  <rect x="124" y="318" width="14" height="32" fill="#26a69a" opacity="0.8" rx="1"/>
+  <rect x="144" y="300" width="14" height="50" fill="#26a69a" opacity="0.9" rx="1"/>
+  <rect x="164" y="285" width="14" height="65" fill="#26a69a" opacity="1.0" rx="1"/>
+  <rect x="184" y="275" width="14" height="75" fill="#26a69a" opacity="1.0" rx="1"/>
+  <rect x="204" y="270" width="14" height="80" fill="#26a69a" opacity="1.0" rx="1"/>
+  <rect x="224" y="278" width="14" height="72" fill="#26a69a" opacity="0.95" rx="1"/>
+  <rect x="244" y="292" width="14" height="58" fill="#26a69a" opacity="0.85" rx="1"/>
+  <rect x="264" y="312" width="14" height="38" fill="#26a69a" opacity="0.7" rx="1"/>
+  <rect x="284" y="332" width="14" height="18" fill="#26a69a" opacity="0.55" rx="1"/>
+  <rect x="304" y="342" width="14" height="8" fill="#26a69a" opacity="0.45" rx="1"/>
+
+  <!-- Cycle: selling pressure -->
+  <rect x="324" y="350" width="14" height="12" fill="#ef5350" opacity="0.5" rx="1"/>
+  <rect x="344" y="350" width="14" height="28" fill="#ef5350" opacity="0.65" rx="1"/>
+  <rect x="364" y="350" width="14" height="48" fill="#ef5350" opacity="0.8" rx="1"/>
+  <rect x="384" y="350" width="14" height="62" fill="#ef5350" opacity="0.9" rx="1"/>
+  <rect x="404" y="350" width="14" height="70" fill="#ef5350" opacity="1.0" rx="1"/>
+  <rect x="424" y="350" width="14" height="65" fill="#ef5350" opacity="0.95" rx="1"/>
+  <rect x="444" y="350" width="14" height="50" fill="#ef5350" opacity="0.85" rx="1"/>
+  <rect x="464" y="350" width="14" height="32" fill="#ef5350" opacity="0.7" rx="1"/>
+  <rect x="484" y="350" width="14" height="15" fill="#ef5350" opacity="0.55" rx="1"/>
+
+  <!-- Cycle 2: buying pressure returns -->
+  <rect x="504" y="342" width="14" height="8" fill="#26a69a" opacity="0.45" rx="1"/>
+  <rect x="524" y="330" width="14" height="20" fill="#26a69a" opacity="0.6" rx="1"/>
+  <rect x="544" y="315" width="14" height="35" fill="#26a69a" opacity="0.75" rx="1"/>
+  <rect x="564" y="298" width="14" height="52" fill="#26a69a" opacity="0.88" rx="1"/>
+  <rect x="584" y="285" width="14" height="65" fill="#26a69a" opacity="0.95" rx="1"/>
+  <rect x="604" y="278" width="14" height="72" fill="#26a69a" opacity="1.0" rx="1"/>
+  <rect x="624" y="282" width="14" height="68" fill="#26a69a" opacity="0.98" rx="1"/>
+  <rect x="644" y="295" width="14" height="55" fill="#26a69a" opacity="0.88" rx="1"/>
+  <rect x="664" y="312" width="14" height="38" fill="#26a69a" opacity="0.75" rx="1"/>
+  <rect x="684" y="328" width="14" height="22" fill="#26a69a" opacity="0.6" rx="1"/>
+  <rect x="704" y="340" width="14" height="10" fill="#26a69a" opacity="0.5" rx="1"/>
+  <rect x="724" y="350" width="14" height="8" fill="#ef5350" opacity="0.45" rx="1"/>
+
+  <!-- Signal line (orange) overlaying histogram -->
+  <polyline points="91,345 111,335 131,322 151,305 171,290 191,280 211,275 231,282 251,296 271,315 291,335 311,345 331,352 351,362 371,378 391,392 411,400 431,395 451,382 471,365 491,352 511,345 531,338 551,325 571,308 591,292 611,282 631,286 651,298 671,315 691,332 711,345 731,352" fill="none" stroke="#ff9800" stroke-width="2" opacity="0.9"/>
+
+  <!-- Buying Climax annotation -->
+  <rect x="155" y="245" width="108" height="22" rx="4" fill="#26a69a" fill-opacity="0.1" stroke="#26a69a" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="209" y="260" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="500">Buying Climax</text>
+  <path d="M 211,267 C 211,270 211,272 211,275" fill="none" stroke="#26a69a" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Selling Climax annotation -->
+  <rect x="355" y="408" width="112" height="22" rx="4" fill="#ef5350" fill-opacity="0.1" stroke="#ef5350" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="411" y="423" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500">Selling Climax</text>
+  <path d="M 411,408 C 411,405 411,402 411,400" fill="none" stroke="#ef5350" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Signal Cross annotation (where signal line crosses zero ~x=500) -->
+  <g filter="url(#glow)">
+    <circle cx="501" cy="350" r="5" fill="none" stroke="#ff9800" stroke-width="2"/>
+  </g>
+  <rect x="440" y="245" width="108" height="22" rx="4" fill="#ff9800" fill-opacity="0.1" stroke="#ff9800" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="494" y="260" text-anchor="middle" fill="#ff9800" font-size="10" font-weight="500">Signal Cross</text>
+  <path d="M 501,267 C 501,300 501,335 501,345" fill="none" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Volume bars -->
+  <g opacity="0.45">
+    <rect x="86" y="432" width="10" height="8" fill="#ef5350" rx="1"/>
+    <rect x="106" y="428" width="10" height="12" fill="#26a69a" rx="1"/>
+    <rect x="126" y="425" width="10" height="15" fill="#26a69a" rx="1"/>
+    <rect x="146" y="422" width="10" height="18" fill="#26a69a" rx="1"/>
+    <rect x="166" y="420" width="10" height="20" fill="#26a69a" rx="1"/>
+    <rect x="186" y="418" width="10" height="22" fill="#26a69a" rx="1"/>
+    <rect x="206" y="417" width="10" height="23" fill="#26a69a" rx="1"/>
+    <rect x="226" y="420" width="10" height="20" fill="#26a69a" rx="1"/>
+    <rect x="246" y="424" width="10" height="16" fill="#26a69a" rx="1"/>
+    <rect x="266" y="428" width="10" height="12" fill="#26a69a" rx="1"/>
+    <rect x="286" y="432" width="10" height="8" fill="#26a69a" rx="1"/>
+    <rect x="306" y="434" width="10" height="6" fill="#26a69a" rx="1"/>
+    <rect x="326" y="432" width="10" height="8" fill="#ef5350" rx="1"/>
+    <rect x="346" y="428" width="10" height="12" fill="#ef5350" rx="1"/>
+    <rect x="366" y="424" width="10" height="16" fill="#ef5350" rx="1"/>
+    <rect x="386" y="420" width="10" height="20" fill="#ef5350" rx="1"/>
+    <rect x="406" y="418" width="10" height="22" fill="#ef5350" rx="1"/>
+    <rect x="426" y="420" width="10" height="20" fill="#ef5350" rx="1"/>
+    <rect x="446" y="424" width="10" height="16" fill="#ef5350" rx="1"/>
+    <rect x="466" y="428" width="10" height="12" fill="#ef5350" rx="1"/>
+    <rect x="486" y="432" width="10" height="8" fill="#ef5350" rx="1"/>
+    <rect x="506" y="434" width="10" height="6" fill="#26a69a" rx="1"/>
+    <rect x="526" y="430" width="10" height="10" fill="#26a69a" rx="1"/>
+    <rect x="546" y="426" width="10" height="14" fill="#26a69a" rx="1"/>
+    <rect x="566" y="422" width="10" height="18" fill="#26a69a" rx="1"/>
+    <rect x="586" y="419" width="10" height="21" fill="#26a69a" rx="1"/>
+    <rect x="606" y="417" width="10" height="23" fill="#26a69a" rx="1"/>
+    <rect x="626" y="419" width="10" height="21" fill="#26a69a" rx="1"/>
+    <rect x="646" y="423" width="10" height="17" fill="#26a69a" rx="1"/>
+    <rect x="666" y="427" width="10" height="13" fill="#26a69a" rx="1"/>
+    <rect x="686" y="431" width="10" height="9" fill="#26a69a" rx="1"/>
+    <rect x="706" y="434" width="10" height="6" fill="#26a69a" rx="1"/>
+    <rect x="726" y="432" width="10" height="8" fill="#ef5350" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Buying Pressure</text>
+    <circle cx="145" cy="20" r="4" fill="#ef5350"/>
+    <text x="155" y="24" fill="#999" font-size="9">Selling Pressure</text>
+    <circle cx="280" cy="20" r="4" fill="#ff9800"/>
+    <text x="290" y="24" fill="#999" font-size="9">Signal Line</text>
+    <rect x="385" y="14" width="12" height="12" rx="2" fill="#ffffff" fill-opacity="0.1" stroke="#bbb" stroke-width="0.5"/>
+    <text x="403" y="24" fill="#999" font-size="9">Climax</text>
+  </g>
+</svg>

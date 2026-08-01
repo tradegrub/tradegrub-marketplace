@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="coneGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c4dff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#7c4dff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#e0e0e0" font-size="17" font-weight="600">First Passage Time</text>
+  <text x="400" y="54" text-anchor="middle" fill="#6a6a8a" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="60" y1="100" x2="740" y2="100"/>
+    <line x1="60" y1="150" x2="740" y2="150"/>
+    <line x1="60" y1="200" x2="740" y2="200"/>
+    <line x1="60" y1="250" x2="740" y2="250"/>
+    <line x1="60" y1="300" x2="740" y2="300"/>
+    <line x1="60" y1="350" x2="740" y2="350"/>
+    <line x1="60" y1="400" x2="740" y2="400"/>
+    <line x1="160" y1="70" x2="160" y2="430"/>
+    <line x1="260" y1="70" x2="260" y2="430"/>
+    <line x1="360" y1="70" x2="360" y2="430"/>
+    <line x1="460" y1="70" x2="460" y2="430"/>
+    <line x1="560" y1="70" x2="560" y2="430"/>
+    <line x1="660" y1="70" x2="660" y2="430"/>
+  </g>
+
+  <!-- Upper target level (green dashed) -->
+  <line x1="60" y1="155" x2="740" y2="155" stroke="#4caf50" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.7"/>
+  <text x="745" y="159" fill="#4caf50" font-size="10" opacity="0.8">Upper Target</text>
+
+  <!-- Lower target level (red dashed) -->
+  <line x1="60" y1="345" x2="740" y2="345" stroke="#f44336" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.7"/>
+  <text x="745" y="349" fill="#f44336" font-size="10" opacity="0.8">Lower Target</text>
+
+  <!-- Historical price line (left side, ending at ~x=390) -->
+  <polyline
+    points="80,310 110,295 135,305 160,285 185,298 210,275 235,290 260,265 285,278 310,260 335,270 360,255 390,250"
+    fill="none" stroke="#4fc3f7" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Current Price marker -->
+  <circle cx="390" cy="250" r="4" fill="#4fc3f7" filter="url(#glow)"/>
+  <line x1="390" y1="245" x2="390" y2="70" stroke="#4fc3f7" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="390" y="240" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="500">Current Price</text>
+
+  <!-- Probability cone (expanding from current price forward) -->
+  <polygon
+    points="390,250 460,225 530,195 600,170 670,155 740,140 740,360 670,345 600,330 530,305 460,275 390,250"
+    fill="url(#coneGrad)"/>
+
+  <!-- Cone upper edge -->
+  <polyline
+    points="390,250 460,225 530,195 600,170 670,155 740,140"
+    fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+
+  <!-- Cone lower edge -->
+  <polyline
+    points="390,250 460,275 530,305 600,330 670,345 740,360"
+    fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+
+  <!-- Cone median path (dashed) -->
+  <polyline
+    points="390,250 460,250 530,250 600,250 670,250 740,250"
+    fill="none" stroke="#b388ff" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
+
+  <!-- Probability labels -->
+  <text x="620" y="148" fill="#4caf50" font-size="12" font-weight="600" filter="url(#glow)">P(reach upper) = 68%</text>
+  <text x="620" y="370" fill="#f44336" font-size="12" font-weight="600" filter="url(#glow)">P(reach lower) = 32%</text>
+
+  <!-- Estimated arrival time markers along bottom axis -->
+  <line x1="390" y1="415" x2="740" y2="415" stroke="#555577" stroke-width="0.5"/>
+  <g fill="#8888aa" font-size="9" text-anchor="middle">
+    <line x1="460" y1="412" x2="460" y2="418" stroke="#555577" stroke-width="0.5"/>
+    <text x="460" y="428">5d</text>
+    <line x1="530" y1="412" x2="530" y2="418" stroke="#555577" stroke-width="0.5"/>
+    <text x="530" y="428">10d</text>
+    <line x1="600" y1="412" x2="600" y2="418" stroke="#555577" stroke-width="0.5"/>
+    <text x="600" y="428">15d</text>
+    <line x1="670" y1="412" x2="670" y2="418" stroke="#555577" stroke-width="0.5"/>
+    <text x="670" y="428">20d</text>
+    <line x1="740" y1="412" x2="740" y2="418" stroke="#555577" stroke-width="0.5"/>
+    <text x="740" y="428">25d</text>
+  </g>
+  <text x="565" y="442" text-anchor="middle" fill="#6a6a8a" font-size="9">Estimated Arrival Time</text>
+
+  <!-- Arrival time probability bars -->
+  <g opacity="0.6">
+    <rect x="448" y="395" width="24" height="17" rx="2" fill="#4caf50" opacity="0.25"/>
+    <rect x="518" y="390" width="24" height="22" rx="2" fill="#4caf50" opacity="0.35"/>
+    <rect x="588" y="393" width="24" height="19" rx="2" fill="#4caf50" opacity="0.25"/>
+    <rect x="658" y="398" width="24" height="14" rx="2" fill="#4caf50" opacity="0.15"/>
+  </g>
+
+  <!-- Legend bar at bottom -->
+  <rect x="60" y="465" width="680" height="24" rx="4" fill="#0d0d1a" opacity="0.5"/>
+  <circle cx="90" cy="477" r="4" fill="#4fc3f7"/>
+  <text x="100" y="481" fill="#8888aa" font-size="10">Price</text>
+  <line x1="150" y1="477" x2="175" y2="477" stroke="#4caf50" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="182" y="481" fill="#8888aa" font-size="10">Upper Target</text>
+  <line x1="270" y1="477" x2="295" y2="477" stroke="#f44336" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="302" y="481" fill="#8888aa" font-size="10">Lower Target</text>
+  <rect x="385" y="472" width="16" height="10" rx="2" fill="#7c4dff" opacity="0.3"/>
+  <text x="407" y="481" fill="#8888aa" font-size="10">Probability Cone</text>
+  <rect x="510" y="472" width="16" height="10" rx="2" fill="#4caf50" opacity="0.3"/>
+  <text x="532" y="481" fill="#8888aa" font-size="10">Arrival Distribution</text>
+</svg>

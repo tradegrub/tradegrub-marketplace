@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Ornstein-Uhlenbeck Estimator</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart with equilibrium -->
+  <rect x="60" y="70" width="700" height="150" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <!-- Equilibrium line -->
+  <line x1="60" y1="145" x2="760" y2="145" stroke="#AB47BC" stroke-width="1" stroke-dasharray="6,3" opacity="0.6"/>
+  <text x="762" y="149" fill="#AB47BC" font-family="Inter,sans-serif" font-size="9">mu</text>
+  <!-- Price oscillating -->
+  <polyline points="100,170 140,120 180,160 220,110 260,155 300,130 340,150 380,135 420,155 460,125 500,160 540,115 580,148 620,140 660,142 700,145" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+  <!-- Overbought zone -->
+  <rect x="200" y="70" width="60" height="35" fill="rgba(244,67,54,0.1)" rx="2"/>
+  <text x="230" y="85" text-anchor="middle" fill="#EF5350" font-family="Inter,sans-serif" font-size="8">OB</text>
+  <!-- Oversold zone -->
+  <rect x="100" y="160" width="60" height="35" fill="rgba(76,175,80,0.1)" rx="2"/>
+  <text x="130" y="185" text-anchor="middle" fill="#66BB6A" font-family="Inter,sans-serif" font-size="8">OS</text>
+
+  <!-- Subplot -->
+  <rect x="60" y="250" width="700" height="180" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="70" y="270" fill="#888" font-family="Inter,sans-serif" font-size="10">Theta / Z-Score</text>
+
+  <!-- Zero -->
+  <line x1="60" y1="340" x2="760" y2="340" stroke="#888" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+  <!-- +2 z -->
+  <line x1="60" y1="290" x2="760" y2="290" stroke="#EF5350" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+  <text x="762" y="294" fill="#EF5350" font-family="Inter,sans-serif" font-size="9">+2</text>
+  <!-- -2 z -->
+  <line x1="60" y1="390" x2="760" y2="390" stroke="#66BB6A" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+  <text x="762" y="394" fill="#66BB6A" font-family="Inter,sans-serif" font-size="9">-2</text>
+  <!-- 0.5 theta -->
+  <line x1="60" y1="315" x2="760" y2="315" stroke="#66BB6A" stroke-width="1" stroke-dasharray="3,5" opacity="0.3"/>
+
+  <!-- OB bg -->
+  <rect x="200" y="250" width="80" height="180" fill="rgba(244,67,54,0.06)"/>
+  <!-- OS bg -->
+  <rect x="480" y="250" width="80" height="180" fill="rgba(76,175,80,0.06)"/>
+
+  <!-- Theta (blue) - stays in upper area -->
+  <polyline points="100,310 160,305 220,308 280,312 340,315 400,318 460,310 520,305 580,312 640,320 700,318" fill="none" stroke="#42A5F5" stroke-width="2"/>
+  <!-- Z-score (orange) - oscillates -->
+  <polyline points="100,380 160,310 220,370 280,280 340,360 400,320 460,355 520,395 580,350 640,340 700,340" fill="none" stroke="#FF9800" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="60" y="460" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="80" y1="475" x2="100" y2="475" stroke="#42A5F5" stroke-width="2"/>
+  <text x="105" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Theta</text>
+  <line x1="180" y1="475" x2="200" y2="475" stroke="#FF9800" stroke-width="1"/>
+  <text x="205" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Z-Score</text>
+  <line x1="300" y1="475" x2="320" y2="475" stroke="#AB47BC" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="325" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Equilibrium</text>
+  <rect x="440" y="470" width="10" height="10" fill="rgba(244,67,54,0.3)"/>
+  <text x="455" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">OB</text>
+  <rect x="500" y="470" width="10" height="10" fill="rgba(76,175,80,0.3)"/>
+  <text x="515" y="479" fill="#aaa" font-family="Inter,sans-serif" font-size="11">OS</text>
+</svg>

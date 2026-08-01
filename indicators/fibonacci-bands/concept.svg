@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="goldenZone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9800" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ff9800" stop-opacity="0.04"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="180" x2="760" y2="180"/>
+    <line x1="60" y1="260" x2="760" y2="260"/><line x1="60" y1="340" x2="760" y2="340"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Fibonacci Retracement Bands</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Fibonacci band levels (horizontal, dynamic based on rolling range) -->
+  <!-- Range high (100%) -->
+  <line x1="80" y1="80" x2="740" y2="80" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,4" opacity="0.3"/>
+  <text x="745" y="84" fill="#e0e0e0" font-size="9" opacity="0.6">100%</text>
+
+  <!-- 78.6% -->
+  <line x1="80" y1="118" x2="740" y2="118" stroke="#ab47bc" stroke-width="1" stroke-dasharray="3,4" opacity="0.4"/>
+  <text x="745" y="122" fill="#ab47bc" font-size="9">78.6%</text>
+
+  <!-- 61.8% -->
+  <line x1="80" y1="152" x2="740" y2="152" stroke="#ff9800" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="745" y="156" fill="#ff9800" font-size="9" font-weight="500">61.8%</text>
+
+  <!-- 50% -->
+  <line x1="80" y1="180" x2="740" y2="180" stroke="#42a5f5" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <text x="745" y="184" fill="#42a5f5" font-size="9">50.0%</text>
+
+  <!-- 38.2% -->
+  <line x1="80" y1="208" x2="740" y2="208" stroke="#ff9800" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="745" y="212" fill="#ff9800" font-size="9" font-weight="500">38.2%</text>
+
+  <!-- 23.6% -->
+  <line x1="80" y1="240" x2="740" y2="240" stroke="#ab47bc" stroke-width="1" stroke-dasharray="3,4" opacity="0.4"/>
+  <text x="745" y="244" fill="#ab47bc" font-size="9">23.6%</text>
+
+  <!-- Range low (0%) -->
+  <line x1="80" y1="280" x2="740" y2="280" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,4" opacity="0.3"/>
+  <text x="745" y="284" fill="#e0e0e0" font-size="9" opacity="0.6">0%</text>
+
+  <!-- Golden zone fill (38.2% to 61.8%) -->
+  <rect x="80" y="152" width="660" height="56" fill="url(#goldenZone)" rx="2"/>
+
+  <!-- Golden zone label -->
+  <rect x="90" y="170" width="80" height="18" rx="4" fill="#ff9800" fill-opacity="0.12" stroke="#ff9800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="130" y="183" text-anchor="middle" fill="#ff9800" font-size="9" font-weight="500">Golden Zone</text>
+
+  <!-- Price candles - uptrend, pullback to 38.2%, bounce -->
+  <!-- Uptrend -->
+  <line x1="100" y1="250" x2="100" y2="275" stroke="#26a69a" stroke-width="1"/><rect x="96" y="252" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="125" y1="235" x2="125" y2="260" stroke="#26a69a" stroke-width="1"/><rect x="121" y="238" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="150" y1="215" x2="150" y2="245" stroke="#26a69a" stroke-width="1"/><rect x="146" y="218" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="175" y1="180" x2="175" y2="225" stroke="#26a69a" stroke-width="1"/><rect x="171" y="185" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="148" x2="200" y2="195" stroke="#26a69a" stroke-width="1"/><rect x="196" y="155" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="225" y1="120" x2="225" y2="165" stroke="#26a69a" stroke-width="1"/><rect x="221" y="128" width="8" height="25" fill="#26a69a" rx="1"/>
+  <line x1="250" y1="95" x2="250" y2="140" stroke="#26a69a" stroke-width="1"/><rect x="246" y="100" width="8" height="28" fill="#26a69a" rx="1"/>
+  <line x1="275" y1="82" x2="275" y2="118" stroke="#26a69a" stroke-width="1"/><rect x="271" y="88" width="8" height="20" fill="#26a69a" rx="1"/>
+
+  <!-- Pullback into golden zone -->
+  <line x1="300" y1="95" x2="300" y2="130" stroke="#ef5350" stroke-width="1"/><rect x="296" y="98" width="8" height="22" fill="#ef5350" rx="1"/>
+  <line x1="325" y1="110" x2="325" y2="148" stroke="#ef5350" stroke-width="1"/><rect x="321" y="115" width="8" height="25" fill="#ef5350" rx="1"/>
+  <line x1="350" y1="128" x2="350" y2="165" stroke="#ef5350" stroke-width="1"/><rect x="346" y="132" width="8" height="24" fill="#ef5350" rx="1"/>
+  <line x1="375" y1="148" x2="375" y2="185" stroke="#ef5350" stroke-width="1"/><rect x="371" y="152" width="8" height="24" fill="#ef5350" rx="1"/>
+  <line x1="400" y1="165" x2="400" y2="210" stroke="#ef5350" stroke-width="1"/><rect x="396" y="170" width="8" height="28" fill="#ef5350" rx="1"/>
+
+  <!-- Bounce at 38.2% -->
+  <line x1="425" y1="175" x2="425" y2="218" stroke="#ef5350" stroke-width="1"/><rect x="421" y="180" width="8" height="25" fill="#ef5350" rx="1"/>
+  <!-- Hammer/reversal candle at 38.2% -->
+  <line x1="450" y1="168" x2="450" y2="220" stroke="#26a69a" stroke-width="1.5"/><rect x="444" y="172" width="12" height="15" fill="#26a69a" rx="1" filter="url(#glow)"/>
+
+  <!-- Bounce signal -->
+  <g filter="url(#softGlow)">
+    <polygon points="448,162 458,162 453,152" fill="#00e676"/>
+  </g>
+  <rect x="462" y="148" width="95" height="20" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="509" y="162" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">38.2% BOUNCE</text>
+
+  <!-- Continuation up -->
+  <line x1="475" y1="150" x2="475" y2="185" stroke="#26a69a" stroke-width="1"/><rect x="471" y="155" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="135" x2="500" y2="168" stroke="#26a69a" stroke-width="1"/><rect x="496" y="140" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="525" y1="118" x2="525" y2="152" stroke="#26a69a" stroke-width="1"/><rect x="521" y="122" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="550" y1="105" x2="550" y2="138" stroke="#26a69a" stroke-width="1"/><rect x="546" y="108" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="575" y1="92" x2="575" y2="125" stroke="#26a69a" stroke-width="1"/><rect x="571" y="95" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="600" y1="82" x2="600" y2="112" stroke="#26a69a" stroke-width="1"/><rect x="596" y="85" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="625" y1="90" x2="625" y2="118" stroke="#ef5350" stroke-width="1"/><rect x="621" y="93" width="8" height="15" fill="#ef5350" rx="1"/>
+  <line x1="650" y1="82" x2="650" y2="108" stroke="#26a69a" stroke-width="1"/><rect x="646" y="85" width="8" height="15" fill="#26a69a" rx="1"/>
+
+  <!-- Pullback depth arrow annotation -->
+  <line x1="440" y1="85" x2="440" y2="205" stroke="#888" stroke-width="1" opacity="0.4"/>
+  <polygon points="437,205 443,205 440,212" fill="#888" opacity="0.4"/>
+  <polygon points="437,85 443,85 440,78" fill="#888" opacity="0.4"/>
+  <text x="430" y="148" text-anchor="end" fill="#888" font-size="8" transform="rotate(-90, 430, 148)">Pullback Depth</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="96" y="400" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="121" y="398" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="146" y="395" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="171" y="390" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="196" y="385" width="8" height="25" fill="#26a69a" rx="1"/>
+    <rect x="221" y="388" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="246" y="390" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="271" y="395" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="296" y="398" width="8" height="12" fill="#ef5350" rx="1"/>
+    <rect x="321" y="400" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="346" y="402" width="8" height="8" fill="#ef5350" rx="1"/>
+    <rect x="371" y="403" width="8" height="7" fill="#ef5350" rx="1"/>
+    <rect x="396" y="404" width="8" height="6" fill="#ef5350" rx="1"/>
+    <rect x="421" y="405" width="8" height="5" fill="#ef5350" rx="1"/>
+  </g>
+  <rect x="444" y="388" width="12" height="22" fill="#00e676" rx="1" opacity="0.6" filter="url(#softGlow)"/>
+  <g opacity="0.4">
+    <rect x="471" y="392" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="496" y="395" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="521" y="393" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="546" y="395" width="8" height="15" fill="#26a69a" rx="1"/>
+    <rect x="571" y="398" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="596" y="400" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="621" y="402" width="8" height="8" fill="#ef5350" rx="1"/>
+    <rect x="646" y="400" width="8" height="10" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#ff9800"/>
+    <text x="30" y="24" fill="#999" font-size="9">38.2% / 61.8%</text>
+    <circle cx="130" cy="20" r="4" fill="#42a5f5"/>
+    <text x="140" y="24" fill="#999" font-size="9">50% Midpoint</text>
+    <circle cx="230" cy="20" r="4" fill="#ab47bc"/>
+    <text x="240" y="24" fill="#999" font-size="9">23.6% / 78.6%</text>
+    <rect x="340" y="12" width="20" height="16" fill="#ff9800" opacity="0.3" rx="2"/>
+    <text x="365" y="24" fill="#999" font-size="9">Golden Zone</text>
+    <circle cx="460" cy="20" r="4" fill="#00e676"/>
+    <text x="470" y="24" fill="#999" font-size="9">Bounce Signal</text>
+    <circle cx="570" cy="20" r="4" fill="#e0e0e0" opacity="0.5"/>
+    <text x="580" y="24" fill="#999" font-size="9">Range Bounds</text>
+  </g>
+</svg>

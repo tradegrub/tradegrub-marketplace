@@ -1,0 +1,12 @@
+{
+  "id": "swing-failure-pattern",
+  "name": "Swing Failure Pattern",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Patterns",
+  "tags": ["sfp", "swing-failure", "liquidity", "sweep", "reversal", "smart-money"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Detects swing failure patterns where price sweeps a swing level then reverses, signaling liquidity grab reversals"
+}

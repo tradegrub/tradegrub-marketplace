@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="bandFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9800" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#FF9800" stop-opacity="0.01"/>
+      <stop offset="100%" stop-color="#FF9800" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Band Trend Breakout Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- EMA center line -->
+  <polyline points="80,260 140,255 200,250 260,248 320,245 380,240 440,232 500,220 560,210 620,200 680,190 720,185"
+    fill="none" stroke="#FF9800" stroke-width="2" opacity="0.8"/>
+  <text x="725" y="188" fill="#FF9800" font-size="9">EMA</text>
+
+  <!-- Upper ATR band -->
+  <polyline points="80,200 140,195 200,188 260,185 320,180 380,175 440,165 500,150 560,138 620,125 680,112 720,105"
+    fill="none" stroke="#787b86" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.5"/>
+  <text x="725" y="108" fill="#787b86" font-size="8">+ATR</text>
+
+  <!-- Lower ATR band -->
+  <polyline points="80,320 140,315 200,312 260,310 320,310 380,305 440,300 500,290 560,282 620,275 680,268 720,265"
+    fill="none" stroke="#787b86" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.5"/>
+  <text x="725" y="268" fill="#787b86" font-size="8">-ATR</text>
+
+  <!-- Band fill -->
+  <polygon points="80,200 140,195 200,188 260,185 320,180 380,175 440,165 500,150 560,138 620,125 680,112 720,105 720,265 680,268 620,275 560,282 500,290 440,300 380,305 320,310 260,310 200,312 140,315 80,320"
+    fill="url(#bandFill)"/>
+
+  <!-- Price line - ranging then breaking out above upper band -->
+  <polyline points="80,270 110,260 140,250 170,265 200,255 230,245 260,260 290,248 320,240 350,235 380,225 410,215 430,195 450,175 470,160 490,145 510,130 530,118 550,105 570,95 590,85 610,90 630,100 650,110 680,120"
+    fill="none" stroke="#2196F3" stroke-width="2.5"/>
+
+  <!-- Breakout point -->
+  <circle cx="470" cy="160" r="6" fill="none" stroke="#26a69a" stroke-width="2"/>
+  <g filter="url(#glow)">
+    <polygon points="470,148 465,138 475,138" fill="#26a69a"/>
+  </g>
+  <rect x="478" y="132" width="90" height="20" rx="4" fill="#26a69a" fill-opacity="0.15" stroke="#26a69a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="523" y="146" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">BREAKOUT</text>
+
+  <!-- Breakout arrow -->
+  <text x="440" y="155" fill="#26a69a" font-size="8">Price exits</text>
+  <text x="440" y="165" fill="#26a69a" font-size="8">upper band</text>
+
+  <!-- Trailing exit at EMA center -->
+  <circle cx="680" cy="120" r="6" fill="none" stroke="#ef5350" stroke-width="2"/>
+  <line x1="680" y1="126" x2="680" y2="190" stroke="#ef5350" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <rect x="625" y="95" width="50" height="18" rx="4" fill="#ef5350" fill-opacity="0.15" stroke="#ef5350" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="650" y="108" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="600">EXIT</text>
+
+  <!-- Trailing stop annotation -->
+  <text x="620" y="170" fill="#ef5350" font-size="8">Trailing exit</text>
+  <text x="620" y="180" fill="#ef5350" font-size="8">at EMA center</text>
+
+  <!-- Ranging phase annotation -->
+  <rect x="130" y="275" width="120" height="16" rx="3" fill="#787b86" fill-opacity="0.1"/>
+  <text x="190" y="287" text-anchor="middle" fill="#787b86" font-size="8">Ranging (No Signal)</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#FF9800"/>
+    <text x="30" y="24" fill="#999" font-size="9">EMA Center</text>
+    <line x1="140" y1="20" x2="160" y2="20" stroke="#787b86" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="165" y="24" fill="#999" font-size="9">ATR Bands</text>
+    <circle cx="280" cy="20" r="4" fill="#2196F3"/>
+    <text x="290" y="24" fill="#999" font-size="9">Price</text>
+    <polygon points="360,24 355,14 365,14" fill="#26a69a"/>
+    <text x="370" y="24" fill="#999" font-size="9">Band Breakout</text>
+    <circle cx="490" cy="20" r="4" fill="none" stroke="#ef5350" stroke-width="1.5"/>
+    <text x="500" y="24" fill="#999" font-size="9">Trailing Exit (EMA)</text>
+  </g>
+</svg>

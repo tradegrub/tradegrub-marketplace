@@ -1,0 +1,34 @@
+{
+  "id": "complete-trade-planner",
+  "name": "Complete Trade Planner",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "multi-signal",
+  "tags": [
+    "numpy",
+    "scipy",
+    "trade-planner",
+    "stop-loss",
+    "take-profit",
+    "trailing"
+  ],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Complete entry and exit framework with configurable stop loss, take profit, and trailing stop using multi-indicator confirmation via numpy and scipy",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

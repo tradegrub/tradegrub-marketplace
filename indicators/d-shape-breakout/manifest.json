@@ -1,0 +1,30 @@
+{
+  "id": "d-shape-breakout",
+  "name": "Arc Breakout Signals",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "price-action",
+  "tags": ["breakout", "arc", "support", "resistance", "swing"],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Semi-circular arc-based support and resistance with curved breakout zone signals",
+  "official": true,
+  "beta": true,
+  "likes": 0,
+  "uses": 0,
+  "language": "Python",
+  "languages": ["python"],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "overlay": true,
+  "inputs": [
+    {"name": "swing_length", "type": "int", "default": 10, "min": 3, "max": 50},
+    {"name": "arc_bars", "type": "int", "default": 20, "min": 5, "max": 60}
+  ],
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

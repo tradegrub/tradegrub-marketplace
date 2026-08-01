@@ -1,0 +1,103 @@
+from tg_scripting import *
+import numpy as np
+
+indicator("Adaptive SAR Strategy", overlay=True)
+
+af_start = input.float(0.02, "AF Start", minval=0.01, maxval=0.1, step=0.01)
+af_max = input.float(0.2, "AF Max", minval=0.1, maxval=0.5, step=0.05)
+atr_len = input.int(14, "ATR Length", minval=5, maxval=30)
+stop_mult = input.float(2.0, "Stop ATR Multiple", minval=1.0, maxval=4.0, step=0.5)
+
+hi = np.array(high, dtype=float)
+lo = np.array(low, dtype=float)
+cl = np.array(close, dtype=float)
+n = len(cl)
+
+atr_arr = np.array(ta.atr(high, low, close, atr_len), dtype=float)
+atr_arr = np.nan_to_num(atr_arr, nan=1.0)
+
+atr_pct = np.zeros(n)
+for i in range(50, n):
+    window = atr_arr[i-50:i]
+    pct = np.sum(window <= atr_arr[i]) / 50
+    atr_pct[i] = pct
+
+sar = np.zeros(n)
+is_long = True
+ep = hi[0]
+af = af_start
+sar[0] = lo[0]
+
+for i in range(1, n):
+    vol_adj = 0.5 + atr_pct[i]
+    cur_af_max = af_max * vol_adj
+
+    if is_long:
+        sar[i] = sar[i-1] + af * (ep - sar[i-1])
+        sar[i] = min(sar[i], lo[i-1])
+        if i >= 2:
+            sar[i] = min(sar[i], lo[i-2])
+        if hi[i] > ep:
+            ep = hi[i]
+            af = min(af + af_start, cur_af_max)
+        if lo[i] < sar[i]:
+            is_long = False
+            sar[i] = ep
+            ep = lo[i]
+            af = af_start
+    else:
+        sar[i] = sar[i-1] + af * (ep - sar[i-1])
+        sar[i] = max(sar[i], hi[i-1])
+        if i >= 2:
+            sar[i] = max(sar[i], hi[i-2])
+        if lo[i] < ep:
+            ep = lo[i]
+            af = min(af + af_start, cur_af_max)
+        if hi[i] > sar[i]:
+            is_long = True
+            sar[i] = ep
+            ep = hi[i]
+            af = af_start
+
+in_long = False
+in_short = False
+entry_price = 0.0
+for i in range(1, n):
+    strategy.set_bar_index(i)
+    if cl[i] > sar[i] and cl[i-1] <= sar[i-1]:
+        strategy.entry("Long", strategy.LONG)
+        in_long = True
+        in_short = False
+        entry_price = float(cl[i])
+    elif cl[i] < sar[i] and cl[i-1] >= sar[i-1]:
+        strategy.entry("Short", strategy.SHORT)
+        in_short = True
+        in_long = False
+        entry_price = float(cl[i])
+
+    if in_long:
+        sl = entry_price - atr_arr[i] * stop_mult
+        strategy.exit("Long", stop=sl)
+        if cl[i] <= sl:
+            in_long = False
+    if in_short:
+        sl = entry_price + atr_arr[i] * stop_mult
+        strategy.exit("Short", stop=sl)
+        if cl[i] >= sl:
+            in_short = False
+
+bull_sar = np.array([sar[i] if cl[i] > sar[i] else np.nan for i in range(n)])
+bear_sar = np.array([sar[i] if cl[i] <= sar[i] else np.nan for i in range(n)])
+plot(bull_sar.tolist(), title="Bullish SAR", color="#26a69a", style="circles", linewidth=1)
+plot(bear_sar.tolist(), title="Bearish SAR", color="#ff9800", style="circles", linewidth=1)
+
+buy_signal = [False] * n
+exit_signal = [False] * n
+for i in range(1, n):
+    if cl[i] > sar[i] and cl[i-1] <= sar[i-1]:
+        buy_signal[i] = True
+    elif cl[i] < sar[i] and cl[i-1] >= sar[i-1]:
+        exit_signal[i] = True
+
+plotshape(buy_signal, title="Buy Signal", style="triangleup", location="belowbar", color="#00e676")
+plotshape(exit_signal, title="Exit Signal", style="triangledown", location="abovebar", color="#ef5350")

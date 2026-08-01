@@ -1,0 +1,33 @@
+{
+  "id": "period-return-analyzer",
+  "name": "Period Return Analyzer",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistics",
+  "tags": [
+    "numpy",
+    "returns",
+    "period",
+    "performance",
+    "analysis"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Rolling period-over-period return analysis with distribution statistics and percentile ranking using numpy",
+  "official": true,
+  "beta": false,
+  "likes": 1200,
+  "uses": 5800,
+  "language": "Python",
+  "languages": [
+    "python"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-30",
+  "updated": "2026-06-30"
+}

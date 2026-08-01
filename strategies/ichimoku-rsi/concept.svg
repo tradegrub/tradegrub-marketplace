@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="bullCloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26a69a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#26a69a" stop-opacity="0.04"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="420"/><line x1="200" y1="60" x2="200" y2="420"/>
+    <line x1="320" y1="60" x2="320" y2="420"/><line x1="440" y1="60" x2="440" y2="420"/>
+    <line x1="560" y1="60" x2="560" y2="420"/><line x1="680" y1="60" x2="680" y2="420"/>
+    <line x1="60" y1="100" x2="760" y2="100"/><line x1="60" y1="170" x2="760" y2="170"/>
+    <line x1="60" y1="240" x2="760" y2="240"/>
+  </g>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Ichimoku Cloud + RSI Strategy</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- PRICE PANEL (top 60%) -->
+  <!-- Bullish Ichimoku cloud -->
+  <polygon points="80,195 160,188 240,182 320,178 400,175 480,178 560,182 640,188 720,192 720,215 640,210 560,205 480,200 400,198 320,200 240,205 160,210 80,215" fill="url(#bullCloud)"/>
+  <!-- Span A -->
+  <path d="M 80,195 Q 160,188 240,182 Q 320,178 400,175 Q 480,178 560,182 Q 640,188 720,192" fill="none" stroke="#26a69a" stroke-width="1" opacity="0.5"/>
+  <!-- Span B -->
+  <path d="M 80,215 Q 160,210 240,205 Q 320,200 400,198 Q 480,200 560,205 Q 640,210 720,215" fill="none" stroke="#ef5350" stroke-width="1" opacity="0.5"/>
+
+  <!-- Tenkan -->
+  <path d="M 80,225 Q 140,228 200,222 Q 260,210 320,195 Q 380,178 440,165 Q 500,158 560,155 Q 620,160 680,170 Q 720,178 740,182" fill="none" stroke="#42a5f5" stroke-width="1.5" opacity="0.7"/>
+  <!-- Kijun -->
+  <path d="M 80,220 Q 160,222 240,218 Q 320,208 400,195 Q 460,182 520,175 Q 580,172 640,178 Q 700,188 740,195" fill="none" stroke="#ef5350" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Candles in uptrend above cloud -->
+  <line x1="100" y1="218" x2="100" y2="248" stroke="#ef5350" stroke-width="1"/>
+  <rect x="96" y="222" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="140" y1="215" x2="140" y2="242" stroke="#26a69a" stroke-width="1"/>
+  <rect x="136" y="220" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="180" y1="208" x2="180" y2="235" stroke="#26a69a" stroke-width="1"/>
+  <rect x="176" y="212" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="220" y1="198" x2="220" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="216" y="202" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="260" y1="188" x2="260" y2="215" stroke="#ef5350" stroke-width="1"/>
+  <rect x="256" y="192" width="8" height="14" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="178" x2="300" y2="205" stroke="#26a69a" stroke-width="1"/>
+  <rect x="296" y="182" width="8" height="14" fill="#26a69a" rx="1"/>
+
+  <!-- TK Cross point + RSI confirmation = SIGNAL -->
+  <line x1="350" y1="162" x2="350" y2="195" stroke="#00e676" stroke-width="1.5"/>
+  <rect x="344" y="168" width="12" height="20" fill="#00e676" rx="1" filter="url(#glow)"/>
+
+  <g filter="url(#softGlow)">
+    <polygon points="350,158 360,158 355,146" fill="#00e676"/>
+  </g>
+  <rect x="365" y="138" width="150" height="22" rx="4" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="440" y="153" text-anchor="middle" fill="#00e676" font-size="10" font-weight="600">BUY (TK + RSI OK)</text>
+
+  <!-- Post signal candles -->
+  <line x1="390" y1="155" x2="390" y2="182" stroke="#26a69a" stroke-width="1"/>
+  <rect x="386" y="158" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="430" y1="148" x2="430" y2="175" stroke="#26a69a" stroke-width="1"/>
+  <rect x="426" y="152" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="470" y1="142" x2="470" y2="168" stroke="#ef5350" stroke-width="1"/>
+  <rect x="466" y="148" width="8" height="12" fill="#ef5350" rx="1"/>
+  <line x1="510" y1="138" x2="510" y2="165" stroke="#26a69a" stroke-width="1"/>
+  <rect x="506" y="142" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="550" y1="135" x2="550" y2="162" stroke="#26a69a" stroke-width="1"/>
+  <rect x="546" y="140" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="590" y1="140" x2="590" y2="168" stroke="#ef5350" stroke-width="1"/>
+  <rect x="586" y="145" width="8" height="16" fill="#ef5350" rx="1"/>
+  <line x1="630" y1="148" x2="630" y2="178" stroke="#ef5350" stroke-width="1"/>
+  <rect x="626" y="155" width="8" height="16" fill="#ef5350" rx="1"/>
+  <line x1="670" y1="158" x2="670" y2="188" stroke="#ef5350" stroke-width="1"/>
+  <rect x="666" y="165" width="8" height="16" fill="#ef5350" rx="1"/>
+
+  <!-- RSI PANEL (bottom 30%) -->
+  <line x1="60" y1="285" x2="760" y2="285" stroke="#888" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.3"/>
+  <text x="65" y="280" fill="#888" font-size="9" font-weight="500">RSI(14)</text>
+
+  <!-- Overbought 70 -->
+  <line x1="60" y1="310" x2="760" y2="310" stroke="#ef5350" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="762" y="313" fill="#ef5350" font-size="8">70</text>
+  <!-- 50 line -->
+  <line x1="60" y1="350" x2="760" y2="350" stroke="#888" stroke-width="0.8" opacity="0.2"/>
+  <text x="762" y="353" fill="#666" font-size="8">50</text>
+  <!-- Oversold 30 -->
+  <line x1="60" y1="390" x2="760" y2="390" stroke="#00e676" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="762" y="393" fill="#00e676" font-size="8">30</text>
+
+  <!-- RSI line -->
+  <path d="M 100,375 Q 140,368 180,358 Q 220,348 260,355 Q 300,362 340,345 Q 360,338 380,330 Q 420,322 460,318 Q 500,315 540,308 Q 580,312 620,320 Q 660,335 700,348" fill="none" stroke="#ab47bc" stroke-width="2" opacity="0.8"/>
+
+  <!-- RSI at signal point annotation -->
+  <circle cx="350" cy="342" r="8" fill="none" stroke="#00e676" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 355,335 L 375,320" fill="none" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+  <rect x="378" y="310" width="95" height="18" rx="4" fill="#00e676" fill-opacity="0.1" stroke="#00e676" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="425" y="323" text-anchor="middle" fill="#00e676" font-size="8" font-weight="500">RSI not overbought</text>
+
+  <!-- RSI rejected zone (overbought blocks entry) -->
+  <rect x="500" y="295" width="80" height="15" fill="#ef5350" fill-opacity="0.08" rx="2"/>
+  <text x="540" y="305" text-anchor="middle" fill="#ef5350" font-size="7" opacity="0.7">Near OB = No Entry</text>
+
+  <!-- Three filter box -->
+  <rect x="85" y="72" width="160" height="48" rx="4" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="95" y="87" fill="#bbb" font-size="9" font-weight="500">3-Layer Filter:</text>
+  <text x="95" y="100" fill="#26a69a" font-size="8">1. Price above Cloud</text>
+  <text x="95" y="111" fill="#42a5f5" font-size="8">2. Tenkan crosses Kijun</text>
+  <text x="95" y="122" fill="#ab47bc" font-size="8">3. RSI not overbought/oversold</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 445)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <rect x="10" y="14" width="18" height="12" fill="#26a69a" opacity="0.3" rx="2"/>
+    <text x="33" y="24" fill="#999" font-size="9">Cloud</text>
+    <circle cx="85" cy="20" r="4" fill="#42a5f5"/>
+    <text x="95" y="24" fill="#999" font-size="9">Tenkan</text>
+    <circle cx="155" cy="20" r="4" fill="#ef5350"/>
+    <text x="165" y="24" fill="#999" font-size="9">Kijun</text>
+    <circle cx="215" cy="20" r="4" fill="#ab47bc"/>
+    <text x="225" y="24" fill="#999" font-size="9">RSI</text>
+    <circle cx="275" cy="20" r="4" fill="#00e676"/>
+    <text x="285" y="24" fill="#999" font-size="9">Confirmed Signal</text>
+    <rect x="420" y="14" width="40" height="12" fill="#ef5350" opacity="0.15" rx="2"/>
+    <text x="465" y="24" fill="#999" font-size="9">OB Zone (No Entry)</text>
+    <rect x="560" y="14" width="40" height="12" fill="#00e676" opacity="0.15" rx="2"/>
+    <text x="605" y="24" fill="#999" font-size="9">OS Zone</text>
+  </g>
+</svg>

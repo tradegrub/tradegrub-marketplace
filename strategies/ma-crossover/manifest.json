@@ -1,0 +1,19 @@
+{
+  "id": "ma-crossover",
+  "name": "Moving Average Crossover",
+  "author": "TradeGrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "trend",
+  "tags": ["sma", "crossover", "trend-following"],
+  "type": "strategy",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Buy when the fast SMA crosses above the slow SMA, sell on the cross below.",
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-06-27",
+  "updated": "2026-06-27"
+}

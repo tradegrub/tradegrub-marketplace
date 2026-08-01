@@ -1,0 +1,15 @@
+{
+  "name": "ATR Range Levels",
+  "id": "atr-range-levels",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Projected daily price range levels using ATR to show how far the market is likely to move based on average volatility",
+  "category": "volatility",
+  "tags": ["atr", "range", "levels", "volatility", "daily"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4000
+}

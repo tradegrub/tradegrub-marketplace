@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Kalman Spread Tracker</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Hedge ratio subplot -->
+  <rect x="60" y="70" width="700" height="120" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="88" fill="#999" font-family="Inter,sans-serif" font-size="10">Hedge Ratio</text>
+  <polyline points="100,140 180,138 260,135 340,130 420,128 500,132 580,135 660,133 720,130" fill="none" stroke="#FFD54F" stroke-width="1.5"/>
+
+  <!-- Spread Z-Score subplot -->
+  <rect x="60" y="210" width="700" height="220" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="228" fill="#999" font-family="Inter,sans-serif" font-size="10">Spread Z-Score</text>
+
+  <!-- Threshold lines -->
+  <line x1="60" y1="265" x2="760" y2="265" stroke="#EF5350" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <text x="765" y="269" fill="#EF5350" font-family="Inter,sans-serif" font-size="9">+2.0</text>
+  <line x1="60" y1="320" x2="760" y2="320" stroke="#888" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+  <text x="765" y="324" fill="#888" font-family="Inter,sans-serif" font-size="9">0</text>
+  <line x1="60" y1="375" x2="760" y2="375" stroke="#66BB6A" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <text x="765" y="379" fill="#66BB6A" font-family="Inter,sans-serif" font-size="9">-2.0</text>
+
+  <!-- Z-Score line -->
+  <polyline points="100,310 150,290 200,260 250,250 300,275 350,310 400,340 450,380 500,390 550,370 600,330 650,300 700,280 720,290" fill="none" stroke="#42A5F5" stroke-width="2"/>
+
+  <!-- Signal zones -->
+  <rect x="180" y="235" width="80" height="30" fill="rgba(239,83,80,0.1)" rx="2"/>
+  <polygon points="220,248 216,238 224,238" fill="#EF5350"/>
+  <text x="230" y="252" fill="#EF5350" font-family="Inter,sans-serif" font-size="8">SHORT</text>
+
+  <rect x="430" y="375" width="80" height="30" fill="rgba(102,187,106,0.1)" rx="2"/>
+  <polygon points="470,388 466,398 474,398" fill="#66BB6A"/>
+  <text x="480" y="393" fill="#66BB6A" font-family="Inter,sans-serif" font-size="8">LONG</text>
+
+  <!-- Legend -->
+  <rect x="60" y="455" width="700" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <circle cx="100" cy="470" r="4" fill="#42A5F5"/>
+  <text x="110" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Spread Z-Score</text>
+  <circle cx="260" cy="470" r="4" fill="#FFD54F"/>
+  <text x="270" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Hedge Ratio</text>
+  <circle cx="400" cy="470" r="4" fill="#66BB6A"/>
+  <text x="410" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Long Signal</text>
+  <circle cx="530" cy="470" r="4" fill="#EF5350"/>
+  <text x="540" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="11">Short Signal</text>
+</svg>

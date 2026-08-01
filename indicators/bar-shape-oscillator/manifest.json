@@ -1,0 +1,15 @@
+{
+  "name": "Bar Shape Oscillator",
+  "id": "bar-shape-oscillator",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "TradeGrub",
+  "license": "Apache-2.0",
+  "description": "Amplitude-free directional oscillator derived purely from candlestick bar shape ratios",
+  "category": "oscillators",
+  "tags": ["candlestick", "shape", "oscillator", "momentum", "bar-analysis"],
+  "overlay": false,
+  "inputs": [
+    {"name": "smooth_length", "type": "int", "default": 5, "min": 1, "max": 50}
+  ]
+}

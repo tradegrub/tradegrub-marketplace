@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="trendZone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b5e20" stop-opacity="0.12"/>
+      <stop offset="55%" stop-color="#1b5e20" stop-opacity="0.06"/>
+      <stop offset="60%" stop-color="#1b5e20" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="consolZone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="40%" stop-color="#0d47a1" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0d47a1" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0d47a1" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="spreadFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ab47bc" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ab47bc" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Trend/Consolidation zone backgrounds -->
+  <rect x="60" y="65" width="680" height="360" fill="url(#trendZone)"/>
+  <rect x="60" y="65" width="680" height="360" fill="url(#consolZone)"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#e8e8f0" font-size="17" font-weight="600">Trend Volatility Index</text>
+  <text x="400" y="50" text-anchor="middle" fill="#6a6a8e" font-size="11">tradegrub.finance</text>
+
+  <!-- Grid lines -->
+  <g stroke="#445" stroke-width="0.5" opacity="0.04">
+    <line x1="60" y1="105" x2="740" y2="105"/>
+    <line x1="60" y1="145" x2="740" y2="145"/>
+    <line x1="60" y1="185" x2="740" y2="185"/>
+    <line x1="60" y1="225" x2="740" y2="225"/>
+    <line x1="60" y1="265" x2="740" y2="265"/>
+    <line x1="60" y1="305" x2="740" y2="305"/>
+    <line x1="60" y1="345" x2="740" y2="345"/>
+    <line x1="60" y1="385" x2="740" y2="385"/>
+    <line x1="145" y1="65" x2="145" y2="425"/>
+    <line x1="230" y1="65" x2="230" y2="425"/>
+    <line x1="315" y1="65" x2="315" y2="425"/>
+    <line x1="400" y1="65" x2="400" y2="425"/>
+    <line x1="485" y1="65" x2="485" y2="425"/>
+    <line x1="570" y1="65" x2="570" y2="425"/>
+    <line x1="655" y1="65" x2="655" y2="425"/>
+  </g>
+
+  <!-- Chart border -->
+  <rect x="60" y="65" width="680" height="360" fill="none" stroke="#2a2a4a" stroke-width="0.5" rx="2"/>
+
+  <!-- Gini Spread shaded area (between widest and narrowest SMA) -->
+  <polygon points="
+    80,180 110,165 140,155 170,140 200,130 230,145 260,160 290,170 320,185
+    350,200 380,215 410,230 440,245 470,260 500,268 530,272 560,270 590,265
+    620,260 650,258 680,260 710,262 730,264
+    730,310 710,308 680,305 650,300 620,298 590,296 560,295 530,296 500,298
+    470,295 440,290 410,285 380,278 350,268 320,255 290,245 260,240 230,235
+    200,238 170,250 140,268 110,285 80,295
+  " fill="url(#spreadFill)" opacity="0.8"/>
+
+  <!-- Gini Spread label -->
+  <text x="280" y="235" fill="#ce93d8" font-size="10" font-weight="500" opacity="0.9">Gini Spread</text>
+
+  <!-- SMA lines bundle - 7 lines, different periods -->
+  <!-- SMA 5 (fastest, most volatile) -->
+  <polyline filter="url(#glow)" points="
+    80,210 100,195 120,178 140,185 160,170 180,155 200,148 220,165 240,180
+    260,195 280,188 300,200 320,215 340,225 360,235 380,242 400,250 420,258
+    440,265 460,272 480,278 500,280 520,276 540,270 560,268 580,272 600,278
+    620,282 640,280 660,278 680,282 700,285 720,288 730,290
+  " fill="none" stroke="#4fc3f7" stroke-width="1.8" opacity="0.9"/>
+
+  <!-- SMA 10 -->
+  <polyline filter="url(#glow)" points="
+    80,225 100,212 120,198 140,195 160,185 180,172 200,168 220,178 240,190
+    260,202 280,198 300,208 320,220 340,230 360,238 380,245 400,252 420,260
+    440,268 460,275 480,280 500,282 520,280 540,276 560,274 580,276 600,280
+    620,284 640,282 660,280 680,284 700,287 720,290 730,292
+  " fill="none" stroke="#29b6f6" stroke-width="1.6" opacity="0.85"/>
+
+  <!-- SMA 20 -->
+  <polyline filter="url(#glow)" points="
+    80,242 100,230 120,218 140,212 160,200 180,190 200,185 220,192 240,202
+    260,212 280,210 300,218 320,228 340,236 360,243 380,250 400,256 420,263
+    440,272 460,278 480,283 500,285 520,284 540,280 560,278 580,280 600,283
+    620,286 640,284 660,283 680,286 700,289 720,292 730,294
+  " fill="none" stroke="#00bcd4" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- SMA 35 -->
+  <polyline points="
+    80,258 100,248 120,238 140,232 160,222 180,212 200,208 220,212 240,220
+    260,228 280,225 300,230 320,238 340,244 360,250 380,256 400,262 420,268
+    440,276 460,282 480,286 500,288 520,287 540,284 560,282 580,284 600,286
+    620,289 640,287 660,286 680,288 700,291 720,294 730,296
+  " fill="none" stroke="#26a69a" stroke-width="1.4" opacity="0.75"/>
+
+  <!-- SMA 50 -->
+  <polyline points="
+    80,270 100,262 120,254 140,248 160,240 180,232 200,228 220,230 240,236
+    260,242 280,240 300,244 320,250 340,254 360,258 380,263 400,268 420,274
+    440,280 460,285 480,289 500,290 520,290 540,288 560,286 580,287 600,289
+    620,291 640,290 660,289 680,290 700,293 720,296 730,298
+  " fill="none" stroke="#66bb6a" stroke-width="1.3" opacity="0.7"/>
+
+  <!-- SMA 100 -->
+  <polyline points="
+    80,285 100,278 120,272 140,268 160,260 180,254 200,250 220,250 240,254
+    260,258 280,256 300,258 320,262 340,266 360,270 380,274 400,278 420,282
+    440,286 460,290 480,293 500,294 520,294 540,292 560,291 580,292 600,293
+    620,295 640,294 660,294 680,295 700,297 720,300 730,302
+  " fill="none" stroke="#ffa726" stroke-width="1.2" opacity="0.65"/>
+
+  <!-- SMA 200 (slowest) -->
+  <polyline points="
+    80,295 100,290 120,286 140,282 160,276 180,272 200,268 220,268 240,270
+    260,272 280,270 300,272 320,274 340,276 360,278 380,280 400,283 420,286
+    440,290 460,293 480,296 500,298 520,298 540,296 560,295 580,296 600,297
+    620,298 640,298 660,298 680,298 700,300 720,302 730,304
+  " fill="none" stroke="#ef5350" stroke-width="1.1" opacity="0.6"/>
+
+  <!-- Zone divider line -->
+  <line x1="430" y1="70" x2="430" y2="420" stroke="#4a4a6a" stroke-width="0.5" stroke-dasharray="5,5" opacity="0.5"/>
+
+  <!-- Zone labels -->
+  <text filter="url(#textGlow)" x="230" y="90" text-anchor="middle" fill="#66bb6a" font-size="13" font-weight="600" opacity="0.7">Trending</text>
+  <text filter="url(#textGlow)" x="600" y="90" text-anchor="middle" fill="#42a5f5" font-size="13" font-weight="600" opacity="0.7">Consolidation</text>
+
+  <!-- Spread annotation arrows (left = wide spread) -->
+  <line x1="165" y1="140" x2="165" y2="255" stroke="#ce93d8" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,3"/>
+  <polygon points="165,140 162,148 168,148" fill="#ce93d8" opacity="0.5"/>
+  <polygon points="165,255 162,247 168,247" fill="#ce93d8" opacity="0.5"/>
+  <text x="175" y="200" fill="#ce93d8" font-size="8" opacity="0.6">Wide</text>
+
+  <!-- Spread annotation (right = narrow spread) -->
+  <line x1="650" y1="280" x2="650" y2="298" stroke="#ce93d8" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,3"/>
+  <polygon points="650,280 647,285 653,285" fill="#ce93d8" opacity="0.5"/>
+  <polygon points="650,298 647,293 653,293" fill="#ce93d8" opacity="0.5"/>
+  <text x="660" y="292" fill="#ce93d8" font-size="8" opacity="0.6">Narrow</text>
+
+  <!-- Y-axis labels -->
+  <text x="55" y="110" text-anchor="end" fill="#5a5a7a" font-size="8">High</text>
+  <text x="55" y="250" text-anchor="end" fill="#5a5a7a" font-size="8">Mid</text>
+  <text x="55" y="420" text-anchor="end" fill="#5a5a7a" font-size="8">Low</text>
+
+  <!-- Legend bar -->
+  <rect x="60" y="440" width="680" height="42" rx="4" fill="#12122a" stroke="#2a2a4a" stroke-width="0.5"/>
+  <rect x="80" y="455" width="14" height="3" rx="1" fill="#4fc3f7"/>
+  <text x="100" y="460" fill="#8a8aaa" font-size="9">SMA 5</text>
+  <rect x="150" y="455" width="14" height="3" rx="1" fill="#29b6f6"/>
+  <text x="170" y="460" fill="#8a8aaa" font-size="9">SMA 10</text>
+  <rect x="225" y="455" width="14" height="3" rx="1" fill="#00bcd4"/>
+  <text x="245" y="460" fill="#8a8aaa" font-size="9">SMA 20</text>
+  <rect x="300" y="455" width="14" height="3" rx="1" fill="#26a69a"/>
+  <text x="320" y="460" fill="#8a8aaa" font-size="9">SMA 35</text>
+  <rect x="375" y="455" width="14" height="3" rx="1" fill="#66bb6a"/>
+  <text x="395" y="460" fill="#8a8aaa" font-size="9">SMA 50</text>
+  <rect x="450" y="455" width="14" height="3" rx="1" fill="#ffa726"/>
+  <text x="470" y="460" fill="#8a8aaa" font-size="9">SMA 100</text>
+  <rect x="535" y="455" width="14" height="3" rx="1" fill="#ef5350"/>
+  <text x="555" y="460" fill="#8a8aaa" font-size="9">SMA 200</text>
+  <rect x="625" y="452" width="14" height="8" rx="2" fill="#ab47bc" opacity="0.4"/>
+  <text x="645" y="460" fill="#8a8aaa" font-size="9">Gini Spread</text>
+</svg>

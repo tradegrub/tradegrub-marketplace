@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="60" x2="80" y2="360"/>
+    <line x1="200" y1="60" x2="200" y2="360"/>
+    <line x1="320" y1="60" x2="320" y2="360"/>
+    <line x1="440" y1="60" x2="440" y2="360"/>
+    <line x1="560" y1="60" x2="560" y2="360"/>
+    <line x1="680" y1="60" x2="680" y2="360"/>
+    <line x1="60" y1="120" x2="760" y2="120"/>
+    <line x1="60" y1="200" x2="760" y2="200"/>
+    <line x1="60" y1="280" x2="760" y2="280"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Sklearn Regime Detector</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance — KMeans Clustering on Market Features</text>
+
+  <!-- Regime background zones -->
+  <!-- Low Volatility regime (green tint) -->
+  <rect x="80" y="60" width="180" height="300" fill="#26a69a" fill-opacity="0.06" rx="2"/>
+  <rect x="460" y="60" width="140" height="300" fill="#26a69a" fill-opacity="0.06" rx="2"/>
+  <!-- High Volatility regime (red tint) -->
+  <rect x="260" y="60" width="200" height="300" fill="#ef5350" fill-opacity="0.06" rx="2"/>
+  <!-- Trending regime (blue tint) -->
+  <rect x="600" y="60" width="160" height="300" fill="#42a5f5" fill-opacity="0.06" rx="2"/>
+
+  <!-- Regime labels -->
+  <text x="170" y="78" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="500" opacity="0.8">Low Volatility</text>
+  <text x="360" y="78" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="500" opacity="0.8">High Volatility</text>
+  <text x="530" y="78" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="500" opacity="0.8">Low Vol</text>
+  <text x="680" y="78" text-anchor="middle" fill="#42a5f5" font-size="10" font-weight="500" opacity="0.8">Trending</text>
+
+  <!-- Candlesticks - Low Vol zone (tight range) -->
+  <line x1="100" y1="175" x2="100" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="96" y="185" width="8" height="15" fill="#26a69a" rx="1"/>
+  <line x1="125" y1="178" x2="125" y2="215" stroke="#ef5350" stroke-width="1"/>
+  <rect x="121" y="185" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="150" y1="180" x2="150" y2="212" stroke="#26a69a" stroke-width="1"/>
+  <rect x="146" y="190" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="175" y1="182" x2="175" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="171" y="188" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="200" y1="176" x2="200" y2="208" stroke="#ef5350" stroke-width="1"/>
+  <rect x="196" y="180" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="225" y1="180" x2="225" y2="215" stroke="#26a69a" stroke-width="1"/>
+  <rect x="221" y="192" width="8" height="12" fill="#26a69a" rx="1"/>
+  <line x1="245" y1="178" x2="245" y2="214" stroke="#ef5350" stroke-width="1"/>
+  <rect x="241" y="184" width="8" height="20" fill="#ef5350" rx="1"/>
+
+  <!-- Candlesticks - High Vol zone (big swings) -->
+  <line x1="275" y1="140" x2="275" y2="240" stroke="#ef5350" stroke-width="1"/>
+  <rect x="271" y="155" width="8" height="55" fill="#ef5350" rx="1"/>
+  <line x1="300" y1="160" x2="300" y2="265" stroke="#26a69a" stroke-width="1"/>
+  <rect x="296" y="200" width="8" height="45" fill="#26a69a" rx="1"/>
+  <line x1="325" y1="130" x2="325" y2="250" stroke="#ef5350" stroke-width="1"/>
+  <rect x="321" y="145" width="8" height="70" fill="#ef5350" rx="1"/>
+  <line x1="350" y1="170" x2="350" y2="280" stroke="#26a69a" stroke-width="1"/>
+  <rect x="346" y="215" width="8" height="45" fill="#26a69a" rx="1"/>
+  <line x1="375" y1="150" x2="375" y2="260" stroke="#ef5350" stroke-width="1"/>
+  <rect x="371" y="165" width="8" height="60" fill="#ef5350" rx="1"/>
+  <line x1="400" y1="175" x2="400" y2="270" stroke="#26a69a" stroke-width="1"/>
+  <rect x="396" y="220" width="8" height="32" fill="#26a69a" rx="1"/>
+  <line x1="425" y1="155" x2="425" y2="255" stroke="#ef5350" stroke-width="1"/>
+  <rect x="421" y="170" width="8" height="55" fill="#ef5350" rx="1"/>
+  <line x1="450" y1="180" x2="450" y2="260" stroke="#26a69a" stroke-width="1"/>
+  <rect x="446" y="210" width="8" height="30" fill="#26a69a" rx="1"/>
+
+  <!-- Candlesticks - Low Vol again -->
+  <line x1="475" y1="195" x2="475" y2="225" stroke="#26a69a" stroke-width="1"/>
+  <rect x="471" y="200" width="8" height="16" fill="#26a69a" rx="1"/>
+  <line x1="500" y1="192" x2="500" y2="222" stroke="#ef5350" stroke-width="1"/>
+  <rect x="496" y="196" width="8" height="16" fill="#ef5350" rx="1"/>
+  <line x1="525" y1="190" x2="525" y2="220" stroke="#26a69a" stroke-width="1"/>
+  <rect x="521" y="196" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="550" y1="188" x2="550" y2="218" stroke="#26a69a" stroke-width="1"/>
+  <rect x="546" y="195" width="8" height="14" fill="#26a69a" rx="1"/>
+  <line x1="575" y1="186" x2="575" y2="215" stroke="#ef5350" stroke-width="1"/>
+  <rect x="571" y="190" width="8" height="16" fill="#ef5350" rx="1"/>
+
+  <!-- Candlesticks - Trending zone (steady rise) -->
+  <line x1="615" y1="180" x2="615" y2="210" stroke="#26a69a" stroke-width="1"/>
+  <rect x="611" y="185" width="8" height="18" fill="#26a69a" rx="1"/>
+  <line x1="640" y1="165" x2="640" y2="200" stroke="#26a69a" stroke-width="1"/>
+  <rect x="636" y="170" width="8" height="20" fill="#26a69a" rx="1"/>
+  <line x1="665" y1="148" x2="665" y2="185" stroke="#26a69a" stroke-width="1"/>
+  <rect x="661" y="155" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="690" y1="135" x2="690" y2="170" stroke="#ef5350" stroke-width="1"/>
+  <rect x="686" y="140" width="8" height="18" fill="#ef5350" rx="1"/>
+  <line x1="715" y1="120" x2="715" y2="158" stroke="#26a69a" stroke-width="1"/>
+  <rect x="711" y="125" width="8" height="22" fill="#26a69a" rx="1"/>
+  <line x1="740" y1="108" x2="740" y2="148" stroke="#26a69a" stroke-width="1"/>
+  <rect x="736" y="115" width="8" height="22" fill="#26a69a" rx="1"/>
+
+  <!-- Regime indicator sub-pane -->
+  <line x1="60" y1="370" x2="760" y2="370" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="65" y="385" fill="#888" font-size="9">Regime</text>
+
+  <!-- Regime dots/bars in sub-pane -->
+  <g opacity="0.8">
+    <rect x="96" y="390" width="155" height="12" fill="#26a69a" rx="3" opacity="0.5"/>
+    <rect x="271" y="390" width="185" height="12" fill="#ef5350" rx="3" opacity="0.5"/>
+    <rect x="471" y="390" width="115" height="12" fill="#26a69a" rx="3" opacity="0.5"/>
+    <rect x="611" y="390" width="135" height="12" fill="#42a5f5" rx="3" opacity="0.5"/>
+  </g>
+
+  <!-- Cluster centroid annotations -->
+  <g filter="url(#softGlow)">
+    <circle cx="170" cy="195" r="18" fill="none" stroke="#26a69a" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+    <text x="170" y="199" text-anchor="middle" fill="#26a69a" font-size="8" font-weight="600">C₁</text>
+  </g>
+  <g filter="url(#softGlow)">
+    <circle cx="360" cy="210" r="22" fill="none" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+    <text x="360" y="214" text-anchor="middle" fill="#ef5350" font-size="8" font-weight="600">C₂</text>
+  </g>
+  <g filter="url(#softGlow)">
+    <circle cx="680" cy="155" r="18" fill="none" stroke="#42a5f5" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+    <text x="680" y="159" text-anchor="middle" fill="#42a5f5" font-size="8" font-weight="600">C₃</text>
+  </g>
+
+  <!-- Feature annotations -->
+  <rect x="280" y="300" width="100" height="18" rx="4" fill="#ff9800" fill-opacity="0.12" stroke="#ff9800" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="330" y="313" text-anchor="middle" fill="#ff9800" font-size="9" font-weight="500">High ATR%</text>
+
+  <rect x="610" y="290" width="110" height="18" rx="4" fill="#42a5f5" fill-opacity="0.12" stroke="#42a5f5" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="665" y="303" text-anchor="middle" fill="#42a5f5" font-size="9" font-weight="500">Strong Returns</text>
+
+  <!-- Volume bars -->
+  <g opacity="0.4">
+    <rect x="96" y="420" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="121" y="422" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="146" y="420" width="8" height="12" fill="#26a69a" rx="1"/>
+    <rect x="171" y="423" width="8" height="9" fill="#26a69a" rx="1"/>
+    <rect x="196" y="421" width="8" height="11" fill="#ef5350" rx="1"/>
+    <rect x="221" y="424" width="8" height="8" fill="#26a69a" rx="1"/>
+    <rect x="241" y="422" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="271" y="408" width="8" height="24" fill="#ef5350" rx="1"/>
+    <rect x="296" y="412" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="321" y="405" width="8" height="27" fill="#ef5350" rx="1"/>
+    <rect x="346" y="410" width="8" height="22" fill="#26a69a" rx="1"/>
+    <rect x="371" y="408" width="8" height="24" fill="#ef5350" rx="1"/>
+    <rect x="396" y="415" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="421" y="410" width="8" height="22" fill="#ef5350" rx="1"/>
+    <rect x="446" y="413" width="8" height="19" fill="#26a69a" rx="1"/>
+    <rect x="471" y="422" width="8" height="10" fill="#26a69a" rx="1"/>
+    <rect x="496" y="423" width="8" height="9" fill="#ef5350" rx="1"/>
+    <rect x="521" y="421" width="8" height="11" fill="#26a69a" rx="1"/>
+    <rect x="546" y="424" width="8" height="8" fill="#26a69a" rx="1"/>
+    <rect x="571" y="422" width="8" height="10" fill="#ef5350" rx="1"/>
+    <rect x="611" y="418" width="8" height="14" fill="#26a69a" rx="1"/>
+    <rect x="636" y="415" width="8" height="17" fill="#26a69a" rx="1"/>
+    <rect x="661" y="412" width="8" height="20" fill="#26a69a" rx="1"/>
+    <rect x="686" y="418" width="8" height="14" fill="#ef5350" rx="1"/>
+    <rect x="711" y="414" width="8" height="18" fill="#26a69a" rx="1"/>
+    <rect x="736" y="416" width="8" height="16" fill="#26a69a" rx="1"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(60, 450)">
+    <rect width="680" height="40" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="20" r="4" fill="#26a69a"/>
+    <text x="30" y="24" fill="#999" font-size="9">Low Volatility</text>
+    <circle cx="140" cy="20" r="4" fill="#ef5350"/>
+    <text x="150" y="24" fill="#999" font-size="9">High Volatility</text>
+    <circle cx="270" cy="20" r="4" fill="#42a5f5"/>
+    <text x="280" y="24" fill="#999" font-size="9">Trending</text>
+    <circle cx="370" cy="20" r="4" fill="#ff9800"/>
+    <text x="380" y="24" fill="#999" font-size="9">ATR% Feature</text>
+    <rect x="480" y="12" width="30" height="16" fill="#ffffff" fill-opacity="0.06" rx="2" stroke="#888" stroke-width="0.5" stroke-dasharray="3,2"/>
+    <text x="515" y="24" fill="#999" font-size="9">Cluster Centroid</text>
+  </g>
+</svg>

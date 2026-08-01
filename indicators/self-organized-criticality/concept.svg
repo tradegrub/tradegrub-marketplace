@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" rx="8" fill="url(#bg)"/>
+  <!-- Grid -->
+  <g stroke="#fff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="white" font-weight="bold">Market Criticality Index</text>
+  <text x="400" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#888">tradegrub.finance</text>
+  <!-- Semicircular gauge -->
+  <!-- Green zone 0-30: 180deg to 126deg -->
+  <path d="M 200 280 A 180 180 0 0 1 308 118" stroke="#00ff88" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <!-- Yellow zone 30-70: 126deg to 54deg -->
+  <path d="M 308 118 A 180 180 0 0 1 492 118" stroke="#ffdd00" stroke-width="20" fill="none" opacity="0.8"/>
+  <!-- Red zone 70-100: 54deg to 0deg -->
+  <path d="M 492 118 A 180 180 0 0 1 580 280" stroke="#ff4444" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <!-- Tick marks every 10 units -->
+  <g stroke="#fff" stroke-width="1.5" opacity="0.4">
+    <!-- 0 --><line x1="200" y1="280" x2="212" y2="280"/>
+    <!-- 10 --><line x1="210" y1="231" x2="222" y2="235"/>
+    <!-- 20 --><line x1="238" y1="188" x2="249" y2="195"/>
+    <!-- 30 --><line x1="282" y1="155" x2="291" y2="164"/>
+    <!-- 40 --><line x1="338" y1="133" x2="344" y2="144"/>
+    <!-- 50 --><line x1="400" y1="126" x2="400" y2="138"/>
+    <!-- 60 --><line x1="462" y1="133" x2="456" y2="144"/>
+    <!-- 70 --><line x1="518" y1="155" x2="509" y2="164"/>
+    <!-- 80 --><line x1="562" y1="188" x2="551" y2="195"/>
+    <!-- 90 --><line x1="590" y1="231" x2="578" y2="235"/>
+    <!-- 100 --><line x1="600" y1="280" x2="588" y2="280"/>
+  </g>
+  <!-- Tick labels -->
+  <g font-family="Arial,sans-serif" font-size="10" fill="#666" text-anchor="middle">
+    <text x="190" y="284">0</text>
+    <text x="275" y="148">30</text>
+    <text x="400" y="118">50</text>
+    <text x="525" y="148">70</text>
+    <text x="610" y="284">100</text>
+  </g>
+  <!-- Zone labels -->
+  <text x="260" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#00ff88" opacity="0.7">Stable</text>
+  <text x="400" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#ffdd00" opacity="0.7">Elevated</text>
+  <text x="540" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#ff4444" opacity="0.7">Critical</text>
+  <!-- Needle pointing to 72 (in red zone, angle ~50.4deg from right = about 129.6 from top) -->
+  <!-- 72/100 of 180deg arc: angle = 180 - (72*1.8) = 50.4deg from horizontal right -->
+  <!-- needle end: cx + r*cos(angle), cy - r*sin(angle) where center=(400,280), r=155 -->
+  <!-- angle from right = 50.4deg => x=400+155*cos(130deg)=400-99.6=300, y=280-155*sin(130deg)=280-118.7=161 -->
+  <!-- More precisely: 72% of arc. Angle from left = 180-(72*1.8)=50.4 from right, or 129.6 from left -->
+  <!-- From center (400,280): endpoint at angle 180-72*1.8 = 50.4 deg above horizontal -->
+  <!-- x = 400 + 155*cos(180-129.6 deg) = 400 + 155*cos(50.4) = 400 + 98.7 = 499 -->
+  <!-- y = 280 - 155*sin(50.4) = 280 - 119.3 = 161 -->
+  <line x1="400" y1="280" x2="501" y2="161" stroke="white" stroke-width="3" filter="url(#glow)" stroke-linecap="round"/>
+  <circle cx="400" cy="280" r="8" fill="white" opacity="0.9"/>
+  <!-- Value display -->
+  <text x="400" y="320" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" fill="white" font-weight="bold" filter="url(#glow)">72</text>
+  <!-- Mini meters -->
+  <!-- Tail Risk: 65 -->
+  <g transform="translate(115,370)">
+    <text x="0" y="0" font-family="Arial,sans-serif" font-size="11" fill="#aaa">Tail Risk</text>
+    <rect x="0" y="8" width="150" height="10" rx="3" fill="#222" opacity="0.6"/>
+    <rect x="0" y="8" width="97" height="10" rx="3" fill="#ffdd00" opacity="0.8"/>
+    <text x="155" y="17" font-family="Arial,sans-serif" font-size="11" fill="#ffdd00">65</text>
+  </g>
+  <!-- Vol Clustering: 81 -->
+  <g transform="translate(325,370)">
+    <text x="0" y="0" font-family="Arial,sans-serif" font-size="11" fill="#aaa">Vol Clustering</text>
+    <rect x="0" y="8" width="150" height="10" rx="3" fill="#222" opacity="0.6"/>
+    <rect x="0" y="8" width="121" height="10" rx="3" fill="#ff4444" opacity="0.8"/>
+    <text x="155" y="17" font-family="Arial,sans-serif" font-size="11" fill="#ff4444">81</text>
+  </g>
+  <!-- Range Compression: 58 -->
+  <g transform="translate(535,370)">
+    <text x="0" y="0" font-family="Arial,sans-serif" font-size="11" fill="#aaa">Range Compression</text>
+    <rect x="0" y="8" width="150" height="10" rx="3" fill="#222" opacity="0.6"/>
+    <rect x="0" y="8" width="87" height="10" rx="3" fill="#ffdd00" opacity="0.8"/>
+    <text x="155" y="17" font-family="Arial,sans-serif" font-size="11" fill="#ffdd00">58</text>
+  </g>
+  <!-- Legend bar -->
+  <rect x="0" y="445" width="800" height="55" rx="0" fill="#111827" opacity="0.6"/>
+  <circle cx="250" cy="472" r="5" fill="#00ff88"/><text x="262" y="476" font-family="Arial,sans-serif" font-size="12" fill="#ccc">Stable</text>
+  <circle cx="370" cy="472" r="5" fill="#ffdd00"/><text x="382" y="476" font-family="Arial,sans-serif" font-size="12" fill="#ccc">Elevated</text>
+  <circle cx="490" cy="472" r="5" fill="#ff4444"/><text x="502" y="476" font-family="Arial,sans-serif" font-size="12" fill="#ccc">Critical</text>
+</svg>

@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+
+  <!-- Grid - upper panel -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="100" y1="60" x2="100" y2="240"/>
+    <line x1="180" y1="60" x2="180" y2="240"/>
+    <line x1="260" y1="60" x2="260" y2="240"/>
+    <line x1="340" y1="60" x2="340" y2="240"/>
+    <line x1="420" y1="60" x2="420" y2="240"/>
+    <line x1="500" y1="60" x2="500" y2="240"/>
+    <line x1="580" y1="60" x2="580" y2="240"/>
+    <line x1="660" y1="60" x2="660" y2="240"/>
+    <line x1="740" y1="60" x2="740" y2="240"/>
+    <line x1="80" y1="90" x2="750" y2="90"/>
+    <line x1="80" y1="120" x2="750" y2="120"/>
+    <line x1="80" y1="150" x2="750" y2="150"/>
+    <line x1="80" y1="180" x2="750" y2="180"/>
+    <line x1="80" y1="210" x2="750" y2="210"/>
+  </g>
+
+  <!-- Grid - lower panel -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="100" y1="260" x2="100" y2="400"/>
+    <line x1="180" y1="260" x2="180" y2="400"/>
+    <line x1="260" y1="260" x2="260" y2="400"/>
+    <line x1="340" y1="260" x2="340" y2="400"/>
+    <line x1="420" y1="260" x2="420" y2="400"/>
+    <line x1="500" y1="260" x2="500" y2="400"/>
+    <line x1="580" y1="260" x2="580" y2="400"/>
+    <line x1="660" y1="260" x2="660" y2="400"/>
+    <line x1="740" y1="260" x2="740" y2="400"/>
+    <line x1="80" y1="295" x2="750" y2="295"/>
+    <line x1="80" y1="330" x2="750" y2="330"/>
+    <line x1="80" y1="365" x2="750" y2="365"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-size="16" font-weight="600">Cycle Channel Oscillator</text>
+  <text x="400" y="52" text-anchor="middle" fill="#888" font-size="11">tradegrub.finance</text>
+
+  <!-- Upper panel label -->
+  <text x="85" y="75" fill="#666" font-size="8">Price</text>
+
+  <!-- Upper panel Y-axis -->
+  <text x="72" y="94" text-anchor="end" fill="#555" font-size="7">185</text>
+  <text x="72" y="124" text-anchor="end" fill="#555" font-size="7">175</text>
+  <text x="72" y="154" text-anchor="end" fill="#555" font-size="7">165</text>
+  <text x="72" y="184" text-anchor="end" fill="#555" font-size="7">155</text>
+  <text x="72" y="214" text-anchor="end" fill="#555" font-size="7">145</text>
+
+  <!-- ===== UPPER PANEL (y60-240): Price + Channel ===== -->
+
+  <!-- Channel shaded area (purple, very low opacity) -->
+  <polygon points="100,128 120,120 140,112 160,105 180,98 200,102 220,110 240,120 260,128 280,132 300,130 320,122 340,112 360,102 380,95 400,92 420,95 440,102 460,112 480,122 500,130 520,132 540,128 560,118 580,108 600,100 620,95 640,92 660,90 680,95 700,102 720,110 740,118 740,178 720,170 700,162 680,155 660,150 640,152 620,155 600,160 580,168 560,178 540,188 520,192 500,190 480,182 460,172 440,162 420,155 400,152 380,155 360,162 340,172 320,182 300,190 280,192 260,188 240,180 220,170 200,162 180,158 160,165 140,172 120,180 100,188" fill="#ab47bc" fill-opacity="0.06"/>
+
+  <!-- Upper channel band (purple dashed) -->
+  <polyline points="100,128 120,120 140,112 160,105 180,98 200,102 220,110 240,120 260,128 280,132 300,130 320,122 340,112 360,102 380,95 400,92 420,95 440,102 460,112 480,122 500,130 520,132 540,128 560,118 580,108 600,100 620,95 640,92 660,90 680,95 700,102 720,110 740,118" fill="none" stroke="#ab47bc" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.55"/>
+
+  <!-- Lower channel band (purple dashed) -->
+  <polyline points="100,188 120,180 140,172 160,165 180,158 200,162 220,170 240,180 260,188 280,192 300,190 320,182 340,172 360,162 380,155 400,152 420,155 440,162 460,172 480,182 500,190 520,192 540,188 560,178 580,168 600,160 620,155 640,152 660,150 680,155 700,162 720,170 740,178" fill="none" stroke="#ab47bc" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.55"/>
+
+  <!-- Price line (cyan, ~30 points) -->
+  <polyline points="100,162 120,155 140,145 160,135 180,125 200,128 220,138 240,148 260,158 280,165 300,160 320,148 340,138 360,128 380,120 400,115 420,118 440,128 460,140 480,152 500,162 520,165 540,158 560,145 580,135 600,125 620,118 640,115 660,112 680,120 700,130 720,142 740,150" fill="none" stroke="#42d4f5" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Small dots on price at key turning points -->
+  <circle cx="180" cy="125" r="2" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="280" cy="165" r="2" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="400" cy="115" r="2" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="520" cy="165" r="2" fill="#42d4f5" opacity="0.6"/>
+  <circle cx="660" cy="112" r="2" fill="#42d4f5" opacity="0.6"/>
+
+  <!-- ===== DIVIDER ===== -->
+  <line x1="80" y1="250" x2="750" y2="250" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- ===== LOWER PANEL (y260-400): Oscillator ===== -->
+
+  <!-- Lower panel label -->
+  <text x="85" y="272" fill="#666" font-size="8">Oscillator</text>
+
+  <!-- OB zone shaded (red, 80-100 range: y260-288) -->
+  <rect x="80" y="260" width="670" height="28" fill="#EF5350" fill-opacity="0.05"/>
+  <!-- OS zone shaded (green, 0-20 range: y372-400) -->
+  <rect x="80" y="372" width="670" height="28" fill="#4CAF50" fill-opacity="0.05"/>
+
+  <!-- OB/OS horizontal dashed lines -->
+  <line x1="80" y1="288" x2="750" y2="288" stroke="#EF5350" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+  <line x1="80" y1="372" x2="750" y2="372" stroke="#4CAF50" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+
+  <!-- 50 midline -->
+  <line x1="80" y1="330" x2="750" y2="330" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.08"/>
+
+  <!-- Level labels -->
+  <text x="72" y="268" text-anchor="end" fill="#666" font-size="7">100</text>
+  <text x="72" y="292" text-anchor="end" fill="#EF5350" font-size="7">80</text>
+  <text x="72" y="334" text-anchor="end" fill="#666" font-size="7">50</text>
+  <text x="72" y="376" text-anchor="end" fill="#4CAF50" font-size="7">20</text>
+  <text x="72" y="404" text-anchor="end" fill="#666" font-size="7">0</text>
+
+  <!-- Oscillator line (orange, ~30 points) -->
+  <polyline points="100,350 120,335 140,312 160,288 180,272 200,278 220,300 240,325 260,352 280,370 300,365 320,342 340,315 360,290 380,272 400,268 420,275 440,295 460,318 480,345 500,368 520,375 540,358 560,332 580,305 600,280 620,270 640,265 660,268 680,278 700,298 720,322 740,345" fill="none" stroke="#FF9800" stroke-width="2" filter="url(#softGlow)"/>
+
+  <!-- Dots at oscillator extremes -->
+  <circle cx="180" cy="272" r="2.5" fill="#FF9800" opacity="0.7"/>
+  <circle cx="280" cy="370" r="2.5" fill="#FF9800" opacity="0.7"/>
+  <circle cx="400" cy="268" r="2.5" fill="#FF9800" opacity="0.7"/>
+  <circle cx="520" cy="375" r="2.5" fill="#FF9800" opacity="0.7"/>
+  <circle cx="660" cy="268" r="2.5" fill="#FF9800" opacity="0.7"/>
+
+  <!-- Divergence: price makes higher high (x400 y115 -> x660 y112) but oscillator makes lower high (x400 y268 -> x660 y268... make it clearer) -->
+  <!-- Price: higher high at x660 (y112) vs x400 (y115) -->
+  <!-- Oscillator: lower high at x660 (y268) vs x400 (y268) - make x660 slightly higher y -->
+
+  <!-- Divergence lines connecting the two highs -->
+  <!-- Price panel: upward slope (higher high) -->
+  <line x1="400" y1="115" x2="660" y2="112" stroke="#EF5350" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.65"/>
+  <!-- Oscillator panel: downward slope (lower high = higher y value) -->
+  <line x1="400" y1="268" x2="660" y2="275" stroke="#EF5350" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.65"/>
+
+  <!-- Divergence marker circles -->
+  <circle cx="400" cy="115" r="4" fill="none" stroke="#EF5350" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="660" cy="112" r="4" fill="none" stroke="#EF5350" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="400" cy="268" r="4" fill="none" stroke="#EF5350" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="660" cy="275" r="4" fill="none" stroke="#EF5350" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- Divergence annotation box -->
+  <rect x="490" y="215" width="115" height="24" rx="4" fill="#1a1a2e" fill-opacity="0.88" stroke="#EF5350" stroke-width="1"/>
+  <text x="547" y="231" text-anchor="middle" fill="#EF5350" font-size="9" font-weight="600">Bearish Divergence</text>
+
+  <!-- "HH" and "LH" labels -->
+  <text x="400" y="108" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.7">HH</text>
+  <text x="660" y="105" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.7">HH</text>
+  <text x="400" y="262" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.7">H</text>
+  <text x="660" y="262" text-anchor="middle" fill="#EF5350" font-size="7" opacity="0.7">LH</text>
+
+  <!-- OB/OS zone labels -->
+  <text x="755" y="278" fill="#EF5350" font-size="7" opacity="0.5">OB</text>
+  <text x="755" y="388" fill="#4CAF50" font-size="7" opacity="0.5">OS</text>
+
+  <!-- X-axis bar numbers -->
+  <text x="100" y="415" text-anchor="middle" fill="#555" font-size="7">0</text>
+  <text x="180" y="415" text-anchor="middle" fill="#555" font-size="7">5</text>
+  <text x="260" y="415" text-anchor="middle" fill="#555" font-size="7">10</text>
+  <text x="340" y="415" text-anchor="middle" fill="#555" font-size="7">15</text>
+  <text x="420" y="415" text-anchor="middle" fill="#555" font-size="7">20</text>
+  <text x="500" y="415" text-anchor="middle" fill="#555" font-size="7">25</text>
+  <text x="580" y="415" text-anchor="middle" fill="#555" font-size="7">30</text>
+  <text x="660" y="415" text-anchor="middle" fill="#555" font-size="7">35</text>
+  <text x="740" y="415" text-anchor="middle" fill="#555" font-size="7">40</text>
+
+  <!-- Axis borders -->
+  <line x1="80" y1="60" x2="80" y2="240" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="80" y1="260" x2="80" y2="400" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- Legend bar -->
+  <g transform="translate(60, 440)">
+    <rect width="680" height="30" rx="4" fill="#ffffff" fill-opacity="0.03"/>
+    <circle cx="20" cy="15" r="4" fill="#42d4f5"/>
+    <text x="30" y="19" fill="#999" font-size="9">Price</text>
+    <circle cx="80" cy="15" r="4" fill="#ab47bc"/>
+    <text x="90" y="19" fill="#999" font-size="9">Cycle Channel</text>
+    <circle cx="195" cy="15" r="4" fill="#FF9800"/>
+    <text x="205" y="19" fill="#999" font-size="9">Oscillator</text>
+    <rect x="275" y="11" width="10" height="8" rx="1" fill="#EF5350" fill-opacity="0.15" stroke="#EF5350" stroke-width="0.5"/>
+    <text x="291" y="19" fill="#999" font-size="9">OB/OS Zones</text>
+    <line x1="378" y1="15" x2="395" y2="15" stroke="#EF5350" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="402" y="19" fill="#999" font-size="9">Divergence</text>
+  </g>
+</svg>

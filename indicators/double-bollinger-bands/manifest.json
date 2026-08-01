@@ -1,0 +1,15 @@
+{
+  "name": "Double Bollinger Bands",
+  "id": "double-bollinger-bands",
+  "version": "1.0.0",
+  "type": "indicator",
+  "author": "tradegrub",
+  "license": "Apache-2.0",
+  "description": "Two sets of Bollinger Bands at different standard deviation levels to identify normal, trending, and extreme volatility zones",
+  "category": "volatility",
+  "tags": ["bollinger", "bands", "volatility", "zones", "standard-deviation"],
+  "languages": ["python"],
+  "overlay": true,
+  "official": true,
+  "likes": 4600
+}

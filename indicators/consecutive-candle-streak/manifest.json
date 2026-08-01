@@ -1,0 +1,12 @@
+{
+  "id": "consecutive-candle-streak",
+  "name": "Consecutive Candle Streak",
+  "version": "1.0.0",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0",
+  "category": "Momentum",
+  "tags": ["streak", "consecutive", "candles", "exhaustion", "reversal", "momentum"],
+  "type": "indicator",
+  "language": "python",
+  "description": "Tracks consecutive bullish/bearish candle streaks and identifies exhaustion when streaks exceed historical averages"
+}

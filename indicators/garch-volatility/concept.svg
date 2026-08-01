@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="8"/>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">GARCH Volatility Forecast</text>
+  <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
+
+  <!-- Price chart -->
+  <rect x="60" y="70" width="700" height="160" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <!-- High vol shading -->
+  <rect x="280" y="70" width="140" height="160" fill="rgba(239,83,80,0.06)"/>
+  <rect x="580" y="70" width="100" height="160" fill="rgba(239,83,80,0.06)"/>
+
+  <g stroke-width="1.5">
+    <line x1="100" y1="140" x2="100" y2="185" stroke="#4CAF50"/><rect x="96" y="148" width="8" height="24" fill="#4CAF50" rx="1"/>
+    <line x1="140" y1="135" x2="140" y2="178" stroke="#4CAF50"/><rect x="136" y="140" width="8" height="24" fill="#4CAF50" rx="1"/>
+    <line x1="180" y1="130" x2="180" y2="175" stroke="#4CAF50"/><rect x="176" y="135" width="8" height="26" fill="#4CAF50" rx="1"/>
+    <line x1="220" y1="128" x2="220" y2="172" stroke="#EF5350"/><rect x="216" y="135" width="8" height="26" fill="#EF5350" rx="1"/>
+    <line x1="260" y1="138" x2="260" y2="188" stroke="#EF5350"/><rect x="256" y="148" width="8" height="30" fill="#EF5350" rx="1"/>
+    <line x1="300" y1="120" x2="300" y2="200" stroke="#EF5350"/><rect x="296" y="140" width="8" height="48" fill="#EF5350" rx="1"/>
+    <line x1="340" y1="100" x2="340" y2="190" stroke="#EF5350"/><rect x="336" y="115" width="8" height="55" fill="#EF5350" rx="1"/>
+    <line x1="380" y1="110" x2="380" y2="195" stroke="#4CAF50"/><rect x="376" y="120" width="8" height="50" fill="#4CAF50" rx="1"/>
+    <line x1="420" y1="125" x2="420" y2="180" stroke="#4CAF50"/><rect x="416" y="132" width="8" height="32" fill="#4CAF50" rx="1"/>
+    <line x1="460" y1="130" x2="460" y2="175" stroke="#4CAF50"/><rect x="456" y="136" width="8" height="26" fill="#4CAF50" rx="1"/>
+    <line x1="500" y1="128" x2="500" y2="170" stroke="#4CAF50"/><rect x="496" y="132" width="8" height="24" fill="#4CAF50" rx="1"/>
+    <line x1="540" y1="125" x2="540" y2="168" stroke="#EF5350"/><rect x="536" y="130" width="8" height="26" fill="#EF5350" rx="1"/>
+    <line x1="580" y1="110" x2="580" y2="190" stroke="#EF5350"/><rect x="576" y="125" width="8" height="50" fill="#EF5350" rx="1"/>
+    <line x1="620" y1="100" x2="620" y2="195" stroke="#EF5350"/><rect x="616" y="118" width="8" height="58" fill="#EF5350" rx="1"/>
+    <line x1="660" y1="120" x2="660" y2="185" stroke="#4CAF50"/><rect x="656" y="130" width="8" height="38" fill="#4CAF50" rx="1"/>
+    <line x1="700" y1="130" x2="700" y2="178" stroke="#4CAF50"/><rect x="696" y="136" width="8" height="28" fill="#4CAF50" rx="1"/>
+  </g>
+
+  <!-- Separator -->
+  <line x1="60" y1="245" x2="760" y2="245" stroke="#444" stroke-width="1"/>
+
+  <!-- Volatility subplot -->
+  <rect x="60" y="255" width="700" height="180" fill="rgba(255,255,255,0.02)" rx="4"/>
+  <text x="75" y="272" fill="#666" font-family="Inter,sans-serif" font-size="10">GARCH Volatility</text>
+  <rect x="280" y="255" width="140" height="180" fill="rgba(239,83,80,0.06)"/>
+  <rect x="580" y="255" width="100" height="180" fill="rgba(239,83,80,0.06)"/>
+
+  <!-- Conditional vol (blue) -->
+  <polyline points="100,400 140,395 180,390 220,388 260,370 300,320 340,290 380,310 420,350 460,380 500,390 540,385 580,320 620,295 660,340 700,375" fill="none" stroke="#42A5F5" stroke-width="2"/>
+
+  <!-- Forecast vol (orange) -->
+  <polyline points="100,395 140,392 180,388 220,385 260,365 300,310 340,280 380,295 420,340 460,370 500,385 540,378 580,310 620,285 660,325 700,365" fill="none" stroke="#FFA726" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <!-- Vol SMA (gray) -->
+  <polyline points="100,398 140,396 180,394 220,392 260,385 300,370 340,355 380,350 420,355 460,365 500,378 540,382 580,375 620,360 660,355 700,365" fill="none" stroke="#888" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="120" y="455" width="560" height="30" fill="rgba(255,255,255,0.03)" rx="4"/>
+  <line x1="145" y1="470" x2="175" y2="470" stroke="#42A5F5" stroke-width="2"/>
+  <text x="180" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Cond. Vol</text>
+  <line x1="275" y1="470" x2="305" y2="470" stroke="#FFA726" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="310" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Forecast</text>
+  <line x1="395" y1="470" x2="425" y2="470" stroke="#888" stroke-width="1"/>
+  <text x="430" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">Vol SMA</text>
+  <rect x="520" y="464" width="14" height="12" fill="rgba(239,83,80,0.15)" rx="2"/>
+  <text x="540" y="474" fill="#aaa" font-family="Inter,sans-serif" font-size="10">High Vol</text>
+</svg>

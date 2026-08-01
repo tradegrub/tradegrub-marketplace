@@ -1,0 +1,11 @@
+{
+  "name": "Quasimodo Reversal",
+  "id": "quasimodo-reversal",
+  "version": "1.0.0",
+  "type": "indicator",
+  "category": "price-action",
+  "tags": ["quasimodo", "reversal", "pattern", "swing", "zigzag"],
+  "description": "Detects Quasimodo (QML) reversal patterns where swing structure breaks symmetry",
+  "author": "TradeGrub Community",
+  "license": "Apache-2.0"
+}
