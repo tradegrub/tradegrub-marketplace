@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="40" y="52" fill="#e8eaf6" font-family="Inter, sans-serif" font-size="24" font-weight="600">Valuation Multiple Bands</text>
+  <text x="40" y="78" fill="#7986cb" font-family="Inter, sans-serif" font-size="14">Plots the price levels implied by a set of P/E multiples, turning an earnings-based valuation ra</text>
+  <line x1="40" y1="96" x2="760" y2="96" stroke="#2a2e5a" stroke-width="1"/>
+  <line x1="60" y1="140" x2="740" y2="140" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="200" x2="740" y2="200" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="260" x2="740" y2="260" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="320" x2="740" y2="320" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="380" x2="740" y2="380" stroke="#252a4a" stroke-width="1"/>
+  <polyline points="60,300 160,280 260,240 360,260 460,200 560,230 660,180" fill="none" stroke="#7986cb" stroke-width="3" filter="url(#glow)"/>
+  <line x1="60" y1="340" x2="740" y2="340" stroke="#00e676" stroke-width="2"/><line x1="60" y1="160" x2="740" y2="160" stroke="#ef5350" stroke-width="2"/><rect x="60" y="160" width="680" height="180" fill="rgba(66,165,245,0.06)"/>
+  <text x="400" y="440" text-anchor="middle" fill="#9fa8da" font-family="Inter, sans-serif" font-size="14">Price against the levels implied by a chosen multiple range</text>
+</svg>

@@ -1,0 +1,29 @@
+//@version=6
+// Valuation Multiple Bands — what price WOULD be at a given multiple of
+// trailing earnings, drawn as bands so the current multiple is readable.
+indicator("Valuation Multiple Bands", overlay=true)
+
+period_type = input.string("FY", "Reporting period", options=["FY", "FQ"])
+low_mult = input.float(10.0, "Low multiple", minval=1.0, maxval=100.0)
+mid_mult = input.float(18.0, "Mid multiple", minval=1.0, maxval=100.0)
+high_mult = input.float(26.0, "High multiple", minval=1.0, maxval=200.0)
+
+sym = syminfo.tickerid
+net_income = request.financial(sym, "NET_INCOME", period_type)
+shares     = request.financial(sym, "TOTAL_SHARES_OUTSTANDING", period_type)
+
+eps = shares != 0 ? net_income / shares : na
+
+// Negative earnings make every band meaningless, so nothing is drawn rather
+// than drawing bands below zero.
+low_band  = eps > 0 ? eps * low_mult : na
+mid_band  = eps > 0 ? eps * mid_mult : na
+high_band = eps > 0 ? eps * high_mult : na
+
+p_low = plot(low_band, "Low multiple", color=color.teal, linewidth=2)
+p_high = plot(high_band, "High multiple", color=color.red, linewidth=2)
+plot(mid_band, "Mid multiple", color=color.gray)
+fill(p_low, p_high, color=color.new(color.blue, 94))
+
+current_pe = eps > 0 ? close / eps : na
+plot(current_pe, "Current P/E", display=display.data_window)
