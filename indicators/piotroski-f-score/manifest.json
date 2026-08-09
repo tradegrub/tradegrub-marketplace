@@ -1,0 +1,34 @@
+{
+  "id": "piotroski-f-score",
+  "name": "Piotroski F-Score",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistical",
+  "tags": [
+    "fundamental",
+    "value",
+    "quality",
+    "f-score",
+    "piotroski",
+    "screening"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Nine-point fundamental quality score covering profitability, leverage and operating efficiency, plotted as a bar-aligned series.",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Pine",
+  "languages": [
+    "pine"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-08-09",
+  "updated": "2026-08-09"
+}

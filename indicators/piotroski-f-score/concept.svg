@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <text x="40" y="52" fill="#e8eaf6" font-family="Inter, sans-serif" font-size="24" font-weight="600">Piotroski F-Score</text>
+  <text x="40" y="78" fill="#7986cb" font-family="Inter, sans-serif" font-size="14">Nine-point fundamental quality score covering profitability, leverage and operating efficiency, </text>
+  <line x1="40" y1="96" x2="760" y2="96" stroke="#2a2e5a" stroke-width="1"/>
+  <line x1="60" y1="140" x2="740" y2="140" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="200" x2="740" y2="200" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="260" x2="740" y2="260" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="320" x2="740" y2="320" stroke="#252a4a" stroke-width="1"/>
+  <line x1="60" y1="380" x2="740" y2="380" stroke="#252a4a" stroke-width="1"/>
+  <rect x="60" y="200" width="217" height="120" rx="6" fill="#ef5350" opacity="0.25"/>
+  <rect x="60" y="200" width="217" height="120" rx="6" fill="none" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="168" y="268" text-anchor="middle" fill="#ef5350" font-family="Inter, sans-serif" font-size="16" font-weight="600">0-3 weak</text>
+  <rect x="287" y="200" width="217" height="120" rx="6" fill="#ffa726" opacity="0.25"/>
+  <rect x="287" y="200" width="217" height="120" rx="6" fill="none" stroke="#ffa726" stroke-width="1.5"/>
+  <text x="395" y="268" text-anchor="middle" fill="#ffa726" font-family="Inter, sans-serif" font-size="16" font-weight="600">4-6 mixed</text>
+  <rect x="513" y="200" width="217" height="120" rx="6" fill="#00e676" opacity="0.25"/>
+  <rect x="513" y="200" width="217" height="120" rx="6" fill="none" stroke="#00e676" stroke-width="1.5"/>
+  <text x="622" y="268" text-anchor="middle" fill="#00e676" font-family="Inter, sans-serif" font-size="16" font-weight="600">7-9 strong</text>
+  <text x="400" y="420" text-anchor="middle" fill="#9fa8da" font-family="Inter, sans-serif" font-size="14">Nine binary tests: profitability, leverage, operating efficiency</text>
+</svg>

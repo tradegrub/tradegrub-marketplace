@@ -1,0 +1,34 @@
+{
+  "id": "graham-number",
+  "name": "Graham Number",
+  "author": "tradegrub",
+  "author_uid": "tradegrub",
+  "version": "1.0.0",
+  "category": "statistical",
+  "tags": [
+    "fundamental",
+    "value",
+    "graham",
+    "intrinsic-value",
+    "valuation",
+    "overlay"
+  ],
+  "type": "indicator",
+  "access": "open-source",
+  "price": 0,
+  "currency": "USD",
+  "description": "Benjamin Graham's fair-value ceiling for a defensive investor, plotted directly on the price scale alongside price.",
+  "official": true,
+  "beta": false,
+  "likes": 0,
+  "uses": 0,
+  "language": "Pine",
+  "languages": [
+    "pine"
+  ],
+  "min_platform_version": "2.0",
+  "screenshots": [],
+  "backtest_summary": {},
+  "created": "2026-08-09",
+  "updated": "2026-08-09"
+}

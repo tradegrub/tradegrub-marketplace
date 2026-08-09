@@ -1,0 +1,25 @@
+//@version=6
+// DuPont decomposition — ROE = net margin x asset turnover x equity multiplier.
+// Two companies with identical ROE can be built completely differently.
+indicator("DuPont ROE Decomposition", overlay=false)
+
+period_type = input.string("FY", "Reporting period", options=["FY", "FQ"])
+
+sym = syminfo.tickerid
+net_income   = request.financial(sym, "NET_INCOME", period_type)
+revenue      = request.financial(sym, "TOTAL_REVENUE", period_type)
+total_assets = request.financial(sym, "TOTAL_ASSETS", period_type)
+total_liab   = request.financial(sym, "TOTAL_LIABILITIES", period_type)
+
+equity = total_assets - total_liab
+
+margin     = revenue != 0 ? net_income / revenue : na
+turnover   = total_assets != 0 ? revenue / total_assets : na
+multiplier = equity != 0 ? total_assets / equity : na
+roe = margin * turnover * multiplier * 100
+
+plot(roe, "ROE %", color=color.teal, linewidth=2)
+plot(margin * 100, "Net margin %", color=color.blue)
+plot(turnover * 100, "Asset turnover x100", color=color.orange)
+plot(multiplier * 10, "Equity multiplier x10", color=color.purple)
+hline(0, "Zero", color=color.gray)

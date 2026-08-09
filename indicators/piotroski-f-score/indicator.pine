@@ -1,0 +1,47 @@
+//@version=6
+// Piotroski F-Score — nine binary tests of fundamental quality.
+// Each test scores 1 point. 8-9 is a strong balance sheet, 0-2 is a weak one.
+indicator("Piotroski F-Score", overlay=false)
+
+period_type = input.string("FY", "Reporting period", options=["FY", "FQ"])
+
+sym = syminfo.tickerid
+net_income   = request.financial(sym, "NET_INCOME", period_type)
+op_cash_flow = request.financial(sym, "CASH_F_OPERATING_ACTIVITIES", period_type)
+total_assets = request.financial(sym, "TOTAL_ASSETS", period_type)
+long_debt    = request.financial(sym, "TOTAL_DEBT", period_type)
+cur_assets   = request.financial(sym, "TOTAL_CURRENT_ASSETS", period_type)
+cur_liab     = request.financial(sym, "TOTAL_CURRENT_LIABILITIES", period_type)
+shares       = request.financial(sym, "TOTAL_SHARES_OUTSTANDING", period_type)
+revenue      = request.financial(sym, "TOTAL_REVENUE", period_type)
+gross_profit = request.financial(sym, "GROSS_PROFIT", period_type)
+
+// One reporting period back. Financial series are bar-aligned and step at the
+// filing date, so a fixed bar offset is not usable — compare against the value
+// as it stood before the most recent step instead.
+prev_assets  = total_assets[1]
+prev_ni      = net_income[1]
+roa      = total_assets != 0 ? net_income / total_assets : na
+prev_roa = prev_assets != 0 ? prev_ni / prev_assets : na
+
+score = 0.0
+// Profitability
+score := score + (roa > 0 ? 1 : 0)
+score := score + (op_cash_flow > 0 ? 1 : 0)
+score := score + (roa > prev_roa ? 1 : 0)
+score := score + (op_cash_flow > net_income ? 1 : 0)
+// Leverage, liquidity and share count
+score := score + (long_debt < long_debt[1] ? 1 : 0)
+score := score + (cur_liab != 0 and cur_liab[1] != 0 and (cur_assets / cur_liab) > (cur_assets[1] / cur_liab[1]) ? 1 : 0)
+score := score + (shares <= shares[1] ? 1 : 0)
+// Operating efficiency
+gm      = revenue != 0 ? gross_profit / revenue : na
+prev_gm = revenue[1] != 0 ? gross_profit[1] / revenue[1] : na
+score := score + (gm > prev_gm ? 1 : 0)
+turn      = total_assets != 0 ? revenue / total_assets : na
+prev_turn = prev_assets != 0 ? revenue[1] / prev_assets : na
+score := score + (turn > prev_turn ? 1 : 0)
+
+plot(score, "F-Score", color=score >= 7 ? color.teal : score <= 3 ? color.red : color.gray, style=plot.style_columns)
+hline(7, "Strong", color=color.teal)
+hline(3, "Weak", color=color.red)

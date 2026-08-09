@@ -27,6 +27,16 @@ from tg_scripting.context import ScriptContext
 
 MARKETPLACE_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# Every (folder, filename) pair that counts as a publishable script. Pine sits
+# alongside Python because some scripts -- the fundamental scores in
+# particular -- need request.financial(), which only the Pine runtime exposes.
+SCRIPT_FILES = [
+    ("indicators", "indicator.py"),
+    ("indicators", "indicator.pine"),
+    ("strategies", "strategy.py"),
+    ("strategies", "strategy.pine"),
+]
+
 
 def make_mock_bars(n=200):
     """Generate realistic synthetic OHLCV bars."""
@@ -47,17 +57,29 @@ def make_mock_bars(n=200):
 
 
 def validate_script(script_path):
-    """Run a single script through ScriptContext. Returns (success, error_msg)."""
+    """Run a single script through ScriptContext. Returns (success, error_msg).
+
+    Pine scripts go through the Pine interpreter instead of exec(). They are
+    held to the same bar: parse and run against synthetic OHLCV without
+    raising. Fundamental scripts see no financial data in this harness, which
+    is deliberate -- a script that blows up on missing fundamentals would blow
+    up the same way on a crypto pair.
+    """
     try:
         with open(script_path, "r") as f:
             source = f.read()
 
+        bars = make_mock_bars()
+        ctx = ScriptContext(bars)
+
+        if script_path.endswith(".pine"):
+            from tg_scripting.pine import interpreter as pine
+            pine.interpret(source, ctx)
+            return True, None
+
         # Compile first (syntax check)
         compile(source, script_path, "exec")
 
-        # Execute with mock data
-        bars = make_mock_bars()
-        ctx = ScriptContext(bars)
         ns = ctx.build_namespace()
 
         # Add numpy and common imports
@@ -74,8 +96,8 @@ def validate_script(script_path):
 def find_all_scripts(filter_path=None):
     """Find all marketplace script files."""
     scripts = []
-    for kind, pyname in [("indicators", "indicator.py"), ("strategies", "strategy.py")]:
-        pattern = os.path.join(MARKETPLACE_ROOT, kind, "*", pyname)
+    for kind, fname in SCRIPT_FILES:
+        pattern = os.path.join(MARKETPLACE_ROOT, kind, "*", fname)
         for path in sorted(glob.glob(pattern)):
             rel = os.path.relpath(path, MARKETPLACE_ROOT)
             folder = os.path.dirname(rel)
@@ -117,8 +139,8 @@ def check_index_parity():
         (kind, os.path.basename(os.path.dirname(path)))
         for kind, path in (
             (k, p)
-            for k, pyname in (("indicators", "indicator.py"), ("strategies", "strategy.py"))
-            for p in glob.glob(os.path.join(MARKETPLACE_ROOT, k, "*", pyname))
+            for k, fname in SCRIPT_FILES
+            for p in glob.glob(os.path.join(MARKETPLACE_ROOT, k, "*", fname))
         )
     }
 

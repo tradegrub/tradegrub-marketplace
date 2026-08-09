@@ -1,0 +1,31 @@
+//@version=6
+// Altman Z-Score — five weighted ratios predicting financial distress.
+// Above 2.99 is the safe zone, below 1.81 is the distress zone.
+indicator("Altman Z-Score", overlay=false)
+
+period_type = input.string("FY", "Reporting period", options=["FY", "FQ"])
+
+sym = syminfo.tickerid
+total_assets = request.financial(sym, "TOTAL_ASSETS", period_type)
+total_liab   = request.financial(sym, "TOTAL_LIABILITIES", period_type)
+cur_assets   = request.financial(sym, "TOTAL_CURRENT_ASSETS", period_type)
+cur_liab     = request.financial(sym, "TOTAL_CURRENT_LIABILITIES", period_type)
+retained     = request.financial(sym, "RETAINED_EARNINGS", period_type)
+ebit         = request.financial(sym, "EBIT", period_type)
+revenue      = request.financial(sym, "TOTAL_REVENUE", period_type)
+shares       = request.financial(sym, "TOTAL_SHARES_OUTSTANDING", period_type)
+
+working_capital = cur_assets - cur_liab
+market_cap = shares * close
+
+a = total_assets != 0 ? working_capital / total_assets : na
+b = total_assets != 0 ? retained / total_assets : na
+c = total_assets != 0 ? ebit / total_assets : na
+d = total_liab != 0 ? market_cap / total_liab : na
+e = total_assets != 0 ? revenue / total_assets : na
+
+z = 1.2 * a + 1.4 * b + 3.3 * c + 0.6 * d + 1.0 * e
+
+plot(z, "Z-Score", color=z >= 2.99 ? color.teal : z <= 1.81 ? color.red : color.orange, linewidth=2)
+hline(2.99, "Safe", color=color.teal)
+hline(1.81, "Distress", color=color.red)

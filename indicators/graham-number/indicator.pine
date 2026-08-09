@@ -1,0 +1,24 @@
+//@version=6
+// Graham Number — the price ceiling Graham considered defensible for a
+// defensive investor: sqrt(22.5 * EPS * book value per share).
+indicator("Graham Number", overlay=true)
+
+period_type = input.string("FY", "Reporting period", options=["FY", "FQ"])
+margin = input.float(0.0, "Margin of safety %", minval=0.0, maxval=50.0)
+
+sym = syminfo.tickerid
+net_income   = request.financial(sym, "NET_INCOME", period_type)
+total_assets = request.financial(sym, "TOTAL_ASSETS", period_type)
+total_liab   = request.financial(sym, "TOTAL_LIABILITIES", period_type)
+shares       = request.financial(sym, "TOTAL_SHARES_OUTSTANDING", period_type)
+
+eps  = shares != 0 ? net_income / shares : na
+bvps = shares != 0 ? (total_assets - total_liab) / shares : na
+
+// Both inputs must be positive for the square root to mean anything, which is
+// itself part of Graham's screen: no earnings or negative book value fails it.
+raw = (eps > 0 and bvps > 0) ? math.sqrt(22.5 * eps * bvps) : na
+graham = raw * (1 - margin / 100)
+
+plot(graham, "Graham Number", color=color.teal, linewidth=2)
+bgcolor(close < graham ? color.new(color.teal, 90) : na)

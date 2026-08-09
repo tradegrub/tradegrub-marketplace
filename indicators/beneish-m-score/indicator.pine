@@ -1,0 +1,35 @@
+//@version=6
+// Beneish M-Score — eight forensic ratios. Above -1.78 flags the accounting
+// profile typical of manipulated earnings.
+indicator("Beneish M-Score", overlay=false)
+
+period_type = input.string("FY", "Reporting period", options=["FY", "FQ"])
+
+sym = syminfo.tickerid
+receivables  = request.financial(sym, "ACCOUNTS_RECEIVABLES_NET", period_type)
+revenue      = request.financial(sym, "TOTAL_REVENUE", period_type)
+gross_profit = request.financial(sym, "GROSS_PROFIT", period_type)
+total_assets = request.financial(sym, "TOTAL_ASSETS", period_type)
+cur_assets   = request.financial(sym, "TOTAL_CURRENT_ASSETS", period_type)
+ppe          = request.financial(sym, "PROPERTY_PLANT_EQUIPMENT", period_type)
+depreciation = request.financial(sym, "DEPRECIATION_DEPLETION", period_type)
+sga          = request.financial(sym, "SELLING_GENERAL_ADMIN_EXPENSES", period_type)
+net_income   = request.financial(sym, "NET_INCOME", period_type)
+op_cash_flow = request.financial(sym, "CASH_F_OPERATING_ACTIVITIES", period_type)
+total_debt   = request.financial(sym, "TOTAL_DEBT", period_type)
+
+// Days sales in receivables: receivables growing faster than sales is the
+// single strongest manipulation signal in the original study.
+dsri = (revenue != 0 and revenue[1] != 0 and receivables[1] != 0) ? (receivables / revenue) / (receivables[1] / revenue[1]) : 1.0
+gmi  = (revenue != 0 and revenue[1] != 0 and gross_profit != 0) ? (gross_profit[1] / revenue[1]) / (gross_profit / revenue) : 1.0
+aqi  = (total_assets != 0 and total_assets[1] != 0) ? (1 - (cur_assets + ppe) / total_assets) / (1 - (cur_assets[1] + ppe[1]) / total_assets[1]) : 1.0
+sgi  = revenue[1] != 0 ? revenue / revenue[1] : 1.0
+depi = (depreciation != 0 and ppe != 0 and ppe[1] != 0) ? (depreciation[1] / (depreciation[1] + ppe[1])) / (depreciation / (depreciation + ppe)) : 1.0
+sgai = (revenue != 0 and revenue[1] != 0 and sga[1] != 0) ? (sga / revenue) / (sga[1] / revenue[1]) : 1.0
+lvgi = (total_assets != 0 and total_assets[1] != 0 and total_debt[1] != 0) ? (total_debt / total_assets) / (total_debt[1] / total_assets[1]) : 1.0
+tata = total_assets != 0 ? (net_income - op_cash_flow) / total_assets : 0.0
+
+m = -4.84 + 0.92 * dsri + 0.528 * gmi + 0.404 * aqi + 0.892 * sgi + 0.115 * depi - 0.172 * sgai + 4.679 * tata - 0.327 * lvgi
+
+plot(m, "M-Score", color=m > -1.78 ? color.red : color.teal, linewidth=2)
+hline(-1.78, "Manipulation threshold", color=color.red)
