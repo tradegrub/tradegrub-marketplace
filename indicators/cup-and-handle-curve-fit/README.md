@@ -1,4 +1,4 @@
-# Cup and Handle Detector
+# Cup and Handle Curve Fit
 
 ![Concept](concept.svg)
 

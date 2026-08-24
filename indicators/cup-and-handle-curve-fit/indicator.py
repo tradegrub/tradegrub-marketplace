@@ -1,7 +1,7 @@
 from tg_scripting import *
 import numpy as np
 
-indicator("Cup and Handle Detector", overlay=True)
+indicator("Cup and Handle Curve Fit", overlay=True)
 
 cup_len = input.int(30, "Cup Length", minval=10, maxval=100)
 handle_len = input.int(10, "Handle Length", minval=3, maxval=30)

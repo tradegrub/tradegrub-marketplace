@@ -796,8 +796,8 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "cup-and-handle",
-    "name": "Cup and Handle Detector",
+    "id": "cup-and-handle-curve-fit",
+    "name": "Cup and Handle Curve Fit",
     "author": "tradegrub",
     "author_uid": "tradegrub",
     "version": "1.0.0",
@@ -1459,39 +1459,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "fair-value-gap",
-    "name": "Fair Value Gap Detector",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "smart-money",
-    "tags": [
-      "fvg",
-      "fair-value",
-      "gap",
-      "imbalance",
-      "smart-money"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Finds price imbalances where three-candle sequences leave unfilled gaps indicating institutional activity",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "fibonacci-bands",
     "name": "Fibonacci Retracement Bands",
     "author": "tradegrub",
@@ -1608,39 +1575,6 @@
     "price": 0,
     "currency": "USD",
     "description": "Uses scipy FFT to decompose price into dominant cycles, showing cycle strength and filtered price reconstruction to identify rhythmic market patterns",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "fractal-adaptive-ma",
-    "name": "Fractal Adaptive Moving Average",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "frama",
-      "fractal",
-      "adaptive",
-      "moving-average",
-      "trend"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Moving average with period that adapts based on fractal dimension of price series",
     "official": true,
     "beta": true,
     "likes": 0,
@@ -2185,39 +2119,6 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "kaufman-adaptive-ma",
-    "name": "Kaufman Adaptive Moving Average",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "kama",
-      "adaptive",
-      "moving-average",
-      "efficiency-ratio",
-      "trend"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Adaptive moving average that speeds up in trends and slows in choppy markets using efficiency ratio",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
     "id": "kelly-criterion",
     "name": "Kelly Criterion Sizer",
     "author": "tradegrub",
@@ -2600,39 +2501,6 @@
     "price": 0,
     "currency": "USD",
     "description": "Rolling maximum drawdown calculator with recovery time tracking and drawdown depth visualization",
-    "official": true,
-    "beta": true,
-    "likes": 0,
-    "uses": 0,
-    "language": "Python",
-    "languages": [
-      "python"
-    ],
-    "min_platform_version": "2.0",
-    "screenshots": [],
-    "backtest_summary": {},
-    "created": "2026-06-30",
-    "updated": "2026-06-30"
-  },
-  {
-    "id": "mcginley-dynamic",
-    "name": "McGinley Dynamic Indicator",
-    "author": "tradegrub",
-    "author_uid": "tradegrub",
-    "version": "1.0.0",
-    "category": "trend",
-    "tags": [
-      "mcginley",
-      "dynamic",
-      "moving-average",
-      "adaptive",
-      "trend"
-    ],
-    "type": "indicator",
-    "access": "open-source",
-    "price": 0,
-    "currency": "USD",
-    "description": "Self-adjusting moving average that automatically adjusts speed based on market velocity",
     "official": true,
     "beta": true,
     "likes": 0,
@@ -4763,7 +4631,7 @@
     "updated": "2026-06-30"
   },
   {
-    "id": "trend-strength",
+    "id": "multi-factor-trend-strength",
     "name": "Multi-Factor Trend Strength",
     "author": "tradegrub",
     "author_uid": "tradegrub",
@@ -7062,7 +6930,7 @@
     "updated": "2026-06-27"
   },
   {
-    "id": "price-channel",
+    "id": "price-channel-breakout",
     "name": "Price Channel Breakout",
     "author": "tradegrub",
     "author_uid": "tradegrub",

@@ -163,7 +163,24 @@ def _normalize_name(name):
     return re.sub(r"[^a-z0-9]", "", name.lower())
 
 
-def check_builtin_duplicates():
+def _readme_title(folder):
+    """The first markdown H1 in the folder's README, if any."""
+    for candidate in ("README.md", "readme.md"):
+        path = os.path.join(folder, candidate)
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path) as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("# "):
+                        return line[2:].strip()
+        except OSError:
+            return None
+    return None
+
+
+def check_builtin_duplicates(only=None):
     """No marketplace item may duplicate a predefined built-in.
 
     CONTRIBUTING.md has carried this rule as a review checkbox since the repo
@@ -175,6 +192,13 @@ def check_builtin_duplicates():
     tools/generate_builtin_names.py. Both fields matter -- `name` is the
     registration key ("SMA") and `label` is what the user reads ("Simple
     Moving Average") -- so a submission colliding with either is a duplicate.
+
+    The manifest `name` is not the only place the collision can hide: the
+    folder id, the README H1 and the index.json name are all read by a user or
+    the app, so all four are checked and the failure names which one collided.
+
+    `only` scopes the check to a set of (kind, id) pairs, so validating a
+    single script still runs this gate on that script.
 
     Returns a list of human-readable problems; empty means nothing collides.
     """
@@ -189,10 +213,23 @@ def check_builtin_duplicates():
     for original in list(data.get("names", [])) + list(data.get("labels", [])):
         builtin.setdefault(_normalize_name(original), set()).add(original)
 
+    index_names = {}
+    index_path = os.path.join(MARKETPLACE_ROOT, "index.json")
+    if os.path.exists(index_path):
+        try:
+            with open(index_path) as f:
+                for e in json.load(f):
+                    ekind = "strategies" if e.get("type") == "strategy" else "indicators"
+                    index_names[(ekind, e.get("id"))] = (e.get("name") or "").strip()
+        except ValueError:
+            pass
+
     problems = []
     for kind in ("indicators", "strategies"):
         for manifest_path in sorted(glob.glob(os.path.join(MARKETPLACE_ROOT, kind, "*", "manifest.json"))):
             sid = os.path.basename(os.path.dirname(manifest_path))
+            if only and (kind, sid) not in only:
+                continue
             try:
                 with open(manifest_path) as f:
                     manifest = json.load(f)
@@ -203,12 +240,27 @@ def check_builtin_duplicates():
             if not name:
                 problems.append(f"{kind}/{sid}: manifest.json has no name")
                 continue
-            hit = builtin.get(_normalize_name(name))
-            if hit:
-                problems.append(
-                    f"{kind}/{sid}: name \"{name}\" duplicates built-in "
-                    f"{' / '.join(sorted(hit))} -- rename it or withdraw it"
-                )
+
+            # Every field a user or the app can read the item's identity from.
+            # Checking manifest.name alone let "Ultra EMA" ship in a folder
+            # called `ema` and read as the built-in everywhere the id shows
+            # (D-063). The field that collided is named in the message,
+            # because a gate nobody can act on gets ignored.
+            candidates = [
+                ("manifest.json name", name),
+                ("folder id", sid),
+                ("README title", _readme_title(os.path.dirname(manifest_path))),
+                ("index.json name", index_names.get((kind, sid))),
+            ]
+            for field, value in candidates:
+                if not value:
+                    continue
+                hit = builtin.get(_normalize_name(value))
+                if hit:
+                    problems.append(
+                        f"{kind}/{sid}: {field} \"{value}\" duplicates built-in "
+                        f"{' / '.join(sorted(hit))} -- rename it or withdraw it"
+                    )
     return problems
 
 
@@ -222,7 +274,17 @@ def main():
 
     # Parity is a whole-repo property, so only assert it on a full run.
     index_problems = [] if filter_path else check_index_parity()
-    duplicate_problems = [] if filter_path else check_builtin_duplicates()
+    # Duplication is a per-item property, so it runs on a filtered path too,
+    # scoped to the scripts that were selected. Skipping it there removed the
+    # gate at the exact moment a contributor checks their own submission
+    # (D-064).
+    only = None
+    if filter_path:
+        only = {
+            (folder.split(os.sep)[0], os.path.basename(folder))
+            for folder, _ in scripts
+        }
+    duplicate_problems = check_builtin_duplicates(only)
 
     passed = 0
     failed = 0

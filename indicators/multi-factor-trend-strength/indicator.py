@@ -1,6 +1,6 @@
 from tg_scripting import *
 
-indicator("Trend Strength", overlay=False)
+indicator("Multi-Factor Trend Strength", overlay=False)
 
 show_labels = input.bool(True, "Show Labels")
 show_levels = input.bool(True, "Show Levels")
