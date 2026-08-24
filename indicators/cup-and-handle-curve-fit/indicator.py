@@ -1,5 +1,6 @@
 from tg_scripting import *
 import numpy as np
+import warnings
 
 indicator("Cup and Handle Curve Fit", overlay=True)
 
@@ -8,11 +9,26 @@ handle_len = input.int(10, "Handle Length", minval=3, maxval=30)
 depth_pct = input.float(5.0, "Min Depth %", minval=1.0, maxval=20.0, step=0.5)
 show_labels = input.bool(True, "Show Labels")
 
+# scipy carries the curve fit this detector is built on. Without it there is
+# no curvature, so there is no cup -- and the old fallback returned a
+# curvature of 0.0, which the `curvature <= 0` guard below rejected on every
+# bar. The detector then found nothing and reported success, which is
+# indistinguishable from a chart with no cups in it (D-070). The import stays
+# guarded so the script still loads and its inputs still register, but the
+# absence is now said out loud at load and raised at the point of use rather
+# than returning a number that reads as a legitimate rejection.
 try:
     from scipy.optimize import curve_fit
     HAS_SCIPY = True
 except ImportError:
     HAS_SCIPY = False
+    warnings.warn(
+        "Cup and Handle Curve Fit requires scipy for its parabolic curve fit. "
+        "scipy is not available, so this indicator cannot detect anything and "
+        "will raise rather than plot an empty chart.",
+        RuntimeWarning,
+        stacklevel=2,
+    )
 
 src = np.array(close, dtype=float)
 n = len(src)
@@ -27,7 +43,11 @@ def parabola(x, a, b, c):
 
 def fit_score(segment):
     if not HAS_SCIPY:
-        return 1.0, 0.0
+        raise ImportError(
+            "Cup and Handle Curve Fit needs scipy.optimize.curve_fit to measure "
+            "cup curvature. Install scipy, or use a detector that does not "
+            "depend on it -- silently finding no patterns would be worse."
+        )
     xs = np.arange(len(segment), dtype=float)
     try:
         popt, _ = curve_fit(parabola, xs, segment, maxfev=2000)

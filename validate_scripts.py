@@ -10,6 +10,7 @@ Usage:
     python validate_scripts.py strategies/wedge-breakout  # validate one
 """
 
+import ast
 import sys
 import os
 import json
@@ -180,6 +181,147 @@ def _readme_title(folder):
     return None
 
 
+def _pine_declared_title(source):
+    """The title argument of the first indicator()/strategy() call in Pine source.
+
+    Pine has no Python AST, so this is a hand-written scan rather than a
+    regex: find the identifier, then walk the argument list forward counting
+    parentheses and skipping over string literals, so a title containing a
+    comma or a bracket does not truncate the parse and a call spanning several
+    lines is still read whole. Line comments (//) and string bodies are
+    skipped when looking for the call itself, so the word "indicator(" inside
+    a comment or a description string is not mistaken for the declaration.
+
+    Returns the title string, or None when the call is absent or the title is
+    not a plain literal (a computed title cannot be checked statically).
+    """
+    i, n = 0, len(source)
+    while i < n:
+        ch = source[i]
+        if ch == "/" and source.startswith("//", i):
+            j = source.find("\n", i)
+            i = n if j < 0 else j + 1
+            continue
+        if ch in "'\"":
+            i = _skip_string(source, i)
+            continue
+        m = re.compile(r"(?<![A-Za-z0-9_.])(indicator|strategy)\s*\(").match(source, i)
+        if m:
+            return _first_title_arg(source, m.end())
+        i += 1
+    return None
+
+
+def _skip_string(source, i):
+    """Index just past the string literal starting at `i`."""
+    quote = source[i]
+    i += 1
+    while i < len(source):
+        if source[i] == "\\":
+            i += 2
+            continue
+        if source[i] == quote:
+            return i + 1
+        i += 1
+    return i
+
+
+def _first_title_arg(source, i):
+    """Read the title out of an argument list whose opening paren is consumed.
+
+    Takes the first positional argument when it is a string literal, and
+    otherwise a `title=` keyword anywhere in the list. Depth counting keeps
+    nested calls out of the way; string skipping keeps punctuation inside a
+    literal from being read as structure.
+    """
+    depth, start, args = 1, i, []
+    while i < len(source) and depth > 0:
+        ch = source[i]
+        if ch in "'\"":
+            i = _skip_string(source, i)
+            continue
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth -= 1
+            if depth == 0:
+                args.append(source[start:i])
+                break
+        elif ch == "," and depth == 1:
+            args.append(source[start:i])
+            start = i + 1
+        i += 1
+
+    positional = []
+    keyword = {}
+    for raw in args:
+        arg = raw.strip()
+        if not arg:
+            continue
+        kw = re.match(r"([A-Za-z_][A-Za-z0-9_]*)\s*=(?!=)(.*)", arg, re.S)
+        if kw:
+            keyword[kw.group(1)] = kw.group(2).strip()
+        else:
+            positional.append(arg)
+
+    for value in ([positional[0]] if positional else []) + [keyword.get("title", "")]:
+        literal = re.fullmatch(r"(['\"])(.*)\1", value or "", re.S)
+        if literal:
+            return literal.group(2)
+    return None
+
+
+def _script_declared_title(folder):
+    """The on-chart title declared inside a folder's script.
+
+    This is the string a user reads in the chart legend, and until D-068 it
+    was the one identity field the duplicate gate never opened. Two items
+    renamed in the D-057 round declared a title colliding exactly with a
+    built-in while their manifest name looked clean.
+
+    Python scripts are parsed with `ast`, so any layout parses -- multi-line
+    calls, single or double quotes, a `title=` keyword. Pine goes through the
+    scanner above. A title built at runtime (an f-string, a variable, a
+    concatenation) is not a literal and is reported as absent rather than
+    guessed at; the scripts are never executed to find out.
+    """
+    for fname in ("indicator.py", "strategy.py", "indicator.pine", "strategy.pine"):
+        path = os.path.join(folder, fname)
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path) as f:
+                source = f.read()
+        except OSError:
+            continue
+
+        if path.endswith(".pine"):
+            title = _pine_declared_title(source)
+            if title:
+                return title
+            continue
+
+        try:
+            tree = ast.parse(source)
+        except SyntaxError:
+            # The compile-and-run gate reports the syntax error itself.
+            continue
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Call):
+                continue
+            func = node.func
+            fname_called = getattr(func, "id", None) or getattr(func, "attr", None)
+            if fname_called not in ("indicator", "strategy"):
+                continue
+            values = list(node.args[:1]) + [
+                kw.value for kw in node.keywords if kw.arg == "title"
+            ]
+            for value in values:
+                if isinstance(value, ast.Constant) and isinstance(value.value, str):
+                    return value.value
+    return None
+
+
 def check_builtin_duplicates(only=None):
     """No marketplace item may duplicate a predefined built-in.
 
@@ -194,8 +336,11 @@ def check_builtin_duplicates(only=None):
     Moving Average") -- so a submission colliding with either is a duplicate.
 
     The manifest `name` is not the only place the collision can hide: the
-    folder id, the README H1 and the index.json name are all read by a user or
-    the app, so all four are checked and the failure names which one collided.
+    folder id, the README H1, the index.json name and the title declared in
+    the script's own indicator()/strategy() call are all read by a user or the
+    app, so all five are checked and the failure names which one collided.
+    The script title was the last blind spot (D-068) and the only field the
+    user reads on the chart itself.
 
     `only` scopes the check to a set of (kind, id) pairs, so validating a
     single script still runs this gate on that script.
@@ -251,6 +396,7 @@ def check_builtin_duplicates(only=None):
                 ("folder id", sid),
                 ("README title", _readme_title(os.path.dirname(manifest_path))),
                 ("index.json name", index_names.get((kind, sid))),
+                ("script title", _script_declared_title(os.path.dirname(manifest_path))),
             ]
             for field, value in candidates:
                 if not value:
