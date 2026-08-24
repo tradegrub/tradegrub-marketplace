@@ -14,6 +14,7 @@ import sys
 import os
 import json
 import glob
+import re
 import traceback
 import time
 import numpy as np
@@ -151,6 +152,66 @@ def check_index_parity():
     return problems
 
 
+def _normalize_name(name):
+    """Fold a display name to its comparison key.
+
+    Case, whitespace and punctuation are all noise for this rule: "Zero-Lag
+    EMA", "zero lag ema" and "Zero_Lag_EMA" are the same indicator to a user
+    browsing the picker. So the key is the lowercased name with every
+    non-alphanumeric character removed.
+    """
+    return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def check_builtin_duplicates():
+    """No marketplace item may duplicate a predefined built-in.
+
+    CONTRIBUTING.md has carried this rule as a review checkbox since the repo
+    opened, which meant it held exactly as well as a reviewer's memory: eight
+    duplicates shipped and were removed by hand in July 2026.
+
+    builtin-names.json is the checked-in list of built-in names and picker
+    labels, generated from the chart platform's indicator-catalog.ts by
+    tools/generate_builtin_names.py. Both fields matter -- `name` is the
+    registration key ("SMA") and `label` is what the user reads ("Simple
+    Moving Average") -- so a submission colliding with either is a duplicate.
+
+    Returns a list of human-readable problems; empty means nothing collides.
+    """
+    names_path = os.path.join(MARKETPLACE_ROOT, "builtin-names.json")
+    if not os.path.exists(names_path):
+        return ["builtin-names.json is missing; run tools/generate_builtin_names.py"]
+
+    with open(names_path) as f:
+        data = json.load(f)
+
+    builtin = {}
+    for original in list(data.get("names", [])) + list(data.get("labels", [])):
+        builtin.setdefault(_normalize_name(original), set()).add(original)
+
+    problems = []
+    for kind in ("indicators", "strategies"):
+        for manifest_path in sorted(glob.glob(os.path.join(MARKETPLACE_ROOT, kind, "*", "manifest.json"))):
+            sid = os.path.basename(os.path.dirname(manifest_path))
+            try:
+                with open(manifest_path) as f:
+                    manifest = json.load(f)
+            except ValueError as e:
+                problems.append(f"{kind}/{sid}: manifest.json is not valid JSON ({e})")
+                continue
+            name = (manifest.get("name") or "").strip()
+            if not name:
+                problems.append(f"{kind}/{sid}: manifest.json has no name")
+                continue
+            hit = builtin.get(_normalize_name(name))
+            if hit:
+                problems.append(
+                    f"{kind}/{sid}: name \"{name}\" duplicates built-in "
+                    f"{' / '.join(sorted(hit))} -- rename it or withdraw it"
+                )
+    return problems
+
+
 def main():
     filter_path = sys.argv[1] if len(sys.argv) > 1 else None
     scripts = find_all_scripts(filter_path)
@@ -161,6 +222,7 @@ def main():
 
     # Parity is a whole-repo property, so only assert it on a full run.
     index_problems = [] if filter_path else check_index_parity()
+    duplicate_problems = [] if filter_path else check_builtin_duplicates()
 
     passed = 0
     failed = 0
@@ -201,7 +263,14 @@ def main():
         print("\n  index.json is what the app reads. A script missing from it "
               "ships to nobody.\n")
 
-    if errors or index_problems:
+    if duplicate_problems:
+        print("BUILT-IN DUPLICATE FAILURES:\n")
+        for p in duplicate_problems:
+            print(f"  {p}")
+        print("\n  A marketplace item that shadows a built-in gives users two "
+              "rows for one indicator.\n")
+
+    if errors or index_problems or duplicate_problems:
         return 1
 
     print("All scripts validated successfully; index.json matches the tree.")
