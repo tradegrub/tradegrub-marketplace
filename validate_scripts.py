@@ -10,10 +10,12 @@ Usage:
     python validate_scripts.py strategies/wedge-breakout  # validate one
 """
 
+import ast
 import sys
 import os
 import json
 import glob
+import re
 import traceback
 import time
 import numpy as np
@@ -151,6 +153,263 @@ def check_index_parity():
     return problems
 
 
+def _normalize_name(name):
+    """Fold a display name to its comparison key.
+
+    Case, whitespace and punctuation are all noise for this rule: "Zero-Lag
+    EMA", "zero lag ema" and "Zero_Lag_EMA" are the same indicator to a user
+    browsing the picker. So the key is the lowercased name with every
+    non-alphanumeric character removed.
+    """
+    return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def _readme_title(folder):
+    """The first markdown H1 in the folder's README, if any."""
+    for candidate in ("README.md", "readme.md"):
+        path = os.path.join(folder, candidate)
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path) as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("# "):
+                        return line[2:].strip()
+        except OSError:
+            return None
+    return None
+
+
+def _pine_declared_title(source):
+    """The title argument of the first indicator()/strategy() call in Pine source.
+
+    Pine has no Python AST, so this is a hand-written scan rather than a
+    regex: find the identifier, then walk the argument list forward counting
+    parentheses and skipping over string literals, so a title containing a
+    comma or a bracket does not truncate the parse and a call spanning several
+    lines is still read whole. Line comments (//) and string bodies are
+    skipped when looking for the call itself, so the word "indicator(" inside
+    a comment or a description string is not mistaken for the declaration.
+
+    Returns the title string, or None when the call is absent or the title is
+    not a plain literal (a computed title cannot be checked statically).
+    """
+    i, n = 0, len(source)
+    while i < n:
+        ch = source[i]
+        if ch == "/" and source.startswith("//", i):
+            j = source.find("\n", i)
+            i = n if j < 0 else j + 1
+            continue
+        if ch in "'\"":
+            i = _skip_string(source, i)
+            continue
+        m = re.compile(r"(?<![A-Za-z0-9_.])(indicator|strategy)\s*\(").match(source, i)
+        if m:
+            return _first_title_arg(source, m.end())
+        i += 1
+    return None
+
+
+def _skip_string(source, i):
+    """Index just past the string literal starting at `i`."""
+    quote = source[i]
+    i += 1
+    while i < len(source):
+        if source[i] == "\\":
+            i += 2
+            continue
+        if source[i] == quote:
+            return i + 1
+        i += 1
+    return i
+
+
+def _first_title_arg(source, i):
+    """Read the title out of an argument list whose opening paren is consumed.
+
+    Takes the first positional argument when it is a string literal, and
+    otherwise a `title=` keyword anywhere in the list. Depth counting keeps
+    nested calls out of the way; string skipping keeps punctuation inside a
+    literal from being read as structure.
+    """
+    depth, start, args = 1, i, []
+    while i < len(source) and depth > 0:
+        ch = source[i]
+        if ch in "'\"":
+            i = _skip_string(source, i)
+            continue
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth -= 1
+            if depth == 0:
+                args.append(source[start:i])
+                break
+        elif ch == "," and depth == 1:
+            args.append(source[start:i])
+            start = i + 1
+        i += 1
+
+    positional = []
+    keyword = {}
+    for raw in args:
+        arg = raw.strip()
+        if not arg:
+            continue
+        kw = re.match(r"([A-Za-z_][A-Za-z0-9_]*)\s*=(?!=)(.*)", arg, re.S)
+        if kw:
+            keyword[kw.group(1)] = kw.group(2).strip()
+        else:
+            positional.append(arg)
+
+    for value in ([positional[0]] if positional else []) + [keyword.get("title", "")]:
+        literal = re.fullmatch(r"(['\"])(.*)\1", value or "", re.S)
+        if literal:
+            return literal.group(2)
+    return None
+
+
+def _script_declared_title(folder):
+    """The on-chart title declared inside a folder's script.
+
+    This is the string a user reads in the chart legend, and until D-068 it
+    was the one identity field the duplicate gate never opened. Two items
+    renamed in the D-057 round declared a title colliding exactly with a
+    built-in while their manifest name looked clean.
+
+    Python scripts are parsed with `ast`, so any layout parses -- multi-line
+    calls, single or double quotes, a `title=` keyword. Pine goes through the
+    scanner above. A title built at runtime (an f-string, a variable, a
+    concatenation) is not a literal and is reported as absent rather than
+    guessed at; the scripts are never executed to find out.
+    """
+    for fname in ("indicator.py", "strategy.py", "indicator.pine", "strategy.pine"):
+        path = os.path.join(folder, fname)
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path) as f:
+                source = f.read()
+        except OSError:
+            continue
+
+        if path.endswith(".pine"):
+            title = _pine_declared_title(source)
+            if title:
+                return title
+            continue
+
+        try:
+            tree = ast.parse(source)
+        except SyntaxError:
+            # The compile-and-run gate reports the syntax error itself.
+            continue
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Call):
+                continue
+            func = node.func
+            fname_called = getattr(func, "id", None) or getattr(func, "attr", None)
+            if fname_called not in ("indicator", "strategy"):
+                continue
+            values = list(node.args[:1]) + [
+                kw.value for kw in node.keywords if kw.arg == "title"
+            ]
+            for value in values:
+                if isinstance(value, ast.Constant) and isinstance(value.value, str):
+                    return value.value
+    return None
+
+
+def check_builtin_duplicates(only=None):
+    """No marketplace item may duplicate a predefined built-in.
+
+    CONTRIBUTING.md has carried this rule as a review checkbox since the repo
+    opened, which meant it held exactly as well as a reviewer's memory: eight
+    duplicates shipped and were removed by hand in July 2026.
+
+    builtin-names.json is the checked-in list of built-in names and picker
+    labels, generated from the chart platform's indicator-catalog.ts by
+    tools/generate_builtin_names.py. Both fields matter -- `name` is the
+    registration key ("SMA") and `label` is what the user reads ("Simple
+    Moving Average") -- so a submission colliding with either is a duplicate.
+
+    The manifest `name` is not the only place the collision can hide: the
+    folder id, the README H1, the index.json name and the title declared in
+    the script's own indicator()/strategy() call are all read by a user or the
+    app, so all five are checked and the failure names which one collided.
+    The script title was the last blind spot (D-068) and the only field the
+    user reads on the chart itself.
+
+    `only` scopes the check to a set of (kind, id) pairs, so validating a
+    single script still runs this gate on that script.
+
+    Returns a list of human-readable problems; empty means nothing collides.
+    """
+    names_path = os.path.join(MARKETPLACE_ROOT, "builtin-names.json")
+    if not os.path.exists(names_path):
+        return ["builtin-names.json is missing; run tools/generate_builtin_names.py"]
+
+    with open(names_path) as f:
+        data = json.load(f)
+
+    builtin = {}
+    for original in list(data.get("names", [])) + list(data.get("labels", [])):
+        builtin.setdefault(_normalize_name(original), set()).add(original)
+
+    index_names = {}
+    index_path = os.path.join(MARKETPLACE_ROOT, "index.json")
+    if os.path.exists(index_path):
+        try:
+            with open(index_path) as f:
+                for e in json.load(f):
+                    ekind = "strategies" if e.get("type") == "strategy" else "indicators"
+                    index_names[(ekind, e.get("id"))] = (e.get("name") or "").strip()
+        except ValueError:
+            pass
+
+    problems = []
+    for kind in ("indicators", "strategies"):
+        for manifest_path in sorted(glob.glob(os.path.join(MARKETPLACE_ROOT, kind, "*", "manifest.json"))):
+            sid = os.path.basename(os.path.dirname(manifest_path))
+            if only and (kind, sid) not in only:
+                continue
+            try:
+                with open(manifest_path) as f:
+                    manifest = json.load(f)
+            except ValueError as e:
+                problems.append(f"{kind}/{sid}: manifest.json is not valid JSON ({e})")
+                continue
+            name = (manifest.get("name") or "").strip()
+            if not name:
+                problems.append(f"{kind}/{sid}: manifest.json has no name")
+                continue
+
+            # Every field a user or the app can read the item's identity from.
+            # Checking manifest.name alone let "Ultra EMA" ship in a folder
+            # called `ema` and read as the built-in everywhere the id shows
+            # (D-063). The field that collided is named in the message,
+            # because a gate nobody can act on gets ignored.
+            candidates = [
+                ("manifest.json name", name),
+                ("folder id", sid),
+                ("README title", _readme_title(os.path.dirname(manifest_path))),
+                ("index.json name", index_names.get((kind, sid))),
+                ("script title", _script_declared_title(os.path.dirname(manifest_path))),
+            ]
+            for field, value in candidates:
+                if not value:
+                    continue
+                hit = builtin.get(_normalize_name(value))
+                if hit:
+                    problems.append(
+                        f"{kind}/{sid}: {field} \"{value}\" duplicates built-in "
+                        f"{' / '.join(sorted(hit))} -- rename it or withdraw it"
+                    )
+    return problems
+
+
 def main():
     filter_path = sys.argv[1] if len(sys.argv) > 1 else None
     scripts = find_all_scripts(filter_path)
@@ -161,6 +420,17 @@ def main():
 
     # Parity is a whole-repo property, so only assert it on a full run.
     index_problems = [] if filter_path else check_index_parity()
+    # Duplication is a per-item property, so it runs on a filtered path too,
+    # scoped to the scripts that were selected. Skipping it there removed the
+    # gate at the exact moment a contributor checks their own submission
+    # (D-064).
+    only = None
+    if filter_path:
+        only = {
+            (folder.split(os.sep)[0], os.path.basename(folder))
+            for folder, _ in scripts
+        }
+    duplicate_problems = check_builtin_duplicates(only)
 
     passed = 0
     failed = 0
@@ -201,7 +471,14 @@ def main():
         print("\n  index.json is what the app reads. A script missing from it "
               "ships to nobody.\n")
 
-    if errors or index_problems:
+    if duplicate_problems:
+        print("BUILT-IN DUPLICATE FAILURES:\n")
+        for p in duplicate_problems:
+            print(f"  {p}")
+        print("\n  A marketplace item that shadows a built-in gives users two "
+              "rows for one indicator.\n")
+
+    if errors or index_problems or duplicate_problems:
         return 1
 
     print("All scripts validated successfully; index.json matches the tree.")

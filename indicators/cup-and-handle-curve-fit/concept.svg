@@ -6,7 +6,7 @@
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#bg)" rx="8"/>
-  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Cup and Handle Detector</text>
+  <text x="400" y="35" text-anchor="middle" fill="#e0e0e0" font-family="Inter,sans-serif" font-size="18" font-weight="600">Cup and Handle Curve Fit</text>
   <text x="400" y="55" text-anchor="middle" fill="#666" font-family="Inter,sans-serif" font-size="11">tradegrub.finance</text>
   <!-- Price axis -->
   <line x1="60" y1="70" x2="60" y2="420" stroke="#333" stroke-width="1"/>

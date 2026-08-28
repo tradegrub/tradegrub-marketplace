@@ -197,7 +197,28 @@ Pull requests are reviewed against this checklist:
 - [ ] Script works on multiple symbols and timeframes
 - [ ] No hardcoded symbols, API keys, or external network calls
 - [ ] Entry added to index.json
-- [ ] Does not duplicate a built-in indicator or existing marketplace script
+- [ ] Does not duplicate an existing marketplace script
+
+### No duplicating a built-in (enforced)
+
+This is no longer a reviewer's memory. `python validate_scripts.py` fails the run
+when any of five identity fields folds onto a built-in name or picker label,
+ignoring case, spacing and punctuation: "Zero-Lag EMA", "zero lag ema" and "Zero_Lag_EMA" are all
+the same item. The list lives in `builtin-names.json`, generated from the chart
+platform's indicator catalog by `tools/generate_builtin_names.py`.
+
+The five fields checked are the manifest `name`, the folder id, the README H1, the
+`index.json` name, and the title declared in your script's own `indicator(...)` or
+`strategy(...)` call. That last one is the string a user reads in the chart legend,
+so a distinct-looking listing with a colliding on-chart title is still a duplicate.
+
+The failure names your folder and the built-in it collides with. When it trips:
+
+- **Rename**, if your script is genuinely different from the built-in. Pick a name
+  that says what makes it different, and update `manifest.json`, `index.json`,
+  `README.md`, the folder id and the `indicator(...)`/`strategy(...)` title together.
+- **Withdraw**, if it is the same indicator. The built-in always wins: it ships with
+  the chart, needs no install, and two rows for one indicator only confuses users.
 
 ## License
 
