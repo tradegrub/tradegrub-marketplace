@@ -20,8 +20,13 @@ import traceback
 import time
 import numpy as np
 
-# Add tg_scripting to path
-CHART_PLATFORM = os.path.expanduser("~/StudioProjects/chart-platform")
+# Add tg_scripting to path. TG_CHART_PLATFORM points at the chart-platform
+# checkout under test (its marketplace.test.ts sets it, as for
+# tools/generate_builtin_names.py), so a worktree's runtime is the one
+# validated, not whatever the main checkout has (chart-platform D-859).
+CHART_PLATFORM = os.environ.get(
+    "TG_CHART_PLATFORM", os.path.expanduser("~/StudioProjects/chart-platform")
+)
 TG_PKG = os.path.join(CHART_PLATFORM, "website/public/scripts/pyodide-packages")
 sys.path.insert(0, TG_PKG)
 
